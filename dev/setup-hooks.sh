@@ -33,10 +33,12 @@ files=$(git diff --cached --name-only -- '*.cpp')
 if [ -n "$files" ]; then
   echo "Running clang-format on staged C++ files..."
   for file in $files; do
+    echo "Formatting $file"
     clang-format -i "$file"
     git add "$file"
   done
-  echo "clang-format completed and changes staged, you can now commit again.\n"
+  echo "clang-format completed and changes staged, you can now commit again."
+  echo
 else
   echo "No staged C++ files to format."
 fi
