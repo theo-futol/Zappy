@@ -34,7 +34,7 @@ if [ -n "$files" ]; then
   echo "Running clang-format on staged C++ files..."
   for file in $files; do
     echo "Formatting $file"
-    clang-format -i "$file"
+    clang-format -i $file
     git add "$file"
   done
   echo "clang-format completed and changes staged, you can now commit again."
