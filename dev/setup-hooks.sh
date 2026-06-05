@@ -27,23 +27,24 @@ echo "npx --no-install commitlint --edit "$1"" > .husky/commit-msg
 echo "-> .husky/commit-msg created."
 
 # Add pre-commit hook to format C++ files
-echo "files=$(git diff --cached --name-only -- '*.cpp')
+cat > .husky/pre-commit << 'EOF'
+#!/bin/sh
 
-if [ -n $files ]; then
-  echo "Files to format: $files"
-  echo "Running clang-format on staged C++ files..."
+files=$(git diff --cached --name-only -- '*.cpp')
+
+if [ -n "$files" ]; then
   for file in $files; do
     echo "Formatting $file"
-    clang-format -i $file
+    clang-format -i "$file"
     git add "$file"
   done
-  echo "clang-format completed and changes staged, you can now commit again."
+
+  echo "clang-format completed. Changes staged, you can now commit again."
   echo
 else
   echo "No staged C++ files to format."
 fi
-" > .husky/pre-commit
-echo "-> .husky/pre-commit created."
+EOF
 
 echo "----"
 
