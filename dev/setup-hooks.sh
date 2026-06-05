@@ -36,7 +36,7 @@ if [ -n "$files" ]; then
     clang-format -i "$file"
     git add "$file"
   done
-  echo "clang-format completed and changes staged, you can now commit again."
+  echo "clang-format completed and changes staged, you can now commit again.\n"
 else
   echo "No staged C++ files to format."
 fi
