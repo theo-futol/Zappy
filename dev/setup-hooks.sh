@@ -28,7 +28,7 @@ echo "-> .husky/commit-msg created."
 
 # Add pre-commit hook to format C++ files
 echo "
-files=$(git diff --cached --name-only -- '*.cpp')
+files=$(git diff --cached --name-only | grep -E '\.(cpp)$')
 
 if [ -n "$files" ]; then
   echo "Files to format: $files"
