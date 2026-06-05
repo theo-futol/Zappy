@@ -31,6 +31,7 @@ echo "
 files=$(git diff --cached --name-only -- '*.cpp')
 
 if [ -n "$files" ]; then
+  echo "Files to format: $files"
   echo "Running clang-format on staged C++ files..."
   for file in $files; do
     echo "Formatting $file"
