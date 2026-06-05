@@ -1,0 +1,3 @@
+.husky
+*.js
+node_modules
