@@ -6,6 +6,7 @@
 #include <unordered_map>
 #include <chrono>
 #include "../../Client/Client.hpp"
+#include "../../../Simulation/World/World.hpp"
 
 namespace zappy
 {
@@ -20,10 +21,11 @@ namespace zappy
     public:
         using Handler = std::function<void(const std::vector<std::string> &)>;
 
-        CommandParser(Client *client, int f);
+        CommandParser(Client *client, int f, World *world = nullptr);
 
         /// @brief Reads pending data from the client socket into the command queue.
-        void feed();
+        /// @return false if the client disconnected.
+        bool feed();
 
         /// @brief Dispatches the next queued command if its time has come.
         void executeNext();
@@ -35,6 +37,7 @@ namespace zappy
 
         Client *_client;
         int _f;
+        World *_world;
         std::queue<PendingCommand> _commandQueue;
         std::unordered_map<std::string, std::pair<int, Handler>> _aiCommands;
         std::unordered_map<std::string, Handler> _graphicCommands;

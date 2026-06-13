@@ -8,8 +8,8 @@ int main(int ac, char **av)
         zappy::ArgParser argParser(ac, av);
         zappy::Core core(argParser);
 
-        core.setClientHandler();
         core.setWorld();
+        core.setClientHandler();
         core.run();
     }
     catch (const zappy::ServerException &e)

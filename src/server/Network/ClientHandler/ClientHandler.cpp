@@ -12,7 +12,7 @@ ClientHandler::~ClientHandler()
 {
 }
 
-ClientHandler::ClientHandler(int port, int initialClientCapacity, int f) : _f(f), _lastResourceUpdate(std::chrono::steady_clock::now())
+ClientHandler::ClientHandler(int port, int initialClientCapacity, int f, World *world) : _f(f), _lastResourceUpdate(std::chrono::steady_clock::now()), _world(world)
 {
     _tcpSocket.create(AF_INET, SOCK_STREAM, 0);
     _tcpSocket.bind(port);
@@ -28,33 +28,46 @@ void ClientHandler::handleClients(void)
     {
         if (poll(_fds.data(), _fds.size(), TIMEOUT) < 0)
         {
-            continue;
+            if (errno == EINTR)
+                continue;
+            throw ServerException("poll failed: " + std::string(strerror(errno)));
         }
         if (_fds[0].revents & POLLIN)
             addClient();
         auto now = std::chrono::steady_clock::now();
         if (now - _lastResourceUpdate >= std::chrono::milliseconds(TIMEOUT))
         {
-            // TO DO: ADD RESSOURCE UPDATE LOGIC HERE
+            _world->ressourcePassiveGeneration();
             _lastResourceUpdate = now;
         }
 
-        for (size_t i = 1; i < _fds.size(); i++)
+        clientEventHandling();
+    }
+}
+
+void ClientHandler::clientEventHandling()
+{
+    for (size_t i = 1; i < _fds.size(); i++)
+    {
+        if (_fds[i].revents & POLLHUP)
         {
-            if (_fds[i].revents & POLLHUP)
+            removeClient(_fds[i].fd);
+            i--;
+            continue;
+        }
+        if (_fds[i].revents & POLLIN)
+        {
+            auto it = _parsers.find(_fds[i].fd);
+            if (it != _parsers.end())
             {
-                removeClient(_fds[i].fd);
-                i--;
-                continue;
-            }
-            if (_fds[i].revents & POLLIN)
-            {
-                auto it = _parsers.find(_fds[i].fd);
-                if (it != _parsers.end())
+                if (!it->second->feed())
                 {
-                    it->second->feed();
-                    it->second->executeNext();
+                    removeClient(_fds[i].fd);
+                    i--;
+                    continue;
                 }
+                while (it->second->hasPending())
+                    it->second->executeNext();
             }
         }
     }

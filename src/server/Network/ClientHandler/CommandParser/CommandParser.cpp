@@ -4,7 +4,7 @@
 
 namespace zappy
 {
-CommandParser::CommandParser(Client *client, int f) : _client(client), _f(f)
+CommandParser::CommandParser(Client *client, int f, World *world) : _client(client), _f(f), _world(world)
 {
     _initAICommands();
     _initGraphicCommands();
@@ -35,12 +35,12 @@ void CommandParser::_initGraphicCommands()
     _graphicCommands["sst"] = [](const std::vector<std::string> &) {};
 }
 
-void CommandParser::feed()
+bool CommandParser::feed()
 {
     char buf[4096] = {0};
     int bytes = recv(_client->getFd(), buf, sizeof(buf) - 1, 0);
     if (bytes <= 0)
-        return;
+        return false;
     std::string buffer = _client->getBuffer() + std::string(buf, bytes);
     size_t pos;
     while ((pos = buffer.find('\n')) != std::string::npos)
@@ -58,6 +58,7 @@ void CommandParser::feed()
         _commandQueue.push({line, base + std::chrono::milliseconds(cost * 1000 / _f)});
     }
     _client->setBuffer(buffer);
+    return true;
 }
 
 void CommandParser::executeNext()

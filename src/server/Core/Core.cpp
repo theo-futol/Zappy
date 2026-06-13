@@ -18,7 +18,7 @@ void Core::setClientHandler()
     int port = _argParser.getInt("-p");
     int f = _argParser.hasFlag("-f") ? _argParser.getInt("-f") : 100;
     int initialClientCapacity = _argParser.getInt("-c") * _argParser.getList("-n").size();
-    _clientHandler = std::make_unique<ClientHandler>(port, initialClientCapacity, f);
+    _clientHandler = std::make_unique<ClientHandler>(port, initialClientCapacity, f, _world.get());
 }
 
 void Core::setWorld()
