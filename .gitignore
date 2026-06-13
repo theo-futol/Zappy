@@ -1,3 +1,4 @@
 .husky
 *.js
 node_modules
+*.o
