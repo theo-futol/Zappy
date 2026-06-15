@@ -9,7 +9,7 @@ ClientHandler::~ClientHandler()
 }
 
 ClientHandler::ClientHandler(int port, int initialClientCapacity, int f, World *world, bool *serverIsRunning)
-    : _serverIsRunning(serverIsRunning), _f(f), _lastResourceUpdate(std::chrono::steady_clock::now()), _world(world)
+    : _f(f), _lastResourceUpdate(std::chrono::steady_clock::now()), _world(world), _serverIsRunning(serverIsRunning)
 {
     _tcpSocket.create(AF_INET, SOCK_STREAM, 0);
     _tcpSocket.bind(port);

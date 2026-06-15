@@ -2,6 +2,9 @@
 
 namespace zappy
 {
+
+bool Core::serverIsRunning = true;
+
 Core::Core(ArgParser argParser) : _argParser(std::move(argParser)), _clientHandler(nullptr), _world(nullptr)
 {
     setSignalHandler();
