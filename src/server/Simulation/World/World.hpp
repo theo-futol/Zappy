@@ -34,6 +34,10 @@ namespace zappy
 
             void ressourcePassiveGeneration();
             Player *getPlayerByID(int playerID);
+            Player *getPlayerByID(int playerID) const;
             std::pair<int, int> getMapSize() const;
-    };
+
+            tile *getTileAt(int playerID);
+            tile *getTileAt(position pos);
+        };
 } // namespace zappy

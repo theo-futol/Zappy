@@ -51,10 +51,35 @@ Player *World::getPlayerByID(int playerID)
     return nullptr;
 }
 
+Player *World::getPlayerByID(int playerID) const
+{
+    for (const auto &column : _map)
+        for (const auto &tile : column)
+            for (const auto &player : tile._players)
+                if (player->getPlayerID() == playerID)
+                    return player.get();
+    return nullptr;
+}
+
 std::pair<int, int> World::getMapSize() const
 {
     if (_map.empty())
         return std::make_pair(0, 0);
     return _mapSize;
+}
+
+tile *World::getTileAt(int playerID)
+{
+    Player *player = getPlayerByID(playerID);
+    if (!player)
+        return nullptr;
+    return getTileAt(player->getPosition());
+}
+
+tile *World::getTileAt(position pos)
+{
+    if (pos.x >= _map.size() || pos.y >= _map[0].size())
+        return nullptr;
+    return &_map[pos.x][pos.y];
 }
 } // namespace zappy

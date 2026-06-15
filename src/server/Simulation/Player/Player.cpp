@@ -70,4 +70,9 @@ void Player::move(std::pair<int, int> mapSize)
     }
 }
 
+Inventory &Player::getInventory()
+{
+    return _inventory;
+}
+
 } // namespace zappy

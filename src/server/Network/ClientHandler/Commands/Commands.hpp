@@ -15,7 +15,7 @@ namespace zappy
             std::string Right(std::vector<std::string> args, Client &client);
             std::string Left(std::vector<std::string> args, Client &client);
             std::string Look(std::vector<std::string> args, Client &client);
-            std::string Inventory(std::vector<std::string> args, Client &client);
+            std::string getInventory(std::vector<std::string> args, Client &client);
             std::string Connect_nbr(std::vector<std::string> args, Client &client);
             std::string Broadcast(std::vector<std::string> args, Client &client);
             std::string Eject(std::vector<std::string> args, Client &client);

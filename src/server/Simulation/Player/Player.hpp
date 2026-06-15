@@ -1,14 +1,16 @@
 #pragma once
 #include <string>
+
 #include "Teams.hpp"
 #include "../../ServerException/ServerException.hpp"
+#include "Inventory/Inventory.hpp"
 
 namespace zappy
 {
     struct position
     {
-        int x;
-        int y;
+        size_t x;
+        size_t y;
     };
 
     class Player
@@ -22,12 +24,14 @@ namespace zappy
             int rotation;
             Team _team;
             bool isLeveling;
+            Inventory _inventory;
         public:
-            Player(int playerID, int fd, const Team &team) : _fd(fd), _playerID(playerID), _pos{0, 0}, _team(team), isLeveling(false) {}
+            Player(int playerID, int fd, const Team &team) : _fd(fd), _playerID(playerID), _pos{0, 0}, _team(team), isLeveling(false), _inventory() {}
             int getPlayerID() const;
             const position &getPosition() const;
             int getRotation() const;
             int getLevel() const;
+            Inventory& getInventory();
 
             void setRotation(int rotation);
             void setPosition(int x, int y, std::pair<int, int> mapSize);
