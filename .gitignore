@@ -1,0 +1,5 @@
+.husky
+*.js
+node_modules
+*.o
+zappy_*
