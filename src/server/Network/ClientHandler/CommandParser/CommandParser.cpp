@@ -8,31 +8,32 @@ CommandParser::CommandParser(Client *client, int f, World *world) : _client(clie
 {
     _initAICommands();
     _initGraphicCommands();
+    _commands = Commands(world);
 }
 
 void CommandParser::_initAICommands()
 {
-    _aiCommands["Forward"] = std::make_pair(7, [](const std::vector<std::string> &) {});
-    _aiCommands["Right"] = std::make_pair(7, [](const std::vector<std::string> &) {});
-    _aiCommands["Left"] = std::make_pair(7, [](const std::vector<std::string> &) {});
-    _aiCommands["Look"] = std::make_pair(7, [](const std::vector<std::string> &) {});
-    _aiCommands["Inventory"] = std::make_pair(1, [](const std::vector<std::string> &) {});
-    _aiCommands["Connect_nbr"] = std::make_pair(0, [](const std::vector<std::string> &) {});
-    _aiCommands["Broadcast"] = std::make_pair(7, [](const std::vector<std::string> &) {});
-    _aiCommands["Eject"] = std::make_pair(7, [](const std::vector<std::string> &) {});
-    _aiCommands["Take"] = std::make_pair(7, [](const std::vector<std::string> &) {});
-    _aiCommands["Set"] = std::make_pair(7, [](const std::vector<std::string> &) {});
-    _aiCommands["Fork"] = std::make_pair(42, [](const std::vector<std::string> &) {});
-    _aiCommands["Incantation"] = std::make_pair(300, [](const std::vector<std::string> &) {});
+    _aiCommands["Forward"] = std::make_pair(7, [](const std::vector<std::string> &cmd, Client &client, Commands &commands) { commands.Forward(cmd[1], client); });
+    _aiCommands["Right"] = std::make_pair(7, [](const std::vector<std::string> &cmd, Client &client, Commands &commands) { commands.Right(cmd[1], client); });
+    _aiCommands["Left"] = std::make_pair(7, [](const std::vector<std::string> &cmd, Client &client, Commands &commands) { commands.Left(cmd[1], client); });
+    _aiCommands["Look"] = std::make_pair(7, [](const std::vector<std::string> &cmd, Client &client, Commands &commands) { commands.Look(cmd[1], client); });
+    _aiCommands["Inventory"] = std::make_pair(1, [](const std::vector<std::string> &cmd, Client &client, Commands &commands) { commands.Inventory(cmd[1], client); });
+    _aiCommands["Connect_nbr"] = std::make_pair(0, [](const std::vector<std::string> &cmd, Client &client, Commands &commands) { commands.Connect_nbr(cmd[1], client); });
+    _aiCommands["Broadcast"] = std::make_pair(7, [](const std::vector<std::string> &cmd, Client &client, Commands &commands) { commands.Broadcast(cmd[1], client); });
+    _aiCommands["Eject"] = std::make_pair(7, [](const std::vector<std::string> &cmd, Client &client, Commands &commands) { commands.Eject(cmd[1], client); });
+    _aiCommands["Take"] = std::make_pair(7, [](const std::vector<std::string> &cmd, Client &client, Commands &commands) { commands.Take(cmd[1], client); });
+    _aiCommands["Set"] = std::make_pair(7, [](const std::vector<std::string> &cmd, Client &client, Commands &commands) { commands.Set(cmd[1], client); });
+    _aiCommands["Fork"] = std::make_pair(42, [](const std::vector<std::string> &cmd, Client &client, Commands &commands) { commands.Fork(cmd[1], client); });
+    _aiCommands["Incantation"] = std::make_pair(300, [](const std::vector<std::string> &cmd, Client &client, Commands &commands) { commands.Incantation(cmd[1], client); });
 }
 
 void CommandParser::_initGraphicCommands()
 {
-    _graphicCommands["ppo"] = [](const std::vector<std::string> &) {};
-    _graphicCommands["plv"] = [](const std::vector<std::string> &) {};
-    _graphicCommands["pin"] = [](const std::vector<std::string> &) {};
-    _graphicCommands["sgt"] = [](const std::vector<std::string> &) {};
-    _graphicCommands["sst"] = [](const std::vector<std::string> &) {};
+    _graphicCommands["ppo"] = [](const std::vector<std::string> &cmd, Client &client, Commands &commands) { commands.Ppo(cmd[1], client); };
+    _graphicCommands["plv"] = [](const std::vector<std::string> &cmd, Client &client, Commands &commands) { commands.Plv(cmd[1], client); };
+    _graphicCommands["pin"] = [](const std::vector<std::string> &cmd, Client &client, Commands &commands) { commands.Pin(cmd[1], client); };
+    _graphicCommands["sgt"] = [](const std::vector<std::string> &cmd, Client &client, Commands &commands) { commands.Sgt(cmd[1], client); };
+    _graphicCommands["sst"] = [](const std::vector<std::string> &cmd, Client &client, Commands &commands) { commands.Sst(cmd[1], client); };
 }
 
 bool CommandParser::feed()

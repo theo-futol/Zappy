@@ -7,6 +7,7 @@
 #include <chrono>
 #include "../../Client/Client.hpp"
 #include "../../../Simulation/World/World.hpp"
+#include "../Commands/Commands.hpp"
 
 namespace zappy
 {
@@ -19,7 +20,7 @@ namespace zappy
     class CommandParser
     {
     public:
-        using Handler = std::function<void(const std::vector<std::string> &)>;
+        using Handler = std::function<void(const std::vector<std::string> &cmd, Client &client, Commands &commands)>;
 
         CommandParser(Client *client, int f, World *world = nullptr);
 
@@ -41,6 +42,7 @@ namespace zappy
         std::queue<PendingCommand> _commandQueue;
         std::unordered_map<std::string, std::pair<int, Handler>> _aiCommands;
         std::unordered_map<std::string, Handler> _graphicCommands;
+        Commands _commands;
         void _initAICommands();
         void _initGraphicCommands();
         void _dispatch(const std::string &line);
