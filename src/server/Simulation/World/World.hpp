@@ -27,9 +27,17 @@ namespace zappy
         private:
             std::vector<std::shared_ptr<Player>> _players;
             Map _map;
+            std::pair<int, int> _mapSize;
         public:
             World(int x, int y);
+            ~World() = default;
 
             void ressourcePassiveGeneration();
-    };
+            Player *getPlayerByID(int playerID);
+            Player *getPlayerByID(int playerID) const;
+            std::pair<int, int> getMapSize() const;
+
+            tile *getTileAt(int playerID);
+            tile *getTileAt(position pos);
+        };
 } // namespace zappy

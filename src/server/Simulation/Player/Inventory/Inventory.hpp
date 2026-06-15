@@ -16,5 +16,7 @@ namespace zappy
             void addItem(ItemType type, int quantity = 1);
             void removeItem(ItemType type, int quantity = 1);
             std::string checkInventory() const;
+            int getItemCount(const std::string &itemName) const;
+            int getItemCount(const ItemType &itemType) const;
     };
 } // namespace zappy

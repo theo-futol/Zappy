@@ -40,7 +40,7 @@ void ArgParser::parse()
     std::string missing;
     for (const auto &[flag, cfg] : _flagConfigs)
         if (cfg.required && _parsedValues.find(flag) == _parsedValues.end())
-            missing += "  " + flag + " — " + cfg.description + "\n";
+            missing += "  " + flag + " : " + cfg.description + "\n";
     if (!missing.empty())
         throw ServerException("Missing required flags:\n" + missing);
 }

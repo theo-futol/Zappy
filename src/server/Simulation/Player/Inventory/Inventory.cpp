@@ -36,4 +36,19 @@ std::string Inventory::checkInventory() const
     result += "]";
     return result;
 }
+
+int Inventory::getItemCount(const std::string &itemName) const
+{
+    ItemType type = stringToItemType(itemName);
+    return getItemCount(type);
+}
+
+int Inventory::getItemCount(const ItemType &itemType) const
+{
+    auto it = _items.find(itemType);
+    if (it != _items.end())
+        return it->second;
+    return 0;
+}
+
 } // namespace zappy
