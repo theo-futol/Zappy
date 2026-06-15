@@ -47,7 +47,6 @@ class HeuristicDecision:
 
 
 class HeuristicModel:
-    """Decision pure appelee par le client a partir d'une observation enrichie."""
 
     def predict(
         self,
@@ -60,14 +59,14 @@ class HeuristicModel:
         objective: str = "exploration",
     ) -> HeuristicDecision:
         if not team_name:
-            raise ValueError("team_name ne peut pas etre vide.")
+            raise ValueError("team_name cannot be empty")
 
         normalized_inventory = _normalize_inventory(inventory)
         normalized_tiles = _normalize_visible_tiles(visible_tiles)
         if not look_is_fresh or not normalized_tiles:
             return HeuristicDecision(
                 command="Look",
-                rationale="La vision n'est pas a jour, il faut consommer une action Look.",
+                rationale="vision not fresh or no visible tiles, need to update vision.",
                 confidence=0.99,
             )
 
@@ -78,12 +77,12 @@ class HeuristicModel:
             if current_counts["food"] > 0:
                 return HeuristicDecision(
                     command="Take food",
-                    rationale="La nourriture est basse et il y a du food sur la case courante.",
+                    rationale="food is on the current tile, need to take it to survive.",
                     confidence=0.98,
                 )
             target = _select_visible_target(normalized_tiles, {"food"})
             if target is not None:
-                return _move_towards(target, "La nourriture est prioritaire pour survivre.")
+                return _move_towards(target, "food is prioritized for survival.")
 
         if objective == "elevation":
             ritual_command = _decide_incantation_step(level, normalized_inventory, current_counts)
@@ -95,18 +94,18 @@ class HeuristicModel:
             if current_stone is not None:
                 return HeuristicDecision(
                     command=f"Take {current_stone}",
-                    rationale=f"La case courante contient {current_stone}, utile pour le prochain niveau.",
+                    rationale=f"current content {current_stone}, can be useful for the incantation.",
                     confidence=0.9,
                 )
 
             target = _select_visible_target(normalized_tiles, needed_stones)
             if target is not None:
-                return _move_towards(target, "Une pierre utile est visible dans le champ de vision.")
+                return _move_towards(target, "stone needed for incantation is visible, moving towards it.")
 
         if current_counts["food"] > 0:
             return HeuristicDecision(
                 command="Take food",
-                rationale="Il y a du food sur la case courante, autant renforcer la reserve.",
+                rationale="food is on the current tile, need to take it to survive.",
                 confidence=0.74,
             )
 
@@ -114,17 +113,17 @@ class HeuristicModel:
         if current_stone is not None:
             return HeuristicDecision(
                 command=f"Take {current_stone}",
-                rationale=f"La case courante contient {current_stone}, ressource interessante a ramasser.",
+                rationale=f"current content {current_stone}, can be useful for the incantation.",
                 confidence=0.7,
             )
 
         target = _select_visible_target(normalized_tiles, set(STONE_PRIORITY) | {"food"})
         if target is not None:
-            return _move_towards(target, "Une ressource utile est visible, on se rapproche.")
+            return _move_towards(target, "A useful resource is visible, moving towards it.")
 
         return HeuristicDecision(
             command="Forward",
-            rationale="Rien d'utile en vue, on avance pour decouvrir de nouvelles cases.",
+            rationale="No useful resources in sight, moving forward to discover new tiles.",
             confidence=0.62,
         )
 
@@ -179,7 +178,7 @@ def _decide_incantation_step(
         if inventory.get(stone, 0) > 0:
             return HeuristicDecision(
                 command=f"Set {stone}",
-                rationale=f"Il faut poser {stone} sur la case pour preparer l'incantation.",
+                rationale=f"need to place {stone} on the tile to prepare the incantation.",
                 confidence=0.93,
             )
 
@@ -188,7 +187,7 @@ def _decide_incantation_step(
     if players_here >= players_needed and _ground_matches_requirement(current_counts, needed_on_ground):
         return HeuristicDecision(
             command="Incantation",
-            rationale="La case semble prete pour l'incantation.",
+            rationale="the tile appears ready for the incantation.",
             confidence=0.88,
         )
 
@@ -257,19 +256,19 @@ def _move_towards(target: Mapping[str, object], rationale: str) -> HeuristicDeci
     if dx < 0:
         return HeuristicDecision(
             command="Left",
-            rationale=f"{rationale} Le meilleur chemin commence par tourner a gauche.",
+            rationale=f"{rationale} The best path starts by turning left.",
             confidence=0.76,
         )
     if dx > 0:
         return HeuristicDecision(
             command="Right",
-            rationale=f"{rationale} Le meilleur chemin commence par tourner a droite.",
+            rationale=f"{rationale} The best path starts by turning right.",
             confidence=0.76,
         )
     if dy > 0:
         return HeuristicDecision(
             command="Forward",
-            rationale=f"{rationale} La ressource est droit devant.",
+            rationale=f"{rationale} The resource is right in front.",
             confidence=0.8,
         )
     return HeuristicDecision(
