@@ -108,7 +108,7 @@ void CommandParser::_dispatch(const std::string &line)
     {
         auto it = _aiCommands.find(cmd);
         if (it != _aiCommands.end())
-            it->second.second(args);
+            it->second.second(args, *_client, _commands);
         else
             send(_client->getFd(), "ko\n", 3, 0);
     }
@@ -116,7 +116,7 @@ void CommandParser::_dispatch(const std::string &line)
     {
         auto it = _graphicCommands.find(cmd);
         if (it != _graphicCommands.end())
-            it->second(args);
+            it->second(args, *_client, _commands);
         else
             send(_client->getFd(), "suc\n", 4, 0);
     }
