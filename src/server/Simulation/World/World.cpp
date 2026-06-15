@@ -11,6 +11,7 @@ World::World(int x, int y)
     for (int i = 0; i < x; ++i)
         for (int j = 0; j < y; ++j)
             _map[i][j] = tile();
+    _mapSize = std::make_pair(x, y);
 }
 
 /// @brief Generates resources on the map at regular intervals.
@@ -38,5 +39,22 @@ void World::ressourcePassiveGeneration()
                 it->second += 1;
         }
     }
+}
+
+Player *World::getPlayerByID(int playerID)
+{
+    for (const auto &column : _map)
+        for (const auto &tile : column)
+            for (const auto &player : tile._players)
+                if (player->getPlayerID() == playerID)
+                    return player.get();
+    return nullptr;
+}
+
+std::pair<int, int> World::getMapSize() const
+{
+    if (_map.empty())
+        return std::make_pair(0, 0);
+    return _mapSize;
 }
 } // namespace zappy
