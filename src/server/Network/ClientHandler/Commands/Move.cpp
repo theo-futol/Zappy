@@ -2,9 +2,9 @@
 
 namespace zappy
 {
-std::string Commands::Forward(std::string command, Client &client)
+std::string Commands::Forward(std::vector<std::string> args, Client &client)
 {
-    (void)command; // Unused parameter
+    (void)args; // Unused parameter
     Player *player = _world->getPlayerByID(client.getPlayerID());
     if (!player)
         return "dead\n";
@@ -12,9 +12,9 @@ std::string Commands::Forward(std::string command, Client &client)
     player->move(_world->getMapSize());
     return "ok\n";
 }
-std::string Commands::Right(std::string command, Client &client)
+std::string Commands::Right(std::vector<std::string> args, Client &client)
 {
-    (void)command; // Unused parameter
+    (void)args; // Unused parameter
     Player *player = _world->getPlayerByID(client.getPlayerID());
     if (!player)
         return "dead\n";
@@ -22,9 +22,9 @@ std::string Commands::Right(std::string command, Client &client)
     player->setRotation(player->getRotation() + 90 % 360);
     return "ok\n";
 }
-std::string Commands::Left(std::string command, Client &client)
+std::string Commands::Left(std::vector<std::string> args, Client &client)
 {
-    (void)command; // Unused parameter
+    (void)args; // Unused parameter
     Player *player = _world->getPlayerByID(client.getPlayerID());
     if (!player)
         return "dead\n";

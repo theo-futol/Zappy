@@ -2,9 +2,9 @@
 
 namespace zappy
 {
-std::string Commands::Broadcast(std::string command, Client &client)
+std::string Commands::Broadcast(std::vector<std::string> args, Client &client)
 {
-    (void)command;                         // Unused parameter
+    (void)args;                            // Unused parameter
     (void)client;                          // Unused parameter
     return "Broadcast command executed\n"; // Placeholder return value
 }

@@ -2,9 +2,9 @@
 
 namespace zappy
 {
-std::string Commands::Connect_nbr(std::string command, Client &client)
+std::string Commands::Connect_nbr(std::vector<std::string> args, Client &client)
 {
-    (void)command;                           // Unused parameter
+    (void)args;                              // Unused parameter
     (void)client;                            // Unused parameter
     return "Connect_nbr command executed\n"; // Placeholder return value
 }
