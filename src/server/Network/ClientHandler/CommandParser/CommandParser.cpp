@@ -4,11 +4,10 @@
 
 namespace zappy
 {
-CommandParser::CommandParser(Client *client, int f, World *world) : _client(client), _f(f), _world(world)
+CommandParser::CommandParser(Client *client, int f, World *world) : _client(client), _f(f), _world(world), _commands(world)
 {
     _initAICommands();
     _initGraphicCommands();
-    _commands = Commands(world);
 }
 
 void CommandParser::_initAICommands()
