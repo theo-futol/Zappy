@@ -29,6 +29,7 @@ namespace zappy
             Map _map;
         public:
             World(int x, int y);
+            ~World() = default;
 
             void ressourcePassiveGeneration();
     };

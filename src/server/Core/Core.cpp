@@ -31,6 +31,7 @@ void Core::setWorld()
     int width = _argParser.getInt("-x");
     int height = _argParser.getInt("-y");
     _world = std::make_unique<World>(width, height);
+    std::cout << "World created with dimensions: " << width << "x" << height << std::endl;
 }
 
 void Core::signalHandler(int signal)
