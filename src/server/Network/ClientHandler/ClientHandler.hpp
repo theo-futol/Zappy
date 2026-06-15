@@ -29,20 +29,18 @@ namespace zappy
             std::unordered_map<int, std::unique_ptr<CommandParser>> _parsers; ///< One parser per client fd.
             std::chrono::steady_clock::time_point _lastResourceUpdate;  ///< Timestamp of the last world resource tick.
             World *_world;                                              ///< Non-owning pointer to the simulation world.
-
+            bool * _serverIsRunning;                                    ///< Flag to control the main loop.
             /// @brief Iterates connected clients, handles disconnections and dispatches incoming commands.
             void clientEventHandling();
 
         public:
-            /// @brief Constructs an inactive handler with default values.
-            ClientHandler();
-
             /// @brief Constructs a handler, binds and listens on the given port.
             /// @param port                 TCP port to listen on.
             /// @param initialClientCapacity Initial capacity hint for the fd and client vectors.
             /// @param f                    Reciprocal of the time unit (default: 100).
             /// @param world                Non-owning pointer to the simulation world.
-            ClientHandler(int port, int initialClientCapacity, int f = 100, World *world = nullptr);
+            /// @param serverIsRunning      Pointer to the flag controlling the main loop.
+            ClientHandler(int port, int initialClientCapacity, int f = 100, World *world = nullptr, bool *serverIsRunning = nullptr);
 
             ~ClientHandler();
 

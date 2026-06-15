@@ -4,15 +4,12 @@
 
 namespace zappy
 {
-ClientHandler::ClientHandler() : _f(100), _lastResourceUpdate(std::chrono::steady_clock::now())
-{
-}
-
 ClientHandler::~ClientHandler()
 {
 }
 
-ClientHandler::ClientHandler(int port, int initialClientCapacity, int f, World *world) : _f(f), _lastResourceUpdate(std::chrono::steady_clock::now()), _world(world)
+ClientHandler::ClientHandler(int port, int initialClientCapacity, int f, World *world, bool *serverIsRunning)
+    : _serverIsRunning(serverIsRunning), _f(f), _lastResourceUpdate(std::chrono::steady_clock::now()), _world(world)
 {
     _tcpSocket.create(AF_INET, SOCK_STREAM, 0);
     _tcpSocket.bind(port);
@@ -24,7 +21,7 @@ ClientHandler::ClientHandler(int port, int initialClientCapacity, int f, World *
 
 void ClientHandler::handleClients(void)
 {
-    while (true)
+    while (*_serverIsRunning)
     {
         if (poll(_fds.data(), _fds.size(), TIMEOUT) < 0)
         {
