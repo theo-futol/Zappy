@@ -1,0 +1,42 @@
+#include "World.hpp"
+
+namespace zappy
+{
+World::World(int x, int y)
+{
+    _map.resize(x);
+    for (auto &column : _map)
+        column.resize(y);
+
+    for (int i = 0; i < x; ++i)
+        for (int j = 0; j < y; ++j)
+            _map[i][j] = tile();
+}
+
+/// @brief Generates resources on the map at regular intervals.
+/// Via the formula : map_width * map_height * density
+/// @note The density and generation logic can be adjusted based on game requirements.
+/// This function should be called periodically, e.g., every 20 seconds, to simulate resource regeneration.
+/// The density of each ressource are the following:
+/// food: 0.5, linemate: 0.3, deraumere: 0.5, sibur: 0.1, mendiane: 0.1, phiras: 0.08, thystame: 0.05
+void World::ressourcePassiveGeneration()
+{
+    const std::vector<std::pair<ItemType, double>> resourceDensity = {{ItemType::FOOD, 0.5},     {ItemType::LINEMATE, 0.3}, {ItemType::DERAUMERE, 0.5}, {ItemType::SIBUR, 0.1},
+                                                                      {ItemType::MENDIANE, 0.1}, {ItemType::PHIRAS, 0.08},  {ItemType::THYSTAME, 0.05}};
+    int totalTiles = _map.size() * (_map.empty() ? 0 : _map[0].size());
+
+    for (const auto &[type, density] : resourceDensity)
+    {
+        int totalToGenerate = static_cast<int>(totalTiles * density);
+        for (int i = 0; i < totalToGenerate; ++i)
+        {
+            int x = rand() % _map.size();
+            int y = rand() % (_map.empty() ? 1 : _map[0].size());
+            std::vector<std::pair<zappy::ItemType, int>> &tileCoords = _map[x][y]._items;
+            auto it = std::find_if(tileCoords.begin(), tileCoords.end(), [type](const std::pair<ItemType, int> &item) { return item.first == type; });
+            if (it != tileCoords.end())
+                it->second += 1;
+        }
+    }
+}
+} // namespace zappy
