@@ -7,7 +7,6 @@
 
 namespace zappy
 {
-
     class Core
     {
         public:
