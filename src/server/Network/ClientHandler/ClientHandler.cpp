@@ -1,6 +1,6 @@
 #include "ClientHandler.hpp"
 
-#define TIMEOUT 20000 // 20 seconds in milliseconds
+static constexpr int RESOURCE_INTERVAL_MS = 20000;
 
 namespace zappy
 {
@@ -23,7 +23,18 @@ void ClientHandler::handleClients(void)
 {
     while (*_serverIsRunning)
     {
-        if (poll(_fds.data(), _fds.size(), TIMEOUT) < 0)
+        auto now = std::chrono::steady_clock::now();
+        auto deadline = _lastResourceUpdate + std::chrono::milliseconds(RESOURCE_INTERVAL_MS);
+        for (auto &[fd, parser] : _parsers)
+        {
+            auto t = parser->nextReadyAt();
+            if (t < deadline)
+                deadline = t;
+        }
+        int64_t ms = std::chrono::duration_cast<std::chrono::milliseconds>(deadline - now).count();
+        int timeout = std::max(static_cast<int64_t>(0), ms);
+
+        if (poll(_fds.data(), _fds.size(), timeout) < 0)
         {
             if (errno == EINTR)
                 continue;
@@ -31,14 +42,20 @@ void ClientHandler::handleClients(void)
         }
         if (_fds[0].revents & POLLIN)
             addClient();
-        auto now = std::chrono::steady_clock::now();
-        if (now - _lastResourceUpdate >= std::chrono::milliseconds(TIMEOUT))
+
+        now = std::chrono::steady_clock::now();
+        if (now - _lastResourceUpdate >= std::chrono::milliseconds(RESOURCE_INTERVAL_MS))
         {
             _world->ressourcePassiveGeneration();
             _lastResourceUpdate = now;
         }
 
         clientEventHandling();
+        for (auto &[fd, parser] : _parsers)
+        {
+            while (parser->hasPending())
+                parser->executeNext();
+        }
     }
 }
 

@@ -5,6 +5,7 @@
 #include <chrono>
 #include <unordered_map>
 #include <string.h>
+#include <algorithm>
 
 #include "../Client/Client.hpp"
 #include "../Socket/Socket.hpp"

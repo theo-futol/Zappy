@@ -39,5 +39,7 @@ namespace zappy
 
             tile *getTileAt(int playerID);
             tile *getTileAt(position pos);
+
+            int getAvailableSlotsForTeam(const std::string &teamName) const;
         };
 } // namespace zappy

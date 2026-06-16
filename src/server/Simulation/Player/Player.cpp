@@ -75,4 +75,9 @@ Inventory &Player::getInventory()
     return _inventory;
 }
 
+Team &Player::getTeam()
+{
+    return _team;
+}
+
 } // namespace zappy

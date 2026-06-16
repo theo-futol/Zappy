@@ -80,6 +80,13 @@ bool CommandParser::hasPending() const
     return !_commandQueue.empty();
 }
 
+std::chrono::steady_clock::time_point CommandParser::nextReadyAt() const
+{
+    if (_commandQueue.empty())
+        return std::chrono::steady_clock::time_point::max();
+    return _commandQueue.front().readyAt;
+}
+
 void CommandParser::_handleHandshake(const std::string &teamName)
 {
     if (teamName == "GRAPHIC")
@@ -89,8 +96,14 @@ void CommandParser::_handleHandshake(const std::string &teamName)
     else
     {
         _client->setType(ClientType::AI);
-        // here, need to tell the client playerID, map size
-        send(_client->getFd(), "0\n10 10\n", 8, 0);
+        int availableSlots = _world->getAvailableSlotsForTeam(teamName);
+        if (availableSlots < 0)
+        {
+            send(_client->getFd(), "ko\n", 3, 0);
+            return;
+        }
+        std::string handShakeMsg = std::to_string(availableSlots) + "\n" + std::to_string(_world->getMapSize().first) + " " + std::to_string(_world->getMapSize().second) + "\n";
+        send(_client->getFd(), handShakeMsg.c_str(), handShakeMsg.size(), 0);
     }
 }
 

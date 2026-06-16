@@ -82,4 +82,21 @@ tile *World::getTileAt(position pos)
         return nullptr;
     return &_map[pos.x][pos.y];
 }
+
+int World::getAvailableSlotsForTeam(const std::string &teamName) const
+{
+    int totalSlots = 0;
+    bool teamFound = false;
+    for (const auto &player : _players)
+    {
+        if (player->getTeam()._name == teamName)
+        {
+            teamFound = true;
+            totalSlots += player->getTeam().slotsAvailable;
+        }
+    }
+    if (!teamFound)
+        return -1;
+    return totalSlots;
+}
 } // namespace zappy

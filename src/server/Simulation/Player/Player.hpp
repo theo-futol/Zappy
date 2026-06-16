@@ -33,6 +33,7 @@ namespace zappy
             int getLevel() const;
             Inventory& getInventory();
 
+            Team& getTeam();
             void setRotation(int rotation);
             void setPosition(int x, int y, std::pair<int, int> mapSize);
             void move(std::pair<int, int> mapSize);
