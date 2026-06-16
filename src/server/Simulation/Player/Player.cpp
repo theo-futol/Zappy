@@ -12,6 +12,16 @@ const position &Player::getPosition() const
     return _pos;
 }
 
+Team Player::getTeam()
+{
+    return _team;
+}
+
+Team Player::getTeam() const
+{
+    return _team;
+}
+
 int Player::getLevel() const
 {
     return _level;

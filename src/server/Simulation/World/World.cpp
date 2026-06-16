@@ -82,4 +82,19 @@ tile *World::getTileAt(position pos)
         return nullptr;
     return &_map[pos.x][pos.y];
 }
+
+void World::setTileAt(position pos, ItemType itemType, int count)
+{
+    if (pos.x >= _map.size() || pos.y >= _map[0].size())
+        return;
+
+    std::vector<std::pair<ItemType, int>> &tileItems = _map[pos.x][pos.y]._items;
+    auto it = std::find_if(tileItems.begin(), tileItems.end(), [itemType](const std::pair<ItemType, int> &item) { return item.first == itemType; });
+
+    if (it != tileItems.end())
+        it->second = count;
+    else
+        tileItems.emplace_back(itemType, count);
+}
+
 } // namespace zappy
