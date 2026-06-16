@@ -2,10 +2,6 @@
 
 namespace zappy
 {
-int Player::getPlayerID() const
-{
-    return _playerID;
-}
 
 const position &Player::getPosition() const
 {
@@ -78,6 +74,11 @@ Inventory &Player::getInventory()
 Team &Player::getTeam()
 {
     return _team;
+}
+
+int Player::getFd() const
+{
+    return _fd;
 }
 
 const Team &Player::getTeam() const

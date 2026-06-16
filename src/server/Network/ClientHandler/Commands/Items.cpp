@@ -5,8 +5,7 @@ namespace zappy
 {
 std::string Commands::Take(std::vector<std::string> args, Client &client)
 {
-    int playerID = client.getPlayerID();
-    tile *currentTile = _world->getTileAt(playerID);
+    tile *currentTile = _world->getTileAt(client.getFd());
     if (args.size() < 2 || !currentTile)
         return "ko\n";
     ItemType itemType = stringToItemType(args[1]);
@@ -19,7 +18,7 @@ std::string Commands::Take(std::vector<std::string> args, Client &client)
             if (it->second <= 0)
                 return "ko\n";
             it->second--;
-            _world->getPlayerByID(playerID)->getInventory().addItem(itemType);
+            _world->getPlayerByFd(client.getFd())->getInventory().addItem(itemType);
             break;
         }
     }
@@ -28,17 +27,16 @@ std::string Commands::Take(std::vector<std::string> args, Client &client)
 
 std::string Commands::Set(std::vector<std::string> args, Client &client)
 {
-    int playerID = client.getPlayerID();
-    tile *currentTile = _world->getTileAt(playerID);
+    tile *currentTile = _world->getTileAt(client.getFd());
     if (args.size() < 2 || !currentTile)
         return "ko\n";
     ItemType itemType = stringToItemType(args[1]);
     if (itemType == ItemType::UNKNOWN)
         return "ko\n";
-    int itemCount = _world->getPlayerByID(playerID)->getInventory().getItemCount(itemType);
+    int itemCount = _world->getPlayerByFd(client.getFd())->getInventory().getItemCount(itemType);
     if (itemCount <= 0)
         return "ko\n";
-    _world->getPlayerByID(playerID)->getInventory().removeItem(itemType);
+    _world->getPlayerByFd(client.getFd())->getInventory().removeItem(itemType);
     for (auto it = currentTile->_items.begin(); it != currentTile->_items.end(); it++)
         if (itemType == it->first)
         {

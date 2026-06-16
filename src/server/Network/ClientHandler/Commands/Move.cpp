@@ -5,7 +5,7 @@ namespace zappy
 std::string Commands::Forward(std::vector<std::string> args, Client &client)
 {
     (void)args; // Unused parameter
-    Player *player = _world->getPlayerByID(client.getPlayerID());
+    Player *player = _world->getPlayerByFd(client.getFd());
     if (!player)
         return "dead\n";
 
@@ -15,7 +15,7 @@ std::string Commands::Forward(std::vector<std::string> args, Client &client)
 std::string Commands::Right(std::vector<std::string> args, Client &client)
 {
     (void)args; // Unused parameter
-    Player *player = _world->getPlayerByID(client.getPlayerID());
+    Player *player = _world->getPlayerByFd(client.getFd());
     if (!player)
         return "dead\n";
 
@@ -25,7 +25,7 @@ std::string Commands::Right(std::vector<std::string> args, Client &client)
 std::string Commands::Left(std::vector<std::string> args, Client &client)
 {
     (void)args; // Unused parameter
-    Player *player = _world->getPlayerByID(client.getPlayerID());
+    Player *player = _world->getPlayerByFd(client.getFd());
     if (!player)
         return "dead\n";
 

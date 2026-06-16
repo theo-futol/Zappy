@@ -32,13 +32,4 @@ void Client::setBuffer(const std::string &buffer)
     _buffer = buffer;
 }
 
-int Client::getPlayerID() const
-{
-    return _playerID;
-}
-
-void Client::setPlayerID(int playerID)
-{
-    this->_playerID = playerID;
-}
 } // namespace zappy

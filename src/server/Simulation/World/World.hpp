@@ -29,18 +29,24 @@ class World
     Map _map;
     std::pair<int, int> _mapSize;
 
+  private:
+    std::vector<Team> _teams;
+
   public:
     World(int x, int y);
     ~World() = default;
 
     void ressourcePassiveGeneration();
-    Player *getPlayerByID(int playerID);
-    Player *getPlayerByID(int playerID) const;
+    Player *getPlayerByFd(int fd);
+    Player *getPlayerByFd(int fd) const;
     std::pair<int, int> getMapSize() const;
 
     tile *getTileAt(int playerID);
     tile *getTileAt(position pos);
     void setTileAt(position pos, ItemType itemType, int count);
     int getAvailableSlotsForTeam(const std::string &teamName) const;
+    void addTeam(const std::string &name, int teamID, int initialSlots);
+    Team *getTeamByName(const std::string &name);
+    void addPlayer(int fd, const std::string &teamName);
 };
 } // namespace zappy

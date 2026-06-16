@@ -41,22 +41,22 @@ void World::ressourcePassiveGeneration()
     }
 }
 
-Player *World::getPlayerByID(int playerID)
+Player *World::getPlayerByFd(int fd)
 {
     for (const auto &column : _map)
         for (const auto &tile : column)
             for (const auto &player : tile._players)
-                if (player->getPlayerID() == playerID)
+                if (player->getFd() == fd)
                     return player.get();
     return nullptr;
 }
 
-Player *World::getPlayerByID(int playerID) const
+Player *World::getPlayerByFd(int fd) const
 {
     for (const auto &column : _map)
         for (const auto &tile : column)
             for (const auto &player : tile._players)
-                if (player->getPlayerID() == playerID)
+                if (player->getFd() == fd)
                     return player.get();
     return nullptr;
 }
@@ -70,7 +70,7 @@ std::pair<int, int> World::getMapSize() const
 
 tile *World::getTileAt(int playerID)
 {
-    Player *player = getPlayerByID(playerID);
+    Player *player = getPlayerByFd(playerID);
     if (!player)
         return nullptr;
     return getTileAt(player->getPosition());
@@ -99,18 +99,31 @@ void World::setTileAt(position pos, ItemType itemType, int count)
 
 int World::getAvailableSlotsForTeam(const std::string &teamName) const
 {
-    int totalSlots = 0;
-    bool teamFound = false;
-    for (const auto &player : _players)
-    {
-        if (player->getTeam()._name == teamName)
-        {
-            teamFound = true;
-            totalSlots += player->getTeam()._slotsAvailable;
-        }
-    }
-    if (!teamFound)
-        return -1;
-    return totalSlots;
+    for (const auto &team : _teams)
+        if (team._name == teamName)
+            return team.getAvailableSlots();
+    return -1;
+}
+
+void World::addTeam(const std::string &name, int teamID, int initialSlots)
+{
+    _teams.emplace_back(name, teamID, initialSlots);
+}
+
+Team *World::getTeamByName(const std::string &name)
+{
+    for (auto &team : _teams)
+        if (team._name == name)
+            return &team;
+    return nullptr;
+}
+
+void World::addPlayer(int fd, const std::string &teamName)
+{
+    Team *team = getTeamByName(teamName);
+    if (!team)
+        return;
+    auto player = std::make_shared<Player>(fd, *team);
+    _players.push_back(player);
 }
 } // namespace zappy

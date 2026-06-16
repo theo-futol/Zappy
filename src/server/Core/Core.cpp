@@ -30,7 +30,11 @@ void Core::setWorld()
 {
     int width = _argParser.getInt("-x");
     int height = _argParser.getInt("-y");
+    int initialSlots = _argParser.getInt("-c");
     _world = std::make_unique<World>(width, height);
+    const auto &teamNames = _argParser.getList("-n");
+    for (int i = 0; i < static_cast<int>(teamNames.size()); ++i)
+        _world->addTeam(teamNames[i], i, initialSlots);
     std::cout << "World created with dimensions: " << width << "x" << height << std::endl;
 }
 

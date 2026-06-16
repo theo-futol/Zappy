@@ -104,6 +104,7 @@ void CommandParser::_handleHandshake(const std::string &teamName)
         }
         std::string handShakeMsg = std::to_string(availableSlots) + "\n" + std::to_string(_world->getMapSize().first) + " " + std::to_string(_world->getMapSize().second) + "\n";
         send(_client->getFd(), handShakeMsg.c_str(), handShakeMsg.size(), 0);
+        _world->addPlayer(_client->getFd(), teamName);
     }
 }
 

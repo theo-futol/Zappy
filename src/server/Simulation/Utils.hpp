@@ -2,6 +2,13 @@
 
 namespace zappy
 {
+enum class PlayerState
+{
+    PENDING,
+    ALIVE,
+    DEAD
+};
+
 struct position
 {
     size_t x;

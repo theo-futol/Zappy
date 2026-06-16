@@ -51,11 +51,6 @@ void ClientHandler::handleClients(void)
         }
 
         clientEventHandling();
-        for (auto &[fd, parser] : _parsers)
-        {
-            while (parser->hasPending())
-                parser->executeNext();
-        }
     }
 }
 
@@ -82,6 +77,11 @@ void ClientHandler::clientEventHandling()
                 }
             }
         }
+    }
+    for (auto &[fd, parser] : _parsers)
+    {
+        while (parser->hasPending())
+            parser->executeNext();
     }
 }
 
