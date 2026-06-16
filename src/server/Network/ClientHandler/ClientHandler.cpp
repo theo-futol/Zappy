@@ -80,8 +80,6 @@ void ClientHandler::clientEventHandling()
                     i--;
                     continue;
                 }
-                while (it->second->hasPending())
-                    it->second->executeNext();
             }
         }
     }
