@@ -33,7 +33,7 @@ std::string Inventory::checkInventory() const
         if (std::next(it) != _items.end())
             result += ", ";
     }
-    result += "]";
+    result += "]\n";
     return result;
 }
 
