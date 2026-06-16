@@ -41,5 +41,6 @@ class World
     tile *getTileAt(int playerID);
     tile *getTileAt(position pos);
     void setTileAt(position pos, ItemType itemType, int count);
+    void sendMessageToPlayersThatAreOnTile(position pos, const std::string &message);
 };
 } // namespace zappy
