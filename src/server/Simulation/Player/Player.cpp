@@ -12,16 +12,6 @@ const position &Player::getPosition() const
     return _pos;
 }
 
-Team Player::getTeam()
-{
-    return _team;
-}
-
-Team Player::getTeam() const
-{
-    return _team;
-}
-
 int Player::getLevel() const
 {
     return _level;
@@ -83,6 +73,16 @@ void Player::move(std::pair<int, int> mapSize)
 Inventory &Player::getInventory()
 {
     return _inventory;
+}
+
+Team &Player::getTeam()
+{
+    return _team;
+}
+
+const Team &Player::getTeam() const
+{
+    return _team;
 }
 
 } // namespace zappy

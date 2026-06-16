@@ -25,8 +25,8 @@ class Player
     {
     }
     int getPlayerID() const;
-    Team getTeam();
-    Team getTeam() const;
+    const Team &getTeam() const;
+    Team &getTeam();
     const position &getPosition() const;
     int getRotation() const;
     int getLevel() const;

@@ -41,5 +41,6 @@ class World
     tile *getTileAt(int playerID);
     tile *getTileAt(position pos);
     void setTileAt(position pos, ItemType itemType, int count);
+    int getAvailableSlotsForTeam(const std::string &teamName) const;
 };
 } // namespace zappy

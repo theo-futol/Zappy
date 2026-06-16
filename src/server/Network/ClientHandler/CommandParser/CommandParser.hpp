@@ -34,6 +34,9 @@ namespace zappy
         /// @brief Returns true if there are commands waiting in the queue.
         bool hasPending() const;
 
+        /// @brief Returns the readyAt time of the next queued command, or time_point::max() if the queue is empty.
+        std::chrono::steady_clock::time_point nextReadyAt() const;
+
     private:
 
         Client *_client;

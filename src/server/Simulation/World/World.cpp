@@ -97,4 +97,20 @@ void World::setTileAt(position pos, ItemType itemType, int count)
         tileItems.emplace_back(itemType, count);
 }
 
+int World::getAvailableSlotsForTeam(const std::string &teamName) const
+{
+    int totalSlots = 0;
+    bool teamFound = false;
+    for (const auto &player : _players)
+    {
+        if (player->getTeam()._name == teamName)
+        {
+            teamFound = true;
+            totalSlots += player->getTeam()._slotsAvailable;
+        }
+    }
+    if (!teamFound)
+        return -1;
+    return totalSlots;
+}
 } // namespace zappy
