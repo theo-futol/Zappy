@@ -18,6 +18,7 @@ RESOURCE_NAMES = (
 RESOURCE_IDS = set(RESOURCE_NAMES)
 
 _BROADCAST_RE = re.compile(r"^message\s+(\d+),\s?(.*)$")
+_EJECT_RE = re.compile(r"^eject:\s*(\d+)$")
 _LEVEL_RE = re.compile(r"^Current level:\s+(\d+)$")
 
 
@@ -26,7 +27,6 @@ class ProtocolError(ValueError):
 
 
 class LineBuffer:
-    """Decoupe un flux TCP en lignes terminees par \\n."""
 
     def __init__(self) -> None:
         self._buffer = ""
@@ -69,6 +69,13 @@ def parse_server_line(line: str) -> dict[str, object]:
             "type": "broadcast",
             "direction": int(broadcast_match.group(1)),
             "message": broadcast_match.group(2),
+        }
+
+    eject_match = _EJECT_RE.match(raw)
+    if eject_match is not None:
+        return {
+            "type": "eject",
+            "direction": int(eject_match.group(1)),
         }
 
     if raw.startswith("[") and raw.endswith("]"):

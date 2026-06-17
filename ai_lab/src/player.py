@@ -176,18 +176,37 @@ class Player:
         return "ko\n"
 
     def Incantation(self):
-        res = self.server.validate_incantation(self.x, self.y, self.level)
-        if not res:
+        ritual_level = self.level
+        participants = [
+            player
+            for player in self.server.map[self.y][self.x]["players"]
+            if player.level == ritual_level
+        ]
+
+        if not self.server.validate_incantation(self.x, self.y, ritual_level):
+            self.server.add_visual_event(
+                "incantation_failed",
+                self.x,
+                self.y,
+                f"L{ritual_level} KO",
+            )
             return "ko\n"
-        
-        for p in self.server.map[self.y][self.x]["players"]:
-            if p.level == self.level:
-                p.level += 1
-                if p.client_id in self.server.client_handlers and p != self:
-                    self.server.client_handlers[p.client_id].send_response(f"Current level: {p.level}\n")
-        
-        reqs = self.server.ELEVATION_REQS[self.level - 1]
+
+        for player in participants:
+            player.level = ritual_level + 1
+            if player.client_id in self.server.client_handlers and player != self:
+                self.server.client_handlers[player.client_id].send_response(
+                    f"Current level: {player.level}\n"
+                )
+
+        reqs = self.server.ELEVATION_REQS[ritual_level]
         for k in ["linemate", "deraumere", "sibur", "mendiane", "phiras", "thystame"]:
             self.server.map[self.y][self.x][k] -= reqs[k]
-        
-        return f"Current level: {self.level}\n"
+
+        self.server.add_visual_event(
+            "incantation_success",
+            self.x,
+            self.y,
+            f"L{ritual_level}->{ritual_level + 1} x{len(participants)}",
+        )
+        return f"Current level: {ritual_level + 1}\n"

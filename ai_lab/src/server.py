@@ -1,10 +1,13 @@
 import asyncio
 import random
-import math
 from src.parser import Parser
-from src.ui import UI
 from src.client_handler import ClientHandler
 from src.player import Player
+
+try:
+    from src.ui import UI
+except Exception:
+    from src.headless_ui import HeadlessUI as UI
 
 class Server:
     ELEVATION_REQS = {
@@ -38,6 +41,7 @@ class Server:
         self.players = []
         self.client_handlers = {}
         self.next_client_id = 1
+        self.visual_events = []
         
         self.ui = UI(self)
         self.spawn_resources()
@@ -87,6 +91,26 @@ class Server:
             if p.client_id in self.client_handlers:
                 self.client_handlers[p.client_id].send_response(f"message {k}, {text}\n")
 
+    def add_visual_event(self, kind, x, y, label, ttl=3.0):
+        self.visual_events.append(
+            {
+                "kind": kind,
+                "x": x,
+                "y": y,
+                "label": label,
+                "ttl": float(ttl),
+            }
+        )
+        self.visual_events = self.visual_events[-12:]
+
+    def update_visual_events(self, dt):
+        active_events = []
+        for event in self.visual_events:
+            event["ttl"] -= dt
+            if event["ttl"] > 0:
+                active_events.append(event)
+        self.visual_events = active_events
+
     async def handle_client(self, reader, writer):
         cid = self.next_client_id
         self.next_client_id += 1
@@ -116,6 +140,7 @@ class Server:
                 virtual_dt = dt * self.freq
                 self.ticks += virtual_dt
                 self.resource_timer -= virtual_dt
+                self.update_visual_events(dt)
                 
                 if self.resource_timer <= 0:
                     self.spawn_resources()

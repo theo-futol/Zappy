@@ -5,10 +5,12 @@ The Antigravity Server is a local, deterministic, and highly observable lab envi
 ## Setup and Installation
 
 1. **Install Dependencies**
-   The server relies on the standard Python library for its core asynchronous network and game logic, and utilizes Pygame for the visual UI.
+   Install the graphics dependency that matches your Python version:
    ```bash
    pip install -r requirements.txt
    ```
+   On Python 3.13 and older, this installs `pygame==2.6.1`.
+   On Python 3.14 and newer, this installs `pygame-ce==2.5.7`, because it provides wheels for Python 3.14 on macOS while upstream `pygame` currently does not.
 
 2. **Configuration**
    Before running the server, you can modify the `config.json` file to adjust the game parameters:
@@ -24,7 +26,7 @@ Run the server module from the root directory:
 ```bash
 python server.py
 ```
-This single command will spin up the Pygame UI window and concurrently start the Asyncio TCP server.
+This single command starts the Asyncio TCP server. If the graphics dependency is installed, the graphical UI opens as well. Otherwise the server runs in headless mode.
 
 ## Interacting with the Server
 
