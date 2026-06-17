@@ -6,6 +6,11 @@
 #include "Teams.hpp"
 #include "../Utils.hpp"
 
+#define NORTH 0
+#define EAST 90
+#define SOUTH 180
+#define WEST 270
+
 namespace zappy
 {
 class Player
@@ -22,7 +27,7 @@ class Player
     PlayerState _state;
 
   public:
-    Player(int fd, const Team &team) : _fd(fd),  _pos{0, 0}, _team(team), _isLeveling(false), _inventory(), _state(PlayerState::PENDING)
+    Player(int fd, const Team &team) : _fd(fd),  _pos{0, 0}, rotation(NORTH), _team(team), _isLeveling(false), _inventory(), _state(PlayerState::PENDING)
     {
     }
     const Team &getTeam() const;
@@ -38,5 +43,7 @@ class Player
     void setPosition(int x, int y, std::pair<int, int> mapSize);
     void move(std::pair<int, int> mapSize);
     void levelUp();
+    void changeState(PlayerState newState);
+    PlayerState getState() const;
 };
 } // namespace zappy

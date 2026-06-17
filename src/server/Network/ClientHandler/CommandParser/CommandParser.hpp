@@ -5,6 +5,7 @@
 #include <functional>
 #include <unordered_map>
 #include <chrono>
+
 #include "../../Client/Client.hpp"
 #include "../../../Simulation/World/World.hpp"
 #include "../Commands/Commands.hpp"
@@ -46,6 +47,7 @@ namespace zappy
         std::unordered_map<std::string, std::pair<int, Handler>> _aiCommands;
         std::unordered_map<std::string, Handler> _graphicCommands;
         Commands _commands;
+        std::queue<std::string> *_broadcastQueue;
         void _initAICommands();
         void _initGraphicCommands();
         void _dispatch(const std::string &line);

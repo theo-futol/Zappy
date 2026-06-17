@@ -34,6 +34,7 @@ namespace zappy
             std::queue <std::string> _broadcastQueue;                   ///< Queue of pending broadcast messages to send to all the clients.
             /// @brief Iterates connected clients, handles disconnections and dispatches incoming commands.
             void clientEventHandling();
+            void broadcastGuiInfo();
 
         public:
             /// @brief Constructs a handler, binds and listens on the given port.

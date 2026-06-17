@@ -51,6 +51,7 @@ void ClientHandler::handleClients(void)
         }
 
         clientEventHandling();
+        broadcastGuiInfo();
     }
 }
 
@@ -111,5 +112,17 @@ Client *ClientHandler::getClientByFd(int fd) const
         if (client->getFd() == fd)
             return client.get();
     return nullptr;
+}
+
+void ClientHandler::broadcastGuiInfo()
+{
+    while (!_broadcastQueue.empty())
+    {
+        std::string message = _broadcastQueue.front();
+        _broadcastQueue.pop();
+        for (const auto &client : _clients)
+            if (client->getType() == ClientType::GRAPHIC)
+                send(client->getFd(), message.c_str(), message.size(), 0);
+    }
 }
 } // namespace zappy

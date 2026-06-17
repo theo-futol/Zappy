@@ -49,16 +49,16 @@ void Player::move(std::pair<int, int> mapSize)
 {
     switch (rotation)
     {
-    case 0: // Up
+    case NORTH: // Up
         setPosition(_pos.x, _pos.y - 1, mapSize);
         break;
-    case 90: // Right
+    case EAST: // Right
         setPosition(_pos.x + 1, _pos.y, mapSize);
         break;
-    case 180: // Down
+    case SOUTH: // Down
         setPosition(_pos.x, _pos.y + 1, mapSize);
         break;
-    case 270: // Left
+    case WEST: // Left
         setPosition(_pos.x - 1, _pos.y, mapSize);
         break;
     default:
@@ -84,6 +84,16 @@ int Player::getFd() const
 const Team &Player::getTeam() const
 {
     return _team;
+}
+
+void Player::changeState(PlayerState newState)
+{
+    _state = newState;
+}
+
+PlayerState Player::getState() const
+{
+    return _state;
 }
 
 } // namespace zappy
