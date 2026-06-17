@@ -45,25 +45,46 @@ void Player::setPosition(int x, int y, std::pair<int, int> mapSize)
     _pos.y = y;
 }
 
-void Player::move(std::pair<int, int> mapSize)
+position Player::nextPosition(std::pair<int, int> mapSize) const
 {
+    position nextPos = _pos;
+
     switch (rotation)
     {
-    case 0: // Up
-        setPosition(_pos.x, _pos.y - 1, mapSize);
+    case NORTH: // Up
+        nextPos.y -= 1;
         break;
-    case 90: // Right
-        setPosition(_pos.x + 1, _pos.y, mapSize);
+    case EAST: // Right
+        nextPos.x += 1;
         break;
-    case 180: // Down
-        setPosition(_pos.x, _pos.y + 1, mapSize);
+    case SOUTH: // Down
+        nextPos.y += 1;
         break;
-    case 270: // Left
-        setPosition(_pos.x - 1, _pos.y, mapSize);
+    case WEST: // Left
+        nextPos.x -= 1;
         break;
     default:
         throw ServerException("Invalid rotation value for movement");
     }
+
+    // Wrap around if the player goes out of bounds
+    if (nextPos.x < 0)
+        nextPos.x = mapSize.first - 1;
+    else if (nextPos.x >= mapSize.first)
+        nextPos.x = 0;
+    if (nextPos.y < 0)
+        nextPos.y = mapSize.second - 1;
+    else if (nextPos.y >= mapSize.second)
+        nextPos.y = 0;
+
+    return nextPos;
+}
+
+void Player::move(std::pair<int, int> mapSize)
+{
+    position nextPos = nextPosition(mapSize);
+
+    setPosition(nextPos.x, nextPos.y, mapSize);
 }
 
 Inventory &Player::getInventory()
@@ -86,4 +107,22 @@ const Team &Player::getTeam() const
     return _team;
 }
 
+void Player::changeState(PlayerState newState)
+{
+    _state = newState;
+}
+
+PlayerState Player::getState() const
+{
+    return _state;
+}
+
+void Player::writeToClient(const std::string &message) const
+{
+    if (_fd < 0)
+        throw ServerException("Invalid file descriptor for player");
+    ssize_t bytesSent = write(_fd, message.c_str(), message.size());
+    if (bytesSent < 0)
+        throw ServerException("Failed to send message to client");
+}
 } // namespace zappy

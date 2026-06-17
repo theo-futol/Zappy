@@ -1,5 +1,6 @@
 #include "../../../Simulation/World/World.hpp"
 #include "../../Client/Client.hpp"
+#include <queue>
 
 namespace zappy
 {
@@ -7,8 +8,9 @@ namespace zappy
     {
         private:
             World *_world;
+            std::queue<std::string> *_broadcastQueue;
         public:
-            Commands(World *world) : _world(world) {}
+            Commands(World *world, std::queue<std::string> *broadcastQueue) : _world(world), _broadcastQueue(broadcastQueue) {}
             ~Commands() = default;
             // AI Commands
             std::string Forward(std::vector<std::string> args, Client &client);

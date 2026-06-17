@@ -12,6 +12,7 @@ World::World(int x, int y)
         for (int j = 0; j < y; ++j)
             _map[i][j] = tile();
     _mapSize = std::make_pair(x, y);
+    srand(time(nullptr));
 }
 
 /// @brief Generates resources on the map at regular intervals.
@@ -74,17 +75,18 @@ tile *World::getTileAt(int playerID)
 
 tile *World::getTileAt(position pos)
 {
-    if (pos.x >= _map.size() || pos.y >= _map[0].size())
+    if (pos.x >= static_cast<int>(_map.size()) || pos.y >= static_cast<int>(_map[0].size()))
         return nullptr;
     return &_map[pos.x][pos.y];
 }
 
 void World::setTileAt(position pos, ItemType itemType, int count)
 {
-    if (pos.x >= _map.size() || pos.y >= _map[0].size())
-        return;
+    tile *tilePtr = getTileAt(pos);
 
-    std::vector<std::pair<ItemType, int>> &tileItems = _map[pos.x][pos.y]._items;
+    if (!tilePtr)
+        return;
+    std::vector<std::pair<ItemType, int>> &tileItems = tilePtr->_items;
     auto it = std::find_if(tileItems.begin(), tileItems.end(), [itemType](const std::pair<ItemType, int> &item) { return item.first == itemType; });
 
     if (it != tileItems.end())
@@ -121,5 +123,15 @@ void World::addPlayer(int fd, const std::string &teamName)
         return;
     auto player = std::make_shared<Player>(fd, *team);
     _players.push_back(player);
+}
+
+void World::sendMessageToPlayersThatAreOnTile(position pos, const std::string &message)
+{
+    tile *tilePtr = getTileAt(pos);
+
+    if (!tilePtr)
+        return;
+    for (const auto &player : tilePtr->_players)
+        player->writeToClient(message);
 }
 } // namespace zappy

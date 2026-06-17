@@ -54,11 +54,10 @@ struct Team
         {
             if (it->first == position)
             {
-                it->second -= count;
-                if (it->second <= 0)
-                {
-                    _eggs.erase(it);
-                }
+                if (count == -1)
+                    it->second = 0;
+                else
+                    it->second -= count;
                 return;
             }
         }

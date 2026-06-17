@@ -9,7 +9,7 @@ ClientHandler::~ClientHandler()
 }
 
 ClientHandler::ClientHandler(int port, int initialClientCapacity, int f, World *world, bool *serverIsRunning)
-    : _f(f), _lastResourceUpdate(std::chrono::steady_clock::now()), _world(world), _serverIsRunning(serverIsRunning)
+    : _f(f), _lastResourceUpdate(std::chrono::steady_clock::now()), _world(world), _serverIsRunning(serverIsRunning), _broadcastQueue()
 {
     _tcpSocket.create(AF_INET, SOCK_STREAM, 0);
     _tcpSocket.bind(port);
@@ -51,6 +51,7 @@ void ClientHandler::handleClients(void)
         }
 
         clientEventHandling();
+        broadcastGuiInfo();
     }
 }
 
@@ -111,5 +112,17 @@ Client *ClientHandler::getClientByFd(int fd) const
         if (client->getFd() == fd)
             return client.get();
     return nullptr;
+}
+
+void ClientHandler::broadcastGuiInfo()
+{
+    while (!_broadcastQueue.empty())
+    {
+        std::string message = _broadcastQueue.front();
+        _broadcastQueue.pop();
+        for (const auto &client : _clients)
+            if (client->getType() == ClientType::GRAPHIC)
+                send(client->getFd(), message.c_str(), message.size(), 0);
+    }
 }
 } // namespace zappy

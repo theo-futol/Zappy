@@ -4,7 +4,8 @@
 
 namespace zappy
 {
-CommandParser::CommandParser(Client *client, int f, World *world) : _client(client), _f(f), _world(world), _commands(world)
+CommandParser::CommandParser(Client *client, int f, World *world, std::queue<std::string> *broadcastQueue)
+    : _client(client), _f(f), _world(world), _commands(world, broadcastQueue), _broadcastQueue(broadcastQueue)
 {
     _initAICommands();
     _initGraphicCommands();
@@ -105,6 +106,10 @@ void CommandParser::_handleHandshake(const std::string &teamName)
         std::string handShakeMsg = std::to_string(availableSlots) + "\n" + std::to_string(_world->getMapSize().first) + " " + std::to_string(_world->getMapSize().second) + "\n";
         send(_client->getFd(), handShakeMsg.c_str(), handShakeMsg.size(), 0);
         _world->addPlayer(_client->getFd(), teamName);
+
+        _broadcastQueue->push("pnw " + std::to_string(_client->getFd()) + " " + std::to_string(_world->getPlayerByFd(_client->getFd())->getPosition().x) + " " +
+                              std::to_string(_world->getPlayerByFd(_client->getFd())->getPosition().y) + " " +
+                              std::to_string(_world->getPlayerByFd(_client->getFd())->getRotation()) + " " + teamName + "\n");
     }
 }
 
