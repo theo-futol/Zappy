@@ -41,9 +41,11 @@ class Player
     int getFd() const;
     void setRotation(int rotation);
     void setPosition(int x, int y, std::pair<int, int> mapSize);
+    position nextPosition(std::pair<int, int> mapSize) const;
     void move(std::pair<int, int> mapSize);
     void levelUp();
     void changeState(PlayerState newState);
     PlayerState getState() const;
+    void writeToClient(const std::string &message) const;
 };
 } // namespace zappy

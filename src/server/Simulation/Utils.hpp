@@ -11,8 +11,8 @@ enum class PlayerState
 
 struct position
 {
-    size_t x;
-    size_t y;
+    int x;
+    int y;
 };
 inline bool operator==(const position &lhs, const position &rhs)
 {

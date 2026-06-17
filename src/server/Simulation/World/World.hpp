@@ -48,5 +48,6 @@ class World
     void addTeam(const std::string &name, int teamID, int initialSlots);
     Team *getTeamByName(const std::string &name);
     void addPlayer(int fd, const std::string &teamName);
+    void sendMessageToPlayersThatAreOnTile(position pos, const std::string &message);
 };
 } // namespace zappy
