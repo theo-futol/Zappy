@@ -51,16 +51,16 @@ position Player::nextPosition(std::pair<int, int> mapSize) const
 
     switch (rotation)
     {
-    case NORTH: // Up
+    case Degrees::NORTH: // Up
         nextPos.y -= 1;
         break;
-    case EAST: // Right
+    case Degrees::EAST: // Right
         nextPos.x += 1;
         break;
-    case SOUTH: // Down
+    case Degrees::SOUTH: // Down
         nextPos.y += 1;
         break;
-    case WEST: // Left
+    case Degrees::WEST: // Left
         nextPos.x -= 1;
         break;
     default:
@@ -125,4 +125,22 @@ void Player::writeToClient(const std::string &message) const
     if (bytesSent < 0)
         throw ServerException("Failed to send message to client");
 }
+
+Degrees Player::getDirectionTo(const position &target, std::pair<int, int> mapSize) const
+{
+    if (_pos == target)
+        return Degrees::NORTH;
+    int dx = 0;
+    int dy = 0;
+    if (abs(target.x - _pos.x) < (mapSize.first - abs(target.x - _pos.x)))
+        dx = target.x - _pos.x;
+    else
+        dx = mapSize.first - (target.x - _pos.x);
+    if (abs(target.y - _pos.y) < (mapSize.second - abs(target.y - _pos.y)))
+        dy = target.y - _pos.y;
+    else
+        dy = mapSize.second - (target.y - _pos.y);
+    return static_cast<Degrees>(std::atan2(dy, dx) * 100);
+}
+
 } // namespace zappy

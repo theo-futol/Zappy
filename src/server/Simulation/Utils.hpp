@@ -3,7 +3,7 @@
 namespace zappy
 {
 
-enum Corner
+enum Degrees
 {
     NORTH = 0,
     NORTH_EAST = 45,
