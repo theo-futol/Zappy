@@ -22,7 +22,7 @@ namespace zappy
     public:
         using Handler = std::function<void(const std::vector<std::string> &cmd, Client &client, Commands &commands)>;
 
-        CommandParser(Client *client, int f, World *world = nullptr);
+        CommandParser(Client *client, int f, World *world = nullptr, std::queue<std::string> *broadcastQueue = nullptr);
 
         /// @brief Reads pending data from the client socket into the command queue.
         /// @return false if the client disconnected.

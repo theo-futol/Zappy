@@ -12,6 +12,7 @@ World::World(int x, int y)
         for (int j = 0; j < y; ++j)
             _map[i][j] = tile();
     _mapSize = std::make_pair(x, y);
+    srand(time(nullptr));
 }
 
 /// @brief Generates resources on the map at regular intervals.

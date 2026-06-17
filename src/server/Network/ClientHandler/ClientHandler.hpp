@@ -31,6 +31,7 @@ namespace zappy
             std::chrono::steady_clock::time_point _lastResourceUpdate;  ///< Timestamp of the last world resource tick.
             World *_world;                                              ///< Non-owning pointer to the simulation world.
             bool * _serverIsRunning;                                    ///< Flag to control the main loop.
+            std::queue <std::string> _broadcastQueue;                   ///< Queue of pending broadcast messages to send to all the clients.
             /// @brief Iterates connected clients, handles disconnections and dispatches incoming commands.
             void clientEventHandling();
 

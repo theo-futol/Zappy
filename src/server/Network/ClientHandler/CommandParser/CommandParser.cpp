@@ -4,7 +4,7 @@
 
 namespace zappy
 {
-CommandParser::CommandParser(Client *client, int f, World *world) : _client(client), _f(f), _world(world), _commands(world)
+CommandParser::CommandParser(Client *client, int f, World *world, std::queue<std::string> *broadcastQueue) : _client(client), _f(f), _world(world), _commands(world, broadcastQueue)
 {
     _initAICommands();
     _initGraphicCommands();
