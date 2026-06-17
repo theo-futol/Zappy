@@ -7,13 +7,12 @@ std::string Commands::Look(std::vector<std::string> args, Client &client)
     (void)args; // Unused parameter
     std::string buffer = "[";
     Player *player = _world->getPlayerByFd(client.getFd());
+    std::pair<int, int> mapSize = _world->getMapSize();
+    position pos = player->getPosition();
+    int rotation = player->getRotation();
 
     for (int i = 0; i < player->getLevel(); i++)
     {
-        position pos = player->getPosition();
-        int rotation = player->getRotation();
-        std::pair<int, int> mapSize = _world->getMapSize();
-
         for (int j = 0; j < (3 * (i + 1) - i); j++)
         {
             position tilePos = pos;
