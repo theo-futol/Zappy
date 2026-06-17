@@ -43,21 +43,17 @@ void World::ressourcePassiveGeneration()
 
 Player *World::getPlayerByFd(int fd)
 {
-    for (const auto &column : _map)
-        for (const auto &tile : column)
-            for (const auto &player : tile._players)
-                if (player->getFd() == fd)
-                    return player.get();
+    for (const auto &player : _players)
+        if (player->getFd() == fd)
+            return player.get();
     return nullptr;
 }
 
 Player *World::getPlayerByFd(int fd) const
 {
-    for (const auto &column : _map)
-        for (const auto &tile : column)
-            for (const auto &player : tile._players)
-                if (player->getFd() == fd)
-                    return player.get();
+    for (const auto &player : _players)
+        if (player->getFd() == fd)
+            return player.get();
     return nullptr;
 }
 
