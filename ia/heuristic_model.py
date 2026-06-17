@@ -49,6 +49,19 @@ class HeuristicDecision:
     plan: tuple[str, ...] = ()
 
 
+@dataclass(frozen=True)
+class _PredictionContext:
+    level: int
+    objective: str
+    inventory: dict[str, int]
+    reserved_resources: dict[str, int]
+    visible_tiles: list[dict[str, object]]
+    current_counts: Counter[str]
+    needed_stones: set[str]
+    inventory_ready_for_elevation: bool
+    current_tile_preparation: bool
+
+
 class HeuristicModel:
 
     def predict(
@@ -65,101 +78,187 @@ class HeuristicModel:
         if not team_name:
             raise ValueError("team_name cannot be empty")
 
-        normalized_inventory = _normalize_inventory(inventory)
-        normalized_reserved_resources = _normalize_inventory(current_tile_reserved_resources or {})
-        normalized_tiles = _normalize_visible_tiles(visible_tiles)
-        if not look_is_fresh or not normalized_tiles:
-            return HeuristicDecision(
+        context = self._build_context(
+            level=level,
+            objective=objective,
+            inventory=inventory,
+            visible_tiles=visible_tiles,
+            current_tile_reserved_resources=current_tile_reserved_resources,
+        )
+
+        # Refresh vision before making any expensive decision.
+        if not look_is_fresh or not context.visible_tiles:
+            return _build_single_action_decision(
                 command="Look",
                 rationale="vision not fresh or no visible tiles, need to update vision.",
                 confidence=0.99,
-                plan=("Look",),
             )
 
-        current_tile = _find_current_tile(normalized_tiles)
-        current_counts = Counter(current_tile["items"])
+        # Keep food above a safe minimum before doing anything risky.
+        survival_decision = self._decide_survival(context)
+        if survival_decision is not None:
+            return survival_decision
+
+        # Handle the next elevation step when inventory or setup says it is time.
+        elevation_decision = self._decide_elevation(context)
+        if elevation_decision is not None:
+            return elevation_decision
+
+        # Outside of elevation, only gather stones that matter for the next level.
+        collection_decision = self._decide_general_collection(context)
+        if collection_decision is not None:
+            return collection_decision
+
+        return self._decide_exploration()
+
+    def _build_context(
+        self,
+        *,
+        level: int,
+        objective: str,
+        inventory: Mapping[str, int],
+        visible_tiles: Sequence[Mapping[str, object]],
+        current_tile_reserved_resources: Mapping[str, int] | None,
+    ) -> _PredictionContext:
+        """builds a context object that contains all the information needed to make a decision."""
+        normalized_inventory = _normalize_inventory(inventory)
+        normalized_reserved_resources = _normalize_inventory(current_tile_reserved_resources or {})
+        normalized_tiles = _normalize_visible_tiles(visible_tiles)
+
+        if normalized_tiles:
+            current_tile = _find_current_tile(normalized_tiles)
+            current_counts = Counter(current_tile["items"])
+        else:
+            current_counts = Counter()
         needed_stones = _needed_stones_for_level(level, normalized_inventory)
         inventory_ready_for_elevation = level in LEVEL_REQUIREMENTS and not needed_stones
         current_tile_preparation = any(
             normalized_reserved_resources.get(resource, 0) > 0
             for resource in RESOURCE_NAMES_WITHOUT_FOOD
         )
+        return _PredictionContext(
+            level=level,
+            objective=objective,
+            inventory=normalized_inventory,
+            reserved_resources=normalized_reserved_resources,
+            visible_tiles=normalized_tiles,
+            current_counts=current_counts,
+            needed_stones=needed_stones,
+            inventory_ready_for_elevation=inventory_ready_for_elevation,
+            current_tile_preparation=current_tile_preparation,
+        )
 
-        if normalized_inventory["food"] <= SURVIVAL_FOOD_THRESHOLD:
-            if current_counts["food"] > 0:
-                return HeuristicDecision(
-                    command="Take food",
-                    rationale="food is on the current tile, need to take it to survive.",
-                    confidence=0.98,
-                    plan=("Take food",),
-                )
-            target = _select_visible_target(normalized_tiles, {"food"})
-            if target is not None:
-                return _move_towards(target, "food is prioritized for survival.")
+    def _decide_survival(self, context: _PredictionContext) -> HeuristicDecision | None:
+        if context.inventory["food"] > SURVIVAL_FOOD_THRESHOLD:
+            return None
 
-        ritual_command = _decide_incantation_step(level, normalized_inventory, current_counts)
+        if context.current_counts["food"] > 0:
+            return _build_single_action_decision(
+                command="Take food",
+                rationale="food is on the current tile, need to take it to survive.",
+                confidence=0.98,
+            )
+
+        target = _select_visible_target(context.visible_tiles, {"food"})
+        if target is None:
+            return None
+        return _move_towards(target, "food is prioritized for survival.")
+
+    def _decide_elevation(self, context: _PredictionContext) -> HeuristicDecision | None:
+        """decides whether to take an action related to elevation, and if so, what action to take."""
+        ritual_command = _decide_incantation_step(
+            context.level,
+            context.inventory,
+            context.current_counts,
+        )
         if ritual_command is not None:
             return ritual_command
 
-        if objective == "elevation" or inventory_ready_for_elevation or current_tile_preparation:
-            if inventory_ready_for_elevation:
-                missing_players = _missing_players_for_incantation(level, current_counts)
-                if missing_players > 0:
-                    next_level = level + 1
-                    return HeuristicDecision(
-                        command=f"Broadcast incantation niveau {next_level}",
-                        rationale=(
-                            "inventory ready for the next incantation but not enough players "
-                            "are currently on the tile."
-                        ),
-                        confidence=0.72,
-                        plan=(f"Broadcast incantation niveau {next_level}",),
-                    )
+        should_prepare_elevation = (
+            context.objective == "elevation"
+            or context.inventory_ready_for_elevation
+            or context.current_tile_preparation
+        )
+        if not should_prepare_elevation:
+            return None
 
-            current_stone = _pick_current_tile_resource(
-                current_counts,
-                needed_stones,
-                reserved_resources=normalized_reserved_resources,
+        if context.inventory_ready_for_elevation:
+            missing_players = _missing_players_for_incantation(
+                context.level,
+                context.current_counts,
             )
-            if current_stone is not None:
-                return HeuristicDecision(
-                    command=f"Take {current_stone}",
-                    rationale=f"current content {current_stone}, can be useful for the incantation.",
-                    confidence=0.9,
-                    plan=(f"Take {current_stone}",),
+            if missing_players > 0:
+                next_level = context.level + 1
+                return _build_single_action_decision(
+                    command=f"Broadcast incantation niveau {next_level}",
+                    rationale=(
+                        "inventory ready for the next incantation but not enough players "
+                        "are currently on the tile."
+                    ),
+                    confidence=0.72,
                 )
 
-            target = _select_visible_target(normalized_tiles, needed_stones)
-            if target is not None:
-                return _move_towards(target, "stone needed for incantation is visible, moving towards it.")
+        current_stone = _pick_current_tile_resource(
+            context.current_counts,
+            context.needed_stones,
+            reserved_resources=context.reserved_resources,
+        )
+        if current_stone is not None:
+            return _build_single_action_decision(
+                command=f"Take {current_stone}",
+                rationale=f"current content {current_stone}, can be useful for the incantation.",
+                confidence=0.9,
+            )
 
-        if current_counts["food"] > 0:
-            return HeuristicDecision(
+        target = _select_visible_target(context.visible_tiles, context.needed_stones)
+        if target is None:
+            return None
+        return _move_towards(target, "stone needed for incantation is visible, moving towards it.")
+
+    def _decide_general_collection(self, context: _PredictionContext) -> HeuristicDecision | None:
+        if context.current_counts["food"] > 0:
+            return _build_single_action_decision(
                 command="Take food",
                 rationale="food is on the current tile, need to take it to survive.",
                 confidence=0.74,
-                plan=("Take food",),
             )
 
-        current_stone = _pick_current_tile_resource(current_counts, needed_stones)
+        current_stone = _pick_current_tile_resource(
+            context.current_counts,
+            context.needed_stones,
+        )
         if current_stone is not None:
-            return HeuristicDecision(
+            return _build_single_action_decision(
                 command=f"Take {current_stone}",
                 rationale=f"current content {current_stone}, still needed for the next incantation.",
                 confidence=0.7,
-                plan=(f"Take {current_stone}",),
             )
 
-        target = _select_visible_target(normalized_tiles, needed_stones | {"food"})
-        if target is not None:
-            return _move_towards(target, "A useful resource is visible, moving towards it.")
+        target = _select_visible_target(context.visible_tiles, context.needed_stones | {"food"})
+        if target is None:
+            return None
+        return _move_towards(target, "A useful resource is visible, moving towards it.")
 
-        return HeuristicDecision(
+    def _decide_exploration(self) -> HeuristicDecision:
+        return _build_single_action_decision(
             command="Forward",
             rationale="No useful resources in sight, moving forward to discover new tiles.",
             confidence=0.62,
-            plan=("Forward",),
         )
+
+
+def _build_single_action_decision(
+    *,
+    command: str,
+    rationale: str,
+    confidence: float,
+) -> HeuristicDecision:
+    return HeuristicDecision(
+        command=command,
+        rationale=rationale,
+        confidence=confidence,
+        plan=(command,),
+    )
 
 
 def _normalize_inventory(inventory: Mapping[str, int]) -> dict[str, int]:
