@@ -137,15 +137,15 @@ def describe_observation(observation: dict[str, object]) -> str:
 
 
 def main() -> None:
-    model = HeuristicModel()
-
     print("Modele heuristique pret.")
-    print("Modele : regles simples avec if")
+    print("Modele : FSM deterministe avec transitions simples")
     print()
     
     for observation in build_demo_observations():
+        model = HeuristicModel()
         decision = model.predict(**observation)
         print("Observation :", describe_observation(observation))
+        print("Etat :", decision.state)
         print("Commande proposee :", decision.command)
         print("Confiance :", f"{decision.confidence:.2f}")
         print("Justification :", decision.rationale)
