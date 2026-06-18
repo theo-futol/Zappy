@@ -126,21 +126,38 @@ void Player::writeToClient(const std::string &message) const
         throw ServerException("Failed to send message to client");
 }
 
+int Player::getDistanceTo(const position &target, std::pair<int, int> mapSize) const
+{
+    int dx = std::abs(target.x - _pos.x);
+    int dy = std::abs(target.y - _pos.y);
+
+    if (dx > (mapSize.first - dx))
+        dx = mapSize.first - dx;
+    if (dy > (mapSize.second - dy))
+        dy = mapSize.second - dy;
+    return std::sqrt((dx * dx) + (dy * dy));
+}
+
+int Player::getDistanceTo(const Player &target, std::pair<int, int> mapSize) const
+{
+    return getDistanceTo(target.getPosition(), mapSize);
+}
+
 Degrees Player::getDirectionTo(const position &target, std::pair<int, int> mapSize) const
 {
     if (_pos == target)
         return Degrees::NORTH;
-    int dx = 0;
-    int dy = 0;
-    if (abs(target.x - _pos.x) < (mapSize.first - abs(target.x - _pos.x)))
-        dx = target.x - _pos.x;
-    else
-        dx = mapSize.first - (target.x - _pos.x);
-    if (abs(target.y - _pos.y) < (mapSize.second - abs(target.y - _pos.y)))
-        dy = target.y - _pos.y;
-    else
-        dy = mapSize.second - (target.y - _pos.y);
+    int dx = target.x - _pos.x;
+    int dy = target.y - _pos.y;
+    if (std::abs(dx) > (mapSize.first - std::abs(dx)))
+        dx = mapSize.first - dx;
+    if (std::abs(dy) > (mapSize.second - std::abs(dy)))
+        dy = mapSize.second - dy;
     return static_cast<Degrees>(std::atan2(dy, dx) * 100);
 }
+
+Degrees Player::getDirectionTo(const Player &target, std::pair<int, int> mapSize) const
+{
+    return getDirectionTo(target.getPosition(), mapSize);
 
 } // namespace zappy

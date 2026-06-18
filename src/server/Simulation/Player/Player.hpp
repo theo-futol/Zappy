@@ -44,5 +44,8 @@ class Player
     void levelUp();
     void writeToClient(const std::string &message) const; // TO DO : Use the client instead of the fd to write to the client
     Degrees getDirectionTo(const position &target, std::pair<int, int> mapSize) const;
-};
+    Degrees getDirectionTo(const Player &target, std::pair<int, int> mapSize) const;
+    int getDistanceTo(const position &target, std::pair<int, int> mapSize) const;
+    int getDistanceTo(const Player &target, std::pair<int, int> mapSize) const;
+  };
 } // namespace zappy
