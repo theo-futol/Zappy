@@ -33,5 +33,6 @@ namespace zappy
             std::string Sst(std::vector<std::string> args, Client &client);
             std::string Msz(std::vector<std::string> args, Client &client);
             std::string Bct(std::vector<std::string> args, Client &client);
+            std::string Mct(std::vector<std::string> args, Client &client);
     };
 }
