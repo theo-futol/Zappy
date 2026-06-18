@@ -23,9 +23,7 @@ class Player
     PlayerState _state;
 
   public:
-    Player(int fd, const Team &team) : _fd(fd),  _pos{0, 0}, rotation(Degrees::NORTH), _team(team), _isLeveling(false), _inventory(), _state(PlayerState::PENDING)
-    {
-    }
+    Player(int fd, const Team &team);
     const Team &getTeam() const;
     Team &getTeam();
 
@@ -44,5 +42,6 @@ class Player
     void levelUp();
     void writeToClient(const std::string &message) const; // TO DO : Use the client instead of the fd to write to the client
     Degrees getDirectionTo(const position &target, std::pair<int, int> mapSize) const;
+    void setState(PlayerState newState);
 };
 } // namespace zappy

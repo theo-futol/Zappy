@@ -1,9 +1,11 @@
 #pragma once
-#include "../Player/Player.hpp"
-#include "Items.hpp"
 #include <algorithm>
 #include <memory>
 #include <vector>
+#include <queue>
+
+#include "../Player/Player.hpp"
+#include "Items.hpp"
 
 namespace zappy
 {
@@ -28,20 +30,24 @@ class World
     std::vector<std::shared_ptr<Player>> _players;
     Map _map;
     std::pair<int, int> _mapSize;
-
-  private:
     std::vector<Team> _teams;
+    std::queue<std::string> *_broadcastQueue;
+
 
   public:
     World(int x, int y);
     ~World() = default;
 
     void ressourcePassiveGeneration();
+    void checkWinningCondition();
+    void foodCheck();
     std::vector<std::shared_ptr<Player>> &getPlayers();
     const std::vector<std::shared_ptr<Player>> &getPlayers() const;
     Player *getPlayerByFd(int fd);
     Player *getPlayerByFd(int fd) const;
     std::pair<int, int> getMapSize() const;
+  void setBroadCastQueue(std::queue<std::string> *broadcastQueue);
+
 
     std::vector<Team>& getTeams();
     tile *getTileAt(int playerID);

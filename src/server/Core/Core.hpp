@@ -24,5 +24,6 @@ namespace zappy
             ArgParser _argParser;
             std::unique_ptr<ClientHandler> _clientHandler;
             std::unique_ptr<World> _world;
+            void setWorldBroadcast();
     };
 } // namespace zappy

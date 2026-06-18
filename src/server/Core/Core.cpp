@@ -24,6 +24,13 @@ void Core::setClientHandler()
     int f = _argParser.hasFlag("-f") ? _argParser.getInt("-f") : 100;
     int initialClientCapacity = _argParser.getInt("-c") * _argParser.getList("-n").size();
     _clientHandler = std::make_unique<ClientHandler>(port, initialClientCapacity, f, _world.get(), &serverIsRunning);
+    setWorldBroadcast();
+}
+
+void Core::setWorldBroadcast()
+{
+    if (_world)
+        _world->setBroadCastQueue(&_clientHandler->getBroadcastQueue());
 }
 
 void Core::setWorld()

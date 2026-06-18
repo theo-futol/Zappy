@@ -3,6 +3,10 @@
 namespace zappy
 {
 
+Player::Player(int fd, const Team &team) : _fd(fd), _pos{0, 0}, rotation(Degrees::NORTH), _team(team), _isLeveling(false), _inventory(), _state(PlayerState::PENDING)
+{
+    _inventory.addItem(ItemType::FOOD, 10);
+}
 const position &Player::getPosition() const
 {
     return _pos;
@@ -143,4 +147,8 @@ Degrees Player::getDirectionTo(const position &target, std::pair<int, int> mapSi
     return static_cast<Degrees>(std::atan2(dy, dx) * 100);
 }
 
+void Player::setState(PlayerState newState)
+{
+    _state = newState;
+}
 } // namespace zappy

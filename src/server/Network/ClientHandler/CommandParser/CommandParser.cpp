@@ -66,6 +66,12 @@ void CommandParser::executeNext()
 {
     if (_commandQueue.empty())
         return;
+    if (_client->getType() != ClientType::GRAPHIC && _world->getPlayerByFd(_client->getFd())->getState() == PlayerState::DEAD)
+    {
+        _client->setType(ClientType::DEAD);
+        _commandQueue.pop();
+        return;
+    }
     if (std::chrono::steady_clock::now() < _commandQueue.front().readyAt)
         return;
     std::string line = _commandQueue.front().line;

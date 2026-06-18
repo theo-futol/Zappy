@@ -2,7 +2,8 @@
 
 namespace zappy
 {
-World::World(int x, int y)
+
+World::World(int x, int y) : _broadcastQueue(nullptr)
 {
     _map.resize(x);
     for (auto &column : _map)
@@ -148,5 +149,50 @@ void World::sendMessageToPlayersThatAreOnTile(position pos, const std::string &m
         return;
     for (const auto &player : tilePtr->_players)
         player->writeToClient(message);
+}
+
+void World::setBroadCastQueue(std::queue<std::string> *broadcastQueue)
+{
+    _broadcastQueue = broadcastQueue;
+}
+
+void World::foodCheck()
+{
+    for (auto player = _players.begin(); player != _players.end();)
+    {
+        if (player->get()->getInventory().getItemCount(ItemType::FOOD) <= 0)
+        {
+            _broadcastQueue->push("pdi " + std::to_string(player->get()->getFd()) + "\n");
+            player->get()->setState(PlayerState::DEAD);
+            player = _players.erase(player);
+        }
+        else
+        {
+            player->get()->getInventory().removeItem(ItemType::FOOD);
+            ++player;
+        }
+    }
+}
+
+void World::checkWinningCondition()
+{
+    int playerCounter = 0;
+
+    for (const auto &team : _teams)
+        if (team._slotsOccupied >= 6)
+        {
+            for (auto &player : _players)
+            {
+                if (player->getTeam()._name != team._name)
+                    continue;
+                if (player->getLevel() >= 8)
+                    playerCounter++;
+            }
+            if (playerCounter >= 6)
+            {
+                _broadcastQueue->push("seg " + team._name + "\n");
+                break; // ADD SOMETHING ELSE TO STOP THE SERVER, UPDATE THE STATIC TOO
+            }
+        }
 }
 } // namespace zappy

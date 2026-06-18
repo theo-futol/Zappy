@@ -1,6 +1,7 @@
 #include "ClientHandler.hpp"
 
 static constexpr int RESOURCE_INTERVAL_MS = 20000;
+static constexpr int CYCLE_TO_DIE = 126;
 
 namespace zappy
 {
@@ -9,7 +10,8 @@ ClientHandler::~ClientHandler()
 }
 
 ClientHandler::ClientHandler(int port, int initialClientCapacity, int f, World *world, bool *serverIsRunning)
-    : _f(f), _lastResourceUpdate(std::chrono::steady_clock::now()), _world(world), _serverIsRunning(serverIsRunning), _broadcastQueue()
+    : _f(f), _lastResourceUpdate(std::chrono::steady_clock::now()), _lastFoodUpdate(std::chrono::steady_clock::now()), _world(world), _serverIsRunning(serverIsRunning),
+      _broadcastQueue()
 {
     _tcpSocket.create(AF_INET, SOCK_STREAM, 0);
     _tcpSocket.bind(port);
@@ -24,7 +26,11 @@ void ClientHandler::handleClients(void)
     while (*_serverIsRunning)
     {
         auto now = std::chrono::steady_clock::now();
+        auto foodIntervalMs = std::chrono::milliseconds(CYCLE_TO_DIE * 1000 / _f);
         auto deadline = _lastResourceUpdate + std::chrono::milliseconds(RESOURCE_INTERVAL_MS);
+        auto foodDeadline = _lastFoodUpdate + foodIntervalMs;
+        if (foodDeadline < deadline)
+            deadline = foodDeadline;
         for (auto &[fd, parser] : _parsers)
         {
             auto t = parser->nextReadyAt();
@@ -48,6 +54,11 @@ void ClientHandler::handleClients(void)
         {
             _world->ressourcePassiveGeneration();
             _lastResourceUpdate = now;
+        }
+        if (now - _lastFoodUpdate >= foodIntervalMs)
+        {
+            _world->foodCheck();
+            _lastFoodUpdate = now;
         }
 
         clientEventHandling();
@@ -124,5 +135,10 @@ void ClientHandler::broadcastGuiInfo()
             if (client->getType() == ClientType::GRAPHIC)
                 send(client->getFd(), message.c_str(), message.size(), 0);
     }
+}
+
+std::queue<std::string> &ClientHandler::getBroadcastQueue()
+{
+    return _broadcastQueue;
 }
 } // namespace zappy
