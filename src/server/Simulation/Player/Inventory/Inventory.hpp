@@ -18,5 +18,6 @@ namespace zappy
             std::string checkInventory() const;
             int getItemCount(const std::string &itemName) const;
             int getItemCount(const ItemType &itemType) const;
+            std::unordered_map<ItemType, int>& getItems();
     };
 } // namespace zappy

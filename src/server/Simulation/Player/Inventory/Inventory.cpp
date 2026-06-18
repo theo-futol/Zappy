@@ -51,4 +51,9 @@ int Inventory::getItemCount(const ItemType &itemType) const
     return 0;
 }
 
+std::unordered_map<ItemType, int> &Inventory::getItems()
+{
+    return _items;
+}
+
 } // namespace zappy
