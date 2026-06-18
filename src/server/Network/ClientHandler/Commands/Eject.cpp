@@ -10,22 +10,29 @@ std::string Commands::Eject(std::vector<std::string> args, Client &client)
         return "ko\n"; // Player not found
     position playerPos = player->getPosition();
     position nextPos = player->nextPosition(_world->getMapSize());
-    bool hasEjectedPlayers = player->getTeam().hasEggAtPosition(playerPos);
+    bool hasEjectedEggs = player->getTeam().hasEggAtPosition(playerPos);
+    bool hasEjectedPlayers = false;
+    std::vector<std::shared_ptr<Player>> ejectedPlayers;
 
     // move all players to nextPosition
     tile *currentTile = _world->getTileAt(playerPos);
     for (const auto &otherPlayer : currentTile->_players)
         if (otherPlayer->getFd() != player->getFd())
-        {
-            otherPlayer->setPosition(nextPos.x, nextPos.y, _world->getMapSize());
-            _world->getTileAt(nextPos)->_players.push_back(otherPlayer);
-            _world->getTileAt(playerPos)->_players.erase(std::remove(_world->getTileAt(playerPos)->_players.begin(), _world->getTileAt(playerPos)->_players.end(), otherPlayer),
-                                                         _world->getTileAt(playerPos)->_players.end());
-        }
+            ejectedPlayers.push_back(otherPlayer);
+    for (const auto &otherPlayer : ejectedPlayers)
+    {
+        hasEjectedPlayers = true;
+        otherPlayer->setPosition(nextPos.x, nextPos.y, _world->getMapSize());
+        _world->getTileAt(nextPos)->_players.push_back(otherPlayer);
+    }
+    currentTile->_players.erase(
+        std::remove_if(currentTile->_players.begin(), currentTile->_players.end(), [&player](const std::shared_ptr<Player> &p) { return p->getFd() != player->getFd(); }),
+        currentTile->_players.end());
     // destroy all eggs on the tile
     _world->setTileAt(playerPos, ItemType::EGG, 0);
     player->getTeam().removeEgg(playerPos, -1);
     _world->sendMessageToPlayersThatAreOnTile(playerPos, "eject: " + std::to_string(player->getRotation()) + "\n");
-    return hasEjectedPlayers || !(currentTile->_players.empty()) ? "ok\n" : "ko\n";
+    _broadcastQueue->push("pex " + std::to_string(player->getFd()) + "\n");
+    return hasEjectedEggs || hasEjectedPlayers ? "ok\n" : "ko\n";
 }
 } // namespace zappy

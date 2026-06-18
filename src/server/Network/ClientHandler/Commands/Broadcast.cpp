@@ -11,6 +11,7 @@ std::string Commands::Broadcast(std::vector<std::string> args, Client &client)
     for (std::shared_ptr<Player> player : _world->getPlayers()) // TO DO : Use the distance to determine the time needed to receive the message ?
         if (player->getFd() != client.getFd())
             player->writeToClient("message " + std::to_string(player->getDirectionTo(playerPos, _world->getMapSize()) / 45 + 1) + ", " + args[0] + "\n");
+    _broadcastQueue->push("pbc " + std::to_string(player->getFd()) + " " + args[0] + "\n");
     return "ok\n";
 }
 } // namespace zappy
