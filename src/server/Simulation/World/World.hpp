@@ -37,6 +37,8 @@ class World
     ~World() = default;
 
     void ressourcePassiveGeneration();
+    std::vector<std::shared_ptr<Player>> &getPlayers();
+    const std::vector<std::shared_ptr<Player>> &getPlayers() const;
     Player *getPlayerByFd(int fd);
     Player *getPlayerByFd(int fd) const;
     std::pair<int, int> getMapSize() const;

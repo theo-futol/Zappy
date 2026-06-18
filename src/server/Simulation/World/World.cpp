@@ -42,6 +42,16 @@ void World::ressourcePassiveGeneration()
     }
 }
 
+std::vector<std::shared_ptr<Player>> &World::getPlayers()
+{
+    return _players;
+}
+
+const std::vector<std::shared_ptr<Player>> &World::getPlayers() const
+{
+    return _players;
+}
+
 Player *World::getPlayerByFd(int fd)
 {
     for (const auto &player : _players)
