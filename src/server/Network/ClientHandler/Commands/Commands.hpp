@@ -31,5 +31,6 @@ namespace zappy
             std::string Pin(std::vector<std::string> args, Client &client);
             std::string Sgt(std::vector<std::string> args, Client &client);
             std::string Sst(std::vector<std::string> args, Client &client);
+            std::string Msz(std::vector<std::string> args, Client &client);
     };
 }

@@ -1,5 +1,5 @@
-#include "../../../Simulation/Player/Inventory/Inventory.hpp"
-#include "Commands.hpp"
+#include "../../../../Simulation/Player/Inventory/Inventory.hpp"
+#include "../Commands.hpp"
 
 namespace zappy
 {
