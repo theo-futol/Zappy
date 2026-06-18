@@ -3,6 +3,7 @@
 #include <memory>
 #include <vector>
 #include <queue>
+#include <thread>
 
 #include "../Player/Player.hpp"
 #include "Items.hpp"
