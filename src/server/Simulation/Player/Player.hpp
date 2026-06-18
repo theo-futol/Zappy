@@ -1,11 +1,15 @@
 #pragma once
 #include <string>
 #include <math.h>
+#include <algorithm>
+#include <chrono>
 
 #include "../../ServerException/ServerException.hpp"
 #include "Inventory/Inventory.hpp"
 #include "Teams.hpp"
 #include "../Utils.hpp"
+
+#define BROADCAST_MESSAGE_TIME_PER_TILE 7
 
 namespace zappy
 {
@@ -21,6 +25,7 @@ class Player
     bool _isLeveling;
     Inventory _inventory;
     PlayerState _state;
+    std::vector<std::pair<std::string, std::vector<std::pair<std::pair<std::clock_t, int>, int>>>> _messagesToSend; // <<message, <<clock, timeNeeded>, receiverFd>, <clock, timeNeeded>, receiverFd>>, <message, <<clock, timeNeeded>, receiverFd>>>
 
   public:
     Player(int fd, const Team &team) : _fd(fd),  _pos{0, 0}, rotation(Degrees::NORTH), _team(team), _isLeveling(false), _inventory(), _state(PlayerState::PENDING)
@@ -42,10 +47,15 @@ class Player
     void changeState(PlayerState newState);
     void move(std::pair<int, int> mapSize);
     void levelUp();
-    void writeToClient(const std::string &message) const; // TO DO : Use the client instead of the fd to write to the client
+    void writeToClient(const std::string &message) const;
     Degrees getDirectionTo(const position &target, std::pair<int, int> mapSize) const;
     Degrees getDirectionTo(const Player &target, std::pair<int, int> mapSize) const;
     int getDistanceTo(const position &target, std::pair<int, int> mapSize) const;
     int getDistanceTo(const Player &target, std::pair<int, int> mapSize) const;
+    // Broadcast a message to all players in the world, except the sender
+    // TO DO : Use a class to represent the queue
+    void sortQueueByTimeNeeded();
+    void addMessageToQueue(const std::string &message, int timeNeeded, int receiverFd);
+    void sendMessageToClient();
   };
 } // namespace zappy

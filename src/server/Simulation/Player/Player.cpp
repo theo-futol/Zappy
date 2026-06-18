@@ -159,5 +159,59 @@ Degrees Player::getDirectionTo(const position &target, std::pair<int, int> mapSi
 Degrees Player::getDirectionTo(const Player &target, std::pair<int, int> mapSize) const
 {
     return getDirectionTo(target.getPosition(), mapSize);
+}
+
+void Player::addMessageToQueue(const std::string &message, int timeNeeded, int receiverFd)
+{
+    if (_messagesToSend.size() == 0)
+        _messagesToSend.push_back(std::make_pair(message, std::vector<std::pair<std::pair<std::clock_t, int>, int>>{{std::make_pair(std::clock(), timeNeeded), receiverFd}}));
+    else
+    {
+        for (auto &msg : _messagesToSend)
+            if (msg.first == message)
+            {
+                msg.second.emplace_back(std::make_pair(std::clock(), timeNeeded), receiverFd);
+                return;
+            }
+        _messagesToSend.push_back(std::make_pair(message, std::vector<std::pair<std::pair<std::clock_t, int>, int>>{{std::make_pair(std::clock(), timeNeeded), receiverFd}}));
+    }
+}
+
+void Player::sendMessageToClient()
+{
+    if (_messagesToSend.size() == 0)
+        return;
+    std::clock_t currentTime = std::clock();
+    for (auto &msg : _messagesToSend)
+    {
+        std::vector<std::pair<std::pair<std::clock_t, int>, int>> &times = msg.second;
+        for (auto it = times.begin(); it != times.end(); it++)
+            if (currentTime - it->first.first >= it->first.second * CLOCKS_PER_SEC / 1000)
+            {
+                if (it->second < 0)
+                    throw ServerException("Invalid file descriptor for player");
+                ssize_t bytesSent = write(it->second, msg.first.c_str(), msg.first.size());
+                if (bytesSent < 0)
+                    throw ServerException("Failed to send message to client");
+            }
+            else
+                break;
+    }
+    _messagesToSend.erase(std::remove_if(_messagesToSend.begin(), _messagesToSend.end(),
+                                         [currentTime](const std::pair<std::string, std::vector<std::pair<std::pair<std::clock_t, int>, int>>> &msg) {
+                                             for (const auto &time : msg.second)
+                                                 if (currentTime - time.first.first < time.first.second * CLOCKS_PER_SEC / 1000)
+                                                     return false;
+                                             return true;
+                                         }),
+                          _messagesToSend.end());
+}
+
+void Player::sortQueueByTimeNeeded()
+{
+    for (auto &msg : _messagesToSend)
+        std::sort(msg.second.begin(), msg.second.end(),
+                  [](const std::pair<std::pair<std::clock_t, int>, int> &a, const std::pair<std::pair<std::clock_t, int>, int> &b) { return a.first.second < b.first.second; });
+}
 
 } // namespace zappy

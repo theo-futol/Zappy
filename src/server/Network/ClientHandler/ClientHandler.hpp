@@ -35,6 +35,8 @@ namespace zappy
             /// @brief Iterates connected clients, handles disconnections and dispatches incoming commands.
             void clientEventHandling();
             void broadcastGuiInfo();
+            /// @brief Broadcasts a message to all clients of type GRAPHIC (use for processing the broadcast command).
+            void broadcastMessageToClients();
 
         public:
             /// @brief Constructs a handler, binds and listens on the given port.
