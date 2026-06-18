@@ -26,6 +26,6 @@ std::string Commands::Eject(std::vector<std::string> args, Client &client)
     _world->setTileAt(playerPos, ItemType::EGG, 0);
     player->getTeam().removeEgg(playerPos, -1);
     _world->sendMessageToPlayersThatAreOnTile(playerPos, "eject: " + std::to_string(player->getRotation()) + "\n");
-    return hasEjectedPlayers ? "ok\n" : "ko\n";
+    return hasEjectedPlayers || !(currentTile->_players.empty()) ? "ok\n" : "ko\n";
 }
 } // namespace zappy
