@@ -1,3 +1,5 @@
+import random
+
 from src.commands import CommandConfig
 
 class Player:
@@ -13,7 +15,7 @@ class Player:
             "linemate": 0, "deraumere": 0, "sibur": 0,
             "mendiane": 0, "phiras": 0, "thystame": 0
         }
-        self.direction = 1 # 1:N, 2:E, 3:S, 4:W
+        self.direction = random.randint(1, 4) # 1:N, 2:E, 3:S, 4:W
         self.action_queue = [] # tuple (command_str, ticks_remaining)
         self.is_dead = False
         self.starvation_timer = 126 # ticks

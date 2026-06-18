@@ -1,4 +1,5 @@
 import asyncio
+import math
 import random
 from src.parser import Parser
 from src.client_handler import ClientHandler
@@ -42,6 +43,7 @@ class Server:
         self.client_handlers = {}
         self.next_client_id = 1
         self.visual_events = []
+        self.recent_broadcasts = []
         
         self.ui = UI(self)
         self.spawn_resources()
@@ -85,11 +87,67 @@ class Server:
         return True
 
     def broadcast_message(self, sender, text):
+        self.recent_broadcasts.append(
+            {
+                "sender_id": sender.client_id,
+                "team": sender.team,
+                "level": sender.level,
+                "x": sender.x,
+                "y": sender.y,
+                "text": text,
+            }
+        )
+        self.recent_broadcasts = self.recent_broadcasts[-10:]
+
         for p in self.players:
-            if p == sender: continue
-            k = 0 # Dummy direction
+            if p == sender:
+                continue
+            k = self.compute_sound_direction(sender, p)
             if p.client_id in self.client_handlers:
                 self.client_handlers[p.client_id].send_response(f"message {k}, {text}\n")
+
+    def compute_sound_direction(self, sender, receiver):
+        dx = self._shortest_toroidal_delta(sender.x - receiver.x, self.width)
+        dy = self._shortest_toroidal_delta(sender.y - receiver.y, self.height)
+
+        if dx == 0 and dy == 0:
+            return 0
+
+        right, forward = self._world_vector_to_local(dx, dy, receiver.direction)
+        angle = math.degrees(math.atan2(-right, forward))
+
+        if -22.5 <= angle < 22.5:
+            return 1
+        if 22.5 <= angle < 67.5:
+            return 2
+        if 67.5 <= angle < 112.5:
+            return 3
+        if 112.5 <= angle < 157.5:
+            return 4
+        if angle >= 157.5 or angle < -157.5:
+            return 5
+        if -157.5 <= angle < -112.5:
+            return 6
+        if -112.5 <= angle < -67.5:
+            return 7
+        return 8
+
+    def _shortest_toroidal_delta(self, delta, size):
+        half_size = size / 2
+        if delta > half_size:
+            return delta - size
+        if delta < -half_size:
+            return delta + size
+        return delta
+
+    def _world_vector_to_local(self, dx, dy, direction):
+        if direction == 1:
+            return dx, -dy
+        if direction == 2:
+            return dy, dx
+        if direction == 3:
+            return -dx, dy
+        return -dy, -dx
 
     def add_visual_event(self, kind, x, y, label, ttl=3.0):
         self.visual_events.append(
