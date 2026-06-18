@@ -43,6 +43,7 @@ class World
     Player *getPlayerByFd(int fd) const;
     std::pair<int, int> getMapSize() const;
 
+    std::vector<Team>& getTeams();
     tile *getTileAt(int playerID);
     tile *getTileAt(position pos);
     void setTileAt(position pos, ItemType itemType, int count);

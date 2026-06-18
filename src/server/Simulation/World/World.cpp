@@ -126,6 +126,11 @@ Team *World::getTeamByName(const std::string &name)
     return nullptr;
 }
 
+std::vector<Team> &World::getTeams()
+{
+    return _teams;
+}
+
 void World::addPlayer(int fd, const std::string &teamName)
 {
     Team *team = getTeamByName(teamName);
