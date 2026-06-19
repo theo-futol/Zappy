@@ -20,6 +20,7 @@ RESOURCE_IDS = set(RESOURCE_NAMES)
 _BROADCAST_RE = re.compile(r"^message\s+(\d+),\s?(.*)$")
 _EJECT_RE = re.compile(r"^eject:\s*(\d+)$")
 _LEVEL_RE = re.compile(r"^Current level:\s+(\d+)$")
+_GAME_END_RE = re.compile(r"^seg\s+(.+)$")
 
 
 class ProtocolError(ValueError):
@@ -62,6 +63,10 @@ def parse_server_line(line: str) -> dict[str, object]:
     level_match = _LEVEL_RE.match(raw)
     if level_match is not None:
         return {"type": "current_level", "level": int(level_match.group(1))}
+
+    game_end_match = _GAME_END_RE.match(raw)
+    if game_end_match is not None:
+        return {"type": "game_end", "team": game_end_match.group(1).strip()}
 
     broadcast_match = _BROADCAST_RE.match(raw)
     if broadcast_match is not None:

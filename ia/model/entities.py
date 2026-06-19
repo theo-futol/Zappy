@@ -27,6 +27,7 @@ class PredictionContext:
     action_cooldowns: dict[str, int]
     safe_turns: int
     ally_broadcast: dict[str, object] | None
+    incantation_support: dict[str, bool | int]
     last_outgoing_broadcast: dict[str, object] | None
     visible_tiles: list[dict[str, object]]
     current_counts: Counter[str]

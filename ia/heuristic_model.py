@@ -7,6 +7,7 @@ from typing import Mapping, Sequence
 try:
     from .config import DEFAULT_OBJECTIVE
     from .model import (
+        BehaviorState,
         BehaviorStateMachine,
         HeuristicDecision,
         build_prediction_context,
@@ -15,6 +16,7 @@ try:
 except ImportError:
     from config import DEFAULT_OBJECTIVE
     from model import (
+        BehaviorState,
         BehaviorStateMachine,
         HeuristicDecision,
         build_prediction_context,
@@ -41,6 +43,7 @@ class HeuristicModel:
         action_cooldowns: Mapping[str, int] | None = None,
         safe_turns: int = 0,
         ally_broadcast: Mapping[str, object] | None = None,
+        incantation_support: Mapping[str, object] | None = None,
         last_outgoing_broadcast: Mapping[str, object] | None = None,
     ) -> HeuristicDecision:
         if not team_name:
@@ -57,13 +60,14 @@ class HeuristicModel:
             action_cooldowns=action_cooldowns,
             safe_turns=safe_turns,
             ally_broadcast=ally_broadcast,
+            incantation_support=incantation_support,
             last_outgoing_broadcast=last_outgoing_broadcast,
         )
 
         state = self._state_machine.resolve_state(context)
 
-        # Refresh vision before committing to the current state.
-        if not look_is_fresh or not context.visible_tiles:
+        # Sound-based help can react immediately without refreshing the vision first.
+        if state != BehaviorState.HELP_INCANTATION and (not look_is_fresh or not context.visible_tiles):
             return self._state_machine.attach_state(
                 build_single_action_decision(
                     command="Look",

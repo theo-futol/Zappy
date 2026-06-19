@@ -5,19 +5,35 @@ from __future__ import annotations
 from typing import Mapping
 
 try:
-    from ..broadcast import BROADCAST_INTENTION_INCANTATION, build_plan_from_sound_direction
+    from ..broadcast import (
+        BROADCAST_INTENTION_INCANTATION,
+        BROADCAST_INTENTION_INCANTATION_ARRIVING,
+        BROADCAST_INTENTION_INCANTATION_AVAILABLE,
+        build_plan_from_sound_direction,
+        is_incantation_call_intention,
+        is_incantation_support_intention,
+    )
     from ..config import (
-        ALLY_HELP_FOOD_THRESHOLD,
         EXPLORE_TURN_INTERVAL,
         FORCE_OPPORTUNISTIC_AFTER_SAFE_TURNS,
         FORK_FOOD_THRESHOLD,
         FORK_SAFE_TURNS_THRESHOLD,
+        HIGH_LEVEL_DISABLE_WAIT_FORK,
+        HIGH_LEVEL_COORDINATION_MIN_LEVEL,
         INCANTATION_FOOD_THRESHOLD,
+        INCANTATION_ARRIVING_REPEAT_INTERVAL,
+        INCANTATION_AVAILABLE_REPEAT_INTERVAL,
         OPPORTUNISTIC_FOOD_THRESHOLD,
         OVERCROWD_EJECT_THRESHOLD,
         PLACE_STONES_ONLY_WHEN_INVENTORY_READY,
+        REPEAT_INCANTATION_SUPPORT_BROADCASTS,
         SURVIVAL_FOOD_THRESHOLD,
+        get_ally_help_food_threshold,
+        get_gather_food_threshold,
+        get_incantation_call_repeat_interval,
         get_outgoing_broadcast_repeat_interval,
+        get_prepare_incantation_food_threshold,
+        get_wait_incantation_food_threshold,
         get_wait_incantation_fork_turns,
     )
     from ..utils.model_utils import (
@@ -29,30 +45,48 @@ try:
         build_single_action_decision,
         decide_incantation_step,
         has_enough_food_for_incantation,
+        has_enough_food_for_incantation_with_threshold,
         move_towards,
         tile_is_ready_for_incantation,
     )
     from .entities import BehaviorState, HeuristicDecision, PredictionContext
 except ImportError:
-    from broadcast import BROADCAST_INTENTION_INCANTATION, build_plan_from_sound_direction
+    from broadcast import (
+        BROADCAST_INTENTION_INCANTATION,
+        BROADCAST_INTENTION_INCANTATION_ARRIVING,
+        BROADCAST_INTENTION_INCANTATION_AVAILABLE,
+        build_plan_from_sound_direction,
+        is_incantation_call_intention,
+        is_incantation_support_intention,
+    )
     from config import (
-        ALLY_HELP_FOOD_THRESHOLD,
         EXPLORE_TURN_INTERVAL,
         FORCE_OPPORTUNISTIC_AFTER_SAFE_TURNS,
         FORK_FOOD_THRESHOLD,
         FORK_SAFE_TURNS_THRESHOLD,
+        HIGH_LEVEL_DISABLE_WAIT_FORK,
+        HIGH_LEVEL_COORDINATION_MIN_LEVEL,
         INCANTATION_FOOD_THRESHOLD,
+        INCANTATION_ARRIVING_REPEAT_INTERVAL,
+        INCANTATION_AVAILABLE_REPEAT_INTERVAL,
         OPPORTUNISTIC_FOOD_THRESHOLD,
         OVERCROWD_EJECT_THRESHOLD,
         PLACE_STONES_ONLY_WHEN_INVENTORY_READY,
+        REPEAT_INCANTATION_SUPPORT_BROADCASTS,
         SURVIVAL_FOOD_THRESHOLD,
+        get_ally_help_food_threshold,
+        get_gather_food_threshold,
+        get_incantation_call_repeat_interval,
         get_outgoing_broadcast_repeat_interval,
+        get_prepare_incantation_food_threshold,
+        get_wait_incantation_food_threshold,
         get_wait_incantation_fork_turns,
     )
     from model.decision_support import (
         build_single_action_decision,
         decide_incantation_step,
         has_enough_food_for_incantation,
+        has_enough_food_for_incantation_with_threshold,
         move_towards,
         tile_is_ready_for_incantation,
     )
@@ -150,7 +184,7 @@ class BehaviorStateMachine:
         if state == BehaviorState.SURVIVE:
             return self._needs_survival_state(context)
         if state == BehaviorState.HELP_INCANTATION:
-            return self._can_help_ally(context)
+            return self._can_help_ally(context, committed=True)
         if state == BehaviorState.PREPARE_INCANTATION:
             return self._should_prepare_incantation(context)
         if state == BehaviorState.WAIT_INCANTATION:
@@ -167,37 +201,77 @@ class BehaviorStateMachine:
             context.level,
             context.current_counts,
         )
-        if self._has_other_ally_incantation_call(context) and not tile_ready_for_incantation:
+        if (
+            self._has_other_ally_incantation_call(context)
+            and not self._recently_called_for_incantation(context)
+        ):
             return False
 
-        if not has_enough_food_for_incantation(context.inventory):
+        if not has_enough_food_for_incantation_with_threshold(
+            context.inventory,
+            minimum_food_threshold=self._wait_incantation_food_threshold(context),
+        ):
             return False
         if not (tile_ready_for_incantation or context.inventory_ready_for_elevation):
             return False
         return missing_players_for_incantation(context.level, context.current_counts) > 0
 
     def _should_prepare_incantation(self, context: PredictionContext) -> bool:
-        if not has_enough_food_for_incantation(context.inventory):
+        if not has_enough_food_for_incantation_with_threshold(
+            context.inventory,
+            minimum_food_threshold=self._prepare_incantation_food_threshold(context),
+        ):
             return False
         if self._should_wait_for_incantation(context):
             return False
+
+        tile_ready_for_incantation = tile_is_ready_for_incantation(
+            context.level,
+            context.current_counts,
+        )
+        if tile_ready_for_incantation or context.inventory_ready_for_elevation:
+            missing_players = missing_players_for_incantation(
+                context.level,
+                context.current_counts,
+            )
+            if (
+                missing_players > 0
+                and not has_enough_food_for_incantation_with_threshold(
+                    context.inventory,
+                    minimum_food_threshold=self._wait_incantation_food_threshold(context),
+                )
+            ):
+                return False
+
         return (
             context.objective == "elevation"
             or context.inventory_ready_for_elevation
             or context.current_tile_preparation
-            or tile_is_ready_for_incantation(context.level, context.current_counts)
+            or tile_ready_for_incantation
         )
 
     def _should_gather(self, context: PredictionContext) -> bool:
+        if context.inventory["food"] < self._gather_food_threshold(context):
+            return True
         if context.needed_stones:
             return True
-        return context.inventory["food"] < INCANTATION_FOOD_THRESHOLD
+        return False
 
-    def _can_help_ally(self, context: PredictionContext) -> bool:
+    def _can_help_ally(
+        self,
+        context: PredictionContext,
+        *,
+        committed: bool = False,
+    ) -> bool:
         ally_broadcast = context.ally_broadcast
         if ally_broadcast is None:
             return False
-        if context.inventory["food"] < ALLY_HELP_FOOD_THRESHOLD:
+
+        help_food_threshold = get_ally_help_food_threshold(
+            context.level,
+            committed=committed,
+        )
+        if context.inventory["food"] < help_food_threshold:
             return False
         if not has_enough_food_for_incantation(context.inventory):
             return False
@@ -205,13 +279,27 @@ class BehaviorStateMachine:
         payload = ally_broadcast.get("payload")
         if not isinstance(payload, Mapping):
             return False
-        if payload.get("intention") != BROADCAST_INTENTION_INCANTATION:
+        if not is_incantation_call_intention(str(payload.get("intention", ""))):
             return False
         if int(payload.get("level", 0)) != context.level:
             return False
-        if tile_is_ready_for_incantation(context.level, context.current_counts):
+        if self._should_keep_local_incantation_priority(context, committed=committed):
             return False
         return True
+
+    def _should_keep_local_incantation_priority(
+        self,
+        context: PredictionContext,
+        *,
+        committed: bool,
+    ) -> bool:
+        if committed:
+            return False
+        if not tile_is_ready_for_incantation(context.level, context.current_counts):
+            return False
+        if self._recently_called_for_incantation(context):
+            return True
+        return not self._is_high_level_coordination(context)
 
     def _has_other_ally_incantation_call(self, context: PredictionContext) -> bool:
         ally_broadcast = context.ally_broadcast
@@ -221,16 +309,35 @@ class BehaviorStateMachine:
         payload = ally_broadcast.get("payload")
         if not isinstance(payload, Mapping):
             return False
-        if payload.get("intention") != BROADCAST_INTENTION_INCANTATION:
+        if not is_incantation_call_intention(str(payload.get("intention", ""))):
             return False
         if int(payload.get("level", 0)) != context.level:
             return False
         return int(ally_broadcast.get("direction", 0)) != 0
 
+    def _recently_called_for_incantation(self, context: PredictionContext) -> bool:
+        last_outgoing_broadcast = context.last_outgoing_broadcast
+        if last_outgoing_broadcast is None:
+            return False
+        if int(last_outgoing_broadcast.get("level", 0)) != context.level:
+            return False
+        if not is_incantation_call_intention(str(last_outgoing_broadcast.get("intention", ""))):
+            return False
+        repeat_interval = get_incantation_call_repeat_interval(context.level)
+        return int(last_outgoing_broadcast.get("age", repeat_interval)) < repeat_interval
+
+    def _has_incantation_support(self, context: PredictionContext) -> bool:
+        return bool(context.incantation_support.get("available")) or bool(
+            context.incantation_support.get("arriving")
+        )
+
     def _can_fork(self, context: PredictionContext) -> bool:
         if context.inventory["food"] < FORK_FOOD_THRESHOLD:
             return False
         return self._cooldown_ready(context, "Fork")
+
+    def _is_high_level_coordination(self, context: PredictionContext) -> bool:
+        return int(context.level) >= int(HIGH_LEVEL_COORDINATION_MIN_LEVEL)
 
     def _can_eject(self, context: PredictionContext) -> bool:
         if context.current_counts.get("player", 0) < OVERCROWD_EJECT_THRESHOLD:
@@ -339,13 +446,34 @@ class BehaviorStateMachine:
         return move_towards(target, "food is prioritized for survival.")
 
     def _decide_elevation(self, context: PredictionContext) -> HeuristicDecision | None:
-        if not has_enough_food_for_incantation(context.inventory):
+        if not has_enough_food_for_incantation_with_threshold(
+            context.inventory,
+            minimum_food_threshold=self._prepare_incantation_food_threshold(context),
+        ):
             return None
 
         tile_ready_for_incantation = tile_is_ready_for_incantation(
             context.level,
             context.current_counts,
         )
+        missing_players = 0
+        if tile_ready_for_incantation or context.inventory_ready_for_elevation:
+            missing_players = missing_players_for_incantation(
+                context.level,
+                context.current_counts,
+            )
+            if (
+                missing_players > 0
+                and not has_enough_food_for_incantation_with_threshold(
+                    context.inventory,
+                    minimum_food_threshold=self._wait_incantation_food_threshold(context),
+                )
+            ):
+                return self._decide_food_reserve_collection(
+                    context,
+                    "food reserve is too low to hold the tile while waiting for more players.",
+                )
+
         can_place_stones = context.current_tile_preparation or context.inventory_ready_for_elevation
         if not PLACE_STONES_ONLY_WHEN_INVENTORY_READY:
             can_place_stones = True
@@ -355,6 +483,7 @@ class BehaviorStateMachine:
                 context.level,
                 context.inventory,
                 context.current_counts,
+                minimum_food_threshold=self._prepare_incantation_food_threshold(context),
             )
             if ritual_command is not None:
                 return ritual_command
@@ -369,10 +498,6 @@ class BehaviorStateMachine:
             return None
 
         if tile_ready_for_incantation or context.inventory_ready_for_elevation:
-            missing_players = missing_players_for_incantation(
-                context.level,
-                context.current_counts,
-            )
             if missing_players > 0:
                 return self._decide_waiting_for_players(context)
 
@@ -401,6 +526,14 @@ class BehaviorStateMachine:
                 confidence=0.74,
             )
 
+        if context.inventory["food"] < self._gather_food_threshold(context):
+            decision = self._decide_food_reserve_collection(
+                context,
+                "food reserve is too low for the next high-level regrouping, moving towards food first.",
+            )
+            if decision is not None:
+                return decision
+
         current_stone = pick_current_tile_resource(
             context.current_counts,
             context.needed_stones,
@@ -418,6 +551,32 @@ class BehaviorStateMachine:
             return None
         return move_towards(target, "A useful resource is visible, moving towards it.")
 
+    def _decide_food_reserve_collection(
+        self,
+        context: PredictionContext,
+        rationale: str,
+    ) -> HeuristicDecision | None:
+        if context.current_counts["food"] > 0:
+            return build_single_action_decision(
+                command="Take food",
+                rationale="food is on the current tile, need to take it before committing to a long regrouping.",
+                confidence=0.86,
+            )
+
+        target = select_visible_target(context.visible_tiles, {"food"})
+        if target is None:
+            return None
+        return move_towards(target, rationale)
+
+    def _gather_food_threshold(self, context: PredictionContext) -> int:
+        return get_gather_food_threshold(context.level)
+
+    def _wait_incantation_food_threshold(self, context: PredictionContext) -> int:
+        return get_wait_incantation_food_threshold(context.level)
+
+    def _prepare_incantation_food_threshold(self, context: PredictionContext) -> int:
+        return get_prepare_incantation_food_threshold(context.level)
+
     def _decide_ally_incantation_help(self, context: PredictionContext) -> HeuristicDecision | None:
         if not self._can_help_ally(context):
             return None
@@ -426,10 +585,14 @@ class BehaviorStateMachine:
             return None
 
         direction = int(ally_broadcast.get("direction", -1))
+        support_broadcast = self._decide_help_support_broadcast(context, direction)
+        if support_broadcast is not None:
+            return support_broadcast
+
         if direction == 0:
             return build_single_action_decision(
                 command="Look",
-                rationale="already on the ally incantation tile, staying available to help.",
+                rationale="already on the ally incantation tile, staying available to help the group.",
                 confidence=0.73,
             )
 
@@ -454,7 +617,7 @@ class BehaviorStateMachine:
             and self._should_send_incantation_broadcast(context)
         ):
             return build_single_action_decision(
-                command="Broadcast incantation",
+                command=f"Broadcast {BROADCAST_INTENTION_INCANTATION}",
                 rationale=(
                     "inventory ready for the next incantation but not enough players "
                     "are currently on the tile."
@@ -463,12 +626,25 @@ class BehaviorStateMachine:
             )
 
         if (
-            context.safe_turns >= get_wait_incantation_fork_turns(context.level)
-            and self._can_fork(context)
+            self._can_fork_while_waiting(context)
         ):
             return build_single_action_decision(
                 command="Fork",
                 rationale="waiting for more players on the incantation tile, creating an egg can help future regrouping.",
+                confidence=0.60,
+            )
+
+        if bool(context.incantation_support.get("arriving")):
+            return build_single_action_decision(
+                command="Look",
+                rationale="allied players announced that they are arriving, holding the tile for the incantation.",
+                confidence=0.66,
+            )
+
+        if bool(context.incantation_support.get("available")):
+            return build_single_action_decision(
+                command="Look",
+                rationale="an allied player confirmed availability, waiting a bit longer before changing plans.",
                 confidence=0.60,
             )
 
@@ -477,6 +653,15 @@ class BehaviorStateMachine:
             rationale="waiting on the tile while staying ready for the incantation.",
             confidence=0.45,
         )
+
+    def _can_fork_while_waiting(self, context: PredictionContext) -> bool:
+        if self._has_incantation_support(context):
+            return False
+        if self._is_high_level_coordination(context) and HIGH_LEVEL_DISABLE_WAIT_FORK:
+            return False
+        if context.safe_turns < get_wait_incantation_fork_turns(context.level):
+            return False
+        return self._can_fork(context)
 
     def _decide_exploration(self) -> HeuristicDecision:
         if self._state_turns % EXPLORE_TURN_INTERVAL == 0:
@@ -502,11 +687,123 @@ class BehaviorStateMachine:
             return False
 
         last_outgoing_broadcast = context.last_outgoing_broadcast
-        repeat_interval = get_outgoing_broadcast_repeat_interval(context.level)
+        repeat_interval = get_incantation_call_repeat_interval(context.level)
         if last_outgoing_broadcast is None:
             return True
-        if last_outgoing_broadcast.get("intention") != BROADCAST_INTENTION_INCANTATION:
+        if not is_incantation_call_intention(str(last_outgoing_broadcast.get("intention", ""))):
             return True
         if int(last_outgoing_broadcast.get("level", 0)) != context.level:
             return True
         return int(last_outgoing_broadcast.get("age", repeat_interval)) >= repeat_interval
+
+    def _decide_help_support_broadcast(
+        self,
+        context: PredictionContext,
+        direction: int,
+    ) -> HeuristicDecision | None:
+        if not self._cooldown_ready(context, "Broadcast"):
+            return None
+
+        if direction == 0 and self._should_send_available_support_broadcast(context, on_tile=True):
+            return build_single_action_decision(
+                command=f"Broadcast {BROADCAST_INTENTION_INCANTATION_AVAILABLE}",
+                rationale="already on the ritual tile, confirming availability for the incantation.",
+                confidence=0.67,
+            )
+
+        if direction != 0 and self._should_send_available_support_broadcast(context, on_tile=False):
+            return build_single_action_decision(
+                command=f"Broadcast {BROADCAST_INTENTION_INCANTATION_AVAILABLE}",
+                rationale="matching the incantation request and confirming availability before moving.",
+                confidence=0.64,
+            )
+
+        if direction != 0 and self._should_send_arriving_support_broadcast(context):
+            return build_single_action_decision(
+                command=f"Broadcast {BROADCAST_INTENTION_INCANTATION_ARRIVING}",
+                rationale="still following the incantation call, telling the group that help is on the way.",
+                confidence=0.62,
+            )
+
+        return None
+
+    def _should_send_available_support_broadcast(
+        self,
+        context: PredictionContext,
+        *,
+        on_tile: bool,
+    ) -> bool:
+        last_outgoing_broadcast = context.last_outgoing_broadcast
+        leader_token = self._current_ally_leader_token(context)
+        if last_outgoing_broadcast is None:
+            return True
+        if int(last_outgoing_broadcast.get("level", 0)) != context.level:
+            return True
+
+        last_age = int(
+            last_outgoing_broadcast.get(
+                "age",
+                get_outgoing_broadcast_repeat_interval(context.level),
+            )
+        )
+        last_intention = str(last_outgoing_broadcast.get("intention", ""))
+        last_leader_token = self._broadcast_leader_token(last_outgoing_broadcast)
+
+        if leader_token is not None and last_leader_token != leader_token:
+            return True
+        if last_age > get_outgoing_broadcast_repeat_interval(context.level) * 2:
+            return True
+        if not is_incantation_support_intention(last_intention):
+            return True
+        if on_tile and last_intention == BROADCAST_INTENTION_INCANTATION_ARRIVING:
+            return last_age >= INCANTATION_ARRIVING_REPEAT_INTERVAL
+        if last_intention == BROADCAST_INTENTION_INCANTATION_AVAILABLE:
+            if not REPEAT_INCANTATION_SUPPORT_BROADCASTS:
+                return False
+            return last_age >= INCANTATION_AVAILABLE_REPEAT_INTERVAL
+        return False
+
+    def _should_send_arriving_support_broadcast(self, context: PredictionContext) -> bool:
+        last_outgoing_broadcast = context.last_outgoing_broadcast
+        leader_token = self._current_ally_leader_token(context)
+        if last_outgoing_broadcast is None:
+            return False
+        if int(last_outgoing_broadcast.get("level", 0)) != context.level:
+            return False
+
+        last_intention = str(last_outgoing_broadcast.get("intention", ""))
+        last_leader_token = self._broadcast_leader_token(last_outgoing_broadcast)
+        last_age = int(
+            last_outgoing_broadcast.get(
+                "age",
+                INCANTATION_ARRIVING_REPEAT_INTERVAL,
+            )
+        )
+        if leader_token is not None and last_leader_token != leader_token:
+            return False
+        if last_intention == BROADCAST_INTENTION_INCANTATION_AVAILABLE:
+            return last_age >= INCANTATION_ARRIVING_REPEAT_INTERVAL
+        if last_intention == BROADCAST_INTENTION_INCANTATION_ARRIVING:
+            if not REPEAT_INCANTATION_SUPPORT_BROADCASTS:
+                return False
+            return last_age >= INCANTATION_ARRIVING_REPEAT_INTERVAL
+        return False
+
+    def _current_ally_leader_token(self, context: PredictionContext) -> str | None:
+        ally_broadcast = context.ally_broadcast
+        if ally_broadcast is None:
+            return None
+
+        payload = ally_broadcast.get("payload")
+        if not isinstance(payload, Mapping):
+            return None
+        return self._broadcast_leader_token(payload)
+
+    def _broadcast_leader_token(self, payload: Mapping[str, object]) -> str | None:
+        raw_token = payload.get("leader_token")
+        if raw_token is None:
+            return None
+        normalized_token = str(raw_token).strip().lower()
+        if not normalized_token:
+            return None
+        return normalized_token

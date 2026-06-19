@@ -32,6 +32,7 @@ class UI:
             "muted": (180, 182, 190),
             "selected": (255, 225, 110),
             "paused": (255, 190, 80),
+            "victory": (255, 220, 90),
             "incantation_success": (80, 255, 140),
             "incantation_failed": (255, 110, 110),
             "overlay": (8, 8, 12, 150),
@@ -88,7 +89,9 @@ class UI:
                 self._draw_tile(x, y)
 
         self._draw_side_panel()
-        if self.server.paused:
+        if self.server.game_over:
+            self._draw_game_over_overlay()
+        elif self.server.paused:
             self._draw_pause_overlay()
         pygame.display.flip()
 
@@ -202,14 +205,47 @@ class UI:
         y = 18
         y = self._draw_text("Server State", panel_x + 18, y, self.font_large)
         y += 6
-        status_color = self.colors["paused"] if self.server.paused else self.colors["text"]
-        pause_text = "PAUSED" if self.server.paused else "RUNNING"
+        if self.server.game_over:
+            status_color = self.colors["victory"]
+            pause_text = "GAME OVER"
+        else:
+            status_color = self.colors["paused"] if self.server.paused else self.colors["text"]
+            pause_text = "PAUSED" if self.server.paused else "RUNNING"
         y = self._draw_text(pause_text, panel_x + 18, y, self.font, status_color)
-        y = self._draw_text("P or SPACE: toggle pause", panel_x + 18, y, self.font_small, self.colors["muted"])
+        if not self.server.game_over:
+            y = self._draw_text("P or SPACE: toggle pause", panel_x + 18, y, self.font_small, self.colors["muted"])
         y += 8
         y = self._draw_text(f"Freq: {self.server.freq}", panel_x + 18, y, self.font)
         y = self._draw_text(f"Ticks: {self.server.ticks:.2f}", panel_x + 18, y, self.font)
         y = self._draw_text(f"Players: {len(self.server.players)}", panel_x + 18, y, self.font)
+        y += 10
+        y = self._draw_text("Players By Level", panel_x + 18, y, self.font)
+        y = self._draw_level_counts(panel_x + 18, y)
+
+        if self.server.game_over and self.server.winner_team is not None:
+            y += 8
+            y = self._draw_text(
+                f"Winner: {self.server.winner_team}",
+                panel_x + 18,
+                y,
+                self.font,
+                self.colors["victory"],
+            )
+            y = self._draw_text(
+                f"L8 players: {self.server.winner_player_count}",
+                panel_x + 18,
+                y,
+                self.font_small,
+                self.colors["text"],
+            )
+            countdown = self.server.shutdown_countdown()
+            y = self._draw_text(
+                f"Closing in: {countdown:.1f}s",
+                panel_x + 18,
+                y,
+                self.font_small,
+                self.colors["muted"],
+            )
 
         y += 12
         y = self._draw_text("Recent Incantations", panel_x + 18, y, self.font)
@@ -313,6 +349,71 @@ class UI:
         )
         self.screen.blit(pause_text, pause_rect)
         self.screen.blit(hint_text, hint_rect)
+
+    def _draw_game_over_overlay(self):
+        overlay = pygame.Surface(
+            (self.server.width * self.TILE_SIZE, self.server.height * self.TILE_SIZE),
+            pygame.SRCALPHA,
+        )
+        overlay.fill((8, 8, 12, 205))
+        self.screen.blit(overlay, (self._map_origin_x(), 0))
+
+        winner_team = self.server.winner_team or "unknown"
+        title_text = self.font_large.render("WINNER", True, self.colors["victory"])
+        winner_text = self.font_large.render(winner_team, True, self.colors["text"])
+        detail_text = self.font.render(
+            f"{self.server.winner_player_count} players reached level 8",
+            True,
+            self.colors["text"],
+        )
+        countdown = self.server.shutdown_countdown()
+        close_text = self.font.render(
+            f"Server closing in {countdown:.1f}s",
+            True,
+            self.colors["muted"],
+        )
+
+        center_x = self._map_origin_x() + self.server.width * self.TILE_SIZE // 2
+        center_y = self.server.height * self.TILE_SIZE // 2
+
+        self.screen.blit(title_text, title_text.get_rect(center=(center_x, center_y - 52)))
+        self.screen.blit(winner_text, winner_text.get_rect(center=(center_x, center_y - 10)))
+        self.screen.blit(detail_text, detail_text.get_rect(center=(center_x, center_y + 28)))
+        self.screen.blit(close_text, close_text.get_rect(center=(center_x, center_y + 58)))
+
+    def _draw_level_counts(self, x, y):
+        counts = self.server.count_players_by_level()
+        row_y = y
+        column_width = 110
+
+        for start_level in range(1, self.server.MAX_LEVEL + 1, 2):
+            left_level = start_level
+            right_level = start_level + 1
+
+            left_color = self.colors["victory"] if left_level == self.server.MAX_LEVEL else self.colors["text"]
+            left_text = self.font_small.render(
+                f"L{left_level}: {counts.get(left_level, 0)}",
+                True,
+                left_color,
+            )
+            self.screen.blit(left_text, (x, row_y))
+
+            if right_level <= self.server.MAX_LEVEL:
+                right_color = (
+                    self.colors["victory"]
+                    if right_level == self.server.MAX_LEVEL
+                    else self.colors["text"]
+                )
+                right_text = self.font_small.render(
+                    f"L{right_level}: {counts.get(right_level, 0)}",
+                    True,
+                    right_color,
+                )
+                self.screen.blit(right_text, (x + column_width, row_y))
+
+            row_y += left_text.get_height() + 4
+
+        return row_y
 
     def _event_for_tile(self, x, y):
         for event in reversed(self.server.visual_events):

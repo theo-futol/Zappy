@@ -11,18 +11,39 @@ except ImportError:
 
 
 BROADCAST_NONE_TOKEN = "none"
-BROADCAST_INTENTION_INCANTATION = "incantation"
+BROADCAST_INTENTION_INCANTATION = "incantation_call"
+BROADCAST_INTENTION_INCANTATION_AVAILABLE = "incantation_available"
+BROADCAST_INTENTION_INCANTATION_ARRIVING = "incantation_arriving"
 BROADCAST_INTENTION_EXPLORATION = "exploration"
+
+INCANTATION_CALL_INTENTIONS = {
+    "incantation",
+    BROADCAST_INTENTION_INCANTATION,
+}
+
+INCANTATION_SUPPORT_INTENTIONS = {
+    BROADCAST_INTENTION_INCANTATION_AVAILABLE,
+    BROADCAST_INTENTION_INCANTATION_ARRIVING,
+}
+
+INCANTATION_INTENTIONS = INCANTATION_CALL_INTENTIONS | INCANTATION_SUPPORT_INTENTIONS
 
 
 def build_broadcast_message(
     *,
     level: int,
     intention: str,
+    leader_token: str | None = None,
     resources: Mapping[str, int] | None = None,
 ) -> str:
     resource_text = format_broadcast_resources(resources or {})
     normalized_intention = normalize_broadcast_intention(intention)
+    normalized_leader_token = normalize_broadcast_leader_token(leader_token)
+    if is_incantation_broadcast_intention(normalized_intention):
+        return (
+            f"{int(level)}, {normalized_intention}, "
+            f"{normalized_leader_token}, {resource_text}"
+        )
     return f"{int(level)}, {normalized_intention}, {resource_text}"
 
 
@@ -31,11 +52,16 @@ def parse_broadcast_message(message: str) -> dict[str, object] | None:
     if not raw_message:
         return None
 
-    parts = [part.strip() for part in raw_message.split(",", maxsplit=2)]
-    if len(parts) != 3:
+    parts = [part.strip() for part in raw_message.split(",", maxsplit=3)]
+    if len(parts) not in {3, 4}:
         return None
 
-    level_text, intention_text, resource_text = parts
+    if len(parts) == 3:
+        level_text, intention_text, resource_text = parts
+        leader_token = None
+    else:
+        level_text, intention_text, leader_token_text, resource_text = parts
+        leader_token = normalize_broadcast_leader_token(leader_token_text)
 
     if not level_text.isdigit():
         return None
@@ -48,6 +74,7 @@ def parse_broadcast_message(message: str) -> dict[str, object] | None:
     return {
         "level": int(level_text),
         "intention": normalize_broadcast_intention(intention_text),
+        "leader_token": leader_token,
         "resources": resources,
     }
 
@@ -118,7 +145,28 @@ def normalize_broadcast_intention(intention: str) -> str:
     normalized_intention = intention.strip().lower().replace(" ", "_")
     if not normalized_intention:
         return BROADCAST_INTENTION_EXPLORATION
+    if normalized_intention == "incantation":
+        return BROADCAST_INTENTION_INCANTATION
     return normalized_intention
+
+
+def normalize_broadcast_leader_token(leader_token: str | None) -> str | None:
+    normalized_leader_token = (leader_token or "").strip().lower()
+    if not normalized_leader_token or normalized_leader_token == BROADCAST_NONE_TOKEN:
+        return None
+    return normalized_leader_token
+
+
+def is_incantation_broadcast_intention(intention: str) -> bool:
+    return normalize_broadcast_intention(intention) in INCANTATION_INTENTIONS
+
+
+def is_incantation_call_intention(intention: str) -> bool:
+    return normalize_broadcast_intention(intention) in INCANTATION_CALL_INTENTIONS
+
+
+def is_incantation_support_intention(intention: str) -> bool:
+    return normalize_broadcast_intention(intention) in INCANTATION_SUPPORT_INTENTIONS
 
 
 def build_plan_from_sound_direction(direction: int) -> tuple[str, ...]:

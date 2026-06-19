@@ -2,6 +2,7 @@ import random
 
 from src.commands import CommandConfig
 
+
 class Player:
     def __init__(self, client_id, team_name, x, y, server):
         self.client_id = client_id
@@ -28,10 +29,15 @@ class Player:
             parts = cmd_str.split()
             cmd = parts[0] if parts else ""
             cost = CommandConfig.COSTS.get(cmd, None)
+            queue_entry = {
+                "command": cmd_str,
+                "ticks_left": 0 if cost is None else float(cost),
+                "started": False,
+            }
             if cost is not None:
-                self.action_queue.append((cmd_str, cost))
+                self.action_queue.append(queue_entry)
             else:
-                self.action_queue.append((cmd_str, 0)) # Will return ko immediately
+                self.action_queue.append(queue_entry) # Will return ko immediately
 
     def update(self, virtual_dt):
         if self.is_dead:
@@ -43,22 +49,42 @@ class Player:
             if self.food <= 0:
                 self.is_dead = True
                 self.server.map[self.y][self.x]["players"].remove(self)
+                self.server.cancel_incantation_for_player(self)
                 return
             self.starvation_timer += 126
 
         if self.is_frozen or not self.action_queue:
             return
 
-        cmd_str, ticks_left = self.action_queue[0]
-        ticks_left -= virtual_dt
-        
-        if ticks_left <= 0:
+        queue_entry = self.action_queue[0]
+        cmd_str = str(queue_entry["command"])
+
+        if not bool(queue_entry.get("started", False)):
+            queue_entry["started"] = True
+            started_response = self.start_command(cmd_str)
+            if started_response is not None:
+                self.action_queue.pop(0)
+                if self.client_id in self.server.client_handlers:
+                    self.server.client_handlers[self.client_id].send_response(started_response)
+                return
+
+        queue_entry["ticks_left"] = float(queue_entry["ticks_left"]) - virtual_dt
+
+        if float(queue_entry["ticks_left"]) <= 0:
             self.action_queue.pop(0)
             response = self.execute_command(cmd_str)
             if self.client_id in self.server.client_handlers:
                 self.server.client_handlers[self.client_id].send_response(response)
-        else:
-            self.action_queue[0] = (cmd_str, ticks_left)
+
+    def start_command(self, cmd_str):
+        parts = cmd_str.split()
+        cmd = parts[0] if parts else ""
+
+        if cmd == "Incantation":
+            if not self.server.begin_incantation(self):
+                return "ko\n"
+            return None
+        return None
 
     def execute_command(self, cmd_str):
         parts = cmd_str.split()
@@ -178,37 +204,4 @@ class Player:
         return "ko\n"
 
     def Incantation(self):
-        ritual_level = self.level
-        participants = [
-            player
-            for player in self.server.map[self.y][self.x]["players"]
-            if player.level == ritual_level
-        ]
-
-        if not self.server.validate_incantation(self.x, self.y, ritual_level):
-            self.server.add_visual_event(
-                "incantation_failed",
-                self.x,
-                self.y,
-                f"L{ritual_level} KO",
-            )
-            return "ko\n"
-
-        for player in participants:
-            player.level = ritual_level + 1
-            if player.client_id in self.server.client_handlers and player != self:
-                self.server.client_handlers[player.client_id].send_response(
-                    f"Current level: {player.level}\n"
-                )
-
-        reqs = self.server.ELEVATION_REQS[ritual_level]
-        for k in ["linemate", "deraumere", "sibur", "mendiane", "phiras", "thystame"]:
-            self.server.map[self.y][self.x][k] -= reqs[k]
-
-        self.server.add_visual_event(
-            "incantation_success",
-            self.x,
-            self.y,
-            f"L{ritual_level}->{ritual_level + 1} x{len(participants)}",
-        )
-        return f"Current level: {ritual_level + 1}\n"
+        return self.server.complete_incantation(self)

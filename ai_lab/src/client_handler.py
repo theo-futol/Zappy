@@ -11,7 +11,20 @@ class ClientHandler:
 
     def send_response(self, msg):
         try:
+            if self.writer.is_closing():
+                return
             self.writer.write(msg.encode())
+        except:
+            pass
+
+    async def close(self):
+        try:
+            await self.writer.drain()
+        except:
+            pass
+        try:
+            self.writer.close()
+            await self.writer.wait_closed()
         except:
             pass
 
@@ -58,4 +71,4 @@ class ClientHandler:
         finally:
             if self.player:
                 self.player.is_dead = True
-            self.writer.close()
+            await self.close()

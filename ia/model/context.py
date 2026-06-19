@@ -41,6 +41,7 @@ def build_prediction_context(
     action_cooldowns: Mapping[str, int] | None,
     safe_turns: int,
     ally_broadcast: Mapping[str, object] | None,
+    incantation_support: Mapping[str, object] | None,
     last_outgoing_broadcast: Mapping[str, object] | None,
 ) -> PredictionContext:
     normalized_inventory = normalize_inventory(inventory)
@@ -71,12 +72,14 @@ def build_prediction_context(
         action_cooldowns=normalized_action_cooldowns,
         safe_turns=max(0, int(safe_turns)),
         ally_broadcast=dict(ally_broadcast) if ally_broadcast is not None else None,
+        incantation_support=normalize_incantation_support(incantation_support or {}),
         last_outgoing_broadcast=(
             dict(last_outgoing_broadcast)
             if last_outgoing_broadcast is not None
             else None
         ),
         visible_tiles=normalized_tiles,
+
         current_counts=current_counts,
         needed_stones=needed_stones,
         inventory_ready_for_elevation=inventory_ready_for_elevation,
@@ -89,3 +92,11 @@ def normalize_action_cooldowns(action_cooldowns: Mapping[str, int]) -> dict[str,
     for action_name, value in action_cooldowns.items():
         normalized[str(action_name)] = int(value)
     return normalized
+
+
+def normalize_incantation_support(incantation_support: Mapping[str, object]) -> dict[str, bool | int]:
+    return {
+        "available": bool(incantation_support.get("available", False)),
+        "arriving": bool(incantation_support.get("arriving", False)),
+        "age": max(0, int(incantation_support.get("age", 0))),
+    }

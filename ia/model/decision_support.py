@@ -48,18 +48,34 @@ def tile_is_ready_for_incantation(
 
 
 def has_enough_food_for_incantation(inventory: Mapping[str, int]) -> bool:
-    return int(inventory.get("food", 0)) >= INCANTATION_FOOD_THRESHOLD
+    return has_enough_food_for_incantation_with_threshold(
+        inventory,
+        minimum_food_threshold=INCANTATION_FOOD_THRESHOLD,
+    )
+
+
+def has_enough_food_for_incantation_with_threshold(
+    inventory: Mapping[str, int],
+    *,
+    minimum_food_threshold: int,
+) -> bool:
+    return int(inventory.get("food", 0)) >= int(minimum_food_threshold)
 
 
 def decide_incantation_step(
     level: int,
     inventory: Mapping[str, int],
     current_counts: Counter[str],
+    *,
+    minimum_food_threshold: int = INCANTATION_FOOD_THRESHOLD,
 ) -> HeuristicDecision | None:
     requirement = LEVEL_REQUIREMENTS.get(level)
     if requirement is None:
         return None
-    if not has_enough_food_for_incantation(inventory):
+    if not has_enough_food_for_incantation_with_threshold(
+        inventory,
+        minimum_food_threshold=minimum_food_threshold,
+    ):
         return None
 
     needed_on_ground = requirement["stones"]

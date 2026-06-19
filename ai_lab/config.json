@@ -2,7 +2,8 @@
   "port": 4242,
   "width": 10,
   "height": 10,
-  "teams": ["Team1", "Team2", "Team3"],
-  "initial_clients_per_team": 3,
-  "default_freq": 100
+  "teams": ["Team1", "Team2"],
+  "initial_clients_per_team": 10,
+  "default_freq": 500,
+  "rules_profile": "subject"
 }

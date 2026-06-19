@@ -10,6 +10,7 @@ class HeadlessUI:
     def __init__(self, server) -> None:
         self.server = server
         self._last_tick = 0.0
+        self._winner_announced = False
 
     def init(self) -> None:
         self._last_tick = time.perf_counter()
@@ -22,6 +23,12 @@ class HeadlessUI:
         return dt
 
     def render(self) -> None:
+        if self.server.game_over and not self._winner_announced:
+            self._winner_announced = True
+            print(
+                f"[server] WINNER {self.server.winner_team} "
+                f"({self.server.winner_player_count} players reached level 8)"
+            )
         return
 
     def quit(self) -> None:
