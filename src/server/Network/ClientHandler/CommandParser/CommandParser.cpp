@@ -29,6 +29,10 @@ void CommandParser::_initAICommands()
 
 void CommandParser::_initGraphicCommands()
 {
+    _graphicCommands["msz"] = [](const std::vector<std::string> &cmd, Client &client, Commands &commands) { commands.Msz(cmd, client); };
+    _graphicCommands["bct"] = [](const std::vector<std::string> &cmd, Client &client, Commands &commands) { commands.Bct(cmd, client); };
+    _graphicCommands["mct"] = [](const std::vector<std::string> &cmd, Client &client, Commands &commands) { commands.Mct(cmd, client); };
+    _graphicCommands["tna"] = [](const std::vector<std::string> &cmd, Client &client, Commands &commands) { commands.Tna(cmd, client); };
     _graphicCommands["ppo"] = [](const std::vector<std::string> &cmd, Client &client, Commands &commands) { commands.Ppo(cmd, client); };
     _graphicCommands["plv"] = [](const std::vector<std::string> &cmd, Client &client, Commands &commands) { commands.Plv(cmd, client); };
     _graphicCommands["pin"] = [](const std::vector<std::string> &cmd, Client &client, Commands &commands) { commands.Pin(cmd, client); };
