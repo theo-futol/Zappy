@@ -16,6 +16,7 @@ std::string Commands::Eject(std::vector<std::string> args, Client &client)
 
     // move all players to nextPosition
     tile *currentTile = _world->getTileAt(playerPos);
+    _world->sendMessageToPlayersThatAreOnTile(playerPos, "eject: " + std::to_string(player->getRotation()) + "\n");
     for (const auto &otherPlayer : currentTile->_players)
         if (otherPlayer->getFd() != player->getFd())
             ejectedPlayers.push_back(otherPlayer);
@@ -31,7 +32,6 @@ std::string Commands::Eject(std::vector<std::string> args, Client &client)
     // destroy all eggs on the tile
     _world->setTileAt(playerPos, ItemType::EGG, 0);
     player->getTeam().removeEgg(playerPos, -1, -1);
-    _world->sendMessageToPlayersThatAreOnTile(playerPos, "eject: " + std::to_string(player->getRotation()) + "\n");
     _broadcastQueue->push("pex " + std::to_string(player->getFd()) + "\n");
     return hasEjectedEggs || hasEjectedPlayers ? "ok\n" : "ko\n";
 }

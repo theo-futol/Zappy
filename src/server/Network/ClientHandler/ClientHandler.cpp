@@ -65,7 +65,19 @@ void ClientHandler::handleClients(void)
         if (_world->checkWinningCondition())
             *_serverIsRunning = false;
         broadcastGuiInfo();
+        broadcastMessageToClients();
     }
+}
+
+void ClientHandler::broadcastMessageToClients()
+{
+    for (const auto &client : _clients)
+        if (client->getType() == ClientType::AI)
+        {
+            Player *player = _world->getPlayerByFd(client->getFd());
+            if (player)
+                player->sendMessageToClient();
+        }
 }
 
 void ClientHandler::clientEventHandling()

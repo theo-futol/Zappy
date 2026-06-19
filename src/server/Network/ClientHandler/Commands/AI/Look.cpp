@@ -50,7 +50,7 @@ std::string Commands::Look(std::vector<std::string> args, Client &client)
 
             tile *currentTile = _world->getTileAt(tilePos);
             for (const auto &item : currentTile->_items)
-                buffer += itemTypeToString(item.first) + " " + std::to_string(item.second) + " "; // TO DO : used count instead of multiply the item name
+                buffer += itemTypeToString(item.first) + ":" + std::to_string(item.second) + " ";
             if (!currentTile->_players.empty())
                 buffer += "player " + std::to_string(currentTile->_players.size() - (tilePos == player->getPosition())) + " ";
         }
