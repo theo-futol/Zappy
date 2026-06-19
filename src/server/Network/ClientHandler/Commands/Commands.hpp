@@ -1,5 +1,6 @@
 #include "../../../Simulation/World/World.hpp"
 #include "../../Client/Client.hpp"
+#include <chrono>
 #include <queue>
 
 namespace zappy
@@ -25,6 +26,10 @@ namespace zappy
             std::string Set(std::vector<std::string> args, Client &client);
             std::string Fork(std::vector<std::string> args, Client &client);
             std::string Incantation(std::vector<std::string> args, Client &client);
+            // Starts an incantation: validates prerequisites, notifies the initiator and the GUI,
+            // and freezes every participant until `endTime`. Returns false (and replies "ko") if the
+            // prerequisites are not met, in which case the ritual must not be scheduled.
+            bool beginIncantation(Client &client, std::chrono::steady_clock::time_point endTime);
             // Graphic Commands
             std::string Ppo(std::vector<std::string> args, Client &client);
             std::string Plv(std::vector<std::string> args, Client &client);

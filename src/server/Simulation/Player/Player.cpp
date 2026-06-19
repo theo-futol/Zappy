@@ -164,6 +164,16 @@ void Player::setState(PlayerState newState)
 {
     _state = newState;
 }
+
+void Player::setFrozenUntil(std::chrono::steady_clock::time_point until)
+{
+    _frozenUntil = until;
+}
+
+bool Player::isFrozen() const
+{
+    return std::chrono::steady_clock::now() < _frozenUntil;
+}
 Degrees Player::getDirectionTo(const Player &target, std::pair<int, int> mapSize) const
 {
     return getDirectionTo(target.getPosition(), mapSize);

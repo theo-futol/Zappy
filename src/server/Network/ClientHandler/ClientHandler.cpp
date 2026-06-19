@@ -118,7 +118,7 @@ void ClientHandler::addClient()
         return;
     send(clientFd, "WELCOME\n", 8, 0);
     _clients.push_back(std::make_unique<Client>(clientFd));
-    _parsers[clientFd] = std::make_unique<CommandParser>(_clients.back().get(), _f);
+    _parsers[clientFd] = std::make_unique<CommandParser>(_clients.back().get(), _f, _world, &_broadcastQueue);
     _fds.push_back({.fd = clientFd, .events = POLLIN, .revents = 0});
 }
 

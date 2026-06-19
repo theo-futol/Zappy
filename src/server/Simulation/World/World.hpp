@@ -4,6 +4,7 @@
 #include <vector>
 #include <queue>
 #include <thread>
+#include <utility>
 
 #include "../Player/Player.hpp"
 #include "Items.hpp"
@@ -23,6 +24,15 @@ struct tile
     }
 };
 
+/// @brief Requirements to elevate from a given level to the next one.
+/// @note `players` is the minimum number of players of the same level that must
+/// stand on the tile; `stones` lists the minimum count of each required stone.
+struct ElevationRequirement
+{
+    int players;
+    std::vector<std::pair<ItemType, int>> stones;
+};
+
 using Map = std::vector<std::vector<tile>>;
 
 class World
@@ -39,6 +49,15 @@ class World
     World(int x, int y);
     ~World() = default;
 
+    /// @brief Checks whether an elevation from `level` to `level + 1` can take place on the tile.
+    /// Verifies both the minimum number of same-level players and the required stones.
+    bool isIncantationValid(int x, int y, int level);
+    /// @brief Returns the requirements to elevate from `level` to `level + 1`, or nullptr if `level` is out of [1, 7].
+    const ElevationRequirement *getElevationRequirement(int level) const;
+    /// @brief Returns the players standing on the tile that are exactly at `level`.
+    std::vector<Player *> getPlayersOnTileAtLevel(int x, int y, int level);
+    /// @brief Removes from the tile the stones consumed by an elevation from `level` to `level + 1`.
+    void removeIncantationStones(int x, int y, int level);
     void ressourcePassiveGeneration();
     bool checkWinningCondition();
     void foodCheck();

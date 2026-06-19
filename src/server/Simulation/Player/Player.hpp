@@ -26,6 +26,7 @@ class Player
     Inventory _inventory;
     PlayerState _state;
     std::vector<std::pair<std::string, std::vector<std::pair<std::pair<std::clock_t, int>, int>>>> _messagesToSend; // <<message, <<clock, timeNeeded>, receiverFd>, <clock, timeNeeded>, receiverFd>>, <message, <<clock, timeNeeded>, receiverFd>>>
+    std::chrono::steady_clock::time_point _frozenUntil = std::chrono::steady_clock::time_point::min(); // While in the future, the player is frozen (e.g. during an incantation) and cannot act.
 
   public:
     Player(int fd, const Team &team);
@@ -48,6 +49,10 @@ class Player
     void writeToClient(const std::string &message) const;
     Degrees getDirectionTo(const position &target, std::pair<int, int> mapSize) const;
     void setState(PlayerState newState);
+    /// @brief Freezes the player until the given time point (used while an incantation is underway).
+    void setFrozenUntil(std::chrono::steady_clock::time_point until);
+    /// @brief Returns true while the player is frozen and must not execute any command.
+    bool isFrozen() const;
     Degrees getDirectionTo(const Player &target, std::pair<int, int> mapSize) const;
     int getDistanceTo(const position &target, std::pair<int, int> mapSize) const;
     int getDistanceTo(const Player &target, std::pair<int, int> mapSize) const;

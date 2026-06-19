@@ -174,6 +174,75 @@ void World::foodCheck()
     }
 }
 
+static const std::vector<ElevationRequirement> elevationRequirements = {
+    {0, {}},
+    {1, {{ItemType::LINEMATE, 1}}},
+    {2, {{ItemType::LINEMATE, 1}, {ItemType::DERAUMERE, 1}, {ItemType::SIBUR, 1}}},
+    {2, {{ItemType::LINEMATE, 2}, {ItemType::SIBUR, 1}, {ItemType::PHIRAS, 2}}},
+    {4, {{ItemType::LINEMATE, 1}, {ItemType::DERAUMERE, 1}, {ItemType::SIBUR, 2}, {ItemType::PHIRAS, 1}}},
+    {4, {{ItemType::LINEMATE, 1}, {ItemType::DERAUMERE, 2}, {ItemType::SIBUR, 1}, {ItemType::MENDIANE, 3}}},
+    {6, {{ItemType::LINEMATE, 1}, {ItemType::DERAUMERE, 2}, {ItemType::SIBUR, 3}, {ItemType::PHIRAS, 1}}},
+    {6, {{ItemType::LINEMATE, 2}, {ItemType::DERAUMERE, 2}, {ItemType::SIBUR, 2}, {ItemType::MENDIANE, 2}, {ItemType::PHIRAS, 2}, {ItemType::THYSTAME, 1}}},
+};
+
+const ElevationRequirement *World::getElevationRequirement(int level) const
+{
+    if (level < 1 || level > 7)
+        return nullptr;
+    return &elevationRequirements[level];
+}
+
+std::vector<Player *> World::getPlayersOnTileAtLevel(int x, int y, int level)
+{
+    std::vector<Player *> result;
+    position pos{x, y};
+
+    for (const auto &player : _players)
+        if (player->getLevel() == level && player->getPosition() == pos)
+            result.push_back(player.get());
+    return result;
+}
+
+bool World::isIncantationValid(int x, int y, int level)
+{
+    const ElevationRequirement *requirement = getElevationRequirement(level);
+    tile *tilePtr = getTileAt({x, y});
+
+    if (!requirement || !tilePtr)
+        return false;
+    if (static_cast<int>(getPlayersOnTileAtLevel(x, y, level).size()) < requirement->players)
+        return false;
+    for (const auto &[stone, needed] : requirement->stones)
+    {
+        int available = 0;
+        for (const auto &item : tilePtr->_items)
+            if (item.first == stone)
+            {
+                available = item.second;
+                break;
+            }
+        if (available < needed)
+            return false;
+    }
+    return true;
+}
+
+void World::removeIncantationStones(int x, int y, int level)
+{
+    const ElevationRequirement *requirement = getElevationRequirement(level);
+    tile *tilePtr = getTileAt({x, y});
+
+    if (!requirement || !tilePtr)
+        return;
+    for (const auto &[stone, needed] : requirement->stones)
+        for (auto &item : tilePtr->_items)
+            if (item.first == stone)
+            {
+                item.second = std::max(0, item.second - needed);
+                break;
+            }
+}
+
 bool World::checkWinningCondition()
 {
     int playerCounter = 0;

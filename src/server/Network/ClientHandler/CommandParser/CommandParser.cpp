@@ -56,7 +56,14 @@ bool CommandParser::feed()
         auto it = _aiCommands.find(cmd);
         int cost = (it != _aiCommands.end()) ? it->second.first : 0;
         auto base = _commandQueue.empty() ? std::chrono::steady_clock::now() : _commandQueue.back().readyAt;
-        _commandQueue.push({line, base + std::chrono::milliseconds(cost * 1000 / _f)});
+        auto readyAt = base + std::chrono::milliseconds(cost * 1000 / _f);
+        Player *player = _world ? _world->getPlayerByFd(_client->getFd()) : nullptr;
+        if (cmd == "Incantation" && _client->getType() == ClientType::AI && player && !player->isFrozen())
+        {
+            if (!_commands.beginIncantation(*_client, readyAt))
+                continue;
+        }
+        _commandQueue.push({line, readyAt});
     }
     _client->setBuffer(buffer);
     return true;
@@ -66,11 +73,23 @@ void CommandParser::executeNext()
 {
     if (_commandQueue.empty())
         return;
-    if (_client->getType() != ClientType::GRAPHIC && _world->getPlayerByFd(_client->getFd())->getState() == PlayerState::DEAD)
+    if (_client->getType() == ClientType::DEAD)
     {
-        _client->setType(ClientType::DEAD);
         _commandQueue.pop();
         return;
+    }
+    if (_client->getType() == ClientType::AI)
+    {
+        Player *player = _world->getPlayerByFd(_client->getFd());
+        if (player && player->getState() == PlayerState::DEAD)
+        {
+            _client->setType(ClientType::DEAD);
+            _commandQueue.pop();
+            return;
+        }
+        // A frozen player (mid-incantation) must not run any queued command until the ritual ends.
+        if (player && player->isFrozen())
+            return;
     }
     if (std::chrono::steady_clock::now() < _commandQueue.front().readyAt)
         return;
