@@ -1,0 +1,285 @@
+RFC 1                                                       Zappy Project
+Category: Standards Track                                Théo Futol
+                                                          2026-06-19
+
+
+                    Zappy: Network Survival Game
+                       Server / Protocol / Client RFC
+
+
+Status of This Memo
+
+   This document specifies the Zappy network protocol, the
+   architecture of the zappy_server, and the set of commands
+   exchanged between the server and its clients (AI clients and
+   graphical client). Distribution of this memo is unlimited.
+
+
+Table of Contents
+
+   1.  Introduction
+   2.  Terminology
+   3.  Protocol
+       3.1.  Transport
+       3.2.  Connection Handshake
+   4.  Architecture
+   5.  Commands
+       5.1.  Client/AI Commands
+       5.2.  GUI Protocol
+   6.  Security Considerations
+   7.  GUI
+   8.  AI
+
+
+1.  Introduction
+
+   Zappy is a network simulation game built around a single server
+   (zappy_server) that hosts a world inhabited by several teams of
+   players competing against each other. The world is a flat,
+   wrap-around tile map (exiting one edge brings a player back on the
+   opposite edge) on which mineral and food resources are scattered
+   and periodically respawned.
+
+   The goal of each team is to reach the maximum elevation level with
+   at least six of its players. To rise in level, players must
+   perform an "incantation" ritual on a shared tile, gathering a
+   required number of players of the same level along with specific
+   quantities of stones. The first team to get six players to the
+   maximum level wins the game.
+
+   Players are driven by autonomous AI clients connected to the
+   server over the network; once launched, a client receives no
+   further input from the user and acts solely through the protocol
+   described in this document. A graphical client (GUI) can also
+   connect to the server, using a dedicated extension of the
+   protocol, to observe and render the state of the world in real
+   time without influencing gameplay.
+
+   Three binaries compose the project:
+     - zappy_server: generates and runs the world (C++).
+     - zappy_gui:    a graphical, read-only observer (OpenGL).
+     - zappy_ai:     an autonomous client driving a player (python).
+
+
+2.  Terminology
+
+   Trantor
+        The name of the planet/world simulated by the server. It is
+        geographically flat (no relief) and topologically wraps
+        around itself: a player leaving the map on one side
+        reappears on the opposite side.
+
+   Trantorian
+        An inhabitant of Trantor, i.e. a player. Trantorians are
+        bodiless, blurry, and occupy the entire tile they stand on.
+        They are pacifists, can overlap freely with other
+        Trantorians on the same tile, and cannot distinguish the
+        facing direction of another Trantorian they encounter. Their
+        vision range is limited and grows with their elevation level.
+
+   Egg
+        The result of a successful `Fork` command. An egg occupies a
+        team slot; when a new client connects to that team, a
+        pending egg is selected at random and hatches into a new
+        player with a random orientation.
+
+   Elevation / Incantation
+        The ritual by which a group of players of the same level,
+        gathered on one tile with the required stones, all advance to
+        the next level simultaneously.
+
+   Time unit
+        Trantor's unit of time. The duration of an action is given by
+        action_time / f, where f is the server's frequency parameter
+        (reciprocal of the time unit), set with the `-f` server
+        argument.
+
+
+3.  Protocol
+
+3.1.  Transport
+
+   All communication between the server and its clients (AI clients
+   and GUI clients) is carried over TCP sockets. The server listens
+   on a single port, given at startup, and multiplexes all client
+   sockets using `poll`.
+
+   Every command and every response is transmitted as a character
+   string terminated by a newline ('\n'). Arguments noted between
+   angle brackets (e.g. <object>) are placeholders to be replaced by
+   an actual value. If the server receives a command it does not
+   recognize, or a recognized command with invalid parameters, it
+   must respond "ko".
+
+   A client may send up to 10 requests in a row without waiting for a
+   response; requests beyond that limit are not taken into account by
+   the server until prior ones are processed. Requests are buffered
+   and executed in the order they were received; the execution delay
+   of a command only blocks the player that issued it.
+
+3.2.  Connection Handshake (AI client)
+
+   1. The client opens a TCP socket on the server's port.
+   2. The server and the client exchange the following messages:
+
+        <--  WELCOME\n
+        -->  TEAM-NAME\n
+        <--  CLIENT-NUM\n
+        <--  X Y\n
+
+      Where:
+        - TEAM-NAME  is the name of the team the client wants to join.
+        - CLIENT-NUM is the number of remaining available slots for
+          that team. If this number is >= 1, the client occupies a
+          slot and becomes a player.
+        - X Y        are the width and height of the world.
+
+   The reserved team name `GRAPHIC` is used by the GUI client to
+   authenticate itself as an observer instead of a regular player
+   (see Section 5.2).
+
+
+4.  Architecture
+
+   The server is executed as a single process and a single thread; no
+   active waiting is performed at any point.
+
+   - Core / ArgParser:
+       At startup, the Core parses all command-line arguments through
+       the ArgParser class, which is responsible for registering all
+       supported flags (-p, -x, -y, -n, -c, -f) and for handling
+       process signals.
+
+   - Network / Socket:
+       The Socket class manages client connections at the transport
+       level (accepting new connections, reading/writing raw data).
+
+   - Network / ClientHandler:
+       The ClientHandler is responsible for retrieving, via `poll`,
+       the data available on a given client socket, and storing it
+       in a per-client command queue.
+
+   - Network / CommandParser:
+       The CommandParser processes the input retrieved by the
+       ClientHandler from the command queue and executes the
+       corresponding function in the server.
+
+   - Commands:
+       Each command sent by an AI client (Broadcast, Look, Take,
+       Set, Forward, etc.) is handled by a dedicated Commands
+       implementation.
+
+   - GUI notifications:
+       Independently of AI command processing, the server sends
+       commands to every connected GUI client to keep it informed
+       of events occurring in the world (player movement, death,
+       incantation, egg laying, etc. -- see Section 5.2).
+
+   - Simulation:
+       The Simulation is responsible for the behaviour of players and
+       of the world: movement, resource spawning, inventories,
+       incantations, eggs, and elevation rules.
+
+   [This section will be detailed further as the implementation
+   progresses.]
+
+
+5.  Commands
+
+5.1.  Client/AI Commands
+
+   Each player only responds to the following commands:
+
+   +------------+----------+------------+------------------------------+
+   | Action     | Command  | Time limit | Response                    |
+   +------------+----------+------------+------------------------------+
+   | move fwd   | Forward  | 7/f        | ok / ko                     |
+   | turn right | Right    | 7/f        | ok / ko                     |
+   | turn left  | Left     | 7/f        | ok / ko                     |
+   | look       | Look     | 7/f        | [tile1, tile2, ...]         |
+   | inventory  | Inventory| 1/f        | [linemate n, sibur n, ...]  |
+   | broadcast  | Broadcast| 7/f        | ok / ko                     |
+   |            | <text>   |            |                              |
+   | team slots | Connect_nbr | -       | value                        |
+   | fork       | Fork     | 42/f       | ok                           |
+   | eject      | Eject    | 7/f        | ok / ko                      |
+   | take obj.  | Take <object> | 7/f   | ok / ko                     |
+   | set obj.   | Set <object>  | 7/f   | ok / ko                     |
+   | incantation| Incantation   | 300/f | Elevation underway /        |
+   |            |               |       | Current level: k / ko       |
+   | death      | -             | -     | dead                         |
+   +------------+----------+------------+------------------------------+
+
+   All commands are sent as a string ending with a newline. In case of
+   a bad or unknown command, the server answers "ko".
+
+   The `Look` command returns the content of every tile within the
+   player's field of vision, ordered from the player's own tile
+   outward, line by line, left to right. The response format is:
+
+        [tile0, tile1, tile2, ...]
+
+   Each tile lists the objects present on it (players and/or
+   resources), separated by spaces, e.g.:
+
+        [deraumere:2, thystame:1 player:3]
+
+   Tiles are separated by a comma, optionally followed by a space.
+   An empty tile is represented by an empty field between separators.
+
+5.2.  GUI Protocol
+
+   A GUI client authenticates by sending `GRAPHIC` as its team name
+   during the handshake (Section 3.2). Once recognized, the server
+   exchanges the following messages with it:
+
+   +---------------------------------------+--------+--------+----------------------------------+
+   | Command                                | Dir.   | Reply  | Description                     |
+   +---------------------------------------+--------+--------+----------------------------------+
+   | msz X Y                                | Server | msz    | Map size                        |
+   | bct X Y q0 q1 q2 q3 q4 q5 q6            | Server | bct X Y| Content of a tile                |
+   | bct X Y q0 q1 q2 q3 q4 q5 q6  (x N)     | Server | mct    | Content of the whole map         |
+   | tna N  (x nbr_teams)                   | Server | tna    | Name of all the teams           |
+   | pnw #n X Y O L N                       | Server | -      | Connection of a new player       |
+   | ppo #n X Y O                           | Both   | ppo #n | Player's position               |
+   | plv #n L                               | Both   | plv #n | Player's level                  |
+   | pin #n X Y q0 q1 q2 q3 q4 q5 q6         | Both   | pin #n | Player's inventory               |
+   | pex #n                                 | Server | -      | Expulsion                        |
+   | pbc #n M                               | Server | -      | Broadcast                        |
+   | pic X Y L #n #n ...                    | Server | -      | Start of an incantation          |
+   | pie X Y R                              | Server | -      | End of an incantation            |
+   | pfk #n                                 | Server | -      | Egg laying by the player         |
+   | pdr #n i                               | Server | -      | Resource dropping                |
+   | pgt #n i                               | Server | -      | Resource collecting              |
+   | pdi #n                                 | Server | -      | Death of a player                |
+   | enw #e #n X Y                          | Server | -      | An egg was laid by a player      |
+   | ebo #e                                 | Server | -      | Player connection for an egg     |
+   | edi #e                                 | Server | -      | Death of an egg                  |
+   | sgt T                                  | Both   | sgt    | Time unit request                |
+   | sst T                                  | Both   | sst T  | Time unit modification           |
+   | seg N                                  | Server | -      | End of game                      |
+   | smg M                                  | Server | -      | Message from the server          |
+   | suc                                    | Client | -      | Unknown command                  |
+   | sbp                                    | Client | -      | Command parameter error          |
+   +---------------------------------------+--------+--------+----------------------------------+
+
+
+6.  Security Considerations
+
+   [To be completed.]
+
+
+7.  GUI
+
+   [To be completed.]
+
+
+8.  AI
+
+   [To be completed.]
+
+
+Authors' Addresses
+
+   Théo Futol
+   Email: theo-futol@epitech.eu

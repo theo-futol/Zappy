@@ -44,25 +44,3 @@ However there is a special case which is the instance of a GUI instance connecti
 | `smg M` | Server | — | Message from the server |
 | `suc` | Client | — | Unknown command |
 | `sbp` | Client | — | Command parameter error |
-
-
-# TO REMOVE
-- poll -> need timeout don't forget, foutre un chrono dedans avant.
-- player needs to have a isActive (If no eggs are in the teams, no spawn)
-- map stocker vector vector vector ??? (see other commands such as Broadcast to verify it's usefulness)
-
-
-vector<shared_ptr<Player>>
-
-struct tile 
-{
-    vector<shared_ptr<Player>>
-    vector<>
-
-}
-
-
-
-
-
-
