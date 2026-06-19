@@ -169,16 +169,16 @@ void World::foodCheck()
         else
         {
             player->get()->getInventory().removeItem(ItemType::FOOD);
-            ++player;
+            player++;
         }
     }
 }
 
-void World::checkWinningCondition()
+bool World::checkWinningCondition()
 {
     int playerCounter = 0;
 
-    for (const auto &team : _teams)
+    for (auto &team : _teams)
         if (team._slotsOccupied >= 6)
         {
             for (auto &player : _players)
@@ -191,8 +191,10 @@ void World::checkWinningCondition()
             if (playerCounter >= 6)
             {
                 _broadcastQueue->push("seg " + team._name + "\n");
-                break; // ADD SOMETHING ELSE TO STOP THE SERVER, UPDATE THE STATIC TOO
+                team._hasWin = true;
+                return true;
             }
         }
+    return false;
 }
 } // namespace zappy

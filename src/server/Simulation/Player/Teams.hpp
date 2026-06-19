@@ -14,8 +14,9 @@ struct Team
     int _slotsAvailable;                                      // Eggs will be counted as slots available for the team
     int _slotsOccupied;                                       // Number of players currently in the team
     std::vector<std::pair<position, std::vector<int>>> _eggs; // Vector of pair (position, list of egg IDs) representing the eggs of the team
+    bool _hasWin;                                             // Indicate if the team has won the game
 
-    Team(const std::string &name, int teamID, int initialSlots) : _name(name), _teamID(teamID), _slotsAvailable(initialSlots), _slotsOccupied(0), _eggs()
+    Team(const std::string &name, int teamID, int initialSlots) : _name(name), _teamID(teamID), _slotsAvailable(initialSlots), _slotsOccupied(0), _eggs(), _hasWin(false)
     {
     }
     bool hasAvailableSlots() const

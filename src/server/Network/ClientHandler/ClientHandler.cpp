@@ -62,6 +62,8 @@ void ClientHandler::handleClients(void)
         }
 
         clientEventHandling();
+        if (_world->checkWinningCondition())
+            *_serverIsRunning = false;
         broadcastGuiInfo();
     }
 }

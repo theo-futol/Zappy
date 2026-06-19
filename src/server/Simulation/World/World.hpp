@@ -39,7 +39,7 @@ class World
     ~World() = default;
 
     void ressourcePassiveGeneration();
-    void checkWinningCondition();
+    bool checkWinningCondition();
     void foodCheck();
     std::vector<std::shared_ptr<Player>> &getPlayers();
     const std::vector<std::shared_ptr<Player>> &getPlayers() const;
