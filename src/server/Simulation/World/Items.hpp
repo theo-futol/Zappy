@@ -12,6 +12,7 @@ namespace zappy
         MENDIANE,
         PHIRAS,
         THYSTAME,
+        EGG,
         UNKNOWN
     };
 
@@ -25,6 +26,7 @@ namespace zappy
             case ItemType::MENDIANE: return "mendiane";
             case ItemType::PHIRAS: return "phiras";
             case ItemType::THYSTAME: return "thystame";
+            case ItemType::EGG: return "egg";
             default: return "unknown";
         }
     }
@@ -38,6 +40,7 @@ namespace zappy
         if (str == "mendiane") return ItemType::MENDIANE;
         if (str == "phiras") return ItemType::PHIRAS;
         if (str == "thystame") return ItemType::THYSTAME;
+        if (str == "egg") return ItemType::EGG;
         return ItemType::UNKNOWN;
     }
 } // namespace zappy

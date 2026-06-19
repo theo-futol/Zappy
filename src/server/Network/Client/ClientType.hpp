@@ -6,6 +6,7 @@ namespace zappy
     {
         GRAPHIC,
         AI,
+        DEAD,
         UNKNOWN
     };
 } // namespace zappy

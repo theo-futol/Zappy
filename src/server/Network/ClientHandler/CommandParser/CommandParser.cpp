@@ -4,7 +4,8 @@
 
 namespace zappy
 {
-CommandParser::CommandParser(Client *client, int f, World *world) : _client(client), _f(f), _world(world), _commands(world)
+CommandParser::CommandParser(Client *client, int f, World *world, std::queue<std::string> *broadcastQueue)
+    : _client(client), _f(f), _world(world), _commands(world, broadcastQueue), _broadcastQueue(broadcastQueue)
 {
     _initAICommands();
     _initGraphicCommands();
@@ -55,7 +56,14 @@ bool CommandParser::feed()
         auto it = _aiCommands.find(cmd);
         int cost = (it != _aiCommands.end()) ? it->second.first : 0;
         auto base = _commandQueue.empty() ? std::chrono::steady_clock::now() : _commandQueue.back().readyAt;
-        _commandQueue.push({line, base + std::chrono::milliseconds(cost * 1000 / _f)});
+        auto readyAt = base + std::chrono::milliseconds(cost * 1000 / _f);
+        Player *player = _world ? _world->getPlayerByFd(_client->getFd()) : nullptr;
+        if (cmd == "Incantation" && _client->getType() == ClientType::AI && player && !player->isFrozen())
+        {
+            if (!_commands.beginIncantation(*_client, readyAt))
+                continue;
+        }
+        _commandQueue.push({line, readyAt});
     }
     _client->setBuffer(buffer);
     return true;
@@ -65,6 +73,24 @@ void CommandParser::executeNext()
 {
     if (_commandQueue.empty())
         return;
+    if (_client->getType() == ClientType::DEAD)
+    {
+        _commandQueue.pop();
+        return;
+    }
+    if (_client->getType() == ClientType::AI)
+    {
+        Player *player = _world->getPlayerByFd(_client->getFd());
+        if (player && player->getState() == PlayerState::DEAD)
+        {
+            _client->setType(ClientType::DEAD);
+            _commandQueue.pop();
+            return;
+        }
+        // A frozen player (mid-incantation) must not run any queued command until the ritual ends.
+        if (player && player->isFrozen())
+            return;
+    }
     if (std::chrono::steady_clock::now() < _commandQueue.front().readyAt)
         return;
     std::string line = _commandQueue.front().line;
@@ -80,6 +106,13 @@ bool CommandParser::hasPending() const
     return !_commandQueue.empty();
 }
 
+std::chrono::steady_clock::time_point CommandParser::nextReadyAt() const
+{
+    if (_commandQueue.empty())
+        return std::chrono::steady_clock::time_point::max();
+    return _commandQueue.front().readyAt;
+}
+
 void CommandParser::_handleHandshake(const std::string &teamName)
 {
     if (teamName == "GRAPHIC")
@@ -89,8 +122,19 @@ void CommandParser::_handleHandshake(const std::string &teamName)
     else
     {
         _client->setType(ClientType::AI);
-        // here, need to tell the client playerID, map size
-        send(_client->getFd(), "0\n10 10\n", 8, 0);
+        int availableSlots = _world->getAvailableSlotsForTeam(teamName);
+        if (availableSlots < 0)
+        {
+            send(_client->getFd(), "ko\n", 3, 0);
+            return;
+        }
+        std::string handShakeMsg = std::to_string(availableSlots) + "\n" + std::to_string(_world->getMapSize().first) + " " + std::to_string(_world->getMapSize().second) + "\n";
+        send(_client->getFd(), handShakeMsg.c_str(), handShakeMsg.size(), 0);
+        _world->addPlayer(_client->getFd(), teamName);
+
+        _broadcastQueue->push("pnw " + std::to_string(_client->getFd()) + " " + std::to_string(_world->getPlayerByFd(_client->getFd())->getPosition().x) + " " +
+                              std::to_string(_world->getPlayerByFd(_client->getFd())->getPosition().y) + " " +
+                              std::to_string(_world->getPlayerByFd(_client->getFd())->getRotation()) + " " + teamName + "\n");
     }
 }
 

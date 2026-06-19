@@ -10,9 +10,7 @@ namespace zappy
             int _fd;
             ClientType _type;
             std::string _buffer;
-
-            int _playerID = -1;
-        public:
+            public:
             Client(int fd, ClientType type = ClientType::UNKNOWN) : _fd(fd), _type(type), _buffer() {}
             // Network related tasks
             int getFd() const;
@@ -21,9 +19,5 @@ namespace zappy
             const std::string &getBuffer() const;
             std::string &getBuffer();
             void setBuffer(const std::string &buffer);
-
-            // Simulation link
-            int getPlayerID() const;
-            void setPlayerID(int playerID);
     };
 } // namespace zappy

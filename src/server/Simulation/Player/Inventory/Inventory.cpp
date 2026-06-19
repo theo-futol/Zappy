@@ -33,7 +33,7 @@ std::string Inventory::checkInventory() const
         if (std::next(it) != _items.end())
             result += ", ";
     }
-    result += "]";
+    result += "]\n";
     return result;
 }
 
@@ -49,6 +49,11 @@ int Inventory::getItemCount(const ItemType &itemType) const
     if (it != _items.end())
         return it->second;
     return 0;
+}
+
+std::unordered_map<ItemType, int> &Inventory::getItems()
+{
+    return _items;
 }
 
 } // namespace zappy

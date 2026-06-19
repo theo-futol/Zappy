@@ -1,5 +1,7 @@
 #include "../../../Simulation/World/World.hpp"
 #include "../../Client/Client.hpp"
+#include <chrono>
+#include <queue>
 
 namespace zappy
 {
@@ -7,8 +9,9 @@ namespace zappy
     {
         private:
             World *_world;
+            std::queue<std::string> *_broadcastQueue;
         public:
-            Commands(World *world) : _world(world) {}
+            Commands(World *world, std::queue<std::string> *broadcastQueue) : _world(world), _broadcastQueue(broadcastQueue) {}
             ~Commands() = default;
             // AI Commands
             std::string Forward(std::vector<std::string> args, Client &client);
@@ -23,11 +26,19 @@ namespace zappy
             std::string Set(std::vector<std::string> args, Client &client);
             std::string Fork(std::vector<std::string> args, Client &client);
             std::string Incantation(std::vector<std::string> args, Client &client);
+            // Starts an incantation: validates prerequisites, notifies the initiator and the GUI,
+            // and freezes every participant until `endTime`. Returns false (and replies "ko") if the
+            // prerequisites are not met, in which case the ritual must not be scheduled.
+            bool beginIncantation(Client &client, std::chrono::steady_clock::time_point endTime);
             // Graphic Commands
             std::string Ppo(std::vector<std::string> args, Client &client);
             std::string Plv(std::vector<std::string> args, Client &client);
             std::string Pin(std::vector<std::string> args, Client &client);
             std::string Sgt(std::vector<std::string> args, Client &client);
             std::string Sst(std::vector<std::string> args, Client &client);
+            std::string Msz(std::vector<std::string> args, Client &client);
+            std::string Bct(std::vector<std::string> args, Client &client);
+            std::string Mct(std::vector<std::string> args, Client &client);
+            std::string Tna(std::vector<std::string> args, Client &client);
     };
 }
