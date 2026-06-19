@@ -3,6 +3,7 @@
 namespace zappy
 {
 
+/// @brief Compass bearing in degrees, used for player orientation and direction maths.
 enum Degrees
 {
     NORTH = 0,
@@ -14,6 +15,7 @@ enum Degrees
     WEST = 270
 };
 
+/// @brief Lifecycle of a player slot: waiting to hatch, active in the world, or dead.
 enum class PlayerState
 {
     PENDING,
@@ -21,6 +23,7 @@ enum class PlayerState
     DEAD
 };
 
+/// @brief A tile coordinate on the map.
 struct position
 {
     int x;
