@@ -157,19 +157,19 @@ class BehaviorStateMachine:
     def _select_forced_state(self, context: PredictionContext) -> BehaviorState | None:
         if self._needs_survival_state(context):
             return BehaviorState.SURVIVE
-        if self._should_wait_for_incantation(context):
-            return BehaviorState.WAIT_INCANTATION
         if self._can_help_ally(context):
             return BehaviorState.HELP_INCANTATION
+        if self._should_wait_for_incantation(context):
+            return BehaviorState.WAIT_INCANTATION
         if self._should_prepare_incantation(context):
             return BehaviorState.PREPARE_INCANTATION
         return None
 
     def _select_next_state(self, context: PredictionContext) -> BehaviorState:
-        if self._should_wait_for_incantation(context):
-            return BehaviorState.WAIT_INCANTATION
         if self._can_help_ally(context):
             return BehaviorState.HELP_INCANTATION
+        if self._should_wait_for_incantation(context):
+            return BehaviorState.WAIT_INCANTATION
         if self._should_prepare_incantation(context):
             return BehaviorState.PREPARE_INCANTATION
         if self._should_gather(context):
@@ -203,7 +203,7 @@ class BehaviorStateMachine:
         )
         if (
             self._has_other_ally_incantation_call(context)
-            and not self._recently_called_for_incantation(context)
+            and not self._has_incantation_support(context)
         ):
             return False
 
@@ -296,6 +296,11 @@ class BehaviorStateMachine:
         if committed:
             return False
         if not tile_is_ready_for_incantation(context.level, context.current_counts):
+            return False
+        if (
+            self._has_other_ally_incantation_call(context)
+            and not self._has_incantation_support(context)
+        ):
             return False
         if self._recently_called_for_incantation(context):
             return True
@@ -612,6 +617,20 @@ class BehaviorStateMachine:
         )
 
     def _decide_waiting_for_players(self, context: PredictionContext) -> HeuristicDecision:
+        if bool(context.incantation_support.get("arriving")):
+            return build_single_action_decision(
+                command="Look",
+                rationale="allied players announced that they are arriving, holding the tile for the incantation.",
+                confidence=0.66,
+            )
+
+        if bool(context.incantation_support.get("available")):
+            return build_single_action_decision(
+                command="Look",
+                rationale="an allied player confirmed availability, waiting a bit longer before changing plans.",
+                confidence=0.60,
+            )
+
         if (
             self._cooldown_ready(context, "Broadcast")
             and self._should_send_incantation_broadcast(context)
@@ -631,20 +650,6 @@ class BehaviorStateMachine:
             return build_single_action_decision(
                 command="Fork",
                 rationale="waiting for more players on the incantation tile, creating an egg can help future regrouping.",
-                confidence=0.60,
-            )
-
-        if bool(context.incantation_support.get("arriving")):
-            return build_single_action_decision(
-                command="Look",
-                rationale="allied players announced that they are arriving, holding the tile for the incantation.",
-                confidence=0.66,
-            )
-
-        if bool(context.incantation_support.get("available")):
-            return build_single_action_decision(
-                command="Look",
-                rationale="an allied player confirmed availability, waiting a bit longer before changing plans.",
                 confidence=0.60,
             )
 
@@ -683,6 +688,8 @@ class BehaviorStateMachine:
         return context.action_cooldowns.get(action_name, 0) <= 0
 
     def _should_send_incantation_broadcast(self, context: PredictionContext) -> bool:
+        if self._has_incantation_support(context):
+            return False
         if self._has_other_ally_incantation_call(context):
             return False
 

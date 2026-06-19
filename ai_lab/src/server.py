@@ -16,9 +16,7 @@ class Server:
     WINNER_PLAYER_COUNT = 6
     GAME_OVER_DISPLAY_SECONDS = 3.0
     RESOURCE_RESPAWN_INTERVAL = 20.0
-    RULES_PROFILE_SUBJECT = "subject"
-    RULES_PROFILE_ORIGIN_SERVER_MAIN = "origin_server_main"
-    SUBJECT_RESOURCE_DENSITIES = {
+    RESOURCE_DENSITIES = {
         "food": 0.5,
         "linemate": 0.3,
         "deraumere": 0.15,
@@ -27,16 +25,7 @@ class Server:
         "phiras": 0.08,
         "thystame": 0.05,
     }
-    ORIGIN_SERVER_MAIN_RESOURCE_DENSITIES = {
-        "food": 0.5,
-        "linemate": 0.3,
-        "deraumere": 0.5,
-        "sibur": 0.1,
-        "mendiane": 0.1,
-        "phiras": 0.08,
-        "thystame": 0.05,
-    }
-    RESOURCE_NAMES = tuple(SUBJECT_RESOURCE_DENSITIES)
+    RESOURCE_NAMES = tuple(RESOURCE_DENSITIES)
 
     ELEVATION_REQS = {
         1: {"players": 1, "linemate": 1, "deraumere": 0, "sibur": 0, "mendiane": 0, "phiras": 0, "thystame": 0},
@@ -55,15 +44,11 @@ class Server:
         self.teams = self.config["teams"]
         self.freq = self.config["default_freq"]
         self.initial_clients = self.config["initial_clients_per_team"]
-        self.rules_profile = str(
-            self.config.get("rules_profile", self.RULES_PROFILE_ORIGIN_SERVER_MAIN)
-        )
         
         self.paused = False
         self.running = True
         self.ticks = 0.0
         self.loop_time = 0.0
-        self.last_resource_spawn_at = None
         
         self.map = [[{"food": 0, "linemate": 0, "deraumere": 0, "sibur": 0, "mendiane": 0, "phiras": 0, "thystame": 0, "players": []} for _ in range(self.width)] for _ in range(self.height)]
         self.eggs = []
@@ -89,13 +74,6 @@ class Server:
         self.resource_timer = self.RESOURCE_RESPAWN_INTERVAL
 
     def spawn_resources(self):
-        if self._uses_origin_server_main_rules():
-            self._spawn_resources_origin_server_main()
-            return
-
-        self._spawn_resources_subject()
-
-    def _spawn_resources_subject(self):
         for resource_name in self.RESOURCE_NAMES:
             target_quantity = self._target_resource_quantity(resource_name)
             current_quantity = self._current_resource_quantity(resource_name)
@@ -104,18 +82,9 @@ class Server:
                 continue
             self._place_resource_evenly(resource_name, missing_quantity)
 
-    def _spawn_resources_origin_server_main(self):
-        total_tiles = self.width * self.height
-        densities = self._resource_densities()
-        for resource_name, density in densities.items():
-            quantity_to_add = int(total_tiles * float(density))
-            if quantity_to_add <= 0:
-                continue
-            self._place_resource_randomly(resource_name, quantity_to_add)
-
     def _target_resource_quantity(self, resource_name):
         total_tiles = self.width * self.height
-        density = float(self._resource_densities()[resource_name])
+        density = float(self.RESOURCE_DENSITIES[resource_name])
         # The subject requires at least one unit of each resource on the floor.
         return max(1, int(total_tiles * density))
 
@@ -140,12 +109,6 @@ class Server:
             )
             self.map[target_y][target_x][resource_name] += 1
 
-    def _place_resource_randomly(self, resource_name, quantity):
-        for _ in range(quantity):
-            target_x = random.randint(0, self.width - 1)
-            target_y = random.randint(0, self.height - 1)
-            self.map[target_y][target_x][resource_name] += 1
-
     def _resource_placement_score(self, resource_name, x, y):
         tile = self.map[y][x]
         total_resources = sum(tile[name] for name in self.RESOURCE_NAMES)
@@ -153,14 +116,6 @@ class Server:
             tile[resource_name],
             total_resources,
         )
-
-    def _resource_densities(self):
-        if self._uses_origin_server_main_rules():
-            return self.ORIGIN_SERVER_MAIN_RESOURCE_DENSITIES
-        return self.SUBJECT_RESOURCE_DENSITIES
-
-    def _uses_origin_server_main_rules(self):
-        return self.rules_profile == self.RULES_PROFILE_ORIGIN_SERVER_MAIN
 
     def get_available_slots(self, team):
         return sum(1 for egg in self.eggs if egg["team"] == team)
@@ -520,7 +475,7 @@ class Server:
                     virtual_dt = dt * self.freq
                     self.ticks += virtual_dt
                     self.update_visual_events(dt)
-                    self._update_resource_spawns(loop_time, virtual_dt)
+                    self._update_resource_spawns(virtual_dt)
 
                     for p in list(self.players):
                         p.update(virtual_dt)
@@ -547,15 +502,7 @@ class Server:
                 self.tcp_server.close()
                 await self.tcp_server.wait_closed()
 
-    def _update_resource_spawns(self, loop_time, virtual_dt):
-        if self._uses_origin_server_main_rules():
-            if self.last_resource_spawn_at is None:
-                self.last_resource_spawn_at = loop_time
-            while loop_time - self.last_resource_spawn_at >= self.RESOURCE_RESPAWN_INTERVAL:
-                self.spawn_resources()
-                self.last_resource_spawn_at += self.RESOURCE_RESPAWN_INTERVAL
-            return
-
+    def _update_resource_spawns(self, virtual_dt):
         self.resource_timer -= virtual_dt
         while self.resource_timer <= 0:
             self.spawn_resources()

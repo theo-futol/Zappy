@@ -28,6 +28,7 @@ try:
         LOOK_REFRESH_INTERVAL,
         OPPORTUNISTIC_FOOD_THRESHOLD,
         get_ally_broadcast_max_age,
+        get_ally_broadcast_switch_min_age,
         get_ally_help_food_threshold,
     )
     from .heuristic_model import HeuristicModel
@@ -52,6 +53,7 @@ except ImportError:
         LOOK_REFRESH_INTERVAL,
         OPPORTUNISTIC_FOOD_THRESHOLD,
         get_ally_broadcast_max_age,
+        get_ally_broadcast_switch_min_age,
         get_ally_help_food_threshold,
     )
     from heuristic_model import HeuristicModel
@@ -490,7 +492,8 @@ class ZappyAIClient:
                 return
 
             if current_ally_broadcast is not None:
-                return
+                if not self._should_replace_ally_broadcast(current_ally_broadcast, payload):
+                    return
 
             self.state["ally_broadcast"] = {
                 "direction": int(direction),
@@ -527,6 +530,24 @@ class ZappyAIClient:
         if current_leader_token is None or incoming_leader_token is None:
             return False
         return current_leader_token == incoming_leader_token
+
+    def _should_replace_ally_broadcast(
+        self,
+        current_ally_broadcast: dict[str, object],
+        payload: dict[str, object],
+    ) -> bool:
+        current_age = int(current_ally_broadcast.get("age", 0))
+        switch_min_age = get_ally_broadcast_switch_min_age(int(self.state["level"]))
+        if current_age < switch_min_age:
+            return False
+
+        current_payload = current_ally_broadcast.get("payload")
+        if not isinstance(current_payload, dict):
+            return True
+
+        current_token = self._extract_leader_token(current_payload)
+        incoming_token = self._extract_leader_token(payload)
+        return current_token != incoming_token
 
     def _support_matches_local_leader(self, payload: dict[str, object]) -> bool:
         local_leader_token = self._active_local_leader_token()
