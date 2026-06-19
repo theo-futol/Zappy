@@ -19,7 +19,9 @@ clean:
 		fi; \
 	done
 
-fclean: clean
+fclean: clean 
 	-rm -f $(addprefix $(PROJECT_NAME)_,$(BINARIES))
 
-.PHONY: all clean fclean
+re: fclean all
+
+.PHONY: all clean fclean re
