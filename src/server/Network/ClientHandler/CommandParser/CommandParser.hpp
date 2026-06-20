@@ -32,7 +32,7 @@ namespace zappy
     {
     public:
         /// @brief Signature every command handler implements.
-        using Handler = std::function<void(const std::vector<std::string> &cmd, Client &client, Commands &commands)>;
+        using Handler = std::function<std::string(const std::vector<std::string> &cmd, Client &client, Commands &commands)>;
 
         /// @brief Builds a parser for one client.
         /// @param client         The client this parser serves.

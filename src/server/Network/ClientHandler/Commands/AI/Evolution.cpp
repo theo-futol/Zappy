@@ -54,10 +54,8 @@ std::string Commands::Incantation(std::vector<std::string> args, Client &client)
     int level = initiator->getLevel();
     std::string pieHeader = "pie " + std::to_string(pos.x) + " " + std::to_string(pos.y) + " ";
 
-    // Prerequisites must still hold at the end of the ritual, otherwise the elevation fails.
     if (!_world->isIncantationValid(pos.x, pos.y, level))
     {
-        initiator->writeToClient("ko\n");
         _broadcastQueue->push(pieHeader + "0\n");
         return "ko\n";
     }

@@ -174,6 +174,7 @@ bool Player::isFrozen() const
 {
     return std::chrono::steady_clock::now() < _frozenUntil;
 }
+
 Degrees Player::getDirectionTo(const Player &target, std::pair<int, int> mapSize) const
 {
     return getDirectionTo(target.getPosition(), mapSize);
