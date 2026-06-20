@@ -137,6 +137,7 @@ void World::addPlayer(int fd, const std::string &teamName)
     Team *team = getTeamByName(teamName);
     if (!team)
         return;
+    team->addPlayer();
     auto player = std::make_shared<Player>(fd, *team);
     _players.push_back(player);
 }
