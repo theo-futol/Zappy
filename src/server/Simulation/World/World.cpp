@@ -246,9 +246,9 @@ void World::removeIncantationStones(int x, int y, int level)
 
 bool World::checkWinningCondition()
 {
-    int playerCounter = 0;
-
     for (auto &team : _teams)
+    {
+        int playerCounter = 0;
         if (team._slotsOccupied >= 6)
         {
             for (auto &player : _players)
@@ -265,6 +265,7 @@ bool World::checkWinningCondition()
                 return true;
             }
         }
+    }
     return false;
 }
 } // namespace zappy
