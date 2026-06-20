@@ -66,13 +66,18 @@ struct Team
     ///        that one egg; with count == -1, clears every egg on the tile.
     void removeEgg(const position &position, int count = 1, int eggID = -1)
     {
-        _slotsAvailable -= count;
+        if (count == 0)
+            return;
+        int slotsToRemove = 0;
         for (auto it = _eggs.begin(); it != _eggs.end(); ++it)
         {
             if (it->first == position)
             {
                 if (count == -1)
+                {
+                    slotsToRemove = it->second.size();
                     it->second.clear();
+                }
                 else
                 {
                     if (eggID == -1)
@@ -85,9 +90,10 @@ struct Team
                                 break;
                             }
                 }
-                return;
+                break;
             }
         }
+        _slotsAvailable -= slotsToRemove == 0 ? count : slotsToRemove;
     }
     /// @brief Read-only view of all eggs (tile position paired with its egg IDs).
     const std::vector<std::pair<position, std::vector<int>>> &getEggs() const
