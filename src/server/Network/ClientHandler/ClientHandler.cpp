@@ -105,10 +105,8 @@ void ClientHandler::clientEventHandling()
         }
     }
     for (auto &[fd, parser] : _parsers)
-    {
-        while (parser->hasPending())
-            parser->executeNext();
-    }
+        while (parser->executeNext())
+            ;
 }
 
 void ClientHandler::addClient()

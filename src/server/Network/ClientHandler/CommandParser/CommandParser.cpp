@@ -73,14 +73,14 @@ bool CommandParser::feed()
     return true;
 }
 
-void CommandParser::executeNext()
+bool CommandParser::executeNext()
 {
     if (_commandQueue.empty())
-        return;
+        return false;
     if (_client->getType() == ClientType::DEAD)
     {
         _commandQueue.pop();
-        return;
+        return true;
     }
     if (_client->getType() == ClientType::AI)
     {
@@ -89,25 +89,21 @@ void CommandParser::executeNext()
         {
             _client->setType(ClientType::DEAD);
             _commandQueue.pop();
-            return;
+            return true;
         }
         // A frozen player (mid-incantation) must not run any queued command until the ritual ends.
         if (player && player->isFrozen())
-            return;
+            return false;
     }
     if (std::chrono::steady_clock::now() < _commandQueue.front().readyAt)
-        return;
+        return false;
     std::string line = _commandQueue.front().line;
     _commandQueue.pop();
     if (_client->getType() == ClientType::UNKNOWN)
         _handleHandshake(line);
     else
         _dispatch(line);
-}
-
-bool CommandParser::hasPending() const
-{
-    return !_commandQueue.empty();
+    return true;
 }
 
 std::chrono::steady_clock::time_point CommandParser::nextReadyAt() const
