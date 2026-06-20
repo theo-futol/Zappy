@@ -15,7 +15,7 @@ namespace zappy
 /// @brief A single map cell: who is standing on it and what resources lie there.
 struct tile
 {
-    std::vector<std::shared_ptr<Player>> _players;
+    std::vector<Player *> _players; // non-owning: players are owned by World::_players
     std::vector<std::pair<ItemType, int>> _items;
 
     /// @brief Builds an empty tile pre-seeded with a zero count for each resource type.
@@ -44,7 +44,7 @@ using Map = std::vector<std::vector<tile>>;
 class World
 {
   private:
-    std::vector<std::shared_ptr<Player>> _players;
+    std::vector<std::unique_ptr<Player>> _players;
     Map _map;
     std::pair<int, int> _mapSize;
     std::vector<std::shared_ptr<Team>> _teams;
@@ -76,8 +76,8 @@ class World
     void foodCheck();
 
     /// @brief All players currently in the world.
-    std::vector<std::shared_ptr<Player>> &getPlayers();
-    const std::vector<std::shared_ptr<Player>> &getPlayers() const;
+    std::vector<std::unique_ptr<Player>> &getPlayers();
+    const std::vector<std::unique_ptr<Player>> &getPlayers() const;
 
     /// @brief Looks up a player by its client fd, or nullptr if none matches.
     Player *getPlayerByFd(int fd);
@@ -115,5 +115,8 @@ class World
 
     /// @brief Sends a message to every player currently standing on the given tile.
     void sendMessageToPlayersThatAreOnTile(position pos, const std::string &message);
+
+    /// @brief Removes a player from the world and decrease the number of slots occupied in its team. The player is removed from the tile it was standing on and from the list of players in the world.
+    void removePlayer(int fd);
 };
 } // namespace zappy

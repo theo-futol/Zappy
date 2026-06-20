@@ -12,7 +12,7 @@ std::string Commands::Eject(std::vector<std::string> args, Client &client)
     position nextPos = player->nextPosition(_world->getMapSize());
     bool hasEjectedEggs = player->getTeam().hasEggAtPosition(playerPos);
     bool hasEjectedPlayers = false;
-    std::vector<std::shared_ptr<Player>> ejectedPlayers;
+    std::vector<Player *> ejectedPlayers;
 
     // move all players to nextPosition
     tile *currentTile = _world->getTileAt(playerPos);
@@ -26,9 +26,8 @@ std::string Commands::Eject(std::vector<std::string> args, Client &client)
         otherPlayer->setPosition(nextPos.x, nextPos.y, _world->getMapSize());
         _world->getTileAt(nextPos)->_players.push_back(otherPlayer);
     }
-    currentTile->_players.erase(
-        std::remove_if(currentTile->_players.begin(), currentTile->_players.end(), [&player](const std::shared_ptr<Player> &p) { return p->getFd() != player->getFd(); }),
-        currentTile->_players.end());
+    currentTile->_players.erase(std::remove_if(currentTile->_players.begin(), currentTile->_players.end(), [&player](const Player *p) { return p->getFd() != player->getFd(); }),
+                                currentTile->_players.end());
     // destroy all eggs on the tile
     _world->setTileAt(playerPos, ItemType::EGG, 0);
     player->getTeam().removeEgg(playerPos, -1, -1);

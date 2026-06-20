@@ -19,6 +19,12 @@ namespace zappy
             ///        until its first message reveals whether it is graphic or AI.
             Client(int fd, ClientType type = ClientType::UNKNOWN) : _fd(fd), _type(type), _buffer() {}
 
+            /// @brief Closes the owned socket. Destroying a Client releases its fd.
+            ~Client();
+
+            // A Client uniquely owns its fd: copying would risk a double close.
+            Client(const Client &) = delete;
+            Client &operator=(const Client &) = delete;
             // Network related tasks
 
             /// @brief Returns the socket descriptor, used to read/write and to poll this client.

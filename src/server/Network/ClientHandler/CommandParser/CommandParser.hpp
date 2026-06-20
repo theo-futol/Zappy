@@ -50,12 +50,14 @@ namespace zappy
         ///         false if nothing was ready to run (queue empty, command not yet due,
         ///         or the player is frozen) — the caller must stop draining and wait.
         bool executeNext();
+        /// @brief Returns true if the client has been banned for flooding (too many queued commands).
+        /// @return Boolean indicating whether the client is banned for flooding.
+        bool isBanned() const;
 
         /// @brief Returns the readyAt time of the next queued command, or time_point::max() if the queue is empty.
         std::chrono::steady_clock::time_point nextReadyAt() const;
 
     private:
-
         Client *_client;                       ///< Client this parser serves (not owned).
         int _f;                                ///< Reciprocal of the time unit, scales durations.
         World *_world;                         ///< Shared simulation world (not owned).
@@ -64,6 +66,7 @@ namespace zappy
         std::unordered_map<std::string, Handler> _graphicCommands;             ///< Graphic command name -> handler.
         Commands _commands;                    ///< Shared implementation of the command behaviours.
         std::queue<std::string> *_broadcastQueue; ///< Queue for messages to graphic clients (not owned).
+        bool _isBanned;                     ///< True if the client has been banned for flooding.
 
         /// @brief Fills _aiCommands with the AI protocol commands and their durations.
         void _initAICommands();

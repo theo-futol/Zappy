@@ -105,8 +105,15 @@ void ClientHandler::clientEventHandling()
         }
     }
     for (auto &[fd, parser] : _parsers)
+    {
+        if (parser->isBanned())
+        {
+            removeClient(fd);
+            break;
+        }
         while (parser->executeNext())
             ;
+    }
 }
 
 void ClientHandler::addClient()
@@ -122,6 +129,7 @@ void ClientHandler::addClient()
 
 void ClientHandler::removeClient(int fd)
 {
+    _world->removePlayer(fd);
     _parsers.erase(fd);
 
     _clients.erase(std::remove_if(_clients.begin(), _clients.end(), [fd](const std::unique_ptr<Client> &client) { return client->getFd() == fd; }), _clients.end());

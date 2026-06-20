@@ -23,7 +23,7 @@ namespace zappy
 class Player
 {
   private:
-    int _fd; // Needed to link the player to its client
+    int _fd; // Needed to link the player to its client, do not close it here (Client owns the fd)
 
     int _level = 1;
     position _pos;

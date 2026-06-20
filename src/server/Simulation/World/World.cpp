@@ -43,12 +43,12 @@ void World::ressourcePassiveGeneration()
     }
 }
 
-std::vector<std::shared_ptr<Player>> &World::getPlayers()
+std::vector<std::unique_ptr<Player>> &World::getPlayers()
 {
     return _players;
 }
 
-const std::vector<std::shared_ptr<Player>> &World::getPlayers() const
+const std::vector<std::unique_ptr<Player>> &World::getPlayers() const
 {
     return _players;
 }
@@ -138,8 +138,7 @@ void World::addPlayer(int fd, const std::string &teamName)
     if (!team)
         return;
     team->addPlayer();
-    auto player = std::make_shared<Player>(fd, team);
-    _players.push_back(player);
+    _players.push_back(std::make_unique<Player>(fd, team));
 }
 
 void World::sendMessageToPlayersThatAreOnTile(position pos, const std::string &message)
@@ -267,5 +266,15 @@ bool World::checkWinningCondition()
         }
     }
     return false;
+}
+
+void World::removePlayer(int fd)
+{
+    auto it = std::remove_if(_players.begin(), _players.end(), [fd](const std::unique_ptr<Player> &player) { return player->getFd() == fd; });
+    if (it != _players.end())
+    {
+        (*it)->getTeam().removePlayer();
+        _players.erase(it, _players.end());
+    }
 }
 } // namespace zappy

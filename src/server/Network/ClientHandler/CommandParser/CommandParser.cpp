@@ -5,7 +5,7 @@
 namespace zappy
 {
 CommandParser::CommandParser(Client *client, int f, World *world, std::queue<std::string> *broadcastQueue)
-    : _client(client), _f(f), _world(world), _commands(world, broadcastQueue), _broadcastQueue(broadcastQueue)
+    : _client(client), _f(f), _world(world), _commands(world, broadcastQueue), _broadcastQueue(broadcastQueue), _isBanned(false)
 {
     _initAICommands();
     _initGraphicCommands();
@@ -77,6 +77,11 @@ bool CommandParser::executeNext()
 {
     if (_commandQueue.empty())
         return false;
+    if (_commandQueue.size() > 10) //< Ban system
+    {
+        _isBanned = true;
+        return false;
+    }
     if (_client->getType() == ClientType::DEAD)
     {
         _commandQueue.pop();
@@ -170,5 +175,10 @@ void CommandParser::_dispatch(const std::string &line)
         else
             send(_client->getFd(), "suc\n", 4, 0);
     }
+}
+
+bool CommandParser::isBanned() const
+{
+    return _isBanned;
 }
 } // namespace zappy
