@@ -27,8 +27,6 @@ Table of Contents
        5.1.  Client/AI Commands
        5.2.  GUI Protocol
    6.  Security Considerations
-   7.  GUI
-   8.  AI
 
 
 1.  Introduction
@@ -180,8 +178,126 @@ Table of Contents
        of the world: movement, resource spawning, inventories,
        incantations, eggs, and elevation rules.
 
-   [This section will be detailed further as the implementation
-   progresses.]
+4.1.  Life handling
+
+   Every team starts the game with a fixed number of available slots,
+   each represented in the world by an egg. When an AI client connects
+   to a team that still has at least one egg, one pending egg of that
+   team is selected and replaced by a new player: the egg is removed
+   from the world and the player is added in its place, with a
+   random orientation.
+
+   Once spawned, a player holds a life counter expressed in time
+   units. A newly hatched player starts with 10 life units, i.e.
+   1260 time units (10 * 126), or 1260/f seconds. This counter
+   decreases continuously as time passes.
+
+   To stay alive, the player must consume food it has previously
+   collected in its inventory: each unit of food consumed restores
+   126 time units of life. A player that lets its life counter reach
+   0 without having eaten dies immediately.
+
+   On death:
+     - the player is removed from the world (its inventory and
+       position are discarded);
+     - the team slot it occupied is freed;
+     - the team slot counter is decremented;
+     - the server notifies every connected GUI client (`pdi #n`, see
+       Section 5.2) so they can update their representation of the
+       world state;
+     - the corresponding AI client receives the `dead` response (see
+       Section 5.1) and is disconnected.
+
+4.2.  Player representation
+
+   A player is modelled by the `Player` class
+   (src/server/Simulation/Player/Player.hpp). It binds together the
+   client's socket fd, its position and orientation on the map, its
+   team, its level, its inventory, its life-cycle state, and the
+   queue of broadcast messages still to be delivered to it.
+
+   +------------------+-------------------------------------------+----------------------------------------------+
+   | Attribute        | Type                                       | Description                                  |
+   +------------------+-------------------------------------------+----------------------------------------------+
+   | _fd              | int                                         | Socket fd linking the player to its client.  |
+   | _level           | int                                         | Current elevation level (1..8), default 1.   |
+   | _pos             | position                                    | Current tile coordinates.                    |
+   | rotation         | int                                         | Current facing, in degrees.                  |
+   | _team            | std::shared_ptr<Team>                       | Team this player belongs to.                 |
+   | _isLeveling      | bool                                        | True while taking part in an incantation.    |
+   | _inventory       | Inventory                                   | Resources currently held by the player.      |
+   | _state           | PlayerState                                 | Life-cycle state (pending / alive / dead).   |
+   | _messagesToSend  | vector<pair<string,                         | Pending broadcast messages: text, clock +    |
+   |                  | vector<pair<pair<clock_t,int>,int>>>>       | delay before arrival, and receiver fd.       |
+   | _frozenUntil     | std::chrono::steady_clock::time_point       | While in the future, the player is frozen    |
+   |                  |                                             | (e.g. during an incantation) and cannot act. |
+   +------------------+-------------------------------------------+----------------------------------------------+
+
+   +-------------------------------------------------------------+----------------------------------------------------+
+   | Method                                                       | Description                                        |
+   +-------------------------------------------------------------+----------------------------------------------------+
+   | Player(int fd, std::shared_ptr<Team> team)                  | Spawns a player bound to a client fd, in the team. |
+   | const Team &getTeam() const / Team &getTeam()                | This player's team.                                |
+   | const position &getPosition() const                         | Current tile position.                             |
+   | int getRotation() const                                      | Current facing, in degrees.                        |
+   | int getLevel() const                                         | Current elevation level.                           |
+   | Inventory &getInventory()                                    | This player's inventory.                           |
+   | PlayerState getState() const                                 | Life-cycle state.                                  |
+   | int getFd() const                                            | Socket fd linking this player to its client.       |
+   | position nextPosition(std::pair<int,int> mapSize) const     | Tile reached by one forward step, with wrap-around.|
+   | void setRotation(int rotation)                               | Sets the facing direction.                         |
+   | void setPosition(int x, int y, std::pair<int,int> mapSize)   | Places the player at (x, y), wrapping into bounds. |
+   | void changeState(PlayerState newState)                       | Changes the life-cycle state.                      |
+   | void move(std::pair<int,int> mapSize)                        | Moves one tile forward, with wrap-around.          |
+   | void levelUp()                                                | Raises the player one elevation level.             |
+   | void writeToClient(const std::string &message) const        | Sends a raw message to this player's client socket.|
+   | Degrees getDirectionTo(const position &target, ...) const   | Direction toward a target tile, with wrap-around.  |
+   | void setState(PlayerState newState)                          | Sets the life-cycle state.                         |
+   | void setFrozenUntil(std::chrono::steady_clock::time_point)  | Freezes the player until the given time point.     |
+   | bool isFrozen() const                                        | True while the player is frozen and must not act.  |
+   | Degrees getDirectionTo(const Player &target, ...) const     | Direction toward another player, with wrap-around. |
+   | int getDistanceTo(const position &target, ...) const        | Shortest tile distance to a position (toroidal).   |
+   | int getDistanceTo(const Player &target, ...) const          | Shortest tile distance to another player.          |
+   | void sortQueueByTimeNeeded()                                 | Orders the pending-message queue by delivery time. |
+   | void addMessageToQueue(const std::string&, int, int)         | Queues a message for a receiver, after a delay.    |
+   | void sendMessageToClient()                                   | Flushes messages whose delivery time has arrived.  |
+   +-------------------------------------------------------------+----------------------------------------------------+
+
+4.3.  Team representation
+
+   A team is modelled by the `Team` struct
+   (src/server/Simulation/Player/Teams.hpp). It holds the team's
+   name and identifier, the bookkeeping of available/occupied
+   connection slots, and the eggs currently laid on the map -- each
+   egg laid adds a slot, so the slot counters and the egg list are
+   kept consistent through addEgg()/removeEgg().
+
+   +-----------------+------------------------------------+---------------------------------------------+
+   | Attribute       | Type                                 | Description                                 |
+   +-----------------+------------------------------------+---------------------------------------------+
+   | _name           | std::string                          | Team name.                                  |
+   | _teamID         | int                                   | Team identifier.                            |
+   | _slotsAvailable | int                                   | Total slots (initial slots + eggs laid).    |
+   | _slotsOccupied  | int                                   | Number of players currently in the team.    |
+   | _eggs           | std::vector<std::pair<position,      | Eggs of the team, grouped by tile, each     |
+   |                 | std::vector<int>>>                   | tile carrying the list of egg IDs on it.    |
+   | _hasWin         | bool                                  | True once the team has won the game.        |
+   +-----------------+------------------------------------+---------------------------------------------+
+
+   +------------------------------------------------------------------+------------------------------------------------+
+   | Method                                                            | Description                                     |
+   +------------------------------------------------------------------+------------------------------------------------+
+   | Team(const std::string &name, int teamID, int initialSlots)      | Creates a team with its initial connection slots|
+   | bool hasAvailableSlots() const                                    | True if a new player may still connect.         |
+   | int getAvailableSlots() const                                     | Number of free connection slots remaining.      |
+   | void addPlayer()                                                  | Marks one slot as taken (a player connected).   |
+   | void removePlayer()                                               | Frees one occupied slot (a player left).        |
+   | void addEgg(const position &position, int count = 1)             | Lays count eggs at a tile, adding slots and IDs.|
+   | void removeEgg(const position &position, int count = 1,          | Removes eggs at a tile (and their slots); a     |
+   | int eggID = -1)                                                   | specific eggID removes that egg, -1 clears all. |
+   | const std::vector<...> &getEggs() const                          | Read-only view of all eggs of the team.         |
+   | bool hasEggAtPosition(const position &pos) const                 | True if at least one egg sits on the given tile.|
+   +------------------------------------------------------------------+------------------------------------------------+
 
 
 5.  Commands
@@ -227,6 +343,109 @@ Table of Contents
    Tiles are separated by a comma, optionally followed by a space.
    An empty tile is represented by an empty field between separators.
 
+   Below is a short description of each command, with the input sent
+   by the client and the output returned by the server, in both the
+   success and the failure case.
+
+   Forward
+        Input:   "Forward\n"
+        Success: the player moves one tile forward in the direction
+                 it is currently facing (with wrap-around on map
+                 edges); the server replies "ok\n".
+        Failure: none (the command always succeeds for a living
+                 player); an unknown/malformed command still replies
+                 "ko\n".
+
+   Right / Left
+        Input:   "Right\n" / "Left\n"
+        Success: the player turns 90 degrees clockwise / counter-
+                 clockwise on the spot; the server replies "ok\n".
+        Failure: none; replies "ko\n" only for a malformed command.
+
+   Look
+        Input:   "Look\n"
+        Success: the server replies with the content of every tile in
+                 the player's field of vision (Section 6 of the
+                 subject), e.g. "[player, , thystame, , food, ...]\n".
+        Failure: replies "ko\n" if the command itself is malformed.
+
+   Inventory
+        Input:   "Inventory\n"
+        Success: the server replies with the quantity held of each
+                 resource and the player's remaining life, e.g.
+                 "[food 345, sibur 3, phiras 5, ..., deraumere 0]\n".
+        Failure: replies "ko\n" if the command itself is malformed.
+
+   Broadcast <text>
+        Input:   "Broadcast <text>\n"
+        Success: every connected player receives
+                 "message K, <text>\n", where K is the tile number
+                 indicating the direction the sound came from
+                 (Section 7 of the subject); the broadcaster itself
+                 receives "ok\n".
+        Failure: "ko\n" if no text is given.
+
+   Connect_nbr
+        Input:   "Connect_nbr\n"
+        Success: the server replies with the number of slots still
+                 available (eggs not yet hatched) for the sender's
+                 team, e.g. "3\n".
+        Failure: none; replies "ko\n" only for a malformed command.
+
+   Fork
+        Input:   "Fork\n"
+        Success: the player lays one egg on its own tile, adding a
+                 new connection slot to its team; the server replies
+                 "ok\n".
+        Failure: none; replies "ko\n" only for a malformed command.
+
+   Eject
+        Input:   "Eject\n"
+        Success: every other player sharing the tile is pushed one
+                 tile away in the direction the ejecting player is
+                 facing (destroying any egg laid on that tile), and
+                 each of them receives "eject: K\n" (K being the
+                 direction the push is coming from); the ejecting
+                 player receives "ok\n".
+        Failure: "ko\n" if the player is alone on its tile.
+
+   Take <object>
+        Input:   "Take <object>\n"
+        Success: one unit of <object> is removed from the tile and
+                 added to the player's inventory; the server replies
+                 "ok\n".
+        Failure: "ko\n" if the tile holds no unit of <object>, or if
+                 <object> is not a valid resource name.
+
+   Set <object>
+        Input:   "Set <object>\n"
+        Success: one unit of <object> is removed from the player's
+                 inventory and dropped on its tile; the server
+                 replies "ok\n".
+        Failure: "ko\n" if the player does not hold <object>, or if
+                 <object> is not a valid resource name.
+
+   Incantation
+        Input:   "Incantation\n"
+        Success: if the tile holds the required number of players of
+                 the same level and the required stones (Section 5 of
+                 the subject), the incantation starts and every
+                 participant receives "Elevation underway\n"; once it
+                 completes, the stones are consumed and every
+                 participant is raised one level and receives
+                 "Current level: k\n" (k being the new level).
+        Failure: "ko\n" immediately if the prerequisites are not met
+                 when the ritual starts, or to every participant if
+                 they are no longer met when it ends.
+
+   Death
+        Input:   none -- triggered automatically when the player's
+                 life counter reaches 0 (Section 4.1).
+        Success: the server sends "dead\n" to the corresponding
+                 client and closes its connection; the player is
+                 removed from the world and the team slot is freed.
+        Failure: not applicable.
+
 5.2.  GUI Protocol
 
    A GUI client authenticates by sending `GRAPHIC` as its team name
@@ -265,16 +484,6 @@ Table of Contents
 
 
 6.  Security Considerations
-
-   [To be completed.]
-
-
-7.  GUI
-
-   [To be completed.]
-
-
-8.  AI
 
    [To be completed.]
 
