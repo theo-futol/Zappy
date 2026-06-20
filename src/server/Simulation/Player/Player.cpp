@@ -162,6 +162,8 @@ Degrees Player::getDirectionTo(const position &target, std::pair<int, int> mapSi
 
 void Player::setState(PlayerState newState)
 {
+    if (newState == PlayerState::DEAD)
+        _team.removePlayer();
     _state = newState;
 }
 

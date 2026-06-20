@@ -44,8 +44,10 @@ struct Team
     /// @brief Frees one occupied slot (a player left), never going below zero.
     void removePlayer()
     {
-        if (_slotsOccupied > 0)
+        if (_slotsOccupied > 0){
             --_slotsOccupied;
+            --_slotsAvailable;
+        }
     }
     /// @brief Lays count eggs at the given tile, each adding a slot and a unique ID.
     void addEgg(const position &position, int count = 1)
