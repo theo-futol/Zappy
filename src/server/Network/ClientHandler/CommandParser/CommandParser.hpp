@@ -46,10 +46,10 @@ namespace zappy
         bool feed();
 
         /// @brief Dispatches the next queued command if its time has come.
-        void executeNext();
-
-        /// @brief Returns true if there are commands waiting in the queue.
-        bool hasPending() const;
+        /// @return true if a command was consumed (caller may try again immediately),
+        ///         false if nothing was ready to run (queue empty, command not yet due,
+        ///         or the player is frozen) — the caller must stop draining and wait.
+        bool executeNext();
 
         /// @brief Returns the readyAt time of the next queued command, or time_point::max() if the queue is empty.
         std::chrono::steady_clock::time_point nextReadyAt() const;
