@@ -109,36 +109,36 @@ void World::setTileAt(position pos, ItemType itemType, int count)
 int World::getAvailableSlotsForTeam(const std::string &teamName) const
 {
     for (const auto &team : _teams)
-        if (team._name == teamName)
-            return team.getAvailableSlots();
+        if (team->_name == teamName)
+            return team->getAvailableSlots();
     return -1;
 }
 
 void World::addTeam(const std::string &name, int teamID, int initialSlots)
 {
-    _teams.emplace_back(name, teamID, initialSlots);
+    _teams.push_back(std::make_shared<Team>(name, teamID, initialSlots));
 }
 
-Team *World::getTeamByName(const std::string &name)
+std::shared_ptr<Team> World::getTeamByName(const std::string &name)
 {
     for (auto &team : _teams)
-        if (team._name == name)
-            return &team;
+        if (team->_name == name)
+            return team;
     return nullptr;
 }
 
-std::vector<Team> &World::getTeams()
+std::vector<std::shared_ptr<Team>> &World::getTeams()
 {
     return _teams;
 }
 
 void World::addPlayer(int fd, const std::string &teamName)
 {
-    Team *team = getTeamByName(teamName);
+    std::shared_ptr<Team> team = getTeamByName(teamName);
     if (!team)
         return;
     team->addPlayer();
-    auto player = std::make_shared<Player>(fd, *team);
+    auto player = std::make_shared<Player>(fd, team);
     _players.push_back(player);
 }
 
@@ -249,19 +249,19 @@ bool World::checkWinningCondition()
     for (auto &team : _teams)
     {
         int playerCounter = 0;
-        if (team._slotsOccupied >= 6)
+        if (team->_slotsOccupied >= 6)
         {
             for (auto &player : _players)
             {
-                if (player->getTeam()._name != team._name)
+                if (player->getTeam()._name != team->_name)
                     continue;
                 if (player->getLevel() >= 8)
                     playerCounter++;
             }
             if (playerCounter >= 6)
             {
-                _broadcastQueue->push("seg " + team._name + "\n");
-                team._hasWin = true;
+                _broadcastQueue->push("seg " + team->_name + "\n");
+                team->_hasWin = true;
                 return true;
             }
         }

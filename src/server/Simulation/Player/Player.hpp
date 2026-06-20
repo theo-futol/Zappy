@@ -3,6 +3,7 @@
 #include <math.h>
 #include <algorithm>
 #include <chrono>
+#include <memory>
 
 #include "../../ServerException/ServerException.hpp"
 #include "Inventory/Inventory.hpp"
@@ -27,7 +28,7 @@ class Player
     int _level = 1;
     position _pos;
     int rotation;
-    Team _team;
+    std::shared_ptr<Team> _team;
     bool _isLeveling;
     Inventory _inventory;
     PlayerState _state;
@@ -36,7 +37,7 @@ class Player
 
   public:
     /// @brief Spawns a player bound to a client fd, as a member of the given team.
-    Player(int fd, const Team &team);
+    Player(int fd, std::shared_ptr<Team> team);
 
     /// @brief The team this player belongs to.
     const Team &getTeam() const;

@@ -47,7 +47,7 @@ class World
     std::vector<std::shared_ptr<Player>> _players;
     Map _map;
     std::pair<int, int> _mapSize;
-    std::vector<Team> _teams;
+    std::vector<std::shared_ptr<Team>> _teams;
     std::queue<std::string> *_broadcastQueue;
 
 
@@ -91,7 +91,7 @@ class World
 
 
     /// @brief All teams in the game.
-    std::vector<Team>& getTeams();
+    std::vector<std::shared_ptr<Team>>& getTeams();
 
     /// @brief Returns the tile the given player is standing on.
     tile *getTileAt(int playerID);
@@ -108,7 +108,7 @@ class World
     void addTeam(const std::string &name, int teamID, int initialSlots);
 
     /// @brief Looks up a team by name, or nullptr if it does not exist.
-    Team *getTeamByName(const std::string &name);
+    std::shared_ptr<Team> getTeamByName(const std::string &name);
 
     /// @brief Creates a player on the named team and places it in the world.
     void addPlayer(int fd, const std::string &teamName);

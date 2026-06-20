@@ -3,7 +3,7 @@
 namespace zappy
 {
 
-Player::Player(int fd, const Team &team) : _fd(fd), _pos{0, 0}, rotation(Degrees::NORTH), _team(team), _isLeveling(false), _inventory(), _state(PlayerState::PENDING)
+Player::Player(int fd, std::shared_ptr<Team> team) : _fd(fd), _pos{0, 0}, rotation(Degrees::NORTH), _team(team), _isLeveling(false), _inventory(), _state(PlayerState::PENDING)
 {
     _inventory.addItem(ItemType::FOOD, 10);
 }
@@ -98,7 +98,7 @@ Inventory &Player::getInventory()
 
 Team &Player::getTeam()
 {
-    return _team;
+    return *_team;
 }
 
 int Player::getFd() const
@@ -108,7 +108,7 @@ int Player::getFd() const
 
 const Team &Player::getTeam() const
 {
-    return _team;
+    return *_team;
 }
 
 void Player::changeState(PlayerState newState)
@@ -163,7 +163,7 @@ Degrees Player::getDirectionTo(const position &target, std::pair<int, int> mapSi
 void Player::setState(PlayerState newState)
 {
     if (newState == PlayerState::DEAD)
-        _team.removePlayer();
+        _team->removePlayer();
     _state = newState;
 }
 
