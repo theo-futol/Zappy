@@ -12,21 +12,21 @@ std::string Commands::Eject(std::vector<std::string> args, Client &client)
     position nextPos = player->nextPosition(_world->getMapSize());
     bool hasEjectedEggs = player->getTeam().hasEggAtPosition(playerPos);
     bool hasEjectedPlayers = false;
-    std::vector<Player *> ejectedPlayers;
 
     // move all players to nextPosition
     tile *currentTile = _world->getTileAt(playerPos);
     _world->sendMessageToPlayersThatAreOnTile(playerPos, "eject: " + std::to_string(player->getRotation()) + "\n");
     for (const auto &otherPlayer : currentTile->_players)
-        if (otherPlayer->getFd() != player->getFd())
-            ejectedPlayers.push_back(otherPlayer);
-    for (const auto &otherPlayer : ejectedPlayers)
     {
-        hasEjectedPlayers = true;
-        otherPlayer->setPosition(nextPos.x, nextPos.y, _world->getMapSize());
-        _world->getTileAt(nextPos)->_players.push_back(otherPlayer);
+        if (otherPlayer->getFd() != player->getFd() && nextPos != playerPos)
+        {
+            hasEjectedPlayers = true;
+            otherPlayer->setPosition(nextPos.x, nextPos.y, _world->getMapSize());
+            _world->getTileAt(nextPos)->_players.push_back(otherPlayer);
+        }
     }
-    currentTile->_players.erase(std::remove_if(currentTile->_players.begin(), currentTile->_players.end(), [&player](const Player *p) { return p->getFd() != player->getFd(); }),
+    currentTile->_players.erase(std::remove_if(currentTile->_players.begin(), currentTile->_players.end(),
+                                               [&player, &nextPos, &playerPos](const Player *p) { return p->getFd() != player->getFd() && p->getPosition() != playerPos; }),
                                 currentTile->_players.end());
     // destroy all eggs on the tile
     _world->setTileAt(playerPos, ItemType::EGG, 0);
