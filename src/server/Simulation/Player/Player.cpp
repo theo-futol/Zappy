@@ -157,7 +157,7 @@ Degrees Player::getDirectionTo(const position &target, std::pair<int, int> mapSi
         dx = mapSize.first - dx;
     if (std::abs(dy) > (mapSize.second - std::abs(dy)))
         dy = mapSize.second - dy;
-    return static_cast<Degrees>(std::atan2(dy, dx) * 100);
+    return Direction::getNearestDirection(std::atan2(dy, dx) * 100);
 }
 
 void Player::setState(PlayerState newState)
