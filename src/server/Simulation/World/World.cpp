@@ -156,22 +156,24 @@ void World::setBroadCastQueue(std::queue<std::string> *broadcastQueue)
     _broadcastQueue = broadcastQueue;
 }
 
-void World::foodCheck()
+std::vector<int> World::foodCheck()
 {
-    for (auto player = _players.begin(); player != _players.end();)
+    std::vector<int> deadFds;
+
+    for (const auto &player : _players)
     {
-        if (player->get()->getInventory().getItemCount(ItemType::FOOD) <= 0)
+        if (player->getInventory().getItemCount(ItemType::FOOD) <= 0)
         {
-            _broadcastQueue->push("pdi " + std::to_string(player->get()->getFd()) + "\n");
-            player->get()->setState(PlayerState::DEAD);
-            player = _players.erase(player);
+            _broadcastQueue->push("pdi " + std::to_string(player->getFd()) + "\n");
+            player->setState(PlayerState::DEAD);
+            deadFds.push_back(player->getFd());
         }
         else
-        {
-            player->get()->getInventory().removeItem(ItemType::FOOD);
-            player++;
-        }
+            player->getInventory().removeItem(ItemType::FOOD);
     }
+    for (int fd : deadFds)
+        removePlayer(fd);
+    return deadFds;
 }
 
 static const std::vector<ElevationRequirement> elevationRequirements = {
@@ -270,11 +272,13 @@ bool World::checkWinningCondition()
 
 void World::removePlayer(int fd)
 {
-    auto it = std::remove_if(_players.begin(), _players.end(), [fd](const std::unique_ptr<Player> &player) { return player->getFd() == fd; });
-    if (it != _players.end())
-    {
+    auto it = std::find_if(_players.begin(), _players.end(), [fd](const std::unique_ptr<Player> &player) { return player->getFd() == fd; });
+
+    if (it == _players.end())
+        return;
+    // setState(DEAD) already frees the team slot (see Player::setState); avoid freeing it twice.
+    if ((*it)->getState() != PlayerState::DEAD)
         (*it)->getTeam().removePlayer();
-        _players.erase(it, _players.end());
-    }
+    _players.erase(it);
 }
 } // namespace zappy

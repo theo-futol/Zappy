@@ -84,18 +84,13 @@ bool CommandParser::executeNext()
     }
     if (_client->getType() == ClientType::DEAD)
     {
+        send(_client->getFd(), "dead\n", 5, 0);
         _commandQueue.pop();
         return true;
     }
     if (_client->getType() == ClientType::AI)
     {
         Player *player = _world->getPlayerByFd(_client->getFd());
-        if (player && player->getState() == PlayerState::DEAD)
-        {
-            _client->setType(ClientType::DEAD);
-            _commandQueue.pop();
-            return true;
-        }
         // A frozen player (mid-incantation) must not run any queued command until the ritual ends.
         if (player && player->isFrozen())
             return false;

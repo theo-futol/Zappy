@@ -73,7 +73,8 @@ class World
     bool checkWinningCondition();
 
     /// @brief Consumes one food unit per player and kills those who have starved.
-    void foodCheck();
+    /// @return The fds of the players that died of starvation this tick.
+    std::vector<int> foodCheck();
 
     /// @brief All players currently in the world.
     std::vector<std::unique_ptr<Player>> &getPlayers();
