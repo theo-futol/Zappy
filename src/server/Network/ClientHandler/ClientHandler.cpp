@@ -57,10 +57,14 @@ void ClientHandler::handleClients(void)
         }
         if (now - _lastFoodUpdate >= foodIntervalMs)
         {
-            _world->foodCheck();
+            for (int fd : _world->foodCheck())
+            {
+                Client *client = getClientByFd(fd);
+                if (client)
+                    client->setType(ClientType::DEAD);
+            }
             _lastFoodUpdate = now;
         }
-
         clientEventHandling();
         if (_world->checkWinningCondition())
             *_serverIsRunning = false;
