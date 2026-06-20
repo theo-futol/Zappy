@@ -164,7 +164,8 @@ std::vector<int> World::foodCheck()
     {
         if (player->getInventory().getItemCount(ItemType::FOOD) <= 0)
         {
-            _broadcastQueue->push("pdi " + std::to_string(player->getFd()) + "\n");
+            if (_broadcastQueue)
+                _broadcastQueue->push("pdi " + std::to_string(player->getFd()) + "\n");
             player->setState(PlayerState::DEAD);
             deadFds.push_back(player->getFd());
         }
