@@ -1,0 +1,5 @@
+<map id="zappy::Team::removeEgg" name="zappy::Team::removeEgg">
+<area shape="rect" id="Node000001" title="Removes eggs at a tile (and their slots). With eggID set, removes just that one egg; with count == &#45;1..." alt="" coords="5,5,191,31"/>
+<area shape="rect" id="Node000002" href="$namespacezappy.html#a6f4c56af6fff80513c2388249fd217f4" title=" " alt="" coords="239,5,384,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="191,15,225,15,225,21,191,21"/>
+</map>

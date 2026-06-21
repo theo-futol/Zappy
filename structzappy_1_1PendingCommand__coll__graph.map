@@ -1,0 +1,3 @@
+<map id="zappy::PendingCommand" name="zappy::PendingCommand">
+<area shape="rect" id="Node000001" title="A command waiting in a client&#39;s queue together with the time it may run." alt="" coords="5,5,184,91"/>
+</map>

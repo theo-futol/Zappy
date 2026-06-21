@@ -1,0 +1,7 @@
+<map id="zappy::Commands::Tna" name="zappy::Commands::Tna">
+<area shape="rect" id="Node000001" title="tna: reports the name of every team." alt="" coords="459,13,633,38"/>
+<area shape="rect" id="Node000002" href="$classzappy_1_1CommandParser.html#afc4da6302e4998b21a8b2339d7dc372a" title="Fills _graphicCommands with the graphic protocol commands." alt="" coords="228,5,411,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="444,28,411,28,411,23,444,23"/>
+<area shape="rect" id="Node000003" href="$classzappy_1_1CommandParser.html#ac273c38a60fcb6825770e5a4f2ca43c0" title="Builds a parser for one client." alt="" coords="5,5,180,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="214,28,180,28,180,23,214,23"/>
+</map>

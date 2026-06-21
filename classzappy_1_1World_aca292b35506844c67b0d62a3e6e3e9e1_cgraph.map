@@ -1,0 +1,11 @@
+<map id="zappy::World::removePlayer" name="zappy::World::removePlayer">
+<area shape="rect" id="Node000001" title="Removes a player from the world and decrease the number of slots occupied in its team...." alt="" coords="5,80,209,105"/>
+<area shape="rect" id="Node000002" href="$classzappy_1_1Player.html#a7382412b718c7828587ced9e7168bdf3" title="The socket fd linking this player to its client." alt="" coords="281,5,436,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="142,77,257,39,287,31,288,36,258,45,144,82"/>
+<area shape="rect" id="Node000003" href="$classzappy_1_1Player.html#a631fcf2698ec9ac726147ca31184e354" title="Life&#45;cycle state (pending / alive / dead)." alt="" coords="273,55,445,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="209,80,259,75,259,80,210,85"/>
+<area shape="rect" id="Node000004" href="$classzappy_1_1Player.html#ad714c54e4fcee0484d05ad253ab10ccb" title=" " alt="" coords="272,104,445,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="210,100,259,104,258,110,209,105"/>
+<area shape="rect" id="Node000005" href="$structzappy_1_1Team.html#a28b10ed41422bcd6fb1b4fcb58956758" title="Frees one occupied slot (a player left), never going below zero." alt="" coords="257,153,460,179"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="147,103,258,138,292,147,290,152,257,143,145,108"/>
+</map>

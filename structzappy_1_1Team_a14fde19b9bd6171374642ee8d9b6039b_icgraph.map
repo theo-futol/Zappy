@@ -1,0 +1,9 @@
+<map id="zappy::Team::addEgg" name="zappy::Team::addEgg">
+<area shape="rect" id="Node000001" title="Lays count eggs at the given tile, each adding a slot and a unique ID." alt="" coords="677,13,836,38"/>
+<area shape="rect" id="Node000002" href="$classzappy_1_1Commands.html#a1f87b8dcf9ba3044afcca829b91c6082" title="Lays an egg on the current tile, opening a new team slot." alt="" coords="451,13,629,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="663,28,630,28,630,23,663,23"/>
+<area shape="rect" id="Node000003" href="$classzappy_1_1CommandParser.html#a629df3248cf7038782f23805ea6c806e" title="Fills _aiCommands with the AI protocol commands and their durations." alt="" coords="228,5,403,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="437,28,403,28,403,23,437,23"/>
+<area shape="rect" id="Node000004" href="$classzappy_1_1CommandParser.html#ac273c38a60fcb6825770e5a4f2ca43c0" title="Builds a parser for one client." alt="" coords="5,5,180,45"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="214,28,180,28,180,23,214,23"/>
+</map>

@@ -1,0 +1,16 @@
+<map id="zappy::World::removePlayer" name="zappy::World::removePlayer">
+<area shape="rect" id="Node000001" title="Removes a player from the world and decrease the number of slots occupied in its team...." alt="" coords="924,35,1128,60"/>
+<area shape="rect" id="Node000002" href="$classzappy_1_1World.html#a779b35cdefa7a85d2f888890ad2ec84b" title="Consumes one food unit per player and kills those who have starved." alt="" coords="488,5,671,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="910,42,671,27,671,21,910,37"/>
+<area shape="rect" id="Node000006" href="$classzappy_1_1ClientHandler.html#a84580c1dc7567be8362c01f79afe5d61" title="Removes a client, its parser, and its fd from all internal structures." alt="" coords="719,55,876,95"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="910,64,877,68,876,63,910,59"/>
+<area shape="rect" id="Node000003" href="$classzappy_1_1ClientHandler.html#afdb8fe8ed8f6188e930880e315fb2c4a" title="Runs the blocking event loop: polls for I/O, accepts new clients, dispatches commands,..." alt="" coords="283,27,440,67"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="475,35,440,39,440,34,474,29"/>
+<area shape="rect" id="Node000004" href="$classzappy_1_1Core.html#a6cedeb79a573e46f2131b71d3ca17a31" title="Builds the world and network handler, then runs the blocking event loop." alt="" coords="108,35,235,60"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="269,50,235,50,235,45,269,45"/>
+<area shape="rect" id="Node000005" href="$main_8cpp.html#a0c99d968a34e803d378692bde2e3f18f" title=" " alt="" coords="5,35,60,60"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="95,50,60,50,60,45,95,45"/>
+<area shape="rect" id="Node000007" href="$classzappy_1_1ClientHandler.html#a1ed7cca92089d8c0c1743aa93167af4b" title=" " alt="" coords="499,55,660,95"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="705,78,660,78,660,73,705,73"/>
+<area shape="poly" id="edge7_Node000007_Node000003" title=" " alt="" coords="485,66,440,60,440,55,485,61"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="zappy::Team::hasEggAtPosition" name="zappy::Team::hasEggAtPosition">
+<area shape="rect" id="Node000001" title="True if at least one egg is currently sitting on the given tile." alt="" coords="5,5,229,31"/>
+<area shape="rect" id="Node000002" href="$namespacezappy.html#a6f4c56af6fff80513c2388249fd217f4" title=" " alt="" coords="277,5,423,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="230,15,263,15,263,21,230,21"/>
+</map>

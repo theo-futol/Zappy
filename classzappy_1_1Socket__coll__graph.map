@@ -1,0 +1,3 @@
+<map id="zappy::Socket" name="zappy::Socket">
+<area shape="rect" id="Node000001" title="Thin RAII wrapper around a single BSD socket file descriptor." alt="" coords="5,5,108,251"/>
+</map>

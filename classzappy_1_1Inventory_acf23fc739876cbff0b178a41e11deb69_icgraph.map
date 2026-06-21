@@ -1,0 +1,17 @@
+<map id="zappy::Inventory::removeItem" name="zappy::Inventory::removeItem">
+<area shape="rect" id="Node000001" title="Removes quantity of the given item." alt="" coords="784,46,1001,71"/>
+<area shape="rect" id="Node000002" href="$classzappy_1_1World.html#a779b35cdefa7a85d2f888890ad2ec84b" title="Consumes one food unit per player and kills those who have starved." alt="" coords="553,17,736,42"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="771,47,736,43,737,37,772,42"/>
+<area shape="rect" id="Node000006" href="$classzappy_1_1Commands.html#a780efbdebf71f3a24cdf54e305edae70" title="Drops a named resource from the inventory onto the current tile." alt="" coords="559,70,730,95"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="771,73,731,77,730,72,770,68"/>
+<area shape="rect" id="Node000003" href="$classzappy_1_1ClientHandler.html#afdb8fe8ed8f6188e930880e315fb2c4a" title="Runs the blocking event loop: polls for I/O, accepts new clients, dispatches commands,..." alt="" coords="339,5,497,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="539,30,497,29,497,24,539,25"/>
+<area shape="rect" id="Node000004" href="$classzappy_1_1Core.html#a6cedeb79a573e46f2131b71d3ca17a31" title="Builds the world and network handler, then runs the blocking event loop." alt="" coords="132,13,259,38"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="325,28,259,28,259,23,325,23"/>
+<area shape="rect" id="Node000005" href="$main_8cpp.html#a0c99d968a34e803d378692bde2e3f18f" title=" " alt="" coords="5,13,60,38"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="118,28,60,28,60,23,118,23"/>
+<area shape="rect" id="Node000007" href="$classzappy_1_1CommandParser.html#a629df3248cf7038782f23805ea6c806e" title="Fills _aiCommands with the AI protocol commands and their durations." alt="" coords="331,69,505,109"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="546,88,505,89,505,84,546,83"/>
+<area shape="rect" id="Node000008" href="$classzappy_1_1CommandParser.html#ac273c38a60fcb6825770e5a4f2ca43c0" title="Builds a parser for one client." alt="" coords="108,69,283,109"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="317,92,283,92,283,87,317,87"/>
+</map>

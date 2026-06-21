@@ -1,0 +1,5 @@
+<map id="zappy::ClientHandler::addClient" name="zappy::ClientHandler::addClient">
+<area shape="rect" id="Node000001" title="Accepts a new incoming connection, sends the WELCOME handshake, and registers the client and its pars..." alt="" coords="5,5,163,45"/>
+<area shape="rect" id="Node000002" href="$classzappy_1_1Socket.html#af1396d1bb8966c01ad8b62122165c0b9" title="Accepts a pending connection." alt="" coords="211,13,373,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="163,23,197,23,197,28,163,28"/>
+</map>

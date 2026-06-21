@@ -1,0 +1,5 @@
+<map id="zappy::Commands::Bct" name="zappy::Commands::Bct">
+<area shape="rect" id="Node000001" title="bct: reports the content of a single tile." alt="" coords="5,5,176,31"/>
+<area shape="rect" id="Node000002" href="$classzappy_1_1World.html#a9fce895cc2d62e61b943f7d9e03471db" title="Returns the tile at the given coordinates." alt="" coords="224,5,396,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="176,15,210,15,210,21,176,21"/>
+</map>

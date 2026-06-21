@@ -1,0 +1,30 @@
+<map id="src/server/Network/ClientHandler" name="src/server/Network/ClientHandler">
+<area shape="rect" id="node1" href="dir_4f21ac8bc69899bce4caaf78fbfec492.html" title="Client" alt="" coords="29,283,89,308"/>
+<area shape="rect" id="node2" href="dir_8c2ffaa8d549d621a6c54a045212b686.html" title="Socket" alt="" coords="207,136,273,161"/>
+<area shape="poly" id="edge1" href="dir_000003_000002.html" alt="" coords="99,90,68,109,54,122,44,137,34,171,34,207,41,241,51,269,46,271,36,242,29,207,28,170,39,135,50,119,65,105,96,86"/>
+<area shape="rect" id="edge1-headlabel" href="dir_000003_000002.html" title="3" alt="" coords="49,255,59,270"/>
+<area shape="poly" id="edge2" href="dir_000003_000014.html" alt="" coords="146,86,212,126,209,131,143,90"/>
+<area shape="rect" id="edge2-headlabel" href="dir_000003_000014.html" title="1" alt="" coords="206,112,215,126"/>
+<area shape="rect" id="node4" href="dir_9afaf81f30d27c3e5c975779c870a006.html" title="CommandParser" alt="" coords="54,136,183,161"/>
+<area shape="poly" id="edge4" href="dir_000003_000004.html" alt="" coords="128,89,124,123,119,122,123,88"/>
+<area shape="rect" id="edge4-headlabel" href="dir_000003_000004.html" title="1" alt="" coords="126,111,135,126"/>
+<area shape="rect" id="node6" href="dir_8d263310e1a82a7c2dbdbf52fb5226f3.html" title="Simulation" alt="" coords="295,283,387,308"/>
+<area shape="poly" id="edge3" href="dir_000003_000013.html" alt="" coords="183,82,239,100,267,114,291,134,314,166,329,202,338,238,342,268,337,269,333,239,324,204,309,169,287,138,264,119,237,104,181,87"/>
+<area shape="rect" id="edge3-headlabel" href="dir_000003_000013.html" title="4" alt="" coords="343,256,352,271"/>
+<area shape="rect" id="node7" href="dir_a3562cb9c60b40c9fce4fc861cf013f9.html" title="ServerException" alt="" coords="348,136,476,161"/>
+<area shape="poly" id="edge5" href="dir_000003_000012.html" alt="" coords="173,85,353,130,352,135,172,91"/>
+<area shape="rect" id="edge5-headlabel" href="dir_000003_000012.html" title="1" alt="" coords="346,116,355,131"/>
+<area shape="poly" id="edge7" href="dir_000004_000002.html" alt="" coords="109,163,90,184,74,210,66,240,62,269,57,269,60,239,70,208,86,181,105,160"/>
+<area shape="rect" id="edge7-headlabel" href="dir_000004_000002.html" title="1" alt="" coords="63,257,73,272"/>
+<area shape="rect" id="node5" href="dir_3c60a0cde8bbb013f195215eabf283d4.html" title="Commands" alt="" coords="84,209,180,235"/>
+<area shape="poly" id="edge6" href="dir_000004_000005.html" alt="" coords="123,161,130,195,125,196,118,162"/>
+<area shape="rect" id="edge6-headlabel" href="dir_000004_000005.html" title="1" alt="" coords="130,183,139,197"/>
+<area shape="poly" id="edge8" href="dir_000004_000013.html" alt="" coords="138,159,313,273,310,277,135,164"/>
+<area shape="rect" id="edge8-headlabel" href="dir_000004_000013.html" title="1" alt="" coords="308,258,317,273"/>
+<area shape="poly" id="edge9" href="dir_000005_000002.html" alt="" coords="122,237,82,275,79,271,118,233"/>
+<area shape="rect" id="edge9-headlabel" href="dir_000005_000002.html" title="1" alt="" coords="85,269,94,283"/>
+<area shape="poly" id="edge10" href="dir_000005_000013.html" alt="" coords="166,232,295,276,293,281,165,237"/>
+<area shape="rect" id="edge10-headlabel" href="dir_000005_000013.html" title="2" alt="" coords="288,261,298,276"/>
+<area shape="rect" id="clust2" href="dir_0a4f5d35a540b1c515425d8403457bb5.html" alt="" coords="44,52,193,245"/>
+<area shape="rect" id="clust1" href="dir_296963fbc1009e29fdfef810e4621a9d.html" title="Network" alt="" coords="16,16,284,319"/>
+</map>

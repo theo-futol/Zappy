@@ -1,0 +1,7 @@
+<map id="zappy::ClientHandler::broadcastGuiInfo" name="zappy::ClientHandler::broadcastGuiInfo">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,23,163,63"/>
+<area shape="rect" id="Node000002" href="$classzappy_1_1Client.html#aafed3af6e0e3c858d9581a3d9df81218" title="Returns the socket descriptor, used to read/write and to poll this client." alt="" coords="218,5,369,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="163,31,204,26,205,31,163,36"/>
+<area shape="rect" id="Node000003" href="$classzappy_1_1Client.html#af3593a65bba2a2527669eb4a05a618b8" title="Returns the connection&#39;s current role." alt="" coords="211,55,376,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="163,50,197,54,197,59,163,55"/>
+</map>

@@ -1,0 +1,12 @@
+<map id="zappy::Commands::Ppo" name="zappy::Commands::Ppo">
+<area shape="rect" id="Node000001" title="ppo: reports a player&#39;s position and orientation." alt="" coords="5,56,180,81"/>
+<area shape="rect" id="Node000002" href="$classzappy_1_1Player.html#a7382412b718c7828587ced9e7168bdf3" title="The socket fd linking this player to its client." alt="" coords="484,5,639,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="118,53,168,32,227,15,290,7,354,4,470,7,470,12,354,9,291,12,229,21,170,37,120,58"/>
+<area shape="rect" id="Node000003" href="$classzappy_1_1World.html#a439edc13734fbf59d0d280327b4ba191" title="Looks up a player by its client fd, or nullptr if none matches." alt="" coords="228,31,436,56"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="180,57,214,53,215,58,180,62"/>
+<area shape="rect" id="Node000004" href="$classzappy_1_1Player.html#aff283e814b7f01d4ad7398d7c20794e6" title="Current tile position." alt="" coords="237,80,427,105"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="180,75,223,79,223,84,180,80"/>
+<area shape="rect" id="Node000005" href="$classzappy_1_1Player.html#a90f0e1c135399b478553f45d2eea9af2" title="Current facing, in degrees (see Degrees)." alt="" coords="235,129,429,155"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="128,79,229,114,262,123,261,129,227,119,126,84"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="436,29,470,25,471,31,436,35"/>
+</map>

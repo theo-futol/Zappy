@@ -1,0 +1,5 @@
+<map id="zappy::Core" name="zappy::Core">
+<area shape="rect" id="Node000001" title="Top&#45;level server object: owns the world and the network handler and wires them together from the pars..." alt="" coords="5,313,167,559"/>
+<area shape="rect" id="Node000002" href="$classzappy_1_1ArgParser.html" title="Command&#45;line argument parser with runtime flag registration." alt="" coords="25,5,147,251"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="89,251,89,297,83,297,83,251"/>
+</map>

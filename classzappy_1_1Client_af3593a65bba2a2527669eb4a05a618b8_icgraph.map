@@ -1,0 +1,25 @@
+<map id="zappy::Client::getType" name="zappy::Client::getType">
+<area shape="rect" id="Node000001" title="Returns the connection&#39;s current role." alt="" coords="1192,127,1357,153"/>
+<area shape="rect" id="Node000002" href="$classzappy_1_1CommandParser.html#a9777b0807dc3dffe5a6118f149fa5e96" title="Routes one command line to the matching handler for the client&#39;s type." alt="" coords="969,177,1144,217"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1213,159,1134,180,1132,175,1212,154"/>
+<area shape="rect" id="Node000003" href="$classzappy_1_1CommandParser.html#a37a54e030a0ef53e8a6a8970e2c829fe" title="Dispatches the next queued command if its time has come." alt="" coords="747,120,921,160"/>
+<area shape="poly" id="edge11_Node000001_Node000003" title=" " alt="" coords="1179,143,921,143,921,137,1179,137"/>
+<area shape="rect" id="Node000008" href="$classzappy_1_1ClientHandler.html#a5a06587242beacaa70d84c823647d19b" title=" " alt="" coords="755,5,913,45"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="1248,120,1202,84,1173,67,1143,53,1085,37,1024,28,913,23,913,18,1025,23,1086,32,1145,48,1176,62,1205,80,1252,116"/>
+<area shape="rect" id="Node000009" href="$classzappy_1_1ClientHandler.html#acdbdf846181888a63df6190b45da9e42" title="Broadcasts a message to all clients of type GRAPHIC (use for processing the broadcast command)." alt="" coords="488,195,699,235"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="1252,164,1206,201,1176,219,1145,232,1085,247,1023,256,960,260,898,261,782,252,685,237,686,232,783,247,898,255,960,255,1022,251,1084,242,1143,227,1174,214,1202,197,1249,160"/>
+<area shape="rect" id="Node000010" href="$classzappy_1_1CommandParser.html#af47de49c1b3c9fd2ed80834664c6b7f7" title="Reads pending data from the client socket into the command queue." alt="" coords="969,63,1144,103"/>
+<area shape="poly" id="edge12_Node000001_Node000010" title=" " alt="" coords="1212,126,1132,105,1134,100,1213,121"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="964,176,912,163,913,157,966,171"/>
+<area shape="rect" id="Node000004" href="$classzappy_1_1ClientHandler.html#a1ed7cca92089d8c0c1743aa93167af4b" title=" " alt="" coords="513,92,674,132"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="733,131,674,124,675,119,733,126"/>
+<area shape="rect" id="Node000005" href="$classzappy_1_1ClientHandler.html#afdb8fe8ed8f6188e930880e315fb2c4a" title="Runs the blocking event loop: polls for I/O, accepts new clients, dispatches commands,..." alt="" coords="283,92,440,132"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="499,115,440,115,440,109,499,109"/>
+<area shape="rect" id="Node000006" href="$classzappy_1_1Core.html#a6cedeb79a573e46f2131b71d3ca17a31" title="Builds the world and network handler, then runs the blocking event loop." alt="" coords="108,99,235,125"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="269,115,235,115,235,109,269,109"/>
+<area shape="rect" id="Node000007" href="$main_8cpp.html#a0c99d968a34e803d378692bde2e3f18f" title=" " alt="" coords="5,99,60,125"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="95,115,60,115,60,109,95,109"/>
+<area shape="poly" id="edge8_Node000008_Node000005" title=" " alt="" coords="742,40,621,58,489,83,437,95,436,89,487,77,620,53,741,35"/>
+<area shape="poly" id="edge10_Node000009_Node000005" title=" " alt="" coords="534,192,407,135,409,130,536,187"/>
+<area shape="poly" id="edge13_Node000010_Node000004" title=" " alt="" coords="956,92,674,110,674,104,955,86"/>
+</map>

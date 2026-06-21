@@ -1,0 +1,11 @@
+<map id="zappy::ClientHandler::ClientHandler" name="zappy::ClientHandler::ClientHandler">
+<area shape="rect" id="Node000001" title="Constructs a handler, binds and listens on the given port." alt="" coords="5,73,163,113"/>
+<area shape="rect" id="Node000002" href="$classzappy_1_1Socket.html#a6a3c09a75bba538e8fba11a67c10a9d6" title="Binds the socket to the given port on all interfaces." alt="" coords="217,5,364,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="132,70,210,39,231,32,233,37,212,45,134,75"/>
+<area shape="rect" id="Node000003" href="$classzappy_1_1Socket.html#a33bb7774fac8006b8004d0ec1b13b0e8" title="Opens a new socket (wraps ::socket)." alt="" coords="211,55,371,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="163,80,197,76,198,81,163,86"/>
+<area shape="rect" id="Node000004" href="$classzappy_1_1Socket.html#a0fbd375d1839a1679781be7bb4cdaadb" title=" " alt="" coords="213,104,369,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="163,99,199,103,199,109,163,104"/>
+<area shape="rect" id="Node000005" href="$classzappy_1_1Socket.html#afbdb71a72ed69f6d421beb6516050bd1" title="Marks the socket as passive/listening." alt="" coords="213,153,368,179"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="137,110,212,138,236,147,235,152,210,143,135,115"/>
+</map>

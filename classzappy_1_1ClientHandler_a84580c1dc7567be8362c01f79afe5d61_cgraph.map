@@ -1,0 +1,15 @@
+<map id="zappy::ClientHandler::removeClient" name="zappy::ClientHandler::removeClient">
+<area shape="rect" id="Node000001" title="Removes a client, its parser, and its fd from all internal structures." alt="" coords="5,49,163,89"/>
+<area shape="rect" id="Node000002" href="$classzappy_1_1Client.html#aafed3af6e0e3c858d9581a3d9df81218" title="Returns the socket descriptor, used to read/write and to poll this client." alt="" coords="237,31,388,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="163,57,223,51,224,56,163,63"/>
+<area shape="rect" id="Node000003" href="$classzappy_1_1World.html#aca292b35506844c67b0d62a3e6e3e9e1" title="Removes a player from the world and decrease the number of slots occupied in its team...." alt="" coords="211,80,415,105"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="163,74,197,78,197,83,163,80"/>
+<area shape="rect" id="Node000004" href="$classzappy_1_1Player.html#a7382412b718c7828587ced9e7168bdf3" title="The socket fd linking this player to its client." alt="" coords="487,5,641,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="374,77,414,65,437,52,462,40,485,32,487,37,464,44,440,57,416,70,375,83"/>
+<area shape="rect" id="Node000005" href="$classzappy_1_1Player.html#a631fcf2698ec9ac726147ca31184e354" title="Life&#45;cycle state (pending / alive / dead)." alt="" coords="478,55,650,80"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="415,80,464,75,464,80,415,85"/>
+<area shape="rect" id="Node000006" href="$classzappy_1_1Player.html#ad714c54e4fcee0484d05ad253ab10ccb" title=" " alt="" coords="477,104,651,129"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="415,100,464,104,464,110,415,105"/>
+<area shape="rect" id="Node000007" href="$structzappy_1_1Team.html#a28b10ed41422bcd6fb1b4fcb58956758" title="Frees one occupied slot (a player left), never going below zero." alt="" coords="463,153,665,179"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="352,103,463,138,497,147,496,152,462,143,350,108"/>
+</map>

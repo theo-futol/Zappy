@@ -1,0 +1,5 @@
+<map id="zappy::Team::addEgg" name="zappy::Team::addEgg">
+<area shape="rect" id="Node000001" title="Lays count eggs at the given tile, each adding a slot and a unique ID." alt="" coords="5,5,164,31"/>
+<area shape="rect" id="Node000002" href="$namespacezappy.html#a6f4c56af6fff80513c2388249fd217f4" title=" " alt="" coords="212,5,357,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="165,15,198,15,198,21,165,21"/>
+</map>

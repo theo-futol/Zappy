@@ -1,0 +1,3 @@
+<map id="zappy::Client" name="zappy::Client">
+<area shape="rect" id="Node000001" title="A single connected socket: its file descriptor, its role, and its pending I/O buffer...." alt="" coords="5,5,111,291"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="zappy::Core::setSignalHandler" name="zappy::Core::setSignalHandler">
+<area shape="rect" id="Node000001" title="Installs the process signal handler used for graceful shutdown." alt="" coords="5,5,223,31"/>
+<area shape="rect" id="Node000002" href="$classzappy_1_1Core.html#a93bf040f1583c0de3fb413033a5aa379" title="Signal handler that clears serverIsRunning to stop the main loop." alt="" coords="271,5,467,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="223,15,257,15,257,21,223,21"/>
+</map>

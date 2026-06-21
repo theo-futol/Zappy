@@ -1,0 +1,7 @@
+<map id="zappy::World::addPlayer" name="zappy::World::addPlayer">
+<area shape="rect" id="Node000001" title="Creates a player on the named team and places it in the world." alt="" coords="5,31,184,56"/>
+<area shape="rect" id="Node000002" href="$structzappy_1_1Team.html#a15042c6f37d4425f8cd7a29de2f0eff1" title="Marks one slot as taken (a player connected)." alt="" coords="257,5,433,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="184,32,243,26,243,31,185,37"/>
+<area shape="rect" id="Node000003" href="$classzappy_1_1World.html#a0f7b0576d14b018ca6fcba792695d853" title="Looks up a team by name, or nullptr if it does not exist." alt="" coords="232,55,457,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="185,49,219,53,218,58,184,55"/>
+</map>

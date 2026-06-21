@@ -1,0 +1,5 @@
+<map id="zappy::Commands::Tna" name="zappy::Commands::Tna">
+<area shape="rect" id="Node000001" title="tna: reports the name of every team." alt="" coords="5,5,180,31"/>
+<area shape="rect" id="Node000002" href="$classzappy_1_1World.html#acc46f4ab94b9cd7dc0df5adf581195e9" title="All teams in the game." alt="" coords="228,5,404,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="181,15,214,15,214,21,181,21"/>
+</map>

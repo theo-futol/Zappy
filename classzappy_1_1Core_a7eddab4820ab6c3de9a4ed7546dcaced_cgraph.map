@@ -1,0 +1,16 @@
+<map id="zappy::Core::setClientHandler" name="zappy::Core::setClientHandler">
+<area shape="rect" id="Node000001" title="Creates the ClientHandler from the args (port, client count, time unit)." alt="" coords="5,81,220,107"/>
+<area shape="rect" id="Node000002" href="$classzappy_1_1ArgParser.html#a971140dfcfb1fcf6b3bff1b8c6e999fa" title="Returns the parsed value of an INT flag as an integer." alt="" coords="294,5,470,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="158,79,267,47,322,32,323,37,269,53,159,84"/>
+<area shape="rect" id="Node000003" href="$classzappy_1_1ArgParser.html#a3562c347e47d15154be9cff16d5c29f2" title="Returns all values collected for a LIST flag." alt="" coords="553,25,735,51"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="220,80,539,46,539,52,221,85"/>
+<area shape="rect" id="Node000004" href="$classzappy_1_1ArgParser.html#a5db30377644b5ab92f4c37010dbd10a5" title="Returns true if the flag was present in argv after parse()." alt="" coords="287,107,477,132"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="220,101,274,107,273,112,220,107"/>
+<area shape="rect" id="Node000005" href="$classzappy_1_1Core.html#acef6a58b8909e25d0f30e441fbbcf559" title="Connects the world&#39;s broadcast queue to the client handler so world events can be pushed out to clien..." alt="" coords="268,156,496,181"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="150,104,269,142,302,150,301,156,267,147,148,109"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="470,22,539,27,539,33,470,27"/>
+<area shape="rect" id="Node000006" href="$classzappy_1_1ClientHandler.html#a2375da96ad2350bcfa0e19764f283e92" title=" " alt="" coords="565,95,723,135"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="445,153,551,132,552,137,446,159"/>
+<area shape="rect" id="Node000007" href="$classzappy_1_1World.html#a90583ba922f8a981c645259558511518" title="Sets the queue used to push world events out to graphic clients." alt="" coords="544,159,744,199"/>
+<area shape="poly" id="edge7_Node000005_Node000007" title=" " alt="" coords="496,171,530,172,530,177,496,176"/>
+</map>

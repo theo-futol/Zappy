@@ -1,0 +1,10 @@
+<map id="zappy::Core::setWorld" name="zappy::Core::setWorld">
+<area shape="rect" id="Node000001" title="Creates the World from the args (map size, teams)." alt="" coords="5,55,168,80"/>
+<area shape="rect" id="Node000002" href="$classzappy_1_1World.html#af08f69ff3d95da644be0429cdbe7ee7d" title="Registers a new team with an initial number of slots." alt="" coords="218,5,390,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="143,52,233,31,235,36,144,57"/>
+<area shape="rect" id="Node000003" href="$classzappy_1_1ArgParser.html#a971140dfcfb1fcf6b3bff1b8c6e999fa" title="Returns the parsed value of an INT flag as an integer." alt="" coords="216,55,392,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="169,65,202,65,202,70,169,70"/>
+<area shape="rect" id="Node000004" href="$classzappy_1_1ArgParser.html#a3562c347e47d15154be9cff16d5c29f2" title="Returns all values collected for a LIST flag." alt="" coords="440,80,623,105"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="144,77,216,89,324,94,426,94,426,100,324,100,216,94,143,83"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="392,74,427,78,426,84,392,80"/>
+</map>

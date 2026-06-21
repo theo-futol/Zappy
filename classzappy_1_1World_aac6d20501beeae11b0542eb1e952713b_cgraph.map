@@ -1,0 +1,5 @@
+<map id="zappy::World::World" name="zappy::World::World">
+<area shape="rect" id="Node000001" title="Builds an x&#45;by&#45;y world with empty tiles and no players yet." alt="" coords="5,5,156,31"/>
+<area shape="rect" id="Node000002" href="$structzappy_1_1tile.html#a9611bce2fb60de6631fa06cd9ea33a91" title="Builds an empty tile pre&#45;seeded with a zero count for each resource type." alt="" coords="204,5,323,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="156,15,190,15,190,21,156,21"/>
+</map>

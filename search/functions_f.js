@@ -1,0 +1,26 @@
+var searchData=
+[
+  ['sendmessagetoclient_0',['sendMessageToClient',['../classzappy_1_1Player.html#a99b7f27249de16cfdeb1f2129d44a810',1,'zappy::Player']]],
+  ['sendmessagetoplayersthatareontile_1',['sendMessageToPlayersThatAreOnTile',['../classzappy_1_1World.html#abd102b3f00f1993ea7aabd5d883127b3',1,'zappy::World']]],
+  ['serverexception_2',['ServerException',['../classzappy_1_1ServerException.html#a2f00549ed3cc8295caaf6a5399ba17dc',1,'zappy::ServerException']]],
+  ['set_3',['Set',['../classzappy_1_1Commands.html#a780efbdebf71f3a24cdf54e305edae70',1,'zappy::Commands']]],
+  ['setbroadcastqueue_4',['setBroadCastQueue',['../classzappy_1_1World.html#a90583ba922f8a981c645259558511518',1,'zappy::World']]],
+  ['setbuffer_5',['setBuffer',['../classzappy_1_1Client.html#ac82ce36df3beeb570fdb5e4027019708',1,'zappy::Client']]],
+  ['setclienthandler_6',['setClientHandler',['../classzappy_1_1Core.html#a7eddab4820ab6c3de9a4ed7546dcaced',1,'zappy::Core']]],
+  ['setfrozenuntil_7',['setFrozenUntil',['../classzappy_1_1Player.html#a25f313ec41f8ac5fb9544df508dfbf87',1,'zappy::Player']]],
+  ['setposition_8',['setPosition',['../classzappy_1_1Player.html#a16e2f2ea6458b369a60a87f6e26a663c',1,'zappy::Player']]],
+  ['setrotation_9',['setRotation',['../classzappy_1_1Player.html#ab3e4df87dd335792986653bd74d23029',1,'zappy::Player']]],
+  ['setsignalhandler_10',['setSignalHandler',['../classzappy_1_1Core.html#af703c5daab792f243f0ad1269e1f52e7',1,'zappy::Core']]],
+  ['setsocket_11',['setSocket',['../classzappy_1_1Socket.html#a23b81f51d93f411e6b623b698bd85f9d',1,'zappy::Socket']]],
+  ['setstate_12',['setState',['../classzappy_1_1Player.html#a978341e609f445c26e56af3faffb9cfc',1,'zappy::Player']]],
+  ['settileat_13',['setTileAt',['../classzappy_1_1World.html#a3d970927132d48c4440f41db095da4eb',1,'zappy::World']]],
+  ['settype_14',['setType',['../classzappy_1_1Client.html#aafc44ed301967697c2a93931f5e51744',1,'zappy::Client']]],
+  ['setworld_15',['setWorld',['../classzappy_1_1Core.html#abfd869c59ea30c7e241b78a45d7e9d01',1,'zappy::Core']]],
+  ['setworldbroadcast_16',['setWorldBroadcast',['../classzappy_1_1Core.html#acef6a58b8909e25d0f30e441fbbcf559',1,'zappy::Core']]],
+  ['sgt_17',['Sgt',['../classzappy_1_1Commands.html#af6f193129aa187d8e40c02ca179d7a7e',1,'zappy::Commands']]],
+  ['signalhandler_18',['signalHandler',['../classzappy_1_1Core.html#a93bf040f1583c0de3fb413033a5aa379',1,'zappy::Core']]],
+  ['socket_19',['socket',['../classzappy_1_1Socket.html#a938654493ab1bd2ad0a28ebe9b88a55a',1,'zappy::Socket::Socket()=default'],['../classzappy_1_1Socket.html#a3f8d9a33182555162d20c126676a2b28',1,'zappy::Socket::Socket(int socket)']]],
+  ['sortqueuebytimeneeded_20',['sortQueueByTimeNeeded',['../classzappy_1_1Player.html#aa2a78e72a6d8434a0d8b4e8b97bb37c9',1,'zappy::Player']]],
+  ['sst_21',['Sst',['../classzappy_1_1Commands.html#a3057b6cfa6a491556d20052269c11632',1,'zappy::Commands']]],
+  ['stringtoitemtype_22',['stringToItemType',['../namespacezappy.html#a248cf26daf11d752f095e1b6c18f74cd',1,'zappy']]]
+];

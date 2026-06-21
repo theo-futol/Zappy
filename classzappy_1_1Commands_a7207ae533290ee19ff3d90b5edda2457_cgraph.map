@@ -1,0 +1,33 @@
+<map id="zappy::Commands::Broadcast" name="zappy::Commands::Broadcast">
+<area shape="rect" id="Node000001" title="Broadcasts text to every other player, tagged with the direction it came from." alt="" coords="5,219,220,245"/>
+<area shape="rect" id="Node000002" href="$classzappy_1_1Player.html#adc7feb7e75bd00f5cc7b26adc165824a" title="Queues a message to be delivered to a receiver after timeNeeded elapses." alt="" coords="274,5,473,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="119,218,141,185,174,141,217,95,266,55,277,49,280,54,270,60,220,99,178,145,145,188,124,221"/>
+<area shape="rect" id="Node000003" href="$classzappy_1_1Player.html#a9435b23275fc744af449da3a9fb9a3ab" title="Direction from this player toward another player, accounting for wrap&#45;around." alt="" coords="268,70,479,95"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="124,217,182,162,222,131,267,104,284,97,286,102,269,109,225,135,185,166,128,221"/>
+<area shape="rect" id="Node000008" href="$classzappy_1_1Player.html#abd1fbe0bc2cee356fe388496ac5bdf9a" title="Shortest tile distance to another player on the toroidal map." alt="" coords="269,119,478,145"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="134,217,193,186,267,154,292,146,294,151,269,158,196,190,137,222"/>
+<area shape="rect" id="Node000010" href="$classzappy_1_1Client.html#aafed3af6e0e3c858d9581a3d9df81218" title="Returns the socket descriptor, used to read/write and to poll this client." alt="" coords="298,169,449,194"/>
+<area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="179,217,294,194,295,199,180,222"/>
+<area shape="rect" id="Node000011" href="$classzappy_1_1Player.html#a7382412b718c7828587ced9e7168bdf3" title="The socket fd linking this player to its client." alt="" coords="555,269,709,294"/>
+<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="221,235,479,256,542,264,541,270,478,261,220,240"/>
+<area shape="rect" id="Node000012" href="$classzappy_1_1World.html#ad35316e4e1203c45ad2f853319775432" title="Map dimensions as (width, height)." alt="" coords="279,270,468,295"/>
+<area shape="poly" id="edge12_Node000001_Node000012" title=" " alt="" coords="180,242,295,265,294,270,179,247"/>
+<area shape="rect" id="Node000013" href="$classzappy_1_1World.html#a439edc13734fbf59d0d280327b4ba191" title="Looks up a player by its client fd, or nullptr if none matches." alt="" coords="269,319,477,345"/>
+<area shape="poly" id="edge13_Node000001_Node000013" title=" " alt="" coords="137,242,196,274,269,306,294,313,292,318,267,310,193,278,134,247"/>
+<area shape="rect" id="Node000014" href="$classzappy_1_1World.html#a1ae471ce1c5239de029c030e47710937" title="All players currently in the world." alt="" coords="282,369,465,394"/>
+<area shape="poly" id="edge15_Node000001_Node000014" title=" " alt="" coords="128,243,185,298,225,329,269,355,286,362,284,367,267,360,222,333,182,302,124,247"/>
+<area shape="rect" id="Node000015" href="$classzappy_1_1Player.html#aa2a78e72a6d8434a0d8b4e8b97bb37c9" title="Orders the pending&#45;message queue by the time each message needs to arrive." alt="" coords="281,419,465,459"/>
+<area shape="poly" id="edge16_Node000001_Node000015" title=" " alt="" coords="124,243,145,276,178,319,220,365,270,404,280,410,277,415,266,409,217,369,174,323,141,279,119,246"/>
+<area shape="rect" id="Node000004" href="$classzappy_1_1Player.html#a4e5a74128fcd879291a6e6b3cae1168d" title="Direction from this player toward a target tile, accounting for wrap&#45;around." alt="" coords="527,46,737,71"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="479,70,513,67,513,72,479,76"/>
+<area shape="rect" id="Node000007" href="$classzappy_1_1Player.html#aff283e814b7f01d4ad7398d7c20794e6" title="Current tile position." alt="" coords="537,95,727,121"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="479,90,523,95,523,100,479,96"/>
+<area shape="rect" id="Node000005" href="$structzappy_1_1Direction.html#a8a960c10233f975087cd19f31e21cd45" title=" " alt="" coords="785,9,992,49"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="737,44,771,40,772,45,738,49"/>
+<area shape="rect" id="Node000006" href="$namespacezappy.html#a6f4c56af6fff80513c2388249fd217f4" title=" " alt="" coords="816,74,961,99"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="738,67,803,75,802,80,737,73"/>
+<area shape="poly" id="edge9_Node000008_Node000007" title=" " alt="" coords="478,120,523,115,523,121,478,125"/>
+<area shape="rect" id="Node000009" href="$classzappy_1_1Player.html#a2c028895ff96b20ea2ff2f2d810eaa8c" title="Shortest tile distance to a target position on the toroidal map." alt="" coords="527,145,737,170"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="478,140,514,143,514,148,478,145"/>
+<area shape="poly" id="edge14_Node000013_Node000011" title=" " alt="" coords="439,317,553,294,554,299,440,322"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="zappy::World::addTeam" name="zappy::World::addTeam">
+<area shape="rect" id="Node000001" title="Registers a new team with an initial number of slots." alt="" coords="319,5,491,31"/>
+<area shape="rect" id="Node000002" href="$classzappy_1_1Core.html#abfd869c59ea30c7e241b78a45d7e9d01" title="Creates the World from the args (map size, teams)." alt="" coords="108,5,271,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="304,21,271,21,271,15,304,15"/>
+<area shape="rect" id="Node000003" href="$main_8cpp.html#a0c99d968a34e803d378692bde2e3f18f" title=" " alt="" coords="5,5,60,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="94,21,60,21,60,15,94,15"/>
+</map>

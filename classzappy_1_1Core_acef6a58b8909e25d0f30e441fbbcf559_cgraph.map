@@ -1,0 +1,7 @@
+<map id="zappy::Core::setWorldBroadcast" name="zappy::Core::setWorldBroadcast">
+<area shape="rect" id="Node000001" title="Connects the world&#39;s broadcast queue to the client handler so world events can be pushed out to clien..." alt="" coords="5,45,233,70"/>
+<area shape="rect" id="Node000002" href="$classzappy_1_1ClientHandler.html#a2375da96ad2350bcfa0e19764f283e92" title=" " alt="" coords="302,5,461,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="223,42,288,34,288,39,224,47"/>
+<area shape="rect" id="Node000003" href="$classzappy_1_1World.html#a90583ba922f8a981c645259558511518" title="Sets the queue used to push world events out to graphic clients." alt="" coords="281,69,481,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="224,67,268,73,267,78,223,73"/>
+</map>

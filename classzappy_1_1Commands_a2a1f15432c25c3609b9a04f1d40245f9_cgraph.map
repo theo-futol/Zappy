@@ -1,0 +1,23 @@
+<map id="zappy::Commands::Look" name="zappy::Commands::Look">
+<area shape="rect" id="Node000001" title="Returns what the player sees on the tiles within its vision cone." alt="" coords="5,203,187,228"/>
+<area shape="rect" id="Node000002" href="$classzappy_1_1Client.html#aafed3af6e0e3c858d9581a3d9df81218" title="Returns the socket descriptor, used to read/write and to poll this client." alt="" coords="263,5,414,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="101,201,119,168,148,124,187,78,233,40,249,32,251,36,236,44,190,82,153,127,124,171,106,204"/>
+<area shape="rect" id="Node000003" href="$classzappy_1_1Player.html#a70dc9f5c05ea552c47350da37b3bd027" title="Current elevation level (1..8)." alt="" coords="252,55,425,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="106,201,156,146,193,115,233,89,249,82,251,87,236,94,196,120,160,150,110,204"/>
+<area shape="rect" id="Node000004" href="$classzappy_1_1World.html#ad35316e4e1203c45ad2f853319775432" title="Map dimensions as (width, height)." alt="" coords="244,104,433,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="116,200,168,169,234,138,257,131,258,136,236,143,170,174,118,205"/>
+<area shape="rect" id="Node000005" href="$classzappy_1_1World.html#a439edc13734fbf59d0d280327b4ba191" title="Looks up a player by its client fd, or nullptr if none matches." alt="" coords="235,153,443,179"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="159,200,261,179,263,184,160,205"/>
+<area shape="rect" id="Node000007" href="$classzappy_1_1Player.html#aff283e814b7f01d4ad7398d7c20794e6" title="Current tile position." alt="" coords="243,203,434,228"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="187,213,229,213,229,218,187,218"/>
+<area shape="rect" id="Node000008" href="$classzappy_1_1Player.html#a90f0e1c135399b478553f45d2eea9af2" title="Current facing, in degrees (see Degrees)." alt="" coords="242,252,435,277"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="160,225,263,247,261,252,159,231"/>
+<area shape="rect" id="Node000009" href="$classzappy_1_1World.html#a9fce895cc2d62e61b943f7d9e03471db" title="Returns the tile at the given coordinates." alt="" coords="253,301,425,327"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="119,226,171,256,236,286,263,295,261,300,234,291,168,261,116,230"/>
+<area shape="rect" id="Node000010" href="$namespacezappy.html#aef0d81865578aa094dcbd509e0055a81" title="Converts an ItemType to its protocol name (e.g. LINEMATE &#45;&gt; &quot;linemate&quot;)." alt="" coords="249,351,429,376"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="110,227,161,280,196,310,236,336,255,344,252,349,233,340,193,314,157,284,106,230"/>
+<area shape="rect" id="Node000011" href="$namespacezappy.html#a6f4c56af6fff80513c2388249fd217f4" title=" " alt="" coords="266,400,411,425"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="106,227,124,259,153,302,191,347,236,385,254,394,252,399,233,390,187,351,149,306,120,262,101,229"/>
+<area shape="rect" id="Node000006" href="$classzappy_1_1Player.html#a7382412b718c7828587ced9e7168bdf3" title="The socket fd linking this player to its client." alt="" coords="491,153,645,179"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="443,163,477,163,477,169,443,169"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="zappy::Commands" name="zappy::Commands">
+<area shape="rect" id="Node000001" title="Implements every protocol command&#39;s effect on the world." alt="" coords="46,413,187,679"/>
+<area shape="rect" id="Node000002" href="$classzappy_1_1World.html" title="The authoritative game state: the map, the players, the teams, and the simulation rules that act on t..." alt="" coords="5,5,228,351"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="119,351,119,397,114,397,114,351"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="zappy::World::getPlayersOnTileAtLevel" name="zappy::World::getPlayersOnTileAtLevel">
+<area shape="rect" id="Node000001" title="Returns the players standing on the tile that are exactly at level." alt="" coords="5,47,188,87"/>
+<area shape="rect" id="Node000002" href="$classzappy_1_1Player.html#a70dc9f5c05ea552c47350da37b3bd027" title="Current elevation level (1..8)." alt="" coords="245,5,418,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="188,46,256,31,258,36,189,51"/>
+<area shape="rect" id="Node000003" href="$classzappy_1_1Player.html#aff283e814b7f01d4ad7398d7c20794e6" title="Current tile position." alt="" coords="236,55,427,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="188,65,222,65,222,70,188,70"/>
+<area shape="rect" id="Node000004" href="$namespacezappy.html#a6f4c56af6fff80513c2388249fd217f4" title=" " alt="" coords="259,104,404,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="189,84,258,99,256,104,188,89"/>
+</map>

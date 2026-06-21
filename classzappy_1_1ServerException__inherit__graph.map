@@ -1,0 +1,5 @@
+<map id="zappy::ServerException" name="zappy::ServerException">
+<area shape="rect" id="Node000001" title="Server&#45;wide exception that captures both a message and the source location where it was thrown,..." alt="" coords="5,119,172,224"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="35,5,142,71"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="91,85,91,118,86,118,86,85"/>
+</map>

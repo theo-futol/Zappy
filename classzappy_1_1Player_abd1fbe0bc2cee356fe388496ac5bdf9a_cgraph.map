@@ -1,0 +1,7 @@
+<map id="zappy::Player::getDistanceTo" name="zappy::Player::getDistanceTo">
+<area shape="rect" id="Node000001" title="Shortest tile distance to another player on the toroidal map." alt="" coords="5,31,215,56"/>
+<area shape="rect" id="Node000002" href="$classzappy_1_1Player.html#a2c028895ff96b20ea2ff2f2d810eaa8c" title="Shortest tile distance to a target position on the toroidal map." alt="" coords="263,5,472,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="215,30,249,27,249,32,215,36"/>
+<area shape="rect" id="Node000003" href="$classzappy_1_1Player.html#aff283e814b7f01d4ad7398d7c20794e6" title="Current tile position." alt="" coords="272,55,463,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="215,50,259,55,258,60,215,56"/>
+</map>

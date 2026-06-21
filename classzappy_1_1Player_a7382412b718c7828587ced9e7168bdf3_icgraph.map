@@ -1,0 +1,99 @@
+<map id="zappy::Player::getFd" name="zappy::Player::getFd">
+<area shape="rect" id="Node000001" title="The socket fd linking this player to its client." alt="" coords="1608,924,1763,950"/>
+<area shape="rect" id="Node000002" href="$classzappy_1_1Commands.html#a7ca4eb4871cd71eab1301aa3c0a792a6" title="Starts an incantation: validates prerequisites, notifies the initiator and the GUI,..." alt="" coords="1045,878,1304,903"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1594,926,1560,922,1304,901,1304,895,1560,917,1594,921"/>
+<area shape="rect" id="Node000008" href="$classzappy_1_1Commands.html#a7207ae533290ee19ff3d90b5edda2457" title="Broadcasts text to every other player, tagged with the direction it came from." alt="" coords="1067,104,1282,130"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="1677,911,1663,842,1638,744,1604,633,1558,523,1502,414,1453,331,1426,295,1393,258,1302,178,1260,151,1216,132,1218,127,1262,146,1306,173,1397,255,1430,291,1458,328,1507,411,1562,521,1609,631,1644,742,1668,841,1682,910"/>
+<area shape="rect" id="Node000011" href="$classzappy_1_1Commands.html#a97b197037e4a3aaea14c2a637564cca6" title="Pushes every other player off the current tile." alt="" coords="1083,6,1266,31"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="1680,911,1668,771,1644,566,1627,460,1608,361,1584,278,1558,219,1531,181,1505,151,1478,127,1451,109,1386,78,1303,45,1265,33,1267,28,1305,40,1388,73,1453,104,1482,123,1508,147,1535,178,1562,217,1589,277,1613,360,1633,459,1649,566,1673,771,1685,911"/>
+<area shape="rect" id="Node000012" href="$classzappy_1_1World.html#a779b35cdefa7a85d2f888890ad2ec84b" title="Consumes one food unit per player and kills those who have starved." alt="" coords="1083,1127,1266,1152"/>
+<area shape="poly" id="edge12_Node000001_Node000012" title=" " alt="" coords="1681,964,1668,1010,1645,1067,1610,1122,1588,1146,1561,1166,1515,1186,1466,1197,1416,1200,1366,1196,1274,1177,1206,1155,1207,1150,1275,1172,1366,1191,1416,1194,1466,1192,1514,1181,1559,1161,1584,1142,1606,1119,1641,1064,1663,1008,1676,962"/>
+<area shape="rect" id="Node000013" href="$classzappy_1_1World.html#a439edc13734fbf59d0d280327b4ba191" title="Looks up a player by its client fd, or nullptr if none matches." alt="" coords="1352,535,1560,560"/>
+<area shape="poly" id="edge14_Node000001_Node000013" title=" " alt="" coords="1667,913,1463,562,1467,559,1672,911"/>
+<area shape="rect" id="Node000024" href="$classzappy_1_1Commands.html#a46c4e231666c8d2c3354a8facc95ee17" title="Attempts to start an elevation ritual on the current tile (see beginIncantation)." alt="" coords="1063,55,1286,80"/>
+<area shape="poly" id="edge56_Node000001_Node000024" title=" " alt="" coords="1681,910,1675,814,1658,672,1642,592,1621,510,1593,429,1558,353,1505,263,1481,228,1455,198,1426,172,1392,146,1303,94,1276,83,1278,78,1305,89,1395,142,1429,168,1459,195,1485,225,1510,260,1562,350,1598,427,1626,508,1647,591,1663,671,1681,814,1686,910"/>
+<area shape="rect" id="Node000027" href="$classzappy_1_1Commands.html#aaabc46f14a816bcd9536dba35d36640d" title="pin: reports a player&#39;s position and inventory." alt="" coords="1089,927,1260,952"/>
+<area shape="poly" id="edge57_Node000001_Node000027" title=" " alt="" coords="1594,940,1260,942,1260,936,1594,935"/>
+<area shape="rect" id="Node000029" href="$classzappy_1_1Commands.html#adde6fad572f1f56741cdb1db66dfdd09" title="plv: reports a player&#39;s level." alt="" coords="1089,976,1260,1002"/>
+<area shape="poly" id="edge58_Node000001_Node000029" title=" " alt="" coords="1595,949,1260,983,1260,978,1594,943"/>
+<area shape="rect" id="Node000030" href="$classzappy_1_1Commands.html#a95489f8af16021d203de0dd5c729dc00" title="ppo: reports a player&#39;s position and orientation." alt="" coords="1087,1026,1262,1051"/>
+<area shape="poly" id="edge59_Node000001_Node000030" title=" " alt="" coords="1637,957,1561,979,1403,1011,1263,1031,1262,1026,1402,1005,1559,974,1636,952"/>
+<area shape="rect" id="Node000032" href="$classzappy_1_1World.html#a8ff0093ed1f372a84840c666fd4c7fa4" title=" " alt="" coords="1352,1126,1560,1151"/>
+<area shape="poly" id="edge55_Node000001_Node000032" title=" " alt="" coords="1676,963,1659,998,1634,1040,1601,1081,1561,1116,1539,1128,1537,1123,1559,1112,1597,1078,1629,1037,1654,996,1671,961"/>
+<area shape="rect" id="Node000033" href="$classzappy_1_1World.html#aca292b35506844c67b0d62a3e6e3e9e1" title="Removes a player from the world and decrease the number of slots occupied in its team...." alt="" coords="1354,1076,1558,1102"/>
+<area shape="poly" id="edge60_Node000001_Node000033" title=" " alt="" coords="1668,962,1623,1011,1593,1037,1561,1059,1516,1079,1514,1074,1559,1055,1590,1033,1619,1007,1664,958"/>
+<area shape="rect" id="Node000003" href="$classzappy_1_1CommandParser.html#af47de49c1b3c9fd2ed80834664c6b7f7" title="Reads pending data from the client socket into the command queue." alt="" coords="793,854,968,894"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1032,885,968,882,969,876,1032,880"/>
+<area shape="rect" id="Node000004" href="$classzappy_1_1ClientHandler.html#a1ed7cca92089d8c0c1743aa93167af4b" title=" " alt="" coords="530,854,691,894"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="780,877,692,877,692,872,780,872"/>
+<area shape="rect" id="Node000005" href="$classzappy_1_1ClientHandler.html#afdb8fe8ed8f6188e930880e315fb2c4a" title="Runs the blocking event loop: polls for I/O, accepts new clients, dispatches commands,..." alt="" coords="291,854,449,894"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="516,877,449,877,449,872,516,872"/>
+<area shape="rect" id="Node000006" href="$classzappy_1_1Core.html#a6cedeb79a573e46f2131b71d3ca17a31" title="Builds the world and network handler, then runs the blocking event loop." alt="" coords="108,862,235,887"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="278,877,235,877,235,872,278,872"/>
+<area shape="rect" id="Node000007" href="$main_8cpp.html#a0c99d968a34e803d378692bde2e3f18f" title=" " alt="" coords="5,862,60,887"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="95,877,60,877,60,872,95,872"/>
+<area shape="rect" id="Node000009" href="$classzappy_1_1CommandParser.html#a629df3248cf7038782f23805ea6c806e" title="Fills _aiCommands with the AI protocol commands and their durations." alt="" coords="523,350,698,390"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="1054,111,984,114,910,123,835,142,799,155,765,172,739,191,715,212,674,262,643,312,623,351,618,349,638,309,669,259,711,209,736,186,763,168,797,150,833,137,909,118,984,108,1053,106"/>
+<area shape="rect" id="Node000010" href="$classzappy_1_1CommandParser.html#ac273c38a60fcb6825770e5a4f2ca43c0" title="Builds a parser for one client." alt="" coords="283,462,457,502"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="556,398,415,465,413,460,553,394"/>
+<area shape="poly" id="edge11_Node000011_Node000009" title=" " alt="" coords="1070,9,997,9,917,17,877,26,838,38,800,54,766,75,732,104,703,139,679,178,660,218,632,294,618,351,613,349,627,293,655,216,674,175,699,136,728,101,762,71,798,49,836,33,876,21,917,12,997,4,1070,4"/>
+<area shape="poly" id="edge13_Node000012_Node000005" title=" " alt="" coords="1069,1131,923,1108,842,1090,763,1067,657,1027,556,979,403,897,406,892,558,975,659,1022,765,1062,843,1085,924,1102,1070,1126"/>
+<area shape="poly" id="edge18_Node000013_Node000002" title=" " alt="" coords="1452,575,1437,634,1410,711,1390,752,1367,792,1339,828,1306,860,1270,880,1267,875,1302,856,1335,825,1362,789,1386,749,1405,709,1432,632,1447,573"/>
+<area shape="poly" id="edge26_Node000013_Node000003" title=" " alt="" coords="1450,574,1433,625,1404,690,1362,756,1336,785,1305,810,1280,823,1245,834,1157,852,1059,864,968,872,968,867,1058,859,1156,847,1244,829,1278,818,1303,805,1332,781,1358,752,1400,687,1428,623,1445,573"/>
+<area shape="poly" id="edge19_Node000013_Node000008" title=" " alt="" coords="1440,524,1398,433,1349,315,1339,266,1336,225,1329,188,1319,170,1302,151,1273,132,1275,127,1306,147,1323,167,1334,186,1342,224,1344,265,1355,313,1403,431,1445,521"/>
+<area shape="poly" id="edge24_Node000013_Node000011" title=" " alt="" coords="1453,521,1450,429,1444,367,1432,299,1414,230,1387,161,1350,98,1328,70,1302,44,1285,33,1266,25,1267,20,1288,28,1306,40,1332,66,1354,95,1391,159,1419,228,1437,298,1449,366,1456,429,1458,521"/>
+<area shape="rect" id="Node000014" href="$classzappy_1_1CommandParser.html#a2e37f370a7cf95399de6722ef528da83" title="Handles the first line of an AI client: the team&#45;name handshake." alt="" coords="1087,712,1262,752"/>
+<area shape="poly" id="edge15_Node000013_Node000014" title=" " alt="" coords="1438,573,1383,634,1346,667,1305,695,1263,714,1261,709,1303,691,1343,662,1379,630,1434,569"/>
+<area shape="rect" id="Node000015" href="$classzappy_1_1CommandParser.html#a37a54e030a0ef53e8a6a8970e2c829fe" title="Dispatches the next queued command if its time has come." alt="" coords="793,712,968,752"/>
+<area shape="poly" id="edge25_Node000013_Node000015" title=" " alt="" coords="1413,568,1305,610,1119,669,959,714,957,709,1117,664,1303,605,1411,563"/>
+<area shape="rect" id="Node000016" href="$classzappy_1_1ClientHandler.html#acdbdf846181888a63df6190b45da9e42" title="Broadcasts a message to all clients of type GRAPHIC (use for processing the broadcast command)." alt="" coords="505,785,716,825"/>
+<area shape="poly" id="edge20_Node000013_Node000016" title=" " alt="" coords="1448,574,1429,618,1399,671,1358,724,1333,747,1305,766,1258,784,1195,797,1120,806,1036,812,865,815,716,812,716,807,865,810,1036,807,1119,801,1194,792,1257,779,1303,761,1330,743,1354,720,1394,668,1424,616,1443,572"/>
+<area shape="rect" id="Node000017" href="$classzappy_1_1Commands.html#a6c06a9039770e879febc9934b41a2ae4" title="Returns the number of free team connection slots (the &quot;Connect_nbr&quot; command)." alt="" coords="765,510,996,535"/>
+<area shape="poly" id="edge22_Node000013_Node000017" title=" " alt="" coords="1338,545,996,530,996,525,1338,540"/>
+<area shape="rect" id="Node000018" href="$classzappy_1_1Commands.html#a1f87b8dcf9ba3044afcca829b91c6082" title="Lays an egg on the current tile, opening a new team slot." alt="" coords="791,559,970,584"/>
+<area shape="poly" id="edge27_Node000013_Node000018" title=" " alt="" coords="1338,555,970,570,970,565,1338,550"/>
+<area shape="rect" id="Node000019" href="$classzappy_1_1Commands.html#a564d2d4c271736c266b5adaf25d12cc2" title="Moves the player one tile forward in its current facing." alt="" coords="779,610,982,635"/>
+<area shape="poly" id="edge29_Node000013_Node000019" title=" " alt="" coords="1360,565,1304,573,983,613,982,608,1304,568,1359,560"/>
+<area shape="rect" id="Node000020" href="$classzappy_1_1Commands.html#a88007d6be2a2c4d19906a40c2ce4e08c" title="Returns the player&#39;s inventory (resource counts and remaining life)." alt="" coords="764,183,997,208"/>
+<area shape="poly" id="edge31_Node000013_Node000020" title=" " alt="" coords="1441,523,1302,208,1280,198,1250,191,1173,183,1084,183,998,188,997,182,1084,178,1173,178,1251,186,1282,193,1306,204,1446,521"/>
+<area shape="rect" id="Node000021" href="$classzappy_1_1World.html#a572b27056a65707d367e2a839ef12daa" title="Returns the tile the given player is standing on." alt="" coords="1089,256,1261,282"/>
+<area shape="poly" id="edge33_Node000013_Node000021" title=" " alt="" coords="1444,522,1425,474,1396,415,1355,354,1330,327,1302,303,1282,291,1260,283,1262,278,1285,286,1306,299,1334,323,1359,351,1400,412,1430,472,1449,520"/>
+<area shape="rect" id="Node000022" href="$classzappy_1_1Commands.html#a780efbdebf71f3a24cdf54e305edae70" title="Drops a named resource from the inventory onto the current tile." alt="" coords="795,256,966,282"/>
+<area shape="poly" id="edge53_Node000013_Node000022" title=" " alt="" coords="1442,523,1370,364,1330,285,1314,259,1302,246,1253,223,1199,211,1144,208,1088,212,1035,221,987,233,913,259,911,254,986,228,1034,216,1088,207,1143,203,1200,206,1255,218,1306,241,1318,256,1335,283,1375,362,1446,521"/>
+<area shape="rect" id="Node000023" href="$classzappy_1_1Commands.html#a23dbbcf0459ffacd5f7f69bdae0f3f1d" title="Picks up a named resource from the current tile into the inventory." alt="" coords="791,307,970,332"/>
+<area shape="poly" id="edge54_Node000013_Node000023" title=" " alt="" coords="1440,524,1418,488,1388,445,1349,403,1303,370,1262,351,1220,337,1131,319,1045,313,970,314,970,309,1045,308,1132,314,1221,332,1264,346,1305,365,1352,399,1392,442,1423,485,1444,521"/>
+<area shape="poly" id="edge38_Node000013_Node000024" title=" " alt="" coords="1447,522,1426,426,1393,296,1373,231,1350,172,1327,125,1302,93,1285,82,1288,78,1306,90,1331,122,1355,170,1378,229,1398,295,1432,425,1452,521"/>
+<area shape="rect" id="Node000025" href="$classzappy_1_1Commands.html#afe000f07eae5be6125e8495565010891" title="Turns the player 90° to the left." alt="" coords="793,358,968,383"/>
+<area shape="poly" id="edge40_Node000013_Node000025" title=" " alt="" coords="1435,526,1381,467,1344,436,1303,413,1261,397,1218,385,1128,370,1042,364,968,365,968,360,1043,359,1129,364,1219,379,1263,392,1305,408,1347,432,1385,463,1439,522"/>
+<area shape="rect" id="Node000026" href="$classzappy_1_1Commands.html#a2a1f15432c25c3609b9a04f1d40245f9" title="Returns what the player sees on the tiles within its vision cone." alt="" coords="790,407,971,432"/>
+<area shape="poly" id="edge42_Node000013_Node000026" title=" " alt="" coords="1430,528,1374,485,1340,465,1303,449,1217,427,1129,416,1045,413,972,415,971,409,1045,407,1129,411,1218,422,1305,444,1342,460,1377,481,1433,524"/>
+<area shape="poly" id="edge44_Node000013_Node000027" title=" " alt="" coords="1455,574,1444,644,1419,737,1399,786,1375,834,1344,878,1306,916,1285,929,1261,937,1260,932,1282,924,1302,912,1339,875,1370,831,1394,784,1414,735,1439,642,1450,573"/>
+<area shape="poly" id="edge47_Node000013_Node000029" title=" " alt="" coords="1456,574,1448,652,1439,703,1425,758,1406,815,1380,870,1347,921,1306,966,1285,979,1261,987,1259,982,1282,974,1302,961,1343,918,1376,868,1401,813,1420,757,1434,702,1443,651,1451,574"/>
+<area shape="poly" id="edge49_Node000013_Node000030" title=" " alt="" coords="1458,574,1452,660,1445,718,1432,780,1413,845,1387,908,1351,966,1306,1016,1286,1029,1263,1037,1261,1032,1283,1025,1302,1012,1347,963,1382,905,1408,843,1427,779,1440,717,1447,660,1452,574"/>
+<area shape="rect" id="Node000031" href="$classzappy_1_1Commands.html#ae51a7d1bdbea3b7386da8849447a9162" title="Turns the player 90° to the right." alt="" coords="1083,459,1267,484"/>
+<area shape="poly" id="edge51_Node000013_Node000031" title=" " alt="" coords="1399,533,1303,506,1228,487,1230,482,1305,501,1400,528"/>
+<area shape="poly" id="edge16_Node000014_Node000015" title=" " alt="" coords="1074,734,968,734,968,729,1074,729"/>
+<area shape="poly" id="edge17_Node000015_Node000004" title=" " alt="" coords="843,762,785,801,717,839,676,857,674,852,715,834,782,796,840,758"/>
+<area shape="poly" id="edge21_Node000016_Node000005" title=" " alt="" coords="528,831,441,857,439,852,527,826"/>
+<area shape="poly" id="edge23_Node000017_Node000009" title=" " alt="" coords="802,508,763,493,724,469,687,442,630,393,634,389,690,438,727,465,765,488,804,503"/>
+<area shape="poly" id="edge28_Node000018_Node000009" title=" " alt="" coords="778,556,763,548,715,512,675,469,643,426,621,392,626,389,647,423,679,466,719,508,765,544,781,552"/>
+<area shape="poly" id="edge30_Node000019_Node000009" title=" " alt="" coords="778,606,762,598,734,575,709,549,667,491,636,435,617,392,622,389,641,433,672,488,713,546,738,571,766,593,781,602"/>
+<area shape="poly" id="edge32_Node000020_Node000009" title=" " alt="" coords="829,216,765,246,691,300,634,352,630,348,687,296,763,241,826,211"/>
+<area shape="poly" id="edge34_Node000021_Node000022" title=" " alt="" coords="1075,272,966,272,966,266,1075,266"/>
+<area shape="poly" id="edge36_Node000021_Node000023" title=" " alt="" coords="1087,286,956,309,955,304,1086,281"/>
+<area shape="poly" id="edge35_Node000022_Node000009" title=" " alt="" coords="796,287,765,297,702,324,647,352,645,348,699,319,763,292,795,282"/>
+<area shape="poly" id="edge37_Node000023_Node000009" title=" " alt="" coords="799,337,699,356,698,351,798,332"/>
+<area shape="poly" id="edge39_Node000024_Node000009" title=" " alt="" coords="1050,60,981,62,906,71,833,91,798,106,765,124,735,148,709,176,667,240,637,303,620,351,615,349,632,301,662,237,705,173,732,144,763,120,796,101,831,86,905,66,980,57,1050,55"/>
+<area shape="poly" id="edge41_Node000025_Node000009" title=" " alt="" coords="780,373,698,373,698,368,780,368"/>
+<area shape="poly" id="edge43_Node000026_Node000009" title=" " alt="" coords="797,407,698,389,699,383,798,402"/>
+<area shape="rect" id="Node000028" href="$classzappy_1_1CommandParser.html#afc4da6302e4998b21a8b2339d7dc372a" title="Fills _graphicCommands with the graphic protocol commands." alt="" coords="789,929,972,969"/>
+<area shape="poly" id="edge45_Node000027_Node000028" title=" " alt="" coords="1076,945,972,949,972,943,1075,940"/>
+<area shape="poly" id="edge46_Node000028_Node000010" title=" " alt="" coords="783,924,762,908,748,891,740,875,734,843,730,810,724,793,714,774,678,729,639,686,552,608,469,547,404,505,407,500,473,543,556,604,642,682,682,725,718,771,729,790,735,809,739,842,745,873,753,888,766,904,786,920"/>
+<area shape="poly" id="edge48_Node000029_Node000028" title=" " alt="" coords="1075,978,972,964,973,959,1076,973"/>
+<area shape="poly" id="edge50_Node000030_Node000028" title=" " alt="" coords="1078,1025,1045,1017,981,995,925,971,927,967,983,990,1046,1012,1080,1020"/>
+<area shape="poly" id="edge52_Node000031_Node000009" title=" " alt="" coords="1069,478,923,472,842,462,763,446,698,422,643,393,646,388,700,417,765,441,843,457,923,467,1069,473"/>
+<area shape="poly" id="edge61_Node000033_Node000012" title=" " alt="" coords="1372,1107,1246,1129,1246,1124,1371,1101"/>
+<area shape="rect" id="Node000034" href="$classzappy_1_1ClientHandler.html#a84580c1dc7567be8362c01f79afe5d61" title="Removes a client, its parser, and its fd from all internal structures." alt="" coords="802,1013,959,1053"/>
+<area shape="poly" id="edge62_Node000033_Node000034" title=" " alt="" coords="1340,1088,1199,1081,1045,1066,959,1052,960,1047,1046,1061,1199,1075,1341,1083"/>
+<area shape="poly" id="edge63_Node000034_Node000004" title=" " alt="" coords="816,1010,763,983,693,938,636,896,639,892,696,934,765,979,818,1005"/>
+</map>

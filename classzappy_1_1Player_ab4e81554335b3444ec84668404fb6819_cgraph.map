@@ -1,0 +1,7 @@
+<map id="zappy::Player::move" name="zappy::Player::move">
+<area shape="rect" id="Node000001" title="Moves one tile forward in the current facing, with wrap&#45;around." alt="" coords="5,31,160,56"/>
+<area shape="rect" id="Node000002" href="$classzappy_1_1Player.html#a8b9c6f16cad62adb3f85f645c300393f" title="Tile the player would land on if it moved one step forward, with wrap&#45;around." alt="" coords="208,5,407,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="160,32,194,28,195,33,161,37"/>
+<area shape="rect" id="Node000003" href="$classzappy_1_1Player.html#a16e2f2ea6458b369a60a87f6e26a663c" title="Places the player at (x, y), wrapping into the map bounds." alt="" coords="213,55,402,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="161,49,199,53,199,58,160,54"/>
+</map>

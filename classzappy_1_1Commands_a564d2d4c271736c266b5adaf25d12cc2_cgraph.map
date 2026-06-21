@@ -1,0 +1,17 @@
+<map id="zappy::Commands::Forward" name="zappy::Commands::Forward">
+<area shape="rect" id="Node000001" title="Moves the player one tile forward in its current facing." alt="" coords="5,80,208,105"/>
+<area shape="rect" id="Node000002" href="$classzappy_1_1Client.html#aafed3af6e0e3c858d9581a3d9df81218" title="Returns the socket descriptor, used to read/write and to poll this client." alt="" coords="285,5,435,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="142,77,255,39,286,31,287,36,257,45,143,82"/>
+<area shape="rect" id="Node000003" href="$classzappy_1_1World.html#ad35316e4e1203c45ad2f853319775432" title="Map dimensions as (width, height)." alt="" coords="265,55,455,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="208,80,251,76,252,81,208,85"/>
+<area shape="rect" id="Node000004" href="$classzappy_1_1World.html#a439edc13734fbf59d0d280327b4ba191" title="Looks up a player by its client fd, or nullptr if none matches." alt="" coords="256,104,464,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="208,100,243,103,242,108,208,105"/>
+<area shape="rect" id="Node000006" href="$classzappy_1_1Player.html#ab4e81554335b3444ec84668404fb6819" title="Moves one tile forward in the current facing, with wrap&#45;around." alt="" coords="283,153,437,179"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="146,103,257,138,292,147,290,153,255,143,144,108"/>
+<area shape="rect" id="Node000005" href="$classzappy_1_1Player.html#a7382412b718c7828587ced9e7168bdf3" title="The socket fd linking this player to its client." alt="" coords="534,104,689,129"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="464,114,520,114,520,119,464,119"/>
+<area shape="rect" id="Node000007" href="$classzappy_1_1Player.html#a8b9c6f16cad62adb3f85f645c300393f" title="Tile the player would land on if it moved one step forward, with wrap&#45;around." alt="" coords="512,153,711,179"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="438,163,498,163,498,169,438,169"/>
+<area shape="rect" id="Node000008" href="$classzappy_1_1Player.html#a16e2f2ea6458b369a60a87f6e26a663c" title="Places the player at (x, y), wrapping into the map bounds." alt="" coords="517,203,706,228"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="426,176,533,197,532,203,425,181"/>
+</map>

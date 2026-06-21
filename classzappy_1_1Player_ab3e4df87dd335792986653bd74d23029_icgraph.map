@@ -1,0 +1,12 @@
+<map id="zappy::Player::setRotation" name="zappy::Player::setRotation">
+<area shape="rect" id="Node000001" title="Sets the facing direction." alt="" coords="683,31,875,56"/>
+<area shape="rect" id="Node000002" href="$classzappy_1_1Commands.html#afe000f07eae5be6125e8495565010891" title="Turns the player 90° to the left." alt="" coords="455,5,630,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="669,34,630,30,630,25,669,29"/>
+<area shape="rect" id="Node000005" href="$classzappy_1_1Commands.html#ae51a7d1bdbea3b7386da8849447a9162" title="Turns the player 90° to the right." alt="" coords="451,55,635,80"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="669,57,635,61,634,55,669,52"/>
+<area shape="rect" id="Node000003" href="$classzappy_1_1CommandParser.html#a629df3248cf7038782f23805ea6c806e" title="Fills _aiCommands with the AI protocol commands and their durations." alt="" coords="228,23,403,63"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="442,32,403,36,403,31,441,27"/>
+<area shape="rect" id="Node000004" href="$classzappy_1_1CommandParser.html#ac273c38a60fcb6825770e5a4f2ca43c0" title="Builds a parser for one client." alt="" coords="5,23,180,63"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="214,46,180,46,180,41,214,41"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="437,59,403,55,403,50,438,54"/>
+</map>
