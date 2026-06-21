@@ -18,8 +18,9 @@ std::string Commands::Right(std::vector<std::string> args, Client &client)
     Player *player = _world->getPlayerByFd(client.getFd());
     if (!player)
         return "dead\n";
+    int newRotation = (player->getRotation() + 90) % 360;
 
-    player->setRotation((player->getRotation() + 90) % 360);
+    player->setRotation(newRotation);
     return "ok\n";
 }
 std::string Commands::Left(std::vector<std::string> args, Client &client)
@@ -28,8 +29,9 @@ std::string Commands::Left(std::vector<std::string> args, Client &client)
     Player *player = _world->getPlayerByFd(client.getFd());
     if (!player)
         return "dead\n";
+    int newRotation = (player->getRotation() == 0) ? 270 : (player->getRotation() - 90) % 360;
 
-    player->setRotation((player->getRotation() - 90) % 360);
+    player->setRotation(newRotation);
     return "ok\n";
 }
 } // namespace zappy
