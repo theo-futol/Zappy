@@ -3,7 +3,7 @@
 namespace zappy
 {
 
-Player::Player(int fd, const Team &team) : _fd(fd), _pos{0, 0}, rotation(Degrees::NORTH), _team(team), _isLeveling(false), _inventory(), _state(PlayerState::PENDING)
+Player::Player(int fd, std::shared_ptr<Team> team) : _fd(fd), _pos{0, 0}, rotation(Degrees::NORTH), _team(team), _isLeveling(false), _inventory(), _state(PlayerState::PENDING)
 {
     _inventory.addItem(ItemType::FOOD, 10);
 }
@@ -98,7 +98,7 @@ Inventory &Player::getInventory()
 
 Team &Player::getTeam()
 {
-    return _team;
+    return *_team;
 }
 
 int Player::getFd() const
@@ -108,7 +108,7 @@ int Player::getFd() const
 
 const Team &Player::getTeam() const
 {
-    return _team;
+    return *_team;
 }
 
 void Player::changeState(PlayerState newState)
@@ -157,11 +157,13 @@ Degrees Player::getDirectionTo(const position &target, std::pair<int, int> mapSi
         dx = mapSize.first - dx;
     if (std::abs(dy) > (mapSize.second - std::abs(dy)))
         dy = mapSize.second - dy;
-    return static_cast<Degrees>(std::atan2(dy, dx) * 100);
+    return Direction::getNearestDirection(std::atan2(dy, dx) * 100);
 }
 
 void Player::setState(PlayerState newState)
 {
+    if (newState == PlayerState::DEAD)
+        _team->removePlayer();
     _state = newState;
 }
 
@@ -174,6 +176,7 @@ bool Player::isFrozen() const
 {
     return std::chrono::steady_clock::now() < _frozenUntil;
 }
+
 Degrees Player::getDirectionTo(const Player &target, std::pair<int, int> mapSize) const
 {
     return getDirectionTo(target.getPosition(), mapSize);
@@ -211,18 +214,11 @@ void Player::sendMessageToClient()
                 ssize_t bytesSent = write(it->second, msg.first.c_str(), msg.first.size());
                 if (bytesSent < 0)
                     throw ServerException("Failed to send message to client");
+                it = times.erase(it);
             }
             else
                 break;
     }
-    _messagesToSend.erase(std::remove_if(_messagesToSend.begin(), _messagesToSend.end(),
-                                         [currentTime](const std::pair<std::string, std::vector<std::pair<std::pair<std::clock_t, int>, int>>> &msg) {
-                                             for (const auto &time : msg.second)
-                                                 if (currentTime - time.first.first < time.first.second * CLOCKS_PER_SEC / 1000)
-                                                     return false;
-                                             return true;
-                                         }),
-                          _messagesToSend.end());
 }
 
 void Player::sortQueueByTimeNeeded()

@@ -57,10 +57,14 @@ void ClientHandler::handleClients(void)
         }
         if (now - _lastFoodUpdate >= foodIntervalMs)
         {
-            _world->foodCheck();
+            for (int fd : _world->foodCheck())
+            {
+                Client *client = getClientByFd(fd);
+                if (client)
+                    client->setType(ClientType::DEAD);
+            }
             _lastFoodUpdate = now;
         }
-
         clientEventHandling();
         if (_world->checkWinningCondition())
             *_serverIsRunning = false;
@@ -104,11 +108,19 @@ void ClientHandler::clientEventHandling()
             }
         }
     }
+    std::vector<int> fdsToRemove;
     for (auto &[fd, parser] : _parsers)
     {
-        while (parser->hasPending())
-            parser->executeNext();
+        if (parser->isBanned())
+            fdsToRemove.push_back(fd);
+        else
+        {
+            while (parser->executeNext())
+                ;
+        }
     }
+    for (int fd : fdsToRemove)
+        removeClient(fd);
 }
 
 void ClientHandler::addClient()
@@ -124,6 +136,7 @@ void ClientHandler::addClient()
 
 void ClientHandler::removeClient(int fd)
 {
+    _world->removePlayer(fd);
     _parsers.erase(fd);
 
     _clients.erase(std::remove_if(_clients.begin(), _clients.end(), [fd](const std::unique_ptr<Client> &client) { return client->getFd() == fd; }), _clients.end());

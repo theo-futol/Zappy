@@ -5,6 +5,9 @@ namespace zappy
 std::string Commands::Connect_nbr(std::vector<std::string> args, Client &client)
 {
     (void)args; // Unused parameter
-    return std::to_string(_world->getPlayerByFd(client.getFd())->getTeam().getAvailableSlots()) + "\n";
+    Player *player = _world->getPlayerByFd(client.getFd());
+    if (!player)
+        return "ko\n";
+    return std::to_string(player->getTeam().getAvailableSlots()) + "\n";
 }
 } // namespace zappy

@@ -6,7 +6,14 @@
 
 namespace zappy
 {
+/// @brief Process-wide counter handing out unique IDs to every egg laid.
 static int eggID = 0;
+
+/// @brief One team in the game: its name, its connection slots, and its eggs.
+///
+/// A free connection slot is the right to connect a new AI player. Slots come from
+/// the initial count plus every egg laid (each egg adds a slot), so the egg list and
+/// the slot counters are kept consistent by addEgg()/removeEgg().
 struct Team
 {
     std::string _name;
@@ -19,23 +26,30 @@ struct Team
     Team(const std::string &name, int teamID, int initialSlots) : _name(name), _teamID(teamID), _slotsAvailable(initialSlots), _slotsOccupied(0), _eggs(), _hasWin(false)
     {
     }
+    /// @brief True if a new player may still connect to this team.
     bool hasAvailableSlots() const
     {
         return _slotsOccupied < _slotsAvailable;
     }
+    /// @brief Number of free connection slots remaining.
     int getAvailableSlots() const
     {
         return _slotsAvailable - _slotsOccupied;
     }
+    /// @brief Marks one slot as taken (a player connected).
     void addPlayer()
     {
         ++_slotsOccupied;
     }
+    /// @brief Frees one occupied slot (a player left), never going below zero.
     void removePlayer()
     {
-        if (_slotsOccupied > 0)
+        if (_slotsOccupied > 0){
             --_slotsOccupied;
+            --_slotsAvailable;
+        }
     }
+    /// @brief Lays count eggs at the given tile, each adding a slot and a unique ID.
     void addEgg(const position &position, int count = 1)
     {
         _slotsAvailable += count;
@@ -50,15 +64,22 @@ struct Team
             newEggs.emplace_back(eggID++);
         _eggs.emplace_back(position, newEggs);
     }
+    /// @brief Removes eggs at a tile (and their slots). With eggID set, removes just
+    ///        that one egg; with count == -1, clears every egg on the tile.
     void removeEgg(const position &position, int count = 1, int eggID = -1)
     {
-        _slotsAvailable -= count;
+        if (count == 0)
+            return;
+        int slotsToRemove = 0;
         for (auto it = _eggs.begin(); it != _eggs.end(); ++it)
         {
             if (it->first == position)
             {
                 if (count == -1)
+                {
+                    slotsToRemove = it->second.size();
                     it->second.clear();
+                }
                 else
                 {
                     if (eggID == -1)
@@ -71,14 +92,17 @@ struct Team
                                 break;
                             }
                 }
-                return;
+                break;
             }
         }
+        _slotsAvailable -= slotsToRemove == 0 ? count : slotsToRemove;
     }
+    /// @brief Read-only view of all eggs (tile position paired with its egg IDs).
     const std::vector<std::pair<position, std::vector<int>>> &getEggs() const
     {
         return _eggs;
     }
+    /// @brief True if at least one egg is currently sitting on the given tile.
     bool hasEggAtPosition(const position &pos) const
     {
         for (const std::pair<position, std::vector<int>> &egg : _eggs)

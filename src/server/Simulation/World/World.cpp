@@ -43,12 +43,12 @@ void World::ressourcePassiveGeneration()
     }
 }
 
-std::vector<std::shared_ptr<Player>> &World::getPlayers()
+std::vector<std::unique_ptr<Player>> &World::getPlayers()
 {
     return _players;
 }
 
-const std::vector<std::shared_ptr<Player>> &World::getPlayers() const
+const std::vector<std::unique_ptr<Player>> &World::getPlayers() const
 {
     return _players;
 }
@@ -109,36 +109,36 @@ void World::setTileAt(position pos, ItemType itemType, int count)
 int World::getAvailableSlotsForTeam(const std::string &teamName) const
 {
     for (const auto &team : _teams)
-        if (team._name == teamName)
-            return team.getAvailableSlots();
+        if (team->_name == teamName)
+            return team->getAvailableSlots();
     return -1;
 }
 
 void World::addTeam(const std::string &name, int teamID, int initialSlots)
 {
-    _teams.emplace_back(name, teamID, initialSlots);
+    _teams.push_back(std::make_shared<Team>(name, teamID, initialSlots));
 }
 
-Team *World::getTeamByName(const std::string &name)
+std::shared_ptr<Team> World::getTeamByName(const std::string &name)
 {
     for (auto &team : _teams)
-        if (team._name == name)
-            return &team;
+        if (team->_name == name)
+            return team;
     return nullptr;
 }
 
-std::vector<Team> &World::getTeams()
+std::vector<std::shared_ptr<Team>> &World::getTeams()
 {
     return _teams;
 }
 
 void World::addPlayer(int fd, const std::string &teamName)
 {
-    Team *team = getTeamByName(teamName);
+    std::shared_ptr<Team> team = getTeamByName(teamName);
     if (!team)
         return;
-    auto player = std::make_shared<Player>(fd, *team);
-    _players.push_back(player);
+    team->addPlayer();
+    _players.push_back(std::make_unique<Player>(fd, team));
 }
 
 void World::sendMessageToPlayersThatAreOnTile(position pos, const std::string &message)
@@ -156,22 +156,25 @@ void World::setBroadCastQueue(std::queue<std::string> *broadcastQueue)
     _broadcastQueue = broadcastQueue;
 }
 
-void World::foodCheck()
+std::vector<int> World::foodCheck()
 {
-    for (auto player = _players.begin(); player != _players.end();)
+    std::vector<int> deadFds;
+
+    for (const auto &player : _players)
     {
-        if (player->get()->getInventory().getItemCount(ItemType::FOOD) <= 0)
+        if (player->getInventory().getItemCount(ItemType::FOOD) <= 0)
         {
-            _broadcastQueue->push("pdi " + std::to_string(player->get()->getFd()) + "\n");
-            player->get()->setState(PlayerState::DEAD);
-            player = _players.erase(player);
+            if (_broadcastQueue)
+                _broadcastQueue->push("pdi " + std::to_string(player->getFd()) + "\n");
+            player->setState(PlayerState::DEAD);
+            deadFds.push_back(player->getFd());
         }
         else
-        {
-            player->get()->getInventory().removeItem(ItemType::FOOD);
-            player++;
-        }
+            player->getInventory().removeItem(ItemType::FOOD);
     }
+    for (int fd : deadFds)
+        removePlayer(fd);
+    return deadFds;
 }
 
 static const std::vector<ElevationRequirement> elevationRequirements = {
@@ -245,25 +248,38 @@ void World::removeIncantationStones(int x, int y, int level)
 
 bool World::checkWinningCondition()
 {
-    int playerCounter = 0;
-
     for (auto &team : _teams)
-        if (team._slotsOccupied >= 6)
+    {
+        int playerCounter = 0;
+        if (team->_slotsOccupied >= 6)
         {
             for (auto &player : _players)
             {
-                if (player->getTeam()._name != team._name)
+                if (player->getTeam()._name != team->_name)
                     continue;
                 if (player->getLevel() >= 8)
                     playerCounter++;
             }
             if (playerCounter >= 6)
             {
-                _broadcastQueue->push("seg " + team._name + "\n");
-                team._hasWin = true;
+                _broadcastQueue->push("seg " + team->_name + "\n");
+                team->_hasWin = true;
                 return true;
             }
         }
+    }
     return false;
+}
+
+void World::removePlayer(int fd)
+{
+    auto it = std::find_if(_players.begin(), _players.end(), [fd](const std::unique_ptr<Player> &player) { return player->getFd() == fd; });
+
+    if (it == _players.end())
+        return;
+    // setState(DEAD) already frees the team slot (see Player::setState); avoid freeing it twice.
+    if ((*it)->getState() != PlayerState::DEAD)
+        (*it)->getTeam().removePlayer();
+    _players.erase(it);
 }
 } // namespace zappy
