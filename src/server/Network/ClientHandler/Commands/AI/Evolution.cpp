@@ -5,10 +5,13 @@ namespace zappy
 std::string Commands::Fork(std::vector<std::string> args, Client &client)
 {
     (void)args; // Unused parameter
-    position playerPos = _world->getPlayerByFd(client.getFd())->getPosition();
+    Player *player = _world->getPlayerByFd(client.getFd());
+    if (!player)
+        return "ko\n";
+    position playerPos = player->getPosition();
 
-    _world->setTileAt(_world->getPlayerByFd(client.getFd())->getPosition(), ItemType::EGG, 1);
-    _world->getPlayerByFd(client.getFd())->getTeam().addEgg(playerPos);
+    _world->setTileAt(playerPos, ItemType::EGG, 1);
+    player->getTeam().addEgg(playerPos);
     return "ok\n";
 }
 
