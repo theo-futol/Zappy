@@ -214,18 +214,11 @@ void Player::sendMessageToClient()
                 ssize_t bytesSent = write(it->second, msg.first.c_str(), msg.first.size());
                 if (bytesSent < 0)
                     throw ServerException("Failed to send message to client");
+                it = times.erase(it);
             }
             else
                 break;
     }
-    _messagesToSend.erase(std::remove_if(_messagesToSend.begin(), _messagesToSend.end(),
-                                         [currentTime](const std::pair<std::string, std::vector<std::pair<std::pair<std::clock_t, int>, int>>> &msg) {
-                                             for (const auto &time : msg.second)
-                                                 if (currentTime - time.first.first < time.first.second * CLOCKS_PER_SEC / 1000)
-                                                     return false;
-                                             return true;
-                                         }),
-                          _messagesToSend.end());
 }
 
 void Player::sortQueueByTimeNeeded()
