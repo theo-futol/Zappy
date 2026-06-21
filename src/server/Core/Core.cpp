@@ -24,13 +24,24 @@ void Core::setClientHandler()
     int f = _argParser.hasFlag("-f") ? _argParser.getInt("-f") : 100;
     int initialClientCapacity = _argParser.getInt("-c") * _argParser.getList("-n").size();
     _clientHandler = std::make_unique<ClientHandler>(port, initialClientCapacity, f, _world.get(), &serverIsRunning);
+    setWorldBroadcast();
+}
+
+void Core::setWorldBroadcast()
+{
+    if (_world)
+        _world->setBroadCastQueue(&_clientHandler->getBroadcastQueue());
 }
 
 void Core::setWorld()
 {
     int width = _argParser.getInt("-x");
     int height = _argParser.getInt("-y");
+    int initialSlots = _argParser.getInt("-c");
     _world = std::make_unique<World>(width, height);
+    const auto &teamNames = _argParser.getList("-n");
+    for (int i = 0; i < static_cast<int>(teamNames.size()); ++i)
+        _world->addTeam(teamNames[i], i, initialSlots);
     std::cout << "World created with dimensions: " << width << "x" << height << std::endl;
 }
 

@@ -3,6 +3,8 @@
 
 namespace zappy
 {
+    /// @brief Every resource that can sit on a tile: the food unit, the six
+    ///        elevation stones, and eggs. UNKNOWN is the parse-failure sentinel.
     enum class ItemType
     {
         FOOD,
@@ -12,9 +14,11 @@ namespace zappy
         MENDIANE,
         PHIRAS,
         THYSTAME,
+        EGG,
         UNKNOWN
     };
 
+    /// @brief Converts an ItemType to its protocol name (e.g. LINEMATE -> "linemate").
     inline std::string itemTypeToString(ItemType type)
     {
         switch (type) {
@@ -25,10 +29,12 @@ namespace zappy
             case ItemType::MENDIANE: return "mendiane";
             case ItemType::PHIRAS: return "phiras";
             case ItemType::THYSTAME: return "thystame";
+            case ItemType::EGG: return "egg";
             default: return "unknown";
         }
     }
 
+    /// @brief Parses a protocol name into an ItemType, returning UNKNOWN if unrecognized.
     inline ItemType stringToItemType(const std::string &str)
     {
         if (str == "food") return ItemType::FOOD;
@@ -38,6 +44,7 @@ namespace zappy
         if (str == "mendiane") return ItemType::MENDIANE;
         if (str == "phiras") return ItemType::PHIRAS;
         if (str == "thystame") return ItemType::THYSTAME;
+        if (str == "egg") return ItemType::EGG;
         return ItemType::UNKNOWN;
     }
 } // namespace zappy

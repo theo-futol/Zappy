@@ -1,7 +1,15 @@
 #include "Client.hpp"
+#include <unistd.h>
+#include <utility>
 
 namespace zappy
 {
+Client::~Client()
+{
+    if (_fd >= 0)
+        close(_fd);
+}
+
 int Client::getFd() const
 {
     return _fd;
@@ -32,13 +40,4 @@ void Client::setBuffer(const std::string &buffer)
     _buffer = buffer;
 }
 
-int Client::getPlayerID() const
-{
-    return _playerID;
-}
-
-void Client::setPlayerID(int playerID)
-{
-    this->_playerID = playerID;
-}
 } // namespace zappy
