@@ -12,8 +12,8 @@ std::string Commands::Pin(std::vector<std::string> args, Client &client)
         return "ko\n";
     std::string response = "pin " + std::to_string(player->getFd()) + " " + std::to_string(player->getPosition().x) + " " + std::to_string(player->getPosition().y) + " ";
 
-    for (const auto &item : player->getInventory().getItems())
-        response += std::to_string(item.second) + " ";
+    for (const int &count : player->getInventory().getItems())
+        response += std::to_string(count) + " ";
     response += "\n";
     return response;
 }

@@ -111,11 +111,6 @@ const Team &Player::getTeam() const
     return *_team;
 }
 
-void Player::changeState(PlayerState newState)
-{
-    _state = newState;
-}
-
 PlayerState Player::getState() const
 {
     return _state;
