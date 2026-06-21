@@ -12,10 +12,11 @@ std::string Commands::Look(std::vector<std::string> args, Client &client)
     std::pair<int, int> mapSize = _world->getMapSize();
     position pos = player->getPosition();
     int rotation = player->getRotation();
+    int tileViewed = 2;
 
-    for (int i = 0; i < player->getLevel(); i++)
+    for (int i = 1; i <= player->getLevel(); i++)
     {
-        for (int j = 0; j < (3 * (i + 1) - i); j++)
+        for (int j = 0; j < tileViewed + i; j++)
         {
             position tilePos = pos;
 
@@ -41,7 +42,7 @@ std::string Commands::Look(std::vector<std::string> args, Client &client)
                 throw ServerException("Invalid rotation value");
             }
 
-            if (tilePos.x < 0)
+            if (tilePos.x < 0) // TO DO
                 tilePos.x = mapSize.first - 1;
             else if (tilePos.x >= mapSize.first)
                 tilePos.x = 0;
@@ -58,6 +59,7 @@ std::string Commands::Look(std::vector<std::string> args, Client &client)
         }
         if (i != player->getLevel() - 1)
             buffer += ",";
+        tileViewed += 1;
     }
     return buffer + "]\n";
 }
