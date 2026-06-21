@@ -108,16 +108,19 @@ void ClientHandler::clientEventHandling()
             }
         }
     }
+    std::vector<int> fdsToRemove;
     for (auto &[fd, parser] : _parsers)
     {
         if (parser->isBanned())
+            fdsToRemove.push_back(fd);
+        else
         {
-            removeClient(fd);
-            break;
+            while (parser->executeNext())
+                ;
         }
-        while (parser->executeNext())
-            ;
     }
+    for (int fd : fdsToRemove)
+        removeClient(fd);
 }
 
 void ClientHandler::addClient()
