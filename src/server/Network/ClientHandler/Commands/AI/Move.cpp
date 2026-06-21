@@ -19,7 +19,7 @@ std::string Commands::Right(std::vector<std::string> args, Client &client)
     if (!player)
         return "dead\n";
 
-    player->setRotation(player->getRotation() + 90 % 360);
+    player->setRotation((player->getRotation() + 90) % 360);
     return "ok\n";
 }
 std::string Commands::Left(std::vector<std::string> args, Client &client)
@@ -29,7 +29,7 @@ std::string Commands::Left(std::vector<std::string> args, Client &client)
     if (!player)
         return "dead\n";
 
-    player->setRotation(player->getRotation() - 90 % 360);
+    player->setRotation((player->getRotation() - 90) % 360);
     return "ok\n";
 }
 } // namespace zappy
