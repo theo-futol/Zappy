@@ -1,13 +1,11 @@
 var NAVTREEINDEX2 =
 {
-"classzappy_1_1World.html#aac6d20501beeae11b0542eb1e952713b":[1,0,0,17,0],
-"classzappy_1_1World.html#aac6d20501beeae11b0542eb1e952713b":[0,0,0,17,0],
 "classzappy_1_1World.html#aad86d2fa98fbe95fed52656c32582b19":[1,0,0,17,19],
 "classzappy_1_1World.html#aad86d2fa98fbe95fed52656c32582b19":[0,0,0,17,19],
 "classzappy_1_1World.html#ab1b432308478a9dba9cf0a0695bef412":[0,0,0,17,14],
 "classzappy_1_1World.html#ab1b432308478a9dba9cf0a0695bef412":[1,0,0,17,14],
-"classzappy_1_1World.html#ab344a57c1cabbba19a41136b9b69ccf0":[0,0,0,17,2],
 "classzappy_1_1World.html#ab344a57c1cabbba19a41136b9b69ccf0":[1,0,0,17,2],
+"classzappy_1_1World.html#ab344a57c1cabbba19a41136b9b69ccf0":[0,0,0,17,2],
 "classzappy_1_1World.html#ab6ac66d9af830c2fc55c7c1787987470":[0,0,0,17,5],
 "classzappy_1_1World.html#ab6ac66d9af830c2fc55c7c1787987470":[1,0,0,17,5],
 "classzappy_1_1World.html#abd102b3f00f1993ea7aabd5d883127b3":[0,0,0,17,24],

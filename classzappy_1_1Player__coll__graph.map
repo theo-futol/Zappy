@@ -1,7 +1,7 @@
 <map id="zappy::Player" name="zappy::Player">
-<area shape="rect" id="Node000001" title="One AI&#45;controlled creature in the world: its position, orientation, level, team, inventory and life&#45;c..." alt="" coords="62,253,210,659"/>
+<area shape="rect" id="Node000001" title="One AI&#45;controlled creature in the world: its position, orientation, level, team, inventory and life&#45;c..." alt="" coords="62,253,210,639"/>
 <area shape="rect" id="Node000002" href="$structzappy_1_1position.html" title="A tile coordinate on the map." alt="" coords="5,55,117,141"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="73,140,93,237,88,238,67,141"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="73,140,94,237,89,238,68,142"/>
 <area shape="rect" id="Node000003" href="$classzappy_1_1Inventory.html" title="What a single player is carrying: a count per ItemType. Stored as a vector indexed by ItemType so ite..." alt="" coords="141,5,280,191"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="194,191,184,238,179,237,189,190"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="193,192,184,238,178,236,188,190"/>
 </map>

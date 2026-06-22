@@ -28,7 +28,6 @@ var classzappy_1_1Player =
     [ "_fd", "classzappy_1_1Player.html#aef68cd58e13763ed0c9109e682ed4c82", null ],
     [ "_frozenUntil", "classzappy_1_1Player.html#a199767995ab502c3489bdd9c22abb15c", null ],
     [ "_inventory", "classzappy_1_1Player.html#af0828e055088d2b18337873b1cc6e961", null ],
-    [ "_isLeveling", "classzappy_1_1Player.html#ac14207ee2ade528a968cf8db73735117", null ],
     [ "_level", "classzappy_1_1Player.html#aa8d42939328209e67758a6f3db5e6263", null ],
     [ "_messagesToSend", "classzappy_1_1Player.html#a2319c08518088613258ca50abcfb4d4d", null ],
     [ "_pos", "classzappy_1_1Player.html#ac1d535eb2e4d5e176a5761db7038fbc1", null ],

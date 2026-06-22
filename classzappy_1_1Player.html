@@ -199,8 +199,6 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a1b27187c0a771f2b82fcfed330fc8d68"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af21faec9f3b901c5a926d47501fdff6e" id="r_af21faec9f3b901c5a926d47501fdff6e"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="structzappy_1_1Team.html">Team</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1Player.html#af21faec9f3b901c5a926d47501fdff6e">_team</a></td></tr>
 <tr class="separator:af21faec9f3b901c5a926d47501fdff6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac14207ee2ade528a968cf8db73735117" id="r_ac14207ee2ade528a968cf8db73735117"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1Player.html#ac14207ee2ade528a968cf8db73735117">_isLeveling</a></td></tr>
-<tr class="separator:ac14207ee2ade528a968cf8db73735117"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af0828e055088d2b18337873b1cc6e961" id="r_af0828e055088d2b18337873b1cc6e961"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classzappy_1_1Inventory.html">Inventory</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1Player.html#af0828e055088d2b18337873b1cc6e961">_inventory</a></td></tr>
 <tr class="separator:af0828e055088d2b18337873b1cc6e961"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ade029f0c7486945fa7f5929c42c73dc0" id="r_ade029f0c7486945fa7f5929c42c73dc0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacezappy.html#a739d472bdf98c0f9136679f6ffb58113">PlayerState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1Player.html#ade029f0c7486945fa7f5929c42c73dc0">_state</a></td></tr>
@@ -214,7 +212,7 @@ Private Attributes</h2></td></tr>
 <div class="textblock"><p>One AI-controlled creature in the world: its position, orientation, level, team, inventory and life-cycle state, plus the bookkeeping for broadcast messages it still has to deliver. </p>
 <p>A <a class="el" href="classzappy_1_1Player.html" title="One AI-controlled creature in the world: its position, orientation, level, team, inventory and life-c...">Player</a> is keyed to its client by the socket fd. Movement and direction helpers take the map size so they can wrap around the toroidal world. </p>
 
-<p class="definition">Definition at line <a class="el" href="Player_8hpp_source.html#l00023">23</a> of file <a class="el" href="Player_8hpp_source.html">Player.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Player_8hpp_source.html#l00024">24</a> of file <a class="el" href="Player_8hpp_source.html">Player.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="abccb8c49e9b6854d710c837ca86edbf3" name="abccb8c49e9b6854d710c837ca86edbf3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abccb8c49e9b6854d710c837ca86edbf3">&#9670;&#160;</a></span>Player()</h2>
@@ -283,7 +281,7 @@ Private Attributes</h2></td></tr>
 
 <p>Queues a message to be delivered to a receiver after timeNeeded elapses. </p>
 
-<p class="definition">Definition at line <a class="el" href="Player_8cpp_source.html#l00180">180</a> of file <a class="el" href="Player_8cpp_source.html">Player.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Player_8cpp_source.html#l00181">181</a> of file <a class="el" href="Player_8cpp_source.html">Player.cpp</a>.</p>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
@@ -322,7 +320,7 @@ Private Attributes</h2></td></tr>
 
 <p><a class="el" href="structzappy_1_1Direction.html">Direction</a> from this player toward another player, accounting for wrap-around. </p>
 
-<p class="definition">Definition at line <a class="el" href="Player_8cpp_source.html#l00175">175</a> of file <a class="el" href="Player_8cpp_source.html">Player.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Player_8cpp_source.html#l00176">176</a> of file <a class="el" href="Player_8cpp_source.html">Player.cpp</a>.</p>
 <div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
@@ -703,7 +701,7 @@ Private Attributes</h2></td></tr>
 
 <p>Returns true while the player is frozen and must not execute any command. </p>
 
-<p class="definition">Definition at line <a class="el" href="Player_8cpp_source.html#l00170">170</a> of file <a class="el" href="Player_8cpp_source.html">Player.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Player_8cpp_source.html#l00171">171</a> of file <a class="el" href="Player_8cpp_source.html">Player.cpp</a>.</p>
 <div id="dynsection-16" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-16-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-16-summary" class="dynsummary" style="display:block;">
@@ -824,7 +822,7 @@ Private Attributes</h2></td></tr>
 
 <p>Flushes any queued messages whose delivery time has arrived. </p>
 
-<p class="definition">Definition at line <a class="el" href="Player_8cpp_source.html#l00196">196</a> of file <a class="el" href="Player_8cpp_source.html">Player.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Player_8cpp_source.html#l00197">197</a> of file <a class="el" href="Player_8cpp_source.html">Player.cpp</a>.</p>
 <div id="dynsection-21" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-21-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-21-summary" class="dynsummary" style="display:block;">
@@ -853,7 +851,7 @@ Private Attributes</h2></td></tr>
 
 <p>Freezes the player until the given time point (used while an incantation is underway). </p>
 
-<p class="definition">Definition at line <a class="el" href="Player_8cpp_source.html#l00165">165</a> of file <a class="el" href="Player_8cpp_source.html">Player.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Player_8cpp_source.html#l00166">166</a> of file <a class="el" href="Player_8cpp_source.html">Player.cpp</a>.</p>
 <div id="dynsection-22" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-22-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-22-summary" class="dynsummary" style="display:block;">
@@ -956,7 +954,7 @@ Private Attributes</h2></td></tr>
 
 <p>Sets the life-cycle state. </p>
 
-<p class="definition">Definition at line <a class="el" href="Player_8cpp_source.html#l00158">158</a> of file <a class="el" href="Player_8cpp_source.html">Player.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Player_8cpp_source.html#l00159">159</a> of file <a class="el" href="Player_8cpp_source.html">Player.cpp</a>.</p>
 <div id="dynsection-25" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-25-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-25-summary" class="dynsummary" style="display:block;">
@@ -991,7 +989,7 @@ Private Attributes</h2></td></tr>
 
 <p>Orders the pending-message queue by the time each message needs to arrive. </p>
 
-<p class="definition">Definition at line <a class="el" href="Player_8cpp_source.html#l00219">219</a> of file <a class="el" href="Player_8cpp_source.html">Player.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Player_8cpp_source.html#l00220">220</a> of file <a class="el" href="Player_8cpp_source.html">Player.cpp</a>.</p>
 <div id="dynsection-27" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-27-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-27-summary" class="dynsummary" style="display:block;">
@@ -1052,7 +1050,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Player_8hpp_source.html#l00026">26</a> of file <a class="el" href="Player_8hpp_source.html">Player.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Player_8hpp_source.html#l00027">27</a> of file <a class="el" href="Player_8hpp_source.html">Player.hpp</a>.</p>
 
 </div>
 </div>
@@ -1076,7 +1074,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Player_8hpp_source.html#l00036">36</a> of file <a class="el" href="Player_8hpp_source.html">Player.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Player_8hpp_source.html#l00037">37</a> of file <a class="el" href="Player_8hpp_source.html">Player.hpp</a>.</p>
 
 </div>
 </div>
@@ -1100,31 +1098,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Player_8hpp_source.html#l00033">33</a> of file <a class="el" href="Player_8hpp_source.html">Player.hpp</a>.</p>
-
-</div>
-</div>
-<a id="ac14207ee2ade528a968cf8db73735117" name="ac14207ee2ade528a968cf8db73735117"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac14207ee2ade528a968cf8db73735117">&#9670;&#160;</a></span>_isLeveling</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool zappy::Player::_isLeveling</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="Player_8hpp_source.html#l00032">32</a> of file <a class="el" href="Player_8hpp_source.html">Player.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Player_8hpp_source.html#l00034">34</a> of file <a class="el" href="Player_8hpp_source.html">Player.hpp</a>.</p>
 
 </div>
 </div>
@@ -1148,7 +1122,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Player_8hpp_source.html#l00028">28</a> of file <a class="el" href="Player_8hpp_source.html">Player.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Player_8hpp_source.html#l00029">29</a> of file <a class="el" href="Player_8hpp_source.html">Player.hpp</a>.</p>
 
 </div>
 </div>
@@ -1172,7 +1146,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Player_8hpp_source.html#l00035">35</a> of file <a class="el" href="Player_8hpp_source.html">Player.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Player_8hpp_source.html#l00036">36</a> of file <a class="el" href="Player_8hpp_source.html">Player.hpp</a>.</p>
 
 </div>
 </div>
@@ -1196,7 +1170,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Player_8hpp_source.html#l00029">29</a> of file <a class="el" href="Player_8hpp_source.html">Player.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Player_8hpp_source.html#l00030">30</a> of file <a class="el" href="Player_8hpp_source.html">Player.hpp</a>.</p>
 
 </div>
 </div>
@@ -1220,7 +1194,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Player_8hpp_source.html#l00034">34</a> of file <a class="el" href="Player_8hpp_source.html">Player.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Player_8hpp_source.html#l00035">35</a> of file <a class="el" href="Player_8hpp_source.html">Player.hpp</a>.</p>
 
 </div>
 </div>
@@ -1244,7 +1218,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Player_8hpp_source.html#l00031">31</a> of file <a class="el" href="Player_8hpp_source.html">Player.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Player_8hpp_source.html#l00032">32</a> of file <a class="el" href="Player_8hpp_source.html">Player.hpp</a>.</p>
 
 </div>
 </div>
@@ -1268,7 +1242,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Player_8hpp_source.html#l00030">30</a> of file <a class="el" href="Player_8hpp_source.html">Player.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Player_8hpp_source.html#l00031">31</a> of file <a class="el" href="Player_8hpp_source.html">Player.hpp</a>.</p>
 
 </div>
 </div>
