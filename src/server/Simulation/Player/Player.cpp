@@ -3,7 +3,7 @@
 namespace zappy
 {
 
-Player::Player(int fd, std::shared_ptr<Team> team) : _fd(fd), _pos{0, 0}, rotation(Degrees::NORTH), _team(team), _isLeveling(false), _inventory(), _state(PlayerState::PENDING)
+Player::Player(int fd, std::shared_ptr<Team> team) : _fd(fd), _pos{0, 0}, rotation(Degrees::NORTH), _team(team), _inventory(), _state(PlayerState::PENDING)
 {
     _inventory.addItem(ItemType::FOOD, 10);
 }
