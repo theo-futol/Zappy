@@ -65,12 +65,15 @@ std::string Commands::Incantation(std::vector<std::string> args, Client &client)
 
     std::vector<Player *> participants = _world->getPlayersOnTileAtLevel(pos.x, pos.y, level);
     _world->removeIncantationStones(pos.x, pos.y, level);
+    int new_level = 0;
     for (Player *participant : participants)
     {
         participant->levelUp();
         _broadcastQueue->push("plv " + std::to_string(participant->getFd()) + " " + std::to_string(participant->getLevel()) + "\n");
         participant->writeToClient("Current level: " + std::to_string(participant->getLevel()) + "\n");
+        new_level = participant->getLevel();
     }
+    std::cout << "elevation : " << new_level << std::endl;
     _broadcastQueue->push(pieHeader + "1\n");
     return "";
 }

@@ -6,9 +6,9 @@ namespace zappy
 std::string Commands::Take(std::vector<std::string> args, Client &client)
 {
     tile *currentTile = _world->getTileAt(client.getFd());
-    if (args.size() < 2 || !currentTile)
+    if (args.size() < 1 || !currentTile)
         return "ko\n";
-    ItemType itemType = stringToItemType(args[1]);
+    ItemType itemType = stringToItemType(args[0]);
     if (itemType == ItemType::UNKNOWN)
         return "ko\n";
     for (auto it = currentTile->_items.begin(); it != currentTile->_items.end(); it++)
@@ -29,9 +29,9 @@ std::string Commands::Take(std::vector<std::string> args, Client &client)
 std::string Commands::Set(std::vector<std::string> args, Client &client)
 {
     tile *currentTile = _world->getTileAt(client.getFd());
-    if (args.size() < 2 || !currentTile)
+    if (args.size() < 1 || !currentTile)
         return "ko\n";
-    ItemType itemType = stringToItemType(args[1]);
+    ItemType itemType = stringToItemType(args[0]);
     if (itemType == ItemType::UNKNOWN)
         return "ko\n";
     int itemCount = _world->getPlayerByFd(client.getFd())->getInventory().getItemCount(itemType);
