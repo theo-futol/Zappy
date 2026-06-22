@@ -4,6 +4,8 @@
 ##     Makefile                                                                        ##
 ## ALL ZAPPY SERVICE MAKEFILE
 
+CC = clang++
+
 PROJECT_NAME = zappy
 BINARIES     = server gui ai
 

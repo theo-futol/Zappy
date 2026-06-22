@@ -1,4 +1,5 @@
 #pragma once
+#include <unistd.h>
 #include <string>
 #include <math.h>
 #include <algorithm>
@@ -29,7 +30,7 @@ class Player
     position _pos;
     int rotation;
     std::shared_ptr<Team> _team;
-    bool _isLeveling;
+    // bool _isLeveling;
     Inventory _inventory;
     PlayerState _state;
     std::vector<std::pair<std::string, std::vector<std::pair<std::pair<std::clock_t, int>, int>>>> _messagesToSend; // <<message, <<clock, timeNeeded>, receiverFd>, <clock, timeNeeded>, receiverFd>>, <message, <<clock, timeNeeded>, receiverFd>>>
