@@ -2,7 +2,8 @@
 
 namespace zappy
 {
-World::World(int x, int y)
+
+World::World(int x, int y) : _broadcastQueue(nullptr)
 {
     _map.resize(x);
     for (auto &column : _map)
@@ -12,6 +13,7 @@ World::World(int x, int y)
         for (int j = 0; j < y; ++j)
             _map[i][j] = tile();
     _mapSize = std::make_pair(x, y);
+    srand(time(nullptr));
 }
 
 /// @brief Generates resources on the map at regular intervals.
@@ -41,23 +43,29 @@ void World::ressourcePassiveGeneration()
     }
 }
 
-Player *World::getPlayerByID(int playerID)
+std::vector<std::unique_ptr<Player>> &World::getPlayers()
 {
-    for (const auto &column : _map)
-        for (const auto &tile : column)
-            for (const auto &player : tile._players)
-                if (player->getPlayerID() == playerID)
-                    return player.get();
+    return _players;
+}
+
+const std::vector<std::unique_ptr<Player>> &World::getPlayers() const
+{
+    return _players;
+}
+
+Player *World::getPlayerByFd(int fd)
+{
+    for (const auto &player : _players)
+        if (player->getFd() == fd)
+            return player.get();
     return nullptr;
 }
 
-Player *World::getPlayerByID(int playerID) const
+Player *World::getPlayerByFd(int fd) const
 {
-    for (const auto &column : _map)
-        for (const auto &tile : column)
-            for (const auto &player : tile._players)
-                if (player->getPlayerID() == playerID)
-                    return player.get();
+    for (const auto &player : _players)
+        if (player->getFd() == fd)
+            return player.get();
     return nullptr;
 }
 
@@ -70,7 +78,7 @@ std::pair<int, int> World::getMapSize() const
 
 tile *World::getTileAt(int playerID)
 {
-    Player *player = getPlayerByID(playerID);
+    Player *player = getPlayerByFd(playerID);
     if (!player)
         return nullptr;
     return getTileAt(player->getPosition());
@@ -78,8 +86,219 @@ tile *World::getTileAt(int playerID)
 
 tile *World::getTileAt(position pos)
 {
-    if (pos.x >= _map.size() || pos.y >= _map[0].size())
+    if (pos.x < 0 || pos.y < 0)
+        return nullptr;
+    if (pos.x >= static_cast<int>(_map.size()) || pos.y >= static_cast<int>(_map[0].size()))
         return nullptr;
     return &_map[pos.x][pos.y];
+}
+
+void World::setTileAt(position pos, ItemType itemType, int count)
+{
+    tile *tilePtr = getTileAt(pos);
+
+    if (!tilePtr)
+        return;
+    std::vector<std::pair<ItemType, int>> &tileItems = tilePtr->_items;
+    auto it = std::find_if(tileItems.begin(), tileItems.end(), [itemType](const std::pair<ItemType, int> &item) { return item.first == itemType; });
+
+    if (it != tileItems.end())
+        it->second = count;
+    else
+        tileItems.emplace_back(itemType, count);
+}
+
+int World::getAvailableSlotsForTeam(const std::string &teamName) const
+{
+    for (const auto &team : _teams)
+        if (team->_name == teamName)
+            return team->getAvailableSlots();
+    return -1;
+}
+
+void World::addTeam(const std::string &name, int teamID, int initialSlots)
+{
+    _teams.push_back(std::make_shared<Team>(name, teamID, initialSlots));
+}
+
+std::shared_ptr<Team> World::getTeamByName(const std::string &name)
+{
+    for (auto &team : _teams)
+        if (team->_name == name)
+            return team;
+    return nullptr;
+}
+
+std::vector<std::shared_ptr<Team>> &World::getTeams()
+{
+    return _teams;
+}
+
+void World::addPlayer(int fd, const std::string &teamName)
+{
+    std::shared_ptr<Team> team = getTeamByName(teamName);
+    if (!team)
+        return;
+    team->addPlayer();
+    _players.push_back(std::make_unique<Player>(fd, team));
+    addPlayerToTile(_players.back().get(), _players.back()->getPosition());
+}
+
+void World::removePlayerFromTile(Player *player, position pos)
+{
+    tile *tilePtr = getTileAt(pos);
+    if (!tilePtr)
+        return;
+    tilePtr->_players.erase(std::remove(tilePtr->_players.begin(), tilePtr->_players.end(), player), tilePtr->_players.end());
+}
+
+void World::addPlayerToTile(Player *player, position pos)
+{
+    tile *tilePtr = getTileAt(pos);
+    if (tilePtr)
+        tilePtr->_players.push_back(player);
+}
+
+void World::sendMessageToPlayersThatAreOnTile(position pos, const std::string &message)
+{
+    tile *tilePtr = getTileAt(pos);
+
+    if (!tilePtr)
+        return;
+    for (const auto &player : tilePtr->_players)
+        player->writeToClient(message);
+}
+
+void World::setBroadCastQueue(std::queue<std::string> *broadcastQueue)
+{
+    _broadcastQueue = broadcastQueue;
+}
+
+std::vector<int> World::foodCheck()
+{
+    std::vector<int> deadFds;
+
+    for (const auto &player : _players)
+    {
+        if (player->getInventory().getItemCount(ItemType::FOOD) <= 0)
+        {
+            if (_broadcastQueue)
+                _broadcastQueue->push("pdi " + std::to_string(player->getFd()) + "\n");
+            player->setState(PlayerState::DEAD);
+            deadFds.push_back(player->getFd());
+        }
+        else
+            player->getInventory().removeItem(ItemType::FOOD);
+    }
+    for (int fd : deadFds)
+        removePlayer(fd);
+    return deadFds;
+}
+
+static const std::vector<ElevationRequirement> elevationRequirements = {
+    {0, {}},
+    {1, {{ItemType::LINEMATE, 1}}},
+    {2, {{ItemType::LINEMATE, 1}, {ItemType::DERAUMERE, 1}, {ItemType::SIBUR, 1}}},
+    {2, {{ItemType::LINEMATE, 2}, {ItemType::SIBUR, 1}, {ItemType::PHIRAS, 2}}},
+    {4, {{ItemType::LINEMATE, 1}, {ItemType::DERAUMERE, 1}, {ItemType::SIBUR, 2}, {ItemType::PHIRAS, 1}}},
+    {4, {{ItemType::LINEMATE, 1}, {ItemType::DERAUMERE, 2}, {ItemType::SIBUR, 1}, {ItemType::MENDIANE, 3}}},
+    {6, {{ItemType::LINEMATE, 1}, {ItemType::DERAUMERE, 2}, {ItemType::SIBUR, 3}, {ItemType::PHIRAS, 1}}},
+    {6, {{ItemType::LINEMATE, 2}, {ItemType::DERAUMERE, 2}, {ItemType::SIBUR, 2}, {ItemType::MENDIANE, 2}, {ItemType::PHIRAS, 2}, {ItemType::THYSTAME, 1}}},
+};
+
+const ElevationRequirement *World::getElevationRequirement(int level) const
+{
+    if (level < 1 || level > 7)
+        return nullptr;
+    return &elevationRequirements[level];
+}
+
+std::vector<Player *> World::getPlayersOnTileAtLevel(int x, int y, int level)
+{
+    std::vector<Player *> result;
+    position pos{x, y};
+
+    for (const auto &player : _players)
+        if (player->getLevel() == level && player->getPosition() == pos)
+            result.push_back(player.get());
+    return result;
+}
+
+bool World::isIncantationValid(int x, int y, int level)
+{
+    const ElevationRequirement *requirement = getElevationRequirement(level);
+    tile *tilePtr = getTileAt({x, y});
+
+    if (!requirement || !tilePtr)
+        return false;
+    if (static_cast<int>(getPlayersOnTileAtLevel(x, y, level).size()) < requirement->players)
+        return false;
+    for (const auto &[stone, needed] : requirement->stones)
+    {
+        int available = 0;
+        for (const auto &item : tilePtr->_items)
+            if (item.first == stone)
+            {
+                available = item.second;
+                break;
+            }
+        if (available < needed)
+            return false;
+    }
+    return true;
+}
+
+void World::removeIncantationStones(int x, int y, int level)
+{
+    const ElevationRequirement *requirement = getElevationRequirement(level);
+    tile *tilePtr = getTileAt({x, y});
+
+    if (!requirement || !tilePtr)
+        return;
+    for (const auto &[stone, needed] : requirement->stones)
+        for (auto &item : tilePtr->_items)
+            if (item.first == stone)
+            {
+                item.second = std::max(0, item.second - needed);
+                break;
+            }
+}
+
+bool World::checkWinningCondition()
+{
+    for (auto &team : _teams)
+    {
+        int playerCounter = 0;
+        if (team->_slotsOccupied >= 6)
+        {
+            for (auto &player : _players)
+            {
+                if (player->getTeam()._name != team->_name)
+                    continue;
+                if (player->getLevel() >= 8)
+                    playerCounter++;
+            }
+            if (playerCounter >= 6)
+            {
+                _broadcastQueue->push("seg " + team->_name + "\n");
+                team->_hasWin = true;
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+void World::removePlayer(int fd)
+{
+    auto it = std::find_if(_players.begin(), _players.end(), [fd](const std::unique_ptr<Player> &player) { return player->getFd() == fd; });
+
+    if (it == _players.end())
+        return;
+    removePlayerFromTile(it->get(), (*it)->getPosition());
+    // setState(DEAD) already frees the team slot (see Player::setState); avoid freeing it twice.
+    if ((*it)->getState() != PlayerState::DEAD)
+        (*it)->getTeam().removePlayer();
+    _players.erase(it);
 }
 } // namespace zappy

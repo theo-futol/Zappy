@@ -4,22 +4,26 @@
 ##     Makefile                                                                        ##
 ## ALL ZAPPY SERVICE MAKEFILE
 
-ZAPPY_SERVER = make -C src/server BINARY_LOCATION=$(abspath zappy_server)
+CC = clang++
 
-all:
-	$(ZAPPY_SERVER)
+PROJECT_NAME = zappy
+BINARIES     = server gui ai
 
-zappy_server:
-	$(ZAPPY_SERVER)
-zappy_gui:
-	## inshallah un jour on aura le gui
-zappy_ai:
-	## inshallah un jour on aura l'ia
+zappy_%:
+	$(MAKE) -C src/$* BINARY_LOCATION=$(abspath $(PROJECT_NAME)_$*)
+
+all: zappy_server zappy_gui zappy_ai
+
 clean:
-	$(ZAPPY_SERVER) clean
+	@for bin in $(BINARIES); do \
+		if ! $(MAKE) -C src/$$bin clean; then \
+			echo "$$bin clean failed"; \
+		fi; \
+	done
 
-fclean: clean
-	$(ZAPPY_SERVER) fclean
+fclean: clean 
+	-rm -f $(addprefix $(PROJECT_NAME)_,$(BINARIES))
 
-re:
-	$(ZAPPY_SERVER) re
+re: fclean all
+
+.PHONY: all clean fclean re

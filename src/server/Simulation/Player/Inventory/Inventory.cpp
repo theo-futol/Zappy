@@ -2,38 +2,37 @@
 
 namespace zappy
 {
-Inventory::Inventory()
+Inventory::Inventory() : _items(static_cast<size_t>(ItemType::THYSTAME) + 1, 0)
 {
-    for (int i = static_cast<int>(ItemType::FOOD); i <= static_cast<int>(ItemType::THYSTAME); ++i)
-        _items[static_cast<ItemType>(i)] = 0;
 }
 
 void Inventory::addItem(ItemType type, int quantity)
 {
-    _items[type] += quantity;
+    if (static_cast<size_t>(type) >= _items.size())
+        return;
+    _items[static_cast<size_t>(type)] += quantity;
 }
 
 void Inventory::removeItem(ItemType type, int quantity)
 {
-    auto it = _items.find(type);
-    if (it != _items.end())
-    {
-        it->second -= quantity;
-        if (it->second < 0)
-            it->second = 0;
-    }
+    if (static_cast<size_t>(type) >= _items.size())
+        return;
+    int &count = _items[static_cast<size_t>(type)];
+    count -= quantity;
+    if (count < 0)
+        count = 0;
 }
 
 std::string Inventory::checkInventory() const
 {
     std::string result = "[";
-    for (auto it = _items.begin(); it != _items.end(); ++it)
+    for (size_t i = 0; i < _items.size(); ++i)
     {
-        result += itemTypeToString(it->first) + " " + std::to_string(it->second);
-        if (std::next(it) != _items.end())
+        result += itemTypeToString(static_cast<ItemType>(i)) + " " + std::to_string(_items[i]);
+        if (i + 1 != _items.size())
             result += ", ";
     }
-    result += "]";
+    result += "]\n";
     return result;
 }
 
@@ -45,10 +44,14 @@ int Inventory::getItemCount(const std::string &itemName) const
 
 int Inventory::getItemCount(const ItemType &itemType) const
 {
-    auto it = _items.find(itemType);
-    if (it != _items.end())
-        return it->second;
-    return 0;
+    if (static_cast<size_t>(itemType) >= _items.size())
+        return 0;
+    return _items[static_cast<size_t>(itemType)];
+}
+
+std::vector<int> &Inventory::getItems()
+{
+    return _items;
 }
 
 } // namespace zappy

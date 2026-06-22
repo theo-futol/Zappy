@@ -1,0 +1,18 @@
+#include "../Commands.hpp"
+
+namespace zappy
+{
+    std::string Commands::Ppo(std::vector<std::string> args, Client &client)
+    {
+        (void)client;// Unused parameter
+
+        if (args.size() < 2)
+            return "ko\n";
+        Player *player = _world->getPlayerByFd(std::stoi(args[1]));
+        if (!player)
+            return "ko\n";
+        position pos = player->getPosition();
+        int rotation = player->getRotation();
+        return "ppo " + std::to_string(player->getFd()) + " " + std::to_string(pos.x) + " " + std::to_string(pos.y) + " " + std::to_string(rotation) + "\n";
+    }
+}

@@ -5,6 +5,7 @@
 #include <chrono>
 #include <unordered_map>
 #include <string.h>
+#include <algorithm>
 
 #include "../Client/Client.hpp"
 #include "../Socket/Socket.hpp"
@@ -28,10 +29,15 @@ namespace zappy
             std::vector<std::unique_ptr<Client>> _clients;              ///< Connected clients.
             std::unordered_map<int, std::unique_ptr<CommandParser>> _parsers; ///< One parser per client fd.
             std::chrono::steady_clock::time_point _lastResourceUpdate;  ///< Timestamp of the last world resource tick.
+            std::chrono::steady_clock::time_point _lastFoodUpdate;      ///< Timestamp of the last food consumption tick.
             World *_world;                                              ///< Non-owning pointer to the simulation world.
             bool * _serverIsRunning;                                    ///< Flag to control the main loop.
+            std::queue <std::string> _broadcastQueue;                   ///< Queue of pending broadcast messages to send to all the clients.
             /// @brief Iterates connected clients, handles disconnections and dispatches incoming commands.
             void clientEventHandling();
+            void broadcastGuiInfo();
+            /// @brief Broadcasts a message to all clients of type GRAPHIC (use for processing the broadcast command).
+            void broadcastMessageToClients();
 
         public:
             /// @brief Constructs a handler, binds and listens on the given port.
@@ -61,5 +67,7 @@ namespace zappy
             /// @param fd File descriptor to search for.
             /// @return Pointer to the matching Client, or nullptr if not found.
             Client *getClientByFd(int fd) const;
+
+            std::queue<std::string> &getBroadcastQueue();
     };
 } // namespace zappy
