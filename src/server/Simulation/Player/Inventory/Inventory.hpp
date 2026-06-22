@@ -2,15 +2,16 @@
 #include <vector>
 #include <memory>
 #include "../../World/Items.hpp"
-#include <unordered_map>
 
 namespace zappy
 {
     /// @brief What a single player is carrying: a count per ItemType.
+    ///        Stored as a vector indexed by ItemType so iteration order
+    ///        matches the protocol's fixed food/linemate/.../thystame order.
     class Inventory
     {
         private:
-            std::unordered_map<ItemType, int> _items; // Maybe change for futur bonus?
+            std::vector<int> _items;
         public:
             /// @brief Builds an inventory with every item type present at count 0.
             Inventory();
@@ -30,7 +31,7 @@ namespace zappy
             /// @brief Returns the held count for an item type.
             int getItemCount(const ItemType &itemType) const;
 
-            /// @brief Mutable access to the underlying item-count map.
-            std::unordered_map<ItemType, int>& getItems();
+            /// @brief Mutable access to the underlying item counts, indexed by ItemType.
+            std::vector<int>& getItems();
     };
 } // namespace zappy

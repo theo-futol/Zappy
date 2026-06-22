@@ -86,6 +86,8 @@ tile *World::getTileAt(int playerID)
 
 tile *World::getTileAt(position pos)
 {
+    if (pos.x < 0 || pos.y < 0)
+        return nullptr;
     if (pos.x >= static_cast<int>(_map.size()) || pos.y >= static_cast<int>(_map[0].size()))
         return nullptr;
     return &_map[pos.x][pos.y];
@@ -139,6 +141,22 @@ void World::addPlayer(int fd, const std::string &teamName)
         return;
     team->addPlayer();
     _players.push_back(std::make_unique<Player>(fd, team));
+    addPlayerToTile(_players.back().get(), _players.back()->getPosition());
+}
+
+void World::removePlayerFromTile(Player *player, position pos)
+{
+    tile *tilePtr = getTileAt(pos);
+    if (!tilePtr)
+        return;
+    tilePtr->_players.erase(std::remove(tilePtr->_players.begin(), tilePtr->_players.end(), player), tilePtr->_players.end());
+}
+
+void World::addPlayerToTile(Player *player, position pos)
+{
+    tile *tilePtr = getTileAt(pos);
+    if (tilePtr)
+        tilePtr->_players.push_back(player);
 }
 
 void World::sendMessageToPlayersThatAreOnTile(position pos, const std::string &message)
@@ -277,6 +295,7 @@ void World::removePlayer(int fd)
 
     if (it == _players.end())
         return;
+    removePlayerFromTile(it->get(), (*it)->getPosition());
     // setState(DEAD) already frees the team slot (see Player::setState); avoid freeing it twice.
     if ((*it)->getState() != PlayerState::DEAD)
         (*it)->getTeam().removePlayer();

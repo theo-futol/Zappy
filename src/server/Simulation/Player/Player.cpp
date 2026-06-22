@@ -111,11 +111,6 @@ const Team &Player::getTeam() const
     return *_team;
 }
 
-void Player::changeState(PlayerState newState)
-{
-    _state = newState;
-}
-
 PlayerState Player::getState() const
 {
     return _state;
@@ -154,10 +149,10 @@ Degrees Player::getDirectionTo(const position &target, std::pair<int, int> mapSi
     int dx = target.x - _pos.x;
     int dy = target.y - _pos.y;
     if (std::abs(dx) > (mapSize.first - std::abs(dx)))
-        dx = mapSize.first - dx;
+        dx = mapSize.first - std::abs(dx);
     if (std::abs(dy) > (mapSize.second - std::abs(dy)))
-        dy = mapSize.second - dy;
-    return Direction::getNearestDirection(std::atan2(dy, dx) * 100);
+        dy = mapSize.second - std::abs(dy);
+    return Direction::getNearestDirection(std::atan2(dy, dx) * 180 / M_PI);
 }
 
 void Player::setState(PlayerState newState)

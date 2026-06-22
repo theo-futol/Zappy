@@ -114,6 +114,11 @@ class World
     /// @brief Creates a player on the named team and places it in the world.
     void addPlayer(int fd, const std::string &teamName);
 
+    /// @brief Removes the player pointer from the tile at the given position, if any.
+    void removePlayerFromTile(Player *player, position pos);
+    /// @brief Adds the player pointer to the tile at the given position, if it exists.
+    void addPlayerToTile(Player *player, position pos);
+
     /// @brief Sends a message to every player currently standing on the given tile.
     void sendMessageToPlayersThatAreOnTile(position pos, const std::string &message);
 

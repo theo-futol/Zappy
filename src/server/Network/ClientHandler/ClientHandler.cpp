@@ -1,6 +1,6 @@
 #include "ClientHandler.hpp"
 
-static constexpr int RESOURCE_INTERVAL_MS = 20000;
+static constexpr int RESOURCE_INTERVAL_TIME_UNITS = 20;
 static constexpr int CYCLE_TO_DIE = 126;
 
 namespace zappy
@@ -27,7 +27,8 @@ void ClientHandler::handleClients(void)
     {
         auto now = std::chrono::steady_clock::now();
         auto foodIntervalMs = std::chrono::milliseconds(CYCLE_TO_DIE * 1000 / _f);
-        auto deadline = _lastResourceUpdate + std::chrono::milliseconds(RESOURCE_INTERVAL_MS);
+        auto resourceIntervalMs = std::chrono::milliseconds(RESOURCE_INTERVAL_TIME_UNITS * 1000 / _f);
+        auto deadline = _lastResourceUpdate + resourceIntervalMs;
         auto foodDeadline = _lastFoodUpdate + foodIntervalMs;
         if (foodDeadline < deadline)
             deadline = foodDeadline;
@@ -50,7 +51,7 @@ void ClientHandler::handleClients(void)
             addClient();
 
         now = std::chrono::steady_clock::now();
-        if (now - _lastResourceUpdate >= std::chrono::milliseconds(RESOURCE_INTERVAL_MS))
+        if (now - _lastResourceUpdate >= resourceIntervalMs)
         {
             _world->ressourcePassiveGeneration();
             _lastResourceUpdate = now;
