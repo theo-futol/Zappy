@@ -21,6 +21,7 @@ _BROADCAST_RE = re.compile(r"^message\s+(\d+),\s?(.*)$")
 _EJECT_RE = re.compile(r"^eject:\s*(\d+)$")
 _LEVEL_RE = re.compile(r"^Current level:\s+(\d+)$")
 _GAME_END_RE = re.compile(r"^seg\s+(.+)$")
+_COMPACT_LOOK_ITEM_RE = re.compile(r"^([A-Za-z_]+):(\d+)$")
 
 
 class ProtocolError(ValueError):
@@ -112,8 +113,32 @@ def parse_look_payload(payload: str) -> list[list[str]]:
 
     tiles = []
     for tile in inner.split(","):
-        tiles.append([part for part in tile.strip().split() if part])
+        tiles.append(_parse_look_tile(tile))
     return tiles
+
+
+def _parse_look_tile(tile: str) -> list[str]:
+    items: list[str] = []
+    for part in tile.strip().split():
+        compact_match = _COMPACT_LOOK_ITEM_RE.match(part)
+        if compact_match is None:
+            items.append(part)
+            continue
+
+        resource_name = _normalize_resource_alias(compact_match.group(1))
+        quantity = int(compact_match.group(2))
+        if resource_name not in RESOURCE_IDS:
+            items.append(part)
+            continue
+        items.extend([resource_name] * quantity)
+    return items
+
+
+def _normalize_resource_alias(resource_name: str) -> str:
+    normalized = resource_name.strip().lower()
+    if normalized in {"teraumere", "terraumere"}:
+        return "deraumere"
+    return normalized
 
 
 def parse_inventory_payload(payload: str) -> dict[str, int]:
