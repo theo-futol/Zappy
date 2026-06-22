@@ -9,7 +9,10 @@ std::string Commands::Forward(std::vector<std::string> args, Client &client)
     if (!player)
         return "dead\n";
 
+    position oldPos = player->getPosition();
     player->move(_world->getMapSize());
+    _world->removePlayerFromTile(player, oldPos);
+    _world->addPlayerToTile(player, player->getPosition());
     return "ok\n";
 }
 std::string Commands::Right(std::vector<std::string> args, Client &client)

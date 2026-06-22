@@ -62,8 +62,6 @@ class Player
     void setRotation(int rotation);
     /// @brief Places the player at (x, y), wrapping into the map bounds.
     void setPosition(int x, int y, std::pair<int, int> mapSize);
-    /// @brief Changes the life-cycle state.
-    void changeState(PlayerState newState);
     /// @brief Moves one tile forward in the current facing, with wrap-around.
     void move(std::pair<int, int> mapSize);
     /// @brief Raises the player one elevation level.
