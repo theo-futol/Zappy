@@ -56,9 +56,9 @@ std::string Commands::Look(std::vector<std::string> args, Client &client)
                 buffer += itemTypeToString(item.first) + ":" + std::to_string(item.second) + " ";
             if (!currentTile->_players.empty())
                 buffer += "player " + std::to_string(currentTile->_players.size() - (tilePos == player->getPosition())) + " ";
+            if (i < player->getLevel() && j < tileViewed + i - 1)
+                buffer += ",";
         }
-        if (i < player->getLevel())
-            buffer += ",";
         tileViewed += 1;
     }
     return buffer + "]\n";
