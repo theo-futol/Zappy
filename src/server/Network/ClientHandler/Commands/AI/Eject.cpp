@@ -26,7 +26,7 @@ std::string Commands::Eject(std::vector<std::string> args, Client &client)
         }
     }
     currentTile->_players.erase(std::remove_if(currentTile->_players.begin(), currentTile->_players.end(),
-                                               [&player, &nextPos, &playerPos](const Player *p) { return p->getFd() != player->getFd() && p->getPosition() != playerPos; }),
+                                               [&player, &playerPos](const Player *p) { return p->getFd() != player->getFd() && p->getPosition() != playerPos; }),
                                 currentTile->_players.end());
     // destroy all eggs on the tile
     _world->setTileAt(playerPos, ItemType::EGG, 0);
