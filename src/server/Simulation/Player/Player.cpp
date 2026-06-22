@@ -3,7 +3,7 @@
 namespace zappy
 {
 
-Player::Player(int fd, std::shared_ptr<Team> team) : _fd(fd), _pos{0, 0}, rotation(Degrees::NORTH), _team(team), _isLeveling(false), _inventory(), _state(PlayerState::PENDING)
+Player::Player(int fd, std::shared_ptr<Team> team) : _fd(fd), _pos{0, 0}, rotation(Degrees::NORTH), _team(team), _inventory(), _state(PlayerState::PENDING)
 {
     _inventory.addItem(ItemType::FOOD, 10);
 }
@@ -149,10 +149,11 @@ Degrees Player::getDirectionTo(const position &target, std::pair<int, int> mapSi
     int dx = target.x - _pos.x;
     int dy = target.y - _pos.y;
     if (std::abs(dx) > (mapSize.first - std::abs(dx)))
-        dx = mapSize.first - std::abs(dx);
+        dx = (dx > 0 ? -1 : 1) * (mapSize.first - std::abs(dx));
     if (std::abs(dy) > (mapSize.second - std::abs(dy)))
-        dy = mapSize.second - std::abs(dy);
-    return Direction::getNearestDirection(std::atan2(dy, dx) * 180 / M_PI);
+        dy = (dy > 0 ? -1 : 1) * (mapSize.second - std::abs(dy));
+    int bearing = (static_cast<int>(std::atan2(dx, -dy) * 180 / M_PI) + 360) % 360;
+    return Direction::getNearestDirection(bearing);
 }
 
 void Player::setState(PlayerState newState)
