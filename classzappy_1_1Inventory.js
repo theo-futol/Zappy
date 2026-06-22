@@ -5,7 +5,7 @@ var classzappy_1_1Inventory =
     [ "checkInventory", "classzappy_1_1Inventory.html#a37135508aa9fe63a18b4fab0bc7f01fe", null ],
     [ "getItemCount", "classzappy_1_1Inventory.html#a875bcfe3876992de8044423fcff4bacc", null ],
     [ "getItemCount", "classzappy_1_1Inventory.html#a970058f6726ee0b131fce8610417b0f1", null ],
-    [ "getItems", "classzappy_1_1Inventory.html#aa1b79ddc4954374b207cac16246e87d4", null ],
+    [ "getItems", "classzappy_1_1Inventory.html#ae39a467d579b96abd514a9068b914959", null ],
     [ "removeItem", "classzappy_1_1Inventory.html#acf23fc739876cbff0b178a41e11deb69", null ],
-    [ "_items", "classzappy_1_1Inventory.html#af8d01828d4101ef1dd48571df83dbbcf", null ]
+    [ "_items", "classzappy_1_1Inventory.html#ade50d425cf32f96cd403a2e365336a83", null ]
 ];

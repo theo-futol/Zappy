@@ -22,7 +22,7 @@ var searchData=
   ['_5finventory_19',['_inventory',['../classzappy_1_1Player.html#af0828e055088d2b18337873b1cc6e961',1,'zappy::Player']]],
   ['_5fisbanned_20',['_isBanned',['../classzappy_1_1CommandParser.html#a5f6a4b23059ea9e329cd1559310b812c',1,'zappy::CommandParser']]],
   ['_5fisleveling_21',['_isLeveling',['../classzappy_1_1Player.html#ac14207ee2ade528a968cf8db73735117',1,'zappy::Player']]],
-  ['_5fitems_22',['_items',['../classzappy_1_1Inventory.html#af8d01828d4101ef1dd48571df83dbbcf',1,'zappy::Inventory::_items'],['../structzappy_1_1tile.html#a0a202af52fafa90e112eb71f0dcc1081',1,'zappy::tile::_items']]],
+  ['_5fitems_22',['_items',['../classzappy_1_1Inventory.html#ade50d425cf32f96cd403a2e365336a83',1,'zappy::Inventory::_items'],['../structzappy_1_1tile.html#a0a202af52fafa90e112eb71f0dcc1081',1,'zappy::tile::_items']]],
   ['_5flastfoodupdate_23',['_lastFoodUpdate',['../classzappy_1_1ClientHandler.html#a83937d9eea0a8340c4535441dd2f8cda',1,'zappy::ClientHandler']]],
   ['_5flastresourceupdate_24',['_lastResourceUpdate',['../classzappy_1_1ClientHandler.html#a6ac5c7a87f7031594003bdec5d3959bc',1,'zappy::ClientHandler']]],
   ['_5flevel_25',['_level',['../classzappy_1_1Player.html#aa8d42939328209e67758a6f3db5e6263',1,'zappy::Player']]],

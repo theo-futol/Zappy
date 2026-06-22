@@ -1,13 +1,11 @@
 <map id="src/server/Simulation/Player/Inventory/Inventory.hpp" name="src/server/Simulation/Player/Inventory/Inventory.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="88,5,313,45"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="19,5,244,45"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="5,93,68,119"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="163,48,74,90,72,85,160,43"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="110,48,63,86,60,82,107,43"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="93,93,170,119"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="186,47,153,84,149,81,182,44"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="134,46,134,79,129,79,129,46"/>
 <area shape="rect" id="Node000004" href="$Items_8hpp.html" title=" " alt="" coords="194,93,346,119"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="219,44,252,81,248,84,215,47"/>
-<area shape="rect" id="Node000006" title=" " alt="" coords="371,93,495,119"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="257,43,387,86,385,91,255,48"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="166,43,239,84,236,89,163,48"/>
 <area shape="rect" id="Node000005" title=" " alt="" coords="241,167,299,192"/>
 <area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="273,119,273,153,267,153,267,119"/>
 </map>

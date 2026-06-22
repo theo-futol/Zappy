@@ -1,15 +1,21 @@
 <map id="zappy::ClientHandler::removeClient" name="zappy::ClientHandler::removeClient">
-<area shape="rect" id="Node000001" title="Removes a client, its parser, and its fd from all internal structures." alt="" coords="5,49,163,89"/>
-<area shape="rect" id="Node000002" href="$classzappy_1_1Client.html#aafed3af6e0e3c858d9581a3d9df81218" title="Returns the socket descriptor, used to read/write and to poll this client." alt="" coords="237,31,388,56"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="163,57,223,51,224,56,163,63"/>
-<area shape="rect" id="Node000003" href="$classzappy_1_1World.html#aca292b35506844c67b0d62a3e6e3e9e1" title="Removes a player from the world and decrease the number of slots occupied in its team...." alt="" coords="211,80,415,105"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="163,74,197,78,197,83,163,80"/>
-<area shape="rect" id="Node000004" href="$classzappy_1_1Player.html#a7382412b718c7828587ced9e7168bdf3" title="The socket fd linking this player to its client." alt="" coords="487,5,641,31"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="374,77,414,65,437,52,462,40,485,32,487,37,464,44,440,57,416,70,375,83"/>
-<area shape="rect" id="Node000005" href="$classzappy_1_1Player.html#a631fcf2698ec9ac726147ca31184e354" title="Life&#45;cycle state (pending / alive / dead)." alt="" coords="478,55,650,80"/>
-<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="415,80,464,75,464,80,415,85"/>
-<area shape="rect" id="Node000006" href="$classzappy_1_1Player.html#ad714c54e4fcee0484d05ad253ab10ccb" title=" " alt="" coords="477,104,651,129"/>
-<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="415,100,464,104,464,110,415,105"/>
-<area shape="rect" id="Node000007" href="$structzappy_1_1Team.html#a28b10ed41422bcd6fb1b4fcb58956758" title="Frees one occupied slot (a player left), never going below zero." alt="" coords="463,153,665,179"/>
-<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="352,103,463,138,497,147,496,152,462,143,350,108"/>
+<area shape="rect" id="Node000001" title="Removes a client, its parser, and its fd from all internal structures." alt="" coords="5,98,163,138"/>
+<area shape="rect" id="Node000002" href="$classzappy_1_1Client.html#aafed3af6e0e3c858d9581a3d9df81218" title="Returns the socket descriptor, used to read/write and to poll this client." alt="" coords="237,80,388,105"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="163,107,223,100,224,105,163,112"/>
+<area shape="rect" id="Node000003" href="$classzappy_1_1World.html#aca292b35506844c67b0d62a3e6e3e9e1" title="Removes a player from the world and decrease the number of slots occupied in its team...." alt="" coords="211,129,415,155"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="163,124,197,127,197,133,163,129"/>
+<area shape="rect" id="Node000004" href="$classzappy_1_1Player.html#a7382412b718c7828587ced9e7168bdf3" title="The socket fd linking this player to its client." alt="" coords="487,5,642,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="390,127,413,115,429,97,436,78,444,59,461,40,473,33,476,37,464,44,448,61,441,80,433,100,416,119,392,132"/>
+<area shape="rect" id="Node000005" href="$classzappy_1_1Player.html#aff283e814b7f01d4ad7398d7c20794e6" title="Current tile position." alt="" coords="469,55,660,80"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="374,127,414,114,437,102,462,89,485,81,487,86,464,94,440,106,416,119,375,132"/>
+<area shape="rect" id="Node000006" href="$classzappy_1_1Player.html#a631fcf2698ec9ac726147ca31184e354" title="Life&#45;cycle state (pending / alive / dead)." alt="" coords="479,104,651,129"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="414,129,465,124,465,129,415,134"/>
+<area shape="rect" id="Node000007" href="$classzappy_1_1Player.html#ad714c54e4fcee0484d05ad253ab10ccb" title=" " alt="" coords="478,153,651,179"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="415,149,465,154,464,159,414,154"/>
+<area shape="rect" id="Node000008" href="$structzappy_1_1Team.html#a28b10ed41422bcd6fb1b4fcb58956758" title="Frees one occupied slot (a player left), never going below zero." alt="" coords="463,203,666,228"/>
+<area shape="poly" id="edge7_Node000003_Node000008" title=" " alt="" coords="352,152,463,187,497,197,496,202,462,193,350,157"/>
+<area shape="rect" id="Node000009" href="$classzappy_1_1World.html#a3904131e585caa94fc0b4d4fb01e11f2" title="Removes the player pointer from the tile at the given position, if any." alt="" coords="463,253,667,293"/>
+<area shape="poly" id="edge8_Node000003_Node000009" title=" " alt="" coords="332,153,389,193,464,237,483,245,481,250,461,242,386,198,329,157"/>
+<area shape="rect" id="Node000010" href="$classzappy_1_1World.html#a9fce895cc2d62e61b943f7d9e03471db" title="Returns the tile at the given coordinates." alt="" coords="715,260,887,285"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="667,270,701,270,701,275,667,275"/>
 </map>

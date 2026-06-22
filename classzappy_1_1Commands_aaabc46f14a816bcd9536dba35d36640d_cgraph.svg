@@ -66,7 +66,7 @@
 <!-- Node4 -->
 <g id="Node000004" class="node">
 <title>Node4</title>
-<g id="a_Node000004"><a xlink:href="classzappy_1_1Inventory.html#aa1b79ddc4954374b207cac16246e87d4" target="_top" xlink:title="Mutable access to the underlying item&#45;count map.">
+<g id="a_Node000004"><a xlink:href="classzappy_1_1Inventory.html#ae39a467d579b96abd514a9068b914959" target="_top" xlink:title="Mutable access to the underlying item counts, indexed by ItemType.">
 <polygon fill="white" stroke="#666666" points="315,-93 169,-93 169,-74 315,-74 315,-93"/>
 <text text-anchor="middle" x="242" y="-81" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::Inventory::getItems</text>
 </a>

@@ -6,7 +6,8 @@ var searchData=
   ['removeincantationstones_3',['removeIncantationStones',['../classzappy_1_1World.html#a353dcd17b411d7adefd995b3476b1ea4',1,'zappy::World']]],
   ['removeitem_4',['removeItem',['../classzappy_1_1Inventory.html#acf23fc739876cbff0b178a41e11deb69',1,'zappy::Inventory']]],
   ['removeplayer_5',['removeplayer',['../classzappy_1_1World.html#aca292b35506844c67b0d62a3e6e3e9e1',1,'zappy::World::removePlayer()'],['../structzappy_1_1Team.html#a28b10ed41422bcd6fb1b4fcb58956758',1,'zappy::Team::removePlayer()']]],
-  ['ressourcepassivegeneration_6',['ressourcePassiveGeneration',['../classzappy_1_1World.html#a084bb422eb72235491824c1258c46048',1,'zappy::World']]],
-  ['right_7',['Right',['../classzappy_1_1Commands.html#ae51a7d1bdbea3b7386da8849447a9162',1,'zappy::Commands']]],
-  ['run_8',['run',['../classzappy_1_1Core.html#a6cedeb79a573e46f2131b71d3ca17a31',1,'zappy::Core']]]
+  ['removeplayerfromtile_6',['removePlayerFromTile',['../classzappy_1_1World.html#a3904131e585caa94fc0b4d4fb01e11f2',1,'zappy::World']]],
+  ['ressourcepassivegeneration_7',['ressourcePassiveGeneration',['../classzappy_1_1World.html#a084bb422eb72235491824c1258c46048',1,'zappy::World']]],
+  ['right_8',['Right',['../classzappy_1_1Commands.html#ae51a7d1bdbea3b7386da8849447a9162',1,'zappy::Commands']]],
+  ['run_9',['run',['../classzappy_1_1Core.html#a6cedeb79a573e46f2131b71d3ca17a31',1,'zappy::Core']]]
 ];

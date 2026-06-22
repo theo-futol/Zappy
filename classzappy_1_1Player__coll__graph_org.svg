@@ -50,7 +50,7 @@
 <text text-anchor="start" x="60" y="-37" font-family="Helvetica,sans-Serif" font-size="10.00">getFd()</text>
 <text text-anchor="start" x="47" y="-22" font-family="Helvetica,sans-Serif" font-size="10.00">+</text>
 <text text-anchor="start" x="60" y="-22" font-family="Helvetica,sans-Serif" font-size="10.00">nextPosition()</text>
-<text text-anchor="start" x="60" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">and 16 more...</text>
+<text text-anchor="start" x="60" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">and 15 more...</text>
 <polygon fill="#666666" stroke="#666666" points="43,-287 43,-287 154,-287 154,-287 43,-287"/>
 <polygon fill="#666666" stroke="#666666" points="43,-167 43,-167 58,-167 58,-167 43,-167"/>
 <polygon fill="#666666" stroke="#666666" points="58,-167 58,-167 154,-167 154,-167 58,-167"/>
@@ -89,7 +89,7 @@
 <!-- Node3 -->
 <g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="classzappy_1_1Inventory.html" target="_top" xlink:title="What a single player is carrying: a count per ItemType.">
+<g id="a_Node000003"><a xlink:href="classzappy_1_1Inventory.html" target="_top" xlink:title="What a single player is carrying: a count per ItemType. Stored as a vector indexed by ItemType so ite...">
 <polygon fill="white" stroke="transparent" points="206,-490 102,-490 102,-351 206,-351 206,-490"/>
 <text text-anchor="start" x="113" y="-477.5" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::Inventory</text>
 <text text-anchor="start" x="108.5" y="-462.5" font-family="Helvetica,sans-Serif" font-size="10.00">&#45;</text>

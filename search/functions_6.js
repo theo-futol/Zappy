@@ -13,7 +13,7 @@ var searchData=
   ['getint_10',['getInt',['../classzappy_1_1ArgParser.html#a971140dfcfb1fcf6b3bff1b8c6e999fa',1,'zappy::ArgParser']]],
   ['getinventory_11',['getinventory',['../classzappy_1_1Commands.html#a88007d6be2a2c4d19906a40c2ce4e08c',1,'zappy::Commands::getInventory()'],['../classzappy_1_1Player.html#a7583690b204dac5e1382ba3a80256695',1,'zappy::Player::getInventory()']]],
   ['getitemcount_12',['getitemcount',['../classzappy_1_1Inventory.html#a970058f6726ee0b131fce8610417b0f1',1,'zappy::Inventory::getItemCount(const std::string &amp;itemName) const'],['../classzappy_1_1Inventory.html#a875bcfe3876992de8044423fcff4bacc',1,'zappy::Inventory::getItemCount(const ItemType &amp;itemType) const']]],
-  ['getitems_13',['getItems',['../classzappy_1_1Inventory.html#aa1b79ddc4954374b207cac16246e87d4',1,'zappy::Inventory']]],
+  ['getitems_13',['getItems',['../classzappy_1_1Inventory.html#ae39a467d579b96abd514a9068b914959',1,'zappy::Inventory']]],
   ['getlevel_14',['getLevel',['../classzappy_1_1Player.html#a70dc9f5c05ea552c47350da37b3bd027',1,'zappy::Player']]],
   ['getlist_15',['getList',['../classzappy_1_1ArgParser.html#a3562c347e47d15154be9cff16d5c29f2',1,'zappy::ArgParser']]],
   ['getmapsize_16',['getMapSize',['../classzappy_1_1World.html#ad35316e4e1203c45ad2f853319775432',1,'zappy::World']]],

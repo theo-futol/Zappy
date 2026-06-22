@@ -2,7 +2,6 @@ var classzappy_1_1Player =
 [
     [ "Player", "classzappy_1_1Player.html#abccb8c49e9b6854d710c837ca86edbf3", null ],
     [ "addMessageToQueue", "classzappy_1_1Player.html#adc7feb7e75bd00f5cc7b26adc165824a", null ],
-    [ "changeState", "classzappy_1_1Player.html#a2ae84e7e35ea920806905b2022d3eca1", null ],
     [ "getDirectionTo", "classzappy_1_1Player.html#a9435b23275fc744af449da3a9fb9a3ab", null ],
     [ "getDirectionTo", "classzappy_1_1Player.html#a4e5a74128fcd879291a6e6b3cae1168d", null ],
     [ "getDistanceTo", "classzappy_1_1Player.html#abd1fbe0bc2cee356fe388496ac5bdf9a", null ],

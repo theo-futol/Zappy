@@ -1,0 +1,5 @@
+<map id="zappy::World::addPlayerToTile" name="zappy::World::addPlayerToTile">
+<area shape="rect" id="Node000001" title="Adds the player pointer to the tile at the given position, if it exists." alt="" coords="5,5,221,31"/>
+<area shape="rect" id="Node000002" href="$classzappy_1_1World.html#a9fce895cc2d62e61b943f7d9e03471db" title="Returns the tile at the given coordinates." alt="" coords="269,5,441,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="221,15,255,15,255,21,221,21"/>
+</map>

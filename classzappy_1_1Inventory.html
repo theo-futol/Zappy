@@ -98,7 +98,7 @@ $(document).ready(function(){initNavTree('classzappy_1_1Inventory.html',''); ini
 </div><!--header-->
 <div class="contents">
 
-<p>What a single player is carrying: a count per ItemType.  
+<p>What a single player is carrying: a count per ItemType. Stored as a vector indexed by ItemType so iteration order matches the protocol's fixed food/linemate/.../thystame order.  
  <a href="classzappy_1_1Inventory.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="Inventory_8hpp_source.html">Inventory.hpp</a>&gt;</code></p>
@@ -130,19 +130,19 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a875bcfe3876992de8044423fcff4bacc" id="r_a875bcfe3876992de8044423fcff4bacc"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1Inventory.html#a875bcfe3876992de8044423fcff4bacc">getItemCount</a> (const <a class="el" href="namespacezappy.html#a7def2f3f37d8dd0bd14d9e3c5ac180c5">ItemType</a> &amp;itemType) const</td></tr>
 <tr class="memdesc:a875bcfe3876992de8044423fcff4bacc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the held count for an item type.  <br /></td></tr>
 <tr class="separator:a875bcfe3876992de8044423fcff4bacc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa1b79ddc4954374b207cac16246e87d4" id="r_aa1b79ddc4954374b207cac16246e87d4"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; <a class="el" href="namespacezappy.html#a7def2f3f37d8dd0bd14d9e3c5ac180c5">ItemType</a>, int &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1Inventory.html#aa1b79ddc4954374b207cac16246e87d4">getItems</a> ()</td></tr>
-<tr class="memdesc:aa1b79ddc4954374b207cac16246e87d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mutable access to the underlying item-count map.  <br /></td></tr>
-<tr class="separator:aa1b79ddc4954374b207cac16246e87d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae39a467d579b96abd514a9068b914959" id="r_ae39a467d579b96abd514a9068b914959"><td class="memItemLeft" align="right" valign="top">std::vector&lt; int &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1Inventory.html#ae39a467d579b96abd514a9068b914959">getItems</a> ()</td></tr>
+<tr class="memdesc:ae39a467d579b96abd514a9068b914959"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mutable access to the underlying item counts, indexed by ItemType.  <br /></td></tr>
+<tr class="separator:ae39a467d579b96abd514a9068b914959"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:af8d01828d4101ef1dd48571df83dbbcf" id="r_af8d01828d4101ef1dd48571df83dbbcf"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; <a class="el" href="namespacezappy.html#a7def2f3f37d8dd0bd14d9e3c5ac180c5">ItemType</a>, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1Inventory.html#af8d01828d4101ef1dd48571df83dbbcf">_items</a></td></tr>
-<tr class="separator:af8d01828d4101ef1dd48571df83dbbcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade50d425cf32f96cd403a2e365336a83" id="r_ade50d425cf32f96cd403a2e365336a83"><td class="memItemLeft" align="right" valign="top">std::vector&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1Inventory.html#ade50d425cf32f96cd403a2e365336a83">_items</a></td></tr>
+<tr class="separator:ade50d425cf32f96cd403a2e365336a83"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>What a single player is carrying: a count per ItemType. </p>
+<div class="textblock"><p>What a single player is carrying: a count per ItemType. Stored as a vector indexed by ItemType so iteration order matches the protocol's fixed food/linemate/.../thystame order. </p>
 
-<p class="definition">Definition at line <a class="el" href="Inventory_8hpp_source.html#l00010">10</a> of file <a class="el" href="Inventory_8hpp_source.html">Inventory.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Inventory_8hpp_source.html#l00011">11</a> of file <a class="el" href="Inventory_8hpp_source.html">Inventory.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a984fa5cf672d44c7c79e2024bca36578" name="a984fa5cf672d44c7c79e2024bca36578"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a984fa5cf672d44c7c79e2024bca36578">&#9670;&#160;</a></span>Inventory()</h2>
@@ -194,7 +194,7 @@ Private Attributes</h2></td></tr>
 
 <p>Adds quantity of the given item. </p>
 
-<p class="definition">Definition at line <a class="el" href="Simulation_2Player_2Inventory_2Inventory_8cpp_source.html#l00011">11</a> of file <a class="el" href="Simulation_2Player_2Inventory_2Inventory_8cpp_source.html">Inventory.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Simulation_2Player_2Inventory_2Inventory_8cpp_source.html#l00009">9</a> of file <a class="el" href="Simulation_2Player_2Inventory_2Inventory_8cpp_source.html">Inventory.cpp</a>.</p>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
@@ -222,7 +222,7 @@ Private Attributes</h2></td></tr>
 
 <p>Formats the inventory as the protocol inventory reply string. </p>
 
-<p class="definition">Definition at line <a class="el" href="Simulation_2Player_2Inventory_2Inventory_8cpp_source.html#l00027">27</a> of file <a class="el" href="Simulation_2Player_2Inventory_2Inventory_8cpp_source.html">Inventory.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Simulation_2Player_2Inventory_2Inventory_8cpp_source.html#l00026">26</a> of file <a class="el" href="Simulation_2Player_2Inventory_2Inventory_8cpp_source.html">Inventory.cpp</a>.</p>
 <div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
@@ -258,7 +258,7 @@ Private Attributes</h2></td></tr>
 
 <p>Returns the held count for an item type. </p>
 
-<p class="definition">Definition at line <a class="el" href="Simulation_2Player_2Inventory_2Inventory_8cpp_source.html#l00046">46</a> of file <a class="el" href="Simulation_2Player_2Inventory_2Inventory_8cpp_source.html">Inventory.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Simulation_2Player_2Inventory_2Inventory_8cpp_source.html#l00045">45</a> of file <a class="el" href="Simulation_2Player_2Inventory_2Inventory_8cpp_source.html">Inventory.cpp</a>.</p>
 <div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-4-summary" class="dynsummary" style="display:block;">
@@ -287,7 +287,7 @@ Private Attributes</h2></td></tr>
 
 <p>Returns the held count for an item named by its protocol string. </p>
 
-<p class="definition">Definition at line <a class="el" href="Simulation_2Player_2Inventory_2Inventory_8cpp_source.html#l00040">40</a> of file <a class="el" href="Simulation_2Player_2Inventory_2Inventory_8cpp_source.html">Inventory.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Simulation_2Player_2Inventory_2Inventory_8cpp_source.html#l00039">39</a> of file <a class="el" href="Simulation_2Player_2Inventory_2Inventory_8cpp_source.html">Inventory.cpp</a>.</p>
 <div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-5-summary" class="dynsummary" style="display:block;">
@@ -298,14 +298,14 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a id="aa1b79ddc4954374b207cac16246e87d4" name="aa1b79ddc4954374b207cac16246e87d4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa1b79ddc4954374b207cac16246e87d4">&#9670;&#160;</a></span>getItems()</h2>
+<a id="ae39a467d579b96abd514a9068b914959" name="ae39a467d579b96abd514a9068b914959"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae39a467d579b96abd514a9068b914959">&#9670;&#160;</a></span>getItems()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::unordered_map&lt; <a class="el" href="namespacezappy.html#a7def2f3f37d8dd0bd14d9e3c5ac180c5">ItemType</a>, int &gt; &amp; zappy::Inventory::getItems </td>
+          <td class="memname">std::vector&lt; int &gt; &amp; zappy::Inventory::getItems </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -313,15 +313,15 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Mutable access to the underlying item-count map. </p>
+<p>Mutable access to the underlying item counts, indexed by ItemType. </p>
 
-<p class="definition">Definition at line <a class="el" href="Simulation_2Player_2Inventory_2Inventory_8cpp_source.html#l00054">54</a> of file <a class="el" href="Simulation_2Player_2Inventory_2Inventory_8cpp_source.html">Inventory.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Simulation_2Player_2Inventory_2Inventory_8cpp_source.html#l00052">52</a> of file <a class="el" href="Simulation_2Player_2Inventory_2Inventory_8cpp_source.html">Inventory.cpp</a>.</p>
 <div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-6-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-6-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classzappy_1_1Inventory_aa1b79ddc4954374b207cac16246e87d4_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classzappy_1_1Inventory_ae39a467d579b96abd514a9068b914959_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -366,8 +366,8 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="af8d01828d4101ef1dd48571df83dbbcf" name="af8d01828d4101ef1dd48571df83dbbcf"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af8d01828d4101ef1dd48571df83dbbcf">&#9670;&#160;</a></span>_items</h2>
+<a id="ade50d425cf32f96cd403a2e365336a83" name="ade50d425cf32f96cd403a2e365336a83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade50d425cf32f96cd403a2e365336a83">&#9670;&#160;</a></span>_items</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -376,7 +376,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::unordered_map&lt;<a class="el" href="namespacezappy.html#a7def2f3f37d8dd0bd14d9e3c5ac180c5">ItemType</a>, int&gt; zappy::Inventory::_items</td>
+          <td class="memname">std::vector&lt;int&gt; zappy::Inventory::_items</td>
         </tr>
       </table>
   </td>
@@ -386,7 +386,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Inventory_8hpp_source.html#l00013">13</a> of file <a class="el" href="Inventory_8hpp_source.html">Inventory.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Inventory_8hpp_source.html#l00014">14</a> of file <a class="el" href="Inventory_8hpp_source.html">Inventory.hpp</a>.</p>
 
 </div>
 </div>

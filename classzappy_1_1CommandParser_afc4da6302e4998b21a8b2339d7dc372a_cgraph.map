@@ -28,7 +28,7 @@
 <area shape="poly" id="edge9_Node000007_Node000008" title=" " alt="" coords="341,311,391,277,424,261,459,249,517,236,563,234,610,238,669,249,719,262,764,280,762,285,717,267,667,254,609,244,563,239,518,242,461,254,426,266,394,282,343,315"/>
 <area shape="rect" id="Node000009" href="$classzappy_1_1Player.html#a7583690b204dac5e1382ba3a80256695" title="This player&#39;s inventory." alt="" coords="464,264,664,289"/>
 <area shape="poly" id="edge10_Node000007_Node000009" title=" " alt="" coords="386,310,488,289,489,295,387,316"/>
-<area shape="rect" id="Node000010" href="$classzappy_1_1Inventory.html#aa1b79ddc4954374b207cac16246e87d4" title="Mutable access to the underlying item&#45;count map." alt="" coords="467,313,661,338"/>
+<area shape="rect" id="Node000010" href="$classzappy_1_1Inventory.html#ae39a467d579b96abd514a9068b914959" title="Mutable access to the underlying item counts, indexed by ItemType." alt="" coords="467,313,661,338"/>
 <area shape="poly" id="edge11_Node000007_Node000010" title=" " alt="" coords="409,323,453,323,453,328,409,328"/>
 <area shape="rect" id="Node000011" href="$classzappy_1_1World.html#a439edc13734fbf59d0d280327b4ba191" title="Looks up a player by its client fd, or nullptr if none matches." alt="" coords="460,362,668,388"/>
 <area shape="poly" id="edge12_Node000007_Node000011" title=" " alt="" coords="387,336,489,357,488,362,386,341"/>
