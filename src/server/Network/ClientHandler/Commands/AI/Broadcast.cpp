@@ -9,7 +9,7 @@ std::string Commands::Broadcast(std::vector<std::string> args, Client &client)
         return "ko\n";
     for (const auto &target : _world->getPlayers())
         if (target->getFd() != client.getFd())
-            player->addMessageToQueue("message " + std::to_string(player->getDirectionTo(*target, _world->getMapSize()) / 45 + 1) + ", " + args[0] + "\n",
+            player->addMessageToQueue("message " + std::to_string(Direction::getDirectionValue(player->getDirectionTo(*target, _world->getMapSize()))) + ", " + args[0] + "\n",
                                       player->getDistanceTo(*target, _world->getMapSize()) * BROADCAST_MESSAGE_TIME_PER_TILE, player->getFd());
     player->sortQueueByTimeNeeded();
     _broadcastQueue->push("pbc " + std::to_string(player->getFd()) + " " + args[0] + "\n");

@@ -12,7 +12,9 @@ enum Degrees
     EAST_SOUTH = 135,
     SOUTH = 180,
     SOUTH_WEST = 225,
-    WEST = 270
+    WEST = 270,
+    NORTH_WEST = 315,
+    NONE = -1
 };
 
 struct Direction
@@ -28,7 +30,7 @@ struct Direction
                                                                  {Degrees::SOUTH, 180},
                                                                  {Degrees::SOUTH_WEST, 225},
                                                                  {Degrees::WEST, 270},
-                                                                 {Degrees::NORTH, 360}}};
+                                                                 {Degrees::NORTH_WEST, 315}}};
 
         return std::min_element(directions.begin(), directions.end(),
                                 [value](const Direction &a, const Direction &b) {
@@ -37,6 +39,30 @@ struct Direction
                                     return diffA < diffB;
                                 })
             ->degree;
+    }
+    static int getDirectionValue(Degrees degree)
+    {
+        switch (degree)
+        {
+            case Degrees::NORTH_EAST:
+            return 8;
+        case Degrees::EAST:
+            return 7;
+        case Degrees::EAST_SOUTH:
+            return 6;
+        case Degrees::SOUTH:
+            return 5;
+        case Degrees::SOUTH_WEST:
+            return 4;
+        case Degrees::WEST:
+        return 3;
+        case Degrees::NORTH_WEST:
+            return 2;
+        case Degrees::NORTH:
+            return 1;            
+        default:
+            return 0; // Default to NORTH if invalid
+        }
     }
 };
 
