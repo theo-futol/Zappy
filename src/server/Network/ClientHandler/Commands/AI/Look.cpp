@@ -53,6 +53,8 @@ std::string Commands::Look(std::vector<std::string> args, Client &client)
                 buffer += ", ";
         }
     }
-    return buffer + "]\n";
+    buffer += "]";
+    Logger::log("017", "Look : response sent", {{"player_id", std::to_string(player->getFd())}, {"response", buffer}});
+    return buffer + "\n";
 }
 } // namespace zappy

@@ -29,9 +29,17 @@ std::string Commands::Eject(std::vector<std::string> args, Client &client)
                                                [&player, &playerPos](const Player *p) { return p->getFd() != player->getFd() && p->getPosition() != playerPos; }),
                                 currentTile->_players.end());
     // destroy all eggs on the tile
+    Logger::log("8443", "Player : egg destroyed by ejection",
+                {{"player_id", std::to_string(player->getFd())}, {"x", std::to_string(playerPos.x)}, {"y", std::to_string(playerPos.y)}});
     _world->setTileAt(playerPos, ItemType::EGG, 0);
     player->getTeam().removeEgg(playerPos, -1, -1);
     _broadcastQueue->push("pex " + std::to_string(player->getFd()) + "\n");
-    return hasEjectedEggs || hasEjectedPlayers ? "ok\n" : "ko\n";
+    if (hasEjectedEggs || hasEjectedPlayers)
+    {
+        Logger::log("019", "Eject : players ejected", {{"player_id", std::to_string(player->getFd())}, {"x", std::to_string(nextPos.x)}, {"y", std::to_string(nextPos.y)}});
+        return "ok\n";
+    }
+    Logger::log("8425", "Eject : failed, no players to eject", {{"player_id", std::to_string(player->getFd())}});
+    return "ko\n";
 }
 } // namespace zappy
