@@ -71,7 +71,7 @@ class Player
     /// @brief Sends a raw message to this player's client socket.
     void writeToClient(const std::string &message) const;
     /// @brief Direction from this player toward a target tile, accounting for wrap-around.
-    Degrees getDirectionTo(const position &target, std::pair<int, int> mapSize) const;
+    Degrees getDirectionTo(const std::pair<const position, int> target, std::pair<int, int> mapSize) const;
     /// @brief Sets the life-cycle state.
     void setState(PlayerState newState);
     /// @brief Freezes the player until the given time point (used while an incantation is underway).
