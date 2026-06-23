@@ -27,6 +27,9 @@ bool Commands::beginIncantation(Client &client, std::chrono::steady_clock::time_
     // Only one ritual may run on a tile at a time.
     if (!tilePtr || tilePtr->_incantationInProgress || !_world->isIncantationValid(pos.x, pos.y, level))
     {
+        if (tilePtr && tilePtr->_incantationInProgress)
+            std::cout << "Incantation refused at (" << pos.x << "," << pos.y << ") level " << level
+                      << ": already in progress" << std::endl;
         initiator->writeToClient("ko\n");
         return false;
     }

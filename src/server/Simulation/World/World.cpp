@@ -233,8 +233,13 @@ bool World::isIncantationValid(int x, int y, int level)
 
     if (!requirement || !tilePtr)
         return false;
-    if (static_cast<int>(getPlayersOnTileAtLevel(x, y, level).size()) < requirement->players)
+    int playersAtLevel = static_cast<int>(getPlayersOnTileAtLevel(x, y, level).size());
+    if (playersAtLevel < requirement->players)
+    {
+        std::cout << "Incantation invalid at (" << x << "," << y << ") level " << level
+                  << ": players " << playersAtLevel << "/" << requirement->players << std::endl;
         return false;
+    }
     for (const auto &[stone, needed] : requirement->stones)
     {
         int available = 0;
@@ -245,7 +250,11 @@ bool World::isIncantationValid(int x, int y, int level)
                 break;
             }
         if (available < needed)
+        {
+            std::cout << "Incantation invalid at (" << x << "," << y << ") level " << level
+                      << ": missing " << itemTypeToString(stone) << " " << available << "/" << needed << std::endl;
             return false;
+        }
     }
     return true;
 }
@@ -297,6 +306,9 @@ void World::removePlayer(int fd)
 
     if (it == _players.end())
         return;
+    tile *tilePtr = getTileAt((*it)->getPosition());
+    if (tilePtr && tilePtr->_incantationInProgress)
+        tilePtr->_incantationInProgress = false;
     removePlayerFromTile(it->get(), (*it)->getPosition());
     // setState(DEAD) already frees the team slot (see Player::setState); avoid freeing it twice.
     if ((*it)->getState() != PlayerState::DEAD)
