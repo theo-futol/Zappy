@@ -126,7 +126,10 @@ int World::getAvailableSlotsForTeam(const std::string &teamName) const
 
 void World::addTeam(const std::string &name, int teamID, int initialSlots)
 {
-    _teams.push_back(std::make_shared<Team>(name, teamID, initialSlots));
+    auto team = std::make_shared<Team>(name, teamID, 0);
+    for (int i = 0; i < initialSlots; ++i)
+        team->addEgg(position{rand() % _mapSize.first, rand() % _mapSize.second});
+    _teams.push_back(team);
 }
 
 std::shared_ptr<Team> World::getTeamByName(const std::string &name)
@@ -142,14 +145,27 @@ std::vector<std::shared_ptr<Team>> &World::getTeams()
     return _teams;
 }
 
-void World::addPlayer(int fd, const std::string &teamName)
+bool World::addPlayer(int fd, const std::string &teamName)
 {
     std::shared_ptr<Team> team = getTeamByName(teamName);
     if (!team)
-        return;
-    team->addPlayer();
+        return false;
+    std::vector<std::pair<position, int>> hatchable;
+    for (const auto &eggGroup : team->getEggs())
+        for (int eggId : eggGroup.second)
+            hatchable.emplace_back(eggGroup.first, eggId);
+    if (hatchable.empty())
+        return false; // no egg to hatch from: caller disconnects the client
+
+    const auto &[spawn, eggId] = hatchable[rand() % hatchable.size()];
+    team->removeEgg(spawn, 1, eggId);
+    ++team->_slotsOccupied;
+
     _players.push_back(std::make_unique<Player>(fd, team));
-    addPlayerToTile(_players.back().get(), _players.back()->getPosition());
+    Player *player = _players.back().get();
+    player->setPosition(spawn.x, spawn.y, _mapSize);
+    addPlayerToTile(player, player->getPosition());
+    return true;
 }
 
 void World::removePlayerFromTile(Player *player, position pos)

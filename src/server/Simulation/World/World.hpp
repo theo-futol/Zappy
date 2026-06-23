@@ -106,14 +106,17 @@ class World
     /// @brief Free connection slots remaining for a team (used to admit new players).
     int getAvailableSlotsForTeam(const std::string &teamName) const;
 
-    /// @brief Registers a new team with an initial number of slots.
+    /// @brief Registers a new team, laying initialSlots eggs at random tiles so the
+    ///        first clients have something to hatch from (one egg == one free slot).
     void addTeam(const std::string &name, int teamID, int initialSlots);
 
     /// @brief Looks up a team by name, or nullptr if it does not exist.
     std::shared_ptr<Team> getTeamByName(const std::string &name);
 
-    /// @brief Creates a player on the named team and places it in the world.
-    void addPlayer(int fd, const std::string &teamName);
+    /// @brief Hatches a player from one of the team's eggs, chosen at random, spawning
+    ///        it on that egg's tile and consuming the egg. Returns false if the team
+    ///        does not exist or has no egg left, in which case no player is created.
+    bool addPlayer(int fd, const std::string &teamName);
 
     /// @brief Removes the player pointer from the tile at the given position, if any.
     void removePlayerFromTile(Player *player, position pos);
