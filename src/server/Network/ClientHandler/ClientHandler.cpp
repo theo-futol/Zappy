@@ -1,4 +1,5 @@
 #include "ClientHandler.hpp"
+#include <iostream>
 
 static constexpr int RESOURCE_INTERVAL_TIME_UNITS = 20;
 static constexpr int CYCLE_TO_DIE = 126;
@@ -91,7 +92,7 @@ void ClientHandler::clientEventHandling()
     {
         if (_fds[i].revents & POLLHUP)
         {
-            removeClient(_fds[i].fd);
+            removeClient(_fds[i].fd, "peer closed connection");
             i--;
             continue;
         }
@@ -102,7 +103,7 @@ void ClientHandler::clientEventHandling()
             {
                 if (!it->second->feed())
                 {
-                    removeClient(_fds[i].fd);
+                    removeClient(_fds[i].fd, "recv failed or client closed connection");
                     i--;
                     continue;
                 }
@@ -121,7 +122,7 @@ void ClientHandler::clientEventHandling()
         }
     }
     for (int fd : fdsToRemove)
-        removeClient(fd);
+        removeClient(fd, "command queue overflow");
 }
 
 void ClientHandler::addClient()
@@ -136,7 +137,7 @@ void ClientHandler::addClient()
     std::cout << "New client connected: fd = " << clientFd << std::endl;
 }
 
-void ClientHandler::removeClient(int fd)
+void ClientHandler::removeClient(int fd, const std::string &reason)
 {
     _world->removePlayer(fd);
     _parsers.erase(fd);
@@ -144,7 +145,7 @@ void ClientHandler::removeClient(int fd)
     _clients.erase(std::remove_if(_clients.begin(), _clients.end(), [fd](const std::unique_ptr<Client> &client) { return client->getFd() == fd; }), _clients.end());
 
     _fds.erase(std::remove_if(_fds.begin(), _fds.end(), [fd](const pollfd &pfd) { return pfd.fd == fd; }), _fds.end());
-    std::cout << "Client disconnected: fd = " << fd << std::endl;
+    std::cout << "Client disconnected: fd = " << fd << " reason=\"" << reason << "\"" << std::endl;
 }
 
 Client *ClientHandler::getClientByFd(int fd) const

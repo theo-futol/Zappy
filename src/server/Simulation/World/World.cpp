@@ -1,4 +1,5 @@
 #include "World.hpp"
+#include <iostream>
 
 namespace zappy
 {
@@ -182,6 +183,7 @@ std::vector<int> World::foodCheck()
     {
         if (player->getInventory().getItemCount(ItemType::FOOD) <= 0)
         {
+            std::cout << "Player " << player->getFd() << " died from starvation at level " << player->getLevel() << std::endl;
             if (_broadcastQueue)
                 _broadcastQueue->push("pdi " + std::to_string(player->getFd()) + "\n");
             player->setState(PlayerState::DEAD);

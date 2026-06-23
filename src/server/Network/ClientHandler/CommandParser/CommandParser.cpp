@@ -1,4 +1,5 @@
 #include "CommandParser.hpp"
+#include <iostream>
 #include <sstream>
 #include <sys/socket.h>
 
@@ -123,8 +124,9 @@ void CommandParser::_handleHandshake(const std::string &teamName)
     {
         _client->setType(ClientType::AI);
         int availableSlots = _world->getAvailableSlotsForTeam(teamName);
-        if (availableSlots < 0)
+        if (availableSlots <= 0)
         {
+            std::cout << "Client refused: fd = " << _client->getFd() << " team=\"" << teamName << "\" reason=\"no available slot\"" << std::endl;
             send(_client->getFd(), "ko\n", 3, 0);
             return;
         }

@@ -237,6 +237,16 @@ class ZappyAIClient:
             self._log(f"[stop] limite d'actions atteinte ({self.max_actions})")
             return False
 
+        if (
+            self.planned_commands
+            and self.inventory_is_known
+            and self.actions_since_inventory >= self.inventory_refresh_interval
+        ):
+            self.planned_commands.clear()
+            self._log("[plan] interrupted to refresh inventory")
+            self._send_command("Inventory")
+            return True
+
         if self.planned_commands:
             command = self.planned_commands.pop(0)
             self._log(f"[plan] {command} (reste {len(self.planned_commands)})")
@@ -641,11 +651,21 @@ class ZappyAIClient:
         if argument is not None:
             structured_payload = parse_broadcast_message(argument)
             if structured_payload is not None:
+                payload = build_broadcast_message(
+                    level=int(structured_payload["level"]),
+                    intention=str(structured_payload["intention"]),
+                    leader_token=(
+                        str(structured_payload["leader_token"])
+                        if structured_payload.get("leader_token") is not None
+                        else None
+                    ),
+                    resources=dict(structured_payload["resources"]),
+                )
                 self.state["last_outgoing_broadcast"] = {
                     **dict(structured_payload),
                     "age": 0,
                 }
-                return command
+                return f"Broadcast {payload}"
 
         intention = infer_broadcast_intention(argument, str(self.state["objective"]))
         resources = self._build_broadcast_resources(intention)

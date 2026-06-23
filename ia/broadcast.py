@@ -11,6 +11,9 @@ except ImportError:
 
 
 BROADCAST_NONE_TOKEN = "none"
+BROADCAST_FIELD_SEPARATOR = "|"
+BROADCAST_RESOURCE_SEPARATOR = "+"
+BROADCAST_RESOURCE_QUANTITY_SEPARATOR = ":"
 BROADCAST_INTENTION_INCANTATION = "incantation_call"
 BROADCAST_INTENTION_INCANTATION_AVAILABLE = "incantation_available"
 BROADCAST_INTENTION_INCANTATION_ARRIVING = "incantation_arriving"
@@ -41,10 +44,14 @@ def build_broadcast_message(
     normalized_leader_token = normalize_broadcast_leader_token(leader_token)
     if is_incantation_broadcast_intention(normalized_intention):
         return (
-            f"{int(level)}, {normalized_intention}, "
-            f"{normalized_leader_token}, {resource_text}"
+            f"{int(level)}{BROADCAST_FIELD_SEPARATOR}{normalized_intention}"
+            f"{BROADCAST_FIELD_SEPARATOR}{normalized_leader_token}"
+            f"{BROADCAST_FIELD_SEPARATOR}{resource_text}"
         )
-    return f"{int(level)}, {normalized_intention}, {resource_text}"
+    return (
+        f"{int(level)}{BROADCAST_FIELD_SEPARATOR}{normalized_intention}"
+        f"{BROADCAST_FIELD_SEPARATOR}{resource_text}"
+    )
 
 
 def parse_broadcast_message(message: str) -> dict[str, object] | None:
@@ -52,7 +59,10 @@ def parse_broadcast_message(message: str) -> dict[str, object] | None:
     if not raw_message:
         return None
 
-    parts = [part.strip() for part in raw_message.split(",", maxsplit=3)]
+    if BROADCAST_FIELD_SEPARATOR in raw_message:
+        parts = [part.strip() for part in raw_message.split(BROADCAST_FIELD_SEPARATOR, maxsplit=3)]
+    else:
+        parts = [part.strip() for part in raw_message.split(",", maxsplit=3)]
     if len(parts) not in {3, 4}:
         return None
 
@@ -85,17 +95,35 @@ def format_broadcast_resources(resources: Mapping[str, int]) -> str:
         normalized_quantity = int(quantity)
         if normalized_quantity <= 0:
             continue
-        parts.append(f"{normalized_quantity} {resource_name}")
+        parts.append(
+            f"{normalized_quantity}{BROADCAST_RESOURCE_QUANTITY_SEPARATOR}{resource_name}"
+        )
 
     if not parts:
         return BROADCAST_NONE_TOKEN
-    return " ".join(parts)
+    return BROADCAST_RESOURCE_SEPARATOR.join(parts)
 
 
 def parse_broadcast_resources(resource_text: str) -> dict[str, int]:
     normalized_text = resource_text.strip()
     if not normalized_text or normalized_text.lower() == BROADCAST_NONE_TOKEN:
         return {}
+
+    if BROADCAST_RESOURCE_QUANTITY_SEPARATOR in normalized_text:
+        resources: dict[str, int] = {}
+        for item in normalized_text.split(BROADCAST_RESOURCE_SEPARATOR):
+            if not item:
+                continue
+            if BROADCAST_RESOURCE_QUANTITY_SEPARATOR not in item:
+                raise ValueError(f"Invalid broadcast resource: {item!r}")
+            quantity_text, resource_name = item.split(
+                BROADCAST_RESOURCE_QUANTITY_SEPARATOR,
+                maxsplit=1,
+            )
+            if not quantity_text.isdigit() or not resource_name:
+                raise ValueError(f"Invalid broadcast resource: {item!r}")
+            resources[resource_name] = int(quantity_text)
+        return resources
 
     tokens = normalized_text.split()
     if len(tokens) % 2 != 0:
