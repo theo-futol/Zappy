@@ -1,16 +1,20 @@
 <map id="zappy::ArgParser::getList" name="zappy::ArgParser::getList">
-<area shape="rect" id="Node000001" title="Returns all values collected for a LIST flag." alt="" coords="616,56,799,81"/>
-<area shape="rect" id="Node000002" href="$classzappy_1_1ArgParser.html#a971140dfcfb1fcf6b3bff1b8c6e999fa" title="Returns the parsed value of an INT flag as an integer." alt="" coords="381,30,557,56"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="602,60,557,55,558,50,602,55"/>
-<area shape="rect" id="Node000003" href="$classzappy_1_1Core.html#a7eddab4820ab6c3de9a4ed7546dcaced" title="Creates the ClientHandler from the args (port, client count, time unit)." alt="" coords="108,6,323,32"/>
-<area shape="poly" id="edge7_Node000001_Node000003" title=" " alt="" coords="666,53,620,34,567,20,505,12,441,9,323,12,323,6,441,4,505,7,569,15,621,29,668,48"/>
-<area shape="rect" id="Node000005" href="$classzappy_1_1Core.html#abfd869c59ea30c7e241b78a45d7e9d01" title="Creates the World from the args (map size, teams)." alt="" coords="134,56,297,81"/>
-<area shape="poly" id="edge8_Node000001_Node000005" title=" " alt="" coords="602,71,297,71,297,66,602,66"/>
-<area shape="rect" id="Node000006" href="$classzappy_1_1ArgParser.html#a96434eb053dc6912dd447521309a769c" title="Returns the parsed value of a STRING flag." alt="" coords="371,132,568,157"/>
-<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="655,88,511,134,509,129,653,83"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="368,36,323,32,323,27,368,31"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="368,56,297,63,296,58,367,51"/>
-<area shape="rect" id="Node000004" href="$main_8cpp.html#a0c99d968a34e803d378692bde2e3f18f" title=" " alt="" coords="5,32,60,57"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="110,36,61,43,60,38,110,31"/>
-<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="119,59,60,51,61,45,120,53"/>
+<area shape="rect" id="Node000001" title="Returns all values collected for a LIST flag." alt="" coords="616,79,799,104"/>
+<area shape="rect" id="Node000002" href="$classzappy_1_1Core.html#a2ce4518024d59721debf3eb26c9633c6" title="Stores the parsed arguments; does not build the world or network yet." alt="" coords="147,5,283,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="662,76,617,60,567,47,492,35,416,27,283,21,284,15,416,22,493,30,569,42,618,55,664,71"/>
+<area shape="rect" id="Node000004" href="$classzappy_1_1ArgParser.html#a971140dfcfb1fcf6b3bff1b8c6e999fa" title="Returns the parsed value of an INT flag as an integer." alt="" coords="381,79,557,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="602,94,558,94,558,89,602,89"/>
+<area shape="rect" id="Node000005" href="$classzappy_1_1Core.html#a7eddab4820ab6c3de9a4ed7546dcaced" title="Creates the ClientHandler from the args (port, client count, time unit)." alt="" coords="108,55,323,80"/>
+<area shape="poly" id="edge10_Node000001_Node000005" title=" " alt="" coords="636,79,568,69,441,63,323,64,323,59,441,57,568,63,637,73"/>
+<area shape="rect" id="Node000006" href="$classzappy_1_1Core.html#abfd869c59ea30c7e241b78a45d7e9d01" title="Creates the World from the args (map size, teams)." alt="" coords="134,104,297,129"/>
+<area shape="poly" id="edge11_Node000001_Node000006" title=" " alt="" coords="637,109,568,119,424,126,297,123,297,118,424,120,568,114,636,104"/>
+<area shape="rect" id="Node000007" href="$classzappy_1_1ArgParser.html#a96434eb053dc6912dd447521309a769c" title="Returns the parsed value of a STRING flag." alt="" coords="371,180,568,205"/>
+<area shape="poly" id="edge9_Node000001_Node000007" title=" " alt="" coords="672,113,569,163,515,183,513,177,567,158,670,108"/>
+<area shape="rect" id="Node000003" href="$main_8cpp.html#a0c99d968a34e803d378692bde2e3f18f" title=" " alt="" coords="5,55,60,80"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="140,36,109,45,61,60,59,55,107,39,139,31"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="420,76,322,45,277,33,279,28,323,39,422,71"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="368,84,323,80,323,75,368,79"/>
+<area shape="poly" id="edge7_Node000004_Node000006" title=" " alt="" coords="368,104,297,111,296,106,367,99"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="94,70,60,70,60,65,94,65"/>
+<area shape="poly" id="edge8_Node000006_Node000003" title=" " alt="" coords="143,103,107,94,59,79,61,74,109,89,144,98"/>
 </map>

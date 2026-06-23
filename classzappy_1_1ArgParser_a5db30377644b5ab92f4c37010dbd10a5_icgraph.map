@@ -1,7 +1,10 @@
 <map id="zappy::ArgParser::hasFlag" name="zappy::ArgParser::hasFlag">
-<area shape="rect" id="Node000001" title="Returns true if the flag was present in argv after parse()." alt="" coords="371,5,560,31"/>
-<area shape="rect" id="Node000002" href="$classzappy_1_1Core.html#a7eddab4820ab6c3de9a4ed7546dcaced" title="Creates the ClientHandler from the args (port, client count, time unit)." alt="" coords="108,5,323,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="357,21,323,21,323,15,357,15"/>
-<area shape="rect" id="Node000003" href="$main_8cpp.html#a0c99d968a34e803d378692bde2e3f18f" title=" " alt="" coords="5,5,60,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="94,21,60,21,60,15,94,15"/>
+<area shape="rect" id="Node000001" title="Returns true if the flag was present in argv after parse()." alt="" coords="371,31,560,56"/>
+<area shape="rect" id="Node000002" href="$classzappy_1_1Core.html#a2ce4518024d59721debf3eb26c9633c6" title="Stores the parsed arguments; does not build the world or network yet." alt="" coords="147,5,283,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="357,35,283,27,284,22,357,30"/>
+<area shape="rect" id="Node000004" href="$classzappy_1_1Core.html#a7eddab4820ab6c3de9a4ed7546dcaced" title="Creates the ClientHandler from the args (port, client count, time unit)." alt="" coords="108,55,323,80"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="357,56,323,60,322,54,357,51"/>
+<area shape="rect" id="Node000003" href="$main_8cpp.html#a0c99d968a34e803d378692bde2e3f18f" title=" " alt="" coords="5,31,60,56"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="134,32,61,42,60,37,133,27"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="105,55,60,49,61,44,106,50"/>
 </map>
