@@ -140,17 +140,19 @@ int Player::getDistanceTo(const Player &target, std::pair<int, int> mapSize) con
     return getDistanceTo(target.getPosition(), mapSize);
 }
 
-Degrees Player::getDirectionTo(const position &target, std::pair<int, int> mapSize) const
+Degrees Player::getDirectionTo(const std::pair<const position, int> target, std::pair<int, int> mapSize) const
 {
-    if (_pos == target)
-        return Degrees::NORTH;
-    int dx = target.x - _pos.x;
-    int dy = target.y - _pos.y;
+    if (_pos == target.first)
+        return Degrees::NONE;
+    int dx = target.first.x - _pos.x;
+    int dy = target.first.y - _pos.y;
     if (std::abs(dx) > (mapSize.first - std::abs(dx)))
         dx = (dx > 0 ? -1 : 1) * (mapSize.first - std::abs(dx));
     if (std::abs(dy) > (mapSize.second - std::abs(dy)))
         dy = (dy > 0 ? -1 : 1) * (mapSize.second - std::abs(dy));
     int bearing = (static_cast<int>(std::atan2(dx, -dy) * 180 / M_PI) + 360) % 360;
+    if (rotation != NORTH || target.second != NORTH)
+        bearing = (bearing - rotation + 360) % 360;
     return Direction::getNearestDirection(bearing);
 }
 
@@ -173,7 +175,7 @@ bool Player::isFrozen() const
 
 Degrees Player::getDirectionTo(const Player &target, std::pair<int, int> mapSize) const
 {
-    return getDirectionTo(target.getPosition(), mapSize);
+    return getDirectionTo(std::make_pair(target.getPosition(), target.getRotation()), mapSize);
 }
 
 void Player::addMessageToQueue(const std::string &message, int timeNeeded, int receiverFd)
