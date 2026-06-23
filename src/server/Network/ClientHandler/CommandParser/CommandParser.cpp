@@ -130,13 +130,19 @@ void CommandParser::_handleHandshake(const std::string &teamName)
             send(_client->getFd(), "ko\n", 3, MSG_NOSIGNAL);
             return;
         }
+        if (!_world->addPlayer(_client->getFd(), teamName))
+        {
+            std::cout << "Client refused: fd = " << _client->getFd() << " team=\"" << teamName << "\" reason=\"no egg to hatch from\"" << std::endl;
+            send(_client->getFd(), "ko\n", 3, MSG_NOSIGNAL);
+            _isBanned = true;
+            return;
+        }
         std::string handShakeMsg = std::to_string(availableSlots) + "\n" + std::to_string(_world->getMapSize().first) + " " + std::to_string(_world->getMapSize().second) + "\n";
         send(_client->getFd(), handShakeMsg.c_str(), handShakeMsg.size(), MSG_NOSIGNAL);
-        _world->addPlayer(_client->getFd(), teamName);
 
-        _broadcastQueue->push("pnw " + std::to_string(_client->getFd()) + " " + std::to_string(_world->getPlayerByFd(_client->getFd())->getPosition().x) + " " +
-                              std::to_string(_world->getPlayerByFd(_client->getFd())->getPosition().y) + " " +
-                              std::to_string(_world->getPlayerByFd(_client->getFd())->getRotation()) + " " + teamName + "\n");
+        Player *player = _world->getPlayerByFd(_client->getFd());
+        _broadcastQueue->push("pnw " + std::to_string(_client->getFd()) + " " + std::to_string(player->getPosition().x) + " " + std::to_string(player->getPosition().y) + " " +
+                              std::to_string(player->getRotation()) + " " + teamName + "\n");
     }
 }
 
