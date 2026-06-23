@@ -304,7 +304,7 @@ class BehaviorStateMachine:
             return False
         if self._recently_called_for_incantation(context):
             return True
-        return not self._is_high_level_coordination(context)
+        return False
 
     def _has_other_ally_incantation_call(self, context: PredictionContext) -> bool:
         ally_broadcast = context.ally_broadcast
