@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import asyncio
 import json
+import re
 import sys
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -20,6 +21,7 @@ DEFAULT_STATUS_INTERVAL = 5.0
 DEFAULT_SPAWN_INTERVAL = 0.35
 DEFAULT_POLL_INTERVAL = 0.25
 GAME_OVER_EXIT_CODE = 20
+CLIENT_DEATH_RE = re.compile(r"\bdead\s+level=(\d+)(?:\s+food=(-?\d+))?\b")
 
 
 @dataclass
@@ -157,6 +159,12 @@ class ClientLauncher:
             asyncio.get_running_loop().time() + self.retry_interval,
         )
         reason = self._summarize_stderr(stderr_text)
+        death_summary = self._summarize_death(stderr_text)
+        if death_summary is not None:
+            self._log(
+                f"died {runtime.team}#{managed_client.instance_id} "
+                f"{death_summary} active={len(runtime.active_clients)}/{runtime.target_count}"
+            )
         self._log(
             f"stopped {runtime.team}#{managed_client.instance_id} "
             f"code={return_code} reason={reason} "
@@ -223,6 +231,16 @@ class ClientLauncher:
         if not stderr_text:
             return "no stderr"
         return stderr_text.splitlines()[-1]
+
+    def _summarize_death(self, stderr_text: str) -> str | None:
+        death_match = CLIENT_DEATH_RE.search(stderr_text)
+        if death_match is None:
+            return None
+        level = death_match.group(1)
+        food = death_match.group(2)
+        if food is None:
+            return f"level={level}"
+        return f"level={level} food={food}"
 
     def _log(self, message: str) -> None:
         print(f"[launcher] {message}")

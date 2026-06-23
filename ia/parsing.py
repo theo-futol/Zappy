@@ -114,6 +114,8 @@ def parse_look_payload(payload: str) -> list[list[str]]:
     tiles = []
     for tile in inner.split(","):
         tiles.append(_parse_look_tile(tile))
+    if tiles and "player" not in tiles[0]:
+        tiles[0].append("player")
     return tiles
 
 
@@ -125,19 +127,21 @@ def _parse_look_tile(tile: str) -> list[str]:
             items.append(part)
             continue
 
-        resource_name = _normalize_resource_alias(compact_match.group(1))
+        resource_name = _normalize_look_item_alias(compact_match.group(1))
         quantity = int(compact_match.group(2))
-        if resource_name not in RESOURCE_IDS:
+        if resource_name not in RESOURCE_IDS and resource_name != "player":
             items.append(part)
             continue
         items.extend([resource_name] * quantity)
     return items
 
 
-def _normalize_resource_alias(resource_name: str) -> str:
-    normalized = resource_name.strip().lower()
+def _normalize_look_item_alias(item_name: str) -> str:
+    normalized = item_name.strip().lower()
     if normalized in {"teraumere", "terraumere"}:
         return "deraumere"
+    if normalized in {"players", "player"}:
+        return "player"
     return normalized
 
 
