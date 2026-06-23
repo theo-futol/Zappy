@@ -30,7 +30,7 @@ int Player::getRotation() const
 void Player::setRotation(int rot)
 {
     if (rot % 90 != 0 || rot < 0 || rot > 360)
-        throw ServerException("Rotation must be between 0 and 360 degrees");
+        return;
     rotation = rot;
 }
 
@@ -68,7 +68,7 @@ position Player::nextPosition(std::pair<int, int> mapSize) const
         nextPos.x -= 1;
         break;
     default:
-        throw ServerException("Invalid rotation value for movement");
+        break;
     }
 
     // Wrap around if the player goes out of bounds
@@ -119,10 +119,8 @@ PlayerState Player::getState() const
 void Player::writeToClient(const std::string &message) const
 {
     if (_fd < 0)
-        throw ServerException("Invalid file descriptor for player");
-    ssize_t bytesSent = write(_fd, message.c_str(), message.size());
-    if (bytesSent < 0)
-        throw ServerException("Failed to send message to client");
+        return;
+    write(_fd, message.c_str(), message.size()); // NO VERIFICATION BECAUSE THE SERVER SHOULD NOT CRASH IF THE CLIENT IS DISCONNECTED
 }
 
 int Player::getDistanceTo(const position &target, std::pair<int, int> mapSize) const
@@ -206,10 +204,8 @@ void Player::sendMessageToClient()
             if (currentTime - it->first.first >= it->first.second * CLOCKS_PER_SEC / 1000)
             {
                 if (it->second < 0)
-                    throw ServerException("Invalid file descriptor for player");
-                ssize_t bytesSent = write(it->second, msg.first.c_str(), msg.first.size());
-                if (bytesSent < 0)
-                    throw ServerException("Failed to send message to client");
+                    continue;
+                write(it->second, msg.first.c_str(), msg.first.size()); // NO VERIFICATION BECAUSE THE SERVER SHOULD NOT CRASH IF THE CLIENT IS DISCONNECTED
                 it = times.erase(it);
             }
             else
