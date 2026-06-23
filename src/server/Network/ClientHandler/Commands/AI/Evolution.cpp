@@ -73,7 +73,7 @@ std::string Commands::Incantation(std::vector<std::string> args, Client &client)
         participant->writeToClient("Current level: " + std::to_string(participant->getLevel()) + "\n");
         new_level = participant->getLevel();
     }
-    std::cout << "elevation : " << new_level << std::endl;
+    std::cout << "Player " << initiator->getFd() << " attained a new level : " << new_level << std::endl;
     _broadcastQueue->push(pieHeader + "1\n");
     return "";
 }

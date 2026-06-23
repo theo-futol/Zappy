@@ -45,7 +45,7 @@ void ClientHandler::handleClients(void)
         {
             if (errno == EINTR)
                 continue;
-            throw ServerException("poll failed: " + std::string(strerror(errno)));
+            throw ServerException("Poll failed: " + std::string(strerror(errno)));
         }
         if (_fds[0].revents & POLLIN)
             addClient();
@@ -133,6 +133,7 @@ void ClientHandler::addClient()
     _clients.push_back(std::make_unique<Client>(clientFd));
     _parsers[clientFd] = std::make_unique<CommandParser>(_clients.back().get(), _f, _world, &_broadcastQueue);
     _fds.push_back({.fd = clientFd, .events = POLLIN, .revents = 0});
+    std::cout << "New client connected: fd = " << clientFd << std::endl;
 }
 
 void ClientHandler::removeClient(int fd)
@@ -143,6 +144,7 @@ void ClientHandler::removeClient(int fd)
     _clients.erase(std::remove_if(_clients.begin(), _clients.end(), [fd](const std::unique_ptr<Client> &client) { return client->getFd() == fd; }), _clients.end());
 
     _fds.erase(std::remove_if(_fds.begin(), _fds.end(), [fd](const pollfd &pfd) { return pfd.fd == fd; }), _fds.end());
+    std::cout << "Client disconnected: fd = " << fd << std::endl;
 }
 
 Client *ClientHandler::getClientByFd(int fd) const
