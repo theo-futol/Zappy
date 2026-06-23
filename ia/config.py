@@ -20,27 +20,39 @@ ALLY_BROADCAST_SWITCH_MIN_AGE = 4
 HIGH_LEVEL_ALLY_BROADCAST_SWITCH_MIN_AGE = 2
 OUTGOING_BROADCAST_BASE_REPEAT_INTERVAL = 14
 OUTGOING_BROADCAST_REPEAT_INTERVAL_PER_LEVEL = 2
-INCANTATION_CALL_BASE_REPEAT_INTERVAL = 12
-INCANTATION_CALL_REPEAT_INTERVAL_PER_LEVEL = 1
-HIGH_LEVEL_INCANTATION_CALL_REPEAT_INTERVAL = 18
-INCANTATION_AVAILABLE_REPEAT_INTERVAL = 8
-INCANTATION_ARRIVING_REPEAT_INTERVAL = 5
+INCANTATION_CALL_BASE_REPEAT_INTERVAL = 24
+INCANTATION_CALL_REPEAT_INTERVAL_PER_LEVEL = 2
+HIGH_LEVEL_INCANTATION_CALL_REPEAT_INTERVAL = 32
+INCANTATION_AVAILABLE_REPEAT_INTERVAL = 14
+INCANTATION_ARRIVING_REPEAT_INTERVAL = 10
 REPEAT_INCANTATION_SUPPORT_BROADCASTS = False
 
 # Avoid dropping stones one by one before the full incantation set is ready.
 PLACE_STONES_ONLY_WHEN_INVENTORY_READY = True
 
 # Food thresholds.
-SURVIVAL_FOOD_THRESHOLD = 10
-OPPORTUNISTIC_FOOD_THRESHOLD = 18
-FORK_FOOD_THRESHOLD = 18
+SURVIVAL_FOOD_THRESHOLD = 14
+OPPORTUNISTIC_FOOD_THRESHOLD = 24
+FORK_FOOD_THRESHOLD = 28
 ALLY_HELP_FOOD_THRESHOLD = 20
-HIGH_LEVEL_HELP_JOIN_FOOD_THRESHOLD = 24
-HIGH_LEVEL_HELP_CANCEL_FOOD_THRESHOLD = 18
+LOW_LEVEL_HELP_FOOD_THRESHOLDS = {
+    1: 8,
+    2: 14,
+    3: 18,
+    4: 22,
+}
+HIGH_LEVEL_HELP_JOIN_FOOD_THRESHOLD = 45
+HIGH_LEVEL_HELP_CANCEL_FOOD_THRESHOLD = 30
 INCANTATION_FOOD_THRESHOLD = 10
-HIGH_LEVEL_GATHER_FOOD_THRESHOLD = 24
-HIGH_LEVEL_WAIT_INCANTATION_FOOD_THRESHOLD = 24
-HIGH_LEVEL_PREPARE_INCANTATION_FOOD_THRESHOLD = 18
+GATHER_FOOD_THRESHOLD_BASE = 14
+GATHER_FOOD_THRESHOLD_PER_LEVEL = 5
+WAIT_INCANTATION_FOOD_THRESHOLD_BASE = 16
+WAIT_INCANTATION_FOOD_THRESHOLD_PER_LEVEL = 5
+PREPARE_INCANTATION_FOOD_THRESHOLD_BASE = 14
+PREPARE_INCANTATION_FOOD_THRESHOLD_PER_LEVEL = 4
+HIGH_LEVEL_GATHER_FOOD_THRESHOLD = 50
+HIGH_LEVEL_WAIT_INCANTATION_FOOD_THRESHOLD = 50
+HIGH_LEVEL_PREPARE_INCANTATION_FOOD_THRESHOLD = 35
 
 # Tile conditions.
 OVERCROWD_EJECT_THRESHOLD = 3
@@ -116,7 +128,15 @@ def get_wait_incantation_fork_turns(level: int) -> int:
 
 def get_ally_help_food_threshold(level: int, *, committed: bool = False) -> int:
     if not is_high_level_coordination(level):
-        return int(ALLY_HELP_FOOD_THRESHOLD)
+        threshold = int(
+            LOW_LEVEL_HELP_FOOD_THRESHOLDS.get(
+                max(1, int(level)),
+                ALLY_HELP_FOOD_THRESHOLD,
+            )
+        )
+        if committed:
+            return max(int(INCANTATION_FOOD_THRESHOLD), threshold - 4)
+        return threshold
     if committed:
         return int(HIGH_LEVEL_HELP_CANCEL_FOOD_THRESHOLD)
     return int(HIGH_LEVEL_HELP_JOIN_FOOD_THRESHOLD)
@@ -125,19 +145,31 @@ def get_ally_help_food_threshold(level: int, *, committed: bool = False) -> int:
 def get_gather_food_threshold(level: int) -> int:
     if is_high_level_coordination(level):
         return int(HIGH_LEVEL_GATHER_FOOD_THRESHOLD)
-    return int(INCANTATION_FOOD_THRESHOLD)
+    return _get_level_scaled_value(
+        GATHER_FOOD_THRESHOLD_BASE,
+        GATHER_FOOD_THRESHOLD_PER_LEVEL,
+        level,
+    )
 
 
 def get_wait_incantation_food_threshold(level: int) -> int:
     if is_high_level_coordination(level):
         return int(HIGH_LEVEL_WAIT_INCANTATION_FOOD_THRESHOLD)
-    return int(INCANTATION_FOOD_THRESHOLD)
+    return _get_level_scaled_value(
+        WAIT_INCANTATION_FOOD_THRESHOLD_BASE,
+        WAIT_INCANTATION_FOOD_THRESHOLD_PER_LEVEL,
+        level,
+    )
 
 
 def get_prepare_incantation_food_threshold(level: int) -> int:
     if is_high_level_coordination(level):
         return int(HIGH_LEVEL_PREPARE_INCANTATION_FOOD_THRESHOLD)
-    return int(INCANTATION_FOOD_THRESHOLD)
+    return _get_level_scaled_value(
+        PREPARE_INCANTATION_FOOD_THRESHOLD_BASE,
+        PREPARE_INCANTATION_FOOD_THRESHOLD_PER_LEVEL,
+        level,
+    )
 
 
 def is_high_level_coordination(level: int) -> bool:

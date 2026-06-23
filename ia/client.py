@@ -280,9 +280,35 @@ class ZappyAIClient:
             f"[decision] {decision.state or 'unknown'} -> {decision.command} "
             f"(confiance={decision.confidence:.2f}, raison={decision.rationale})"
         )
+        #self._debug_incantation_state(decision)
         self.planned_commands = list(decision.plan[1:]) if decision.plan else []
         self._send_command(decision.command)
         return True
+
+    def _debug_incantation_state(self, decision: object) -> None:
+        if not self.verbose:
+            return
+        if decision.state not in {"wait_incantation", "prepare_incantation", "help_incantation"}:
+            return
+
+        current_tile_items = []
+        if self.state["visible_tiles"]:
+            current_tile_items = list(self.state["visible_tiles"][0].get("items", []))
+
+        players_here = current_tile_items.count("player")
+        stone_counts = {name: current_tile_items.count(name) for name in STONE_NAMES}
+        self._log(
+            "[debug] incantation_context "
+            f"level={int(self.state['level'])} "
+            f"players_here={players_here} "
+            f"stones={stone_counts} "
+            f"reserved={self.state['current_tile_reserved_resources']} "
+            f"inventory_food={int(self.state['inventory'].get('food', 0))} "
+            f"incantation_support={self.state['incantation_support']} "
+            f"ally_broadcast={self.state['ally_broadcast']} "
+            f"last_outgoing_broadcast={self.state['last_outgoing_broadcast']} "
+            f"look_is_fresh={bool(self.state['look_is_fresh'])}"
+        )
 
     def _send_command(self, command: str) -> None:
         prepared_command = self._prepare_command(command)
@@ -361,6 +387,18 @@ class ZappyAIClient:
                 "message": str(event["message"]),
                 "payload": parsed_message,
             }
+            if parsed_message is None:
+                self._log(
+                    f"[broadcast] ignored unparsable direction={int(event['direction'])} "
+                    f"message={event['message']}"
+                )
+            else:
+                self._log(
+                    f"[broadcast] received direction={int(event['direction'])} "
+                    f"level={parsed_message.get('level')} "
+                    f"intention={parsed_message.get('intention')} "
+                    f"leader={parsed_message.get('leader_token')}"
+                )
             self._update_incantation_broadcasts(int(event["direction"]), parsed_message)
             return
 
@@ -494,6 +532,12 @@ class ZappyAIClient:
         payload: dict[str, object] | None,
     ) -> None:
         if not self._is_relevant_incantation_broadcast(payload):
+            if payload is not None:
+                self._log(
+                    f"[broadcast] ignored irrelevant level={payload.get('level')} "
+                    f"intention={payload.get('intention')} "
+                    f"food={int(self.state['inventory'].get('food', 0))}"
+                )
             return
 
         intention = str(payload.get("intention", ""))
@@ -504,10 +548,17 @@ class ZappyAIClient:
                 current_ally_broadcast["payload"] = dict(payload)
                 current_ally_broadcast["age"] = 0
                 self.planned_commands.clear()
+                self._log(
+                    f"[broadcast] tracking leader={payload.get('leader_token')} "
+                    f"direction={int(direction)}"
+                )
                 return
 
             if current_ally_broadcast is not None:
                 if not self._should_replace_ally_broadcast(current_ally_broadcast, payload):
+                    self._log(
+                        f"[broadcast] kept current leader, ignored leader={payload.get('leader_token')}"
+                    )
                     return
 
             self.state["ally_broadcast"] = {
@@ -516,6 +567,10 @@ class ZappyAIClient:
                 "age": 0,
             }
             self.planned_commands.clear()
+            self._log(
+                f"[broadcast] accepted incantation leader={payload.get('leader_token')} "
+                f"direction={int(direction)}"
+            )
             return
 
         if is_incantation_support_intention(intention):
