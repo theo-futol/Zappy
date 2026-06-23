@@ -5,9 +5,9 @@ int main(int ac, char **av)
 {
     try
     {
-        std::cout << "Starting Zappy server..." << std::endl;
         zappy::ArgParser argParser(ac, av);
         zappy::Core core(argParser);
+        std::cout << "Starting Zappy server..." << std::endl;
         std::cout << "Setting up the world..." << std::endl;
         core.setWorld();
         std::cout << "Setting up the network..." << std::endl;

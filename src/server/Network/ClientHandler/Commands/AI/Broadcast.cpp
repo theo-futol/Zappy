@@ -13,6 +13,7 @@ std::string Commands::Broadcast(std::vector<std::string> args, Client &client)
                                       player->getDistanceTo(*target, _world->getMapSize()) * BROADCAST_MESSAGE_TIME_PER_TILE, player->getFd());
     player->sortQueueByTimeNeeded();
     _broadcastQueue->push("pbc " + std::to_string(player->getFd()) + " " + args[0] + "\n");
+    std::cout << "Player " << player->getFd() << " is broadcasting\n";
     return "ok\n";
 }
 } // namespace zappy

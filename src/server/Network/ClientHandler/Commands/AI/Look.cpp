@@ -12,9 +12,9 @@ std::string Commands::Look(std::vector<std::string> args, Client &client)
     std::pair<int, int> mapSize = _world->getMapSize();
     position pos = player->getPosition();
     int rotation = player->getRotation();
-    int tileViewed = 2;
+    int tileViewed = 1;
 
-    for (int i = 1; i <= player->getLevel(); i++)
+    for (int i = 0; i <= player->getLevel(); i++)
     {
         for (int j = 0; j < tileViewed + i; j++)
         {
@@ -56,8 +56,8 @@ std::string Commands::Look(std::vector<std::string> args, Client &client)
                 buffer += itemTypeToString(item.first) + ":" + std::to_string(item.second) + " ";
             if (!currentTile->_players.empty())
                 buffer += "player " + std::to_string(currentTile->_players.size() - (tilePos == player->getPosition())) + " ";
-            if (i < player->getLevel() && j < tileViewed + i - 1)
-                buffer += ",";
+            if (i <= player->getLevel() && j < tileViewed + i - 1)
+                buffer += ", ";
         }
         tileViewed += 1;
     }

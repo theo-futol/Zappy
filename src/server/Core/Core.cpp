@@ -1,5 +1,10 @@
 #include "Core.hpp"
 
+#define MAX_MAP_SIZE 1024
+#define MAX_CLIENTS 256
+#define MAX_TEAMS 4
+#define MAX_F 1000
+
 namespace zappy
 {
 
@@ -15,6 +20,17 @@ Core::Core(ArgParser argParser) : _argParser(std::move(argParser)), _clientHandl
     _argParser.registerFlag("-c", zappy::FlagType::INT, true, "number of initial clients per team");
     _argParser.registerFlag("-f", zappy::FlagType::INT, false, "reciprocal of time unit for execution of actions");
     _argParser.parse();
+    if (_argParser.getInt("-p") > 65535)
+        throw ServerException("Port number must be between 0 and 65535");
+    if (_argParser.getInt("-x") < 1 || _argParser.getInt("-y") < 1 || _argParser.getInt("-x") > MAX_MAP_SIZE || _argParser.getInt("-y") > MAX_MAP_SIZE)
+        throw ServerException("World dimensions must be positive integers and countains between 1 and " + std::to_string(MAX_MAP_SIZE));
+    if (_argParser.getInt("-c") > MAX_CLIENTS)
+        throw ServerException("Number of initial clients per team must be between 0 and " + std::to_string(MAX_CLIENTS));
+    if (_argParser.getList("-n").size() < 1 || _argParser.getList("-n").size() > MAX_TEAMS)
+        throw ServerException("Number of teams must be between 1 and " + std::to_string(MAX_TEAMS));
+    if (_argParser.hasFlag("-f"))
+        if (_argParser.getInt("-f") < 1 || _argParser.getInt("-f") > MAX_F)
+            throw ServerException("Invalid value for flag '-f', must be between 1 and " + std::to_string(MAX_F));
     serverIsRunning = true;
 }
 
