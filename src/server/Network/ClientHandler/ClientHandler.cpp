@@ -78,12 +78,15 @@ void ClientHandler::handleClients(void)
 
 void ClientHandler::broadcastMessageToClients()
 {
+    std::clock_t currentTime = std::clock();
+    std::function<void(int, const std::string &)> sendFunction = [this](int fd, const std::string &message) { writeToClient(fd, message); };
+
     for (const auto &client : _clients)
         if (client->getType() == ClientType::AI)
         {
             Player *player = _world->getPlayerByFd(client->getFd());
             if (player)
-                player->sendMessageToClient();
+                player->sendMessageToClient(currentTime, sendFunction);
         }
 }
 
@@ -173,4 +176,15 @@ std::queue<std::string> &ClientHandler::getBroadcastQueue()
 {
     return _broadcastQueue;
 }
+
+void ClientHandler::writeToClient(int fd, const std::string &message)
+{
+    if (fd < 0)
+    {
+        std::cout << "[ERROR-440] " << fd << std::endl;
+        return;
+    }
+    send(fd, message.c_str(), message.size(), MSG_NOSIGNAL); // MSG_NOSIGNAL: never SIGPIPE if the client is disconnected
+}
+
 } // namespace zappy
