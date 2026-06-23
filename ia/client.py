@@ -366,6 +366,11 @@ class ZappyAIClient:
             self.dead = True
             self._clear_current_tile_reserved_resources()
             self.planned_commands.clear()
+            print(
+                f"dead level={int(self.state['level'])} "
+                f"food={int(self.state['inventory'].get('food', 0))}",
+                file=sys.stderr,
+            )
             self._log("[state] joueur mort")
             return
 
