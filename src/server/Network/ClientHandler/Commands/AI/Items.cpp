@@ -22,7 +22,7 @@ std::string Commands::Take(std::vector<std::string> args, Client &client)
             break;
         }
     }
-    _broadcastQueue->push("pgt " + std::to_string(client.getFd()) + " " + args[1] + "\n");
+    _broadcastQueue->push("pgt " + std::to_string(client.getFd()) + " " + args[0] + "\n");
     return "ok\n";
 }
 
@@ -44,7 +44,7 @@ std::string Commands::Set(std::vector<std::string> args, Client &client)
             it->second++;
             break;
         }
-    _broadcastQueue->push("pdr " + std::to_string(client.getFd()) + " " + args[1] + "\n");
+    _broadcastQueue->push("pdr " + std::to_string(client.getFd()) + " " + args[0] + "\n");
     return "ok\n";
 }
 } // namespace zappy

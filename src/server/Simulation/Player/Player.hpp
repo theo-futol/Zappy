@@ -1,5 +1,6 @@
 #pragma once
 #include <unistd.h>
+#include <sys/socket.h>
 #include <string>
 #include <math.h>
 #include <algorithm>

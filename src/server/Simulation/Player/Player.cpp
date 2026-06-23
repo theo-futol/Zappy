@@ -120,7 +120,7 @@ void Player::writeToClient(const std::string &message) const
 {
     if (_fd < 0)
         return;
-    write(_fd, message.c_str(), message.size()); // NO VERIFICATION BECAUSE THE SERVER SHOULD NOT CRASH IF THE CLIENT IS DISCONNECTED
+    send(_fd, message.c_str(), message.size(), MSG_NOSIGNAL);
 }
 
 int Player::getDistanceTo(const position &target, std::pair<int, int> mapSize) const
@@ -197,19 +197,22 @@ void Player::sendMessageToClient()
     if (_messagesToSend.size() == 0)
         return;
     std::clock_t currentTime = std::clock();
-    for (auto &msg : _messagesToSend)
+    for (auto msgIt = _messagesToSend.begin(); msgIt != _messagesToSend.end();)
     {
-        std::vector<std::pair<std::pair<std::clock_t, int>, int>> &times = msg.second;
-        for (auto it = times.begin(); it != times.end(); it++)
-            if (currentTime - it->first.first >= it->first.second * CLOCKS_PER_SEC / 1000)
-            {
-                if (it->second < 0)
-                    continue;
-                write(it->second, msg.first.c_str(), msg.first.size()); // NO VERIFICATION BECAUSE THE SERVER SHOULD NOT CRASH IF THE CLIENT IS DISCONNECTED
-                it = times.erase(it);
-            }
-            else
+        std::vector<std::pair<std::pair<std::clock_t, int>, int>> &times = msgIt->second;
+        // times is sorted by timeNeeded, so stop at the first entry that is not ready yet.
+        auto it = times.begin();
+        for (; it != times.end(); it = times.erase(it))
+        {
+            if (currentTime - it->first.first < it->first.second * CLOCKS_PER_SEC / 1000)
                 break;
+            if (it->second >= 0)
+                send(it->second, msgIt->first.c_str(), msgIt->first.size(), MSG_NOSIGNAL); // MSG_NOSIGNAL: never SIGPIPE if the client is disconnected
+        }
+        if (times.empty())
+            msgIt = _messagesToSend.erase(msgIt);
+        else
+            ++msgIt;
     }
 }
 
