@@ -1,4 +1,5 @@
 #include "ClientHandler.hpp"
+#include <sys/socket.h>
 
 static constexpr int RESOURCE_INTERVAL_TIME_UNITS = 20;
 static constexpr int CYCLE_TO_DIE = 126;
@@ -129,7 +130,7 @@ void ClientHandler::addClient()
     int clientFd = _tcpSocket.accept();
     if (clientFd < 0)
         return;
-    send(clientFd, "WELCOME\n", 8, 0);
+    send(clientFd, "WELCOME\n", 8, MSG_NOSIGNAL);
     _clients.push_back(std::make_unique<Client>(clientFd));
     _parsers[clientFd] = std::make_unique<CommandParser>(_clients.back().get(), _f, _world, &_broadcastQueue);
     _fds.push_back({.fd = clientFd, .events = POLLIN, .revents = 0});
@@ -163,7 +164,7 @@ void ClientHandler::broadcastGuiInfo()
         _broadcastQueue.pop();
         for (const auto &client : _clients)
             if (client->getType() == ClientType::GRAPHIC)
-                send(client->getFd(), message.c_str(), message.size(), 0);
+                send(client->getFd(), message.c_str(), message.size(), MSG_NOSIGNAL);
     }
 }
 

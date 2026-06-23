@@ -120,7 +120,7 @@ void Player::writeToClient(const std::string &message) const
 {
     if (_fd < 0)
         return;
-    write(_fd, message.c_str(), message.size()); // NO VERIFICATION BECAUSE THE SERVER SHOULD NOT CRASH IF THE CLIENT IS DISCONNECTED
+    send(_fd, message.c_str(), message.size(), MSG_NOSIGNAL);
 }
 
 int Player::getDistanceTo(const position &target, std::pair<int, int> mapSize) const
@@ -207,7 +207,7 @@ void Player::sendMessageToClient()
             if (currentTime - it->first.first < it->first.second * CLOCKS_PER_SEC / 1000)
                 break;
             if (it->second >= 0)
-                write(it->second, msgIt->first.c_str(), msgIt->first.size()); // NO VERIFICATION BECAUSE THE SERVER SHOULD NOT CRASH IF THE CLIENT IS DISCONNECTED
+                send(it->second, msgIt->first.c_str(), msgIt->first.size(), MSG_NOSIGNAL); // MSG_NOSIGNAL: never SIGPIPE if the client is disconnected
         }
         if (times.empty())
             msgIt = _messagesToSend.erase(msgIt);

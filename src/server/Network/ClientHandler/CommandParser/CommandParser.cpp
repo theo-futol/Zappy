@@ -84,7 +84,7 @@ bool CommandParser::executeNext()
     }
     if (_client->getType() == ClientType::DEAD)
     {
-        send(_client->getFd(), "dead\n", 5, 0);
+        send(_client->getFd(), "dead\n", 5, MSG_NOSIGNAL);
         _commandQueue.pop();
         return true;
     }
@@ -125,11 +125,11 @@ void CommandParser::_handleHandshake(const std::string &teamName)
         int availableSlots = _world->getAvailableSlotsForTeam(teamName);
         if (availableSlots < 0)
         {
-            send(_client->getFd(), "ko\n", 3, 0);
+            send(_client->getFd(), "ko\n", 3, MSG_NOSIGNAL);
             return;
         }
         std::string handShakeMsg = std::to_string(availableSlots) + "\n" + std::to_string(_world->getMapSize().first) + " " + std::to_string(_world->getMapSize().second) + "\n";
-        send(_client->getFd(), handShakeMsg.c_str(), handShakeMsg.size(), 0);
+        send(_client->getFd(), handShakeMsg.c_str(), handShakeMsg.size(), MSG_NOSIGNAL);
         _world->addPlayer(_client->getFd(), teamName);
 
         _broadcastQueue->push("pnw " + std::to_string(_client->getFd()) + " " + std::to_string(_world->getPlayerByFd(_client->getFd())->getPosition().x) + " " +
@@ -154,10 +154,10 @@ void CommandParser::_dispatch(const std::string &line)
         if (it != _aiCommands.end())
         {
             std::string response = it->second.second(args, *_client, _commands);
-            send(_client->getFd(), response.c_str(), response.size(), 0);
+            send(_client->getFd(), response.c_str(), response.size(), MSG_NOSIGNAL);
         }
         else
-            send(_client->getFd(), "ko\n", 3, 0);
+            send(_client->getFd(), "ko\n", 3, MSG_NOSIGNAL);
     }
     else
     {
@@ -165,10 +165,10 @@ void CommandParser::_dispatch(const std::string &line)
         if (it != _graphicCommands.end())
         {
             std::string response = it->second(args, *_client, _commands);
-            send(_client->getFd(), response.c_str(), response.size(), 0);
+            send(_client->getFd(), response.c_str(), response.size(), MSG_NOSIGNAL);
         }
         else
-            send(_client->getFd(), "suc\n", 4, 0);
+            send(_client->getFd(), "suc\n", 4, MSG_NOSIGNAL);
     }
 }
 
