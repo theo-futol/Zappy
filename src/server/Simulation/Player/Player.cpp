@@ -194,11 +194,10 @@ void Player::addMessageToQueue(const std::string &message, int timeNeeded, int r
     }
 }
 
-void Player::sendMessageToClient()
+void Player::sendMessageToClient(std::clock_t currentTime, std::function<void(int, const std::string &)> sendFunction)
 {
     if (_messagesToSend.size() == 0)
         return;
-    std::clock_t currentTime = std::clock();
     for (auto msgIt = _messagesToSend.begin(); msgIt != _messagesToSend.end();)
     {
         std::vector<std::pair<std::pair<std::clock_t, int>, int>> &times = msgIt->second;
@@ -209,7 +208,7 @@ void Player::sendMessageToClient()
             if (currentTime - it->first.first < it->first.second * CLOCKS_PER_SEC / 1000)
                 break;
             if (it->second >= 0)
-                send(it->second, msgIt->first.c_str(), msgIt->first.size(), MSG_NOSIGNAL); // MSG_NOSIGNAL: never SIGPIPE if the client is disconnected
+                sendFunction(it->second, msgIt->first);
         }
         if (times.empty())
             msgIt = _messagesToSend.erase(msgIt);

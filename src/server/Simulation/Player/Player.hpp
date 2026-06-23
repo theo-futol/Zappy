@@ -6,6 +6,7 @@
 #include <algorithm>
 #include <chrono>
 #include <memory>
+#include <functional>
 
 #include "../../ServerException/ServerException.hpp"
 #include "Inventory/Inventory.hpp"
@@ -31,7 +32,6 @@ class Player
     position _pos;
     int rotation;
     std::shared_ptr<Team> _team;
-    // bool _isLeveling;
     Inventory _inventory;
     PlayerState _state;
     std::vector<std::pair<std::string, std::vector<std::pair<std::pair<std::clock_t, int>, int>>>> _messagesToSend; // <<message, <<clock, timeNeeded>, receiverFd>, <clock, timeNeeded>, receiverFd>>, <message, <<clock, timeNeeded>, receiverFd>>>
@@ -91,6 +91,6 @@ class Player
     /// @brief Queues a message to be delivered to a receiver after timeNeeded elapses.
     void addMessageToQueue(const std::string &message, int timeNeeded, int receiverFd);
     /// @brief Flushes any queued messages whose delivery time has arrived.
-    void sendMessageToClient();
+    void sendMessageToClient(std::clock_t currentTime, std::function<void(int, const std::string &)> sendFunction);
   };
 } // namespace zappy
