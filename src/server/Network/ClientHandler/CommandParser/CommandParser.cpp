@@ -62,9 +62,9 @@ bool CommandParser::feed()
         auto base = _commandQueue.empty() ? std::chrono::steady_clock::now() : _commandQueue.back().readyAt;
         auto readyAt = base + std::chrono::milliseconds(cost * 1000 / _f);
         Player *player = _world ? _world->getPlayerByFd(_client->getFd()) : nullptr;
-        if (cmd == "Incantation" && _client->getType() == ClientType::AI && player && !player->isFrozen())
+        if (cmd == "Incantation" && _client->getType() == ClientType::AI)
         {
-            if (!_commands.beginIncantation(*_client, readyAt))
+            if (!player || player->isFrozen() || !_commands.beginIncantation(*_client, readyAt))
                 continue;
         }
         _commandQueue.push({line, readyAt});

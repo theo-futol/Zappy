@@ -17,6 +17,7 @@ struct tile
 {
     std::vector<Player *> _players; // non-owning: players are owned by World::_players
     std::vector<std::pair<ItemType, int>> _items;
+    bool _incantationInProgress = false; // true while an elevation ritual is running on this tile
 
     /// @brief Builds an empty tile pre-seeded with a zero count for each resource type.
     tile() : _players{}, _items{}
