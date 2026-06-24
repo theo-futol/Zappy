@@ -50,6 +50,7 @@ class World
     std::pair<int, int> _mapSize;
     std::vector<std::shared_ptr<Team>> _teams;
     std::queue<std::string> *_broadcastQueue;
+    int _nextPlayerId = 1;
 
 
   public:
@@ -74,16 +75,16 @@ class World
     bool checkWinningCondition();
 
     /// @brief Consumes one food unit per player and kills those who have starved.
-    /// @return The fds of the players that died of starvation this tick.
+    /// @return The ids of the players that died of starvation this tick.
     std::vector<int> foodCheck();
 
     /// @brief All players currently in the world.
     std::vector<std::unique_ptr<Player>> &getPlayers();
     const std::vector<std::unique_ptr<Player>> &getPlayers() const;
 
-    /// @brief Looks up a player by its client fd, or nullptr if none matches.
-    Player *getPlayerByFd(int fd);
-    Player *getPlayerByFd(int fd) const;
+    /// @brief Looks up a player by its logical id, or nullptr if none matches.
+    Player *getPlayerById(int id);
+    Player *getPlayerById(int id) const;
 
     /// @brief Map dimensions as (width, height).
     std::pair<int, int> getMapSize() const;
@@ -114,9 +115,10 @@ class World
     std::shared_ptr<Team> getTeamByName(const std::string &name);
 
     /// @brief Hatches a player from one of the team's eggs, chosen at random, spawning
-    ///        it on that egg's tile and consuming the egg. Returns false if the team
+    ///        it on that egg's tile and consuming the egg. The new player is reached
+    ///        through client fd. Returns the new player's logical id, or -1 if the team
     ///        does not exist or has no egg left, in which case no player is created.
-    bool addPlayer(int fd, const std::string &teamName);
+    int addPlayer(int fd, const std::string &teamName);
 
     /// @brief Removes the player pointer from the tile at the given position, if any.
     void removePlayerFromTile(Player *player, position pos);
@@ -127,6 +129,6 @@ class World
     void sendMessageToPlayersThatAreOnTile(position pos, const std::string &message);
 
     /// @brief Removes a player from the world and decrease the number of slots occupied in its team. The player is removed from the tile it was standing on and from the list of players in the world.
-    void removePlayer(int fd);
+    void removePlayer(int id);
 };
 } // namespace zappy

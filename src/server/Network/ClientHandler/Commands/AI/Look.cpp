@@ -6,7 +6,7 @@ std::string Commands::Look(std::vector<std::string> args, Client &client)
 {
     (void)args; // Unused parameter
     std::string buffer = "[";
-    Player *player = _world->getPlayerByFd(client.getFd());
+    Player *player = _world->getPlayerById(client.getPlayerId());
     if (!player)
         return "ko\n";
     std::pair<int, int> mapSize = _world->getMapSize();
@@ -48,14 +48,14 @@ std::string Commands::Look(std::vector<std::string> args, Client &client)
             for (const auto &item : currentTile->_items)
                 buffer += itemTypeToString(item.first) + ":" + std::to_string(item.second) + " ";
             for (int playerIndex = 0; playerIndex < static_cast<int>(currentTile->_players.size()); ++playerIndex)
-                if (currentTile->_players[playerIndex]->getFd() != player->getFd())
+                if (currentTile->_players[playerIndex]->getId() != player->getId())
                     buffer += "player ";
             if (!(depth == player->getLevel() && lateral == depth))
                 buffer += ", ";
         }
     }
     buffer += "]";
-    Logger::log("017", "Look : response sent", {{"player_id", std::to_string(player->getFd())}, {"response", buffer}});
+    Logger::log("017", "Look : response sent", {{"player_id", std::to_string(player->getId())}, {"response", buffer}});
     return buffer + "\n";
 }
 } // namespace zappy

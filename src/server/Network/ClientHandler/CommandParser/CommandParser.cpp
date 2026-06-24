@@ -56,8 +56,8 @@ bool CommandParser::feed()
         buffer.erase(0, pos + 1);
         if (line.empty())
             continue;
-        Player *player = _world ? _world->getPlayerByFd(_client->getFd()) : nullptr;
-        Logger::log("110", "Parsing : input received", {{"player_id", player ? std::to_string(player->getFd()) : std::to_string(_client->getFd())}});
+        Player *player = _world ? _world->getPlayerById(_client->getPlayerId()) : nullptr;
+        Logger::log("110", "Parsing : input received", {{"player_id", player ? std::to_string(player->getId()) : std::to_string(_client->getFd())}});
         std::istringstream iss(line);
         std::string cmd;
         iss >> cmd;
@@ -71,7 +71,7 @@ bool CommandParser::feed()
                 continue;
             if (player->isFrozen())
             {
-                Logger::log("8428", "Incantation : failed, player frozen during ritual", {{"player_id", std::to_string(player->getFd())}});
+                Logger::log("8428", "Incantation : failed, player frozen during ritual", {{"player_id", std::to_string(player->getId())}});
                 continue;
             }
             if (!_commands.beginIncantation(*_client, readyAt))
@@ -97,21 +97,21 @@ bool CommandParser::executeNext()
         std::istringstream commandName(_commandQueue.front().line);
         std::string command;
         commandName >> command;
-        Logger::log("8442", "Player : action rejected, player is dead", {{"player_id", std::to_string(_client->getFd())}, {"command", command}});
+        Logger::log("8442", "Player : action rejected, player is dead", {{"player_id", std::to_string(_client->getPlayerId())}, {"command", command}});
         send(_client->getFd(), "dead\n", 5, MSG_NOSIGNAL);
         _commandQueue.pop();
         return true;
     }
     if (_client->getType() == ClientType::AI)
     {
-        Player *player = _world->getPlayerByFd(_client->getFd());
+        Player *player = _world->getPlayerById(_client->getPlayerId());
         // A frozen player (mid-incantation) must not run any queued command until the ritual ends.
         if (player && player->isFrozen())
         {
             std::istringstream commandName(_commandQueue.front().line);
             std::string command;
             commandName >> command;
-            Logger::log("8441", "Player : action rejected, player is frozen", {{"player_id", std::to_string(player->getFd())}, {"command", command}});
+            Logger::log("8441", "Player : action rejected, player is frozen", {{"player_id", std::to_string(player->getId())}, {"command", command}});
             return false;
         }
     }
@@ -149,18 +149,20 @@ void CommandParser::_handleHandshake(const std::string &teamName)
             send(_client->getFd(), "ko\n", 3, MSG_NOSIGNAL);
             return;
         }
-        if (!_world->addPlayer(_client->getFd(), teamName))
+        int playerId = _world->addPlayer(_client->getFd(), teamName);
+        if (playerId < 0)
         {
             std::cout << "Client refused: fd = " << _client->getFd() << " team=\"" << teamName << "\" reason=\"no egg to hatch from\"" << std::endl;
             send(_client->getFd(), "ko\n", 3, MSG_NOSIGNAL);
             _isBanned = true;
             return;
         }
+        _client->setPlayerId(playerId);
         std::string handShakeMsg = std::to_string(availableSlots) + "\n" + std::to_string(_world->getMapSize().first) + " " + std::to_string(_world->getMapSize().second) + "\n";
         send(_client->getFd(), handShakeMsg.c_str(), handShakeMsg.size(), MSG_NOSIGNAL);
 
-        Player *player = _world->getPlayerByFd(_client->getFd());
-        _broadcastQueue->push("pnw " + std::to_string(_client->getFd()) + " " + std::to_string(player->getPosition().x) + " " + std::to_string(player->getPosition().y) + " " +
+        Player *player = _world->getPlayerById(playerId);
+        _broadcastQueue->push("pnw " + std::to_string(playerId) + " " + std::to_string(player->getPosition().x) + " " + std::to_string(player->getPosition().y) + " " +
                               std::to_string(player->getRotation()) + " " + teamName + "\n");
     }
     // Log the handshake result
@@ -181,13 +183,13 @@ void CommandParser::_dispatch(const std::string &line)
         auto it = _aiCommands.find(cmd);
         if (it != _aiCommands.end())
         {
-            Logger::log("050", "Parsing : command valid", {{"player_id", std::to_string(_client->getFd())}, {"command", cmd}});
+            Logger::log("050", "Parsing : command valid", {{"player_id", std::to_string(_client->getPlayerId())}, {"command", cmd}});
             std::string response = it->second.second(args, *_client, _commands);
             send(_client->getFd(), response.c_str(), response.size(), MSG_NOSIGNAL);
         }
         else
         {
-            Logger::log("8410", "Parsing : unknown command", {{"player_id", std::to_string(_client->getFd())}, {"input", line}});
+            Logger::log("8410", "Parsing : unknown command", {{"player_id", std::to_string(_client->getPlayerId())}, {"input", line}});
             send(_client->getFd(), "ko\n", 3, MSG_NOSIGNAL);
         }
     }

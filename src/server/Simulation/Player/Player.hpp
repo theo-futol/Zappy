@@ -22,12 +22,14 @@ namespace zappy
 ///        team, inventory and life-cycle state, plus the bookkeeping for broadcast
 ///        messages it still has to deliver.
 ///
-/// A Player is keyed to its client by the socket fd. Movement and direction helpers
-/// take the map size so they can wrap around the toroidal world.
+/// A Player has a stable logical id (its GUI player number), independent of the socket
+/// fd it is reached through. Movement and direction helpers take the map size so they
+/// can wrap around the toroidal world.
 class Player
 {
   private:
-    int _fd; // Needed to link the player to its client, do not close it here (Client owns the fd)
+    int _id;
+    int _fd;
 
     int _level = 1;
     position _pos;
@@ -39,8 +41,8 @@ class Player
     std::chrono::steady_clock::time_point _frozenUntil = std::chrono::steady_clock::time_point::min(); // While in the future, the player is frozen (e.g. during an incantation) and cannot act.
 
   public:
-    /// @brief Spawns a player bound to a client fd, as a member of the given team.
-    Player(int fd, std::shared_ptr<Team> team);
+    /// @brief Spawns a player with the given logical id, reached through client fd, as a member of the given team.
+    Player(int id, int fd, std::shared_ptr<Team> team);
 
     /// @brief The team this player belongs to.
     const Team &getTeam() const;
@@ -56,7 +58,9 @@ class Player
     Inventory &getInventory();
     /// @brief Life-cycle state (pending / alive / dead).
     PlayerState getState() const;
-    /// @brief The socket fd linking this player to its client.
+    /// @brief This player's stable logical id (its GUI player number).
+    int getId() const;
+    /// @brief The socket fd linking this player to its client (for I/O only).
     int getFd() const;
 
     /// @brief Tile the player would land on if it moved one step forward, with wrap-around.

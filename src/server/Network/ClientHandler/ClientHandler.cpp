@@ -66,9 +66,9 @@ void ClientHandler::handleClients(void)
         }
         if (now - _lastFoodUpdate >= foodIntervalMs)
         {
-            for (int fd : _world->foodCheck())
+            for (int id : _world->foodCheck())
             {
-                Client *client = getClientByFd(fd);
+                Client *client = getClientByPlayerId(id);
                 if (client)
                     client->setType(ClientType::DEAD);
             }
@@ -90,7 +90,7 @@ void ClientHandler::broadcastMessageToClients()
     for (const auto &client : _clients)
         if (client->getType() == ClientType::AI)
         {
-            Player *player = _world->getPlayerByFd(client->getFd());
+            Player *player = _world->getPlayerById(client->getPlayerId());
             if (player)
                 player->sendMessageToClient(currentTime, sendFunction);
         }
@@ -102,8 +102,9 @@ void ClientHandler::clientEventHandling()
     {
         if (_fds[i].revents & POLLHUP)
         {
-            Player *player = _world->getPlayerByFd(_fds[i].fd);
-            Logger::log("121", "Client : disconnection detected", {{"fd", std::to_string(_fds[i].fd)}, {"player_id", player ? std::to_string(player->getFd()) : ""}});
+            Client *client = getClientByFd(_fds[i].fd);
+            Player *player = client ? _world->getPlayerById(client->getPlayerId()) : nullptr;
+            Logger::log("121", "Client : disconnection detected", {{"fd", std::to_string(_fds[i].fd)}, {"player_id", player ? std::to_string(player->getId()) : ""}});
             removeClient(_fds[i].fd, "peer closed connection");
             i--;
             continue;
@@ -115,8 +116,9 @@ void ClientHandler::clientEventHandling()
             {
                 if (!it->second->feed())
                 {
-                    Player *player = _world->getPlayerByFd(_fds[i].fd);
-                    Logger::log("121", "Client : disconnection detected", {{"fd", std::to_string(_fds[i].fd)}, {"player_id", player ? std::to_string(player->getFd()) : ""}});
+                    Client *client = getClientByFd(_fds[i].fd);
+                    Player *player = client ? _world->getPlayerById(client->getPlayerId()) : nullptr;
+                    Logger::log("121", "Client : disconnection detected", {{"fd", std::to_string(_fds[i].fd)}, {"player_id", player ? std::to_string(player->getId()) : ""}});
                     removeClient(_fds[i].fd, "recv failed or client closed connection");
                     i--;
                     continue;
@@ -137,8 +139,9 @@ void ClientHandler::clientEventHandling()
     }
     for (int fd : fdsToRemove)
     {
-        Player *player = _world->getPlayerByFd(fd);
-        Logger::log("121", "Client : disconnection detected", {{"fd", std::to_string(fd)}, {"player_id", player ? std::to_string(player->getFd()) : ""}});
+        Client *client = getClientByFd(fd);
+        Player *player = client ? _world->getPlayerById(client->getPlayerId()) : nullptr;
+        Logger::log("121", "Client : disconnection detected", {{"fd", std::to_string(fd)}, {"player_id", player ? std::to_string(player->getId()) : ""}});
         removeClient(fd, "command queue overflow");
     }
 }
@@ -158,14 +161,16 @@ void ClientHandler::addClient()
 
 void ClientHandler::removeClient(int fd, const std::string &reason)
 {
-    Player *player = _world->getPlayerByFd(fd);
-    std::string playerId = player ? std::to_string(player->getFd()) : "";
+    Client *client = getClientByFd(fd);
+    int playerIdValue = client ? client->getPlayerId() : -1;
+    std::string playerId = playerIdValue >= 0 ? std::to_string(playerIdValue) : "";
     if (reason == "peer closed connection")
         Logger::log("032", "Client : disconnected cleanly", {{"fd", std::to_string(fd)}, {"player_id", playerId}});
     else
         Logger::log("8432", "Client : disconnected unexpectedly", {{"fd", std::to_string(fd)}, {"player_id", playerId}});
 
-    _world->removePlayer(fd);
+    if (playerIdValue >= 0)
+        _world->removePlayer(playerIdValue);
     _parsers.erase(fd);
 
     _clients.erase(std::remove_if(_clients.begin(), _clients.end(), [fd](const std::unique_ptr<Client> &client) { return client->getFd() == fd; }), _clients.end());
@@ -177,6 +182,14 @@ Client *ClientHandler::getClientByFd(int fd) const
 {
     for (const auto &client : _clients)
         if (client->getFd() == fd)
+            return client.get();
+    return nullptr;
+}
+
+Client *ClientHandler::getClientByPlayerId(int playerId) const
+{
+    for (const auto &client : _clients)
+        if (client->getPlayerId() == playerId)
             return client.get();
     return nullptr;
 }

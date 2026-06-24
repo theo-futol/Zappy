@@ -58,18 +58,18 @@ const std::vector<std::unique_ptr<Player>> &World::getPlayers() const
     return _players;
 }
 
-Player *World::getPlayerByFd(int fd)
+Player *World::getPlayerById(int id)
 {
     for (const auto &player : _players)
-        if (player->getFd() == fd)
+        if (player->getId() == id)
             return player.get();
     return nullptr;
 }
 
-Player *World::getPlayerByFd(int fd) const
+Player *World::getPlayerById(int id) const
 {
     for (const auto &player : _players)
-        if (player->getFd() == fd)
+        if (player->getId() == id)
             return player.get();
     return nullptr;
 }
@@ -83,7 +83,7 @@ std::pair<int, int> World::getMapSize() const
 
 tile *World::getTileAt(int playerID)
 {
-    Player *player = getPlayerByFd(playerID);
+    Player *player = getPlayerById(playerID);
     if (!player)
         return nullptr;
     return getTileAt(player->getPosition());
@@ -146,27 +146,29 @@ std::vector<std::shared_ptr<Team>> &World::getTeams()
     return _teams;
 }
 
-bool World::addPlayer(int fd, const std::string &teamName)
+int World::addPlayer(int fd, const std::string &teamName)
 {
     std::shared_ptr<Team> team = getTeamByName(teamName);
     if (!team)
-        return false;
+        return -1;
     std::vector<std::pair<position, int>> hatchable;
     for (const auto &eggGroup : team->getEggs())
         for (int eggId : eggGroup.second)
             hatchable.emplace_back(eggGroup.first, eggId);
     if (hatchable.empty())
-        return false; // no egg to hatch from: caller disconnects the client
+        return -1; // no egg to hatch from: caller disconnects the client
 
     const auto &[spawn, eggId] = hatchable[rand() % hatchable.size()];
     team->removeEgg(spawn, 1, eggId);
     ++team->_slotsOccupied;
 
-    _players.push_back(std::make_unique<Player>(fd, team));
+    int id = _nextPlayerId;
+    _nextPlayerId++;
+    _players.push_back(std::make_unique<Player>(id, fd, team));
     Player *player = _players.back().get();
     player->setPosition(spawn.x, spawn.y, _mapSize);
     addPlayerToTile(player, player->getPosition());
-    return true;
+    return id;
 }
 
 void World::removePlayerFromTile(Player *player, position pos)
@@ -201,24 +203,24 @@ void World::setBroadCastQueue(std::queue<std::string> *broadcastQueue)
 
 std::vector<int> World::foodCheck()
 {
-    std::vector<int> deadFds;
+    std::vector<int> deadIds;
 
     for (const auto &player : _players)
     {
         if (player->getInventory().getItemCount(ItemType::FOOD) <= 0)
         {
-            Logger::log("044", "Player : died", {{"player_id", std::to_string(player->getFd())}});
+            Logger::log("044", "Player : died", {{"player_id", std::to_string(player->getId())}});
             if (_broadcastQueue)
-                _broadcastQueue->push("pdi " + std::to_string(player->getFd()) + "\n");
+                _broadcastQueue->push("pdi " + std::to_string(player->getId()) + "\n");
             player->setState(PlayerState::DEAD);
-            deadFds.push_back(player->getFd());
+            deadIds.push_back(player->getId());
         }
         else
             player->getInventory().removeItem(ItemType::FOOD);
     }
-    for (int fd : deadFds)
-        removePlayer(fd);
-    return deadFds;
+    for (int id : deadIds)
+        removePlayer(id);
+    return deadIds;
 }
 
 static const std::vector<ElevationRequirement> elevationRequirements = {
@@ -322,9 +324,9 @@ bool World::checkWinningCondition()
     return false;
 }
 
-void World::removePlayer(int fd)
+void World::removePlayer(int id)
 {
-    auto it = std::find_if(_players.begin(), _players.end(), [fd](const std::unique_ptr<Player> &player) { return player->getFd() == fd; });
+    auto it = std::find_if(_players.begin(), _players.end(), [id](const std::unique_ptr<Player> &player) { return player->getId() == id; });
 
     if (it == _players.end())
         return;
