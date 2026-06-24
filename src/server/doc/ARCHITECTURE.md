@@ -8,6 +8,7 @@ The purpose of this document is to provide a high-level overview of the architec
 src/server
 ├── ArgParser
 ├── Core
+├── Logger
 ├── Network
 │   ├── Client
 │   ├── ClientHandler
@@ -28,6 +29,8 @@ src/server
 - **[ArgParser](ArgParser.md)**: command-line argument parser that handles user inputs and configurations. Responsible for parsing and validating the arguments provided by the user.
 
 - **[Core](Core.md)**: core functionality of the application, including the main logic and processing of data. Handles signals, manages flags, and orchestrates the overall flow of the application.
+
+- **[Logger](Logger.md)**: static logging utility used across the server to emit structured event lines (player actions, world events, protocol rejections) to stdout, following the protocol's `code - message (key=value, ...)` grammar.
 
 - **[Network/Client](Client.md)**: client-side networking components, covering both AI and GRAPHIC client types. Handles communication through sockets (via file descriptors) and manages the input buffer for each client.
 
