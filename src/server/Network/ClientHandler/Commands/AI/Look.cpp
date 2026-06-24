@@ -48,8 +48,7 @@ std::string Commands::Look(std::vector<std::string> args, Client &client)
             for (const auto &item : currentTile->_items)
                 buffer += itemTypeToString(item.first) + ":" + std::to_string(item.second) + " ";
             for (int playerIndex = 0; playerIndex < static_cast<int>(currentTile->_players.size()); ++playerIndex)
-                if (currentTile->_players[playerIndex]->getFd() != player->getFd())
-                    buffer += "player ";
+                buffer += "player ";
             if (!(depth == player->getLevel() && lateral == depth))
                 buffer += ", ";
         }
