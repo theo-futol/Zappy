@@ -40,7 +40,10 @@ void World::resourcePassiveGeneration()
             std::vector<std::pair<zappy::ItemType, int>> &tileCoords = _map[x][y]._items;
             auto it = std::find_if(tileCoords.begin(), tileCoords.end(), [type](const std::pair<ItemType, int> &item) { return item.first == type; });
             if (it != tileCoords.end())
+            {
                 it->second += 1;
+                Logger::log("021", "World : automatic resource spawn", {{"item", itemTypeToString(type)}, {"x", std::to_string(x)}, {"y", std::to_string(y)}});
+            }
         }
     }
 }
@@ -100,7 +103,10 @@ void World::setTileAt(position pos, ItemType itemType, int count)
     tile *tilePtr = getTileAt(pos);
 
     if (!tilePtr)
+    {
+        Logger::log("8451", "World : tile update failed", {{"x", std::to_string(pos.x)}, {"y", std::to_string(pos.y)}});
         return;
+    }
     std::vector<std::pair<ItemType, int>> &tileItems = tilePtr->_items;
     auto it = std::find_if(tileItems.begin(), tileItems.end(), [itemType](const std::pair<ItemType, int> &item) { return item.first == itemType; });
 
@@ -108,6 +114,7 @@ void World::setTileAt(position pos, ItemType itemType, int count)
         it->second = count;
     else
         tileItems.emplace_back(itemType, count);
+    Logger::log("020", "World : resource spawned on tile", {{"item", itemTypeToString(itemType)}, {"x", std::to_string(pos.x)}, {"y", std::to_string(pos.y)}});
 }
 
 int World::getAvailableSlotsForTeam(const std::string &teamName) const
@@ -200,7 +207,7 @@ std::vector<int> World::foodCheck()
     {
         if (player->getInventory().getItemCount(ItemType::FOOD) <= 0)
         {
-            std::cout << "Player " << player->getFd() << " died from starvation at level " << player->getLevel() << std::endl;
+            Logger::log("044", "Player : died", {{"player_id", std::to_string(player->getFd())}});
             if (_broadcastQueue)
                 _broadcastQueue->push("pdi " + std::to_string(player->getFd()) + "\n");
             player->setState(PlayerState::DEAD);
@@ -253,7 +260,7 @@ bool World::isIncantationValid(int x, int y, int level)
     int playersAtLevel = static_cast<int>(getPlayersOnTileAtLevel(x, y, level).size());
     if (playersAtLevel < requirement->players)
     {
-        std::cout << "Incantation invalid at (" << x << "," << y << ") level " << level << ": players " << playersAtLevel << "/" << requirement->players << std::endl;
+        Logger::log("8422", "Incantation : failed, conditions not met", {{"x", std::to_string(x)}, {"y", std::to_string(y)}});
         return false;
     }
     for (const auto &[stone, needed] : requirement->stones)
@@ -267,8 +274,7 @@ bool World::isIncantationValid(int x, int y, int level)
             }
         if (available < needed)
         {
-            std::cout << "Incantation invalid at (" << x << "," << y << ") level " << level << ": missing " << itemTypeToString(stone) << " " << available << "/" << needed
-                      << std::endl;
+            Logger::log("8422", "Incantation : failed, conditions not met", {{"x", std::to_string(x)}, {"y", std::to_string(y)}});
             return false;
         }
     }

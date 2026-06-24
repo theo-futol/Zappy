@@ -9,6 +9,7 @@
 #include <functional>
 
 #include "../../ServerException/ServerException.hpp"
+#include "../../Logger/Logger.hpp"
 #include "Inventory/Inventory.hpp"
 #include "Teams.hpp"
 #include "../Utils.hpp"

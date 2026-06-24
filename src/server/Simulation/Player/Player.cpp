@@ -6,6 +6,7 @@ namespace zappy
 Player::Player(int fd, std::shared_ptr<Team> team) : _fd(fd), _pos{0, 0}, rotation(Degrees::NORTH), _team(team), _inventory(), _state(PlayerState::PENDING)
 {
     _inventory.addItem(ItemType::FOOD, 10);
+    Logger::log("040", "Player : created", {{"player_id", std::to_string(_fd)}, {"team", _team->_name}, {"x", std::to_string(_pos.x)}, {"y", std::to_string(_pos.y)}});
 }
 const position &Player::getPosition() const
 {
@@ -166,6 +167,8 @@ void Player::setState(PlayerState newState)
 void Player::setFrozenUntil(std::chrono::steady_clock::time_point until)
 {
     _frozenUntil = until;
+    auto untilMs = std::chrono::duration_cast<std::chrono::milliseconds>(until - std::chrono::steady_clock::now()).count();
+    Logger::log("042", "Player : frozen", {{"player_id", std::to_string(_fd)}, {"until_ms", std::to_string(untilMs)}});
 }
 
 bool Player::isFrozen() const
