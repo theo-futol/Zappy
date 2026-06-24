@@ -61,12 +61,19 @@ namespace zappy
 
             /// @brief Removes a client, its parser, and its fd from all internal structures.
             /// @param fd File descriptor of the client to remove.
-            void removeClient(int fd);
+            void removeClient(int fd, const std::string &reason = "unknown");
 
             /// @brief Looks up a client by its file descriptor.
             /// @param fd File descriptor to search for.
             /// @return Pointer to the matching Client, or nullptr if not found.
             Client *getClientByFd(int fd) const;
+
+            /// @brief Looks up a client by its associated player's logical id.
+            /// @param playerId Player id to search for.
+            /// @return Pointer to the matching Client, or nullptr if not found.
+            Client *getClientByPlayerId(int playerId) const;
+
+            void writeToClient(int fd, const std::string &message);
 
             std::queue<std::string> &getBroadcastQueue();
     };

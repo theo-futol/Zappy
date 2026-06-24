@@ -3,5 +3,6 @@
 node_modules
 *.o
 zappy_*
-*/__pycache__/
+__pycache__/
+**/__pycache__/
 venv

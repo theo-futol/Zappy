@@ -7,9 +7,9 @@ std::string Commands::Plv(std::vector<std::string> args, Client &client)
     (void)client; // Unused parameter
     if (args.size() < 2)
         return "ko\n";
-    Player *player = _world->getPlayerByFd(std::stoi(args[1]));
+    Player *player = _world->getPlayerById(std::stoi(args[1]));
     if (!player)
         return "ko\n";
-    return "plv " + std::to_string(player->getFd()) + " " + std::to_string(player->getLevel()) + "\n";
+    return "plv " + std::to_string(player->getId()) + " " + std::to_string(player->getLevel()) + "\n";
 }
 } // namespace zappy
