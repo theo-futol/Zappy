@@ -68,7 +68,7 @@ class World
     void removeIncantationStones(int x, int y, int level);
 
     /// @brief Periodically replenishes resources across the map (the spawn-rate tick).
-    void ressourcePassiveGeneration();
+    void resourcePassiveGeneration();
 
     /// @brief Returns true once a team has reached the win condition (6 players lvl 8).
     bool checkWinningCondition();

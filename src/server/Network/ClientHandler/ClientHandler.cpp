@@ -55,7 +55,7 @@ void ClientHandler::handleClients(void)
         now = std::chrono::steady_clock::now();
         if (now - _lastResourceUpdate >= resourceIntervalMs)
         {
-            _world->ressourcePassiveGeneration();
+            _world->resourcePassiveGeneration();
             _lastResourceUpdate = now;
         }
         if (now - _lastFoodUpdate >= foodIntervalMs)

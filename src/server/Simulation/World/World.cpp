@@ -15,6 +15,7 @@ World::World(int x, int y) : _broadcastQueue(nullptr)
             _map[i][j] = tile();
     _mapSize = std::make_pair(x, y);
     srand(time(nullptr));
+    resourcePassiveGeneration();
 }
 
 /// @brief Generates resources on the map at regular intervals.
@@ -23,7 +24,7 @@ World::World(int x, int y) : _broadcastQueue(nullptr)
 /// This function should be called periodically, e.g., every 20 seconds, to simulate resource regeneration.
 /// The density of each ressource are the following:
 /// food: 0.5, linemate: 0.3, deraumere: 0.5, sibur: 0.1, mendiane: 0.1, phiras: 0.08, thystame: 0.05
-void World::ressourcePassiveGeneration()
+void World::resourcePassiveGeneration()
 {
     const std::vector<std::pair<ItemType, double>> resourceDensity = {{ItemType::FOOD, 0.5},     {ItemType::LINEMATE, 0.3}, {ItemType::DERAUMERE, 0.5}, {ItemType::SIBUR, 0.1},
                                                                       {ItemType::MENDIANE, 0.1}, {ItemType::PHIRAS, 0.08},  {ItemType::THYSTAME, 0.05}};
