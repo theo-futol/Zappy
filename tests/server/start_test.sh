@@ -3,9 +3,9 @@
 set -euo pipefail
 
 # Define test directories
-UNIT_TEST_DIR="unit"
-STRESS_TEST_DIR="stress"
-FUNCTIONAL_TEST_DIR="functional"
+UNIT_TEST_DIR="tests/server/unit"
+STRESS_TEST_DIR="tests/server/stress"
+FUNCTIONAL_TEST_DIR="tests/server/functional"
 
 # Check if the correct number of arguments is provided
 if [ "$#" -ne 3 ]; then
