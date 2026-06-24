@@ -50,11 +50,21 @@ class World
     std::pair<int, int> _mapSize;
     std::vector<std::shared_ptr<Team>> _teams;
     std::queue<std::string> *_broadcastQueue;
+    int _nextPlayerId = 1;
+    bool _useOldGen;
 
+    /// @brief Legacy resource generation: independently rolls width*height*density
+    ///        random tiles per resource type, incrementing whatever is already there.
+    ///        Kept byte-for-byte as the original behavior, enabled via -oldgen.
+    void resourcePassiveGenerationLegacy();
+    /// @brief Spec-accurate resource generation: tops every resource up to
+    ///        width*height*density (never above, never below 1), spread evenly and
+    ///        randomly across the map.
+    void resourcePassiveGenerationEven();
 
   public:
     /// @brief Builds an x-by-y world with empty tiles and no players yet.
-    World(int x, int y);
+    World(int x, int y, bool useOldGen = false);
     ~World() = default;
 
     /// @brief Checks whether an elevation from `level` to `level + 1` can take place on the tile.
@@ -68,22 +78,22 @@ class World
     void removeIncantationStones(int x, int y, int level);
 
     /// @brief Periodically replenishes resources across the map (the spawn-rate tick).
-    void ressourcePassiveGeneration();
+    void resourcePassiveGeneration();
 
     /// @brief Returns true once a team has reached the win condition (6 players lvl 8).
     bool checkWinningCondition();
 
     /// @brief Consumes one food unit per player and kills those who have starved.
-    /// @return The fds of the players that died of starvation this tick.
+    /// @return The ids of the players that died of starvation this tick.
     std::vector<int> foodCheck();
 
     /// @brief All players currently in the world.
     std::vector<std::unique_ptr<Player>> &getPlayers();
     const std::vector<std::unique_ptr<Player>> &getPlayers() const;
 
-    /// @brief Looks up a player by its client fd, or nullptr if none matches.
-    Player *getPlayerByFd(int fd);
-    Player *getPlayerByFd(int fd) const;
+    /// @brief Looks up a player by its logical id, or nullptr if none matches.
+    Player *getPlayerById(int id);
+    Player *getPlayerById(int id) const;
 
     /// @brief Map dimensions as (width, height).
     std::pair<int, int> getMapSize() const;
@@ -106,14 +116,18 @@ class World
     /// @brief Free connection slots remaining for a team (used to admit new players).
     int getAvailableSlotsForTeam(const std::string &teamName) const;
 
-    /// @brief Registers a new team with an initial number of slots.
+    /// @brief Registers a new team, laying initialSlots eggs at random tiles so the
+    ///        first clients have something to hatch from (one egg == one free slot).
     void addTeam(const std::string &name, int teamID, int initialSlots);
 
     /// @brief Looks up a team by name, or nullptr if it does not exist.
     std::shared_ptr<Team> getTeamByName(const std::string &name);
 
-    /// @brief Creates a player on the named team and places it in the world.
-    void addPlayer(int fd, const std::string &teamName);
+    /// @brief Hatches a player from one of the team's eggs, chosen at random, spawning
+    ///        it on that egg's tile and consuming the egg. The new player is reached
+    ///        through client fd. Returns the new player's logical id, or -1 if the team
+    ///        does not exist or has no egg left, in which case no player is created.
+    int addPlayer(int fd, const std::string &teamName);
 
     /// @brief Removes the player pointer from the tile at the given position, if any.
     void removePlayerFromTile(Player *player, position pos);
@@ -124,6 +138,6 @@ class World
     void sendMessageToPlayersThatAreOnTile(position pos, const std::string &message);
 
     /// @brief Removes a player from the world and decrease the number of slots occupied in its team. The player is removed from the tile it was standing on and from the list of players in the world.
-    void removePlayer(int fd);
+    void removePlayer(int id);
 };
 } // namespace zappy

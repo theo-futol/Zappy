@@ -6,7 +6,7 @@ std::string Commands::Look(std::vector<std::string> args, Client &client)
 {
     (void)args; // Unused parameter
     std::string buffer = "[";
-    Player *player = _world->getPlayerByFd(client.getFd());
+    Player *player = _world->getPlayerById(client.getPlayerId());
     if (!player)
         return "ko\n";
     std::pair<int, int> mapSize = _world->getMapSize();
@@ -53,6 +53,8 @@ std::string Commands::Look(std::vector<std::string> args, Client &client)
                 buffer += ", ";
         }
     }
-    return buffer + "]\n";
+    buffer += "]";
+    Logger::log("017", "Look : response sent", {{"player_id", std::to_string(player->getId())}, {"response", buffer}});
+    return buffer + "\n";
 }
 } // namespace zappy

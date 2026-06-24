@@ -5,19 +5,24 @@ namespace zappy
 std::string Commands::Fork(std::vector<std::string> args, Client &client)
 {
     (void)args; // Unused parameter
-    Player *player = _world->getPlayerByFd(client.getFd());
+    Player *player = _world->getPlayerById(client.getPlayerId());
     if (!player)
+    {
+        Logger::log("8420", "Fork : failed", {{"player_id", std::to_string(client.getPlayerId())}});
         return "ko\n";
+    }
     position playerPos = player->getPosition();
 
     _world->setTileAt(playerPos, ItemType::EGG, 1);
     player->getTeam().addEgg(playerPos);
+    Logger::log("010", "Fork : new egg laid",
+                {{"player_id", std::to_string(player->getId())}, {"team", player->getTeam()._name}, {"x", std::to_string(playerPos.x)}, {"y", std::to_string(playerPos.y)}});
     return "ok\n";
 }
 
 bool Commands::beginIncantation(Client &client, std::chrono::steady_clock::time_point endTime)
 {
-    Player *initiator = _world->getPlayerByFd(client.getFd());
+    Player *initiator = _world->getPlayerById(client.getPlayerId());
     if (!initiator)
         return false;
     position pos = initiator->getPosition();
@@ -27,9 +32,8 @@ bool Commands::beginIncantation(Client &client, std::chrono::steady_clock::time_
     // Only one ritual may run on a tile at a time.
     if (!tilePtr || tilePtr->_incantationInProgress || !_world->isIncantationValid(pos.x, pos.y, level))
     {
-        if (tilePtr && tilePtr->_incantationInProgress)
-            std::cout << "Incantation refused at (" << pos.x << "," << pos.y << ") level " << level
-                      << ": already in progress" << std::endl;
+        Logger::log("8422", "Incantation : failed, conditions not met at start",
+                    {{"player_id", std::to_string(initiator->getId())}, {"x", std::to_string(pos.x)}, {"y", std::to_string(pos.y)}});
         initiator->writeToClient("ko\n");
         return false;
     }
@@ -38,7 +42,7 @@ bool Commands::beginIncantation(Client &client, std::chrono::steady_clock::time_
     std::vector<Player *> participants = _world->getPlayersOnTileAtLevel(pos.x, pos.y, level);
     std::string pic = "pic " + std::to_string(pos.x) + " " + std::to_string(pos.y) + " " + std::to_string(level);
     for (const Player *participant : participants)
-        pic += " " + std::to_string(participant->getFd());
+        pic += " " + std::to_string(participant->getId());
     _broadcastQueue->push(pic + "\n");
 
     for (Player *participant : participants)
@@ -46,13 +50,15 @@ bool Commands::beginIncantation(Client &client, std::chrono::steady_clock::time_
         participant->writeToClient("Elevation underway\n");
         participant->setFrozenUntil(endTime);
     }
+    Logger::log("012", "Incantation : started",
+                {{"player_id", std::to_string(initiator->getId())}, {"level", std::to_string(level)}, {"x", std::to_string(pos.x)}, {"y", std::to_string(pos.y)}});
     return true;
 }
 
 std::string Commands::Incantation(std::vector<std::string> args, Client &client)
 {
     (void)args; // Unused parameter
-    Player *initiator = _world->getPlayerByFd(client.getFd());
+    Player *initiator = _world->getPlayerById(client.getPlayerId());
     if (!initiator)
         return "ko\n";
     position pos = initiator->getPosition();
@@ -63,23 +69,30 @@ std::string Commands::Incantation(std::vector<std::string> args, Client &client)
     if (tilePtr)
         tilePtr->_incantationInProgress = false;
 
+    std::vector<Player *> participants = _world->getPlayersOnTileAtLevel(pos.x, pos.y, level);
+    for (Player *participant : participants)
+        Logger::log("043", "Player : unfrozen", {{"player_id", std::to_string(participant->getId())}});
+
     if (!_world->isIncantationValid(pos.x, pos.y, level))
     {
+        Logger::log("8423", "Incantation : failed, conditions not met at end",
+                    {{"player_id", std::to_string(initiator->getId())}, {"x", std::to_string(pos.x)}, {"y", std::to_string(pos.y)}});
         _broadcastQueue->push(pieHeader + "0\n");
         return "ko\n";
     }
 
-    std::vector<Player *> participants = _world->getPlayersOnTileAtLevel(pos.x, pos.y, level);
     _world->removeIncantationStones(pos.x, pos.y, level);
     int new_level = 0;
     for (Player *participant : participants)
     {
         participant->levelUp();
-        _broadcastQueue->push("plv " + std::to_string(participant->getFd()) + " " + std::to_string(participant->getLevel()) + "\n");
+        Logger::log("041", "Player : level up", {{"player_id", std::to_string(participant->getId())}, {"level", std::to_string(participant->getLevel())}});
+        _broadcastQueue->push("plv " + std::to_string(participant->getId()) + " " + std::to_string(participant->getLevel()) + "\n");
         participant->writeToClient("Current level: " + std::to_string(participant->getLevel()) + "\n");
         new_level = participant->getLevel();
     }
-    std::cout << "Player " << initiator->getFd() << " attained a new level : " << new_level << std::endl;
+    Logger::log("013", "Incantation : completed",
+                {{"player_id", std::to_string(initiator->getId())}, {"level", std::to_string(new_level)}, {"x", std::to_string(pos.x)}, {"y", std::to_string(pos.y)}});
     _broadcastQueue->push(pieHeader + "1\n");
     return "";
 }
