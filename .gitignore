@@ -5,3 +5,4 @@ node_modules
 zappy_*
 */__pycache__/
 venv
+*.gc*
