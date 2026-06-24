@@ -111,7 +111,7 @@ bool CommandParser::executeNext()
             std::istringstream commandName(_commandQueue.front().line);
             std::string command;
             commandName >> command;
-            Logger::log("8441", "Player : action rejected, player is frozen", {{"player_id", std::to_string(player->getFd())}, {"command", command}});
+            // Logger::log("8441", "Player : action rejected, player is frozen", {{"player_id", std::to_string(player->getFd())}, {"command", command}});
             return false;
         }
     }
