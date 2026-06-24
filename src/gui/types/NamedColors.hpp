@@ -11,6 +11,7 @@ namespace Zappy
  */
 struct NamedColors
 {
+    static constexpr Vec3 Black = Vec3(0.0f, 0.0f, 0.0f);
     static constexpr Vec3 White = Vec3(1.0f, 1.0f, 1.0f);     ///< Pure white.
     static constexpr Vec3 LightGray = Vec3(0.7f, 0.7f, 0.7f); ///< Light gray.
     static constexpr Vec3 DarkGray = Vec3(0.4f, 0.4f, 0.4f);  ///< Dark gray.

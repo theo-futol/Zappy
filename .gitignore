@@ -12,7 +12,6 @@ zappy_gui
 compile_commands.json
 .cache/
 .clangd
-Makefile
 *.o
 zappy_*
 __pycache__/

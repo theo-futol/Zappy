@@ -23,10 +23,10 @@ void HandlerRegistry::dispatch(const std::string &key, const std::vector<std::st
     auto it = _byKey.find(key);
 
     // TEMP debug: verify the parser/dispatch pipeline. Remove before the render phase.
-    // std::cout << "[dispatch] " << key;
-    // for (const std::string &arg : args)
-    //     std::cout << " " << arg;
-    // std::cout << (it == _byKey.end() ? "  -> no handler" : "  -> handled") << std::endl;
+    std::cout << "[dispatch] " << key;
+    for (const std::string &arg : args)
+        std::cout << " " << arg;
+    std::cout << (it == _byKey.end() ? "  -> no handler" : "  -> handled") << std::endl;
 
     if (it == _byKey.end())
         return;
