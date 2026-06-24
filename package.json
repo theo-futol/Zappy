@@ -10,7 +10,7 @@
   },
   "scripts": {
     "prepare": "husky",
-    "build": "make -C zappy_server",
+    "build": "make zappy_server",
     "test": "./tests/server/start_test.sh 1 0 0"
   }
 }
