@@ -40,10 +40,7 @@ void World::resourcePassiveGeneration()
             std::vector<std::pair<zappy::ItemType, int>> &tileCoords = _map[x][y]._items;
             auto it = std::find_if(tileCoords.begin(), tileCoords.end(), [type](const std::pair<ItemType, int> &item) { return item.first == type; });
             if (it != tileCoords.end())
-            {
                 it->second += 1;
-                Logger::log("021", "World : automatic resource spawn", {{"item", itemTypeToString(type)}, {"x", std::to_string(x)}, {"y", std::to_string(y)}});
-            }
         }
     }
 }
