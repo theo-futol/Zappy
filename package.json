@@ -1,4 +1,7 @@
 {
+  "name": "zappy",
+  "version": "1.0.0",
+  "description": "Zappy is a networked multiplayer game where players control virtual agents in a 2D grid world, gathering resources, building structures, and competing against each other.",
   "devDependencies": {
     "@commitlint/cli": "^21.0.2",
     "@commitlint/config-conventional": "^21.0.2",

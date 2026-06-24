@@ -34,6 +34,10 @@ files=$(git diff --cached --name-only -- '*.cpp')
 
 if [ -n "$files" ]; then
   for file in $files; do
+    if [ ! -f "$file" ]; then
+      echo "File $file does not exist. Skipping."
+      continue
+    fi
     echo "Formatting $file"
     clang-format -i "$file"
     git add "$file"
