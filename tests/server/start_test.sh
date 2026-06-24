@@ -84,4 +84,9 @@ fi
 
 echo
 echo "All selected tests completed successfully."
-kill "$SERVER_PID" || { echo "Failed to terminate the server process."; exit 1; }
+
+if [ -n "$SERVER_PID" ]; then
+    echo
+    echo "Terminating the server process with PID $SERVER_PID..."
+    kill "$SERVER_PID" || { echo "Failed to terminate the server process."; exit 1; }
+fi
