@@ -28,6 +28,23 @@ int Player::getRotation() const
     return rotation;
 }
 
+int Player::getOrientation() const
+{
+    switch (rotation)
+    {
+    case Degrees::NORTH:
+        return 1;
+    case Degrees::EAST:
+        return 2;
+    case Degrees::SOUTH:
+        return 3;
+    case Degrees::WEST:
+        return 4;
+    default:
+        return 1;
+    }
+}
+
 void Player::setRotation(int rot)
 {
     if (rot % 90 != 0 || rot < 0 || rot > 360)

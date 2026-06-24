@@ -213,6 +213,8 @@ int World::addPlayer(int fd, const std::string &teamName)
     _players.push_back(std::make_unique<Player>(id, fd, team));
     Player *player = _players.back().get();
     player->setPosition(spawn.x, spawn.y, _mapSize);
+    std::vector<int> rotations = {0, 1, 2, 3};
+    player->setRotation(rotations[rand() % rotations.size()]);
     addPlayerToTile(player, player->getPosition());
     return id;
 }
