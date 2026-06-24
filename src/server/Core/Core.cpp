@@ -23,6 +23,7 @@ Core::Core(ArgParser argParser) : _argParser(std::move(argParser)), _clientHandl
     _argParser.registerFlag("-n", zappy::FlagType::LIST, true, "name of the team");
     _argParser.registerFlag("-c", zappy::FlagType::INT, false, "number of initial clients per team");
     _argParser.registerFlag("-f", zappy::FlagType::INT, false, "reciprocal of time unit for execution of actions");
+    _argParser.registerFlag("-oldgen", zappy::FlagType::FLAG, false, "use the legacy resource generation algorithm");
     _argParser.parse();
     if (_argParser.getInt("-p") > 65535)
         throw ServerException("Port number must be between 0 and 65535");
@@ -65,7 +66,7 @@ void Core::setWorld()
     int width = _argParser.hasFlag("-x") ? _argParser.getInt("-x") : INITIAL_WORLD_WIDTH;
     int height = _argParser.hasFlag("-y") ? _argParser.getInt("-y") : INITIAL_WORLD_HEIGHT;
     int initialSlots = _argParser.hasFlag("-c") ? _argParser.getInt("-c") : INITIAL_CLIENT_CAPACITY;
-    _world = std::make_unique<World>(width, height);
+    _world = std::make_unique<World>(width, height, _argParser.hasFlag("-oldgen"));
     const auto &teamNames = _argParser.getList("-n");
     for (int i = 0; i < static_cast<int>(teamNames.size()); ++i)
         _world->addTeam(teamNames[i], i, initialSlots);

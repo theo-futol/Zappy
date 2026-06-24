@@ -51,11 +51,20 @@ class World
     std::vector<std::shared_ptr<Team>> _teams;
     std::queue<std::string> *_broadcastQueue;
     int _nextPlayerId = 1;
+    bool _useOldGen;
 
+    /// @brief Legacy resource generation: independently rolls width*height*density
+    ///        random tiles per resource type, incrementing whatever is already there.
+    ///        Kept byte-for-byte as the original behavior, enabled via -oldgen.
+    void resourcePassiveGenerationLegacy();
+    /// @brief Spec-accurate resource generation: tops every resource up to
+    ///        width*height*density (never above, never below 1), spread evenly and
+    ///        randomly across the map.
+    void resourcePassiveGenerationEven();
 
   public:
     /// @brief Builds an x-by-y world with empty tiles and no players yet.
-    World(int x, int y);
+    World(int x, int y, bool useOldGen = false);
     ~World() = default;
 
     /// @brief Checks whether an elevation from `level` to `level + 1` can take place on the tile.

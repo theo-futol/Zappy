@@ -4,7 +4,7 @@
 namespace zappy
 {
 
-World::World(int x, int y) : _broadcastQueue(nullptr)
+World::World(int x, int y, bool useOldGen) : _broadcastQueue(nullptr), _useOldGen(useOldGen)
 {
     _map.resize(x);
     for (auto &column : _map)
@@ -19,12 +19,19 @@ World::World(int x, int y) : _broadcastQueue(nullptr)
 }
 
 /// @brief Generates resources on the map at regular intervals.
-/// Via the formula : map_width * map_height * density
-/// @note The density and generation logic can be adjusted based on game requirements.
-/// This function should be called periodically, e.g., every 20 seconds, to simulate resource regeneration.
-/// The density of each ressource are the following:
-/// food: 0.5, linemate: 0.3, deraumere: 0.5, sibur: 0.1, mendiane: 0.1, phiras: 0.08, thystame: 0.05
+/// Dispatches to the legacy or spec-accurate algorithm depending on -oldgen.
 void World::resourcePassiveGeneration()
+{
+    if (_useOldGen)
+        resourcePassiveGenerationLegacy();
+    else
+        resourcePassiveGenerationEven();
+}
+
+/// @brief Legacy algorithm, preserved as-is (including the deraumere density quirk)
+/// for comparison/rollback via -oldgen. Via the formula : map_width * map_height * density
+/// food: 0.5, linemate: 0.3, deraumere: 0.5, sibur: 0.1, mendiane: 0.1, phiras: 0.08, thystame: 0.05
+void World::resourcePassiveGenerationLegacy()
 {
     const std::vector<std::pair<ItemType, double>> resourceDensity = {{ItemType::FOOD, 0.5},     {ItemType::LINEMATE, 0.3}, {ItemType::DERAUMERE, 0.5}, {ItemType::SIBUR, 0.1},
                                                                       {ItemType::MENDIANE, 0.1}, {ItemType::PHIRAS, 0.08},  {ItemType::THYSTAME, 0.05}};
@@ -40,6 +47,48 @@ void World::resourcePassiveGeneration()
             std::vector<std::pair<zappy::ItemType, int>> &tileCoords = _map[x][y]._items;
             auto it = std::find_if(tileCoords.begin(), tileCoords.end(), [type](const std::pair<ItemType, int> &item) { return item.first == type; });
             if (it != tileCoords.end())
+                it->second += 1;
+        }
+    }
+}
+
+/// @brief Spec-accurate algorithm: tops every resource up to map_width * map_height *
+/// density (at least 1, so Trantor always has one of each on the floor), never
+/// generating past the target nor when already there. Placement is purely random
+/// (independent random tile per unit) - a given tile may end up with nothing.
+/// food: 0.5, linemate: 0.3, deraumere: 0.15, sibur: 0.1, mendiane: 0.1,
+/// phiras: 0.08, thystame: 0.05
+void World::resourcePassiveGenerationEven()
+{
+    const std::vector<std::pair<ItemType, double>> resourceDensity = {{ItemType::FOOD, 0.5},     {ItemType::LINEMATE, 0.3}, {ItemType::DERAUMERE, 0.15}, {ItemType::SIBUR, 0.1},
+                                                                      {ItemType::MENDIANE, 0.1}, {ItemType::PHIRAS, 0.08},  {ItemType::THYSTAME, 0.05}};
+    if (_map.empty() || _map[0].empty())
+        return;
+    int width = static_cast<int>(_map.size());
+    int height = static_cast<int>(_map[0].size());
+
+    for (const auto &[type, density] : resourceDensity)
+    {
+        int target = std::max(1, static_cast<int>(width * height * density));
+        int current = 0;
+        for (const auto &column : _map)
+            for (const auto &tileAt : column)
+            {
+                auto it = std::find_if(tileAt._items.begin(), tileAt._items.end(), [type](const std::pair<ItemType, int> &item) { return item.first == type; });
+                if (it != tileAt._items.end())
+                    current += it->second;
+            }
+        int toAdd = target - current;
+        if (toAdd <= 0)
+            continue;
+
+        for (int i = 0; i < toAdd; ++i)
+        {
+            int x = rand() % width;
+            int y = rand() % height;
+            std::vector<std::pair<ItemType, int>> &tileItems = _map[x][y]._items;
+            auto it = std::find_if(tileItems.begin(), tileItems.end(), [type](const std::pair<ItemType, int> &item) { return item.first == type; });
+            if (it != tileItems.end())
                 it->second += 1;
         }
     }
