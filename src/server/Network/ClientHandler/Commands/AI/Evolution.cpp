@@ -77,8 +77,10 @@ std::string Commands::Incantation(std::vector<std::string> args, Client &client)
     {
         Logger::log("8423", "Incantation : failed, conditions not met at end",
                     {{"player_id", std::to_string(initiator->getId())}, {"x", std::to_string(pos.x)}, {"y", std::to_string(pos.y)}});
+        for (Player *participant : participants)
+            participant->writeToClient("ko\n");
         _broadcastQueue->push(pieHeader + "0\n");
-        return "ko\n";
+        return "";
     }
 
     _world->removeIncantationStones(pos.x, pos.y, level);

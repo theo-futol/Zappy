@@ -236,14 +236,8 @@ class ClientLauncher:
             str(self.port),
             "--team",
             team_name,
-            "--objective",
-            self.args.objective,
-            "--inventory-refresh",
-            str(self.args.inventory_refresh),
         ]
 
-        if self.args.max_actions is not None:
-            command.extend(["--max-actions", str(self.args.max_actions)])
         if not self.args.show_client_logs:
             command.append("--quiet")
         return command
