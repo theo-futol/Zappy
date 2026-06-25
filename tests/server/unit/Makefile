@@ -2,7 +2,7 @@ SRC	=	$(shell find ../../../src/server ./ -name "*.cpp" -not -path "../../../src
 OBJ = $(SRC:.cpp=.o)
 
 CXX = g++
-CXXFLAGS	=	-Wall -Wextra -Werror  -std=c++20 --coverage -O0 -g
+CXXFLAGS	=	-Wall -Wextra -Werror  -std=c++20 --coverage -O0 -g -I../../../src/server
 
 all: $(OBJ)
 	$(CXX) $(CXXFLAGS) $(OBJ) -o zappy_server_tests -lcriterion
