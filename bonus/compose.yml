@@ -1,0 +1,35 @@
+services:
+  server:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    environment:
+      PORT: ${ZAPPY_PORT:-4242}
+      WIDTH: ${ZAPPY_WIDTH:-10}
+      HEIGHT: ${ZAPPY_HEIGHT:-10}
+      TEAMS: ${ZAPPY_TEAMS:-team1}
+      CLIENTS: ${ZAPPY_CLIENTS:-3}
+      FREQ: ${ZAPPY_FREQ:-100}
+    expose:
+      - "${ZAPPY_PORT:-4242}"
+    networks:
+      - zappy-net
+
+  zaplauncher:
+    build:
+      context: ./ZapLauncher
+      dockerfile: Dockerfile
+    environment:
+      API_KEY: ${API_KEY:-}
+      ZAPPY_SERVER_HOST: ${ZAPPY_SERVER_HOST:-server}
+      ZAPPY_SERVER_PORT: ${ZAPPY_PORT:-4242}
+    ports:
+      - "${ZAPLAUNCHER_PORT:-8000}:8000"
+    depends_on:
+      - server
+    networks:
+      - zappy-net
+
+networks:
+  zappy-net:
+    driver: bridge
