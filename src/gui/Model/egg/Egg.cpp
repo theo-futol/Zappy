@@ -17,6 +17,14 @@ Appearance Egg::appearance() const
     return Appearance{"egg", _color, 0.5f};
 }
 
+std::vector<std::string> Egg::infoLines() const
+{
+    std::vector<std::string> lines = AMapEntity::infoLines();
+
+    lines.push_back("TEAM  " + _team);
+    return lines;
+}
+
 const std::string &Egg::team() const
 {
     return _team;

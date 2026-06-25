@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include <vector>
 
 #include "types/Appearance.hpp"
 #include "types/GridPosition.hpp"
@@ -63,6 +64,12 @@ class IEntity
      * @return The appearance used by the renderer.
      */
     virtual Appearance appearance() const = 0;
+
+    /**
+     * @brief Human-readable info lines the entity declares for the HUD selection panel.
+     * @return One string per line (identity, position, and type-specific details).
+     */
+    virtual std::vector<std::string> infoLines() const = 0;
 };
 
 } // namespace Zappy

@@ -1,0 +1,3855 @@
+[dispatch] WELCOME  -> no handler
+[dispatch] msz 30 30  -> handled
+[dispatch] sgt 100  -> handled
+[dispatch] bct 0 0 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 0 1 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 0 2 0 2 0 0 2 0 0  -> handled
+[dispatch] bct 0 3 0 0 0 0 1 0 0  -> handled
+[dispatch] bct 0 4 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 0 5 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 0 6 0 0 1 0 0 0 0  -> handled
+[dispatch] bct 0 7 0 2 1 0 0 1 0  -> handled
+[dispatch] bct 0 8 0 0 0 1 0 0 0  -> handled
+[dispatch] bct 0 9 0 0 0 0 2 0 0  -> handled
+[dispatch] bct 0 10 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 0 11 0 0 0 1 0 0 0  -> handled
+[dispatch] bct 0 12 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 0 13 0 1 1 0 0 0 0  -> handled
+[dispatch] bct 0 14 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 0 15 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 0 16 0 0 0 1 0 0 0  -> handled
+[dispatch] bct 0 17 0 0 1 0 0 0 0  -> handled
+[dispatch] bct 0 18 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 0 19 0 0 0 0 0 1 1  -> handled
+[dispatch] bct 0 20 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 0 21 2 0 0 0 0 0 0  -> handled
+[dispatch] bct 0 22 1 0 0 1 0 0 0  -> handled
+[dispatch] bct 0 23 0 0 1 0 0 0 0  -> handled
+[dispatch] bct 0 24 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 0 25 1 0 0 1 1 0 0  -> handled
+[dispatch] bct 0 26 0 0 1 0 2 0 0  -> handled
+[dispatch] bct 0 27 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 0 28 0 0 1 0 0 0 0  -> handled
+[dispatch] bct 0 29 2 1 0 0 1 0 0  -> handled
+[dispatch] bct 1 0 1 0 1 0 0 0 0  -> handled
+[dispatch] bct 1 1 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 1 2 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 1 3 1 2 0 1 0 0 0  -> handled
+[dispatch] bct 1 4 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 1 5 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 1 6 1 1 1 0 0 0 0  -> handled
+[dispatch] bct 1 7 0 0 0 0 0 1 0  -> handled
+[dispatch] bct 1 8 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 1 9 0 0 0 1 0 0 0  -> handled
+[dispatch] bct 1 10 2 1 0 0 0 0 0  -> handled
+[dispatch] bct 1 11 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 1 12 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 1 13 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 1 14 0 1 0 0 1 0 0  -> handled
+[dispatch] bct 1 15 0 0 1 0 0 0 0  -> handled
+[dispatch] bct 1 16 0 0 0 0 0 0 1  -> handled
+[dispatch] bct 1 17 0 1 2 0 0 0 0  -> handled
+[dispatch] bct 1 18 1 1 0 0 0 0 0  -> handled
+[dispatch] bct 1 19 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 1 20 0 0 1 0 0 0 0  -> handled
+[dispatch] bct 1 21 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 1 22 0 1 0 0 1 0 0  -> handled
+[dispatch] bct 1 23 1 1 1 0 0 0 0  -> handled
+[dispatch] bct 1 24 0 0 0 1 0 1 0  -> handled
+[dispatch] bct 1 25 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 1 26 1 1 0 0 0 0 0  -> handled
+[dispatch] bct 1 27 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 1 28 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 1 29 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 2 0 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 2 1 2 0 0 0 0 0 0  -> handled
+[dispatch] bct 2 2 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 2 3 2 0 0 0 0 0 0  -> handled
+[dispatch] bct 2 4 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 2 5 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 2 6 0 0 1 0 0 0 0  -> handled
+[dispatch] bct 2 7 1 1 0 0 0 0 0  -> handled
+[dispatch] bct 2 8 0 0 0 1 0 0 0  -> handled
+[dispatch] bct 2 9 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 2 10 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 2 11 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 2 12 1 1 0 0 0 0 0  -> handled
+[dispatch] bct 2 13 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 2 14 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 2 15 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 2 16 0 0 2 0 0 0 0  -> handled
+[dispatch] bct 2 17 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 2 18 0 0 0 1 2 0 0  -> handled
+[dispatch] bct 2 19 0 1 1 0 0 0 0  -> handled
+[dispatch] bct 2 20 2 0 0 0 0 0 0  -> handled
+[dispatch] bct 2 21 2 0 0 0 0 0 0  -> handled
+[dispatch] bct 2 22 1 2 0 0 0 0 0  -> handled
+[dispatch] bct 2 23 1 0 0 0 1 0 1  -> handled
+[dispatch] bct 2 24 2 0 0 0 0 0 0  -> handled
+[dispatch] bct 2 25 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 2 26 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 2 27 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 2 28 1 0 1 0 0 0 0  -> handled
+[dispatch] bct 2 29 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 3 0 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 3 1 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 3 2 0 0 0 0 0 1 0  -> handled
+[dispatch] bct 3 3 3 1 0 0 0 0 1  -> handled
+[dispatch] bct 3 4 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 3 5 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 3 6 0 1 0 1 0 0 0  -> handled
+[dispatch] bct 3 7 1 0 0 1 0 0 0  -> handled
+[dispatch] bct 3 8 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 3 9 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 3 10 1 0 1 0 0 0 0  -> handled
+[dispatch] bct 3 11 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 3 12 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 3 13 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 3 14 0 1 0 1 1 0 0  -> handled
+[dispatch] bct 3 15 1 0 1 0 0 0 0  -> handled
+[dispatch] bct 3 16 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 3 17 0 0 0 1 0 0 0  -> handled
+[dispatch] bct 3 18 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 3 19 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 3 20 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 3 21 0 0 0 0 0 0 1  -> handled
+[dispatch] bct 3 22 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 3 23 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 3 24 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 3 25 2 1 0 0 0 0 0  -> handled
+[dispatch] bct 3 26 0 0 0 1 0 2 1  -> handled
+[dispatch] bct 3 27 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 3 28 0 1 0 1 0 0 0  -> handled
+[dispatch] bct 3 29 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 4 0 1 2 0 0 0 1 0  -> handled
+[dispatch] bct 4 1 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 4 2 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 4 3 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 4 4 1 1 0 0 0 0 0  -> handled
+[dispatch] bct 4 5 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 4 6 0 0 0 0 0 1 0  -> handled
+[dispatch] bct 4 7 0 0 0 0 0 1 0  -> handled
+[dispatch] bct 4 8 0 0 0 0 1 0 0  -> handled
+[dispatch] bct 4 9 0 2 0 0 0 0 0  -> handled
+[dispatch] bct 4 10 0 1 0 1 0 0 0  -> handled
+[dispatch] bct 4 11 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 4 12 2 0 1 0 0 1 0  -> handled
+[dispatch] bct 4 13 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 4 14 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 4 15 1 1 0 0 0 0 0  -> handled
+[dispatch] bct 4 16 2 0 0 0 0 0 0  -> handled
+[dispatch] bct 4 17 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 4 18 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 4 19 0 1 0 1 0 0 0  -> handled
+[dispatch] bct 4 20 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 4 21 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 4 22 1 1 0 0 1 0 0  -> handled
+[dispatch] bct 4 23 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 4 24 1 1 0 0 0 0 0  -> handled
+[dispatch] bct 4 25 2 0 0 1 0 0 0  -> handled
+[dispatch] bct 4 26 1 0 0 0 1 0 0  -> handled
+[dispatch] bct 4 27 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 4 28 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 4 29 0 0 0 0 0 1 0  -> handled
+[dispatch] bct 5 0 0 0 0 0 0 0 1  -> handled
+[dispatch] bct 5 1 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 5 2 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 5 3 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 5 4 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 5 5 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 5 6 0 0 1 0 0 0 0  -> handled
+[dispatch] bct 5 7 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 5 8 0 0 0 0 0 0 1  -> handled
+[dispatch] bct 5 9 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 5 10 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 5 11 1 0 1 0 0 0 0  -> handled
+[dispatch] bct 5 12 0 0 0 0 0 0 1  -> handled
+[dispatch] bct 5 13 0 0 0 0 0 0 1  -> handled
+[dispatch] bct 5 14 0 2 0 1 0 0 0  -> handled
+[dispatch] bct 5 15 2 0 0 0 0 1 0  -> handled
+[dispatch] bct 5 16 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 5 17 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 5 18 1 0 1 0 0 0 0  -> handled
+[dispatch] bct 5 19 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 5 20 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 5 21 1 1 0 0 0 0 0  -> handled
+[dispatch] bct 5 22 0 0 0 0 1 0 0  -> handled
+[dispatch] bct 5 23 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 5 24 2 0 0 0 0 0 0  -> handled
+[dispatch] bct 5 25 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 5 26 5 0 1 0 0 1 0  -> handled
+[dispatch] bct 5 27 1 0 0 0 0 1 2  -> handled
+[dispatch] bct 5 28 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 5 29 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 6 0 1 0 0 0 1 0 0  -> handled
+[dispatch] bct 6 1 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 6 2 1 0 0 0 0 0 1  -> handled
+[dispatch] bct 6 3 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 6 4 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 6 5 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 6 6 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 6 7 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 6 8 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 6 9 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 6 10 0 0 0 1 0 0 0  -> handled
+[dispatch] bct 6 11 0 0 1 0 0 0 0  -> handled
+[dispatch] bct 6 12 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 6 13 2 0 0 0 0 0 0  -> handled
+[dispatch] bct 6 14 1 1 0 0 0 0 0  -> handled
+[dispatch] bct 6 15 1 0 0 0 0 0 1  -> handled
+[dispatch] bct 6 16 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 6 17 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 6 18 1 0 0 1 0 0 0  -> handled
+[dispatch] bct 6 19 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 6 20 2 1 0 1 0 0 0  -> handled
+[dispatch] bct 6 21 0 0 0 0 1 0 0  -> handled
+[dispatch] bct 6 22 0 0 0 0 0 0 1  -> handled
+[dispatch] bct 6 23 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 6 24 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 6 25 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 6 26 0 0 0 1 0 0 0  -> handled
+[dispatch] bct 6 27 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 6 28 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 6 29 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 7 0 0 0 0 1 0 0 0  -> handled
+[dispatch] bct 7 1 0 1 0 1 0 0 0  -> handled
+[dispatch] bct 7 2 1 0 0 1 0 0 0  -> handled
+[dispatch] bct 7 3 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 7 4 2 0 0 0 0 0 0  -> handled
+[dispatch] bct 7 5 1 2 0 0 0 0 0  -> handled
+[dispatch] bct 7 6 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 7 7 3 0 0 0 0 0 0  -> handled
+[dispatch] bct 7 8 1 0 1 0 0 0 0  -> handled
+[dispatch] bct 7 9 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 7 10 1 1 0 0 0 0 0  -> handled
+[dispatch] bct 7 11 1 1 0 0 0 0 0  -> handled
+[dispatch] bct 7 12 1 0 1 0 0 0 0  -> handled
+[dispatch] bct 7 13 2 0 0 0 0 0 0  -> handled
+[dispatch] bct 7 14 0 0 0 1 0 0 0  -> handled
+[dispatch] bct 7 15 4 0 0 0 0 0 0  -> handled
+[dispatch] bct 7 16 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 7 17 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 7 18 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 7 19 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 7 20 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 7 21 2 0 0 1 0 0 0  -> handled
+[dispatch] bct 7 22 2 0 0 0 0 0 0  -> handled
+[dispatch] bct 7 23 0 0 0 0 1 0 0  -> handled
+[dispatch] bct 7 24 0 0 1 1 0 0 0  -> handled
+[dispatch] bct 7 25 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 7 26 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 7 27 0 0 1 1 0 0 0  -> handled
+[dispatch] bct 7 28 2 0 0 0 0 0 0  -> handled
+[dispatch] bct 7 29 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 8 0 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 8 1 3 1 0 0 0 0 0  -> handled
+[dispatch] bct 8 2 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 8 3 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 8 4 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 8 5 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 8 6 1 0 0 0 0 1 0  -> handled
+[dispatch] bct 8 7 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 8 8 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 8 9 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 8 10 1 0 0 0 1 0 0  -> handled
+[dispatch] bct 8 11 1 0 1 0 0 0 0  -> handled
+[dispatch] bct 8 12 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 8 13 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 8 14 1 0 0 0 1 0 0  -> handled
+[dispatch] bct 8 15 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 8 16 0 0 1 0 0 0 0  -> handled
+[dispatch] bct 8 17 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 8 18 1 0 1 0 0 0 1  -> handled
+[dispatch] bct 8 19 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 8 20 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 8 21 0 1 0 0 0 1 0  -> handled
+[dispatch] bct 8 22 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 8 23 0 1 1 0 0 0 0  -> handled
+[dispatch] bct 8 24 1 0 0 0 0 0 1  -> handled
+[dispatch] bct 8 25 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 8 26 1 0 0 0 1 0 0  -> handled
+[dispatch] bct 8 27 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 8 28 1 1 0 0 0 0 0  -> handled
+[dispatch] bct 8 29 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 9 0 0 0 0 0 0 1 0  -> handled
+[dispatch] bct 9 1 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 9 2 0 0 0 0 0 0 1  -> handled
+[dispatch] bct 9 3 1 0 1 0 0 1 0  -> handled
+[dispatch] bct 9 4 0 0 1 0 0 0 0  -> handled
+[dispatch] bct 9 5 0 2 0 1 0 0 0  -> handled
+[dispatch] bct 9 6 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 9 7 3 0 0 0 1 0 0  -> handled
+[dispatch] bct 9 8 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 9 9 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 9 10 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 9 11 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 9 12 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 9 13 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 9 14 0 0 0 0 0 1 0  -> handled
+[dispatch] bct 9 15 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 9 16 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 9 17 0 0 1 0 1 0 0  -> handled
+[dispatch] bct 9 18 1 1 0 0 0 0 0  -> handled
+[dispatch] bct 9 19 0 0 1 0 0 0 0  -> handled
+[dispatch] bct 9 20 3 0 0 0 0 0 0  -> handled
+[dispatch] bct 9 21 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 9 22 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 9 23 0 1 0 0 0 1 0  -> handled
+[dispatch] bct 9 24 0 0 0 1 0 0 0  -> handled
+[dispatch] bct 9 25 0 0 2 0 0 0 0  -> handled
+[dispatch] bct 9 26 3 0 1 0 0 0 0  -> handled
+[dispatch] bct 9 27 0 0 0 0 1 0 0  -> handled
+[dispatch] bct 9 28 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 9 29 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 10 0 1 1 0 1 0 0 0  -> handled
+[dispatch] bct 10 1 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 10 2 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 10 3 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 10 4 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 10 5 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 10 6 0 0 0 0 1 1 0  -> handled
+[dispatch] bct 10 7 1 2 0 0 0 0 0  -> handled
+[dispatch] bct 10 8 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 10 9 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 10 10 0 1 1 0 0 1 0  -> handled
+[dispatch] bct 10 11 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 10 12 0 0 2 0 0 0 1  -> handled
+[dispatch] bct 10 13 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 10 14 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 10 15 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 10 16 0 2 0 0 0 0 0  -> handled
+[dispatch] bct 10 17 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 10 18 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 10 19 1 0 0 0 0 1 0  -> handled
+[dispatch] bct 10 20 0 1 1 1 0 0 0  -> handled
+[dispatch] bct 10 21 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 10 22 0 0 0 1 0 0 0  -> handled
+[dispatch] bct 10 23 0 0 1 1 1 0 0  -> handled
+[dispatch] bct 10 24 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 10 25 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 10 26 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 10 27 0 0 0 1 0 0 0  -> handled
+[dispatch] bct 10 28 2 0 0 0 1 0 0  -> handled
+[dispatch] bct 10 29 1 1 0 0 0 0 0  -> handled
+[dispatch] bct 11 0 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 11 1 2 0 0 0 0 0 0  -> handled
+[dispatch] bct 11 2 0 0 1 1 0 0 0  -> handled
+[dispatch] bct 11 3 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 11 4 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 11 5 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 11 6 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 11 7 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 11 8 0 0 0 0 1 0 0  -> handled
+[dispatch] bct 11 9 1 1 0 0 1 0 0  -> handled
+[dispatch] bct 11 10 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 11 11 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 11 12 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 11 13 0 0 2 1 0 0 0  -> handled
+[dispatch] bct 11 14 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 11 15 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 11 16 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 11 17 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 11 18 0 0 1 0 0 0 0  -> handled
+[dispatch] bct 11 19 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 11 20 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 11 21 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 11 22 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 11 23 0 0 0 0 0 0 1  -> handled
+[dispatch] bct 11 24 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 11 25 1 0 0 0 0 1 0  -> handled
+[dispatch] bct 11 26 1 2 0 0 0 0 0  -> handled
+[dispatch] bct 11 27 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 11 28 0 1 2 0 0 0 0  -> handled
+[dispatch] bct 11 29 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 12 0 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 12 1 0 0 0 0 1 0 0  -> handled
+[dispatch] bct 12 2 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 12 3 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 12 4 0 1 1 0 0 1 0  -> handled
+[dispatch] bct 12 5 0 0 0 1 0 0 0  -> handled
+[dispatch] bct 12 6 0 1 0 1 0 0 0  -> handled
+[dispatch] bct 12 7 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 12 8 0 0 0 0 1 0 0  -> handled
+[dispatch] bct 12 9 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 12 10 0 0 0 0 0 0 1  -> handled
+[dispatch] bct 12 11 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 12 12 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 12 13 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 12 14 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 12 15 2 0 1 0 0 0 0  -> handled
+[dispatch] bct 12 16 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 12 17 0 0 0 0 0 1 0  -> handled
+[dispatch] bct 12 18 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 12 19 1 0 0 1 0 0 0  -> handled
+[dispatch] bct 12 20 1 1 0 0 0 0 0  -> handled
+[dispatch] bct 12 21 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 12 22 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 12 23 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 12 24 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 12 25 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 12 26 3 0 1 1 0 0 0  -> handled
+[dispatch] bct 12 27 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 12 28 0 1 1 0 1 0 0  -> handled
+[dispatch] bct 12 29 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 13 0 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 13 1 0 1 0 0 1 0 0  -> handled
+[dispatch] bct 13 2 0 1 0 0 1 0 0  -> handled
+[dispatch] bct 13 3 0 0 0 0 0 1 0  -> handled
+[dispatch] bct 13 4 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 13 5 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 13 6 0 1 0 1 0 0 0  -> handled
+[dispatch] bct 13 7 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 13 8 0 0 1 0 0 0 0  -> handled
+[dispatch] bct 13 9 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 13 10 1 1 0 0 0 0 0  -> handled
+[dispatch] bct 13 11 0 1 0 0 1 0 0  -> handled
+[dispatch] bct 13 12 0 0 0 0 0 1 0  -> handled
+[dispatch] bct 13 13 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 13 14 1 0 0 0 0 0 1  -> handled
+[dispatch] bct 13 15 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 13 16 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 13 17 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 13 18 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 13 19 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 13 20 1 2 0 0 0 0 0  -> handled
+[dispatch] bct 13 21 1 1 0 0 1 0 0  -> handled
+[dispatch] bct 13 22 0 1 1 0 0 0 0  -> handled
+[dispatch] bct 13 23 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 13 24 3 0 0 0 0 0 0  -> handled
+[dispatch] bct 13 25 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 13 26 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 13 27 1 1 1 0 0 0 0  -> handled
+[dispatch] bct 13 28 2 0 0 0 0 0 0  -> handled
+[dispatch] bct 13 29 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 14 0 0 0 1 1 0 0 0  -> handled
+[dispatch] bct 14 1 0 1 1 0 0 0 0  -> handled
+[dispatch] bct 14 2 0 0 0 0 1 0 0  -> handled
+[dispatch] bct 14 3 0 0 1 0 0 0 0  -> handled
+[dispatch] bct 14 4 0 0 0 0 1 0 0  -> handled
+[dispatch] bct 14 5 0 0 0 0 0 0 1  -> handled
+[dispatch] bct 14 6 0 2 0 1 0 0 0  -> handled
+[dispatch] bct 14 7 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 14 8 1 0 0 1 0 0 0  -> handled
+[dispatch] bct 14 9 1 0 1 0 0 0 1  -> handled
+[dispatch] bct 14 10 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 14 11 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 14 12 0 0 1 0 0 0 0  -> handled
+[dispatch] bct 14 13 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 14 14 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 14 15 1 1 0 0 0 0 0  -> handled
+[dispatch] bct 14 16 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 14 17 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 14 18 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 14 19 1 1 0 0 0 0 0  -> handled
+[dispatch] bct 14 20 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 14 21 0 0 0 0 1 0 0  -> handled
+[dispatch] bct 14 22 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 14 23 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 14 24 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 14 25 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 14 26 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 14 27 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 14 28 2 0 0 1 1 0 0  -> handled
+[dispatch] bct 14 29 1 1 0 0 0 0 0  -> handled
+[dispatch] bct 15 0 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 15 1 2 0 0 0 0 0 0  -> handled
+[dispatch] bct 15 2 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 15 3 1 1 0 0 1 0 0  -> handled
+[dispatch] bct 15 4 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 15 5 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 15 6 0 0 1 0 0 0 0  -> handled
+[dispatch] bct 15 7 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 15 8 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 15 9 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 15 10 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 15 11 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 15 12 1 1 0 0 0 0 0  -> handled
+[dispatch] bct 15 13 2 1 1 0 0 0 0  -> handled
+[dispatch] bct 15 14 0 1 0 0 0 1 0  -> handled
+[dispatch] bct 15 15 1 0 1 0 0 0 0  -> handled
+[dispatch] bct 15 16 2 0 1 0 0 0 0  -> handled
+[dispatch] bct 15 17 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 15 18 0 0 0 0 1 0 0  -> handled
+[dispatch] bct 15 19 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 15 20 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 15 21 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 15 22 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 15 23 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 15 24 1 1 1 1 0 1 0  -> handled
+[dispatch] bct 15 25 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 15 26 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 15 27 2 1 0 0 0 0 0  -> handled
+[dispatch] bct 15 28 1 0 2 0 0 0 0  -> handled
+[dispatch] bct 15 29 0 0 0 0 0 1 0  -> handled
+[dispatch] bct 16 0 0 1 1 0 0 0 0  -> handled
+[dispatch] bct 16 1 0 0 0 0 1 0 0  -> handled
+[dispatch] bct 16 2 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 16 3 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 16 4 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 16 5 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 16 6 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 16 7 0 1 0 0 1 0 0  -> handled
+[dispatch] bct 16 8 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 16 9 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 16 10 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 16 11 0 1 0 0 0 1 0  -> handled
+[dispatch] bct 16 12 0 0 0 0 1 0 0  -> handled
+[dispatch] bct 16 13 0 0 1 0 0 0 0  -> handled
+[dispatch] bct 16 14 2 1 0 0 0 0 0  -> handled
+[dispatch] bct 16 15 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 16 16 1 0 0 0 1 0 0  -> handled
+[dispatch] bct 16 17 1 0 0 0 1 0 0  -> handled
+[dispatch] bct 16 18 0 0 0 0 0 1 0  -> handled
+[dispatch] bct 16 19 0 0 1 0 0 0 0  -> handled
+[dispatch] bct 16 20 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 16 21 1 0 0 1 0 1 0  -> handled
+[dispatch] bct 16 22 0 0 1 0 0 0 0  -> handled
+[dispatch] bct 16 23 0 0 0 0 0 0 1  -> handled
+[dispatch] bct 16 24 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 16 25 2 0 0 0 0 0 0  -> handled
+[dispatch] bct 16 26 0 0 1 0 0 0 0  -> handled
+[dispatch] bct 16 27 2 0 0 0 0 0 0  -> handled
+[dispatch] bct 16 28 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 16 29 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 17 0 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 17 1 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 17 2 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 17 3 0 0 1 1 0 0 0  -> handled
+[dispatch] bct 17 4 1 0 0 1 1 0 0  -> handled
+[dispatch] bct 17 5 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 17 6 0 0 0 0 0 0 1  -> handled
+[dispatch] bct 17 7 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 17 8 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 17 9 1 1 0 0 0 0 0  -> handled
+[dispatch] bct 17 10 1 0 1 0 0 1 0  -> handled
+[dispatch] bct 17 11 0 0 1 0 0 1 0  -> handled
+[dispatch] bct 17 12 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 17 13 0 0 0 1 0 0 0  -> handled
+[dispatch] bct 17 14 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 17 15 0 0 0 0 0 1 0  -> handled
+[dispatch] bct 17 16 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 17 17 1 1 0 0 0 0 0  -> handled
+[dispatch] bct 17 18 0 0 1 0 0 0 0  -> handled
+[dispatch] bct 17 19 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 17 20 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 17 21 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 17 22 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 17 23 3 0 0 0 0 0 0  -> handled
+[dispatch] bct 17 24 4 0 1 0 0 0 0  -> handled
+[dispatch] bct 17 25 1 1 0 0 1 0 1  -> handled
+[dispatch] bct 17 26 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 17 27 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 17 28 2 0 0 0 0 0 0  -> handled
+[dispatch] bct 17 29 2 0 0 0 0 1 0  -> handled
+[dispatch] bct 18 0 0 0 0 0 1 0 0  -> handled
+[dispatch] bct 18 1 2 0 0 0 0 0 0  -> handled
+[dispatch] bct 18 2 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 18 3 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 18 4 2 0 0 0 0 1 0  -> handled
+[dispatch] bct 18 5 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 18 6 2 1 0 0 1 0 0  -> handled
+[dispatch] bct 18 7 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 18 8 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 18 9 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 18 10 0 0 0 0 0 1 0  -> handled
+[dispatch] bct 18 11 1 0 0 0 0 0 1  -> handled
+[dispatch] bct 18 12 1 0 0 1 0 0 0  -> handled
+[dispatch] bct 18 13 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 18 14 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 18 15 1 0 0 1 0 0 0  -> handled
+[dispatch] bct 18 16 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 18 17 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 18 18 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 18 19 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 18 20 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 18 21 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 18 22 0 0 0 1 0 0 0  -> handled
+[dispatch] bct 18 23 2 0 0 0 0 0 0  -> handled
+[dispatch] bct 18 24 0 0 0 0 1 0 0  -> handled
+[dispatch] bct 18 25 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 18 26 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 18 27 0 1 0 0 0 0 1  -> handled
+[dispatch] bct 18 28 1 1 0 0 0 0 0  -> handled
+[dispatch] bct 18 29 0 1 0 0 1 0 0  -> handled
+[dispatch] bct 19 0 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 19 1 1 1 0 0 0 0 0  -> handled
+[dispatch] bct 19 2 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 19 3 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 19 4 2 1 0 0 0 0 0  -> handled
+[dispatch] bct 19 5 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 19 6 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 19 7 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 19 8 1 1 0 0 0 0 0  -> handled
+[dispatch] bct 19 9 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 19 10 0 1 0 0 0 0 1  -> handled
+[dispatch] bct 19 11 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 19 12 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 19 13 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 19 14 0 0 0 1 0 0 0  -> handled
+[dispatch] bct 19 15 2 0 0 0 0 0 0  -> handled
+[dispatch] bct 19 16 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 19 17 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 19 18 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 19 19 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 19 20 0 1 0 0 0 1 0  -> handled
+[dispatch] bct 19 21 0 0 1 0 0 0 0  -> handled
+[dispatch] bct 19 22 2 1 0 0 1 0 0  -> handled
+[dispatch] bct 19 23 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 19 24 2 0 1 0 0 0 0  -> handled
+[dispatch] bct 19 25 0 2 0 1 0 0 0  -> handled
+[dispatch] bct 19 26 0 1 0 0 0 0 1  -> handled
+[dispatch] bct 19 27 0 2 0 0 0 0 0  -> handled
+[dispatch] bct 19 28 1 1 0 0 1 0 0  -> handled
+[dispatch] bct 19 29 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 20 0 0 1 0 0 0 1 0  -> handled
+[dispatch] bct 20 1 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 20 2 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 20 3 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 20 4 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 20 5 1 1 0 0 0 0 0  -> handled
+[dispatch] bct 20 6 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 20 7 2 0 0 0 0 0 1  -> handled
+[dispatch] bct 20 8 1 0 0 0 1 0 0  -> handled
+[dispatch] bct 20 9 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 20 10 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 20 11 1 0 0 0 1 0 0  -> handled
+[dispatch] bct 20 12 2 0 0 0 0 0 0  -> handled
+[dispatch] bct 20 13 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 20 14 2 1 0 0 0 0 0  -> handled
+[dispatch] bct 20 15 0 0 1 0 0 0 0  -> handled
+[dispatch] bct 20 16 1 1 0 0 0 0 0  -> handled
+[dispatch] bct 20 17 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 20 18 1 0 0 0 1 0 0  -> handled
+[dispatch] bct 20 19 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 20 20 0 0 0 1 0 0 0  -> handled
+[dispatch] bct 20 21 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 20 22 1 2 0 0 0 0 0  -> handled
+[dispatch] bct 20 23 0 0 1 1 0 0 0  -> handled
+[dispatch] bct 20 24 0 0 0 1 0 1 0  -> handled
+[dispatch] bct 20 25 1 0 0 0 0 1 0  -> handled
+[dispatch] bct 20 26 3 0 1 0 1 1 0  -> handled
+[dispatch] bct 20 27 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 20 28 0 0 0 0 0 0 1  -> handled
+[dispatch] bct 20 29 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 21 0 2 0 0 0 0 0 0  -> handled
+[dispatch] bct 21 1 0 1 1 0 0 0 0  -> handled
+[dispatch] bct 21 2 1 0 1 0 0 0 0  -> handled
+[dispatch] bct 21 3 1 0 1 0 0 0 0  -> handled
+[dispatch] bct 21 4 0 0 1 0 0 0 0  -> handled
+[dispatch] bct 21 5 2 1 0 0 0 0 0  -> handled
+[dispatch] bct 21 6 0 1 1 0 0 0 0  -> handled
+[dispatch] bct 21 7 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 21 8 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 21 9 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 21 10 0 0 0 0 0 1 0  -> handled
+[dispatch] bct 21 11 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 21 12 2 0 1 0 0 0 0  -> handled
+[dispatch] bct 21 13 3 0 0 0 0 0 0  -> handled
+[dispatch] bct 21 14 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 21 15 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 21 16 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 21 17 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 21 18 1 1 1 0 0 0 0  -> handled
+[dispatch] bct 21 19 0 0 2 0 0 0 0  -> handled
+[dispatch] bct 21 20 1 1 0 0 0 0 0  -> handled
+[dispatch] bct 21 21 1 0 1 0 0 0 0  -> handled
+[dispatch] bct 21 22 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 21 23 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 21 24 0 0 1 0 0 0 0  -> handled
+[dispatch] bct 21 25 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 21 26 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 21 27 0 1 1 0 0 0 0  -> handled
+[dispatch] bct 21 28 0 1 1 0 0 0 0  -> handled
+[dispatch] bct 21 29 1 0 0 1 0 0 0  -> handled
+[dispatch] bct 22 0 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 22 1 0 1 0 1 0 0 0  -> handled
+[dispatch] bct 22 2 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 22 3 0 2 0 0 0 0 0  -> handled
+[dispatch] bct 22 4 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 22 5 0 0 0 1 0 0 0  -> handled
+[dispatch] bct 22 6 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 22 7 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 22 8 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 22 9 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 22 10 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 22 11 0 2 0 0 0 0 0  -> handled
+[dispatch] bct 22 12 3 0 0 0 1 0 0  -> handled
+[dispatch] bct 22 13 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 22 14 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 22 15 3 1 0 1 0 1 0  -> handled
+[dispatch] bct 22 16 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 22 17 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 22 18 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 22 19 1 0 0 0 1 0 0  -> handled
+[dispatch] bct 22 20 2 1 0 1 0 0 0  -> handled
+[dispatch] bct 22 21 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 22 22 2 0 0 0 0 0 0  -> handled
+[dispatch] bct 22 23 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 22 24 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 22 25 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 22 26 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 22 27 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 22 28 2 0 0 0 0 0 0  -> handled
+[dispatch] bct 22 29 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 23 0 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 23 1 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 23 2 0 1 0 1 0 0 0  -> handled
+[dispatch] bct 23 3 0 0 0 0 1 0 0  -> handled
+[dispatch] bct 23 4 0 0 0 1 0 0 0  -> handled
+[dispatch] bct 23 5 1 0 2 0 0 0 0  -> handled
+[dispatch] bct 23 6 0 0 1 0 0 0 0  -> handled
+[dispatch] bct 23 7 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 23 8 0 0 0 0 0 1 0  -> handled
+[dispatch] bct 23 9 0 0 0 0 0 1 0  -> handled
+[dispatch] bct 23 10 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 23 11 0 1 0 0 1 0 0  -> handled
+[dispatch] bct 23 12 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 23 13 2 0 0 1 0 0 0  -> handled
+[dispatch] bct 23 14 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 23 15 2 0 0 0 0 0 0  -> handled
+[dispatch] bct 23 16 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 23 17 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 23 18 0 0 0 0 0 0 1  -> handled
+[dispatch] bct 23 19 0 0 0 0 2 0 0  -> handled
+[dispatch] bct 23 20 0 2 0 0 0 1 1  -> handled
+[dispatch] bct 23 21 0 1 0 0 0 0 1  -> handled
+[dispatch] bct 23 22 2 1 0 0 1 0 0  -> handled
+[dispatch] bct 23 23 0 0 1 0 0 0 0  -> handled
+[dispatch] bct 23 24 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 23 25 1 1 0 1 0 1 0  -> handled
+[dispatch] bct 23 26 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 23 27 0 0 0 1 1 0 0  -> handled
+[dispatch] bct 23 28 0 0 0 0 1 1 0  -> handled
+[dispatch] bct 23 29 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 24 0 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 24 1 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 24 2 1 1 0 0 0 0 0  -> handled
+[dispatch] bct 24 3 1 2 0 0 0 0 0  -> handled
+[dispatch] bct 24 4 1 1 0 0 0 2 0  -> handled
+[dispatch] bct 24 5 2 0 0 0 0 1 0  -> handled
+[dispatch] bct 24 6 0 0 1 0 0 0 0  -> handled
+[dispatch] bct 24 7 2 1 0 0 1 0 0  -> handled
+[dispatch] bct 24 8 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 24 9 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 24 10 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 24 11 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 24 12 0 1 0 0 0 1 0  -> handled
+[dispatch] bct 24 13 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 24 14 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 24 15 1 0 0 1 0 0 0  -> handled
+[dispatch] bct 24 16 0 1 0 0 0 1 0  -> handled
+[dispatch] bct 24 17 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 24 18 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 24 19 3 0 0 0 0 0 0  -> handled
+[dispatch] bct 24 20 0 1 1 0 0 0 0  -> handled
+[dispatch] bct 24 21 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 24 22 1 0 1 0 0 0 0  -> handled
+[dispatch] bct 24 23 1 1 0 0 1 0 0  -> handled
+[dispatch] bct 24 24 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 24 25 1 1 1 0 0 0 0  -> handled
+[dispatch] bct 24 26 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 24 27 1 2 0 0 0 0 0  -> handled
+[dispatch] bct 24 28 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 24 29 0 2 0 0 0 0 0  -> handled
+[dispatch] bct 25 0 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 25 1 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 25 2 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 25 3 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 25 4 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 25 5 0 0 1 0 1 0 0  -> handled
+[dispatch] bct 25 6 2 0 1 0 0 0 0  -> handled
+[dispatch] bct 25 7 0 0 1 0 0 0 0  -> handled
+[dispatch] bct 25 8 2 0 2 0 0 0 0  -> handled
+[dispatch] bct 25 9 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 25 10 0 1 0 1 0 0 0  -> handled
+[dispatch] bct 25 11 0 0 0 1 0 1 0  -> handled
+[dispatch] bct 25 12 0 0 1 1 1 0 0  -> handled
+[dispatch] bct 25 13 2 0 0 0 0 0 0  -> handled
+[dispatch] bct 25 14 0 0 0 1 0 0 0  -> handled
+[dispatch] bct 25 15 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 25 16 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 25 17 1 0 0 0 1 0 0  -> handled
+[dispatch] bct 25 18 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 25 19 0 1 0 0 0 0 1  -> handled
+[dispatch] bct 25 20 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 25 21 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 25 22 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 25 23 0 0 0 0 0 1 1  -> handled
+[dispatch] bct 25 24 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 25 25 2 0 0 0 0 0 0  -> handled
+[dispatch] bct 25 26 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 25 27 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 25 28 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 25 29 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 26 0 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 26 1 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 26 2 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 26 3 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 26 4 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 26 5 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 26 6 1 1 0 0 0 0 0  -> handled
+[dispatch] bct 26 7 2 0 0 0 0 0 1  -> handled
+[dispatch] bct 26 8 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 26 9 2 1 0 0 0 0 0  -> handled
+[dispatch] bct 26 10 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 26 11 0 2 0 0 0 0 0  -> handled
+[dispatch] bct 26 12 0 1 0 0 1 0 0  -> handled
+[dispatch] bct 26 13 0 0 1 0 0 0 0  -> handled
+[dispatch] bct 26 14 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 26 15 0 1 0 1 1 0 0  -> handled
+[dispatch] bct 26 16 0 0 0 0 0 1 0  -> handled
+[dispatch] bct 26 17 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 26 18 0 0 0 0 0 1 0  -> handled
+[dispatch] bct 26 19 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 26 20 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 26 21 0 1 1 0 0 0 0  -> handled
+[dispatch] bct 26 22 0 1 0 0 0 1 0  -> handled
+[dispatch] bct 26 23 0 0 0 0 1 0 0  -> handled
+[dispatch] bct 26 24 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 26 25 1 0 1 0 0 0 1  -> handled
+[dispatch] bct 26 26 0 1 0 0 1 0 0  -> handled
+[dispatch] bct 26 27 0 0 2 0 1 0 1  -> handled
+[dispatch] bct 26 28 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 26 29 0 0 1 0 0 0 0  -> handled
+[dispatch] bct 27 0 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 27 1 0 0 0 0 0 1 0  -> handled
+[dispatch] bct 27 2 0 1 0 1 0 0 0  -> handled
+[dispatch] bct 27 3 0 2 0 0 0 0 0  -> handled
+[dispatch] bct 27 4 0 0 2 1 0 0 0  -> handled
+[dispatch] bct 27 5 0 0 0 2 0 0 0  -> handled
+[dispatch] bct 27 6 0 0 0 1 0 0 0  -> handled
+[dispatch] bct 27 7 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 27 8 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 27 9 1 1 0 0 0 0 0  -> handled
+[dispatch] bct 27 10 1 1 0 0 0 0 0  -> handled
+[dispatch] bct 27 11 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 27 12 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 27 13 0 0 0 0 1 0 0  -> handled
+[dispatch] bct 27 14 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 27 15 1 0 1 0 0 0 0  -> handled
+[dispatch] bct 27 16 0 0 0 1 0 1 0  -> handled
+[dispatch] bct 27 17 1 0 1 0 0 0 0  -> handled
+[dispatch] bct 27 18 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 27 19 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 27 20 0 0 2 0 0 0 1  -> handled
+[dispatch] bct 27 21 2 1 0 0 0 0 0  -> handled
+[dispatch] bct 27 22 2 0 0 0 0 0 0  -> handled
+[dispatch] bct 27 23 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 27 24 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 27 25 0 1 0 0 2 0 0  -> handled
+[dispatch] bct 27 26 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 27 27 0 2 0 0 0 0 0  -> handled
+[dispatch] bct 27 28 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 27 29 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 28 0 1 1 0 0 0 1 0  -> handled
+[dispatch] bct 28 1 0 0 0 1 0 0 0  -> handled
+[dispatch] bct 28 2 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 28 3 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 28 4 2 1 0 0 0 0 0  -> handled
+[dispatch] bct 28 5 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 28 6 2 1 0 0 0 0 0  -> handled
+[dispatch] bct 28 7 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 28 8 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 28 9 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 28 10 0 1 0 0 0 1 0  -> handled
+[dispatch] bct 28 11 1 0 1 0 0 0 0  -> handled
+[dispatch] bct 28 12 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 28 13 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 28 14 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 28 15 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 28 16 0 0 1 0 0 0 1  -> handled
+[dispatch] bct 28 17 1 1 0 0 0 0 0  -> handled
+[dispatch] bct 28 18 1 1 1 0 0 0 0  -> handled
+[dispatch] bct 28 19 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 28 20 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 28 21 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 28 22 1 1 2 0 0 0 0  -> handled
+[dispatch] bct 28 23 2 0 0 0 0 0 0  -> handled
+[dispatch] bct 28 24 1 1 0 0 1 1 0  -> handled
+[dispatch] bct 28 25 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 28 26 0 0 0 0 1 0 0  -> handled
+[dispatch] bct 28 27 0 3 0 0 1 0 1  -> handled
+[dispatch] bct 28 28 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 28 29 0 0 0 0 0 1 0  -> handled
+[dispatch] bct 29 0 3 0 0 0 0 0 0  -> handled
+[dispatch] bct 29 1 0 0 0 1 0 0 0  -> handled
+[dispatch] bct 29 2 0 1 0 1 0 0 0  -> handled
+[dispatch] bct 29 3 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 29 4 0 0 1 0 0 0 0  -> handled
+[dispatch] bct 29 5 0 1 0 1 0 2 0  -> handled
+[dispatch] bct 29 6 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 29 7 2 0 1 0 0 0 0  -> handled
+[dispatch] bct 29 8 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 29 9 0 0 0 0 1 0 0  -> handled
+[dispatch] bct 29 10 0 0 1 0 0 0 0  -> handled
+[dispatch] bct 29 11 0 0 0 0 0 1 0  -> handled
+[dispatch] bct 29 12 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 29 13 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 29 14 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 29 15 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 29 16 0 1 0 0 1 0 0  -> handled
+[dispatch] bct 29 17 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 29 18 1 1 0 0 0 0 1  -> handled
+[dispatch] bct 29 19 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 29 20 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 29 21 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 29 22 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 29 23 1 0 1 0 0 0 0  -> handled
+[dispatch] bct 29 24 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 29 25 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 29 26 0 0 0 1 0 0 0  -> handled
+[dispatch] bct 29 27 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 29 28 1 0 0 1 0 0 0  -> handled
+[dispatch] bct 29 29 0 1 0 0 0 0 0  -> handled
+[dispatch] tna Team2  -> handled
+[dispatch] tna Team1  -> handled
+[dispatch] pnw #15 27 13 2 1 Team2  -> handled
+[dispatch] pin #15 27 13 11 0 0 0 0 0 0  -> handled
+[dispatch] plv #15 1  -> handled
+[dispatch] pnw #14 11 7 4 1 Team1  -> handled
+[dispatch] pin #14 11 7 10 0 0 0 0 0 0  -> handled
+[dispatch] plv #14 1  -> handled
+[dispatch] pnw #13 8 27 4 1 Team2  -> handled
+[dispatch] pin #13 8 27 11 0 0 0 0 0 0  -> handled
+[dispatch] plv #13 1  -> handled
+[dispatch] pnw #12 15 2 2 1 Team1  -> handled
+[dispatch] pin #12 15 2 10 0 0 0 0 0 0  -> handled
+[dispatch] plv #12 1  -> handled
+[dispatch] pnw #11 9 4 1 1 Team1  -> handled
+[dispatch] pin #11 9 4 12 0 0 0 0 0 0  -> handled
+[dispatch] plv #11 1  -> handled
+[dispatch] pnw #10 24 27 2 1 Team2  -> handled
+[dispatch] pin #10 24 27 12 0 0 0 0 0 0  -> handled
+[dispatch] plv #10 1  -> handled
+[dispatch] pnw #9 12 4 3 1 Team2  -> handled
+[dispatch] pin #9 12 4 14 0 0 0 0 0 0  -> handled
+[dispatch] plv #9 1  -> handled
+[dispatch] pnw #8 3 16 2 1 Team1  -> handled
+[dispatch] pin #8 3 16 13 0 0 0 0 0 0  -> handled
+[dispatch] plv #8 1  -> handled
+[dispatch] pnw #7 26 21 3 1 Team2  -> handled
+[dispatch] pin #7 26 21 15 0 0 0 0 0 0  -> handled
+[dispatch] plv #7 1  -> handled
+[dispatch] pnw #6 9 11 4 1 Team1  -> handled
+[dispatch] pin #6 9 11 13 0 0 0 0 0 0  -> handled
+[dispatch] plv #6 1  -> handled
+[dispatch] pnw #5 22 15 3 1 Team1  -> handled
+[dispatch] pin #5 22 15 16 0 0 0 0 0 0  -> handled
+[dispatch] plv #5 1  -> handled
+[dispatch] pnw #4 29 4 3 1 Team2  -> handled
+[dispatch] pin #4 29 4 15 1 0 0 0 0 0  -> handled
+[dispatch] plv #4 1  -> handled
+[dispatch] pnw #3 4 4 4 1 Team2  -> handled
+[dispatch] pin #3 4 4 15 0 0 0 0 0 0  -> handled
+[dispatch] plv #3 1  -> handled
+[dispatch] pnw #2 28 0 2 1 Team1  -> handled
+[dispatch] pin #2 28 0 14 0 0 0 0 0 0  -> handled
+[dispatch] plv #2 1  -> handled
+[dispatch] pnw #1 24 12 4 1 Team1  -> handled
+[dispatch] pin #1 24 12 14 0 0 0 0 0 0  -> handled
+[dispatch] plv #1 1  -> handled
+[dispatch] pnw #0 13 11 1 1 Team2  -> handled
+[dispatch] pin #0 13 11 14 0 0 0 0 0 0  -> handled
+[dispatch] plv #0 1  -> handled
+[dispatch] enw #8 #-1 5 3  -> handled
+[dispatch] enw #9 #-1 15 0  -> handled
+[dispatch] enw #10 #-1 18 12  -> handled
+[dispatch] enw #11 #-1 8 23  -> handled
+[dispatch] enw #12 #-1 17 1  -> handled
+[dispatch] enw #13 #-1 6 14  -> handled
+[dispatch] enw #14 #-1 20 15  -> handled
+[dispatch] enw #15 #-1 16 25  -> handled
+[dispatch] enw #16 #-1 19 14  -> handled
+[dispatch] enw #17 #-1 5 16  -> handled
+[dispatch] enw #18 #-1 2 24  -> handled
+[dispatch] enw #19 #-1 1 16  -> handled
+[dispatch] enw #20 #-1 26 15  -> handled
+[dispatch] enw #21 #-1 11 0  -> handled
+[dispatch] enw #22 #-1 4 1  -> handled
+[dispatch] enw #23 #-1 6 2  -> handled
+[dispatch] enw #24 #-1 26 21  -> handled
+[dispatch] enw #33 #-1 19 13  -> handled
+[dispatch] enw #34 #-1 24 12  -> handled
+[dispatch] enw #35 #-1 29 20  -> handled
+[dispatch] enw #36 #-1 27 2  -> handled
+[dispatch] enw #37 #-1 13 24  -> handled
+[dispatch] enw #38 #-1 3 19  -> handled
+[dispatch] enw #39 #-1 26 0  -> handled
+[dispatch] enw #40 #-1 2 28  -> handled
+[dispatch] enw #41 #-1 7 27  -> handled
+[dispatch] enw #42 #-1 0 7  -> handled
+[dispatch] enw #43 #-1 9 25  -> handled
+[dispatch] enw #44 #-1 6 28  -> handled
+[dispatch] enw #45 #-1 3 19  -> handled
+[dispatch] enw #46 #-1 3 14  -> handled
+[dispatch] enw #47 #-1 14 14  -> handled
+[dispatch] enw #48 #-1 15 25  -> handled
+[dispatch] enw #49 #-1 19 9  -> handled
+[dispatch] msz 30 30  -> handled
+[dispatch] bct 0 0 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 0 1 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 0 2 0 2 0 0 2 0 0  -> handled
+[dispatch] bct 0 3 0 0 0 0 1 0 0  -> handled
+[dispatch] bct 0 4 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 0 5 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 0 6 0 0 1 0 0 0 0  -> handled
+[dispatch] bct 0 7 0 2 1 0 0 1 0  -> handled
+[dispatch] bct 0 8 0 0 0 1 0 0 0  -> handled
+[dispatch] bct 0 9 0 0 0 0 2 0 0  -> handled
+[dispatch] bct 0 10 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 0 11 0 0 0 1 0 0 0  -> handled
+[dispatch] bct 0 12 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 0 13 0 1 1 0 0 0 0  -> handled
+[dispatch] bct 0 14 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 0 15 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 0 16 0 0 0 1 0 0 0  -> handled
+[dispatch] bct 0 17 0 0 1 0 0 0 0  -> handled
+[dispatch] bct 0 18 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 0 19 0 0 0 0 0 1 1  -> handled
+[dispatch] bct 0 20 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 0 21 2 0 0 0 0 0 0  -> handled
+[dispatch] bct 0 22 1 0 0 1 0 0 0  -> handled
+[dispatch] bct 0 23 0 0 1 0 0 0 0  -> handled
+[dispatch] bct 0 24 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 0 25 1 0 0 1 1 0 0  -> handled
+[dispatch] bct 0 26 0 0 1 0 2 0 0  -> handled
+[dispatch] bct 0 27 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 0 28 0 0 1 0 0 0 0  -> handled
+[dispatch] bct 0 29 2 1 0 0 1 0 0  -> handled
+[dispatch] bct 1 0 1 0 1 0 0 0 0  -> handled
+[dispatch] bct 1 1 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 1 2 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 1 3 1 2 0 1 0 0 0  -> handled
+[dispatch] bct 1 4 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 1 5 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 1 6 1 1 1 0 0 0 0  -> handled
+[dispatch] bct 1 7 0 0 0 0 0 1 0  -> handled
+[dispatch] bct 1 8 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 1 9 0 0 0 1 0 0 0  -> handled
+[dispatch] bct 1 10 2 1 0 0 0 0 0  -> handled
+[dispatch] bct 1 11 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 1 12 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 1 13 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 1 14 0 1 0 0 1 0 0  -> handled
+[dispatch] bct 1 15 0 0 1 0 0 0 0  -> handled
+[dispatch] bct 1 16 0 0 0 0 0 0 1  -> handled
+[dispatch] bct 1 17 0 1 2 0 0 0 0  -> handled
+[dispatch] bct 1 18 1 1 0 0 0 0 0  -> handled
+[dispatch] bct 1 19 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 1 20 0 0 1 0 0 0 0  -> handled
+[dispatch] bct 1 21 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 1 22 0 1 0 0 1 0 0  -> handled
+[dispatch] bct 1 23 1 1 1 0 0 0 0  -> handled
+[dispatch] bct 1 24 0 0 0 1 0 1 0  -> handled
+[dispatch] bct 1 25 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 1 26 1 1 0 0 0 0 0  -> handled
+[dispatch] bct 1 27 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 1 28 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 1 29 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 2 0 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 2 1 2 0 0 0 0 0 0  -> handled
+[dispatch] bct 2 2 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 2 3 2 0 0 0 0 0 0  -> handled
+[dispatch] bct 2 4 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 2 5 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 2 6 0 0 1 0 0 0 0  -> handled
+[dispatch] bct 2 7 1 1 0 0 0 0 0  -> handled
+[dispatch] bct 2 8 0 0 0 1 0 0 0  -> handled
+[dispatch] bct 2 9 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 2 10 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 2 11 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 2 12 1 1 0 0 0 0 0  -> handled
+[dispatch] bct 2 13 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 2 14 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 2 15 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 2 16 0 0 2 0 0 0 0  -> handled
+[dispatch] bct 2 17 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 2 18 0 0 0 1 2 0 0  -> handled
+[dispatch] bct 2 19 0 1 1 0 0 0 0  -> handled
+[dispatch] bct 2 20 2 0 0 0 0 0 0  -> handled
+[dispatch] bct 2 21 2 0 0 0 0 0 0  -> handled
+[dispatch] bct 2 22 1 2 0 0 0 0 0  -> handled
+[dispatch] bct 2 23 1 0 0 0 1 0 1  -> handled
+[dispatch] bct 2 24 2 0 0 0 0 0 0  -> handled
+[dispatch] bct 2 25 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 2 26 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 2 27 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 2 28 1 0 1 0 0 0 0  -> handled
+[dispatch] bct 2 29 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 3 0 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 3 1 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 3 2 0 0 0 0 0 1 0  -> handled
+[dispatch] bct 3 3 3 1 0 0 0 0 1  -> handled
+[dispatch] bct 3 4 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 3 5 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 3 6 0 1 0 1 0 0 0  -> handled
+[dispatch] bct 3 7 1 0 0 1 0 0 0  -> handled
+[dispatch] bct 3 8 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 3 9 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 3 10 1 0 1 0 0 0 0  -> handled
+[dispatch] bct 3 11 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 3 12 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 3 13 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 3 14 0 1 0 1 1 0 0  -> handled
+[dispatch] bct 3 15 1 0 1 0 0 0 0  -> handled
+[dispatch] bct 3 16 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 3 17 0 0 0 1 0 0 0  -> handled
+[dispatch] bct 3 18 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 3 19 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 3 20 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 3 21 0 0 0 0 0 0 1  -> handled
+[dispatch] bct 3 22 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 3 23 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 3 24 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 3 25 2 1 0 0 0 0 0  -> handled
+[dispatch] bct 3 26 0 0 0 1 0 2 1  -> handled
+[dispatch] bct 3 27 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 3 28 0 1 0 1 0 0 0  -> handled
+[dispatch] bct 3 29 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 4 0 1 2 0 0 0 1 0  -> handled
+[dispatch] bct 4 1 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 4 2 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 4 3 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 4 4 1 1 0 0 0 0 0  -> handled
+[dispatch] bct 4 5 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 4 6 0 0 0 0 0 1 0  -> handled
+[dispatch] bct 4 7 0 0 0 0 0 1 0  -> handled
+[dispatch] bct 4 8 0 0 0 0 1 0 0  -> handled
+[dispatch] bct 4 9 0 2 0 0 0 0 0  -> handled
+[dispatch] bct 4 10 0 1 0 1 0 0 0  -> handled
+[dispatch] bct 4 11 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 4 12 2 0 1 0 0 1 0  -> handled
+[dispatch] bct 4 13 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 4 14 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 4 15 1 1 0 0 0 0 0  -> handled
+[dispatch] bct 4 16 2 0 0 0 0 0 0  -> handled
+[dispatch] bct 4 17 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 4 18 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 4 19 0 1 0 1 0 0 0  -> handled
+[dispatch] bct 4 20 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 4 21 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 4 22 1 1 0 0 1 0 0  -> handled
+[dispatch] bct 4 23 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 4 24 1 1 0 0 0 0 0  -> handled
+[dispatch] bct 4 25 2 0 0 1 0 0 0  -> handled
+[dispatch] bct 4 26 1 0 0 0 1 0 0  -> handled
+[dispatch] bct 4 27 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 4 28 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 4 29 0 0 0 0 0 1 0  -> handled
+[dispatch] bct 5 0 0 0 0 0 0 0 1  -> handled
+[dispatch] bct 5 1 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 5 2 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 5 3 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 5 4 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 5 5 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 5 6 0 0 1 0 0 0 0  -> handled
+[dispatch] bct 5 7 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 5 8 0 0 0 0 0 0 1  -> handled
+[dispatch] bct 5 9 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 5 10 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 5 11 1 0 1 0 0 0 0  -> handled
+[dispatch] bct 5 12 0 0 0 0 0 0 1  -> handled
+[dispatch] bct 5 13 0 0 0 0 0 0 1  -> handled
+[dispatch] bct 5 14 0 2 0 1 0 0 0  -> handled
+[dispatch] bct 5 15 2 0 0 0 0 1 0  -> handled
+[dispatch] bct 5 16 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 5 17 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 5 18 1 0 1 0 0 0 0  -> handled
+[dispatch] bct 5 19 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 5 20 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 5 21 1 1 0 0 0 0 0  -> handled
+[dispatch] bct 5 22 0 0 0 0 1 0 0  -> handled
+[dispatch] bct 5 23 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 5 24 2 0 0 0 0 0 0  -> handled
+[dispatch] bct 5 25 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 5 26 5 0 1 0 0 1 0  -> handled
+[dispatch] bct 5 27 1 0 0 0 0 1 2  -> handled
+[dispatch] bct 5 28 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 5 29 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 6 0 1 0 0 0 1 0 0  -> handled
+[dispatch] bct 6 1 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 6 2 1 0 0 0 0 0 1  -> handled
+[dispatch] bct 6 3 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 6 4 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 6 5 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 6 6 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 6 7 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 6 8 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 6 9 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 6 10 0 0 0 1 0 0 0  -> handled
+[dispatch] bct 6 11 0 0 1 0 0 0 0  -> handled
+[dispatch] bct 6 12 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 6 13 2 0 0 0 0 0 0  -> handled
+[dispatch] bct 6 14 1 1 0 0 0 0 0  -> handled
+[dispatch] bct 6 15 1 0 0 0 0 0 1  -> handled
+[dispatch] bct 6 16 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 6 17 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 6 18 1 0 0 1 0 0 0  -> handled
+[dispatch] bct 6 19 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 6 20 2 1 0 1 0 0 0  -> handled
+[dispatch] bct 6 21 0 0 0 0 1 0 0  -> handled
+[dispatch] bct 6 22 0 0 0 0 0 0 1  -> handled
+[dispatch] bct 6 23 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 6 24 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 6 25 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 6 26 0 0 0 1 0 0 0  -> handled
+[dispatch] bct 6 27 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 6 28 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 6 29 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 7 0 0 0 0 1 0 0 0  -> handled
+[dispatch] bct 7 1 0 1 0 1 0 0 0  -> handled
+[dispatch] bct 7 2 1 0 0 1 0 0 0  -> handled
+[dispatch] bct 7 3 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 7 4 2 0 0 0 0 0 0  -> handled
+[dispatch] bct 7 5 1 2 0 0 0 0 0  -> handled
+[dispatch] bct 7 6 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 7 7 3 0 0 0 0 0 0  -> handled
+[dispatch] bct 7 8 1 0 1 0 0 0 0  -> handled
+[dispatch] bct 7 9 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 7 10 1 1 0 0 0 0 0  -> handled
+[dispatch] bct 7 11 1 1 0 0 0 0 0  -> handled
+[dispatch] bct 7 12 1 0 1 0 0 0 0  -> handled
+[dispatch] bct 7 13 2 0 0 0 0 0 0  -> handled
+[dispatch] bct 7 14 0 0 0 1 0 0 0  -> handled
+[dispatch] bct 7 15 4 0 0 0 0 0 0  -> handled
+[dispatch] bct 7 16 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 7 17 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 7 18 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 7 19 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 7 20 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 7 21 2 0 0 1 0 0 0  -> handled
+[dispatch] bct 7 22 2 0 0 0 0 0 0  -> handled
+[dispatch] bct 7 23 0 0 0 0 1 0 0  -> handled
+[dispatch] bct 7 24 0 0 1 1 0 0 0  -> handled
+[dispatch] bct 7 25 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 7 26 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 7 27 0 0 1 1 0 0 0  -> handled
+[dispatch] bct 7 28 2 0 0 0 0 0 0  -> handled
+[dispatch] bct 7 29 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 8 0 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 8 1 3 1 0 0 0 0 0  -> handled
+[dispatch] bct 8 2 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 8 3 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 8 4 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 8 5 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 8 6 1 0 0 0 0 1 0  -> handled
+[dispatch] bct 8 7 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 8 8 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 8 9 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 8 10 1 0 0 0 1 0 0  -> handled
+[dispatch] bct 8 11 1 0 1 0 0 0 0  -> handled
+[dispatch] bct 8 12 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 8 13 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 8 14 1 0 0 0 1 0 0  -> handled
+[dispatch] bct 8 15 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 8 16 0 0 1 0 0 0 0  -> handled
+[dispatch] bct 8 17 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 8 18 1 0 1 0 0 0 1  -> handled
+[dispatch] bct 8 19 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 8 20 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 8 21 0 1 0 0 0 1 0  -> handled
+[dispatch] bct 8 22 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 8 23 0 1 1 0 0 0 0  -> handled
+[dispatch] bct 8 24 1 0 0 0 0 0 1  -> handled
+[dispatch] bct 8 25 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 8 26 1 0 0 0 1 0 0  -> handled
+[dispatch] bct 8 27 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 8 28 1 1 0 0 0 0 0  -> handled
+[dispatch] bct 8 29 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 9 0 0 0 0 0 0 1 0  -> handled
+[dispatch] bct 9 1 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 9 2 0 0 0 0 0 0 1  -> handled
+[dispatch] bct 9 3 1 0 1 0 0 1 0  -> handled
+[dispatch] bct 9 4 0 0 1 0 0 0 0  -> handled
+[dispatch] bct 9 5 0 2 0 1 0 0 0  -> handled
+[dispatch] bct 9 6 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 9 7 3 0 0 0 1 0 0  -> handled
+[dispatch] bct 9 8 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 9 9 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 9 10 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 9 11 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 9 12 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 9 13 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 9 14 0 0 0 0 0 1 0  -> handled
+[dispatch] bct 9 15 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 9 16 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 9 17 0 0 1 0 1 0 0  -> handled
+[dispatch] bct 9 18 1 1 0 0 0 0 0  -> handled
+[dispatch] bct 9 19 0 0 1 0 0 0 0  -> handled
+[dispatch] bct 9 20 3 0 0 0 0 0 0  -> handled
+[dispatch] bct 9 21 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 9 22 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 9 23 0 1 0 0 0 1 0  -> handled
+[dispatch] bct 9 24 0 0 0 1 0 0 0  -> handled
+[dispatch] bct 9 25 0 0 2 0 0 0 0  -> handled
+[dispatch] bct 9 26 3 0 1 0 0 0 0  -> handled
+[dispatch] bct 9 27 0 0 0 0 1 0 0  -> handled
+[dispatch] bct 9 28 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 9 29 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 10 0 1 1 0 1 0 0 0  -> handled
+[dispatch] bct 10 1 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 10 2 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 10 3 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 10 4 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 10 5 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 10 6 0 0 0 0 1 1 0  -> handled
+[dispatch] bct 10 7 1 2 0 0 0 0 0  -> handled
+[dispatch] bct 10 8 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 10 9 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 10 10 0 1 1 0 0 1 0  -> handled
+[dispatch] bct 10 11 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 10 12 0 0 2 0 0 0 1  -> handled
+[dispatch] bct 10 13 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 10 14 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 10 15 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 10 16 0 2 0 0 0 0 0  -> handled
+[dispatch] bct 10 17 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 10 18 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 10 19 1 0 0 0 0 1 0  -> handled
+[dispatch] bct 10 20 0 1 1 1 0 0 0  -> handled
+[dispatch] bct 10 21 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 10 22 0 0 0 1 0 0 0  -> handled
+[dispatch] bct 10 23 0 0 1 1 1 0 0  -> handled
+[dispatch] bct 10 24 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 10 25 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 10 26 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 10 27 0 0 0 1 0 0 0  -> handled
+[dispatch] bct 10 28 2 0 0 0 1 0 0  -> handled
+[dispatch] bct 10 29 1 1 0 0 0 0 0  -> handled
+[dispatch] bct 11 0 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 11 1 2 0 0 0 0 0 0  -> handled
+[dispatch] bct 11 2 0 0 1 1 0 0 0  -> handled
+[dispatch] bct 11 3 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 11 4 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 11 5 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 11 6 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 11 7 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 11 8 0 0 0 0 1 0 0  -> handled
+[dispatch] bct 11 9 1 1 0 0 1 0 0  -> handled
+[dispatch] bct 11 10 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 11 11 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 11 12 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 11 13 0 0 2 1 0 0 0  -> handled
+[dispatch] bct 11 14 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 11 15 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 11 16 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 11 17 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 11 18 0 0 1 0 0 0 0  -> handled
+[dispatch] bct 11 19 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 11 20 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 11 21 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 11 22 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 11 23 0 0 0 0 0 0 1  -> handled
+[dispatch] bct 11 24 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 11 25 1 0 0 0 0 1 0  -> handled
+[dispatch] bct 11 26 1 2 0 0 0 0 0  -> handled
+[dispatch] bct 11 27 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 11 28 0 1 2 0 0 0 0  -> handled
+[dispatch] bct 11 29 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 12 0 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 12 1 0 0 0 0 1 0 0  -> handled
+[dispatch] bct 12 2 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 12 3 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 12 4 0 1 1 0 0 1 0  -> handled
+[dispatch] bct 12 5 0 0 0 1 0 0 0  -> handled
+[dispatch] bct 12 6 0 1 0 1 0 0 0  -> handled
+[dispatch] bct 12 7 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 12 8 0 0 0 0 1 0 0  -> handled
+[dispatch] bct 12 9 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 12 10 0 0 0 0 0 0 1  -> handled
+[dispatch] bct 12 11 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 12 12 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 12 13 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 12 14 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 12 15 2 0 1 0 0 0 0  -> handled
+[dispatch] bct 12 16 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 12 17 0 0 0 0 0 1 0  -> handled
+[dispatch] bct 12 18 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 12 19 1 0 0 1 0 0 0  -> handled
+[dispatch] bct 12 20 1 1 0 0 0 0 0  -> handled
+[dispatch] bct 12 21 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 12 22 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 12 23 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 12 24 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 12 25 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 12 26 3 0 1 1 0 0 0  -> handled
+[dispatch] bct 12 27 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 12 28 0 1 1 0 1 0 0  -> handled
+[dispatch] bct 12 29 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 13 0 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 13 1 0 1 0 0 1 0 0  -> handled
+[dispatch] bct 13 2 0 1 0 0 1 0 0  -> handled
+[dispatch] bct 13 3 0 0 0 0 0 1 0  -> handled
+[dispatch] bct 13 4 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 13 5 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 13 6 0 1 0 1 0 0 0  -> handled
+[dispatch] bct 13 7 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 13 8 0 0 1 0 0 0 0  -> handled
+[dispatch] bct 13 9 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 13 10 1 1 0 0 0 0 0  -> handled
+[dispatch] bct 13 11 0 1 0 0 1 0 0  -> handled
+[dispatch] bct 13 12 0 0 0 0 0 1 0  -> handled
+[dispatch] bct 13 13 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 13 14 1 0 0 0 0 0 1  -> handled
+[dispatch] bct 13 15 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 13 16 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 13 17 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 13 18 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 13 19 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 13 20 1 2 0 0 0 0 0  -> handled
+[dispatch] bct 13 21 1 1 0 0 1 0 0  -> handled
+[dispatch] bct 13 22 0 1 1 0 0 0 0  -> handled
+[dispatch] bct 13 23 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 13 24 3 0 0 0 0 0 0  -> handled
+[dispatch] bct 13 25 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 13 26 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 13 27 1 1 1 0 0 0 0  -> handled
+[dispatch] bct 13 28 2 0 0 0 0 0 0  -> handled
+[dispatch] bct 13 29 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 14 0 0 0 1 1 0 0 0  -> handled
+[dispatch] bct 14 1 0 1 1 0 0 0 0  -> handled
+[dispatch] bct 14 2 0 0 0 0 1 0 0  -> handled
+[dispatch] bct 14 3 0 0 1 0 0 0 0  -> handled
+[dispatch] bct 14 4 0 0 0 0 1 0 0  -> handled
+[dispatch] bct 14 5 0 0 0 0 0 0 1  -> handled
+[dispatch] bct 14 6 0 2 0 1 0 0 0  -> handled
+[dispatch] bct 14 7 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 14 8 1 0 0 1 0 0 0  -> handled
+[dispatch] bct 14 9 1 0 1 0 0 0 1  -> handled
+[dispatch] bct 14 10 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 14 11 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 14 12 0 0 1 0 0 0 0  -> handled
+[dispatch] bct 14 13 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 14 14 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 14 15 1 1 0 0 0 0 0  -> handled
+[dispatch] bct 14 16 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 14 17 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 14 18 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 14 19 1 1 0 0 0 0 0  -> handled
+[dispatch] bct 14 20 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 14 21 0 0 0 0 1 0 0  -> handled
+[dispatch] bct 14 22 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 14 23 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 14 24 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 14 25 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 14 26 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 14 27 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 14 28 2 0 0 1 1 0 0  -> handled
+[dispatch] bct 14 29 1 1 0 0 0 0 0  -> handled
+[dispatch] bct 15 0 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 15 1 2 0 0 0 0 0 0  -> handled
+[dispatch] bct 15 2 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 15 3 1 1 0 0 1 0 0  -> handled
+[dispatch] bct 15 4 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 15 5 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 15 6 0 0 1 0 0 0 0  -> handled
+[dispatch] bct 15 7 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 15 8 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 15 9 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 15 10 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 15 11 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 15 12 1 1 0 0 0 0 0  -> handled
+[dispatch] bct 15 13 2 1 1 0 0 0 0  -> handled
+[dispatch] bct 15 14 0 1 0 0 0 1 0  -> handled
+[dispatch] bct 15 15 1 0 1 0 0 0 0  -> handled
+[dispatch] bct 15 16 2 0 1 0 0 0 0  -> handled
+[dispatch] bct 15 17 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 15 18 0 0 0 0 1 0 0  -> handled
+[dispatch] bct 15 19 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 15 20 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 15 21 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 15 22 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 15 23 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 15 24 1 1 1 1 0 1 0  -> handled
+[dispatch] bct 15 25 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 15 26 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 15 27 2 1 0 0 0 0 0  -> handled
+[dispatch] bct 15 28 1 0 2 0 0 0 0  -> handled
+[dispatch] bct 15 29 0 0 0 0 0 1 0  -> handled
+[dispatch] bct 16 0 0 1 1 0 0 0 0  -> handled
+[dispatch] bct 16 1 0 0 0 0 1 0 0  -> handled
+[dispatch] bct 16 2 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 16 3 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 16 4 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 16 5 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 16 6 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 16 7 0 1 0 0 1 0 0  -> handled
+[dispatch] bct 16 8 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 16 9 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 16 10 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 16 11 0 1 0 0 0 1 0  -> handled
+[dispatch] bct 16 12 0 0 0 0 1 0 0  -> handled
+[dispatch] bct 16 13 0 0 1 0 0 0 0  -> handled
+[dispatch] bct 16 14 2 1 0 0 0 0 0  -> handled
+[dispatch] bct 16 15 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 16 16 1 0 0 0 1 0 0  -> handled
+[dispatch] bct 16 17 1 0 0 0 1 0 0  -> handled
+[dispatch] bct 16 18 0 0 0 0 0 1 0  -> handled
+[dispatch] bct 16 19 0 0 1 0 0 0 0  -> handled
+[dispatch] bct 16 20 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 16 21 1 0 0 1 0 1 0  -> handled
+[dispatch] bct 16 22 0 0 1 0 0 0 0  -> handled
+[dispatch] bct 16 23 0 0 0 0 0 0 1  -> handled
+[dispatch] bct 16 24 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 16 25 2 0 0 0 0 0 0  -> handled
+[dispatch] bct 16 26 0 0 1 0 0 0 0  -> handled
+[dispatch] bct 16 27 2 0 0 0 0 0 0  -> handled
+[dispatch] bct 16 28 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 16 29 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 17 0 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 17 1 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 17 2 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 17 3 0 0 1 1 0 0 0  -> handled
+[dispatch] bct 17 4 1 0 0 1 1 0 0  -> handled
+[dispatch] bct 17 5 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 17 6 0 0 0 0 0 0 1  -> handled
+[dispatch] bct 17 7 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 17 8 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 17 9 1 1 0 0 0 0 0  -> handled
+[dispatch] bct 17 10 1 0 1 0 0 1 0  -> handled
+[dispatch] bct 17 11 0 0 1 0 0 1 0  -> handled
+[dispatch] bct 17 12 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 17 13 0 0 0 1 0 0 0  -> handled
+[dispatch] bct 17 14 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 17 15 0 0 0 0 0 1 0  -> handled
+[dispatch] bct 17 16 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 17 17 1 1 0 0 0 0 0  -> handled
+[dispatch] bct 17 18 0 0 1 0 0 0 0  -> handled
+[dispatch] bct 17 19 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 17 20 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 17 21 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 17 22 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 17 23 3 0 0 0 0 0 0  -> handled
+[dispatch] bct 17 24 4 0 1 0 0 0 0  -> handled
+[dispatch] bct 17 25 1 1 0 0 1 0 1  -> handled
+[dispatch] bct 17 26 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 17 27 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 17 28 2 0 0 0 0 0 0  -> handled
+[dispatch] bct 17 29 2 0 0 0 0 1 0  -> handled
+[dispatch] bct 18 0 0 0 0 0 1 0 0  -> handled
+[dispatch] bct 18 1 2 0 0 0 0 0 0  -> handled
+[dispatch] bct 18 2 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 18 3 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 18 4 2 0 0 0 0 1 0  -> handled
+[dispatch] bct 18 5 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 18 6 2 1 0 0 1 0 0  -> handled
+[dispatch] bct 18 7 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 18 8 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 18 9 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 18 10 0 0 0 0 0 1 0  -> handled
+[dispatch] bct 18 11 1 0 0 0 0 0 1  -> handled
+[dispatch] bct 18 12 1 0 0 1 0 0 0  -> handled
+[dispatch] bct 18 13 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 18 14 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 18 15 1 0 0 1 0 0 0  -> handled
+[dispatch] bct 18 16 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 18 17 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 18 18 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 18 19 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 18 20 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 18 21 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 18 22 0 0 0 1 0 0 0  -> handled
+[dispatch] bct 18 23 2 0 0 0 0 0 0  -> handled
+[dispatch] bct 18 24 0 0 0 0 1 0 0  -> handled
+[dispatch] bct 18 25 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 18 26 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 18 27 0 1 0 0 0 0 1  -> handled
+[dispatch] bct 18 28 1 1 0 0 0 0 0  -> handled
+[dispatch] bct 18 29 0 1 0 0 1 0 0  -> handled
+[dispatch] bct 19 0 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 19 1 1 1 0 0 0 0 0  -> handled
+[dispatch] bct 19 2 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 19 3 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 19 4 2 1 0 0 0 0 0  -> handled
+[dispatch] bct 19 5 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 19 6 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 19 7 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 19 8 1 1 0 0 0 0 0  -> handled
+[dispatch] bct 19 9 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 19 10 0 1 0 0 0 0 1  -> handled
+[dispatch] bct 19 11 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 19 12 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 19 13 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 19 14 0 0 0 1 0 0 0  -> handled
+[dispatch] bct 19 15 2 0 0 0 0 0 0  -> handled
+[dispatch] bct 19 16 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 19 17 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 19 18 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 19 19 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 19 20 0 1 0 0 0 1 0  -> handled
+[dispatch] bct 19 21 0 0 1 0 0 0 0  -> handled
+[dispatch] bct 19 22 2 1 0 0 1 0 0  -> handled
+[dispatch] bct 19 23 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 19 24 2 0 1 0 0 0 0  -> handled
+[dispatch] bct 19 25 0 2 0 1 0 0 0  -> handled
+[dispatch] bct 19 26 0 1 0 0 0 0 1  -> handled
+[dispatch] bct 19 27 0 2 0 0 0 0 0  -> handled
+[dispatch] bct 19 28 1 1 0 0 1 0 0  -> handled
+[dispatch] bct 19 29 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 20 0 0 1 0 0 0 1 0  -> handled
+[dispatch] bct 20 1 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 20 2 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 20 3 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 20 4 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 20 5 1 1 0 0 0 0 0  -> handled
+[dispatch] bct 20 6 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 20 7 2 0 0 0 0 0 1  -> handled
+[dispatch] bct 20 8 1 0 0 0 1 0 0  -> handled
+[dispatch] bct 20 9 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 20 10 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 20 11 1 0 0 0 1 0 0  -> handled
+[dispatch] bct 20 12 2 0 0 0 0 0 0  -> handled
+[dispatch] bct 20 13 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 20 14 2 1 0 0 0 0 0  -> handled
+[dispatch] bct 20 15 0 0 1 0 0 0 0  -> handled
+[dispatch] bct 20 16 1 1 0 0 0 0 0  -> handled
+[dispatch] bct 20 17 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 20 18 1 0 0 0 1 0 0  -> handled
+[dispatch] bct 20 19 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 20 20 0 0 0 1 0 0 0  -> handled
+[dispatch] bct 20 21 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 20 22 1 2 0 0 0 0 0  -> handled
+[dispatch] bct 20 23 0 0 1 1 0 0 0  -> handled
+[dispatch] bct 20 24 0 0 0 1 0 1 0  -> handled
+[dispatch] bct 20 25 1 0 0 0 0 1 0  -> handled
+[dispatch] bct 20 26 3 0 1 0 1 1 0  -> handled
+[dispatch] bct 20 27 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 20 28 0 0 0 0 0 0 1  -> handled
+[dispatch] bct 20 29 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 21 0 2 0 0 0 0 0 0  -> handled
+[dispatch] bct 21 1 0 1 1 0 0 0 0  -> handled
+[dispatch] bct 21 2 1 0 1 0 0 0 0  -> handled
+[dispatch] bct 21 3 1 0 1 0 0 0 0  -> handled
+[dispatch] bct 21 4 0 0 1 0 0 0 0  -> handled
+[dispatch] bct 21 5 2 1 0 0 0 0 0  -> handled
+[dispatch] bct 21 6 0 1 1 0 0 0 0  -> handled
+[dispatch] bct 21 7 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 21 8 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 21 9 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 21 10 0 0 0 0 0 1 0  -> handled
+[dispatch] bct 21 11 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 21 12 2 0 1 0 0 0 0  -> handled
+[dispatch] bct 21 13 3 0 0 0 0 0 0  -> handled
+[dispatch] bct 21 14 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 21 15 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 21 16 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 21 17 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 21 18 1 1 1 0 0 0 0  -> handled
+[dispatch] bct 21 19 0 0 2 0 0 0 0  -> handled
+[dispatch] bct 21 20 1 1 0 0 0 0 0  -> handled
+[dispatch] bct 21 21 1 0 1 0 0 0 0  -> handled
+[dispatch] bct 21 22 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 21 23 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 21 24 0 0 1 0 0 0 0  -> handled
+[dispatch] bct 21 25 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 21 26 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 21 27 0 1 1 0 0 0 0  -> handled
+[dispatch] bct 21 28 0 1 1 0 0 0 0  -> handled
+[dispatch] bct 21 29 1 0 0 1 0 0 0  -> handled
+[dispatch] bct 22 0 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 22 1 0 1 0 1 0 0 0  -> handled
+[dispatch] bct 22 2 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 22 3 0 2 0 0 0 0 0  -> handled
+[dispatch] bct 22 4 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 22 5 0 0 0 1 0 0 0  -> handled
+[dispatch] bct 22 6 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 22 7 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 22 8 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 22 9 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 22 10 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 22 11 0 2 0 0 0 0 0  -> handled
+[dispatch] bct 22 12 3 0 0 0 1 0 0  -> handled
+[dispatch] bct 22 13 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 22 14 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 22 15 3 1 0 1 0 1 0  -> handled
+[dispatch] bct 22 16 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 22 17 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 22 18 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 22 19 1 0 0 0 1 0 0  -> handled
+[dispatch] bct 22 20 2 1 0 1 0 0 0  -> handled
+[dispatch] bct 22 21 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 22 22 2 0 0 0 0 0 0  -> handled
+[dispatch] bct 22 23 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 22 24 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 22 25 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 22 26 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 22 27 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 22 28 2 0 0 0 0 0 0  -> handled
+[dispatch] bct 22 29 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 23 0 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 23 1 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 23 2 0 1 0 1 0 0 0  -> handled
+[dispatch] bct 23 3 0 0 0 0 1 0 0  -> handled
+[dispatch] bct 23 4 0 0 0 1 0 0 0  -> handled
+[dispatch] bct 23 5 1 0 2 0 0 0 0  -> handled
+[dispatch] bct 23 6 0 0 1 0 0 0 0  -> handled
+[dispatch] bct 23 7 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 23 8 0 0 0 0 0 1 0  -> handled
+[dispatch] bct 23 9 0 0 0 0 0 1 0  -> handled
+[dispatch] bct 23 10 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 23 11 0 1 0 0 1 0 0  -> handled
+[dispatch] bct 23 12 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 23 13 2 0 0 1 0 0 0  -> handled
+[dispatch] bct 23 14 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 23 15 2 0 0 0 0 0 0  -> handled
+[dispatch] bct 23 16 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 23 17 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 23 18 0 0 0 0 0 0 1  -> handled
+[dispatch] bct 23 19 0 0 0 0 2 0 0  -> handled
+[dispatch] bct 23 20 0 2 0 0 0 1 1  -> handled
+[dispatch] bct 23 21 0 1 0 0 0 0 1  -> handled
+[dispatch] bct 23 22 2 1 0 0 1 0 0  -> handled
+[dispatch] bct 23 23 0 0 1 0 0 0 0  -> handled
+[dispatch] bct 23 24 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 23 25 1 1 0 1 0 1 0  -> handled
+[dispatch] bct 23 26 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 23 27 0 0 0 1 1 0 0  -> handled
+[dispatch] bct 23 28 0 0 0 0 1 1 0  -> handled
+[dispatch] bct 23 29 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 24 0 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 24 1 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 24 2 1 1 0 0 0 0 0  -> handled
+[dispatch] bct 24 3 1 2 0 0 0 0 0  -> handled
+[dispatch] bct 24 4 1 1 0 0 0 2 0  -> handled
+[dispatch] bct 24 5 2 0 0 0 0 1 0  -> handled
+[dispatch] bct 24 6 0 0 1 0 0 0 0  -> handled
+[dispatch] bct 24 7 2 1 0 0 1 0 0  -> handled
+[dispatch] bct 24 8 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 24 9 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 24 10 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 24 11 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 24 12 0 1 0 0 0 1 0  -> handled
+[dispatch] bct 24 13 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 24 14 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 24 15 1 0 0 1 0 0 0  -> handled
+[dispatch] bct 24 16 0 1 0 0 0 1 0  -> handled
+[dispatch] bct 24 17 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 24 18 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 24 19 3 0 0 0 0 0 0  -> handled
+[dispatch] bct 24 20 0 1 1 0 0 0 0  -> handled
+[dispatch] bct 24 21 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 24 22 1 0 1 0 0 0 0  -> handled
+[dispatch] bct 24 23 1 1 0 0 1 0 0  -> handled
+[dispatch] bct 24 24 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 24 25 1 1 1 0 0 0 0  -> handled
+[dispatch] bct 24 26 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 24 27 1 2 0 0 0 0 0  -> handled
+[dispatch] bct 24 28 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 24 29 0 2 0 0 0 0 0  -> handled
+[dispatch] bct 25 0 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 25 1 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 25 2 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 25 3 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 25 4 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 25 5 0 0 1 0 1 0 0  -> handled
+[dispatch] bct 25 6 2 0 1 0 0 0 0  -> handled
+[dispatch] bct 25 7 0 0 1 0 0 0 0  -> handled
+[dispatch] bct 25 8 2 0 2 0 0 0 0  -> handled
+[dispatch] bct 25 9 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 25 10 0 1 0 1 0 0 0  -> handled
+[dispatch] bct 25 11 0 0 0 1 0 1 0  -> handled
+[dispatch] bct 25 12 0 0 1 1 1 0 0  -> handled
+[dispatch] bct 25 13 2 0 0 0 0 0 0  -> handled
+[dispatch] bct 25 14 0 0 0 1 0 0 0  -> handled
+[dispatch] bct 25 15 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 25 16 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 25 17 1 0 0 0 1 0 0  -> handled
+[dispatch] bct 25 18 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 25 19 0 1 0 0 0 0 1  -> handled
+[dispatch] bct 25 20 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 25 21 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 25 22 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 25 23 0 0 0 0 0 1 1  -> handled
+[dispatch] bct 25 24 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 25 25 2 0 0 0 0 0 0  -> handled
+[dispatch] bct 25 26 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 25 27 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 25 28 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 25 29 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 26 0 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 26 1 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 26 2 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 26 3 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 26 4 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 26 5 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 26 6 1 1 0 0 0 0 0  -> handled
+[dispatch] bct 26 7 2 0 0 0 0 0 1  -> handled
+[dispatch] bct 26 8 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 26 9 2 1 0 0 0 0 0  -> handled
+[dispatch] bct 26 10 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 26 11 0 2 0 0 0 0 0  -> handled
+[dispatch] bct 26 12 0 1 0 0 1 0 0  -> handled
+[dispatch] bct 26 13 0 0 1 0 0 0 0  -> handled
+[dispatch] bct 26 14 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 26 15 0 1 0 1 1 0 0  -> handled
+[dispatch] bct 26 16 0 0 0 0 0 1 0  -> handled
+[dispatch] bct 26 17 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 26 18 0 0 0 0 0 1 0  -> handled
+[dispatch] bct 26 19 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 26 20 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 26 21 0 1 1 0 0 0 0  -> handled
+[dispatch] bct 26 22 0 1 0 0 0 1 0  -> handled
+[dispatch] bct 26 23 0 0 0 0 1 0 0  -> handled
+[dispatch] bct 26 24 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 26 25 1 0 1 0 0 0 1  -> handled
+[dispatch] bct 26 26 0 1 0 0 1 0 0  -> handled
+[dispatch] bct 26 27 0 0 2 0 1 0 1  -> handled
+[dispatch] bct 26 28 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 26 29 0 0 1 0 0 0 0  -> handled
+[dispatch] bct 27 0 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 27 1 0 0 0 0 0 1 0  -> handled
+[dispatch] bct 27 2 0 1 0 1 0 0 0  -> handled
+[dispatch] bct 27 3 0 2 0 0 0 0 0  -> handled
+[dispatch] bct 27 4 0 0 2 1 0 0 0  -> handled
+[dispatch] bct 27 5 0 0 0 2 0 0 0  -> handled
+[dispatch] bct 27 6 0 0 0 1 0 0 0  -> handled
+[dispatch] bct 27 7 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 27 8 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 27 9 1 1 0 0 0 0 0  -> handled
+[dispatch] bct 27 10 1 1 0 0 0 0 0  -> handled
+[dispatch] bct 27 11 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 27 12 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 27 13 0 0 0 0 1 0 0  -> handled
+[dispatch] bct 27 14 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 27 15 1 0 1 0 0 0 0  -> handled
+[dispatch] bct 27 16 0 0 0 1 0 1 0  -> handled
+[dispatch] bct 27 17 1 0 1 0 0 0 0  -> handled
+[dispatch] bct 27 18 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 27 19 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 27 20 0 0 2 0 0 0 1  -> handled
+[dispatch] bct 27 21 2 1 0 0 0 0 0  -> handled
+[dispatch] bct 27 22 2 0 0 0 0 0 0  -> handled
+[dispatch] bct 27 23 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 27 24 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 27 25 0 1 0 0 2 0 0  -> handled
+[dispatch] bct 27 26 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 27 27 0 2 0 0 0 0 0  -> handled
+[dispatch] bct 27 28 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 27 29 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 28 0 1 1 0 0 0 1 0  -> handled
+[dispatch] bct 28 1 0 0 0 1 0 0 0  -> handled
+[dispatch] bct 28 2 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 28 3 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 28 4 2 1 0 0 0 0 0  -> handled
+[dispatch] bct 28 5 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 28 6 2 1 0 0 0 0 0  -> handled
+[dispatch] bct 28 7 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 28 8 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 28 9 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 28 10 0 1 0 0 0 1 0  -> handled
+[dispatch] bct 28 11 1 0 1 0 0 0 0  -> handled
+[dispatch] bct 28 12 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 28 13 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 28 14 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 28 15 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 28 16 0 0 1 0 0 0 1  -> handled
+[dispatch] bct 28 17 1 1 0 0 0 0 0  -> handled
+[dispatch] bct 28 18 1 1 1 0 0 0 0  -> handled
+[dispatch] bct 28 19 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 28 20 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 28 21 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 28 22 1 1 2 0 0 0 0  -> handled
+[dispatch] bct 28 23 2 0 0 0 0 0 0  -> handled
+[dispatch] bct 28 24 1 1 0 0 1 1 0  -> handled
+[dispatch] bct 28 25 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 28 26 0 0 0 0 1 0 0  -> handled
+[dispatch] bct 28 27 0 3 0 0 1 0 1  -> handled
+[dispatch] bct 28 28 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 28 29 0 0 0 0 0 1 0  -> handled
+[dispatch] bct 29 0 3 0 0 0 0 0 0  -> handled
+[dispatch] bct 29 1 0 0 0 1 0 0 0  -> handled
+[dispatch] bct 29 2 0 1 0 1 0 0 0  -> handled
+[dispatch] bct 29 3 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 29 4 0 0 1 0 0 0 0  -> handled
+[dispatch] bct 29 5 0 1 0 1 0 2 0  -> handled
+[dispatch] bct 29 6 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 29 7 2 0 1 0 0 0 0  -> handled
+[dispatch] bct 29 8 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 29 9 0 0 0 0 1 0 0  -> handled
+[dispatch] bct 29 10 0 0 1 0 0 0 0  -> handled
+[dispatch] bct 29 11 0 0 0 0 0 1 0  -> handled
+[dispatch] bct 29 12 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 29 13 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 29 14 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 29 15 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 29 16 0 1 0 0 1 0 0  -> handled
+[dispatch] bct 29 17 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 29 18 1 1 0 0 0 0 1  -> handled
+[dispatch] bct 29 19 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 29 20 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 29 21 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 29 22 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 29 23 1 0 1 0 0 0 0  -> handled
+[dispatch] bct 29 24 0 0 0 0 0 0 0  -> handled
+[dispatch] bct 29 25 1 0 0 0 0 0 0  -> handled
+[dispatch] bct 29 26 0 0 0 1 0 0 0  -> handled
+[dispatch] bct 29 27 0 1 0 0 0 0 0  -> handled
+[dispatch] bct 29 28 1 0 0 1 0 0 0  -> handled
+[dispatch] bct 29 29 0 1 0 0 0 0 0  -> handled
+[dispatch] tna Team2  -> handled
+[dispatch] tna Team1  -> handled
+[dispatch] sgt 100  -> handled
+[dispatch] ppo #15 28 13 2  -> handled
+[dispatch] ppo #13 8 27 3  -> handled
+[dispatch] ppo #12 15 2 1  -> handled
+[dispatch] ppo #11 9 3 1  -> handled
+[dispatch] pgt #10 0  -> handled
+[dispatch] pin #10 24 27 13 0 0 0 0 0 0  -> handled
+[dispatch] bct 24 27 0 2 0 0 0 0 0  -> handled
+[dispatch] ppo #9 12 5 3  -> handled
+[dispatch] ppo #8 3 16 1  -> handled
+[dispatch] ppo #6 8 11 4  -> handled
+[dispatch] pnw #16 19 13 4 1 Team1  -> handled
+[dispatch] pin #16 19 13 9 0 0 0 0 0 0  -> handled
+[dispatch] ebo #33  -> handled
+[dispatch] pnw #17 5 3 1 1 Team2  -> handled
+[dispatch] pin #17 5 3 9 0 0 0 0 0 0  -> handled
+[dispatch] ebo #8  -> handled
+[dispatch] pin #7 26 21 14 0 0 0 0 0 0  -> handled
+[dispatch] pin #6 8 11 12 0 0 0 0 0 0  -> handled
+[dispatch] ppo #14 10 7 4  -> handled
+[dispatch] ppo #13 8 28 3  -> handled
+[dispatch] ppo #12 15 1 1  -> handled
+[dispatch] ppo #8 3 15 1  -> handled
+[dispatch] pgt #5 1  -> handled
+[dispatch] pin #5 22 15 16 1 0 0 0 0 0  -> handled
+[dispatch] bct 22 15 3 0 0 1 0 1 0  -> handled
+[dispatch] pdr #4 1  -> handled
+[dispatch] pin #4 29 4 15 0 0 0 0 0 0  -> handled
+[dispatch] bct 29 4 0 1 1 0 0 0 0  -> handled
+[dispatch] ppo #15 29 13 2  -> handled
+[dispatch] pgt #11 0  -> handled
+[dispatch] pin #11 9 3 13 0 0 0 0 0 0  -> handled
+[dispatch] bct 9 3 0 0 1 0 0 1 0  -> handled
+[dispatch] ppo #10 25 27 2  -> handled
+[dispatch] ppo #9 12 6 3  -> handled
+[dispatch] pgt #6 0  -> handled
+[dispatch] pin #6 8 11 13 0 0 0 0 0 0  -> handled
+[dispatch] bct 8 11 0 0 1 0 0 0 0  -> handled
+[dispatch] pic 29 4 1 #4  -> handled
+[dispatch] ppo #17 5 2 1  -> handled
+[dispatch] pgt #16 0  -> handled
+[dispatch] pin #16 19 13 10 0 0 0 0 0 0  -> handled
+[dispatch] bct 19 13 0 0 0 0 0 0 0  -> handled
+[dispatch] ppo #15 29 13 1  -> handled
+[dispatch] pgt #14 0  -> handled
+[dispatch] pin #14 10 7 11 0 0 0 0 0 0  -> handled
+[dispatch] bct 10 7 0 2 0 0 0 0 0  -> handled
+[dispatch] pgt #13 0  -> handled
+[dispatch] pin #13 8 28 12 0 0 0 0 0 0  -> handled
+[dispatch] bct 8 28 0 1 0 0 0 0 0  -> handled
+[dispatch] pgt #12 0  -> handled
+[dispatch] pin #12 15 1 11 0 0 0 0 0 0  -> handled
+[dispatch] bct 15 1 1 0 0 0 0 0 0  -> handled
+[dispatch] pgt #8 0  -> handled
+[dispatch] pin #8 3 15 14 0 0 0 0 0 0  -> handled
+[dispatch] bct 3 15 0 0 1 0 0 0 0  -> handled
+[dispatch] pdr #5 1  -> handled
+[dispatch] pin #5 22 15 16 0 0 0 0 0 0  -> handled
+[dispatch] bct 22 15 3 1 0 1 0 1 0  -> handled
+[dispatch] ppo #17 5 2 4  -> handled
+[dispatch] ppo #15 29 12 1  -> handled
+[dispatch] ppo #11 9 2 1  -> handled
+[dispatch] ppo #10 26 27 2  -> handled
+[dispatch] ppo #9 12 7 3  -> handled
+[dispatch] ppo #6 7 11 4  -> handled
+[dispatch] pin #13 8 28 11 0 0 0 0 0 0  -> handled
+[dispatch] pin #12 15 1 10 0 0 0 0 0 0  -> handled
+[dispatch] pin #3 4 4 14 0 0 0 0 0 0  -> handled
+[dispatch] pin #2 28 0 13 0 0 0 0 0 0  -> handled
+[dispatch] pic 22 15 1 #5  -> handled
+[dispatch] ppo #17 4 2 4  -> handled
+[dispatch] ppo #16 18 13 4  -> handled
+[dispatch] ppo #14 9 7 4  -> handled
+[dispatch] ppo #13 8 29 3  -> handled
+[dispatch] pgt #12 0  -> handled
+[dispatch] pin #12 15 1 11 0 0 0 0 0 0  -> handled
+[dispatch] bct 15 1 0 0 0 0 0 0 0  -> handled
+[dispatch] ppo #11 9 2 4  -> handled
+[dispatch] ppo #9 12 7 2  -> handled
+[dispatch] ppo #8 3 14 1  -> handled
+[dispatch] ppo #16 18 13 1  -> handled
+[dispatch] pgt #15 0  -> handled
+[dispatch] pin #15 29 12 12 0 0 0 0 0 0  -> handled
+[dispatch] bct 29 12 0 0 0 0 0 0 0  -> handled
+[dispatch] ppo #10 27 27 2  -> handled
+[dispatch] ppo #9 13 7 2  -> handled
+[dispatch] pgt #6 0  -> handled
+[dispatch] pin #6 7 11 14 0 0 0 0 0 0  -> handled
+[dispatch] bct 7 11 0 1 0 0 0 0 0  -> handled
+[dispatch] pgt #17 0  -> handled
+[dispatch] pin #17 4 2 10 0 0 0 0 0 0  -> handled
+[dispatch] bct 4 2 0 0 0 0 0 0 0  -> handled
+[dispatch] pgt #14 0  -> handled
+[dispatch] pin #14 9 7 12 0 0 0 0 0 0  -> handled
+[dispatch] bct 9 7 2 0 0 0 1 0 0  -> handled
+[dispatch] ppo #13 8 0 3  -> handled
+[dispatch] ppo #12 15 0 1  -> handled
+[dispatch] ppo #11 8 2 4  -> handled
+[dispatch] ppo #8 3 13 1  -> handled
+[dispatch] pnw #18 24 12 4 1 Team1  -> handled
+[dispatch] pin #18 24 12 9 0 0 0 0 0 0  -> handled
+[dispatch] ebo #34  -> handled
+[dispatch] pnw #19 15 0 4 1 Team2  -> handled
+[dispatch] pin #19 15 0 9 0 0 0 0 0 0  -> handled
+[dispatch] ebo #9  -> handled
+[dispatch] ppo #16 18 12 1  -> handled
+[dispatch] pin #9 13 7 13 0 0 0 0 0 0  -> handled
+[dispatch] pin #8 3 13 13 0 0 0 0 0 0  -> handled
+[dispatch] ppo #15 29 11 1  -> handled
+[dispatch] ppo #10 28 27 2  -> handled
+[dispatch] pgt #9 0  -> handled
+[dispatch] pin #9 13 7 14 0 0 0 0 0 0  -> handled
+[dispatch] bct 13 7 0 0 0 0 0 0 0  -> handled
+[dispatch] ppo #6 6 11 4  -> handled
+[dispatch] ppo #17 3 2 4  -> handled
+[dispatch] ppo #15 29 11 4  -> handled
+[dispatch] pgt #14 0  -> handled
+[dispatch] pin #14 9 7 13 0 0 0 0 0 0  -> handled
+[dispatch] bct 9 7 1 0 0 0 1 0 0  -> handled
+[dispatch] pgt #13 0  -> handled
+[dispatch] pin #13 8 0 12 0 0 0 0 0 0  -> handled
+[dispatch] bct 8 0 0 0 0 0 0 0 0  -> handled
+[dispatch] ppo #12 15 29 1  -> handled
+[dispatch] pgt #11 0  -> handled
+[dispatch] pin #11 8 2 14 0 0 0 0 0 0  -> handled
+[dispatch] bct 8 2 0 0 0 0 0 0 0  -> handled
+[dispatch] ppo #8 3 12 1  -> handled
+[dispatch] ppo #6 6 11 3  -> handled
+[dispatch] ppo #17 3 2 3  -> handled
+[dispatch] pgt #16 0  -> handled
+[dispatch] pin #16 18 12 11 0 0 0 0 0 0  -> handled
+[dispatch] bct 18 12 0 0 0 1 0 0 0  -> handled
+[dispatch] ppo #19 14 0 4  -> handled
+[dispatch] ppo #18 23 12 4  -> handled
+[dispatch] ppo #12 15 29 4  -> handled
+[dispatch] ppo #10 29 27 2  -> handled
+[dispatch] ppo #9 14 7 2  -> handled
+[dispatch] ppo #8 3 12 4  -> handled
+[dispatch] ppo #6 6 12 3  -> handled
+[dispatch] ppo #17 3 3 3  -> handled
+[dispatch] ppo #19 14 0 1  -> handled
+[dispatch] ppo #18 23 12 3  -> handled
+[dispatch] ppo #15 28 11 4  -> handled
+[dispatch] pgt #14 0  -> handled
+[dispatch] pin #14 9 7 14 0 0 0 0 0 0  -> handled
+[dispatch] bct 9 7 0 0 0 0 1 0 0  -> handled
+[dispatch] ppo #12 14 29 4  -> handled
+[dispatch] ppo #13 8 1 3  -> handled
+[dispatch] ppo #11 7 2 4  -> handled
+[dispatch] ppo #9 14 7 3  -> handled
+[dispatch] ppo #8 2 12 4  -> handled
+[dispatch] pin #14 9 7 13 0 0 0 0 0 0  -> handled
+[dispatch] pin #15 28 11 11 0 0 0 0 0 0  -> handled
+[dispatch] pin #4 29 4 14 0 0 0 0 0 0  -> handled
+[dispatch] pin #5 22 15 15 0 0 0 0 0 0  -> handled
+[dispatch] ppo #19 14 29 1  -> handled
+[dispatch] ppo #18 23 13 3  -> handled
+[dispatch] ppo #16 18 11 1  -> handled
+[dispatch] ppo #9 14 8 3  -> handled
+[dispatch] ppo #10 0 27 2  -> handled
+[dispatch] pgt #6 0  -> handled
+[dispatch] pin #6 6 12 15 0 0 0 0 0 0  -> handled
+[dispatch] bct 6 12 0 0 0 0 0 0 0  -> handled
+[dispatch] pgt #17 0  -> handled
+[dispatch] pin #17 3 3 11 0 0 0 0 0 0  -> handled
+[dispatch] bct 3 3 2 1 0 0 0 0 1  -> handled
+[dispatch] pgt #15 0  -> handled
+[dispatch] pin #15 28 11 12 0 0 0 0 0 0  -> handled
+[dispatch] bct 28 11 0 0 1 0 0 0 0  -> handled
+[dispatch] ppo #14 8 7 4  -> handled
+[dispatch] pgt #12 0  -> handled
+[dispatch] pin #12 14 29 12 0 0 0 0 0 0  -> handled
+[dispatch] bct 14 29 0 1 0 0 0 0 0  -> handled
+[dispatch] pgt #13 0  -> handled
+[dispatch] pin #13 8 1 13 0 0 0 0 0 0  -> handled
+[dispatch] bct 8 1 3 1 0 0 0 0 0  -> handled
+[dispatch] pgt #11 0  -> handled
+[dispatch] pin #11 7 2 15 0 0 0 0 0 0  -> handled
+[dispatch] bct 7 2 0 0 0 1 0 0 0  -> handled
+[dispatch] pgt #8 0  -> handled
+[dispatch] pin #8 2 12 14 0 0 0 0 0 0  -> handled
+[dispatch] bct 2 12 0 1 0 0 0 0 0  -> handled
+[dispatch] pgt #16 0  -> handled
+[dispatch] pin #16 18 11 12 0 0 0 0 0 0  -> handled
+[dispatch] bct 18 11 0 0 0 0 0 0 1  -> handled
+[dispatch] pgt #18 0  -> handled
+[dispatch] pin #18 23 13 10 0 0 0 0 0 0  -> handled
+[dispatch] bct 23 13 1 0 0 1 0 0 0  -> handled
+[dispatch] ppo #10 1 27 2  -> handled
+[dispatch] pgt #9 0  -> handled
+[dispatch] pin #9 14 8 15 0 0 0 0 0 0  -> handled
+[dispatch] bct 14 8 0 0 0 1 0 0 0  -> handled
+[dispatch] ppo #6 6 13 3  -> handled
+[dispatch] pnw #20 29 20 3 1 Team1  -> handled
+[dispatch] pin #20 29 20 9 0 0 0 0 0 0  -> handled
+[dispatch] ebo #35  -> handled
+[dispatch] pnw #21 18 12 1 1 Team2  -> handled
+[dispatch] pin #21 18 12 9 0 0 0 0 0 0  -> handled
+[dispatch] ebo #10  -> handled
+[dispatch] pgt #17 0  -> handled
+[dispatch] pin #17 3 3 12 0 0 0 0 0 0  -> handled
+[dispatch] bct 3 3 1 1 0 0 0 0 1  -> handled
+[dispatch] pin #10 1 27 12 0 0 0 0 0 0  -> handled
+[dispatch] pin #11 7 2 14 0 0 0 0 0 0  -> handled
+[dispatch] pin #1 24 12 13 0 0 0 0 0 0  -> handled
+[dispatch] pin #0 13 11 13 0 0 0 0 0 0  -> handled
+[dispatch] ppo #15 27 11 4  -> handled
+[dispatch] pgt #14 0  -> handled
+[dispatch] pin #14 8 7 14 0 0 0 0 0 0  -> handled
+[dispatch] bct 8 7 0 0 0 0 0 0 0  -> handled
+[dispatch] ppo #12 13 29 4  -> handled
+[dispatch] pgt #13 0  -> handled
+[dispatch] pin #13 8 1 14 0 0 0 0 0 0  -> handled
+[dispatch] bct 8 1 2 1 0 0 0 0 0  -> handled
+[dispatch] ppo #11 6 2 4  -> handled
+[dispatch] ppo #8 1 12 4  -> handled
+[dispatch] ppo #16 18 10 1  -> handled
+[dispatch] ppo #19 14 28 1  -> handled
+[dispatch] pgt #18 0  -> handled
+[dispatch] pin #18 23 13 11 0 0 0 0 0 0  -> handled
+[dispatch] bct 23 13 0 0 0 1 0 0 0  -> handled
+[dispatch] ppo #12 13 29 1  -> handled
+[dispatch] pgt #10 0  -> handled
+[dispatch] pin #10 1 27 13 0 0 0 0 0 0  -> handled
+[dispatch] bct 1 27 0 1 0 0 0 0 0  -> handled
+[dispatch] ppo #9 14 9 3  -> handled
+[dispatch] pgt #6 0  -> handled
+[dispatch] pin #6 6 13 16 0 0 0 0 0 0  -> handled
+[dispatch] bct 6 13 1 0 0 0 0 0 0  -> handled
+[dispatch] ppo #21 18 11 1  -> handled
+[dispatch] ppo #20 29 21 3  -> handled
+[dispatch] pgt #17 0  -> handled
+[dispatch] pin #17 3 3 13 0 0 0 0 0 0  -> handled
+[dispatch] bct 3 3 0 1 0 0 0 0 1  -> handled
+[dispatch] pgt #15 0  -> handled
+[dispatch] pin #15 27 11 13 0 0 0 0 0 0  -> handled
+[dispatch] bct 27 11 0 0 0 0 0 0 0  -> handled
+[dispatch] ppo #14 7 7 4  -> handled
+[dispatch] ppo #12 13 28 1  -> handled
+[dispatch] pgt #13 0  -> handled
+[dispatch] pin #13 8 1 15 0 0 0 0 0 0  -> handled
+[dispatch] bct 8 1 1 1 0 0 0 0 0  -> handled
+[dispatch] pgt #11 0  -> handled
+[dispatch] pin #11 6 2 15 0 0 0 0 0 0  -> handled
+[dispatch] bct 6 2 0 0 0 0 0 0 1  -> handled
+[dispatch] ppo #8 0 12 4  -> handled
+[dispatch] ppo #20 29 21 2  -> handled
+[dispatch] pgt #19 0  -> handled
+[dispatch] pin #19 14 28 10 0 0 0 0 0 0  -> handled
+[dispatch] bct 14 28 1 0 0 1 1 0 0  -> handled
+[dispatch] ppo #18 23 14 3  -> handled
+[dispatch] ppo #16 18 9 1  -> handled
+[dispatch] ppo #10 2 27 2  -> handled
+[dispatch] pgt #9 0  -> handled
+[dispatch] pin #9 14 9 16 0 0 0 0 0 0  -> handled
+[dispatch] bct 14 9 0 0 1 0 0 0 1  -> handled
+[dispatch] pin #17 3 3 12 0 0 0 0 0 0  -> handled
+[dispatch] pin #16 18 9 11 0 0 0 0 0 0  -> handled
+[dispatch] pin #7 26 21 13 0 0 0 0 0 0  -> handled
+[dispatch] pin #6 6 13 15 0 0 0 0 0 0  -> handled
+[dispatch] pgt #6 0  -> handled
+[dispatch] pin #6 6 13 16 0 0 0 0 0 0  -> handled
+[dispatch] bct 6 13 0 0 0 0 0 0 0  -> handled
+[dispatch] ppo #20 0 21 2  -> handled
+[dispatch] ppo #21 18 10 1  -> handled
+[dispatch] ppo #16 18 9 4  -> handled
+[dispatch] ppo #17 3 4 3  -> handled
+[dispatch] ppo #15 26 11 4  -> handled
+[dispatch] pgt #14 0  -> handled
+[dispatch] pin #14 7 7 15 0 0 0 0 0 0  -> handled
+[dispatch] bct 7 7 2 0 0 0 0 0 0  -> handled
+[dispatch] pgt #12 0  -> handled
+[dispatch] pin #12 13 28 13 0 0 0 0 0 0  -> handled
+[dispatch] bct 13 28 1 0 0 0 0 0 0  -> handled
+[dispatch] pgt #13 1  -> handled
+[dispatch] pin #13 8 1 15 1 0 0 0 0 0  -> handled
+[dispatch] bct 8 1 1 0 0 0 0 0 0  -> handled
+[dispatch] ppo #11 5 2 4  -> handled
+[dispatch] ppo #8 29 12 4  -> handled
+[dispatch] ppo #21 18 10 4  -> handled
+[dispatch] ppo #16 17 9 4  -> handled
+[dispatch] ppo #17 3 4 2  -> handled
+[dispatch] pgt #19 0  -> handled
+[dispatch] pin #19 14 28 11 0 0 0 0 0 0  -> handled
+[dispatch] bct 14 28 0 0 0 1 1 0 0  -> handled
+[dispatch] ppo #18 23 15 3  -> handled
+[dispatch] ppo #11 5 2 1  -> handled
+[dispatch] pgt #10 0  -> handled
+[dispatch] pin #10 2 27 14 0 0 0 0 0 0  -> handled
+[dispatch] bct 2 27 0 0 0 0 0 0 0  -> handled
+[dispatch] ppo #9 14 10 3  -> handled
+[dispatch] ppo #6 6 14 3  -> handled
+[dispatch] pgt #20 0  -> handled
+[dispatch] pin #20 0 21 10 0 0 0 0 0 0  -> handled
+[dispatch] bct 0 21 1 0 0 0 0 0 0  -> handled
+[dispatch] ppo #17 4 4 2  -> handled
+[dispatch] ppo #15 25 11 4  -> handled
+[dispatch] pgt #14 0  -> handled
+[dispatch] pin #14 7 7 16 0 0 0 0 0 0  -> handled
+[dispatch] bct 7 7 1 0 0 0 0 0 0  -> handled
+[dispatch] pgt #12 0  -> handled
+[dispatch] pin #12 13 28 14 0 0 0 0 0 0  -> handled
+[dispatch] bct 13 28 0 0 0 0 0 0 0  -> handled
+[dispatch] pdr #13 1  -> handled
+[dispatch] pin #13 8 1 15 0 0 0 0 0 0  -> handled
+[dispatch] bct 8 1 1 1 0 0 0 0 0  -> handled
+[dispatch] ppo #8 28 12 4  -> handled
+[dispatch] pnw #22 27 2 2 1 Team1  -> handled
+[dispatch] pin #22 27 2 9 0 0 0 0 0 0  -> handled
+[dispatch] ebo #36  -> handled
+[dispatch] pnw #23 8 23 2 1 Team2  -> handled
+[dispatch] pin #23 8 23 9 0 0 0 0 0 0  -> handled
+[dispatch] ebo #11  -> handled
+[dispatch] ppo #21 17 10 4  -> handled
+[dispatch] pin #13 8 1 14 0 0 0 0 0 0  -> handled
+[dispatch] pin #12 13 28 13 0 0 0 0 0 0  -> handled
+[dispatch] pgt #18 0  -> handled
+[dispatch] pin #18 23 15 12 0 0 0 0 0 0  -> handled
+[dispatch] bct 23 15 1 0 0 0 0 0 0  -> handled
+[dispatch] ppo #19 14 27 1  -> handled
+[dispatch] pin #3 4 4 13 0 0 0 0 0 0  -> handled
+[dispatch] pin #2 28 0 12 0 0 0 0 0 0  -> handled
+[dispatch] pgt #16 0  -> handled
+[dispatch] pin #16 17 9 12 0 0 0 0 0 0  -> handled
+[dispatch] bct 17 9 0 1 0 0 0 0 0  -> handled
+[dispatch] ppo #11 5 1 1  -> handled
+[dispatch] ppo #10 3 27 2  -> handled
+[dispatch] pgt #9 0  -> handled
+[dispatch] pin #9 14 10 17 0 0 0 0 0 0  -> handled
+[dispatch] bct 14 10 0 0 0 0 0 0 0  -> handled
+[dispatch] pgt #6 1  -> handled
+[dispatch] pin #6 6 14 16 1 0 0 0 0 0  -> handled
+[dispatch] bct 6 14 1 0 0 0 0 0 0  -> handled
+[dispatch] pgt #20 0  -> handled
+[dispatch] pin #20 0 21 11 0 0 0 0 0 0  -> handled
+[dispatch] bct 0 21 0 0 0 0 0 0 0  -> handled
+[dispatch] ppo #19 14 27 4  -> handled
+[dispatch] pgt #17 0  -> handled
+[dispatch] pin #17 4 4 13 0 0 0 0 0 0  -> handled
+[dispatch] bct 4 4 0 1 0 0 0 0 0  -> handled
+[dispatch] ppo #15 24 11 4  -> handled
+[dispatch] pgt #14 0  -> handled
+[dispatch] pin #14 7 7 17 0 0 0 0 0 0  -> handled
+[dispatch] bct 7 7 0 0 0 0 0 0 0  -> handled
+[dispatch] plv #2 2  -> handled
+[dispatch] pie 28 0 1  -> handled
+[dispatch] bct 28 0 1 0 0 0 0 1 0  -> handled
+[dispatch] ppo #12 13 27 1  -> handled
+[dispatch] pgt #13 0  -> handled
+[dispatch] pin #13 8 1 15 0 0 0 0 0 0  -> handled
+[dispatch] bct 8 1 0 1 0 0 0 0 0  -> handled
+[dispatch] ppo #8 27 12 4  -> handled
+[dispatch] pgt #21 0  -> handled
+[dispatch] pin #21 17 10 10 0 0 0 0 0 0  -> handled
+[dispatch] bct 17 10 0 0 1 0 0 1 0  -> handled
+[dispatch] ppo #23 9 23 2  -> handled
+[dispatch] ppo #22 28 2 2  -> handled
+[dispatch] ppo #16 16 9 4  -> handled
+[dispatch] pgt #18 0  -> handled
+[dispatch] pin #18 23 15 13 0 0 0 0 0 0  -> handled
+[dispatch] bct 23 15 0 0 0 0 0 0 0  -> handled
+[dispatch] ppo #15 24 11 1  -> handled
+[dispatch] pic 8 1 1 #13  -> handled
+[dispatch] pgt #10 0  -> handled
+[dispatch] pin #10 3 27 15 0 0 0 0 0 0  -> handled
+[dispatch] bct 3 27 0 0 0 0 0 0 0  -> handled
+[dispatch] pgt #11 0  -> handled
+[dispatch] pin #11 5 1 16 0 0 0 0 0 0  -> handled
+[dispatch] bct 5 1 0 0 0 0 0 0 0  -> handled
+[dispatch] ppo #9 14 11 3  -> handled
+[dispatch] pdr #6 1  -> handled
+[dispatch] pin #6 6 14 16 0 0 0 0 0 0  -> handled
+[dispatch] bct 6 14 1 1 0 0 0 0 0  -> handled
+[dispatch] ppo #20 1 21 2  -> handled
+[dispatch] ppo #23 9 23 1  -> handled
+[dispatch] ppo #17 5 4 2  -> handled
+[dispatch] ppo #19 13 27 4  -> handled
+[dispatch] ppo #14 6 7 4  -> handled
+[dispatch] pgt #12 0  -> handled
+[dispatch] pin #12 13 27 14 0 0 0 0 0 0  -> handled
+[dispatch] bct 13 27 0 1 1 0 0 0 0  -> handled
+[dispatch] pgt #2 0  -> handled
+[dispatch] pin #2 28 0 13 0 0 0 0 0 0  -> handled
+[dispatch] bct 28 0 0 0 0 0 0 1 0  -> handled
+[dispatch] pin #19 13 27 10 0 0 0 0 0 0  -> handled
+[dispatch] pin #18 23 15 12 0 0 0 0 0 0  -> handled
+[dispatch] ppo #8 26 12 4  -> handled
+[dispatch] pin #9 14 11 16 0 0 0 0 0 0  -> handled
+[dispatch] pin #8 26 12 13 0 0 0 0 0 0  -> handled
+[dispatch] pic 6 14 1 #6  -> handled
+[dispatch] ppo #23 9 22 1  -> handled
+[dispatch] pgt #22 0  -> handled
+[dispatch] pin #22 28 2 10 0 0 0 0 0 0  -> handled
+[dispatch] bct 28 2 0 0 0 0 0 0 0  -> handled
+[dispatch] ppo #21 16 10 4  -> handled
+[dispatch] ppo #16 15 9 4  -> handled
+[dispatch] ppo #18 23 16 3  -> handled
+[dispatch] ppo #15 24 10 1  -> handled
+[dispatch] ppo #11 5 0 1  -> handled
+[dispatch] ppo #10 4 27 2  -> handled
+[dispatch] pgt #9 0  -> handled
+[dispatch] pin #9 14 11 17 0 0 0 0 0 0  -> handled
+[dispatch] bct 14 11 0 0 0 0 0 0 0  -> handled
+[dispatch] pgt #20 0  -> handled
+[dispatch] pin #20 1 21 12 0 0 0 0 0 0  -> handled
+[dispatch] bct 1 21 2 0 0 0 0 0 0  -> handled
+[dispatch] ppo #19 12 27 4  -> handled
+[dispatch] ppo #18 23 16 4  -> handled
+[dispatch] ppo #17 6 4 2  -> handled
+[dispatch] pgt #14 0  -> handled
+[dispatch] pin #14 6 7 18 0 0 0 0 0 0  -> handled
+[dispatch] bct 6 7 0 0 0 0 0 0 0  -> handled
+[dispatch] ppo #12 13 26 1  -> handled
+[dispatch] ppo #2 29 0 2  -> handled
+[dispatch] ppo #11 5 0 4  -> handled
+[dispatch] ppo #8 25 12 4  -> handled
+[dispatch] ppo #21 15 10 4  -> handled
+[dispatch] pgt #23 0  -> handled
+[dispatch] pin #23 9 22 10 0 0 0 0 0 0  -> handled
+[dispatch] bct 9 22 0 0 0 0 0 0 0  -> handled
+[dispatch] ppo #22 29 2 2  -> handled
+[dispatch] ppo #19 12 27 1  -> handled
+[dispatch] ppo #18 22 16 4  -> handled
+[dispatch] ppo #17 6 4 1  -> handled
+[dispatch] pgt #16 0  -> handled
+[dispatch] pin #16 15 9 13 0 0 0 0 0 0  -> handled
+[dispatch] bct 15 9 0 0 0 0 0 0 0  -> handled
+[dispatch] pgt #15 0  -> handled
+[dispatch] pin #15 24 10 14 0 0 0 0 0 0  -> handled
+[dispatch] bct 24 10 0 0 0 0 0 0 0  -> handled
+[dispatch] ppo #11 4 0 4  -> handled
+[dispatch] ppo #8 25 12 3  -> handled
+[dispatch] pgt #10 1  -> handled
+[dispatch] pin #10 4 27 15 1 0 0 0 0 0  -> handled
+[dispatch] bct 4 27 0 0 0 0 0 0 0  -> handled
+[dispatch] ppo #9 14 12 3  -> handled
+[dispatch] pnw #24 13 24 3 1 Team1  -> handled
+[dispatch] pin #24 13 24 9 0 0 0 0 0 0  -> handled
+[dispatch] ebo #37  -> handled
+[dispatch] pnw #25 17 1 1 1 Team2  -> handled
+[dispatch] pin #25 17 1 9 0 0 0 0 0 0  -> handled
+[dispatch] ebo #12  -> handled
+[dispatch] ppo #21 15 10 1  -> handled
+[dispatch] pgt #20 0  -> handled
+[dispatch] pin #20 1 21 13 0 0 0 0 0 0  -> handled
+[dispatch] bct 1 21 1 0 0 0 0 0 0  -> handled
+[dispatch] pin #14 6 7 17 0 0 0 0 0 0  -> handled
+[dispatch] pin #15 24 10 13 0 0 0 0 0 0  -> handled
+[dispatch] pin #4 29 4 13 0 0 0 0 0 0  -> handled
+[dispatch] ppo #17 6 3 1  -> handled
+[dispatch] pin #5 22 15 14 0 0 0 0 0 0  -> handled
+[dispatch] ppo #14 5 7 4  -> handled
+[dispatch] ppo #12 13 25 1  -> handled
+[dispatch] pgt #2 0  -> handled
+[dispatch] pin #2 29 0 14 0 0 0 0 0 0  -> handled
+[dispatch] bct 29 0 3 0 0 0 0 0 0  -> handled
+[dispatch] ppo #21 15 9 1  -> handled
+[dispatch] ppo #23 9 21 1  -> handled
+[dispatch] ppo #22 0 2 2  -> handled
+[dispatch] ppo #16 14 9 4  -> handled
+[dispatch] ppo #19 12 26 1  -> handled
+[dispatch] pgt #18 0  -> handled
+[dispatch] pin #18 22 16 13 0 0 0 0 0 0  -> handled
+[dispatch] bct 22 16 1 0 0 0 0 0 0  -> handled
+[dispatch] ppo #15 24 9 1  -> handled
+[dispatch] pgt #11 1  -> handled
+[dispatch] pin #11 4 0 16 1 0 0 0 0 0  -> handled
+[dispatch] bct 4 0 1 1 0 0 0 1 0  -> handled
+[dispatch] pdr #10 1  -> handled
+[dispatch] pin #10 4 27 15 0 0 0 0 0 0  -> handled
+[dispatch] bct 4 27 0 1 0 0 0 0 0  -> handled
+[dispatch] ppo #9 14 13 3  -> handled
+[dispatch] ppo #8 25 13 3  -> handled
+[dispatch] ppo #25 17 0 1  -> handled
+[dispatch] pgt #24 0  -> handled
+[dispatch] pin #24 13 24 10 0 0 0 0 0 0  -> handled
+[dispatch] bct 13 24 2 0 0 0 0 0 0  -> handled
+[dispatch] pgt #20 0  -> handled
+[dispatch] pin #20 1 21 14 0 0 0 0 0 0  -> handled
+[dispatch] bct 1 21 0 0 0 0 0 0 0  -> handled
+[dispatch] pgt #17 0  -> handled
+[dispatch] pin #17 6 3 14 0 0 0 0 0 0  -> handled
+[dispatch] bct 6 3 0 0 0 0 0 0 0  -> handled
+[dispatch] ppo #14 4 7 4  -> handled
+[dispatch] ppo #12 13 24 1  -> handled
+[dispatch] pgt #2 0  -> handled
+[dispatch] pin #2 29 0 15 0 0 0 0 0 0  -> handled
+[dispatch] bct 29 0 2 0 0 0 0 0 0  -> handled
+[dispatch] pic 4 0 1 #11  -> handled
+[dispatch] pic 4 27 1 #10  -> handled
+[dispatch] pgt #23 0  -> handled
+[dispatch] pin #23 9 21 11 0 0 0 0 0 0  -> handled
+[dispatch] bct 9 21 0 0 0 0 0 0 0  -> handled
+[dispatch] ppo #22 1 2 2  -> handled
+[dispatch] ppo #21 15 8 1  -> handled
+[dispatch] pgt #19 0  -> handled
+[dispatch] pin #19 12 26 11 0 0 0 0 0 0  -> handled
+[dispatch] bct 12 26 2 0 1 1 0 0 0  -> handled
+[dispatch] pgt #18 0  -> handled
+[dispatch] pin #18 22 16 14 0 0 0 0 0 0  -> handled
+[dispatch] bct 22 16 0 0 0 0 0 0 0  -> handled
+[dispatch] ppo #16 13 9 4  -> handled
+[dispatch] pgt #15 0  -> handled
+[dispatch] pin #15 24 9 14 0 0 0 0 0 0  -> handled
+[dispatch] bct 24 9 0 0 0 0 0 0 0  -> handled
+[dispatch] pin #21 15 8 9 0 0 0 0 0 0  -> handled
+[dispatch] pin #20 1 21 13 0 0 0 0 0 0  -> handled
+[dispatch] plv #1 2  -> handled
+[dispatch] pie 24 12 1  -> handled
+[dispatch] bct 24 12 0 0 0 0 0 1 0  -> handled
+[dispatch] pgt #9 0  -> handled
+[dispatch] pin #9 14 13 18 0 0 0 0 0 0  -> handled
+[dispatch] bct 14 13 0 0 0 0 0 0 0  -> handled
+[dispatch] pgt #8 0  -> handled
+[dispatch] pin #8 25 13 14 0 0 0 0 0 0  -> handled
+[dispatch] bct 25 13 1 0 0 0 0 0 0  -> handled
+[dispatch] pin #10 4 27 14 0 0 0 0 0 0  -> handled
+[dispatch] pin #11 4 0 15 1 0 0 0 0 0  -> handled
+[dispatch] pin #1 24 12 12 0 0 0 0 0 0  -> handled
+[dispatch] pin #0 13 11 12 0 0 0 0 0 0  -> handled
+[dispatch] ppo #25 17 29 1  -> handled
+[dispatch] pgt #24 0  -> handled
+[dispatch] pin #24 13 24 11 0 0 0 0 0 0  -> handled
+[dispatch] bct 13 24 1 0 0 0 0 0 0  -> handled
+[dispatch] ppo #20 2 21 2  -> handled
+[dispatch] ppo #16 13 9 3  -> handled
+[dispatch] ppo #17 6 2 1  -> handled
+[dispatch] ppo #14 3 7 4  -> handled
+[dispatch] pgt #2 0  -> handled
+[dispatch] pin #2 29 0 16 0 0 0 0 0 0  -> handled
+[dispatch] bct 29 0 1 0 0 0 0 0 0  -> handled
+[dispatch] pgt #12 0  -> handled
+[dispatch] pin #12 13 24 15 0 0 0 0 0 0  -> handled
+[dispatch] bct 13 24 0 0 0 0 0 0 0  -> handled
+[dispatch] ppo #21 15 7 1  -> handled
+[dispatch] ppo #23 9 20 1  -> handled
+[dispatch] pgt #22 0  -> handled
+[dispatch] pin #22 1 2 11 0 0 0 0 0 0  -> handled
+[dispatch] bct 1 2 0 0 0 0 0 0 0  -> handled
+[dispatch] ppo #16 13 10 3  -> handled
+[dispatch] pgt #19 0  -> handled
+[dispatch] pin #19 12 26 12 0 0 0 0 0 0  -> handled
+[dispatch] bct 12 26 1 0 1 1 0 0 0  -> handled
+[dispatch] ppo #18 21 16 4  -> handled
+[dispatch] ppo #15 24 8 1  -> handled
+[dispatch] ppo #1 23 12 4  -> handled
+[dispatch] plv #0 2  -> handled
+[dispatch] pie 13 11 1  -> handled
+[dispatch] bct 13 11 0 0 0 0 1 0 0  -> handled
+[dispatch] ppo #9 14 14 3  -> handled
+[dispatch] pgt #8 0  -> handled
+[dispatch] pin #8 25 13 15 0 0 0 0 0 0  -> handled
+[dispatch] bct 25 13 0 0 0 0 0 0 0  -> handled
+[dispatch] ppo #21 15 7 4  -> handled
+[dispatch] pgt #20 0  -> handled
+[dispatch] pin #20 2 21 14 0 0 0 0 0 0  -> handled
+[dispatch] bct 2 21 1 0 0 0 0 0 0  -> handled
+[dispatch] ppo #24 13 25 3  -> handled
+[dispatch] pgt #25 0  -> handled
+[dispatch] pin #25 17 29 10 0 0 0 0 0 0  -> handled
+[dispatch] bct 17 29 1 0 0 0 0 1 0  -> handled
+[dispatch] ppo #17 6 1 1  -> handled
+[dispatch] pgt #14 0  -> handled
+[dispatch] pin #14 3 7 18 0 0 0 0 0 0  -> handled
+[dispatch] bct 3 7 0 0 0 1 0 0 0  -> handled
+[dispatch] ppo #12 13 23 1  -> handled
+[dispatch] pgt #2 0  -> handled
+[dispatch] pin #2 29 0 17 0 0 0 0 0 0  -> handled
+[dispatch] bct 29 0 0 0 0 0 0 0 0  -> handled
+[dispatch] ppo #1 22 12 4  -> handled
+[dispatch] pnw #26 3 19 4 1 Team1  -> handled
+[dispatch] pin #26 3 19 9 0 0 0 0 0 0  -> handled
+[dispatch] ebo #38  -> handled
+[dispatch] pnw #27 6 14 2 1 Team2  -> handled
+[dispatch] pin #27 6 14 9 0 0 0 0 0 0  -> handled
+[dispatch] ebo #13  -> handled
+[dispatch] pin #17 6 1 13 0 0 0 0 0 0  -> handled
+[dispatch] pin #16 13 10 12 0 0 0 0 0 0  -> handled
+[dispatch] pgt #23 0  -> handled
+[dispatch] pin #23 9 20 12 0 0 0 0 0 0  -> handled
+[dispatch] bct 9 20 2 0 0 0 0 0 0  -> handled
+[dispatch] ppo #22 2 2 2  -> handled
+[dispatch] pin #7 26 21 12 0 0 0 0 0 0  -> handled
+[dispatch] pin #6 6 14 15 0 0 0 0 0 0  -> handled
+[dispatch] pgt #16 0  -> handled
+[dispatch] pin #16 13 10 13 0 0 0 0 0 0  -> handled
+[dispatch] bct 13 10 0 1 0 0 0 0 0  -> handled
+[dispatch] pgt #19 0  -> handled
+[dispatch] pin #19 12 26 13 0 0 0 0 0 0  -> handled
+[dispatch] bct 12 26 0 0 1 1 0 0 0  -> handled
+[dispatch] pgt #18 0  -> handled
+[dispatch] pin #18 21 16 15 0 0 0 0 0 0  -> handled
+[dispatch] bct 21 16 0 0 0 0 0 0 0  -> handled
+[dispatch] pgt #15 0  -> handled
+[dispatch] pin #15 24 8 15 0 0 0 0 0 0  -> handled
+[dispatch] bct 24 8 0 0 0 0 0 0 0  -> handled
+[dispatch] ppo #0 13 10 1  -> handled
+[dispatch] pgt #9 0  -> handled
+[dispatch] pin #9 14 14 19 0 0 0 0 0 0  -> handled
+[dispatch] bct 14 14 1 0 0 0 0 0 0  -> handled
+[dispatch] ppo #8 25 14 3  -> handled
+[dispatch] pgt #25 0  -> handled
+[dispatch] pin #25 17 29 11 0 0 0 0 0 0  -> handled
+[dispatch] bct 17 29 0 0 0 0 0 1 0  -> handled
+[dispatch] ppo #24 13 26 3  -> handled
+[dispatch] ppo #22 2 2 1  -> handled
+[dispatch] ppo #21 14 7 4  -> handled
+[dispatch] pgt #20 0  -> handled
+[dispatch] pin #20 2 21 15 0 0 0 0 0 0  -> handled
+[dispatch] bct 2 21 0 0 0 0 0 0 0  -> handled
+[dispatch] ppo #17 6 0 1  -> handled
+[dispatch] ppo #14 2 7 4  -> handled
+[dispatch] pgt #12 0  -> handled
+[dispatch] pin #12 13 23 16 0 0 0 0 0 0  -> handled
+[dispatch] bct 13 23 0 0 0 0 0 0 0  -> handled
+[dispatch] ppo #2 0 0 2  -> handled
+[dispatch] pgt #1 0  -> handled
+[dispatch] pin #1 22 12 13 0 0 0 0 0 0  -> handled
+[dispatch] bct 22 12 2 0 0 0 1 0 0  -> handled
+[dispatch] ppo #24 13 26 2  -> handled
+[dispatch] pgt #26 0  -> handled
+[dispatch] pin #26 3 19 10 0 0 0 0 0 0  -> handled
+[dispatch] bct 3 19 0 0 0 0 0 0 0  -> handled
+[dispatch] pgt #27 0  -> handled
+[dispatch] pin #27 6 14 10 0 0 0 0 0 0  -> handled
+[dispatch] bct 6 14 0 1 0 0 0 0 0  -> handled
+[dispatch] pgt #23 0  -> handled
+[dispatch] pin #23 9 20 13 0 0 0 0 0 0  -> handled
+[dispatch] bct 9 20 1 0 0 0 0 0 0  -> handled
+[dispatch] ppo #19 12 25 1  -> handled
+[dispatch] ppo #18 20 16 4  -> handled
+[dispatch] ppo #16 13 11 3  -> handled
+[dispatch] ppo #15 24 7 1  -> handled
+[dispatch] plv #3 2  -> handled
+[dispatch] pie 4 4 1  -> handled
+[dispatch] bct 4 4 0 0 0 0 0 0 0  -> handled
+[dispatch] ppo #0 13 9 1  -> handled
+[dispatch] pgt #9 0  -> handled
+[dispatch] pin #9 14 14 20 0 0 0 0 0 0  -> handled
+[dispatch] bct 14 14 0 0 0 0 0 0 0  -> handled
+[dispatch] ppo #8 25 15 3  -> handled
+[dispatch] ppo #25 17 28 1  -> handled
+[dispatch] ppo #24 14 26 2  -> handled
+[dispatch] pgt #21 0  -> handled
+[dispatch] pin #21 14 7 10 0 0 0 0 0 0  -> handled
+[dispatch] bct 14 7 1 0 0 0 0 0 0  -> handled
+[dispatch] ppo #20 3 21 2  -> handled
+[dispatch] ppo #22 2 1 1  -> handled
+[dispatch] ppo #16 13 11 4  -> handled
+[dispatch] pgt #17 0  -> handled
+[dispatch] pin #17 6 0 14 0 0 0 0 0 0  -> handled
+[dispatch] bct 6 0 0 0 0 0 1 0 0  -> handled
+[dispatch] pgt #14 1  -> handled
+[dispatch] pin #14 2 7 18 1 0 0 0 0 0  -> handled
+[dispatch] bct 2 7 1 0 0 0 0 0 0  -> handled
+[dispatch] plv #7 2  -> handled
+[dispatch] pie 26 21 1  -> handled
+[dispatch] bct 26 21 0 0 1 0 0 0 0  -> handled
+[dispatch] pin #23 9 20 12 0 0 0 0 0 0  -> handled
+[dispatch] pin #22 2 1 10 0 0 0 0 0 0  -> handled
+[dispatch] ppo #12 13 22 1  -> handled
+[dispatch] pgt #2 0  -> handled
+[dispatch] pin #2 0 0 18 0 0 0 0 0 0  -> handled
+[dispatch] bct 0 0 0 0 0 0 0 0 0  -> handled
+[dispatch] pgt #1 0  -> handled
+[dispatch] pin #1 22 12 14 0 0 0 0 0 0  -> handled
+[dispatch] bct 22 12 1 0 0 0 1 0 0  -> handled
+[dispatch] pin #13 8 1 14 0 0 0 0 0 0  -> handled
+[dispatch] pin #12 13 22 15 0 0 0 0 0 0  -> handled
+[dispatch] pin #3 4 4 12 0 0 0 0 0 0  -> handled
+[dispatch] pin #2 0 0 17 0 0 0 0 0 0  -> handled
+[dispatch] ppo #26 2 19 4  -> handled
+[dispatch] ppo #27 7 14 2  -> handled
+[dispatch] pgt #23 0  -> handled
+[dispatch] pin #23 9 20 13 0 0 0 0 0 0  -> handled
+[dispatch] bct 9 20 0 0 0 0 0 0 0  -> handled
+[dispatch] ppo #16 12 11 4  -> handled
+[dispatch] ppo #19 12 24 1  -> handled
+[dispatch] pgt #18 1  -> handled
+[dispatch] pin #18 20 16 15 1 0 0 0 0 0  -> handled
+[dispatch] bct 20 16 1 0 0 0 0 0 0  -> handled
+[dispatch] pgt #15 1  -> handled
+[dispatch] pin #15 24 7 15 1 0 0 0 0 0  -> handled
+[dispatch] bct 24 7 2 0 0 0 1 0 0  -> handled
+[dispatch] ppo #0 13 8 1  -> handled
+[dispatch] ppo #3 3 4 4  -> handled
+[dispatch] ppo #9 14 15 3  -> handled
+[dispatch] ppo #8 25 16 3  -> handled
+[dispatch] ppo #26 2 19 3  -> handled
+[dispatch] ppo #27 7 14 1  -> handled
+[dispatch] pgt #25 0  -> handled
+[dispatch] pin #25 17 28 12 0 0 0 0 0 0  -> handled
+[dispatch] bct 17 28 2 0 0 0 0 0 0  -> handled
+[dispatch] pgt #24 0  -> handled
+[dispatch] pin #24 14 26 12 0 0 0 0 0 0  -> handled
+[dispatch] bct 14 26 0 0 0 0 0 0 0  -> handled
+[dispatch] pgt #22 0  -> handled
+[dispatch] pin #22 2 1 11 0 0 0 0 0 0  -> handled
+[dispatch] bct 2 1 3 0 0 0 0 0 0  -> handled
+[dispatch] pgt #21 0  -> handled
+[dispatch] pin #21 14 7 11 0 0 0 0 0 0  -> handled
+[dispatch] bct 14 7 0 0 0 0 0 0 0  -> handled
+[dispatch] pgt #20 0  -> handled
+[dispatch] pin #20 3 21 16 0 0 0 0 0 0  -> handled
+[dispatch] bct 3 21 0 0 0 0 0 0 1  -> handled
+[dispatch] ppo #17 6 29 1  -> handled
+[dispatch] ppo #7 26 22 3  -> handled
+[dispatch] pdr #14 1  -> handled
+[dispatch] pin #14 2 7 18 0 0 0 0 0 0  -> handled
+[dispatch] bct 2 7 1 1 0 0 0 0 0  -> handled
+[dispatch] pgt #12 1  -> handled
+[dispatch] pin #12 13 22 15 1 0 0 0 0 0  -> handled
+[dispatch] bct 13 22 0 0 1 0 0 0 0  -> handled
+[dispatch] ppo #2 1 0 2  -> handled
+[dispatch] ppo #0 13 7 1  -> handled
+[dispatch] pgt #1 0  -> handled
+[dispatch] pin #1 22 12 15 0 0 0 0 0 0  -> handled
+[dispatch] bct 22 12 0 0 0 0 1 0 0  -> handled
+[dispatch] ppo #3 3 4 3  -> handled
+[dispatch] ppo #23 9 19 1  -> handled
+[dispatch] pgt #19 0  -> handled
+[dispatch] pin #19 12 24 14 0 0 0 0 0 0  -> handled
+[dispatch] bct 12 24 0 0 0 0 0 0 0  -> handled
+[dispatch] pdr #18 1  -> handled
+[dispatch] pin #18 20 16 15 0 0 0 0 0 0  -> handled
+[dispatch] bct 20 16 1 1 0 0 0 0 0  -> handled
+[dispatch] pgt #16 0  -> handled
+[dispatch] pin #16 12 11 14 0 0 0 0 0 0  -> handled
+[dispatch] bct 12 11 0 0 0 0 0 0 0  -> handled
+[dispatch] ppo #7 26 22 2  -> handled
+[dispatch] pdr #15 1  -> handled
+[dispatch] pin #15 24 7 15 0 0 0 0 0 0  -> handled
+[dispatch] bct 24 7 2 1 0 0 1 0 0  -> handled
+[dispatch] pic 2 7 1 #14  -> handled
+[dispatch] ppo #3 3 5 3  -> handled
+[dispatch] pgt #9 1  -> handled
+[dispatch] pin #9 14 15 20 1 0 0 0 0 0  -> handled
+[dispatch] bct 14 15 1 0 0 0 0 0 0  -> handled
+[dispatch] pgt #8 0  -> handled
+[dispatch] pin #8 25 16 16 0 0 0 0 0 0  -> handled
+[dispatch] bct 25 16 1 0 0 0 0 0 0  -> handled
+[dispatch] pnw #28 20 15 3 1 Team2  -> handled
+[dispatch] pin #28 20 15 9 0 0 0 0 0 0  -> handled
+[dispatch] ebo #14  -> handled
+[dispatch] pnw #29 26 0 1 1 Team1  -> handled
+[dispatch] pin #29 26 0 9 0 0 0 0 0 0  -> handled
+[dispatch] ebo #39  -> handled
+[dispatch] pgt #25 0  -> handled
+[dispatch] pin #25 17 28 13 0 0 0 0 0 0  -> handled
+[dispatch] bct 17 28 1 0 0 0 0 0 0  -> handled
+[dispatch] ppo #24 15 26 2  -> handled
+[dispatch] ppo #27 7 13 1  -> handled
+[dispatch] ppo #26 2 20 3  -> handled
+[dispatch] pin #19 12 24 13 0 0 0 0 0 0  -> handled
+[dispatch] pin #18 20 16 14 0 0 0 0 0 0  -> handled
+[dispatch] ppo #21 13 7 4  -> handled
+[dispatch] pin #9 14 15 19 1 0 0 0 0 0  -> handled
+[dispatch] pin #8 25 16 15 0 0 0 0 0 0  -> handled
+[dispatch] ppo #20 4 21 2  -> handled
+[dispatch] pgt #22 0  -> handled
+[dispatch] pin #22 2 1 12 0 0 0 0 0 0  -> handled
+[dispatch] bct 2 1 2 0 0 0 0 0 0  -> handled
+[dispatch] ppo #17 6 28 1  -> handled
+[dispatch] pic 24 7 1 #15  -> handled
+[dispatch] pgt #2 0  -> handled
+[dispatch] pin #2 1 0 18 0 0 0 0 0 0  -> handled
+[dispatch] bct 1 0 0 0 1 0 0 0 0  -> handled
+[dispatch] pdr #12 1  -> handled
+[dispatch] pin #12 13 22 15 0 0 0 0 0 0  -> handled
+[dispatch] bct 13 22 0 1 1 0 0 0 0  -> handled
+[dispatch] ppo #1 21 12 4  -> handled
+[dispatch] ppo #0 13 6 1  -> handled
+[dispatch] ppo #24 15 26 3  -> handled
+[dispatch] ppo #23 9 18 1  -> handled
+[dispatch] ppo #16 11 11 4  -> handled
+[dispatch] ppo #19 12 23 1  -> handled
+[dispatch] pgt #18 0  -> handled
+[dispatch] pin #18 20 16 15 0 0 0 0 0 0  -> handled
+[dispatch] bct 20 16 0 1 0 0 0 0 0  -> handled
+[dispatch] ppo #7 27 22 2  -> handled
+[dispatch] plv #4 2  -> handled
+[dispatch] pie 29 4 1  -> handled
+[dispatch] bct 29 4 2 0 1 0 0 0 0  -> handled
+[dispatch] pic 13 22 1 #12  -> handled
+[dispatch] ppo #0 13 5 1  -> handled
+[dispatch] pgt #3 0  -> handled
+[dispatch] pin #3 3 5 13 0 0 0 0 0 0  -> handled
+[dispatch] bct 3 5 0 0 0 0 0 0 0  -> handled
+[dispatch] pdr #9 1  -> handled
+[dispatch] pin #9 14 15 19 0 0 0 0 0 0  -> handled
+[dispatch] bct 14 15 1 1 0 0 0 0 0  -> handled
+[dispatch] pgt #8 0  -> handled
+[dispatch] pin #8 25 16 16 0 0 0 0 0 0  -> handled
+[dispatch] bct 25 16 0 0 0 0 0 0 0  -> handled
+[dispatch] ppo #29 26 29 1  -> handled
+[dispatch] pgt #27 0  -> handled
+[dispatch] pin #27 7 13 11 0 0 0 0 0 0  -> handled
+[dispatch] bct 7 13 1 0 0 0 0 0 0  -> handled
+[dispatch] pgt #26 0  -> handled
+[dispatch] pin #26 2 20 11 0 0 0 0 0 0  -> handled
+[dispatch] bct 2 20 1 0 0 0 0 0 0  -> handled
+[dispatch] ppo #28 20 16 3  -> handled
+[dispatch] ppo #21 12 7 4  -> handled
+[dispatch] pgt #20 0  -> handled
+[dispatch] pin #20 4 21 17 0 0 0 0 0 0  -> handled
+[dispatch] bct 4 21 1 0 0 0 0 0 0  -> handled
+[dispatch] pgt #25 0  -> handled
+[dispatch] pin #25 17 28 14 0 0 0 0 0 0  -> handled
+[dispatch] bct 17 28 0 0 0 0 0 0 0  -> handled
+[dispatch] pgt #22 0  -> handled
+[dispatch] pin #22 2 1 13 0 0 0 0 0 0  -> handled
+[dispatch] bct 2 1 1 0 0 0 0 0 0  -> handled
+[dispatch] pgt #17 0  -> handled
+[dispatch] pin #17 6 28 15 0 0 0 0 0 0  -> handled
+[dispatch] bct 6 28 0 0 0 0 0 0 0  -> handled
+[dispatch] pic 20 16 1 #18 #28  -> handled
+[dispatch] ppo #2 2 0 2  -> handled
+[dispatch] ppo #0 13 5 4  -> handled
+[dispatch] pgt #1 0  -> handled
+[dispatch] pin #1 21 12 16 0 0 0 0 0 0  -> handled
+[dispatch] bct 21 12 1 0 1 0 0 0 0  -> handled
+[dispatch] pic 14 15 1 #9  -> handled
+[dispatch] ppo #24 15 27 3  -> handled
+[dispatch] pgt #23 0  -> handled
+[dispatch] pin #23 9 18 14 0 0 0 0 0 0  -> handled
+[dispatch] bct 9 18 1 1 0 0 0 0 0  -> handled
+[dispatch] pgt #16 0  -> handled
+[dispatch] pin #16 11 11 15 0 0 0 0 0 0  -> handled
+[dispatch] bct 11 11 0 0 0 0 0 0 0  -> handled
+[dispatch] ppo #19 12 22 1  -> handled
+[dispatch] pgt #7 0  -> handled
+[dispatch] pin #7 27 22 13 0 0 0 0 0 0  -> handled
+[dispatch] bct 27 22 1 0 0 0 0 0 0  -> handled
+[dispatch] pin #24 15 27 11 0 0 0 0 0 0  -> handled
+[dispatch] pin #25 17 28 13 0 0 0 0 0 0  -> handled
+[dispatch] ppo #0 12 5 4  -> handled
+[dispatch] ppo #3 3 6 3  -> handled
+[dispatch] pgt #4 0  -> handled
+[dispatch] pin #4 29 4 14 0 0 0 0 0 0  -> handled
+[dispatch] bct 29 4 1 0 1 0 0 0 0  -> handled
+[dispatch] pin #14 2 7 17 0 0 0 0 0 0  -> handled
+[dispatch] pin #15 24 7 14 0 0 0 0 0 0  -> handled
+[dispatch] plv #5 2  -> handled
+[dispatch] pie 22 15 1  -> handled
+[dispatch] bct 22 15 3 0 0 1 0 1 0  -> handled
+[dispatch] ppo #8 25 17 3  -> handled
+[dispatch] pin #4 29 4 13 0 0 0 0 0 0  -> handled
+[dispatch] pin #5 22 15 13 0 0 0 0 0 0  -> handled
+[dispatch] ppo #29 26 28 1  -> handled
+[dispatch] ppo #25 17 27 1  -> handled
+[dispatch] pgt #27 0  -> handled
+[dispatch] pin #27 7 13 12 0 0 0 0 0 0  -> handled
+[dispatch] bct 7 13 0 0 0 0 0 0 0  -> handled
+[dispatch] pgt #26 0  -> handled
+[dispatch] pin #26 2 20 12 0 0 0 0 0 0  -> handled
+[dispatch] bct 2 20 0 0 0 0 0 0 0  -> handled
+[dispatch] pgt #22 0  -> handled
+[dispatch] pin #22 2 1 14 0 0 0 0 0 0  -> handled
+[dispatch] bct 2 1 0 0 0 0 0 0 0  -> handled
+[dispatch] ppo #21 11 7 4  -> handled
+[dispatch] pgt #20 0  -> handled
+[dispatch] pin #20 4 21 18 0 0 0 0 0 0  -> handled
+[dispatch] bct 4 21 0 0 0 0 0 0 0  -> handled
+[dispatch] ppo #17 6 27 1  -> handled
+[dispatch] pgt #2 0  -> handled
+[dispatch] pin #2 2 0 19 0 0 0 0 0 0  -> handled
+[dispatch] bct 2 0 0 1 0 0 0 0 0  -> handled
+[dispatch] ppo #3 3 6 2  -> handled
+[dispatch] pgt #1 0  -> handled
+[dispatch] pin #1 21 12 17 0 0 0 0 0 0  -> handled
+[dispatch] bct 21 12 0 0 1 0 0 0 0  -> handled
+[dispatch] ppo #25 17 27 4  -> handled
+[dispatch] pgt #24 0  -> handled
+[dispatch] pin #24 15 27 12 0 0 0 0 0 0  -> handled
+[dispatch] bct 15 27 1 1 0 0 0 0 0  -> handled
+[dispatch] ppo #21 11 7 1  -> handled
+[dispatch] pgt #23 0  -> handled
+[dispatch] pin #23 9 18 15 0 0 0 0 0 0  -> handled
+[dispatch] bct 9 18 0 1 0 0 0 0 0  -> handled
+[dispatch] ppo #19 12 21 1  -> handled
+[dispatch] ppo #17 6 27 4  -> handled
+[dispatch] ppo #16 10 11 4  -> handled
+[dispatch] ppo #3 4 6 2  -> handled
+[dispatch] pgt #7 0  -> handled
+[dispatch] pin #7 27 22 14 0 0 0 0 0 0  -> handled
+[dispatch] bct 27 22 0 0 0 0 0 0 0  -> handled
+[dispatch] pgt #4 0  -> handled
+[dispatch] pin #4 29 4 14 0 0 0 0 0 0  -> handled
+[dispatch] bct 29 4 0 0 1 0 0 0 0  -> handled
+[dispatch] pgt #5 0  -> handled
+[dispatch] pin #5 22 15 14 0 0 0 0 0 0  -> handled
+[dispatch] bct 22 15 2 0 0 1 0 1 0  -> handled
+[dispatch] pgt #0 0  -> handled
+[dispatch] pin #0 12 5 13 0 0 0 0 0 0  -> handled
+[dispatch] bct 12 5 0 0 0 1 0 0 0  -> handled
+[dispatch] pgt #8 0  -> handled
+[dispatch] pin #8 25 17 17 0 0 0 0 0 0  -> handled
+[dispatch] bct 25 17 0 0 0 0 1 0 0  -> handled
+[dispatch] ppo #25 16 27 4  -> handled
+[dispatch] ppo #27 7 12 1  -> handled
+[dispatch] ppo #26 2 21 3  -> handled
+[dispatch] ppo #29 26 27 1  -> handled
+[dispatch] ppo #21 11 6 1  -> handled
+[dispatch] ppo #20 5 21 2  -> handled
+[dispatch] ppo #22 2 0 1  -> handled
+[dispatch] ppo #17 5 27 4  -> handled
+[dispatch] ppo #16 10 11 1  -> handled
+[dispatch] pgt #2 1  -> handled
+[dispatch] pin #2 2 0 19 1 0 0 0 0 0  -> handled
+[dispatch] bct 2 0 0 0 0 0 0 0 0  -> handled
+[dispatch] ppo #1 20 12 4  -> handled
+[dispatch] pnw #30 16 25 3 1 Team2  -> handled
+[dispatch] pin #30 16 25 9 0 0 0 0 0 0  -> handled
+[dispatch] ebo #15  -> handled
+[dispatch] pnw #31 2 28 3 1 Team1  -> handled
+[dispatch] pin #31 2 28 9 0 0 0 0 0 0  -> handled
+[dispatch] ebo #40  -> handled
+[dispatch] pin #21 11 6 10 0 0 0 0 0 0  -> handled
+[dispatch] pin #20 5 21 17 0 0 0 0 0 0  -> handled
+[dispatch] ppo #26 2 21 4  -> handled
+[dispatch] pin #10 4 27 13 0 0 0 0 0 0  -> handled
+[dispatch] pin #11 4 0 14 1 0 0 0 0 0  -> handled
+[dispatch] pgt #24 0  -> handled
+[dispatch] pin #24 15 27 13 0 0 0 0 0 0  -> handled
+[dispatch] bct 15 27 0 1 0 0 0 0 0  -> handled
+[dispatch] pgt #23 1  -> handled
+[dispatch] pin #23 9 18 15 1 0 0 0 0 0  -> handled
+[dispatch] bct 9 18 0 0 0 0 0 0 0  -> handled
+[dispatch] pin #1 20 12 16 0 0 0 0 0 0  -> handled
+[dispatch] pin #0 12 5 12 0 0 0 0 0 0  -> handled
+[dispatch] ppo #16 10 10 1  -> handled
+[dispatch] ppo #19 12 20 1  -> handled
+[dispatch] ppo #7 28 22 2  -> handled
+[dispatch] ppo #4 29 5 3  -> handled
+[dispatch] pgt #5 0  -> handled
+[dispatch] pin #5 22 15 15 0 0 0 0 0 0  -> handled
+[dispatch] bct 22 15 1 0 0 1 0 1 0  -> handled
+[dispatch] ppo #0 11 5 4  -> handled
+[dispatch] pgt #3 0  -> handled
+[dispatch] pin #3 4 6 14 0 0 0 0 0 0  -> handled
+[dispatch] bct 4 6 0 0 0 0 0 1 0  -> handled
+[dispatch] ppo #8 25 18 3  -> handled
+[dispatch] pgt #27 0  -> handled
+[dispatch] pin #27 7 12 13 0 0 0 0 0 0  -> handled
+[dispatch] bct 7 12 0 0 1 0 0 0 0  -> handled
+[dispatch] ppo #26 1 21 4  -> handled
+[dispatch] pgt #29 0  -> handled
+[dispatch] pin #29 26 27 10 0 0 0 0 0 0  -> handled
+[dispatch] bct 26 27 1 0 2 0 1 0 1  -> handled
+[dispatch] pgt #25 0  -> handled
+[dispatch] pin #25 16 27 14 0 0 0 0 0 0  -> handled
+[dispatch] bct 16 27 1 0 0 0 0 0 0  -> handled
+[dispatch] ppo #22 2 29 1  -> handled
+[dispatch] pgt #21 0  -> handled
+[dispatch] pin #21 11 6 11 0 0 0 0 0 0  -> handled
+[dispatch] bct 11 6 0 0 0 0 0 0 0  -> handled
+[dispatch] pgt #20 1  -> handled
+[dispatch] pin #20 5 21 17 1 0 0 0 0 0  -> handled
+[dispatch] bct 5 21 1 0 0 0 0 0 0  -> handled
+[dispatch] pgt #17 0  -> handled
+[dispatch] pin #17 5 27 16 0 0 0 0 0 0  -> handled
+[dispatch] bct 5 27 0 0 0 0 0 1 2  -> handled
+[dispatch] ppo #2 3 0 2  -> handled
+[dispatch] ppo #0 10 5 4  -> handled
+[dispatch] pgt #1 0  -> handled
+[dispatch] pin #1 20 12 17 0 0 0 0 0 0  -> handled
+[dispatch] bct 20 12 1 1 0 0 0 0 0  -> handled
+[dispatch] pgt #30 0  -> handled
+[dispatch] pin #30 16 25 10 0 0 0 0 0 0  -> handled
+[dispatch] bct 16 25 2 0 0 0 0 0 0  -> handled
+[dispatch] pgt #31 0  -> handled
+[dispatch] pin #31 2 28 10 0 0 0 0 0 0  -> handled
+[dispatch] bct 2 28 0 0 1 0 0 0 0  -> handled
+[dispatch] ppo #24 15 28 3  -> handled
+[dispatch] pdr #23 1  -> handled
+[dispatch] pin #23 9 18 15 0 0 0 0 0 0  -> handled
+[dispatch] bct 9 18 0 1 0 0 0 0 0  -> handled
+[dispatch] pgt #19 0  -> handled
+[dispatch] pin #19 12 20 14 0 0 0 0 0 0  -> handled
+[dispatch] bct 12 20 0 1 0 0 0 0 0  -> handled
+[dispatch] pgt #16 1  -> handled
+[dispatch] pin #16 10 10 15 1 0 0 0 0 0  -> handled
+[dispatch] bct 10 10 0 0 1 0 0 1 0  -> handled
+[dispatch] pgt #7 0  -> handled
+[dispatch] pin #7 28 22 15 0 0 0 0 0 0  -> handled
+[dispatch] bct 28 22 0 1 2 0 0 0 0  -> handled
+[dispatch] ppo #2 4 0 2  -> handled
+[dispatch] ppo #3 5 6 2  -> handled
+[dispatch] ppo #4 29 6 3  -> handled
+[dispatch] pgt #5 0  -> handled
+[dispatch] pin #5 22 15 16 0 0 0 0 0 0  -> handled
+[dispatch] bct 22 15 0 0 0 1 0 1 0  -> handled
+[dispatch] pgt #8 1  -> handled
+[dispatch] pin #8 25 18 17 1 0 0 0 0 0  -> handled
+[dispatch] bct 25 18 0 0 0 0 0 0 0  -> handled
+[dispatch] pgt #29 0  -> handled
+[dispatch] pin #29 26 27 11 0 0 0 0 0 0  -> handled
+[dispatch] bct 26 27 0 0 2 0 1 0 1  -> handled
+[dispatch] pgt #25 0  -> handled
+[dispatch] pin #25 16 27 15 0 0 0 0 0 0  -> handled
+[dispatch] bct 16 27 0 0 0 0 0 0 0  -> handled
+[dispatch] ppo #27 7 11 1  -> handled
+[dispatch] pgt #26 0  -> handled
+[dispatch] pin #26 1 21 13 0 0 0 0 0 0  -> handled
+[dispatch] bct 1 21 0 0 0 0 0 0 0  -> handled
+[dispatch] ppo #21 11 5 1  -> handled
+[dispatch] pdr #20 1  -> handled
+[dispatch] pin #20 5 21 17 0 0 0 0 0 0  -> handled
+[dispatch] bct 5 21 1 1 0 0 0 0 0  -> handled
+[dispatch] ppo #22 2 28 1  -> handled
+[dispatch] pic 9 18 1 #23  -> handled
+[dispatch] ppo #17 4 27 4  -> handled
+[dispatch] pin #26 1 21 12 0 0 0 0 0 0  -> handled
+[dispatch] pin #27 7 11 12 0 0 0 0 0 0  -> handled
+[dispatch] ppo #3 5 6 1  -> handled
+[dispatch] pin #17 4 27 15 0 0 0 0 0 0  -> handled
+[dispatch] pin #16 10 10 14 1 0 0 0 0 0  -> handled
+[dispatch] ppo #4 29 7 3  -> handled
+[dispatch] pgt #0 0  -> handled
+[dispatch] pin #0 10 5 13 0 0 0 0 0 0  -> handled
+[dispatch] bct 10 5 0 1 0 0 0 0 0  -> handled
+[dispatch] pgt #1 0  -> handled
+[dispatch] pin #1 20 12 18 0 0 0 0 0 0  -> handled
+[dispatch] bct 20 12 0 1 0 0 0 0 0  -> handled
+[dispatch] pin #7 28 22 14 0 0 0 0 0 0  -> handled
+[dispatch] pin #6 6 14 14 0 0 0 0 0 0  -> handled
+[dispatch] pgt #30 0  -> handled
+[dispatch] pin #30 16 25 11 0 0 0 0 0 0  -> handled
+[dispatch] bct 16 25 1 0 0 0 0 0 0  -> handled
+[dispatch] ppo #31 2 29 3  -> handled
+[dispatch] pgt #24 0  -> handled
+[dispatch] pin #24 15 28 14 0 0 0 0 0 0  -> handled
+[dispatch] bct 15 28 0 0 2 0 0 0 0  -> handled
+[dispatch] ppo #21 11 5 4  -> handled
+[dispatch] pic 5 21 1 #20  -> handled
+[dispatch] ppo #22 2 28 4  -> handled
+[dispatch] pdr #16 1  -> handled
+[dispatch] pin #16 10 10 14 0 0 0 0 0 0  -> handled
+[dispatch] bct 10 10 0 1 1 0 0 1 0  -> handled
+[dispatch] ppo #19 12 19 1  -> handled
+[dispatch] ppo #7 29 22 2  -> handled
+[dispatch] ppo #5 22 16 3  -> handled
+[dispatch] pgt #2 0  -> handled
+[dispatch] pin #2 4 0 20 1 0 0 0 0 0  -> handled
+[dispatch] bct 4 0 0 1 0 0 0 1 0  -> handled
+[dispatch] pdr #8 1  -> handled
+[dispatch] pin #8 25 18 17 0 0 0 0 0 0  -> handled
+[dispatch] bct 25 18 0 1 0 0 0 0 0  -> handled
+[dispatch] pgt #27 0  -> handled
+[dispatch] pin #27 7 11 13 0 0 0 0 0 0  -> handled
+[dispatch] bct 7 11 0 1 0 0 0 0 0  -> handled
+[dispatch] ppo #26 0 21 4  -> handled
+[dispatch] ppo #29 26 26 1  -> handled
+[dispatch] ppo #21 10 5 4  -> handled
+[dispatch] ppo #22 1 28 4  -> handled
+[dispatch] ppo #25 15 27 4  -> handled
+[dispatch] pgt #17 1  -> handled
+[dispatch] pin #17 4 27 15 1 0 0 0 0 0  -> handled
+[dispatch] bct 4 27 0 0 0 0 0 0 0  -> handled
+[dispatch] pic 10 10 1 #16  -> handled
+[dispatch] pgt #4 0  -> handled
+[dispatch] pin #4 29 7 15 0 0 0 0 0 0  -> handled
+[dispatch] bct 29 7 1 0 1 0 0 0 0  -> handled
+[dispatch] ppo #5 22 17 3  -> handled
+[dispatch] ppo #1 19 12 4  -> handled
+[dispatch] ppo #0 9 5 4  -> handled
+[dispatch] ppo #3 5 5 1  -> handled
+[dispatch] pic 25 18 1 #8  -> handled
+[dispatch] ppo #26 0 21 3  -> handled
+[dispatch] pgt #30 0  -> handled
+[dispatch] pin #30 16 25 12 0 0 0 0 0 0  -> handled
+[dispatch] bct 16 25 0 0 0 0 0 0 0  -> handled
+[dispatch] ppo #31 2 0 3  -> handled
+[dispatch] ppo #24 15 29 3  -> handled
+[dispatch] pgt #19 0  -> handled
+[dispatch] pin #19 12 19 15 0 0 0 0 0 0  -> handled
+[dispatch] bct 12 19 0 0 0 1 0 0 0  -> handled
+[dispatch] pgt #7 0  -> handled
+[dispatch] pin #7 29 22 15 0 0 0 0 0 0  -> handled
+[dispatch] bct 29 22 0 0 0 0 0 0 0  -> handled
+[dispatch] ppo #2 5 0 2  -> handled
+[dispatch] pnw #32 7 27 1 1 Team1  -> handled
+[dispatch] pin #32 7 27 9 0 0 0 0 0 0  -> handled
+[dispatch] ebo #41  -> handled
+[dispatch] pnw #33 19 14 3 1 Team2  -> handled
+[dispatch] pin #33 19 14 9 0 0 0 0 0 0  -> handled
+[dispatch] ebo #16  -> handled
+[dispatch] pin #23 9 18 14 0 0 0 0 0 0  -> handled
+[dispatch] pin #22 1 28 13 0 0 0 0 0 0  -> handled
+[dispatch] ppo #29 26 25 1  -> handled
+[dispatch] pin #13 8 1 13 0 0 0 0 0 0  -> handled
+[dispatch] pin #12 13 22 14 0 0 0 0 0 0  -> handled
+[dispatch] ppo #27 7 10 1  -> handled
+[dispatch] pgt #22 0  -> handled
+[dispatch] pin #22 1 28 14 0 0 0 0 0 0  -> handled
+[dispatch] bct 1 28 0 0 0 0 0 0 0  -> handled
+[dispatch] pgt #25 1  -> handled
+[dispatch] pin #25 15 27 15 1 0 0 0 0 0  -> handled
+[dispatch] bct 15 27 0 0 0 0 0 0 0  -> handled
+[dispatch] pin #3 5 5 13 0 0 0 0 0 0  -> handled
+[dispatch] pin #2 5 0 19 1 0 0 0 0 0  -> handled
+[dispatch] ppo #21 9 5 4  -> handled
+[dispatch] pdr #17 1  -> handled
+[dispatch] pin #17 4 27 15 0 0 0 0 0 0  -> handled
+[dispatch] bct 4 27 0 1 0 0 0 0 0  -> handled
+[dispatch] ppo #2 6 0 2  -> handled
+[dispatch] pgt #3 0  -> handled
+[dispatch] pin #3 5 5 14 0 0 0 0 0 0  -> handled
+[dispatch] bct 5 5 0 1 0 0 0 0 0  -> handled
+[dispatch] pgt #4 0  -> handled
+[dispatch] pin #4 29 7 16 0 0 0 0 0 0  -> handled
+[dispatch] bct 29 7 0 0 1 0 0 0 0  -> handled
+[dispatch] pgt #5 0  -> handled
+[dispatch] pin #5 22 17 17 0 0 0 0 0 0  -> handled
+[dispatch] bct 22 17 0 0 0 0 0 0 0  -> handled
+[dispatch] pgt #1 0  -> handled
+[dispatch] pin #1 19 12 19 0 0 0 0 0 0  -> handled
+[dispatch] bct 19 12 0 1 0 0 0 0 0  -> handled
+[dispatch] pgt #0 0  -> handled
+[dispatch] pin #0 9 5 14 0 0 0 0 0 0  -> handled
+[dispatch] bct 9 5 0 2 0 1 0 0 0  -> handled
+[dispatch] ppo #30 16 26 3  -> handled
+[dispatch] ppo #31 2 1 3  -> handled
+[dispatch] ppo #26 0 22 3  -> handled
+[dispatch] pgt #24 0  -> handled
+[dispatch] pin #24 15 29 15 0 0 0 0 0 0  -> handled
+[dispatch] bct 15 29 0 0 0 0 0 1 0  -> handled
+[dispatch] ppo #19 12 18 1  -> handled
+[dispatch] pic 4 27 1 #17  -> handled
+[dispatch] ppo #2 6 0 1  -> handled
+[dispatch] ppo #7 0 22 2  -> handled
+[dispatch] ppo #33 19 15 3  -> handled
+[dispatch] ppo #32 7 26 1  -> handled
+[dispatch] pgt #27 0  -> handled
+[dispatch] pin #27 7 10 14 0 0 0 0 0 0  -> handled
+[dispatch] bct 7 10 1 1 0 0 0 0 0  -> handled
+[dispatch] pdr #25 1  -> handled
+[dispatch] pin #25 15 27 15 0 0 0 0 0 0  -> handled
+[dispatch] bct 15 27 0 1 0 0 0 0 0  -> handled
+[dispatch] pgt #29 0  -> handled
+[dispatch] pin #29 26 25 12 0 0 0 0 0 0  -> handled
+[dispatch] bct 26 25 0 0 1 0 0 0 1  -> handled
+[dispatch] ppo #21 8 5 4  -> handled
+[dispatch] ppo #22 0 28 4  -> handled
+[dispatch] ppo #4 29 8 3  -> handled
+[dispatch] ppo #5 22 18 3  -> handled
+[dispatch] pgt #1 1  -> handled
+[dispatch] pin #1 19 12 19 1 0 0 0 0 0  -> handled
+[dispatch] bct 19 12 0 0 0 0 0 0 0  -> handled
+[dispatch] ppo #0 8 5 4  -> handled
+[dispatch] ppo #3 5 4 1  -> handled
+[dispatch] ppo #30 16 27 3  -> handled
+[dispatch] ppo #31 2 2 3  -> handled
+[dispatch] pgt #26 0  -> handled
+[dispatch] pin #26 0 22 13 0 0 0 0 0 0  -> handled
+[dispatch] bct 0 22 0 0 0 1 0 0 0  -> handled
+[dispatch] ppo #21 8 5 3  -> handled
+[dispatch] ppo #22 0 28 3  -> handled
+[dispatch] ppo #24 15 0 3  -> handled
+[dispatch] pic 15 27 1 #25  -> handled
+[dispatch] pin #29 26 25 11 0 0 0 0 0 0  -> handled
+[dispatch] pin #28 20 16 8 0 0 0 0 0 0  -> handled
+[dispatch] ppo #19 12 17 1  -> handled
+[dispatch] ppo #5 22 19 3  -> handled
+[dispatch] pin #19 12 17 14 0 0 0 0 0 0  -> handled
+[dispatch] pin #18 20 16 14 0 0 0 0 0 0  -> handled
+[dispatch] ppo #2 6 29 1  -> handled
+[dispatch] ppo #0 7 5 4  -> handled
+[dispatch] ppo #3 5 3 1  -> handled
+[dispatch] pin #9 14 15 18 0 0 0 0 0 0  -> handled
+[dispatch] pin #8 25 18 16 0 0 0 0 0 0  -> handled
+[dispatch] pgt #33 0  -> handled
+[dispatch] pin #33 19 15 10 0 0 0 0 0 0  -> handled
+[dispatch] bct 19 15 1 0 0 0 0 0 0  -> handled
+[dispatch] pgt #32 0  -> handled
+[dispatch] pin #32 7 26 10 0 0 0 0 0 0  -> handled
+[dispatch] bct 7 26 0 0 0 0 0 0 0  -> handled
+[dispatch] pgt #27 0  -> handled
+[dispatch] pin #27 7 10 15 0 0 0 0 0 0  -> handled
+[dispatch] bct 7 10 0 1 0 0 0 0 0  -> handled
+[dispatch] ppo #29 26 24 1  -> handled
+[dispatch] ppo #22 0 29 3  -> handled
+[dispatch] ppo #19 12 17 4  -> handled
+[dispatch] ppo #1 18 12 4  -> handled
+[dispatch] pgt #4 0  -> handled
+[dispatch] pin #4 29 8 17 0 0 0 0 0 0  -> handled
+[dispatch] bct 29 8 0 0 0 0 0 0 0  -> handled
+[dispatch] ppo #30 16 28 3  -> handled
+[dispatch] ppo #31 2 3 3  -> handled
+[dispatch] ppo #26 0 23 3  -> handled
+[dispatch] pgt #24 0  -> handled
+[dispatch] pin #24 15 0 16 0 0 0 0 0 0  -> handled
+[dispatch] bct 15 0 0 0 0 0 0 0 0  -> handled
+[dispatch] ppo #21 8 6 3  -> handled
+[dispatch] ppo #19 11 17 4  -> handled
+[dispatch] ppo #7 1 22 2  -> handled
+[dispatch] pgt #2 0  -> handled
+[dispatch] pin #2 6 29 20 1 0 0 0 0 0  -> handled
+[dispatch] bct 6 29 0 1 0 0 0 0 0  -> handled
+[dispatch] pgt #3 0  -> handled
+[dispatch] pin #3 5 3 15 0 0 0 0 0 0  -> handled
+[dispatch] bct 5 3 0 0 0 0 0 0 0  -> handled
+[dispatch] pgt #5 0  -> handled
+[dispatch] pin #5 22 19 18 0 0 0 0 0 0  -> handled
+[dispatch] bct 22 19 0 0 0 0 1 0 0  -> handled
+[dispatch] pgt #0 0  -> handled
+[dispatch] pin #0 7 5 15 0 0 0 0 0 0  -> handled
+[dispatch] bct 7 5 0 2 0 0 0 0 0  -> handled
+[dispatch] ppo #29 26 23 1  -> handled
+[dispatch] pgt #33 0  -> handled
+[dispatch] pin #33 19 15 11 0 0 0 0 0 0  -> handled
+[dispatch] bct 19 15 0 0 0 0 0 0 0  -> handled
+[dispatch] ppo #32 7 25 1  -> handled
+[dispatch] ppo #26 0 23 2  -> handled
+[dispatch] pgt #27 1  -> handled
+[dispatch] pin #27 7 10 15 1 0 0 0 0 0  -> handled
+[dispatch] bct 7 10 0 0 0 0 0 0 0  -> handled
+[dispatch] pgt #22 0  -> handled
+[dispatch] pin #22 0 29 15 0 0 0 0 0 0  -> handled
+[dispatch] bct 0 29 1 1 0 0 1 0 0  -> handled
+[dispatch] ppo #4 29 9 3  -> handled
+[dispatch] pgt #1 3  -> handled
+[dispatch] pin #1 18 12 19 1 0 1 0 0 0  -> handled
+[dispatch] bct 18 12 0 0 0 0 0 0 0  -> handled
+[dispatch] pnw #34 0 7 4 1 Team1  -> handled
+[dispatch] pin #34 0 7 9 0 0 0 0 0 0  -> handled
+[dispatch] ebo #42  -> handled
+[dispatch] pnw #35 5 16 4 1 Team2  -> handled
+[dispatch] pin #35 5 16 9 0 0 0 0 0 0  -> handled
+[dispatch] ebo #17  -> handled
+[dispatch] pin #24 15 0 15 0 0 0 0 0 0  -> handled
+[dispatch] pin #25 15 27 14 0 0 0 0 0 0  -> handled
+[dispatch] ppo #32 7 25 2  -> handled
+[dispatch] ppo #30 16 29 3  -> handled
+[dispatch] pgt #31 0  -> handled
+[dispatch] pin #31 2 3 11 0 0 0 0 0 0  -> handled
+[dispatch] bct 2 3 2 0 0 0 0 0 0  -> handled
+[dispatch] pin #15 24 7 13 0 0 0 0 0 0  -> handled
+[dispatch] pin #14 2 7 16 0 0 0 0 0 0  -> handled
+[dispatch] ppo #26 1 23 2  -> handled
+[dispatch] ppo #24 15 1 3  -> handled
+[dispatch] pin #4 29 9 16 0 0 0 0 0 0  -> handled
+[dispatch] pin #5 22 19 17 0 0 0 0 0 0  -> handled
+[dispatch] pgt #21 0  -> handled
+[dispatch] pin #21 8 6 12 0 0 0 0 0 0  -> handled
+[dispatch] bct 8 6 1 0 0 0 0 1 0  -> handled
+[dispatch] pgt #19 0  -> handled
+[dispatch] pin #19 11 17 15 0 0 0 0 0 0  -> handled
+[dispatch] bct 11 17 0 0 0 0 0 0 0  -> handled
+[dispatch] pgt #7 0  -> handled
+[dispatch] pin #7 1 22 16 0 0 0 0 0 0  -> handled
+[dispatch] bct 1 22 0 1 0 0 1 0 0  -> handled
+[dispatch] ppo #4 29 10 3  -> handled
+[dispatch] ppo #5 22 20 3  -> handled
+[dispatch] ppo #2 6 28 1  -> handled
+[dispatch] ppo #0 6 5 4  -> handled
+[dispatch] ppo #3 5 2 1  -> handled
+[dispatch] ppo #33 19 16 3  -> handled
+[dispatch] ppo #32 8 25 2  -> handled
+[dispatch] pdr #27 1  -> handled
+[dispatch] pin #27 7 10 15 0 0 0 0 0 0  -> handled
+[dispatch] bct 7 10 0 1 0 0 0 0 0  -> handled
+[dispatch] ppo #29 26 22 1  -> handled
+[dispatch] pgt #22 1  -> handled
+[dispatch] pin #22 0 29 15 1 0 0 0 0 0  -> handled
+[dispatch] bct 0 29 1 0 0 0 1 0 0  -> handled
+[dispatch] ppo #2 6 28 4  -> handled
+[dispatch] ppo #1 17 12 4  -> handled
+[dispatch] ppo #34 29 7 4  -> handled
+[dispatch] ppo #35 4 16 4  -> handled
+[dispatch] ppo #33 19 16 4  -> handled
+[dispatch] pgt #26 0  -> handled
+[dispatch] pin #26 1 23 14 0 0 0 0 0 0  -> handled
+[dispatch] bct 1 23 2 1 1 0 0 0 0  -> handled
+[dispatch] pgt #30 0  -> handled
+[dispatch] pin #30 16 29 13 0 0 0 0 0 0  -> handled
+[dispatch] bct 16 29 0 0 0 0 0 0 0  -> handled
+[dispatch] pgt #31 0  -> handled
+[dispatch] pin #31 2 3 12 0 0 0 0 0 0  -> handled
+[dispatch] bct 2 3 1 0 0 0 0 0 0  -> handled
+[dispatch] ppo #24 15 1 2  -> handled
+[dispatch] pic 7 10 1 #27  -> handled
+[dispatch] plv #13 2  -> handled
+[dispatch] pie 8 1 1  -> handled
+[dispatch] bct 8 1 1 0 0 0 0 0 0  -> handled
+[dispatch] pgt #21 0  -> handled
+[dispatch] pin #21 8 6 13 0 0 0 0 0 0  -> handled
+[dispatch] bct 8 6 0 0 0 0 0 1 0  -> handled
+[dispatch] ppo #19 10 17 4  -> handled
+[dispatch] ppo #7 2 22 2  -> handled
+[dispatch] ppo #2 5 28 4  -> handled
+[dispatch] ppo #0 5 5 4  -> handled
+[dispatch] ppo #1 17 12 1  -> handled
+[dispatch] pgt #3 0  -> handled
+[dispatch] pin #3 5 2 16 0 0 0 0 0 0  -> handled
+[dispatch] bct 5 2 0 0 0 0 0 0 0  -> handled
+[dispatch] pgt #5 0  -> handled
+[dispatch] pin #5 22 20 18 0 0 0 0 0 0  -> handled
+[dispatch] bct 22 20 1 1 0 1 0 0 0  -> handled
+[dispatch] pgt #4 0  -> handled
+[dispatch] pin #4 29 10 17 0 0 0 0 0 0  -> handled
+[dispatch] bct 29 10 0 0 1 0 0 0 0  -> handled
+[dispatch] ppo #33 18 16 4  -> handled
+[dispatch] pgt #32 0  -> handled
+[dispatch] pin #32 8 25 11 0 0 0 0 0 0  -> handled
+[dispatch] bct 8 25 0 0 0 0 0 0 0  -> handled
+[dispatch] pgt #29 0  -> handled
+[dispatch] pin #29 26 22 12 0 0 0 0 0 0  -> handled
+[dispatch] bct 26 22 0 1 0 0 0 1 0  -> handled
+[dispatch] pdr #22 1  -> handled
+[dispatch] pin #22 0 29 15 0 0 0 0 0 0  -> handled
+[dispatch] bct 0 29 1 1 0 0 1 0 0  -> handled
+[dispatch] pin #30 16 29 12 0 0 0 0 0 0  -> handled
+[dispatch] pin #31 2 3 11 0 0 0 0 0 0  -> handled
+[dispatch] pin #21 8 6 12 0 0 0 0 0 0  -> handled
+[dispatch] pin #20 5 21 16 0 0 0 0 0 0  -> handled
+[dispatch] plv #6 2  -> handled
+[dispatch] pie 6 14 1  -> handled
+[dispatch] bct 6 14 1 0 0 0 0 0 0  -> handled
+[dispatch] pin #10 4 27 12 0 0 0 0 0 0  -> handled
+[dispatch] pin #11 4 0 13 1 0 0 0 0 0  -> handled
+[dispatch] pin #1 17 12 18 1 0 1 0 0 0  -> handled
+[dispatch] pin #0 5 5 14 0 0 0 0 0 0  -> handled
+[dispatch] ppo #34 28 7 4  -> handled
+[dispatch] pgt #35 0  -> handled
+[dispatch] pin #35 4 16 10 0 0 0 0 0 0  -> handled
+[dispatch] bct 4 16 1 0 0 0 0 0 0  -> handled
+[dispatch] ppo #30 16 0 3  -> handled
+[dispatch] pgt #31 0  -> handled
+[dispatch] pin #31 2 3 12 0 0 0 0 0 0  -> handled
+[dispatch] bct 2 3 0 0 0 0 0 0 0  -> handled
+[dispatch] pgt #26 0  -> handled
+[dispatch] pin #26 1 23 15 0 0 0 0 0 0  -> handled
+[dispatch] bct 1 23 1 1 1 0 0 0 0  -> handled
+[dispatch] ppo #24 16 1 2  -> handled
+[dispatch] pgt #13 0  -> handled
+[dispatch] pin #13 8 1 14 0 0 0 0 0 0  -> handled
+[dispatch] bct 8 1 0 0 0 0 0 0 0  -> handled
+[dispatch] ppo #21 8 7 3  -> handled
+[dispatch] pic 0 29 1 #22  -> handled
+[dispatch] pgt #19 0  -> handled
+[dispatch] pin #19 10 17 16 0 0 0 0 0 0  -> handled
+[dispatch] bct 10 17 0 0 0 0 0 0 0  -> handled
+[dispatch] pgt #2 0  -> handled
+[dispatch] pin #2 5 28 21 1 0 0 0 0 0  -> handled
+[dispatch] bct 5 28 0 0 0 0 0 0 0  -> handled
+[dispatch] ppo #3 5 1 1  -> handled
+[dispatch] pgt #7 0  -> handled
+[dispatch] pin #7 2 22 17 0 0 0 0 0 0  -> handled
+[dispatch] bct 2 22 1 3 0 0 0 0 0  -> handled
+[dispatch] pgt #5 0  -> handled
+[dispatch] pin #5 22 20 19 0 0 0 0 0 0  -> handled
+[dispatch] bct 22 20 0 1 0 1 0 0 0  -> handled
+[dispatch] ppo #4 29 11 3  -> handled
+[dispatch] ppo #1 17 11 1  -> handled
+[dispatch] ppo #0 4 5 4  -> handled
+[dispatch] pgt #33 0  -> handled
+[dispatch] pin #33 18 16 12 0 0 0 0 0 0  -> handled
+[dispatch] bct 18 16 0 0 0 0 0 0 0  -> handled
+[dispatch] ppo #32 9 25 2  -> handled
+[dispatch] ppo #24 16 1 1  -> handled
+[dispatch] ppo #29 26 21 1  -> handled
+[dispatch] ppo #4 29 12 3  -> handled
+[dispatch] pgt #6 0  -> handled
+[dispatch] pin #6 6 14 15 0 0 0 0 0 0  -> handled
+[dispatch] bct 6 14 0 0 0 0 0 0 0  -> handled
+[dispatch] pgt #34 0  -> handled
+[dispatch] pin #34 28 7 10 0 0 0 0 0 0  -> handled
+[dispatch] bct 28 7 0 1 0 0 0 0 0  -> handled
+[dispatch] pgt #35 0  -> handled
+[dispatch] pin #35 4 16 11 0 0 0 0 0 0  -> handled
+[dispatch] bct 4 16 0 0 0 0 0 0 0  -> handled
+[dispatch] ppo #32 9 25 3  -> handled
+[dispatch] ppo #30 16 1 3  -> handled
+[dispatch] ppo #31 2 4 3  -> handled
+[dispatch] pgt #26 1  -> handled
+[dispatch] pin #26 1 23 15 1 0 0 0 0 0  -> handled
+[dispatch] bct 1 23 1 0 1 0 0 0 0  -> handled
+[dispatch] ppo #29 26 21 4  -> handled
+[dispatch] ppo #21 8 8 3  -> handled
+[dispatch] ppo #13 8 2 3  -> handled
+[dispatch] ppo #19 9 17 4  -> handled
+[dispatch] pgt #7 0  -> handled
+[dispatch] pin #7 2 22 18 0 0 0 0 0 0  -> handled
+[dispatch] bct 2 22 0 3 0 0 0 0 0  -> handled
+[dispatch] ppo #4 29 12 4  -> handled
+[dispatch] pgt #5 3  -> handled
+[dispatch] pin #5 22 20 19 0 0 1 0 0 0  -> handled
+[dispatch] bct 22 20 0 1 0 0 0 0 0  -> handled
+[dispatch] ppo #2 4 28 4  -> handled
+[dispatch] pgt #1 2  -> handled
+[dispatch] pin #1 17 11 18 1 1 1 0 0 0  -> handled
+[dispatch] bct 17 11 0 0 0 0 0 1 0  -> handled
+[dispatch] pgt #0 0  -> handled
+[dispatch] pin #0 4 5 15 0 0 0 0 0 0  -> handled
+[dispatch] bct 4 5 0 0 0 0 0 0 0  -> handled
+[dispatch] ppo #3 5 0 1  -> handled
+[dispatch] pnw #36 2 24 3 1 Team2  -> handled
+[dispatch] pin #36 2 24 9 0 0 0 0 0 0  -> handled
+[dispatch] ebo #18  -> handled
+[dispatch] pnw #37 9 25 4 1 Team1  -> handled
+[dispatch] pin #37 9 25 9 0 0 0 0 0 0  -> handled
+[dispatch] ebo #43  -> handled
+[dispatch] pin #26 1 23 14 1 0 0 0 0 0  -> handled
+[dispatch] pin #27 7 10 14 0 0 0 0 0 0  -> handled
+[dispatch] ppo #32 9 26 3  -> handled
+[dispatch] ppo #33 17 16 4  -> handled
+[dispatch] pin #17 4 27 14 0 0 0 0 0 0  -> handled
+[dispatch] pin #16 10 10 13 0 0 0 0 0 0  -> handled
+[dispatch] ppo #29 25 21 4  -> handled
+[dispatch] pin #7 2 22 17 0 0 0 0 0 0  -> handled
+[dispatch] pin #6 6 14 14 0 0 0 0 0 0  -> handled
+[dispatch] ppo #24 16 0 1  -> handled
+[dispatch] ppo #13 8 3 3  -> handled
+[dispatch] ppo #2 3 28 4  -> handled
+[dispatch] ppo #6 6 15 3  -> handled
+[dispatch] ppo #3 5 29 1  -> handled
+[dispatch] ppo #34 27 7 4  -> handled
+[dispatch] ppo #35 3 16 4  -> handled
+[dispatch] ppo #30 16 2 3  -> handled
+[dispatch] ppo #31 2 5 3  -> handled
+[dispatch] pgt #26 0  -> handled
+[dispatch] pin #26 1 23 15 1 0 0 0 0 0  -> handled
+[dispatch] bct 1 23 0 0 1 0 0 0 0  -> handled
+[dispatch] pgt #21 0  -> handled
+[dispatch] pin #21 8 8 13 0 0 0 0 0 0  -> handled
+[dispatch] bct 8 8 0 0 0 0 0 0 0  -> handled
+[dispatch] pgt #19 0  -> handled
+[dispatch] pin #19 9 17 17 0 0 0 0 0 0  -> handled
+[dispatch] bct 9 17 0 0 1 0 1 0 0  -> handled
+[dispatch] ppo #7 3 22 2  -> handled
+[dispatch] ppo #3 5 29 4  -> handled
+[dispatch] ppo #4 28 12 4  -> handled
+[dispatch] pgt #5 1  -> handled
+[dispatch] pin #5 22 20 19 1 0 1 0 0 0  -> handled
+[dispatch] bct 22 20 0 0 0 0 0 0 0  -> handled
+[dispatch] ppo #1 17 10 1  -> handled
+[dispatch] ppo #0 3 5 4  -> handled
+[dispatch] pgt #36 0  -> handled
+[dispatch] pin #36 2 24 10 0 0 0 0 0 0  -> handled
+[dispatch] bct 2 24 1 0 0 0 0 0 0  -> handled
+[dispatch] ppo #37 8 25 4  -> handled
+[dispatch] pgt #33 0  -> handled
+[dispatch] pin #33 17 16 13 0 0 0 0 0 0  -> handled
+[dispatch] bct 17 16 0 0 0 0 0 0 0  -> handled
+[dispatch] pgt #32 0  -> handled
+[dispatch] pin #32 9 26 12 0 0 0 0 0 0  -> handled
+[dispatch] bct 9 26 2 0 1 0 0 0 0  -> handled
+[dispatch] pgt #29 0  -> handled
+[dispatch] pin #29 25 21 13 0 0 0 0 0 0  -> handled
+[dispatch] bct 25 21 0 0 0 0 0 0 0  -> handled
+[dispatch] pgt #24 1  -> handled
+[dispatch] pin #24 16 0 15 1 0 0 0 0 0  -> handled
+[dispatch] bct 16 0 0 0 1 0 0 0 0  -> handled
+[dispatch] pgt #13 0  -> handled
+[dispatch] pin #13 8 3 15 0 0 0 0 0 0  -> handled
+[dispatch] bct 8 3 0 1 0 0 0 0 0  -> handled
+[dispatch] pgt #2 3  -> handled
+[dispatch] pin #2 3 28 21 1 0 1 0 0 0  -> handled
+[dispatch] bct 3 28 0 1 0 0 0 0 0  -> handled
+[dispatch] plv #10 2  -> handled
+[dispatch] pie 4 27 1  -> handled
+[dispatch] bct 4 27 0 0 0 0 0 0 0  -> handled
+[dispatch] plv #11 2  -> handled
+[dispatch] pie 4 0 1  -> handled
+[dispatch] bct 4 0 0 0 0 0 0 1 0  -> handled
+[dispatch] ppo #3 4 29 4  -> handled
+[dispatch] ppo #4 27 12 4  -> handled
+[dispatch] pgt #6 0  -> handled
+[dispatch] pin #6 6 15 15 0 0 0 0 0 0  -> handled
+[dispatch] bct 6 15 0 0 0 0 0 0 1  -> handled
+[dispatch] ppo #1 17 10 2  -> handled
+[dispatch] ppo #0 2 5 4  -> handled
+[dispatch] pgt #34 0  -> handled
+[dispatch] pin #34 27 7 11 0 0 0 0 0 0  -> handled
+[dispatch] bct 27 7 0 0 0 0 0 0 0  -> handled
+[dispatch] ppo #37 8 25 3  -> handled
+[dispatch] ppo #35 2 16 4  -> handled
+[dispatch] pgt #30 0  -> handled
+[dispatch] pin #30 16 2 13 0 0 0 0 0 0  -> handled
+[dispatch] bct 16 2 0 0 0 0 0 0 0  -> handled
+[dispatch] ppo #31 2 6 3  -> handled
+[dispatch] pdr #26 1  -> handled
+[dispatch] pin #26 1 23 15 0 0 0 0 0 0  -> handled
+[dispatch] bct 1 23 0 1 1 0 0 0 0  -> handled
+[dispatch] ppo #21 8 9 3  -> handled
+[dispatch] pin #33 17 16 12 0 0 0 0 0 0  -> handled
+[dispatch] pin #32 9 26 11 0 0 0 0 0 0  -> handled
+[dispatch] pin #23 9 18 13 0 0 0 0 0 0  -> handled
+[dispatch] pin #22 0 29 14 0 0 0 0 0 0  -> handled
+[dispatch] ppo #19 8 17 4  -> handled
+[dispatch] pin #13 8 3 14 0 0 0 0 0 0  -> handled
+[dispatch] pin #12 13 22 13 0 0 0 0 0 0  -> handled
+[dispatch] ppo #7 4 22 2  -> handled
+[dispatch] ppo #5 22 21 3  -> handled
+[dispatch] ppo #1 18 10 2  -> handled
+[dispatch] ppo #0 2 5 3  -> handled
+[dispatch] pin #3 4 29 15 0 0 0 0 0 0  -> handled
+[dispatch] pin #2 3 28 20 1 0 1 0 0 0  -> handled
+[dispatch] pgt #36 0  -> handled
+[dispatch] pin #36 2 24 11 0 0 0 0 0 0  -> handled
+[dispatch] bct 2 24 0 0 0 0 0 0 0  -> handled
+[dispatch] ppo #37 8 26 3  -> handled
+[dispatch] ppo #33 16 16 4  -> handled
+[dispatch] pgt #32 0  -> handled
+[dispatch] pin #32 9 26 12 0 0 0 0 0 0  -> handled
+[dispatch] bct 9 26 1 0 1 0 0 0 0  -> handled
+[dispatch] ppo #31 2 6 4  -> handled
+[dispatch] pic 1 23 1 #26  -> handled
+[dispatch] ppo #29 24 21 4  -> handled
+[dispatch] pdr #24 1  -> handled
+[dispatch] pin #24 16 0 15 0 0 0 0 0 0  -> handled
+[dispatch] bct 16 0 0 1 1 0 0 0 0  -> handled
+[dispatch] ppo #13 8 4 3  -> handled
+[dispatch] ppo #11 3 0 4  -> handled
+[dispatch] ppo #10 5 27 2  -> handled
+[dispatch] pgt #4 0  -> handled
+[dispatch] pin #4 27 12 18 0 0 0 0 0 0  -> handled
+[dispatch] bct 27 12 0 0 0 0 0 0 0  -> handled
+[dispatch] ppo #5 22 22 3  -> handled
+[dispatch] ppo #2 2 28 4  -> handled
+[dispatch] ppo #6 6 16 3  -> handled
+[dispatch] ppo #0 2 6 3  -> handled
+[dispatch] pgt #3 0  -> handled
+[dispatch] pin #3 4 29 16 0 0 0 0 0 0  -> handled
+[dispatch] bct 4 29 0 0 0 0 0 1 0  -> handled
+[dispatch] ppo #34 26 7 4  -> handled
+[dispatch] pgt #35 0  -> handled
+[dispatch] pin #35 2 16 12 0 0 0 0 0 0  -> handled
+[dispatch] bct 2 16 0 0 2 0 0 0 0  -> handled
+[dispatch] ppo #30 16 3 3  -> handled
+[dispatch] ppo #29 24 21 3  -> handled
+[dispatch] pic 16 0 1 #24  -> handled
+[dispatch] ppo #21 8 10 3  -> handled
+[dispatch] pgt #19 1  -> handled
+[dispatch] pin #19 8 17 17 1 0 0 0 0 0  -> handled
+[dispatch] bct 8 17 1 0 0 0 0 0 0  -> handled
+[dispatch] ppo #10 5 27 1  -> handled
+[dispatch] pgt #7 0  -> handled
+[dispatch] pin #7 4 22 18 0 0 0 0 0 0  -> handled
+[dispatch] bct 4 22 0 1 0 0 1 0 0  -> handled
+[dispatch] ppo #0 2 7 3  -> handled
+[dispatch] pgt #1 0  -> handled
+[dispatch] pin #1 18 10 19 1 1 1 0 0 0  -> handled
+[dispatch] bct 18 10 0 0 0 0 0 1 0  -> handled
+[dispatch] ppo #36 2 25 3  -> handled
+[dispatch] pgt #37 0  -> handled
+[dispatch] pin #37 8 26 10 0 0 0 0 0 0  -> handled
+[dispatch] bct 8 26 0 0 0 0 1 0 0  -> handled
+[dispatch] pgt #33 0  -> handled
+[dispatch] pin #33 16 16 13 0 0 0 0 0 0  -> handled
+[dispatch] bct 16 16 0 0 0 0 1 0 0  -> handled
+[dispatch] pgt #32 0  -> handled
+[dispatch] pin #32 9 26 13 0 0 0 0 0 0  -> handled
+[dispatch] bct 9 26 0 0 1 0 0 0 0  -> handled
+[dispatch] ppo #30 16 3 2  -> handled
+[dispatch] ppo #29 24 22 3  -> handled
+[dispatch] ppo #31 1 6 4  -> handled
+[dispatch] pgt #13 0  -> handled
+[dispatch] pin #13 8 4 15 0 0 0 0 0 0  -> handled
+[dispatch] bct 8 4 0 0 0 0 0 0 0  -> handled
+[dispatch] pgt #2 2  -> handled
+[dispatch] pin #2 2 28 20 1 1 1 0 0 0  -> handled
+[dispatch] bct 2 28 0 0 0 0 0 0 0  -> handled
+[dispatch] ppo #11 2 0 4  -> handled
+[dispatch] pgt #6 0  -> handled
+[dispatch] pin #6 6 16 16 0 0 0 0 0 0  -> handled
+[dispatch] bct 6 16 0 0 0 0 0 0 0  -> handled
+[dispatch] ppo #3 3 29 4  -> handled
+[dispatch] ppo #4 26 12 4  -> handled
+[dispatch] pgt #5 0  -> handled
+[dispatch] pin #5 22 22 20 1 0 1 0 0 0  -> handled
+[dispatch] bct 22 22 1 0 0 0 0 0 0  -> handled
+[dispatch] pnw #38 1 16 2 1 Team2  -> handled
+[dispatch] pin #38 1 16 9 0 0 0 0 0 0  -> handled
+[dispatch] ebo #19  -> handled
+[dispatch] pnw #39 6 28 2 1 Team1  -> handled
+[dispatch] pin #39 6 28 9 0 0 0 0 0 0  -> handled
+[dispatch] ebo #44  -> handled
+[dispatch] pin #29 24 22 12 0 0 0 0 0 0  -> handled
+[dispatch] pin #28 20 16 7 0 0 0 0 0 0  -> handled
+[dispatch] ppo #36 2 25 2  -> handled
+[dispatch] pgt #34 0  -> handled
+[dispatch] pin #34 26 7 12 0 0 0 0 0 0  -> handled
+[dispatch] bct 26 7 2 0 0 0 0 0 1  -> handled
+[dispatch] ppo #35 1 16 4  -> handled
+[dispatch] pin #19 8 17 16 1 0 0 0 0 0  -> handled
+[dispatch] pin #18 20 16 13 0 0 0 0 0 0  -> handled
+[dispatch] ppo #30 17 3 2  -> handled
+[dispatch] pin #9 14 15 17 0 0 0 0 0 0  -> handled
+[dispatch] pin #8 25 18 15 0 0 0 0 0 0  -> handled
+[dispatch] pgt #21 0  -> handled
+[dispatch] pin #21 8 10 14 0 0 0 0 0 0  -> handled
+[dispatch] bct 8 10 0 0 0 0 1 0 0  -> handled
+[dispatch] pdr #19 1  -> handled
+[dispatch] pin #19 8 17 16 0 0 0 0 0 0  -> handled
+[dispatch] bct 8 17 1 1 0 0 0 0 0  -> handled
+[dispatch] ppo #10 5 26 1  -> handled
+[dispatch] ppo #7 5 22 2  -> handled
+[dispatch] ppo #1 19 10 2  -> handled
+[dispatch] pgt #0 0  -> handled
+[dispatch] pin #0 2 7 16 0 0 0 0 0 0  -> handled
+[dispatch] bct 2 7 0 1 0 0 0 0 0  -> handled
+[dispatch] ppo #36 3 25 2  -> handled
+[dispatch] ppo #37 8 27 3  -> handled
+[dispatch] ppo #33 15 16 4  -> handled
+[dispatch] ppo #32 9 27 3  -> handled
+[dispatch] pgt #31 0  -> handled
+[dispatch] pin #31 1 6 13 0 0 0 0 0 0  -> handled
+[dispatch] bct 1 6 1 1 1 0 0 0 0  -> handled
+[dispatch] pgt #29 0  -> handled
+[dispatch] pin #29 24 22 13 0 0 0 0 0 0  -> handled
+[dispatch] bct 24 22 0 0 1 0 0 0 0  -> handled
+[dispatch] ppo #13 8 5 3  -> handled
+[dispatch] pic 8 17 1 #19  -> handled
+[dispatch] ppo #11 1 0 4  -> handled
+[dispatch] ppo #7 5 22 1  -> handled
+[dispatch] ppo #4 25 12 4  -> handled
+[dispatch] pgt #5 0  -> handled
+[dispatch] pin #5 22 22 21 1 0 1 0 0 0  -> handled
+[dispatch] bct 22 22 0 0 0 0 0 0 0  -> handled
+[dispatch] ppo #2 1 28 4  -> handled
+[dispatch] ppo #6 6 17 3  -> handled
+[dispatch] ppo #3 2 29 4  -> handled
+[dispatch] pgt #39 0  -> handled
+[dispatch] pin #39 6 28 10 0 0 0 0 0 0  -> handled
+[dispatch] bct 6 28 0 0 0 0 0 0 0  -> handled
+[dispatch] pgt #38 0  -> handled
+[dispatch] pin #38 1 16 10 0 0 0 0 0 0  -> handled
+[dispatch] bct 1 16 0 0 0 0 0 0 1  -> handled
+[dispatch] pgt #34 0  -> handled
+[dispatch] pin #34 26 7 13 0 0 0 0 0 0  -> handled
+[dispatch] bct 26 7 1 0 0 0 0 0 1  -> handled
+[dispatch] ppo #32 9 27 2  -> handled
+[dispatch] pgt #30 0  -> handled
+[dispatch] pin #30 17 3 14 0 0 0 0 0 0  -> handled
+[dispatch] bct 17 3 0 0 1 1 0 0 0  -> handled
+[dispatch] ppo #21 8 11 3  -> handled
+[dispatch] ppo #13 8 6 3  -> handled
+[dispatch] ppo #11 0 0 4  -> handled
+[dispatch] pgt #10 0  -> handled
+[dispatch] pin #10 5 26 13 0 0 0 0 0 0  -> handled
+[dispatch] bct 5 26 4 0 1 0 0 1 0  -> handled
+[dispatch] ppo #7 5 21 1  -> handled
+[dispatch] ppo #4 24 12 4  -> handled
+[dispatch] ppo #6 6 18 3  -> handled
+[dispatch] ppo #1 20 10 2  -> handled
+[dispatch] ppo #0 2 8 3  -> handled
+[dispatch] pgt #36 0  -> handled
+[dispatch] pin #36 3 25 12 0 0 0 0 0 0  -> handled
+[dispatch] bct 3 25 1 1 0 0 0 0 0  -> handled
+[dispatch] ppo #37 8 28 3  -> handled
+[dispatch] ppo #32 10 27 2  -> handled
+[dispatch] pgt #33 0  -> handled
+[dispatch] pin #33 15 16 14 0 0 0 0 0 0  -> handled
+[dispatch] bct 15 16 1 0 1 0 0 0 0  -> handled
+[dispatch] pgt #31 0  -> handled
+[dispatch] pin #31 1 6 14 0 0 0 0 0 0  -> handled
+[dispatch] bct 1 6 0 1 1 0 0 0 0  -> handled
+[dispatch] ppo #29 24 23 3  -> handled
+[dispatch] pin #34 26 7 12 0 0 0 0 0 0  -> handled
+[dispatch] pin #35 1 16 11 0 0 0 0 0 0  -> handled
+[dispatch] ppo #13 8 6 2  -> handled
+[dispatch] pin #25 15 27 13 0 0 0 0 0 0  -> handled
+[dispatch] pin #24 16 0 14 0 0 0 0 0 0  -> handled
+[dispatch] pin #15 24 7 12 0 0 0 0 0 0  -> handled
+[dispatch] pin #14 2 7 15 0 0 0 0 0 0  -> handled
+[dispatch] ppo #2 0 28 4  -> handled
+[dispatch] ppo #0 2 9 3  -> handled
+[dispatch] ppo #3 1 29 4  -> handled
+[dispatch] pin #4 24 12 17 0 0 0 0 0 0  -> handled
+[dispatch] pin #5 22 22 20 1 0 1 0 0 0  -> handled
+[dispatch] ppo #5 22 23 3  -> handled
+[dispatch] ppo #39 7 28 2  -> handled
+[dispatch] ppo #38 2 16 2  -> handled
+[dispatch] pgt #34 0  -> handled
+[dispatch] pin #34 26 7 13 0 0 0 0 0 0  -> handled
+[dispatch] bct 26 7 0 0 0 0 0 0 1  -> handled
+[dispatch] ppo #35 0 16 4  -> handled
+[dispatch] ppo #30 18 3 2  -> handled
+[dispatch] ppo #13 9 6 2  -> handled
+[dispatch] pgt #21 0  -> handled
+[dispatch] pin #21 8 11 15 0 0 0 0 0 0  -> handled
+[dispatch] bct 8 11 0 0 1 0 0 0 0  -> handled
+[dispatch] pgt #7 0  -> handled
+[dispatch] pin #7 5 21 19 0 0 0 0 0 0  -> handled
+[dispatch] bct 5 21 0 1 0 0 0 0 0  -> handled
+[dispatch] pgt #11 0  -> handled
+[dispatch] pin #11 0 0 14 1 0 0 0 0 0  -> handled
+[dispatch] bct 0 0 0 0 0 0 0 0 0  -> handled
+[dispatch] pgt #10 0  -> handled
+[dispatch] pin #10 5 26 14 0 0 0 0 0 0  -> handled
+[dispatch] bct 5 26 3 0 1 0 0 1 0  -> handled
+[dispatch] pgt #6 0  -> handled
+[dispatch] pin #6 6 18 17 0 0 0 0 0 0  -> handled
+[dispatch] bct 6 18 0 0 0 1 0 0 0  -> handled
+[dispatch] ppo #3 0 29 4  -> handled
+[dispatch] ppo #4 23 12 4  -> handled
+[dispatch] ppo #5 22 23 2  -> handled
+[dispatch] ppo #38 2 16 1  -> handled
+[dispatch] ppo #1 21 10 2  -> handled
+[dispatch] pgt #37 0  -> handled
+[dispatch] pin #37 8 28 11 0 0 0 0 0 0  -> handled
+[dispatch] bct 8 28 0 1 0 0 0 0 0  -> handled
+[dispatch] pgt #36 0  -> handled
+[dispatch] pin #36 3 25 13 0 0 0 0 0 0  -> handled
+[dispatch] bct 3 25 0 1 0 0 0 0 0  -> handled
+[dispatch] ppo #35 0 16 1  -> handled
+[dispatch] pgt #32 0  -> handled
+[dispatch] pin #32 10 27 14 0 0 0 0 0 0  -> handled
+[dispatch] bct 10 27 0 0 0 1 0 0 0  -> handled
+[dispatch] ppo #30 18 3 3  -> handled
+[dispatch] pgt #33 0  -> handled
+[dispatch] pin #33 15 16 15 0 0 0 0 0 0  -> handled
+[dispatch] bct 15 16 0 0 1 0 0 0 0  -> handled
+[dispatch] pgt #29 0  -> handled
+[dispatch] pin #29 24 23 14 0 0 0 0 0 0  -> handled
+[dispatch] bct 24 23 1 1 0 0 1 0 0  -> handled
+[dispatch] ppo #31 0 6 4  -> handled
+[dispatch] ppo #13 10 6 2  -> handled
+[dispatch] ppo #2 29 28 4  -> handled
+[dispatch] ppo #4 22 12 4  -> handled
+[dispatch] ppo #5 23 23 2  -> handled
+[dispatch] pgt #0 0  -> handled
+[dispatch] pin #0 2 9 17 0 0 0 0 0 0  -> handled
+[dispatch] bct 2 9 0 0 0 0 0 0 0  -> handled
+[dispatch] ppo #34 25 7 4  -> handled
+[dispatch] ppo #35 0 15 1  -> handled
+[dispatch] pgt #39 0  -> handled
+[dispatch] pin #39 7 28 11 0 0 0 0 0 0  -> handled
+[dispatch] bct 7 28 1 0 0 0 0 0 0  -> handled
+[dispatch] ppo #30 18 4 3  -> handled
+[dispatch] ppo #21 8 12 3  -> handled
+[dispatch] plv #14 2  -> handled
+[dispatch] pie 2 7 1  -> handled
+[dispatch] bct 2 7 0 0 0 0 0 0 0  -> handled
+[dispatch] ppo #11 29 0 4  -> handled
+[dispatch] pgt #10 0  -> handled
+[dispatch] pin #10 5 26 15 0 0 0 0 0 0  -> handled
+[dispatch] bct 5 26 2 0 1 0 0 1 0  -> handled
+[dispatch] pgt #7 1  -> handled
+[dispatch] pin #7 5 21 19 1 0 0 0 0 0  -> handled
+[dispatch] bct 5 21 0 0 0 0 0 0 0  -> handled
+[dispatch] pnw #40 26 15 3 1 Team2  -> handled
+[dispatch] pin #40 26 15 9 0 0 0 0 0 0  -> handled
+[dispatch] ebo #20  -> handled
+[dispatch] pnw #41 3 19 4 1 Team1  -> handled
+[dispatch] pin #41 3 19 9 0 0 0 0 0 0  -> handled
+[dispatch] ebo #45  -> handled
+[dispatch] ppo #6 6 19 3  -> handled
+[dispatch] ppo #1 21 10 1  -> handled
+[dispatch] pgt #3 0  -> handled
+[dispatch] pin #3 0 29 17 0 0 0 0 0 0  -> handled
+[dispatch] bct 0 29 0 1 0 0 1 0 0  -> handled
+[dispatch] ppo #37 8 29 3  -> handled
+[dispatch] ppo #36 4 25 2  -> handled
+[dispatch] pin #30 18 4 13 0 0 0 0 0 0  -> handled
+[dispatch] ppo #38 2 15 1  -> handled
+[dispatch] pin #31 0 6 13 0 0 0 0 0 0  -> handled
+[dispatch] pin #21 8 12 14 0 0 0 0 0 0  -> handled
+[dispatch] pin #20 5 21 15 0 0 0 0 0 0  -> handled
+[dispatch] ppo #32 11 27 2  -> handled
+[dispatch] ppo #33 14 16 4  -> handled
+[dispatch] ppo #31 29 6 4  -> handled
+[dispatch] pin #10 5 26 14 0 0 0 0 0 0  -> handled
+[dispatch] pin #11 29 0 13 1 0 0 0 0 0  -> handled
+[dispatch] pgt #29 0  -> handled
+[dispatch] pin #29 24 23 15 0 0 0 0 0 0  -> handled
+[dispatch] bct 24 23 0 1 0 0 1 0 0  -> handled
+[dispatch] pin #1 21 10 18 1 1 1 0 0 0  -> handled
+[dispatch] pin #0 2 9 16 0 0 0 0 0 0  -> handled
+[dispatch] ppo #21 8 12 2  -> handled
+[dispatch] plv #15 2  -> handled
+[dispatch] pie 24 7 1  -> handled
+[dispatch] bct 24 7 2 0 0 0 1 0 0  -> handled
+[dispatch] pgt #13 0  -> handled
+[dispatch] pin #13 10 6 16 0 0 0 0 0 0  -> handled
+[dispatch] bct 10 6 0 0 0 0 1 1 0  -> handled
+[dispatch] pgt #4 0  -> handled
+[dispatch] pin #4 22 12 18 0 0 0 0 0 0  -> handled
+[dispatch] bct 22 12 0 0 0 0 1 0 0  -> handled
+[dispatch] pgt #5 2  -> handled
+[dispatch] pin #5 23 23 20 1 1 1 0 0 0  -> handled
+[dispatch] bct 23 23 0 0 0 0 0 0 0  -> handled
+[dispatch] ppo #2 29 28 3  -> handled
+[dispatch] ppo #0 2 10 3  -> handled
+[dispatch] pgt #39 0  -> handled
+[dispatch] pin #39 7 28 12 0 0 0 0 0 0  -> handled
+[dispatch] bct 7 28 0 0 0 0 0 0 0  -> handled
+[dispatch] ppo #34 24 7 4  -> handled
+[dispatch] pgt #35 0  -> handled
+[dispatch] pin #35 0 15 12 0 0 0 0 0 0  -> handled
+[dispatch] bct 0 15 0 1 0 0 0 0 0  -> handled
+[dispatch] ppo #33 14 16 3  -> handled
+[dispatch] pgt #30 0  -> handled
+[dispatch] pin #30 18 4 14 0 0 0 0 0 0  -> handled
+[dispatch] bct 18 4 1 0 0 0 0 1 0  -> handled
+[dispatch] ppo #14 1 7 4  -> handled
+[dispatch] plv #12 2  -> handled
+[dispatch] pie 13 22 1  -> handled
+[dispatch] bct 13 22 1 0 1 0 0 0 0  -> handled
+[dispatch] ppo #11 28 0 4  -> handled
+[dispatch] pgt #10 0  -> handled
+[dispatch] pin #10 5 26 15 0 0 0 0 0 0  -> handled
+[dispatch] bct 5 26 1 0 1 0 0 1 0  -> handled
+[dispatch] ppo #7 5 20 1  -> handled
+[dispatch] pgt #6 0  -> handled
+[dispatch] pin #6 6 19 18 0 0 0 0 0 0  -> handled
+[dispatch] bct 6 19 1 0 0 0 0 0 0  -> handled
+[dispatch] ppo #0 2 10 2  -> handled
+[dispatch] ppo #1 21 9 1  -> handled
+[dispatch] ppo #3 29 29 4  -> handled
+[dispatch] ppo #41 2 19 4  -> handled
+[dispatch] ppo #40 26 16 3  -> handled
+[dispatch] pgt #38 0  -> handled
+[dispatch] pin #38 2 15 11 0 0 0 0 0 0  -> handled
+[dispatch] bct 2 15 0 0 0 0 0 0 0  -> handled
+[dispatch] ppo #37 8 0 3  -> handled
+[dispatch] pgt #36 0  -> handled
+[dispatch] pin #36 4 25 14 0 0 0 0 0 0  -> handled
+[dispatch] bct 4 25 1 0 0 1 0 0 0  -> handled
+[dispatch] ppo #33 14 17 3  -> handled
+[dispatch] pgt #32 0  -> handled
+[dispatch] pin #32 11 27 15 0 0 0 0 0 0  -> handled
+[dispatch] bct 11 27 0 0 0 0 0 0 0  -> handled
+[dispatch] ppo #31 28 6 4  -> handled
+[dispatch] pgt #29 1  -> handled
+[dispatch] pin #29 24 23 15 1 0 0 0 0 0  -> handled
+[dispatch] bct 24 23 0 0 0 0 1 0 0  -> handled
+[dispatch] plv #18 2  -> handled
+[dispatch] plv #28 2  -> handled
+[dispatch] pie 20 16 1  -> handled
+[dispatch] bct 20 16 0 0 0 0 0 0 0  -> handled
+[dispatch] ppo #21 9 12 2  -> handled
+[dispatch] ppo #13 11 6 2  -> handled
+[dispatch] pgt #15 0  -> handled
+[dispatch] pin #15 24 7 13 0 0 0 0 0 0  -> handled
+[dispatch] bct 24 7 1 0 0 0 1 0 0  -> handled
+[dispatch] ppo #2 29 29 3  -> handled
+[dispatch] plv #9 2  -> handled
+[dispatch] pie 14 15 1  -> handled
+[dispatch] bct 14 15 1 0 0 0 0 0 0  -> handled
+[dispatch] ppo #3 29 29 1  -> handled
+[dispatch] ppo #5 24 23 2  -> handled
+[dispatch] ppo #4 21 12 4  -> handled
+[dispatch] ppo #40 26 16 4  -> handled
+[dispatch] ppo #39 8 28 2  -> handled
+[dispatch] ppo #37 8 0 2  -> handled
+[dispatch] pgt #34 0  -> handled
+[dispatch] pin #34 24 7 14 0 0 0 0 0 0  -> handled
+[dispatch] bct 24 7 0 0 0 0 1 0 0  -> handled
+[dispatch] ppo #35 0 14 1  -> handled
+[dispatch] pgt #30 0  -> handled
+[dispatch] pin #30 18 4 15 0 0 0 0 0 0  -> handled
+[dispatch] bct 18 4 0 0 0 0 0 1 0  -> handled
+[dispatch] pin #36 4 25 13 0 0 0 0 0 0  -> handled
+[dispatch] pin #37 8 0 10 0 0 0 0 0 0  -> handled
+[dispatch] pin #26 1 23 14 0 0 0 0 0 0  -> handled
+[dispatch] pin #27 7 10 13 0 0 0 0 0 0  -> handled
+[dispatch] ppo #14 0 7 4  -> handled
+[dispatch] pgt #12 0  -> handled
+[dispatch] pin #12 13 22 14 0 0 0 0 0 0  -> handled
+[dispatch] bct 13 22 0 0 1 0 0 0 0  -> handled
+[dispatch] pin #17 4 27 13 0 0 0 0 0 0  -> handled
+[dispatch] pin #16 10 10 12 0 0 0 0 0 0  -> handled
+[dispatch] ppo #11 27 0 4  -> handled
+[dispatch] pgt #10 0  -> handled
+[dispatch] pin #10 5 26 16 0 0 0 0 0 0  -> handled
+[dispatch] bct 5 26 0 0 1 0 0 1 0  -> handled
+[dispatch] ppo #3 29 28 1  -> handled
+[dispatch] pin #7 5 20 18 1 0 0 0 0 0  -> handled
+[dispatch] pin #6 6 19 17 0 0 0 0 0 0  -> handled
+[dispatch] pgt #7 3  -> handled
+[dispatch] pin #7 5 20 18 1 0 1 0 0 0  -> handled
+[dispatch] bct 5 20 0 0 0 0 0 0 0  -> handled
+[dispatch] ppo #4 21 12 3  -> handled
+[dispatch] ppo #40 25 16 4  -> handled
+[dispatch] ppo #41 1 19 4  -> handled
+[dispatch] pgt #6 0  -> handled
+[dispatch] pin #6 6 19 18 0 0 0 0 0 0  -> handled
+[dispatch] bct 6 19 0 0 0 0 0 0 0  -> handled
+[dispatch] ppo #1 21 8 1  -> handled
+[dispatch] ppo #0 3 10 2  -> handled
+[dispatch] ppo #28 20 17 3  -> handled
+[dispatch] ppo #37 9 0 2  -> handled
+[dispatch] pgt #36 0  -> handled
+[dispatch] pin #36 4 25 14 0 0 0 0 0 0  -> handled
+[dispatch] bct 4 25 0 0 0 1 0 0 0  -> handled
+[dispatch] ppo #38 2 14 1  -> handled
+[dispatch] ppo #32 12 27 2  -> handled
+[dispatch] pgt #33 0  -> handled
+[dispatch] pin #33 14 17 16 0 0 0 0 0 0  -> handled
+[dispatch] bct 14 17 0 0 0 0 0 0 0  -> handled
+[dispatch] pgt #31 0  -> handled
+[dispatch] pin #31 28 6 14 0 0 0 0 0 0  -> handled
+[dispatch] bct 28 6 1 2 0 0 0 0 0  -> handled
+[dispatch] pdr #29 1  -> handled
+[dispatch] pin #29 24 23 15 0 0 0 0 0 0  -> handled
+[dispatch] bct 24 23 0 1 0 0 1 0 0  -> handled
+[dispatch] ppo #18 19 16 4  -> handled
+[dispatch] pgt #21 0  -> handled
+[dispatch] pin #21 9 12 15 0 0 0 0 0 0  -> handled
+[dispatch] bct 9 12 0 0 0 0 0 0 0  -> handled
+[dispatch] ppo #14 29 7 4  -> handled
+[dispatch] ppo #15 24 6 1  -> handled
+[dispatch] pgt #13 0  -> handled
+[dispatch] pin #13 11 6 17 0 0 0 0 0 0  -> handled
+[dispatch] bct 11 6 0 0 0 0 0 0 0  -> handled
+[dispatch] pdi #41  -> handled
+[dispatch] pdi #40  -> handled
+[dispatch] pdi #39  -> handled
+[dispatch] pdi #38  -> handled
+[dispatch] pdi #37  -> handled
+[dispatch] pdi #36  -> handled
+[dispatch] pdi #35  -> handled
+[dispatch] pdi #34  -> handled
+[dispatch] pdi #33  -> handled
+[dispatch] pdi #32  -> handled
+[dispatch] pdi #30  -> handled
+[dispatch] pdi #26  -> handled
+[dispatch] pdi #31  -> handled
+[dispatch] pdi #28  -> handled
+[dispatch] pdi #27  -> handled
+[dispatch] pdi #17  -> handled
+[dispatch] pdi #12  -> handled
+[dispatch] pdi #10  -> handled
+[dispatch] pdi #9  -> handled
+[dispatch] pdi #29  -> handled
+[dispatch] pdi #25  -> handled
+[dispatch] pdi #24  -> handled
+[dispatch] pdi #4  -> handled
+[dispatch] pdi #23  -> handled
+[dispatch] pdi #19  -> handled
+[dispatch] pdr #5 1  -> handled
+[dispatch] pin #5 24 23 20 0 1 1 0 0 0  -> handled
+[dispatch] bct 24 23 0 2 0 0 1 0 0  -> handled
+[dispatch] pdi #2  -> handled
+[dispatch] pdi #22  -> handled
+[dispatch] pdi #21  -> handled
+[dispatch] pdi #15  -> handled
+[dispatch] ppo #1 21 7 1  -> handled
+[dispatch] pdi #20  -> handled
+[dispatch] pdi #13  -> handled
+[dispatch] pdi #18  -> handled
+[dispatch] pdi #0  -> handled
+[dispatch] pdi #8  -> handled
+[dispatch] pdi #14  -> handled
+[dispatch] pdi #5  -> handled
+[dispatch] pdi #1  -> handled
+[dispatch] pdi #11  -> handled
+[dispatch] pdi #16  -> handled
+[dispatch] pdi #7  -> handled
+[dispatch] pdi #3  -> handled
+[dispatch] pdi #6  -> handled
+[dispatch] pie 9 18 0  -> handled
+[dispatch] pie 5 21 0  -> handled
+[dispatch] pie 10 10 0  -> handled
+[dispatch] pie 25 18 0  -> handled
+[dispatch] pie 4 27 0  -> handled
+[dispatch] pie 15 27 0  -> handled
+[dispatch] pie 7 10 0  -> handled
+[dispatch] pie 0 29 0  -> handled
+[dispatch] pie 1 23 0  -> handled
+[dispatch] pie 16 0 0  -> handled
+[dispatch] pie 8 17 0  -> handled

@@ -1,5 +1,6 @@
 #pragma once
 
+#include <cstddef>
 #include <map>
 #include <memory>
 #include <string>
@@ -10,6 +11,7 @@
 #include "interface/IEntity.hpp"
 #include "types/Color.hpp"
 #include "types/EntityKey.hpp"
+#include "types/LogMessage.hpp"
 
 namespace Zappy
 {
@@ -65,11 +67,11 @@ class GameState
     const std::vector<std::string> &teams() const;
 
     /**
-     * @brief Distinct display color of a team, assigning a new one on first use.
+     * @brief Distinct display color assigned to a team (when it was registered).
      * @param team Team name.
-     * @return The team's color.
+     * @return The team's color, or white if the team is unknown.
      */
-    Color teamColor(const std::string &team);
+    Color teamColor(const std::string &team) const;
 
     /** @brief Sets the current time unit. @param timeUnit New time unit. */
     void setTimeUnit(int timeUnit);
@@ -83,7 +85,34 @@ class GameState
     /** @brief Winning team, empty while the game is running. @return The winner. */
     const std::string &winner() const;
 
+    /**
+     * @brief Appends a message to the bounded log (oldest dropped past the cap).
+     * @param text Message text.
+     * @param color Display color.
+     */
+    void addMessage(const std::string &text, Color color);
+
+    /** @brief Most recent log messages (broadcasts, server messages). @return The log. */
+    const std::vector<LogMessage> &messages() const;
+
+    /**
+     * @brief Marks an entity as the selected one (its info is shown in the HUD).
+     * @param key Identity of the entity to select.
+     */
+    void selectEntity(const EntityKey &key);
+
+    /** @brief Clears the current selection. */
+    void clearSelection();
+
+    /**
+     * @brief Currently selected entity, resolved live (null if none or it is gone).
+     * @return Pointer to the selected entity, or nullptr.
+     */
+    const IEntity *selectedEntity() const;
+
   private:
+    static constexpr std::size_t MaxMessages = 6; ///< Cap on retained log lines.
+
     Map _map;                                                ///< Toroidal world map.
     std::map<EntityKey, std::unique_ptr<IEntity>> _entities; ///< All map entities.
     std::vector<std::string> _teams;                         ///< Known team names.
@@ -91,6 +120,9 @@ class GameState
     std::string _winner;                                     ///< Winning team, if any.
     ColorPalette _palette;                                   ///< Generator of distinct team colors.
     std::map<std::string, Color> _teamColors;                ///< Assigned color per team.
+    std::vector<LogMessage> _messages;                       ///< Bounded log of recent messages.
+    EntityKey _selectedKey;                                  ///< Identity of the selected entity.
+    bool _hasSelection;                                      ///< Whether an entity is selected.
 };
 
 } // namespace Zappy

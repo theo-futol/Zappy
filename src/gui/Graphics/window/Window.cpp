@@ -46,6 +46,9 @@ void Window::registerCallbacks()
     glfwSetWindowCloseCallback(_window, closeCallback);
     glfwSetKeyCallback(_window, keyCallback);
     glfwSetFramebufferSizeCallback(_window, framebufferSizeCallback);
+    glfwSetScrollCallback(_window, scrollCallback);
+    glfwSetMouseButtonCallback(_window, mouseButtonCallback);
+    glfwSetCursorPosCallback(_window, cursorPosCallback);
 }
 
 Window *Window::fromGlfw(GLFWwindow *window)
@@ -84,6 +87,38 @@ void Window::framebufferSizeCallback(GLFWwindow *window, int width, int height)
     event.width = width;
     event.height = height;
     self->_events.push_back(event);
+}
+
+void Window::scrollCallback(GLFWwindow *window, double xoffset, double yoffset)
+{
+    Event event{};
+
+    (void)xoffset;
+    event.type = EventType::Scroll;
+    event.scrollDelta = yoffset;
+    fromGlfw(window)->_events.push_back(event);
+}
+
+void Window::mouseButtonCallback(GLFWwindow *window, int button, int action, int mods)
+{
+    Event event{};
+
+    (void)mods;
+    event.type = EventType::MouseButton;
+    event.key = button;
+    event.pressed = action == GLFW_PRESS;
+    glfwGetCursorPos(window, &event.mouseX, &event.mouseY);
+    fromGlfw(window)->_events.push_back(event);
+}
+
+void Window::cursorPosCallback(GLFWwindow *window, double xpos, double ypos)
+{
+    Event event{};
+
+    event.type = EventType::MouseMove;
+    event.mouseX = xpos;
+    event.mouseY = ypos;
+    fromGlfw(window)->_events.push_back(event);
 }
 
 bool Window::isOpen() const

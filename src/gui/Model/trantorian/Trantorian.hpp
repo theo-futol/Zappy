@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include <vector>
 
 #include "Model/resourceset/ResourceSet.hpp"
 #include "abstract/AMapEntity.hpp"
@@ -35,6 +36,9 @@ class Trantorian : public AMapEntity
 
     /** @brief Visual description declared by the Trantorian. @return The appearance. */
     Appearance appearance() const override;
+
+    /** @brief Info lines: identity, position, team, level and inventory. @return The lines. */
+    std::vector<std::string> infoLines() const override;
 
     /** @brief Team name. @return The team. */
     const std::string &team() const;

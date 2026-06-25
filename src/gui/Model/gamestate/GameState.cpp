@@ -3,7 +3,7 @@
 namespace Zappy
 {
 
-GameState::GameState() : _map(), _entities(), _teams(), _timeUnit(0), _winner(), _palette(), _teamColors()
+GameState::GameState() : _map(), _entities(), _teams(), _timeUnit(0), _winner(), _palette(), _teamColors(), _messages(), _selectedKey(), _hasSelection(false)
 {
 }
 
@@ -46,6 +46,8 @@ const std::map<EntityKey, std::unique_ptr<IEntity>> &GameState::entities() const
 void GameState::addTeam(const std::string &team)
 {
     _teams.push_back(team);
+    if (_teamColors.find(team) == _teamColors.end())
+        _teamColors[team] = _palette.next();
 }
 
 const std::vector<std::string> &GameState::teams() const
@@ -53,17 +55,13 @@ const std::vector<std::string> &GameState::teams() const
     return _teams;
 }
 
-Color GameState::teamColor(const std::string &team)
+Color GameState::teamColor(const std::string &team) const
 {
     auto it = _teamColors.find(team);
 
     if (it != _teamColors.end())
         return it->second;
-
-    Color color = _palette.next();
-
-    _teamColors[team] = color;
-    return color;
+    return Color{1.0f, 1.0f, 1.0f, 1.0f};
 }
 
 void GameState::setTimeUnit(int timeUnit)
@@ -84,6 +82,41 @@ void GameState::setWinner(const std::string &team)
 const std::string &GameState::winner() const
 {
     return _winner;
+}
+
+void GameState::addMessage(const std::string &text, Color color)
+{
+    _messages.push_back(LogMessage{text, color});
+    if (_messages.size() > MaxMessages)
+        _messages.erase(_messages.begin());
+}
+
+const std::vector<LogMessage> &GameState::messages() const
+{
+    return _messages;
+}
+
+void GameState::selectEntity(const EntityKey &key)
+{
+    _selectedKey = key;
+    _hasSelection = true;
+}
+
+void GameState::clearSelection()
+{
+    _hasSelection = false;
+}
+
+const IEntity *GameState::selectedEntity() const
+{
+    if (!_hasSelection)
+        return nullptr;
+
+    auto it = _entities.find(_selectedKey);
+
+    if (it == _entities.end())
+        return nullptr;
+    return it->second.get();
 }
 
 } // namespace Zappy

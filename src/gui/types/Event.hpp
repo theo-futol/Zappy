@@ -27,6 +27,7 @@ struct Event
 {
     EventType type;     ///< Event category.
     int key;            ///< Key or mouse button code (backend-neutral).
+    bool pressed;       ///< True on press, false on release (keys, mouse buttons).
     double mouseX;      ///< Cursor X position.
     double mouseY;      ///< Cursor Y position.
     double scrollDelta; ///< Scroll amount along the Y axis.

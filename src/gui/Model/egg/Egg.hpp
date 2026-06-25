@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include <vector>
 
 #include "abstract/AMapEntity.hpp"
 #include "types/Appearance.hpp"
@@ -31,6 +32,9 @@ class Egg : public AMapEntity
 
     /** @brief Visual description declared by the egg. @return The appearance. */
     Appearance appearance() const override;
+
+    /** @brief Info lines: identity, position and owning team. @return The lines. */
+    std::vector<std::string> infoLines() const override;
 
     /** @brief Team name. @return The team. */
     const std::string &team() const;

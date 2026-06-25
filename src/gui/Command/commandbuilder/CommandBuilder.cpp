@@ -23,6 +23,21 @@ std::string CommandBuilder::requestTileContent(int x, int y)
     return "bct " + std::to_string(x) + " " + std::to_string(y) + "\n";
 }
 
+std::string CommandBuilder::requestPlayerPosition(int number)
+{
+    return "ppo #" + std::to_string(number) + "\n";
+}
+
+std::string CommandBuilder::requestPlayerLevel(int number)
+{
+    return "plv #" + std::to_string(number) + "\n";
+}
+
+std::string CommandBuilder::requestPlayerInventory(int number)
+{
+    return "pin #" + std::to_string(number) + "\n";
+}
+
 std::string CommandBuilder::requestTimeUnit()
 {
     return "sgt\n";

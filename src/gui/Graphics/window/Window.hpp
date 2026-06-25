@@ -108,6 +108,31 @@ class Window
      */
     static void framebufferSizeCallback(GLFWwindow *window, int width, int height);
 
+    /**
+     * @brief GLFW scroll callback; pushes a Scroll event.
+     * @param window Native window.
+     * @param xoffset Horizontal scroll (unused).
+     * @param yoffset Vertical scroll amount.
+     */
+    static void scrollCallback(GLFWwindow *window, double xoffset, double yoffset);
+
+    /**
+     * @brief GLFW mouse-button callback; pushes a MouseButton event with the cursor position.
+     * @param window Native window.
+     * @param button GLFW button code.
+     * @param action Press or release.
+     * @param mods Modifier bitfield (unused).
+     */
+    static void mouseButtonCallback(GLFWwindow *window, int button, int action, int mods);
+
+    /**
+     * @brief GLFW cursor-position callback; pushes a MouseMove event.
+     * @param window Native window.
+     * @param xpos Cursor X position.
+     * @param ypos Cursor Y position.
+     */
+    static void cursorPosCallback(GLFWwindow *window, double xpos, double ypos);
+
     GLFWwindow *_window;        ///< Native GLFW window handle.
     int _width;                 ///< Window width in pixels.
     int _height;                ///< Window height in pixels.

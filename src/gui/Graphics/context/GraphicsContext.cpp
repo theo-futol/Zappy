@@ -20,4 +20,12 @@ void GraphicsContext::setViewport(int width, int height)
     glViewport(0, 0, width, height);
 }
 
+void GraphicsContext::setDepthTest(bool enabled)
+{
+    if (enabled)
+        glEnable(GL_DEPTH_TEST);
+    else
+        glDisable(GL_DEPTH_TEST);
+}
+
 } // namespace Zappy

@@ -63,6 +63,13 @@ class NetworkService
     void connect(const std::string &host, int port);
 
     /**
+     * @brief Sends a ready-built command line to the server (e.g. from CommandBuilder).
+     * @param command Command line to send (already newline-terminated).
+     * @throws NetworkServiceException On a transport error.
+     */
+    void send(const std::string &command);
+
+    /**
      * @brief Drains all currently available server data and applies it to the state.
      *
      * Non-blocking: returns immediately when no data is pending. Meant to be called

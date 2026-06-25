@@ -1,5 +1,7 @@
 #include "abstract/AMapEntity.hpp"
 
+#include <string>
+
 namespace Zappy
 {
 
@@ -30,6 +32,11 @@ void AMapEntity::setPosition(GridPosition position)
 void AMapEntity::setOrientation(Orientation orientation)
 {
     _orientation = orientation;
+}
+
+std::vector<std::string> AMapEntity::infoLines() const
+{
+    return {getEntityType() + " #" + std::to_string(_number), "POS  " + std::to_string(_position.x) + ", " + std::to_string(_position.y)};
 }
 
 } // namespace Zappy

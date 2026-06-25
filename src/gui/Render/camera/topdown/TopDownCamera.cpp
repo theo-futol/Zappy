@@ -41,13 +41,29 @@ float TopDownCamera::zoom() const
 
 void TopDownCamera::setZoom(float zoom)
 {
-    _zoom = zoom;
+    _zoom = std::clamp(zoom, MinZoom, MaxZoom);
+}
+
+void TopDownCamera::zoomBy(float factor)
+{
+    setZoom(_zoom * factor);
 }
 
 void TopDownCamera::setTarget(float x, float y)
 {
     _targetX = x;
     _targetY = y;
+}
+
+void TopDownCamera::panPixels(float dxPixels, float dyPixels)
+{
+    if (!_height)
+        return;
+
+    float worldPerPixel = (2.0f * BaseHalfHeight / _zoom) / static_cast<float>(_height);
+
+    _targetX -= dxPixels * worldPerPixel;
+    _targetY += dyPixels * worldPerPixel;
 }
 
 void TopDownCamera::fitToMap(int width, int height)
@@ -61,6 +77,29 @@ void TopDownCamera::fitToMap(int width, int height)
     float zoomWidth = (2.0f * BaseHalfHeight * _aspect) / (width * margin);
 
     _zoom = std::min(zoomHeight, zoomWidth);
+}
+
+void TopDownCamera::worldFromScreen(float px, float py, float &outX, float &outY) const
+{
+    if (!_width || !_height)
+    {
+        outX = _targetX;
+        outY = _targetY;
+        return;
+    }
+
+    float halfHeight = BaseHalfHeight / _zoom;
+    float halfWidth = halfHeight * _aspect;
+    float ndcX = (px / static_cast<float>(_width)) * 2.0f - 1.0f;
+    float ndcY = ((static_cast<float>(_height) - py) / static_cast<float>(_height)) * 2.0f - 1.0f;
+
+    outX = _targetX + ndcX * halfWidth;
+    outY = _targetY + ndcY * halfHeight;
+}
+
+int TopDownCamera::viewportWidth() const
+{
+    return _width;
 }
 
 } // namespace Zappy

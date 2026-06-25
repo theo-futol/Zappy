@@ -44,6 +44,12 @@ class GraphicsContext
      * @param height Viewport height in pixels.
      */
     void setViewport(int width, int height);
+
+    /**
+     * @brief Enables or disables depth testing (disabled for 2D overlays like the HUD).
+     * @param enabled True to enable depth testing.
+     */
+    void setDepthTest(bool enabled);
 };
 
 } // namespace Zappy

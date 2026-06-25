@@ -29,6 +29,27 @@ class CommandBuilder
      */
     static std::string requestTileContent(int x, int y);
 
+    /**
+     * @brief Single player position request.
+     * @param number Player number.
+     * @return The "ppo #n" command line.
+     */
+    static std::string requestPlayerPosition(int number);
+
+    /**
+     * @brief Single player level request.
+     * @param number Player number.
+     * @return The "plv #n" command line.
+     */
+    static std::string requestPlayerLevel(int number);
+
+    /**
+     * @brief Single player inventory request.
+     * @param number Player number.
+     * @return The "pin #n" command line.
+     */
+    static std::string requestPlayerInventory(int number);
+
     /** @brief Time unit request. @return The "sgt" command line. */
     static std::string requestTimeUnit();
 

@@ -87,10 +87,12 @@ void Core::init()
 
 void Core::run()
 {
-    while (_render->processInput())
+    while (_render->processInput(_state))
     {
         try
         {
+            for (const std::string &command : _render->takeOutgoing())
+                _network->send(command);
             _network->update();
         }
         catch (const NetworkService::NetworkServiceException &e)

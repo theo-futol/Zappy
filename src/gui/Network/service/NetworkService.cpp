@@ -46,6 +46,18 @@ void NetworkService::connect(const std::string &host, int port)
     }
 }
 
+void NetworkService::send(const std::string &command)
+{
+    try
+    {
+        _socket->send(command);
+    }
+    catch (const INetwork::INetworkException &e)
+    {
+        throw NetworkServiceException(std::string("send: ") + e.what());
+    }
+}
+
 void NetworkService::update()
 {
     try

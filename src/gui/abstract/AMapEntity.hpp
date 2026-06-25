@@ -1,5 +1,8 @@
 #pragma once
 
+#include <string>
+#include <vector>
+
 #include "interface/IEntity.hpp"
 #include "types/GridPosition.hpp"
 #include "types/Orientation.hpp"
@@ -42,6 +45,12 @@ class AMapEntity : public IEntity
 
     /** @brief Updates the facing orientation. @param orientation New orientation. */
     void setOrientation(Orientation orientation) override;
+
+    /**
+     * @brief Base info lines shared by every entity: identity and position.
+     * @return The identity and position lines (concrete types append their own).
+     */
+    std::vector<std::string> infoLines() const override;
 
   protected:
     int _number;              ///< Protocol number within the entity type.

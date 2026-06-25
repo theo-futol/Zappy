@@ -12,6 +12,7 @@
 #include "Render/asset/AssetCache.hpp"
 #include "Render/camera/topdown/TopDownCamera.hpp"
 #include "Render/projection/planar/PlanarProjection.hpp"
+#include "Render/renderer/hud/HudRenderer.hpp"
 #include "interface/IRenderer.hpp"
 
 namespace Zappy
@@ -70,12 +71,27 @@ class RenderSystem
     void render(const GameState &state);
 
     /**
-     * @brief Polls input and updates the camera.
+     * @brief Polls input and updates the camera and selection.
+     * @param state State updated on selection.
      * @return False when the user asked to quit, true otherwise.
      */
-    bool processInput();
+    bool processInput(GameState &state);
+
+    /**
+     * @brief Takes the commands queued this frame (e.g. from HUD buttons or selection).
+     * @return The pending command lines, moved out (the queue is left empty).
+     */
+    std::vector<std::string> takeOutgoing();
 
   private:
+    /**
+     * @brief Picks the entity under a world click and updates the selection.
+     * @param px Click X in pixels.
+     * @param py Click Y in pixels.
+     * @param state State whose selection is set or cleared.
+     */
+    void selectAt(double px, double py, GameState &state);
+
     int _width;         ///< Window width in pixels.
     int _height;        ///< Window height in pixels.
     std::string _title; ///< Window title.
@@ -89,7 +105,10 @@ class RenderSystem
     PlanarProjection _projection; ///< Active grid-to-world mapping.
     InputHandler _input;          ///< Input translation.
 
-    std::vector<std::unique_ptr<IRenderer>> _renderers; ///< Ordered render stages.
+    std::vector<std::unique_ptr<IRenderer>> _renderers; ///< Ordered world render stages.
+    std::unique_ptr<HudRenderer> _hud;                  ///< HUD overlay (drawn separately, full viewport, depth off).
+    bool _framed;                                       ///< Whether the map was auto-framed once (then user controls).
+    std::vector<std::string> _outgoing;                 ///< Commands queued this frame, drained by Core.
 };
 
 } // namespace Zappy
