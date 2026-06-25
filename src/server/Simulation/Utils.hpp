@@ -1,5 +1,9 @@
 #pragma once
 
+#include <algorithm>
+#include <array>
+#include <cstdlib>
+
 namespace zappy
 {
 
@@ -31,11 +35,15 @@ struct Direction
                                                                  {Degrees::SOUTH_WEST, 225},
                                                                  {Degrees::WEST, 270},
                                                                  {Degrees::NORTH_WEST, 315}}};
+        auto angularDistance = [](int a, int b) {
+            int diff = std::abs(a - b);
+            return std::min(diff, 360 - diff);
+        };
 
         return std::min_element(directions.begin(), directions.end(),
-                                [value](const Direction &a, const Direction &b) {
-                                    int diffA = std::abs(a.value - value);
-                                    int diffB = std::abs(b.value - value);
+                                [value, angularDistance](const Direction &a, const Direction &b) {
+                                    int diffA = angularDistance(a.value, value);
+                                    int diffB = angularDistance(b.value, value);
                                     return diffA < diffB;
                                 })
             ->degree;
