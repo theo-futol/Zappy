@@ -4,7 +4,7 @@
 namespace zappy
 {
 
-World::World(int x, int y, bool useOldGen) : _broadcastQueue(nullptr), _useOldGen(useOldGen)
+World::World(int x, int y, int f, bool useOldGen) : _f(f), _broadcastQueue(nullptr), _useOldGen(useOldGen)
 {
     _map.resize(x);
     for (auto &column : _map)
@@ -125,6 +125,11 @@ std::pair<int, int> World::getMapSize() const
     if (_map.empty())
         return std::make_pair(0, 0);
     return _mapSize;
+}
+
+int World::getTimeUnit() const
+{
+    return _f;
 }
 
 tile *World::getTileAt(int playerID)

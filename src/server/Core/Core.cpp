@@ -65,8 +65,9 @@ void Core::setWorld()
 {
     int width = _argParser.hasFlag("-x") ? _argParser.getInt("-x") : INITIAL_WORLD_WIDTH;
     int height = _argParser.hasFlag("-y") ? _argParser.getInt("-y") : INITIAL_WORLD_HEIGHT;
+    int f = _argParser.hasFlag("-f") ? _argParser.getInt("-f") : 100;
     int initialSlots = _argParser.hasFlag("-c") ? _argParser.getInt("-c") : INITIAL_CLIENT_CAPACITY;
-    _world = std::make_unique<World>(width, height, _argParser.hasFlag("-oldgen"));
+    _world = std::make_unique<World>(width, height, f, _argParser.hasFlag("-oldgen"));
     const auto &teamNames = _argParser.getList("-n");
     for (int i = 0; i < static_cast<int>(teamNames.size()); ++i)
         _world->addTeam(teamNames[i], i, initialSlots);
