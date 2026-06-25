@@ -132,6 +132,13 @@ int World::getTimeUnit() const
     return _f;
 }
 
+void World::setTimeUnit(int f)
+{
+    if (f < 1 || f > 1000)
+        return;
+    _f = f;
+}
+
 tile *World::getTileAt(int playerID)
 {
     Player *player = getPlayerById(playerID);

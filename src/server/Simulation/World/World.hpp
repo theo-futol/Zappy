@@ -143,5 +143,8 @@ class World
     /// @brief Returns the active time unit for the world.
     /// @return _f 
     int getTimeUnit() const;
+    /// @brief sets the active time unit for the world.
+    /// @param f 
+    void setTimeUnit(int f);
 };
 } // namespace zappy

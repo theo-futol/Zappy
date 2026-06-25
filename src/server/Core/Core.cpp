@@ -48,10 +48,9 @@ Core::Core(ArgParser argParser) : _argParser(std::move(argParser)), _clientHandl
 void Core::setClientHandler()
 {
     int port = _argParser.getInt("-p");
-    int f = _argParser.hasFlag("-f") ? _argParser.getInt("-f") : 100;
     int cFlag = _argParser.hasFlag("-c") ? _argParser.getInt("-c") : INITIAL_CLIENT_CAPACITY;
     int initialClientCapacity = cFlag * _argParser.getList("-n").size();
-    _clientHandler = std::make_unique<ClientHandler>(port, initialClientCapacity, f, _world.get(), &serverIsRunning);
+    _clientHandler = std::make_unique<ClientHandler>(port, initialClientCapacity, _world.get(), &serverIsRunning);
     setWorldBroadcast();
 }
 
