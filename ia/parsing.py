@@ -115,7 +115,7 @@ def parse_look_payload(payload: str) -> list[list[str]]:
     for tile in inner.split(","):
         tiles.append(_parse_look_tile(tile))
     if tiles and "player" not in tiles[0]:
-        tiles[0].append("player")
+        tiles.insert(0, ["player"])
     return tiles
 
 

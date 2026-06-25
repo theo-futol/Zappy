@@ -1,9 +1,10 @@
 #include "World.hpp"
+#include <iostream>
 
 namespace zappy
 {
 
-World::World(int x, int y) : _broadcastQueue(nullptr)
+World::World(int x, int y, int f, bool useOldGen) : _f(f), _broadcastQueue(nullptr), _useOldGen(useOldGen)
 {
     _map.resize(x);
     for (auto &column : _map)
@@ -14,15 +15,23 @@ World::World(int x, int y) : _broadcastQueue(nullptr)
             _map[i][j] = tile();
     _mapSize = std::make_pair(x, y);
     srand(time(nullptr));
+    resourcePassiveGeneration();
 }
 
 /// @brief Generates resources on the map at regular intervals.
-/// Via the formula : map_width * map_height * density
-/// @note The density and generation logic can be adjusted based on game requirements.
-/// This function should be called periodically, e.g., every 20 seconds, to simulate resource regeneration.
-/// The density of each ressource are the following:
+/// Dispatches to the legacy or spec-accurate algorithm depending on -oldgen.
+void World::resourcePassiveGeneration()
+{
+    if (_useOldGen)
+        resourcePassiveGenerationLegacy();
+    else
+        resourcePassiveGenerationEven();
+}
+
+/// @brief Legacy algorithm, preserved as-is (including the deraumere density quirk)
+/// for comparison/rollback via -oldgen. Via the formula : map_width * map_height * density
 /// food: 0.5, linemate: 0.3, deraumere: 0.5, sibur: 0.1, mendiane: 0.1, phiras: 0.08, thystame: 0.05
-void World::ressourcePassiveGeneration()
+void World::resourcePassiveGenerationLegacy()
 {
     const std::vector<std::pair<ItemType, double>> resourceDensity = {{ItemType::FOOD, 0.5},     {ItemType::LINEMATE, 0.3}, {ItemType::DERAUMERE, 0.5}, {ItemType::SIBUR, 0.1},
                                                                       {ItemType::MENDIANE, 0.1}, {ItemType::PHIRAS, 0.08},  {ItemType::THYSTAME, 0.05}};
@@ -43,6 +52,48 @@ void World::ressourcePassiveGeneration()
     }
 }
 
+/// @brief Spec-accurate algorithm: tops every resource up to map_width * map_height *
+/// density (at least 1, so Trantor always has one of each on the floor), never
+/// generating past the target nor when already there. Placement is purely random
+/// (independent random tile per unit) - a given tile may end up with nothing.
+/// food: 0.5, linemate: 0.3, deraumere: 0.15, sibur: 0.1, mendiane: 0.1,
+/// phiras: 0.08, thystame: 0.05
+void World::resourcePassiveGenerationEven()
+{
+    const std::vector<std::pair<ItemType, double>> resourceDensity = {{ItemType::FOOD, 0.5},     {ItemType::LINEMATE, 0.3}, {ItemType::DERAUMERE, 0.15}, {ItemType::SIBUR, 0.1},
+                                                                      {ItemType::MENDIANE, 0.1}, {ItemType::PHIRAS, 0.08},  {ItemType::THYSTAME, 0.05}};
+    if (_map.empty() || _map[0].empty())
+        return;
+    int width = static_cast<int>(_map.size());
+    int height = static_cast<int>(_map[0].size());
+
+    for (const auto &[type, density] : resourceDensity)
+    {
+        int target = std::max(1, static_cast<int>(width * height * density));
+        int current = 0;
+        for (const auto &column : _map)
+            for (const auto &tileAt : column)
+            {
+                auto it = std::find_if(tileAt._items.begin(), tileAt._items.end(), [type](const std::pair<ItemType, int> &item) { return item.first == type; });
+                if (it != tileAt._items.end())
+                    current += it->second;
+            }
+        int toAdd = target - current;
+        if (toAdd <= 0)
+            continue;
+
+        for (int i = 0; i < toAdd; ++i)
+        {
+            int x = rand() % width;
+            int y = rand() % height;
+            std::vector<std::pair<ItemType, int>> &tileItems = _map[x][y]._items;
+            auto it = std::find_if(tileItems.begin(), tileItems.end(), [type](const std::pair<ItemType, int> &item) { return item.first == type; });
+            if (it != tileItems.end())
+                it->second += 1;
+        }
+    }
+}
+
 std::vector<std::unique_ptr<Player>> &World::getPlayers()
 {
     return _players;
@@ -53,18 +104,18 @@ const std::vector<std::unique_ptr<Player>> &World::getPlayers() const
     return _players;
 }
 
-Player *World::getPlayerByFd(int fd)
+Player *World::getPlayerById(int id)
 {
     for (const auto &player : _players)
-        if (player->getFd() == fd)
+        if (player->getId() == id)
             return player.get();
     return nullptr;
 }
 
-Player *World::getPlayerByFd(int fd) const
+Player *World::getPlayerById(int id) const
 {
     for (const auto &player : _players)
-        if (player->getFd() == fd)
+        if (player->getId() == id)
             return player.get();
     return nullptr;
 }
@@ -76,9 +127,21 @@ std::pair<int, int> World::getMapSize() const
     return _mapSize;
 }
 
+int World::getTimeUnit() const
+{
+    return _f;
+}
+
+void World::setTimeUnit(int f)
+{
+    if (f < 1 || f > 1000)
+        return;
+    _f = f;
+}
+
 tile *World::getTileAt(int playerID)
 {
-    Player *player = getPlayerByFd(playerID);
+    Player *player = getPlayerById(playerID);
     if (!player)
         return nullptr;
     return getTileAt(player->getPosition());
@@ -98,7 +161,10 @@ void World::setTileAt(position pos, ItemType itemType, int count)
     tile *tilePtr = getTileAt(pos);
 
     if (!tilePtr)
+    {
+        Logger::log("8451", "World : tile update failed", {{"x", std::to_string(pos.x)}, {"y", std::to_string(pos.y)}});
         return;
+    }
     std::vector<std::pair<ItemType, int>> &tileItems = tilePtr->_items;
     auto it = std::find_if(tileItems.begin(), tileItems.end(), [itemType](const std::pair<ItemType, int> &item) { return item.first == itemType; });
 
@@ -106,6 +172,7 @@ void World::setTileAt(position pos, ItemType itemType, int count)
         it->second = count;
     else
         tileItems.emplace_back(itemType, count);
+    Logger::log("020", "World : resource spawned on tile", {{"item", itemTypeToString(itemType)}, {"x", std::to_string(pos.x)}, {"y", std::to_string(pos.y)}});
 }
 
 int World::getAvailableSlotsForTeam(const std::string &teamName) const
@@ -118,7 +185,10 @@ int World::getAvailableSlotsForTeam(const std::string &teamName) const
 
 void World::addTeam(const std::string &name, int teamID, int initialSlots)
 {
-    _teams.push_back(std::make_shared<Team>(name, teamID, initialSlots));
+    auto team = std::make_shared<Team>(name, teamID, 0);
+    for (int i = 0; i < initialSlots; ++i)
+        team->addEgg(position{rand() % _mapSize.first, rand() % _mapSize.second});
+    _teams.push_back(team);
 }
 
 std::shared_ptr<Team> World::getTeamByName(const std::string &name)
@@ -134,14 +204,31 @@ std::vector<std::shared_ptr<Team>> &World::getTeams()
     return _teams;
 }
 
-void World::addPlayer(int fd, const std::string &teamName)
+int World::addPlayer(int fd, const std::string &teamName)
 {
     std::shared_ptr<Team> team = getTeamByName(teamName);
     if (!team)
-        return;
-    team->addPlayer();
-    _players.push_back(std::make_unique<Player>(fd, team));
-    addPlayerToTile(_players.back().get(), _players.back()->getPosition());
+        return -1;
+    std::vector<std::pair<position, int>> hatchable;
+    for (const auto &eggGroup : team->getEggs())
+        for (int eggId : eggGroup.second)
+            hatchable.emplace_back(eggGroup.first, eggId);
+    if (hatchable.empty())
+        return -1; // no egg to hatch from: caller disconnects the client
+
+    const auto &[spawn, eggId] = hatchable[rand() % hatchable.size()];
+    team->removeEgg(spawn, 1, eggId);
+    ++team->_slotsOccupied;
+
+    int id = _nextPlayerId;
+    _nextPlayerId++;
+    _players.push_back(std::make_unique<Player>(id, fd, team));
+    Player *player = _players.back().get();
+    player->setPosition(spawn.x, spawn.y, _mapSize);
+    std::vector<int> rotations = {0, 1, 2, 3};
+    player->setRotation(rotations[rand() % rotations.size()]);
+    addPlayerToTile(player, player->getPosition());
+    return id;
 }
 
 void World::removePlayerFromTile(Player *player, position pos)
@@ -176,23 +263,24 @@ void World::setBroadCastQueue(std::queue<std::string> *broadcastQueue)
 
 std::vector<int> World::foodCheck()
 {
-    std::vector<int> deadFds;
+    std::vector<int> deadIds;
 
     for (const auto &player : _players)
     {
         if (player->getInventory().getItemCount(ItemType::FOOD) <= 0)
         {
+            Logger::log("044", "Player : died", {{"player_id", std::to_string(player->getId())}});
             if (_broadcastQueue)
-                _broadcastQueue->push("pdi " + std::to_string(player->getFd()) + "\n");
+                _broadcastQueue->push("pdi " + std::to_string(player->getId()) + "\n");
             player->setState(PlayerState::DEAD);
-            deadFds.push_back(player->getFd());
+            deadIds.push_back(player->getId());
         }
         else
             player->getInventory().removeItem(ItemType::FOOD);
     }
-    for (int fd : deadFds)
-        removePlayer(fd);
-    return deadFds;
+    for (int id : deadIds)
+        removePlayer(id);
+    return deadIds;
 }
 
 static const std::vector<ElevationRequirement> elevationRequirements = {
@@ -231,8 +319,12 @@ bool World::isIncantationValid(int x, int y, int level)
 
     if (!requirement || !tilePtr)
         return false;
-    if (static_cast<int>(getPlayersOnTileAtLevel(x, y, level).size()) < requirement->players)
+    int playersAtLevel = static_cast<int>(getPlayersOnTileAtLevel(x, y, level).size());
+    if (playersAtLevel < requirement->players)
+    {
+        Logger::log("8422", "Incantation : failed, conditions not met", {{"x", std::to_string(x)}, {"y", std::to_string(y)}});
         return false;
+    }
     for (const auto &[stone, needed] : requirement->stones)
     {
         int available = 0;
@@ -243,7 +335,10 @@ bool World::isIncantationValid(int x, int y, int level)
                 break;
             }
         if (available < needed)
+        {
+            Logger::log("8422", "Incantation : failed, conditions not met", {{"x", std::to_string(x)}, {"y", std::to_string(y)}});
             return false;
+        }
     }
     return true;
 }
@@ -289,12 +384,15 @@ bool World::checkWinningCondition()
     return false;
 }
 
-void World::removePlayer(int fd)
+void World::removePlayer(int id)
 {
-    auto it = std::find_if(_players.begin(), _players.end(), [fd](const std::unique_ptr<Player> &player) { return player->getFd() == fd; });
+    auto it = std::find_if(_players.begin(), _players.end(), [id](const std::unique_ptr<Player> &player) { return player->getId() == id; });
 
     if (it == _players.end())
         return;
+    tile *tilePtr = getTileAt((*it)->getPosition());
+    if (tilePtr && tilePtr->_incantationInProgress)
+        tilePtr->_incantationInProgress = false;
     removePlayerFromTile(it->get(), (*it)->getPosition());
     // setState(DEAD) already frees the team slot (see Player::setState); avoid freeing it twice.
     if ((*it)->getState() != PlayerState::DEAD)

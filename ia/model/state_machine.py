@@ -538,6 +538,9 @@ class BehaviorStateMachine:
             )
             if decision is not None:
                 return decision
+            return self._decide_exploration_with_rationale(
+                "food reserve is too low, ignoring stones until food is visible again.",
+            )
 
         current_stone = pick_current_tile_resource(
             context.current_counts,
