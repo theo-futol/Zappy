@@ -22,7 +22,11 @@ void ArgParser::parse()
         if (it == _flagConfigs.end())
             throw ServerException("Unknown flag: " + token);
         const FlagConfig &cfg = it->second;
-        if (cfg.type == FlagType::LIST)
+        if (cfg.type == FlagType::FLAG)
+        {
+            _parsedValues[token];
+        }
+        else if (cfg.type == FlagType::LIST)
         {
             while (i + 1 < _argc && _argv[i + 1][0] != '-')
                 _parsedValues[token].push_back(_argv[++i]);
