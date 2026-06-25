@@ -15,8 +15,9 @@ struct MoveFixture
     std::queue<std::string> broadcastQueue;
     zappy::Commands *commands;
     zappy::Client *client;
+    int playerId;
 
-    MoveFixture() : world(5, 5)
+    MoveFixture() : world(5, 5, 100)
     {
         int sv[2];
         socketpair(AF_UNIX, SOCK_STREAM, 0, sv);
@@ -24,7 +25,14 @@ struct MoveFixture
         b = sv[1];
         client = new zappy::Client(a);
         world.addTeam("team1", 0, 1);
-        world.addPlayer(a, "team1");
+        playerId = world.addPlayer(a, "team1");
+        client->setPlayerId(playerId);
+        // Eggs hatch at a random tile; pin the spawn to (0,0) so position assertions
+        // are deterministic, keeping the tile player-lists consistent with the move.
+        zappy::Player *spawned = world.getPlayerById(playerId);
+        world.removePlayerFromTile(spawned, spawned->getPosition());
+        spawned->setPosition(0, 0, world.getMapSize());
+        world.addPlayerToTile(spawned, spawned->getPosition());
         commands = new zappy::Commands(&world, &broadcastQueue);
     }
     ~MoveFixture()
@@ -38,7 +46,7 @@ struct MoveFixture
 Test(Move, forward_moves_the_player_one_tile_north_and_returns_ok)
 {
     MoveFixture f;
-    zappy::Player *player = f.world.getPlayerByFd(f.a);
+    zappy::Player *player = f.world.getPlayerById(f.playerId);
     zappy::position before = player->getPosition();
     cr_assert_eq(before.x, 0);
     cr_assert_eq(before.y, 0);
@@ -55,7 +63,7 @@ Test(Move, forward_moves_the_player_one_tile_north_and_returns_ok)
 Test(Move, forward_updates_the_tile_player_lists)
 {
     MoveFixture f;
-    zappy::Player *player = f.world.getPlayerByFd(f.a);
+    zappy::Player *player = f.world.getPlayerById(f.playerId);
     zappy::position before = player->getPosition();
 
     f.commands->Forward({}, *f.client);
@@ -82,7 +90,7 @@ Test(Move, forward_on_unknown_player_returns_dead)
 Test(Move, right_turns_90_degrees_clockwise)
 {
     MoveFixture f;
-    zappy::Player *player = f.world.getPlayerByFd(f.a);
+    zappy::Player *player = f.world.getPlayerById(f.playerId);
     cr_assert_eq(player->getRotation(), zappy::Degrees::NORTH);
 
     std::string res = f.commands->Right({}, *f.client);
@@ -94,7 +102,7 @@ Test(Move, right_turns_90_degrees_clockwise)
 Test(Move, right_wraps_around_from_west_to_north)
 {
     MoveFixture f;
-    zappy::Player *player = f.world.getPlayerByFd(f.a);
+    zappy::Player *player = f.world.getPlayerById(f.playerId);
     player->setRotation(zappy::Degrees::WEST);
 
     f.commands->Right({}, *f.client);
@@ -118,7 +126,7 @@ Test(Move, right_on_unknown_player_returns_dead)
 Test(Move, left_turns_90_degrees_counter_clockwise)
 {
     MoveFixture f;
-    zappy::Player *player = f.world.getPlayerByFd(f.a);
+    zappy::Player *player = f.world.getPlayerById(f.playerId);
     player->setRotation(zappy::Degrees::EAST);
 
     std::string res = f.commands->Left({}, *f.client);
@@ -130,7 +138,7 @@ Test(Move, left_turns_90_degrees_counter_clockwise)
 Test(Move, left_wraps_around_from_north_to_west)
 {
     MoveFixture f;
-    zappy::Player *player = f.world.getPlayerByFd(f.a);
+    zappy::Player *player = f.world.getPlayerById(f.playerId);
     cr_assert_eq(player->getRotation(), zappy::Degrees::NORTH);
 
     f.commands->Left({}, *f.client);

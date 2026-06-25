@@ -18,7 +18,7 @@ struct ParserFixture
     zappy::Client *client;
     zappy::CommandParser *parser;
 
-    ParserFixture() : world(10, 10)
+    ParserFixture() : world(10, 10, 100)
     {
         int sv[2];
         socketpair(AF_UNIX, SOCK_STREAM, 0, sv);
@@ -28,7 +28,7 @@ struct ParserFixture
         fcntl(b, F_SETFL, flags | O_NONBLOCK);
         world.addTeam("team1", 0, 5);
         client = new zappy::Client(a);
-        parser = new zappy::CommandParser(client, 100, &world, &broadcastQueue);
+        parser = new zappy::CommandParser(client, &world, &broadcastQueue);
     }
     ~ParserFixture()
     {
@@ -204,7 +204,7 @@ Test(CommandParser, known_graphic_command_is_dispatched)
     f.parser->executeNext();
 
     std::string reply = f.read_reply();
-    cr_assert_str_eq(reply.c_str(), "10 10\n");
+    cr_assert_str_eq(reply.c_str(), "msz 10 10\n");
 }
 
 Test(CommandParser, dead_client_is_told_dead_and_command_is_dropped)
@@ -274,7 +274,7 @@ Test(CommandParser, frozen_AI_player_cannot_execute_queued_commands)
     f.parser->executeNext();
     f.read_reply();
 
-    zappy::Player *player = f.world.getPlayerByFd(f.a);
+    zappy::Player *player = f.world.getPlayerById(f.client->getPlayerId());
     player->setFrozenUntil(std::chrono::steady_clock::now() + std::chrono::seconds(10));
 
     f.send_line("Connect_nbr"); // cost 0, would otherwise be immediately due
@@ -290,6 +290,11 @@ Test(CommandParser, incantation_command_is_dropped_when_requirements_are_not_met
     f.parser->feed();
     f.parser->executeNext(); // handshake: spawns a level-1 player alone on its tile
     f.read_reply();
+
+    // Passive resource generation seeds the map randomly; make sure the spawn
+    // tile has no linemate stone so the elevation requirement genuinely fails.
+    zappy::Player *player = f.world.getPlayerById(f.client->getPlayerId());
+    f.world.setTileAt(player->getPosition(), zappy::ItemType::LINEMATE, 0);
 
     f.send_line("Incantation");
     f.parser->feed();

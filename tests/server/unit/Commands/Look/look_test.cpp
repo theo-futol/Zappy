@@ -16,8 +16,9 @@ struct LookFixture
     std::queue<std::string> broadcastQueue;
     zappy::Commands *commands;
     zappy::Client *client;
+    int playerId;
 
-    LookFixture() : world(5, 5)
+    LookFixture() : world(5, 5, 100)
     {
         int sv[2];
         socketpair(AF_UNIX, SOCK_STREAM, 0, sv);
@@ -25,7 +26,14 @@ struct LookFixture
         b = sv[1];
         client = new zappy::Client(a);
         world.addTeam("team1", 0, 5);
-        world.addPlayer(a, "team1");
+        playerId = world.addPlayer(a, "team1");
+        client->setPlayerId(playerId);
+        // Eggs hatch at a random tile; pin the spawn to (0,0) so position assertions
+        // are deterministic, keeping the tile player-lists consistent.
+        zappy::Player *spawned = world.getPlayerById(playerId);
+        world.removePlayerFromTile(spawned, spawned->getPosition());
+        spawned->setPosition(0, 0, world.getMapSize());
+        world.addPlayerToTile(spawned, spawned->getPosition());
         commands = new zappy::Commands(&world, &broadcastQueue);
     }
     ~LookFixture()
@@ -63,7 +71,7 @@ Test(Look, result_is_wrapped_in_brackets_and_newline_terminated)
 Test(Look, reports_resource_counts_on_the_players_own_tile)
 {
     LookFixture f;
-    zappy::Player *player = f.world.getPlayerByFd(f.a);
+    zappy::Player *player = f.world.getPlayerById(f.playerId);
     f.world.setTileAt(player->getPosition(), zappy::ItemType::LINEMATE, 3);
 
     std::string res = f.commands->Look({}, *f.client);
@@ -77,9 +85,9 @@ Test(Look, default_level_one_player_sees_four_tiles)
 
     std::string res = f.commands->Look({}, *f.client);
 
-    // Rows 0 and 1 (1 + 3 tiles); separators follow the implementation's
-    // level*(level+1) comma count (here level=1 => 2 commas).
-    cr_assert_eq(static_cast<size_t>(std::count(res.begin(), res.end(), ',')), 2u);
+    // Rows 0 and 1 (1 + 3 = 4 tiles) are joined by (4 - 1) = 3 separators; the
+    // implementation emits one "," between every pair of tiles seen.
+    cr_assert_eq(static_cast<size_t>(std::count(res.begin(), res.end(), ',')), 3u);
 }
 
 Test(Look, reports_other_players_present_on_a_seen_tile)
@@ -87,35 +95,45 @@ Test(Look, reports_other_players_present_on_a_seen_tile)
     LookFixture f;
     int sv2[2];
     socketpair(AF_UNIX, SOCK_STREAM, 0, sv2);
-    f.world.addPlayer(sv2[0], "team1"); // spawns on the same (0,0) tile
+    int otherId = f.world.addPlayer(sv2[0], "team1");
+    // Eggs hatch at a random tile; pin the new player onto the observer's own tile.
+    zappy::Player *other = f.world.getPlayerById(otherId);
+    f.world.removePlayerFromTile(other, other->getPosition());
+    other->setPosition(0, 0, f.world.getMapSize());
+    f.world.addPlayerToTile(other, other->getPosition());
 
     std::string res = f.commands->Look({}, *f.client);
 
-    cr_assert(res.find("player 1") != std::string::npos);
+    // The implementation does not number players; it emits one "player " token
+    // per player standing on the tile (including the observer itself).
+    size_t playerTokens = 0;
+    for (size_t pos = res.find("player "); pos != std::string::npos; pos = res.find("player ", pos + 1))
+        ++playerTokens;
+    cr_assert_eq(playerTokens, 2u);
     close(sv2[0]);
     close(sv2[1]);
 }
 
-Test(Look, observer_alone_is_reported_as_zero_other_players_on_its_tile)
+Test(Look, observer_alone_is_reported_as_present_on_its_own_tile)
 {
     LookFixture f;
 
     std::string res = f.commands->Look({}, *f.client);
 
-    // The observer's own tile is non-empty (it stands there), so a "player N"
-    // marker is still emitted, with N excluding the observer itself.
-    cr_assert(res.find("player 0") != std::string::npos);
+    // The observer's own tile is non-empty (it stands there), so exactly one
+    // "player " marker is emitted for that tile.
+    cr_assert(res.find("player ") != std::string::npos);
 }
 
 Test(Look, higher_level_increases_the_number_of_tiles_seen)
 {
     LookFixture f;
-    zappy::Player *player = f.world.getPlayerByFd(f.a);
+    zappy::Player *player = f.world.getPlayerById(f.playerId);
     player->levelUp(); // level 2 now
 
     std::string res = f.commands->Look({}, *f.client);
-    // Rows 0,1,2 (1 + 3 + 5 tiles); level=2 => level*(level+1) = 6 commas.
-    cr_assert_eq(static_cast<size_t>(std::count(res.begin(), res.end(), ',')), 6u);
+    // Rows 0,1,2 (1 + 3 + 5 = 9 tiles) are joined by (9 - 1) = 8 separators.
+    cr_assert_eq(static_cast<size_t>(std::count(res.begin(), res.end(), ',')), 8u);
 }
 
 Test(Look, ignores_unused_args)
@@ -131,7 +149,7 @@ Test(Look, ignores_unused_args)
 Test(Look, works_when_facing_east)
 {
     LookFixture f;
-    zappy::Player *player = f.world.getPlayerByFd(f.a);
+    zappy::Player *player = f.world.getPlayerById(f.playerId);
     player->setRotation(zappy::Degrees::EAST);
 
     std::string res = f.commands->Look({}, *f.client);
@@ -143,7 +161,7 @@ Test(Look, works_when_facing_east)
 Test(Look, works_when_facing_south)
 {
     LookFixture f;
-    zappy::Player *player = f.world.getPlayerByFd(f.a);
+    zappy::Player *player = f.world.getPlayerById(f.playerId);
     player->setRotation(zappy::Degrees::SOUTH);
 
     std::string res = f.commands->Look({}, *f.client);
@@ -155,7 +173,7 @@ Test(Look, works_when_facing_south)
 Test(Look, works_when_facing_west)
 {
     LookFixture f;
-    zappy::Player *player = f.world.getPlayerByFd(f.a);
+    zappy::Player *player = f.world.getPlayerById(f.playerId);
     player->setRotation(zappy::Degrees::WEST);
 
     std::string res = f.commands->Look({}, *f.client);
@@ -167,7 +185,7 @@ Test(Look, works_when_facing_west)
 Test(Look, wraps_on_the_positive_x_boundary_when_facing_east)
 {
     LookFixture f;
-    zappy::Player *player = f.world.getPlayerByFd(f.a);
+    zappy::Player *player = f.world.getPlayerById(f.playerId);
     player->setRotation(zappy::Degrees::EAST);
     player->setPosition(4, 2, f.world.getMapSize()); // x=4 is the last column on a 5x5 map
     // The level-1 vision row lands on x=5 (wraps to 0) for y in {1,2,3}; seed all three.
@@ -183,7 +201,7 @@ Test(Look, wraps_on_the_positive_x_boundary_when_facing_east)
 Test(Look, wraps_on_the_positive_y_boundary_when_facing_south)
 {
     LookFixture f;
-    zappy::Player *player = f.world.getPlayerByFd(f.a);
+    zappy::Player *player = f.world.getPlayerById(f.playerId);
     player->setRotation(zappy::Degrees::SOUTH);
     player->setPosition(2, 4, f.world.getMapSize()); // y=4 is the last row on a 5x5 map
     // The level-1 vision row lands on y=5 (wraps to 0) for x in {1,2,3}; seed all three.

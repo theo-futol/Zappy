@@ -1,6 +1,6 @@
-#include "Network/Client/Client.hpp"
-#include "Network/ClientHandler/Commands/Commands.hpp"
-#include "Simulation/World/World.hpp"
+#include "../../../../../src/server/Network/Client/Client.hpp"
+#include "../../../../../src/server/Network/ClientHandler/Commands/Commands.hpp"
+#include "../../../../../src/server/Simulation/World/World.hpp"
 #include <criterion/criterion.h>
 #include <queue>
 #include <string>
@@ -15,7 +15,7 @@ struct ConnectFixture
     zappy::Commands *commands;
     zappy::Client *client;
 
-    ConnectFixture() : world(5, 5)
+    ConnectFixture() : world(5, 5, 100, false)
     {
         int sv[2];
         socketpair(AF_UNIX, SOCK_STREAM, 0, sv);
@@ -45,7 +45,7 @@ Test(Connect, returns_all_slots_when_team_is_empty)
 {
     ConnectFixture f;
     f.world.addTeam("team1", 0, 3);
-    f.world.addPlayer(f.a, "team1");
+    f.client->setPlayerId(f.world.addPlayer(f.a, "team1"));
 
     std::string res = f.commands->Connect_nbr({}, *f.client);
 
@@ -57,7 +57,7 @@ Test(Connect, decreases_as_more_players_join_the_team)
 {
     ConnectFixture f;
     f.world.addTeam("team1", 0, 3);
-    f.world.addPlayer(f.a, "team1");
+    f.client->setPlayerId(f.world.addPlayer(f.a, "team1"));
 
     int sv2[2];
     socketpair(AF_UNIX, SOCK_STREAM, 0, sv2);
@@ -74,7 +74,7 @@ Test(Connect, returns_zero_when_team_is_full)
 {
     ConnectFixture f;
     f.world.addTeam("team1", 0, 1);
-    f.world.addPlayer(f.a, "team1");
+    f.client->setPlayerId(f.world.addPlayer(f.a, "team1"));
 
     std::string res = f.commands->Connect_nbr({}, *f.client);
 
@@ -85,7 +85,7 @@ Test(Connect, ignores_unused_args)
 {
     ConnectFixture f;
     f.world.addTeam("team1", 0, 5);
-    f.world.addPlayer(f.a, "team1");
+    f.client->setPlayerId(f.world.addPlayer(f.a, "team1"));
 
     std::string res = f.commands->Connect_nbr({"unexpected", "args"}, *f.client);
 

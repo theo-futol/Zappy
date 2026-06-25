@@ -2,7 +2,9 @@
 #include "Network/ClientHandler/Commands/Commands.hpp"
 #include "Simulation/World/World.hpp"
 #include <criterion/criterion.h>
+#include <ctime>
 #include <fcntl.h>
+#include <functional>
 #include <queue>
 #include <string>
 #include <sys/socket.h>
@@ -15,8 +17,9 @@ struct BroadcastFixture
     std::queue<std::string> broadcastQueue;
     zappy::Commands *commands;
     zappy::Client *client;
+    int playerId;
 
-    BroadcastFixture() : world(5, 5)
+    BroadcastFixture() : world(5, 5, 100)
     {
         int sv[2];
         socketpair(AF_UNIX, SOCK_STREAM, 0, sv);
@@ -24,7 +27,14 @@ struct BroadcastFixture
         b = sv[1];
         client = new zappy::Client(a);
         world.addTeam("team1", 0, 5);
-        world.addPlayer(a, "team1");
+        playerId = world.addPlayer(a, "team1");
+        client->setPlayerId(playerId);
+        // Eggs hatch at a random tile; pin the spawn to (0,0) so distance-based
+        // assertions are deterministic.
+        zappy::Player *spawned = world.getPlayerById(playerId);
+        world.removePlayerFromTile(spawned, spawned->getPosition());
+        spawned->setPosition(0, 0, world.getMapSize());
+        world.addPlayerToTile(spawned, spawned->getPosition());
         commands = new zappy::Commands(&world, &broadcastQueue);
     }
     ~BroadcastFixture()
@@ -84,21 +94,21 @@ Test(Broadcast, returns_ok_for_a_valid_single_word_message)
     cr_assert_str_eq(res.c_str(), "ok\n");
 }
 
-Test(Broadcast, pushes_a_pbc_event_with_the_caller_fd_and_text)
+Test(Broadcast, pushes_a_pbc_event_with_the_caller_id_and_text)
 {
     BroadcastFixture f;
 
     f.commands->Broadcast({"hello"}, *f.client);
 
     cr_assert_eq(f.broadcastQueue.size(), 1u);
-    std::string expected = "pbc " + std::to_string(f.a) + " hello\n";
+    std::string expected = "pbc " + std::to_string(f.playerId) + " hello\n";
     cr_assert_str_eq(f.broadcastQueue.front().c_str(), expected.c_str());
 }
 
 Test(Broadcast, does_not_queue_a_message_for_a_lone_player)
 {
     BroadcastFixture f;
-    zappy::Player *player = f.world.getPlayerByFd(f.a);
+    zappy::Player *player = f.world.getPlayerById(f.playerId);
 
     f.commands->Broadcast({"hello"}, *f.client);
     // Nothing should be readable on the sender's own socket since it is the
@@ -118,8 +128,8 @@ Test(Broadcast, notifies_other_players_with_a_direction_tagged_message)
     BroadcastFixture f;
     int sv2[2];
     socketpair(AF_UNIX, SOCK_STREAM, 0, sv2);
-    f.world.addPlayer(sv2[0], "team1");
-    zappy::Player *target = f.world.getPlayerByFd(sv2[0]);
+    int targetId = f.world.addPlayer(sv2[0], "team1");
+    zappy::Player *target = f.world.getPlayerById(targetId);
     target->setPosition(0, 0, f.world.getMapSize()); // same tile as the sender => distance 0
 
     std::string res = f.commands->Broadcast({"hi"}, *f.client);
@@ -130,8 +140,9 @@ Test(Broadcast, notifies_other_players_with_a_direction_tagged_message)
     // implementation queues the message against the *sender's* own fd
     // (player->getFd()) rather than the target's, so it is delivered on the
     // sender's socket peer (f.b), not the target's.
-    zappy::Player *sender = f.world.getPlayerByFd(f.a);
-    sender->sendMessageToClient();
+    zappy::Player *sender = f.world.getPlayerById(f.playerId);
+    std::function<void(int, const std::string &)> sendFunction = [](int fd, const std::string &message) { send(fd, message.c_str(), message.size(), 0); };
+    sender->sendMessageToClient(std::clock(), sendFunction);
 
     char buf[64] = {0};
     int flags = fcntl(f.b, F_GETFL, 0);
@@ -151,8 +162,8 @@ Test(Broadcast, queues_a_delayed_message_for_a_target_on_a_distant_tile)
     BroadcastFixture f;
     int sv2[2];
     socketpair(AF_UNIX, SOCK_STREAM, 0, sv2);
-    f.world.addPlayer(sv2[0], "team1");
-    zappy::Player *target = f.world.getPlayerByFd(sv2[0]);
+    int targetId = f.world.addPlayer(sv2[0], "team1");
+    zappy::Player *target = f.world.getPlayerById(targetId);
     target->setPosition(3, 4, f.world.getMapSize()); // distance > 0 from the sender at (0,0)
 
     std::string res = f.commands->Broadcast({"far"}, *f.client);
@@ -160,8 +171,9 @@ Test(Broadcast, queues_a_delayed_message_for_a_target_on_a_distant_tile)
     cr_assert_str_eq(res.c_str(), "ok\n");
     // With a non-zero distance, timeNeeded > 0 so the message must NOT be
     // ready immediately: nothing should be readable yet on the sender's peer.
-    zappy::Player *sender = f.world.getPlayerByFd(f.a);
-    sender->sendMessageToClient();
+    zappy::Player *sender = f.world.getPlayerById(f.playerId);
+    std::function<void(int, const std::string &)> sendFunction = [](int fd, const std::string &message) { send(fd, message.c_str(), message.size(), 0); };
+    sender->sendMessageToClient(std::clock(), sendFunction);
 
     char buf[64];
     int flags = fcntl(f.b, F_GETFL, 0);
