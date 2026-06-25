@@ -11,7 +11,8 @@ namespace zappy
     {
         INT,    ///< Single integer value (e.g. `-p 4242`)
         STRING, ///< Single string value  (e.g. `-c foo`)
-        LIST    ///< One or more string values until the next flag (e.g. `-n team1 team2`)
+        LIST,   ///< One or more string values until the next flag (e.g. `-n team1 team2`)
+        FLAG    ///< No value, presence is the signal (e.g. `-oldgen`)
     };
 
     /// @brief Metadata attached to a registered flag.

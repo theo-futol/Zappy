@@ -6,8 +6,10 @@
 #include <algorithm>
 #include <chrono>
 #include <memory>
+#include <functional>
 
 #include "../../ServerException/ServerException.hpp"
+#include "../../Logger/Logger.hpp"
 #include "Inventory/Inventory.hpp"
 #include "Teams.hpp"
 #include "../Utils.hpp"
@@ -20,26 +22,27 @@ namespace zappy
 ///        team, inventory and life-cycle state, plus the bookkeeping for broadcast
 ///        messages it still has to deliver.
 ///
-/// A Player is keyed to its client by the socket fd. Movement and direction helpers
-/// take the map size so they can wrap around the toroidal world.
+/// A Player has a stable logical id (its GUI player number), independent of the socket
+/// fd it is reached through. Movement and direction helpers take the map size so they
+/// can wrap around the toroidal world.
 class Player
 {
   private:
-    int _fd; // Needed to link the player to its client, do not close it here (Client owns the fd)
+    int _id;
+    int _fd;
 
     int _level = 1;
     position _pos;
     int rotation;
     std::shared_ptr<Team> _team;
-    // bool _isLeveling;
     Inventory _inventory;
     PlayerState _state;
     std::vector<std::pair<std::string, std::vector<std::pair<std::pair<std::clock_t, int>, int>>>> _messagesToSend; // <<message, <<clock, timeNeeded>, receiverFd>, <clock, timeNeeded>, receiverFd>>, <message, <<clock, timeNeeded>, receiverFd>>>
     std::chrono::steady_clock::time_point _frozenUntil = std::chrono::steady_clock::time_point::min(); // While in the future, the player is frozen (e.g. during an incantation) and cannot act.
 
   public:
-    /// @brief Spawns a player bound to a client fd, as a member of the given team.
-    Player(int fd, std::shared_ptr<Team> team);
+    /// @brief Spawns a player with the given logical id, reached through client fd, as a member of the given team.
+    Player(int id, int fd, std::shared_ptr<Team> team);
 
     /// @brief The team this player belongs to.
     const Team &getTeam() const;
@@ -55,7 +58,9 @@ class Player
     Inventory &getInventory();
     /// @brief Life-cycle state (pending / alive / dead).
     PlayerState getState() const;
-    /// @brief The socket fd linking this player to its client.
+    /// @brief This player's stable logical id (its GUI player number).
+    int getId() const;
+    /// @brief The socket fd linking this player to its client (for I/O only).
     int getFd() const;
 
     /// @brief Tile the player would land on if it moved one step forward, with wrap-around.
@@ -71,7 +76,7 @@ class Player
     /// @brief Sends a raw message to this player's client socket.
     void writeToClient(const std::string &message) const;
     /// @brief Direction from this player toward a target tile, accounting for wrap-around.
-    Degrees getDirectionTo(const position &target, std::pair<int, int> mapSize) const;
+    Degrees getDirectionTo(const std::pair<const position, int> target, std::pair<int, int> mapSize) const;
     /// @brief Sets the life-cycle state.
     void setState(PlayerState newState);
     /// @brief Freezes the player until the given time point (used while an incantation is underway).
@@ -91,6 +96,6 @@ class Player
     /// @brief Queues a message to be delivered to a receiver after timeNeeded elapses.
     void addMessageToQueue(const std::string &message, int timeNeeded, int receiverFd);
     /// @brief Flushes any queued messages whose delivery time has arrived.
-    void sendMessageToClient();
+    void sendMessageToClient(std::clock_t currentTime, std::function<void(int, const std::string &)> sendFunction);
   };
 } // namespace zappy

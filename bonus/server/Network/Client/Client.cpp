@@ -15,6 +15,16 @@ int Client::getFd() const
     return _fd;
 }
 
+int Client::getPlayerId() const
+{
+    return _playerId;
+}
+
+void Client::setPlayerId(int playerId)
+{
+    _playerId = playerId;
+}
+
 const std::string &Client::getBuffer() const
 {
     return _buffer;
