@@ -3,9 +3,10 @@
 namespace zappy
 {
 
-Player::Player(int fd, std::shared_ptr<Team> team) : _fd(fd), _pos{0, 0}, rotation(Degrees::NORTH), _team(team), _inventory(), _state(PlayerState::PENDING)
+Player::Player(int id, int fd, std::shared_ptr<Team> team) : _id(id), _fd(fd), _pos{0, 0}, rotation(Degrees::NORTH), _team(team), _inventory(), _state(PlayerState::PENDING)
 {
     _inventory.addItem(ItemType::FOOD, 10);
+    Logger::log("040", "Player : created", {{"player_id", std::to_string(_id)}, {"team", _team->_name}, {"x", std::to_string(_pos.x)}, {"y", std::to_string(_pos.y)}});
 }
 const position &Player::getPosition() const
 {
@@ -25,6 +26,23 @@ void Player::levelUp()
 int Player::getRotation() const
 {
     return rotation;
+}
+
+int Player::getOrientation() const
+{
+    switch (rotation)
+    {
+    case Degrees::NORTH:
+        return 1;
+    case Degrees::EAST:
+        return 2;
+    case Degrees::SOUTH:
+        return 3;
+    case Degrees::WEST:
+        return 4;
+    default:
+        return 1;
+    }
 }
 
 void Player::setRotation(int rot)
@@ -101,6 +119,11 @@ Team &Player::getTeam()
     return *_team;
 }
 
+int Player::getId() const
+{
+    return _id;
+}
+
 int Player::getFd() const
 {
     return _fd;
@@ -166,6 +189,8 @@ void Player::setState(PlayerState newState)
 void Player::setFrozenUntil(std::chrono::steady_clock::time_point until)
 {
     _frozenUntil = until;
+    auto untilMs = std::chrono::duration_cast<std::chrono::milliseconds>(until - std::chrono::steady_clock::now()).count();
+    Logger::log("042", "Player : frozen", {{"player_id", std::to_string(_id)}, {"until_ms", std::to_string(untilMs)}});
 }
 
 bool Player::isFrozen() const
@@ -194,11 +219,10 @@ void Player::addMessageToQueue(const std::string &message, int timeNeeded, int r
     }
 }
 
-void Player::sendMessageToClient()
+void Player::sendMessageToClient(std::clock_t currentTime, std::function<void(int, const std::string &)> sendFunction)
 {
     if (_messagesToSend.size() == 0)
         return;
-    std::clock_t currentTime = std::clock();
     for (auto msgIt = _messagesToSend.begin(); msgIt != _messagesToSend.end();)
     {
         std::vector<std::pair<std::pair<std::clock_t, int>, int>> &times = msgIt->second;
@@ -209,7 +233,7 @@ void Player::sendMessageToClient()
             if (currentTime - it->first.first < it->first.second * CLOCKS_PER_SEC / 1000)
                 break;
             if (it->second >= 0)
-                send(it->second, msgIt->first.c_str(), msgIt->first.size(), MSG_NOSIGNAL); // MSG_NOSIGNAL: never SIGPIPE if the client is disconnected
+                sendFunction(it->second, msgIt->first);
         }
         if (times.empty())
             msgIt = _messagesToSend.erase(msgIt);

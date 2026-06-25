@@ -6,61 +6,55 @@ std::string Commands::Look(std::vector<std::string> args, Client &client)
 {
     (void)args; // Unused parameter
     std::string buffer = "[";
-    Player *player = _world->getPlayerByFd(client.getFd());
+    Player *player = _world->getPlayerById(client.getPlayerId());
     if (!player)
         return "ko\n";
     std::pair<int, int> mapSize = _world->getMapSize();
     position pos = player->getPosition();
     int rotation = player->getRotation();
-    int tileViewed = 1;
 
-    for (int i = 0; i <= player->getLevel(); i++)
+    for (int depth = 0; depth <= player->getLevel(); depth++)
     {
-        for (int j = 0; j < tileViewed + i; j++)
+        for (int lateral = -depth; lateral <= depth; lateral++)
         {
             position tilePos = pos;
 
             switch (rotation)
             {
             case NORTH:
-                tilePos.x += j - i;
-                tilePos.y -= i;
+                tilePos.x += lateral;
+                tilePos.y -= depth;
                 break;
             case EAST:
-                tilePos.x += i;
-                tilePos.y += j - i;
+                tilePos.x += depth;
+                tilePos.y += lateral;
                 break;
             case SOUTH:
-                tilePos.x += j - i;
-                tilePos.y += i;
+                tilePos.x -= lateral;
+                tilePos.y += depth;
                 break;
             case WEST:
-                tilePos.x -= i;
-                tilePos.y += j - i;
+                tilePos.x -= depth;
+                tilePos.y -= lateral;
                 break;
             default:
                 throw ServerException("Invalid rotation value");
             }
 
-            if (tilePos.x < 0) // TO DO
-                tilePos.x = mapSize.first - 1;
-            else if (tilePos.x >= mapSize.first)
-                tilePos.x = 0;
-            if (tilePos.y < 0)
-                tilePos.y = mapSize.second - 1;
-            else if (tilePos.y >= mapSize.second)
-                tilePos.y = 0;
+            tilePos.x = (tilePos.x + mapSize.first) % mapSize.first;
+            tilePos.y = (tilePos.y + mapSize.second) % mapSize.second;
 
             tile *currentTile = _world->getTileAt(tilePos);
             for (const auto &item : currentTile->_items)
                 buffer += itemTypeToString(item.first) + ":" + std::to_string(item.second) + " ";
-            if (!currentTile->_players.empty())
-                buffer += "player " + std::to_string(currentTile->_players.size() - (tilePos == player->getPosition())) + " ";
-            if (i <= player->getLevel() && j < tileViewed + i - 1)
+            for (int playerIndex = 0; playerIndex < static_cast<int>(currentTile->_players.size()); ++playerIndex)
+                buffer += "player ";
+            if (!(depth == player->getLevel() && lateral == depth))
                 buffer += ", ";
         }
-        tileViewed += 1;
     }
-    return buffer + "]\n";
+    buffer += "]";
+    Logger::log("017", "Look : response sent", {{"player_id", std::to_string(player->getId())}, {"response", buffer}});
+    return buffer + "\n";
 }
 } // namespace zappy
