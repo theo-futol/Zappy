@@ -103,22 +103,10 @@ def needed_stones_for_level(level: int, inventory: Mapping[str, int]) -> set[str
 def pick_current_tile_resource(
     current_counts: Counter[str],
     candidates: Sequence[str] | set[str],
-    *,
-    reserved_resources: Mapping[str, int] | None = None,
 ) -> str | None:
-    normalized_reserved_resources = reserved_resources or {}
-
-    # Keep stones already reserved on the current tile for the ritual.
     for resource in STONE_PRIORITY:
-        if resource not in candidates or current_counts.get(resource, 0) <= 0:
-            continue
-
-        reserved_amount = int(normalized_reserved_resources.get(resource, 0))
-        collectible_amount = current_counts.get(resource, 0) - reserved_amount
-        if collectible_amount <= 0:
-            continue
-
-        return resource
+        if resource in candidates and current_counts.get(resource, 0) > 0:
+            return resource
     if "food" in candidates and current_counts.get("food", 0) > 0:
         return "food"
     return None
