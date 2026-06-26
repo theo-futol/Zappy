@@ -1,10 +1,10 @@
 #include "../Commands.hpp"
+#include <sys/socket.h>
 
 namespace zappy
 {
 std::string Commands::Sst(std::vector<std::string> args, Client &client)
 {
-    (void)client; // Unused parameter
     try
     {
         if (args.size() < 1)

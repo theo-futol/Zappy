@@ -2,7 +2,7 @@
 
 namespace zappy
 {
-std::string Commands::Broadcast(std::vector<std::string> args, Client &client)
+std::string Commands::Broadcast(std::vector<std::string> args, Client &client, std::vector<std::unique_ptr<Client>> &)
 {
     Player *player = _world->getPlayerById(client.getPlayerId());
     if (!player || args.size() != 1 || args[0].empty())

@@ -1,4 +1,7 @@
 #include "Core.hpp"
+#include "../ServerException/ServerException.hpp"
+#include <algorithm>
+#include <iostream>
 
 #define MAX_MAP_SIZE 1024
 #define MAX_CLIENTS 256

@@ -52,5 +52,8 @@ namespace zappy
 
             /// @brief Replaces the entire pending buffer.
             void setBuffer(const std::string &buffer);
+
+            /// @brief Writes the given message to the client socket, if it is valid. Logs an error if the write fails.
+            void write(const std::string &message) const;
     };
 } // namespace zappy

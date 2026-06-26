@@ -1,4 +1,5 @@
 #include "World.hpp"
+#include <algorithm>
 #include <iostream>
 
 namespace zappy
@@ -246,14 +247,22 @@ void World::addPlayerToTile(Player *player, position pos)
         tilePtr->_players.push_back(player);
 }
 
-void World::sendMessageToPlayersThatAreOnTile(position pos, const std::string &message)
+void World::sendMessageToPlayersThatAreOnTile(position pos, const std::string &message, std::vector<std::unique_ptr<Client>> &clients)
 {
     tile *tilePtr = getTileAt(pos);
 
     if (!tilePtr)
         return;
+    std::vector<Client *> clientsOnTile;
     for (const auto &player : tilePtr->_players)
-        player->writeToClient(message);
+        for (const auto &client : clients)
+            if (client->getPlayerId() == player->getId())
+            {
+                clientsOnTile.push_back(client.get());
+                break;
+            }
+    for (Client *client : clientsOnTile)
+        client->write(message);
 }
 
 void World::setBroadCastQueue(std::queue<std::string> *broadcastQueue)

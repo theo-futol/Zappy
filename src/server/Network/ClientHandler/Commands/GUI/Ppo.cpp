@@ -2,9 +2,8 @@
 
 namespace zappy
 {
-std::string Commands::Ppo(std::vector<std::string> args, Client &client)
+std::string Commands::Ppo(std::vector<std::string> args, Client &)
 {
-    (void)client; // Unused parameter
 
     if (args.size() < 2)
         return "ko\n";

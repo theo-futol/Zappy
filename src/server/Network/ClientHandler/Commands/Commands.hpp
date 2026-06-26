@@ -1,7 +1,8 @@
+#pragma once
 #include "../../../Simulation/World/World.hpp"
-#include "../../../Logger/Logger.hpp"
 #include "../../Client/Client.hpp"
 #include <chrono>
+#include <memory>
 #include <queue>
 
 namespace zappy
@@ -23,33 +24,33 @@ namespace zappy
 
             // AI Commands
             /// @brief Moves the player one tile forward in its current facing.
-            std::string Forward(std::vector<std::string> args, Client &client);
+            std::string Forward(std::vector<std::string> args, Client &client, std::vector<std::unique_ptr<Client>> &clients);
             /// @brief Turns the player 90° to the right.
-            std::string Right(std::vector<std::string> args, Client &client);
+            std::string Right(std::vector<std::string> args, Client &client, std::vector<std::unique_ptr<Client>> &clients);
             /// @brief Turns the player 90° to the left.
-            std::string Left(std::vector<std::string> args, Client &client);
+            std::string Left(std::vector<std::string> args, Client &client, std::vector<std::unique_ptr<Client>> &clients);
             /// @brief Returns what the player sees on the tiles within its vision cone.
-            std::string Look(std::vector<std::string> args, Client &client);
+            std::string Look(std::vector<std::string> args, Client &client, std::vector<std::unique_ptr<Client>> &clients);
             /// @brief Returns the player's inventory (resource counts and remaining life).
-            std::string getInventory(std::vector<std::string> args, Client &client);
+            std::string getInventory(std::vector<std::string> args, Client &client, std::vector<std::unique_ptr<Client>> &clients);
             /// @brief Returns the number of free team connection slots (the "Connect_nbr" command).
-            std::string Connect_nbr(std::vector<std::string> args, Client &client);
+            std::string Connect_nbr(std::vector<std::string> args, Client &client, std::vector<std::unique_ptr<Client>> &clients);
             /// @brief Broadcasts text to every other player, tagged with the direction it came from.
-            std::string Broadcast(std::vector<std::string> args, Client &client);
+            std::string Broadcast(std::vector<std::string> args, Client &client, std::vector<std::unique_ptr<Client>> &clients);
             /// @brief Pushes every other player off the current tile.
-            std::string Eject(std::vector<std::string> args, Client &client);
+            std::string Eject(std::vector<std::string> args, Client &client, std::vector<std::unique_ptr<Client>> &clients);
             /// @brief Picks up a named resource from the current tile into the inventory.
-            std::string Take(std::vector<std::string> args, Client &client);
+            std::string Take(std::vector<std::string> args, Client &client, std::vector<std::unique_ptr<Client>> &clients);
             /// @brief Drops a named resource from the inventory onto the current tile.
-            std::string Set(std::vector<std::string> args, Client &client);
+            std::string Set(std::vector<std::string> args, Client &client, std::vector<std::unique_ptr<Client>> &clients);
             /// @brief Lays an egg on the current tile, opening a new team slot.
-            std::string Fork(std::vector<std::string> args, Client &client);
+            std::string Fork(std::vector<std::string> args, Client &client, std::vector<std::unique_ptr<Client>> &clients);
             /// @brief Attempts to start an elevation ritual on the current tile (see beginIncantation).
-            std::string Incantation(std::vector<std::string> args, Client &client);
+            std::string Incantation(std::vector<std::string> args, Client &client, std::vector<std::unique_ptr<Client>> &clients);
             /// @brief Starts an incantation: validates prerequisites, notifies the initiator and the GUI,
             ///        and freezes every participant until `endTime`. Returns false (and replies "ko") if the
             ///        prerequisites are not met, in which case the ritual must not be scheduled.
-            bool beginIncantation(Client &client, std::chrono::steady_clock::time_point endTime);
+            bool beginIncantation(Client &client, std::chrono::steady_clock::time_point endTime, std::vector<std::unique_ptr<Client>> &clients);
 
             // Graphic Commands
             /// @brief ppo: reports a player's position and orientation.
