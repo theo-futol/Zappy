@@ -32,7 +32,7 @@ namespace zappy
     {
     public:
         /// @brief Signature every command handler implements.
-        using Handler = std::function<std::string(const std::vector<std::string> &cmd, Client &client, Commands &commands)>;
+        using Handler = std::function<std::string(const std::vector<std::string> &cmd, Client &client, Commands &commands, std::vector<std::unique_ptr<Client>> &clients)>;
 
         /// @brief Builds a parser for one client.
         /// @param client         The client this parser serves.
@@ -43,13 +43,13 @@ namespace zappy
 
         /// @brief Reads pending data from the client socket into the command queue.
         /// @return false if the client disconnected.
-        bool feed();
+        bool feed(std::vector<std::unique_ptr<Client>> &clients);
 
         /// @brief Dispatches the next queued command if its time has come.
         /// @return true if a command was consumed (caller may try again immediately),
         ///         false if nothing was ready to run (queue empty, command not yet due,
         ///         or the player is frozen) — the caller must stop draining and wait.
-        bool executeNext();
+        bool executeNext(std::vector<std::unique_ptr<Client>> &clients);
         /// @brief Returns true if the client has been banned for flooding (too many queued commands).
         /// @return Boolean indicating whether the client is banned for flooding.
         bool isBanned() const;
@@ -72,7 +72,7 @@ namespace zappy
         /// @brief Fills _graphicCommands with the graphic protocol commands.
         void _initGraphicCommands();
         /// @brief Routes one command line to the matching handler for the client's type.
-        void _dispatch(const std::string &line);
+        void _dispatch(const std::string &line, std::vector<std::unique_ptr<Client>> &clients);
         /// @brief Handles the first line of an AI client: the team-name handshake.
         void _handleHandshake(const std::string &teamName);
     };

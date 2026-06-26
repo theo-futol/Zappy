@@ -1,13 +1,9 @@
 #pragma once
-#include <unistd.h>
-#include <sys/socket.h>
 #include <string>
-#include <math.h>
-#include <algorithm>
 #include <chrono>
 #include <memory>
-#include <functional>
 
+#include "../../Network/Client/Client.hpp"
 #include "../../ServerException/ServerException.hpp"
 #include "../../Logger/Logger.hpp"
 #include "Inventory/Inventory.hpp"
@@ -75,8 +71,6 @@ class Player
     void move(std::pair<int, int> mapSize);
     /// @brief Raises the player one elevation level.
     void levelUp();
-    /// @brief Sends a raw message to this player's client socket.
-    void writeToClient(const std::string &message) const;
     /// @brief Direction from this player toward a target tile, accounting for wrap-around.
     Degrees getDirectionTo(const std::pair<const position, int> target, std::pair<int, int> mapSize) const;
     /// @brief Sets the life-cycle state.
@@ -98,6 +92,6 @@ class Player
     /// @brief Queues a message to be delivered to a receiver after timeNeeded elapses.
     void addMessageToQueue(const std::string &message, int timeNeeded, int receiverFd);
     /// @brief Flushes any queued messages whose delivery time has arrived.
-    void sendMessageToClient(std::clock_t currentTime, std::function<void(int, const std::string &)> sendFunction);
+    void sendMessageToClient(std::clock_t currentTime, std::vector<std::unique_ptr<Client>> &clients);
   };
 } // namespace zappy

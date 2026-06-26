@@ -2,7 +2,6 @@
 #include <string>
 #include <unordered_map>
 #include <vector>
-#include "../ServerException/ServerException.hpp"
 
 namespace zappy
 {

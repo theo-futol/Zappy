@@ -1,5 +1,6 @@
 #include "Network/Client/Client.hpp"
 #include "Network/ClientHandler/CommandParser/CommandParser.hpp"
+#include "Simulation/Player/Teams.hpp"
 #include "Simulation/World/World.hpp"
 #include <chrono>
 #include <criterion/criterion.h>
@@ -302,6 +303,63 @@ Test(CommandParser, incantation_command_is_dropped_when_requirements_are_not_met
     // beginIncantation() fails (no linemate stone, alone on the tile), so the
     // command must be skipped entirely rather than queued.
     cr_assert_eq(f.parser->nextReadyAt(), std::chrono::steady_clock::time_point::max());
+
+    std::string reply = f.read_reply();
+    cr_assert_str_eq(reply.c_str(), "ko\n");
+}
+
+Test(CommandParser, incantation_command_is_dropped_when_caller_has_no_player)
+{
+    ParserFixture f;
+    // "unknown_team" is not registered: the handshake promotes the client to
+    // AI but no player is created (no available slot for that team).
+    f.send_line("unknown_team");
+    f.parser->feed();
+    f.parser->executeNext();
+    f.read_reply();
+    cr_assert_eq(f.client->getPlayerId(), -1);
+
+    f.send_line("Incantation");
+    f.parser->feed();
+
+    // feed() hits the `!player` branch and skips queuing the command entirely.
+    cr_assert_eq(f.parser->nextReadyAt(), std::chrono::steady_clock::time_point::max());
+}
+
+Test(CommandParser, incantation_command_is_dropped_during_feed_when_player_is_frozen)
+{
+    ParserFixture f;
+    f.send_line("team1");
+    f.parser->feed();
+    f.parser->executeNext();
+    f.read_reply();
+
+    zappy::Player *player = f.world.getPlayerById(f.client->getPlayerId());
+    player->setFrozenUntil(std::chrono::steady_clock::now() + std::chrono::seconds(10));
+
+    f.send_line("Incantation");
+    f.parser->feed();
+
+    // feed() detects the frozen player and skips queuing the command.
+    cr_assert_eq(f.parser->nextReadyAt(), std::chrono::steady_clock::time_point::max());
+}
+
+Test(CommandParser, handshake_with_no_eggs_left_replies_ko_and_bans_the_client)
+{
+    ParserFixture f;
+    // Drain the team's eggs while leaving its slot count untouched, so
+    // getAvailableSlotsForTeam() still reports slots but addPlayer() can't
+    // find an egg to hatch from.
+    std::shared_ptr<zappy::Team> team = f.world.getTeamByName("team1");
+    for (auto &egg : team->_eggs)
+        egg.second.clear();
+
+    f.send_line("team1");
+    f.parser->feed();
+
+    cr_assert(f.parser->executeNext());
+    cr_assert_eq(f.client->getType(), zappy::ClientType::AI);
+    cr_assert(f.parser->isBanned());
 
     std::string reply = f.read_reply();
     cr_assert_str_eq(reply.c_str(), "ko\n");

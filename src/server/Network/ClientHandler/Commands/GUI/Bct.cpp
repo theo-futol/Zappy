@@ -2,9 +2,8 @@
 
 namespace zappy
 {
-std::string Commands::Bct(std::vector<std::string> args, Client &client)
+std::string Commands::Bct(std::vector<std::string> args, Client &)
 {
-    (void)client; // Unused parameter
     if (args.size() < 3)
         return "ko\n";
     int x = std::stoi(args[1]);

@@ -1,9 +1,4 @@
 #pragma once
-#include <sys/socket.h>
-#include <sys/poll.h>
-#include <unistd.h>
-#include <iostream>
-#include <arpa/inet.h>
 
 namespace zappy
 {
