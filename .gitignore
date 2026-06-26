@@ -6,6 +6,8 @@ zappy_*
 __pycache__/
 **/__pycache__/
 ia/__pycache__
+ia/model/__pycache__
+ia/utils/__pycache__
 venv
 *.gc*
 *.pdf
