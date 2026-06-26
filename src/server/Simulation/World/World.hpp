@@ -146,5 +146,8 @@ class World
     /// @brief sets the active time unit for the world.
     /// @param f 
     void setTimeUnit(int f);
+    /// @brief Returns the team that has won the game, or nullptr if no team has won.
+    /// @return 
+    Team *getWinningTeam() const;
 };
 } // namespace zappy

@@ -79,6 +79,11 @@ void ClientHandler::handleClients(void)
         broadcastGuiInfo();
         broadcastMessageToClients();
     }
+    Team *winningTeam = _world->getWinningTeam();
+    if (winningTeam)
+        for (const auto &player : _world->getPlayers())
+            if (player->getTeam()._name == winningTeam->_name)
+                std::cout << "Player " << player->getId() << " was level: " << player->getLevel() << std::endl;
 }
 
 void ClientHandler::broadcastMessageToClients()

@@ -359,6 +359,14 @@ void World::removeIncantationStones(int x, int y, int level)
             }
 }
 
+Team *World::getWinningTeam() const
+{
+    for (const auto &team : _teams)
+        if (team->_hasWin)
+            return team.get();
+    return nullptr;
+}
+
 bool World::checkWinningCondition()
 {
     for (auto &team : _teams)
@@ -377,6 +385,7 @@ bool World::checkWinningCondition()
             {
                 _broadcastQueue->push("seg " + team->_name + "\n");
                 team->_hasWin = true;
+                std::cout << "Team " << team->_name << " has won the game!" << std::endl;
                 return true;
             }
         }
