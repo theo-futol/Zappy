@@ -41,6 +41,7 @@ namespace zappy
             ArgParser _argParser;
             std::unique_ptr<ClientHandler> _clientHandler;
             std::unique_ptr<World> _world;
+            std::string _rulesContent;
 
             /// @brief Connects the world's broadcast queue to the client handler so
             ///        world events can be pushed out to clients.

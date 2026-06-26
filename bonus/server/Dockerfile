@@ -12,7 +12,9 @@ ENV HEIGHT=10
 ENV TEAMS=team1
 ENV CLIENTS=3
 ENV FREQ=100
+ENV RULES=
 
 EXPOSE 4242
+EXPOSE 4243
 
-CMD ["sh", "-c", "./zappy_server -p $PORT -x $WIDTH -y $HEIGHT -n $TEAMS -c $CLIENTS -f $FREQ"]
+CMD ["sh", "-c", "./zappy_server -p $PORT -x $WIDTH -y $HEIGHT -n $TEAMS -c $CLIENTS -f $FREQ${RULES:+ --rules $RULES}"]
