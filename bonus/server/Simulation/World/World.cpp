@@ -1,10 +1,11 @@
 #include "World.hpp"
+#include <algorithm>
 #include <iostream>
 
 namespace zappy
 {
 
-World::World(int x, int y, bool useOldGen) : _broadcastQueue(nullptr), _useOldGen(useOldGen)
+World::World(int x, int y, int f, bool useOldGen) : _f(f), _broadcastQueue(nullptr), _useOldGen(useOldGen)
 {
     _map.resize(x);
     for (auto &column : _map)
@@ -127,6 +128,18 @@ std::pair<int, int> World::getMapSize() const
     return _mapSize;
 }
 
+int World::getTimeUnit() const
+{
+    return _f;
+}
+
+void World::setTimeUnit(int f)
+{
+    if (f < 1 || f > 1000)
+        return;
+    _f = f;
+}
+
 tile *World::getTileAt(int playerID)
 {
     Player *player = getPlayerById(playerID);
@@ -213,6 +226,8 @@ int World::addPlayer(int fd, const std::string &teamName)
     _players.push_back(std::make_unique<Player>(id, fd, team));
     Player *player = _players.back().get();
     player->setPosition(spawn.x, spawn.y, _mapSize);
+    std::vector<int> rotations = {0, 1, 2, 3};
+    player->setRotation(rotations[rand() % rotations.size()]);
     addPlayerToTile(player, player->getPosition());
     return id;
 }
@@ -232,14 +247,22 @@ void World::addPlayerToTile(Player *player, position pos)
         tilePtr->_players.push_back(player);
 }
 
-void World::sendMessageToPlayersThatAreOnTile(position pos, const std::string &message)
+void World::sendMessageToPlayersThatAreOnTile(position pos, const std::string &message, std::vector<std::unique_ptr<Client>> &clients)
 {
     tile *tilePtr = getTileAt(pos);
 
     if (!tilePtr)
         return;
+    std::vector<Client *> clientsOnTile;
     for (const auto &player : tilePtr->_players)
-        player->writeToClient(message);
+        for (const auto &client : clients)
+            if (client->getPlayerId() == player->getId())
+            {
+                clientsOnTile.push_back(client.get());
+                break;
+            }
+    for (Client *client : clientsOnTile)
+        client->write(message);
 }
 
 void World::setBroadCastQueue(std::queue<std::string> *broadcastQueue)
@@ -345,6 +368,14 @@ void World::removeIncantationStones(int x, int y, int level)
             }
 }
 
+Team *World::getWinningTeam() const
+{
+    for (const auto &team : _teams)
+        if (team->_hasWin)
+            return team.get();
+    return nullptr;
+}
+
 bool World::checkWinningCondition()
 {
     for (auto &team : _teams)
@@ -363,6 +394,7 @@ bool World::checkWinningCondition()
             {
                 _broadcastQueue->push("seg " + team->_name + "\n");
                 team->_hasWin = true;
+                std::cout << "Team " << team->_name << " has won the game!" << std::endl;
                 return true;
             }
         }

@@ -2,10 +2,8 @@
 
 namespace zappy
 {
-std::string Commands::Tna(std::vector<std::string> args, Client &client)
+std::string Commands::Tna(std::vector<std::string>, Client &)
 {
-    (void)args;   // Unused parameter
-    (void)client; // Unused parameter
     std::string response;
     std::vector<std::shared_ptr<Team>> &teams = _world->getTeams();
 

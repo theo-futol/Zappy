@@ -2,9 +2,8 @@
 
 namespace zappy
 {
-std::string Commands::getInventory(std::vector<std::string> args, Client &client)
+std::string Commands::getInventory(std::vector<std::string>, Client &client, std::vector<std::unique_ptr<Client>> &)
 {
-    (void)args;
     Player *player = _world->getPlayerById(client.getPlayerId());
     if (player == nullptr)
         return "ko\n";

@@ -2,9 +2,8 @@
 
 namespace zappy
 {
-std::string Commands::Connect_nbr(std::vector<std::string> args, Client &client)
+std::string Commands::Connect_nbr(std::vector<std::string>, Client &client, std::vector<std::unique_ptr<Client>> &)
 {
-    (void)args; // Unused parameter
     Player *player = _world->getPlayerById(client.getPlayerId());
     if (!player)
         return "ko\n";
