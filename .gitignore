@@ -5,6 +5,7 @@ node_modules
 zappy_*
 __pycache__/
 **/__pycache__/
+ia/__pycache__
 venv
 *.gc*
 *.pdf
