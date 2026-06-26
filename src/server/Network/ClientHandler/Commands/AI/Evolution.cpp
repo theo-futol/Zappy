@@ -2,9 +2,8 @@
 
 namespace zappy
 {
-std::string Commands::Fork(std::vector<std::string> args, Client &client)
+std::string Commands::Fork(std::vector<std::string>, Client &client, std::vector<std::unique_ptr<Client>> &)
 {
-    (void)args; // Unused parameter
     Player *player = _world->getPlayerById(client.getPlayerId());
     if (!player)
     {
@@ -20,7 +19,7 @@ std::string Commands::Fork(std::vector<std::string> args, Client &client)
     return "ok\n";
 }
 
-bool Commands::beginIncantation(Client &client, std::chrono::steady_clock::time_point endTime)
+bool Commands::beginIncantation(Client &client, std::chrono::steady_clock::time_point endTime, std::vector<std::unique_ptr<Client>> &clients)
 {
     Player *initiator = _world->getPlayerById(client.getPlayerId());
     if (!initiator)
@@ -34,7 +33,7 @@ bool Commands::beginIncantation(Client &client, std::chrono::steady_clock::time_
     {
         Logger::log("8422", "Incantation : failed, conditions not met at start",
                     {{"player_id", std::to_string(initiator->getId())}, {"x", std::to_string(pos.x)}, {"y", std::to_string(pos.y)}});
-        initiator->writeToClient("ko\n");
+        client.write("ko\n");
         return false;
     }
     tilePtr->_incantationInProgress = true;
@@ -47,7 +46,9 @@ bool Commands::beginIncantation(Client &client, std::chrono::steady_clock::time_
 
     for (Player *participant : participants)
     {
-        participant->writeToClient("Elevation underway\n");
+        Client *participantClient =
+            find_if(clients.begin(), clients.end(), [participant](const std::unique_ptr<Client> &c) { return c->getPlayerId() == participant->getId(); })->get();
+        participantClient->write("Elevation underway\n");
         participant->setFrozenUntil(endTime);
     }
     Logger::log("012", "Incantation : started",
@@ -55,9 +56,8 @@ bool Commands::beginIncantation(Client &client, std::chrono::steady_clock::time_
     return true;
 }
 
-std::string Commands::Incantation(std::vector<std::string> args, Client &client)
+std::string Commands::Incantation(std::vector<std::string>, Client &client, std::vector<std::unique_ptr<Client>> &clients)
 {
-    (void)args; // Unused parameter
     Player *initiator = _world->getPlayerById(client.getPlayerId());
     if (!initiator)
         return "ko\n";
@@ -78,7 +78,11 @@ std::string Commands::Incantation(std::vector<std::string> args, Client &client)
         Logger::log("8423", "Incantation : failed, conditions not met at end",
                     {{"player_id", std::to_string(initiator->getId())}, {"x", std::to_string(pos.x)}, {"y", std::to_string(pos.y)}});
         for (Player *participant : participants)
-            participant->writeToClient("ko\n");
+        {
+            Client *participantClient =
+                find_if(clients.begin(), clients.end(), [participant](const std::unique_ptr<Client> &c) { return c->getPlayerId() == participant->getId(); })->get();
+            participantClient->write("ko\n");
+        }
         _broadcastQueue->push(pieHeader + "0\n");
         return "";
     }
@@ -90,7 +94,9 @@ std::string Commands::Incantation(std::vector<std::string> args, Client &client)
         participant->levelUp();
         Logger::log("041", "Player : level up", {{"player_id", std::to_string(participant->getId())}, {"level", std::to_string(participant->getLevel())}});
         _broadcastQueue->push("plv " + std::to_string(participant->getId()) + " " + std::to_string(participant->getLevel()) + "\n");
-        participant->writeToClient("Current level: " + std::to_string(participant->getLevel()) + "\n");
+        Client *participantClient =
+            find_if(clients.begin(), clients.end(), [participant](const std::unique_ptr<Client> &c) { return c->getPlayerId() == participant->getId(); })->get();
+        participantClient->write("Current level: " + std::to_string(participant->getLevel()) + "\n");
         new_level = participant->getLevel();
     }
     Logger::log("013", "Incantation : completed",

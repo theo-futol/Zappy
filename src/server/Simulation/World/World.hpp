@@ -1,9 +1,7 @@
 #pragma once
-#include <algorithm>
 #include <memory>
 #include <vector>
 #include <queue>
-#include <thread>
 #include <utility>
 
 #include "../Player/Player.hpp"
@@ -45,6 +43,7 @@ using Map = std::vector<std::vector<tile>>;
 class World
 {
   private:
+    int _f;
     std::vector<std::unique_ptr<Player>> _players;
     Map _map;
     std::pair<int, int> _mapSize;
@@ -64,7 +63,7 @@ class World
 
   public:
     /// @brief Builds an x-by-y world with empty tiles and no players yet.
-    World(int x, int y, bool useOldGen = false);
+    World(int x, int y, int f, bool useOldGen = false);
     ~World() = default;
 
     /// @brief Checks whether an elevation from `level` to `level + 1` can take place on the tile.
@@ -135,9 +134,18 @@ class World
     void addPlayerToTile(Player *player, position pos);
 
     /// @brief Sends a message to every player currently standing on the given tile.
-    void sendMessageToPlayersThatAreOnTile(position pos, const std::string &message);
+    void sendMessageToPlayersThatAreOnTile(position pos, const std::string &message, std::vector<std::unique_ptr<Client>> &clients);
 
     /// @brief Removes a player from the world and decrease the number of slots occupied in its team. The player is removed from the tile it was standing on and from the list of players in the world.
     void removePlayer(int id);
+    /// @brief Returns the active time unit for the world.
+    /// @return _f 
+    int getTimeUnit() const;
+    /// @brief sets the active time unit for the world.
+    /// @param f 
+    void setTimeUnit(int f);
+    /// @brief Returns the team that has won the game, or nullptr if no team has won.
+    /// @return 
+    Team *getWinningTeam() const;
 };
 } // namespace zappy

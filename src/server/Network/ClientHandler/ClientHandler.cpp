@@ -1,5 +1,8 @@
 #include "ClientHandler.hpp"
 #include "../../Logger/Logger.hpp"
+#include "../../ServerException/ServerException.hpp"
+#include <algorithm>
+#include <cstring>
 #include <iostream>
 #include <sys/socket.h>
 
@@ -12,9 +15,8 @@ ClientHandler::~ClientHandler()
 {
 }
 
-ClientHandler::ClientHandler(int port, int initialClientCapacity, int f, World *world, bool *serverIsRunning)
-    : _f(f), _lastResourceUpdate(std::chrono::steady_clock::now()), _lastFoodUpdate(std::chrono::steady_clock::now()), _world(world), _serverIsRunning(serverIsRunning),
-      _broadcastQueue()
+ClientHandler::ClientHandler(int port, int initialClientCapacity, World *world, bool *serverIsRunning)
+    : _lastResourceUpdate(std::chrono::steady_clock::now()), _lastFoodUpdate(std::chrono::steady_clock::now()), _world(world), _serverIsRunning(serverIsRunning), _broadcastQueue()
 {
     _tcpSocket.create(AF_INET, SOCK_STREAM, 0);
     _tcpSocket.bind(port);
@@ -30,8 +32,8 @@ void ClientHandler::handleClients(void)
     while (*_serverIsRunning)
     {
         auto now = std::chrono::steady_clock::now();
-        auto foodIntervalMs = std::chrono::milliseconds(CYCLE_TO_DIE * 1000 / _f);
-        auto resourceIntervalMs = std::chrono::milliseconds(RESOURCE_INTERVAL_TIME_UNITS * 1000 / _f);
+        auto foodIntervalMs = std::chrono::milliseconds(CYCLE_TO_DIE * 1000 / _world->getTimeUnit());
+        auto resourceIntervalMs = std::chrono::milliseconds(RESOURCE_INTERVAL_TIME_UNITS * 1000 / _world->getTimeUnit());
         auto deadline = _lastResourceUpdate + resourceIntervalMs;
         auto foodDeadline = _lastFoodUpdate + foodIntervalMs;
         if (foodDeadline < deadline)
@@ -79,20 +81,24 @@ void ClientHandler::handleClients(void)
             *_serverIsRunning = false;
         broadcastGuiInfo();
         broadcastMessageToClients();
+        Team *winningTeam = _world->getWinningTeam();
+        if (winningTeam)
+            for (const auto &player : _world->getPlayers())
+                if (player->getTeam()._name == winningTeam->_name)
+                    std::cout << "Player " << player->getId() << " was level: " << player->getLevel() << std::endl;
     }
 }
 
 void ClientHandler::broadcastMessageToClients()
 {
     std::clock_t currentTime = std::clock();
-    std::function<void(int, const std::string &)> sendFunction = [this](int fd, const std::string &message) { writeToClient(fd, message); };
 
     for (const auto &client : _clients)
         if (client->getType() == ClientType::AI)
         {
             Player *player = _world->getPlayerById(client->getPlayerId());
             if (player)
-                player->sendMessageToClient(currentTime, sendFunction);
+                player->sendMessageToClient(currentTime, _clients);
         }
 }
 
@@ -114,7 +120,7 @@ void ClientHandler::clientEventHandling()
             auto it = _parsers.find(_fds[i].fd);
             if (it != _parsers.end())
             {
-                if (!it->second->feed())
+                if (!it->second->feed(_clients))
                 {
                     Client *client = getClientByFd(_fds[i].fd);
                     Player *player = client ? _world->getPlayerById(client->getPlayerId()) : nullptr;
@@ -133,7 +139,7 @@ void ClientHandler::clientEventHandling()
             fdsToRemove.push_back(fd);
         else
         {
-            while (parser->executeNext())
+            while (parser->executeNext(_clients))
                 ;
         }
     }
@@ -153,8 +159,11 @@ void ClientHandler::addClient()
         return;
     Logger::log("120", "Client : new connection attempt", {{"fd", std::to_string(clientFd)}});
     send(clientFd, "WELCOME\n", 8, MSG_NOSIGNAL);
+    Logger::log("030", "Client : WELCOME handshake sent", {{"fd", std::to_string(clientFd)}});
     _clients.push_back(std::make_unique<Client>(clientFd));
-    _parsers[clientFd] = std::make_unique<CommandParser>(_clients.back().get(), _f, _world, &_broadcastQueue);
+    Logger::log("030", "Client : connection established", {{"fd", std::to_string(clientFd)}, {"type", "UNKNOWN"}});
+    _parsers[clientFd] = std::make_unique<CommandParser>(_clients.back().get(), _world, &_broadcastQueue);
+    Logger::log("030", "Client : command parser created", {{"fd", std::to_string(clientFd)}});
     _fds.push_back({.fd = clientFd, .events = POLLIN, .revents = 0});
     Logger::log("030", "Client : connection established", {{"fd", std::to_string(clientFd)}, {"type", "UNKNOWN"}});
 }
@@ -209,16 +218,6 @@ void ClientHandler::broadcastGuiInfo()
 std::queue<std::string> &ClientHandler::getBroadcastQueue()
 {
     return _broadcastQueue;
-}
-
-void ClientHandler::writeToClient(int fd, const std::string &message)
-{
-    if (fd < 0)
-    {
-        std::cout << "[ERROR-440] " << fd << std::endl;
-        return;
-    }
-    send(fd, message.c_str(), message.size(), MSG_NOSIGNAL); // MSG_NOSIGNAL: never SIGPIPE if the client is disconnected
 }
 
 } // namespace zappy

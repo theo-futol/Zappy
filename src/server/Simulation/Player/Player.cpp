@@ -1,4 +1,6 @@
 #include "Player.hpp"
+#include <algorithm>
+#include <cmath>
 
 namespace zappy
 {
@@ -26,6 +28,23 @@ void Player::levelUp()
 int Player::getRotation() const
 {
     return rotation;
+}
+
+int Player::getOrientation() const
+{
+    switch (rotation)
+    {
+    case Degrees::NORTH:
+        return 1;
+    case Degrees::EAST:
+        return 2;
+    case Degrees::SOUTH:
+        return 3;
+    case Degrees::WEST:
+        return 4;
+    default:
+        return 1;
+    }
 }
 
 void Player::setRotation(int rot)
@@ -122,13 +141,6 @@ PlayerState Player::getState() const
     return _state;
 }
 
-void Player::writeToClient(const std::string &message) const
-{
-    if (_fd < 0)
-        return;
-    send(_fd, message.c_str(), message.size(), MSG_NOSIGNAL);
-}
-
 int Player::getDistanceTo(const position &target, std::pair<int, int> mapSize) const
 {
     int dx = std::abs(target.x - _pos.x);
@@ -202,7 +214,7 @@ void Player::addMessageToQueue(const std::string &message, int timeNeeded, int r
     }
 }
 
-void Player::sendMessageToClient(std::clock_t currentTime, std::function<void(int, const std::string &)> sendFunction)
+void Player::sendMessageToClient(std::clock_t currentTime, std::vector<std::unique_ptr<Client>> &clients)
 {
     if (_messagesToSend.size() == 0)
         return;
@@ -216,7 +228,13 @@ void Player::sendMessageToClient(std::clock_t currentTime, std::function<void(in
             if (currentTime - it->first.first < it->first.second * CLOCKS_PER_SEC / 1000)
                 break;
             if (it->second >= 0)
-                sendFunction(it->second, msgIt->first);
+                // Find the client with the matching fd and send the message
+                for (const auto &client : clients)
+                    if (client->getFd() == it->second)
+                    {
+                        client->write(msgIt->first);
+                        break;
+                    }
         }
         if (times.empty())
             msgIt = _messagesToSend.erase(msgIt);

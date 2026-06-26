@@ -7,22 +7,31 @@
 CC = clang++
 
 PROJECT_NAME = zappy
-BINARIES     = server gui ai
+SERVER_BIN   = $(PROJECT_NAME)_server
+AI_BIN       = $(PROJECT_NAME)_ai
+AI_SOURCES   = $(shell find src/ia -type f -name "*.py")
 
-zappy_%:
-	$(MAKE) -C src/$* BINARY_LOCATION=$(abspath $(PROJECT_NAME)_$*)
+all: $(SERVER_BIN) $(AI_BIN)
 
-all: zappy_server zappy_gui zappy_ai
+$(SERVER_BIN):
+	$(MAKE) -C src/server BINARY_LOCATION=$(abspath $@)
+
+$(AI_BIN): $(AI_SOURCES) Makefile
+	@printf '%s\n' \
+		'#!/bin/sh' \
+		'APP_DIR=$$(CDPATH= cd -- "$$(dirname -- "$$0")" && pwd)' \
+		'cd "$$APP_DIR" || exit 1' \
+		'PYTHONPATH="$$APP_DIR/src$${PYTHONPATH:+:$$PYTHONPATH}"' \
+		'export PYTHONPATH' \
+		'exec "$${PYTHON:-python3}" -m ia.client "$$@"' \
+		> $@
+	@chmod +x $@
 
 clean:
-	@for bin in $(BINARIES); do \
-		if ! $(MAKE) -C src/$$bin clean; then \
-			echo "$$bin clean failed"; \
-		fi; \
-	done
+	$(MAKE) -C src/server clean
 
 fclean: clean 
-	-rm -f $(addprefix $(PROJECT_NAME)_,$(BINARIES))
+	-rm -f $(SERVER_BIN) $(AI_BIN)
 
 re: fclean all
 

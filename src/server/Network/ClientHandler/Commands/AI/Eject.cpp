@@ -2,9 +2,8 @@
 
 namespace zappy
 {
-std::string Commands::Eject(std::vector<std::string> args, Client &client)
+std::string Commands::Eject(std::vector<std::string>, Client &client, std::vector<std::unique_ptr<Client>> &clients)
 {
-    (void)args; // Unused parameter
     Player *player = _world->getPlayerById(client.getPlayerId());
     if (!player)
         return "ko\n"; // Player not found
@@ -15,7 +14,7 @@ std::string Commands::Eject(std::vector<std::string> args, Client &client)
 
     // move all players to nextPosition
     tile *currentTile = _world->getTileAt(playerPos);
-    _world->sendMessageToPlayersThatAreOnTile(playerPos, "eject: " + std::to_string(player->getRotation()) + "\n");
+    _world->sendMessageToPlayersThatAreOnTile(playerPos, "eject: " + std::to_string(player->getRotation()) + "\n", clients);
     for (const auto &otherPlayer : currentTile->_players)
     {
         if (otherPlayer->getId() != player->getId() && nextPos != playerPos)

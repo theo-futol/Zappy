@@ -1,4 +1,4 @@
-BINARY_PATH="../../../zappy_server"
+BINARY_PATH="${PWD}/zappy_server"
 
 COMMANDS_TO_RUN=(
     # empty parameters
@@ -52,3 +52,5 @@ for command in "${COMMANDS_TO_RUN[@]}"; do
 done
 echo    
 echo "Passed $PASSED_TESTS out of $NUMBER_OF_TESTS tests."
+
+exit $((NUMBER_OF_TESTS - PASSED_TESTS))
