@@ -48,10 +48,9 @@ Core::Core(ArgParser argParser) : _argParser(std::move(argParser)), _clientHandl
 void Core::setClientHandler()
 {
     int port = _argParser.getInt("-p");
-    int f = _argParser.hasFlag("-f") ? _argParser.getInt("-f") : 100;
     int cFlag = _argParser.hasFlag("-c") ? _argParser.getInt("-c") : INITIAL_CLIENT_CAPACITY;
     int initialClientCapacity = cFlag * _argParser.getList("-n").size();
-    _clientHandler = std::make_unique<ClientHandler>(port, initialClientCapacity, f, _world.get(), &serverIsRunning);
+    _clientHandler = std::make_unique<ClientHandler>(port, initialClientCapacity, _world.get(), &serverIsRunning);
     setWorldBroadcast();
 }
 
@@ -65,8 +64,9 @@ void Core::setWorld()
 {
     int width = _argParser.hasFlag("-x") ? _argParser.getInt("-x") : INITIAL_WORLD_WIDTH;
     int height = _argParser.hasFlag("-y") ? _argParser.getInt("-y") : INITIAL_WORLD_HEIGHT;
+    int f = _argParser.hasFlag("-f") ? _argParser.getInt("-f") : 100;
     int initialSlots = _argParser.hasFlag("-c") ? _argParser.getInt("-c") : INITIAL_CLIENT_CAPACITY;
-    _world = std::make_unique<World>(width, height, _argParser.hasFlag("-oldgen"));
+    _world = std::make_unique<World>(width, height, f, _argParser.hasFlag("-oldgen"));
     const auto &teamNames = _argParser.getList("-n");
     for (int i = 0; i < static_cast<int>(teamNames.size()); ++i)
         _world->addTeam(teamNames[i], i, initialSlots);

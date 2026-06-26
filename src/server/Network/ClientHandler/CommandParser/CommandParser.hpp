@@ -39,7 +39,7 @@ namespace zappy
         /// @param f              Reciprocal of the time unit, used to scale command durations.
         /// @param world          The shared simulation world.
         /// @param broadcastQueue Queue for messages bound for graphic clients.
-        CommandParser(Client *client, int f, World *world = nullptr, std::queue<std::string> *broadcastQueue = nullptr);
+        CommandParser(Client *client, World *world = nullptr, std::queue<std::string> *broadcastQueue = nullptr);
 
         /// @brief Reads pending data from the client socket into the command queue.
         /// @return false if the client disconnected.
@@ -59,7 +59,6 @@ namespace zappy
 
     private:
         Client *_client;                       ///< Client this parser serves (not owned).
-        int _f;                                ///< Reciprocal of the time unit, scales durations.
         World *_world;                         ///< Shared simulation world (not owned).
         std::queue<PendingCommand> _commandQueue; ///< Commands awaiting their readyAt time.
         std::unordered_map<std::string, std::pair<int, Handler>> _aiCommands;   ///< AI command name -> (duration, handler).

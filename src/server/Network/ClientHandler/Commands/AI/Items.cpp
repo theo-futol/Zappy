@@ -28,7 +28,7 @@ std::string Commands::Take(std::vector<std::string> args, Client &client)
             break;
         }
     }
-    _broadcastQueue->push("pgt " + std::to_string(player->getId()) + " " + args[0] + "\n");
+    _broadcastQueue->push("pgt " + std::to_string(player->getId()) + " " + std::to_string(static_cast<int>(stringToItemType(args[0]))) + "\n");
     Logger::log("01A", "Take : item taken", {{"player_id", std::to_string(player->getId())}, {"item", args[0]}, {"x", std::to_string(pos.x)}, {"y", std::to_string(pos.y)}});
     return "ok\n";
 }
@@ -56,7 +56,7 @@ std::string Commands::Set(std::vector<std::string> args, Client &client)
             it->second++;
             break;
         }
-    _broadcastQueue->push("pdr " + std::to_string(player->getId()) + " " + args[0] + "\n");
+    _broadcastQueue->push("pdr " + std::to_string(player->getId()) + " " + std::to_string(static_cast<int>(stringToItemType(args[0]))) + "\n");
     Logger::log("01B", "Set : item dropped", {{"player_id", std::to_string(player->getId())}, {"item", args[0]}, {"x", std::to_string(pos.x)}, {"y", std::to_string(pos.y)}});
     return "ok\n";
 }

@@ -6,8 +6,8 @@
 
 namespace zappy
 {
-CommandParser::CommandParser(Client *client, int f, World *world, std::queue<std::string> *broadcastQueue)
-    : _client(client), _f(f), _world(world), _commands(world, broadcastQueue), _broadcastQueue(broadcastQueue), _isBanned(false)
+CommandParser::CommandParser(Client *client, World *world, std::queue<std::string> *broadcastQueue)
+    : _client(client), _world(world), _commands(world, broadcastQueue), _broadcastQueue(broadcastQueue), _isBanned(false)
 {
     _initAICommands();
     _initGraphicCommands();
@@ -64,7 +64,7 @@ bool CommandParser::feed()
         auto it = _aiCommands.find(cmd);
         int cost = (it != _aiCommands.end()) ? it->second.first : 0;
         auto base = _commandQueue.empty() ? std::chrono::steady_clock::now() : _commandQueue.back().readyAt;
-        auto readyAt = base + std::chrono::milliseconds(cost * 1000 / _f);
+        auto readyAt = base + std::chrono::milliseconds(cost * 1000 / _world->getTimeUnit());
         if (cmd == "Incantation" && _client->getType() == ClientType::AI)
         {
             if (!player)
@@ -163,7 +163,7 @@ void CommandParser::_handleHandshake(const std::string &teamName)
 
         Player *player = _world->getPlayerById(playerId);
         _broadcastQueue->push("pnw " + std::to_string(playerId) + " " + std::to_string(player->getPosition().x) + " " + std::to_string(player->getPosition().y) + " " +
-                              std::to_string(player->getRotation()) + " " + teamName + "\n");
+                              std::to_string(player->getOrientation()) + " " + std::to_string(player->getLevel()) + " " + teamName + "\n");
     }
     // Log the handshake result
 }
