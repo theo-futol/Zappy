@@ -136,18 +136,17 @@ Test(Broadcast, notifies_other_players_with_a_direction_tagged_message)
     cr_assert_str_eq(res.c_str(), "ok\n");
 
     // The message is queued with timeNeeded = distance * 7 = 0, so it is sent
-    // as soon as sendMessageToClient() is invoked on the sender. Note: the
-    // implementation queues the message against the *sender's* own fd
-    // (player->getFd()) rather than the target's, so it is delivered on the
-    // sender's socket peer (f.b), not the target's.
-    zappy::Player *sender = f.world.getPlayerById(f.playerId);
+    // as soon as sendMessageToClient() is invoked on the target. The
+    // implementation queues the message against the *target's* own fd
+    // (target->getFd()), so it is delivered on the target's socket peer
+    // (sv2[1]), not the sender's.
     std::function<void(int, const std::string &)> sendFunction = [](int fd, const std::string &message) { send(fd, message.c_str(), message.size(), 0); };
-    sender->sendMessageToClient(std::clock(), sendFunction);
+    target->sendMessageToClient(std::clock(), sendFunction);
 
     char buf[64] = {0};
-    int flags = fcntl(f.b, F_GETFL, 0);
-    fcntl(f.b, F_SETFL, flags | O_NONBLOCK);
-    ssize_t n = recv(f.b, buf, sizeof(buf) - 1, 0);
+    int flags = fcntl(sv2[1], F_GETFL, 0);
+    fcntl(sv2[1], F_SETFL, flags | O_NONBLOCK);
+    ssize_t n = recv(sv2[1], buf, sizeof(buf) - 1, 0);
     cr_assert_geq(n, 0);
     std::string received(buf, n > 0 ? n : 0);
     cr_assert(received.rfind("message ", 0) == 0);
