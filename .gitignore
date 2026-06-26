@@ -6,3 +6,5 @@ zappy_*
 __pycache__/
 **/__pycache__/
 venv
+*.gc*
+*.pdf
