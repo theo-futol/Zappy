@@ -13,6 +13,7 @@ struct MoveFixture
     int a, b;
     zappy::World world;
     std::queue<std::string> broadcastQueue;
+    std::vector<std::unique_ptr<zappy::Client>> clients;
     zappy::Commands *commands;
     zappy::Client *client;
     int playerId;
@@ -51,7 +52,7 @@ Test(Move, forward_moves_the_player_one_tile_north_and_returns_ok)
     cr_assert_eq(before.x, 0);
     cr_assert_eq(before.y, 0);
 
-    std::string res = f.commands->Forward({}, *f.client);
+    std::string res = f.commands->Forward({}, *f.client, f.clients);
 
     cr_assert_str_eq(res.c_str(), "ok\n");
     zappy::position after = player->getPosition();
@@ -66,7 +67,7 @@ Test(Move, forward_updates_the_tile_player_lists)
     zappy::Player *player = f.world.getPlayerById(f.playerId);
     zappy::position before = player->getPosition();
 
-    f.commands->Forward({}, *f.client);
+    f.commands->Forward({}, *f.client, f.clients);
 
     zappy::tile *oldTile = f.world.getTileAt(before);
     zappy::tile *newTile = f.world.getTileAt(player->getPosition());
@@ -81,7 +82,7 @@ Test(Move, forward_on_unknown_player_returns_dead)
     socketpair(AF_UNIX, SOCK_STREAM, 0, sv);
     zappy::Client ghost(sv[0]);
 
-    std::string res = f.commands->Forward({}, ghost);
+    std::string res = f.commands->Forward({}, ghost, f.clients);
 
     cr_assert_str_eq(res.c_str(), "dead\n");
     close(sv[1]);
@@ -93,7 +94,7 @@ Test(Move, right_turns_90_degrees_clockwise)
     zappy::Player *player = f.world.getPlayerById(f.playerId);
     cr_assert_eq(player->getRotation(), zappy::Degrees::NORTH);
 
-    std::string res = f.commands->Right({}, *f.client);
+    std::string res = f.commands->Right({}, *f.client, f.clients);
 
     cr_assert_str_eq(res.c_str(), "ok\n");
     cr_assert_eq(player->getRotation(), zappy::Degrees::EAST);
@@ -105,7 +106,7 @@ Test(Move, right_wraps_around_from_west_to_north)
     zappy::Player *player = f.world.getPlayerById(f.playerId);
     player->setRotation(zappy::Degrees::WEST);
 
-    f.commands->Right({}, *f.client);
+    f.commands->Right({}, *f.client, f.clients);
 
     cr_assert_eq(player->getRotation(), zappy::Degrees::NORTH);
 }
@@ -117,7 +118,7 @@ Test(Move, right_on_unknown_player_returns_dead)
     socketpair(AF_UNIX, SOCK_STREAM, 0, sv);
     zappy::Client ghost(sv[0]);
 
-    std::string res = f.commands->Right({}, ghost);
+    std::string res = f.commands->Right({}, ghost, f.clients);
 
     cr_assert_str_eq(res.c_str(), "dead\n");
     close(sv[1]);
@@ -129,7 +130,7 @@ Test(Move, left_turns_90_degrees_counter_clockwise)
     zappy::Player *player = f.world.getPlayerById(f.playerId);
     player->setRotation(zappy::Degrees::EAST);
 
-    std::string res = f.commands->Left({}, *f.client);
+    std::string res = f.commands->Left({}, *f.client, f.clients);
 
     cr_assert_str_eq(res.c_str(), "ok\n");
     cr_assert_eq(player->getRotation(), zappy::Degrees::NORTH);
@@ -141,7 +142,7 @@ Test(Move, left_wraps_around_from_north_to_west)
     zappy::Player *player = f.world.getPlayerById(f.playerId);
     cr_assert_eq(player->getRotation(), zappy::Degrees::NORTH);
 
-    f.commands->Left({}, *f.client);
+    f.commands->Left({}, *f.client, f.clients);
 
     cr_assert_eq(player->getRotation(), zappy::Degrees::WEST);
 }
@@ -153,7 +154,7 @@ Test(Move, left_on_unknown_player_returns_dead)
     socketpair(AF_UNIX, SOCK_STREAM, 0, sv);
     zappy::Client ghost(sv[0]);
 
-    std::string res = f.commands->Left({}, ghost);
+    std::string res = f.commands->Left({}, ghost, f.clients);
 
     cr_assert_str_eq(res.c_str(), "dead\n");
     close(sv[1]);
