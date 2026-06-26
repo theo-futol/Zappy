@@ -2,9 +2,10 @@
 
 namespace zappy
 {
-std::string Commands::Look(std::vector<std::string> args, Client &client)
+std::string Commands::Look(std::vector<std::string> args, Client &client, std::vector<std::unique_ptr<Client>> &clients)
 {
     (void)args; // Unused parameter
+    (void)clients;
     std::string buffer = "[";
     Player *player = _world->getPlayerById(client.getPlayerId());
     if (!player)

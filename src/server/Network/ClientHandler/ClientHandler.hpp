@@ -71,8 +71,6 @@ namespace zappy
             /// @return Pointer to the matching Client, or nullptr if not found.
             Client *getClientByPlayerId(int playerId) const;
 
-            void writeToClient(int fd, const std::string &message);
-
             std::queue<std::string> &getBroadcastQueue();
     };
 } // namespace zappy

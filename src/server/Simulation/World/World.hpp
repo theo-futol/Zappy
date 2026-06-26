@@ -136,7 +136,7 @@ class World
     void addPlayerToTile(Player *player, position pos);
 
     /// @brief Sends a message to every player currently standing on the given tile.
-    void sendMessageToPlayersThatAreOnTile(position pos, const std::string &message);
+    void sendMessageToPlayersThatAreOnTile(position pos, const std::string &message, std::vector<std::unique_ptr<Client>> &clients);
 
     /// @brief Removes a player from the world and decrease the number of slots occupied in its team. The player is removed from the tile it was standing on and from the list of players in the world.
     void removePlayer(int id);

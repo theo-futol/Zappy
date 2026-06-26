@@ -79,24 +79,18 @@ void ClientHandler::handleClients(void)
         broadcastGuiInfo();
         broadcastMessageToClients();
     }
-    Team *winningTeam = _world->getWinningTeam();
-    if (winningTeam)
-        for (const auto &player : _world->getPlayers())
-            if (player->getTeam()._name == winningTeam->_name)
-                std::cout << "Player " << player->getId() << " was level: " << player->getLevel() << std::endl;
 }
 
 void ClientHandler::broadcastMessageToClients()
 {
     std::clock_t currentTime = std::clock();
-    std::function<void(int, const std::string &)> sendFunction = [this](int fd, const std::string &message) { writeToClient(fd, message); };
 
     for (const auto &client : _clients)
         if (client->getType() == ClientType::AI)
         {
             Player *player = _world->getPlayerById(client->getPlayerId());
             if (player)
-                player->sendMessageToClient(currentTime, sendFunction);
+                player->sendMessageToClient(currentTime, _clients);
         }
 }
 
@@ -118,7 +112,7 @@ void ClientHandler::clientEventHandling()
             auto it = _parsers.find(_fds[i].fd);
             if (it != _parsers.end())
             {
-                if (!it->second->feed())
+                if (!it->second->feed(_clients))
                 {
                     Client *client = getClientByFd(_fds[i].fd);
                     Player *player = client ? _world->getPlayerById(client->getPlayerId()) : nullptr;
@@ -137,7 +131,7 @@ void ClientHandler::clientEventHandling()
             fdsToRemove.push_back(fd);
         else
         {
-            while (parser->executeNext())
+            while (parser->executeNext(_clients))
                 ;
         }
     }
@@ -157,8 +151,11 @@ void ClientHandler::addClient()
         return;
     Logger::log("120", "Client : new connection attempt", {{"fd", std::to_string(clientFd)}});
     send(clientFd, "WELCOME\n", 8, MSG_NOSIGNAL);
+    Logger::log("030", "Client : WELCOME handshake sent", {{"fd", std::to_string(clientFd)}});
     _clients.push_back(std::make_unique<Client>(clientFd));
+    Logger::log("030", "Client : connection established", {{"fd", std::to_string(clientFd)}, {"type", "UNKNOWN"}});
     _parsers[clientFd] = std::make_unique<CommandParser>(_clients.back().get(), _world, &_broadcastQueue);
+    Logger::log("030", "Client : command parser created", {{"fd", std::to_string(clientFd)}});
     _fds.push_back({.fd = clientFd, .events = POLLIN, .revents = 0});
     Logger::log("030", "Client : connection established", {{"fd", std::to_string(clientFd)}, {"type", "UNKNOWN"}});
 }
@@ -213,16 +210,6 @@ void ClientHandler::broadcastGuiInfo()
 std::queue<std::string> &ClientHandler::getBroadcastQueue()
 {
     return _broadcastQueue;
-}
-
-void ClientHandler::writeToClient(int fd, const std::string &message)
-{
-    if (fd < 0)
-    {
-        std::cout << "[ERROR-440] " << fd << std::endl;
-        return;
-    }
-    send(fd, message.c_str(), message.size(), MSG_NOSIGNAL); // MSG_NOSIGNAL: never SIGPIPE if the client is disconnected
 }
 
 } // namespace zappy

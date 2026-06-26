@@ -1,5 +1,8 @@
 #pragma once
 #include <string>
+#include <unistd.h>
+#include <sys/socket.h>
+#include <iostream>
 #include "ClientType.hpp"
 
 namespace zappy
@@ -52,5 +55,8 @@ namespace zappy
 
             /// @brief Replaces the entire pending buffer.
             void setBuffer(const std::string &buffer);
+
+            /// @brief Writes the given message to the client socket, if it is valid. Logs an error if the write fails.
+            void write(const std::string &message) const;
     };
 } // namespace zappy
