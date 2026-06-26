@@ -20,7 +20,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="structzappy_1_1Team.html#a28b10ed41422bcd6fb1b4fcb58956758" target="_top" xlink:title="Frees one occupied slot (a player left), never going below zero.">
+<g id="a_Node000002"><a xlink:href="structzappy_1_1Team.html#a28b10ed41422bcd6fb1b4fcb58956758" target="_top" xlink:title="Removes one active player from the team and frees its connection slot. Fork still creates additional ...">
 <polygon fill="white" stroke="#666666" points="316,-19 164,-19 164,0 316,0 316,-19"/>
 <text text-anchor="middle" x="240" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::Team::removePlayer</text>
 </a>

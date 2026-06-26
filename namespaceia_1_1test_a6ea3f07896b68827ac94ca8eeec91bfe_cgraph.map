@@ -1,0 +1,5 @@
+<map id="ia.test.scenario_ready_ping_advertises_but_waits_for_quorum" name="ia.test.scenario_ready_ping_advertises_but_waits_for_quorum">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,208,60"/>
+<area shape="rect" id="Node000002" href="$namespaceia_1_1test.html#a9b419cc95f89cebf07b9c1d82a6454a0" title=" " alt="" coords="256,20,361,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="208,30,242,30,242,35,208,35"/>
+</map>

@@ -1,5 +1,0 @@
-<map id="zappy::World::getPlayerByFd" name="zappy::World::getPlayerByFd">
-<area shape="rect" id="Node000001" title="Looks up a player by its client fd, or nullptr if none matches." alt="" coords="5,5,213,31"/>
-<area shape="rect" id="Node000002" href="$classzappy_1_1Player.html#a7382412b718c7828587ced9e7168bdf3" title="The socket fd linking this player to its client." alt="" coords="261,5,416,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="213,15,248,15,248,21,213,21"/>
-</map>

@@ -1,10 +1,16 @@
 <map id="zappy::Core::setWorld" name="zappy::Core::setWorld">
-<area shape="rect" id="Node000001" title="Creates the World from the args (map size, teams)." alt="" coords="5,55,168,80"/>
-<area shape="rect" id="Node000002" href="$classzappy_1_1World.html#af08f69ff3d95da644be0429cdbe7ee7d" title="Registers a new team with an initial number of slots." alt="" coords="218,5,390,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="143,52,233,31,235,36,144,57"/>
-<area shape="rect" id="Node000003" href="$classzappy_1_1ArgParser.html#a971140dfcfb1fcf6b3bff1b8c6e999fa" title="Returns the parsed value of an INT flag as an integer." alt="" coords="216,55,392,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="169,65,202,65,202,70,169,70"/>
-<area shape="rect" id="Node000004" href="$classzappy_1_1ArgParser.html#a3562c347e47d15154be9cff16d5c29f2" title="Returns all values collected for a LIST flag." alt="" coords="440,80,623,105"/>
-<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="144,77,216,89,324,94,426,94,426,100,324,100,216,94,143,83"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="392,74,427,78,426,84,392,80"/>
+<area shape="rect" id="Node000001" title="Creates the World from the args (map size, teams)." alt="" coords="5,80,168,105"/>
+<area shape="rect" id="Node000002" href="$classzappy_1_1World.html#af08f69ff3d95da644be0429cdbe7ee7d" title="Registers a new team, laying initialSlots eggs at random tiles so the first clients have something to..." alt="" coords="225,5,397,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="116,77,215,39,242,32,243,37,217,45,118,82"/>
+<area shape="rect" id="Node000005" href="$classzappy_1_1ArgParser.html#a971140dfcfb1fcf6b3bff1b8c6e999fa" title="Returns the parsed value of an INT flag as an integer." alt="" coords="223,55,399,80"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="168,81,209,76,209,81,169,86"/>
+<area shape="rect" id="Node000006" href="$classzappy_1_1ArgParser.html#a3562c347e47d15154be9cff16d5c29f2" title="Returns all values collected for a LIST flag." alt="" coords="453,80,636,105"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="168,90,440,90,440,95,168,95"/>
+<area shape="rect" id="Node000007" href="$classzappy_1_1ArgParser.html#a5db30377644b5ab92f4c37010dbd10a5" title="Returns true if the flag was present in argv after parse()." alt="" coords="216,156,405,181"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="126,103,217,134,260,149,258,154,215,139,124,108"/>
+<area shape="rect" id="Node000003" href="$structzappy_1_1Team.html#a14fde19b9bd6171374642ee8d9b6039b" title="Lays count eggs at the given tile, each adding a slot and a unique ID." alt="" coords="465,5,624,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="397,15,451,15,451,21,397,21"/>
+<area shape="rect" id="Node000004" href="$namespacezappy.html#a6f4c56af6fff80513c2388249fd217f4" title=" " alt="" coords="684,5,829,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="625,15,670,15,670,21,625,21"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="399,74,440,79,439,84,399,79"/>
 </map>

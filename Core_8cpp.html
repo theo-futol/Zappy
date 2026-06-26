@@ -97,6 +97,9 @@ $(document).ready(function(){initNavTree('Core_8cpp.html',''); initResizable(); 
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="Core_8hpp_source.html">Core.hpp</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ServerException_8hpp_source.html">../ServerException/ServerException.hpp</a>&quot;</code><br />
+<code>#include &lt;algorithm&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for Core.cpp:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -123,8 +126,62 @@ Macros</h2></td></tr>
 <tr class="separator:a38bf96567b2c74c3549ed40ac53163ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4cbdbe9b7f8e2757f49434127d9f1cb3" id="r_a4cbdbe9b7f8e2757f49434127d9f1cb3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Core_8cpp.html#a4cbdbe9b7f8e2757f49434127d9f1cb3">MAX_F</a>&#160;&#160;&#160;1000</td></tr>
 <tr class="separator:a4cbdbe9b7f8e2757f49434127d9f1cb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a126a8315de555667c8d6d1692761b6d2" id="r_a126a8315de555667c8d6d1692761b6d2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Core_8cpp.html#a126a8315de555667c8d6d1692761b6d2">INITIAL_CLIENT_CAPACITY</a>&#160;&#160;&#160;24</td></tr>
+<tr class="separator:a126a8315de555667c8d6d1692761b6d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f234e5a9fa0a2aef5e54b964cfa084b" id="r_a4f234e5a9fa0a2aef5e54b964cfa084b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Core_8cpp.html#a4f234e5a9fa0a2aef5e54b964cfa084b">INITIAL_WORLD_WIDTH</a>&#160;&#160;&#160;25</td></tr>
+<tr class="separator:a4f234e5a9fa0a2aef5e54b964cfa084b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a521bfccd27c65ec8a3da89b59fcb585e" id="r_a521bfccd27c65ec8a3da89b59fcb585e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Core_8cpp.html#a521bfccd27c65ec8a3da89b59fcb585e">INITIAL_WORLD_HEIGHT</a>&#160;&#160;&#160;25</td></tr>
+<tr class="separator:a521bfccd27c65ec8a3da89b59fcb585e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a126a8315de555667c8d6d1692761b6d2" name="a126a8315de555667c8d6d1692761b6d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a126a8315de555667c8d6d1692761b6d2">&#9670;&#160;</a></span>INITIAL_CLIENT_CAPACITY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define INITIAL_CLIENT_CAPACITY&#160;&#160;&#160;24</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="Core_8cpp_source.html#l00011">11</a> of file <a class="el" href="Core_8cpp_source.html">Core.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a521bfccd27c65ec8a3da89b59fcb585e" name="a521bfccd27c65ec8a3da89b59fcb585e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a521bfccd27c65ec8a3da89b59fcb585e">&#9670;&#160;</a></span>INITIAL_WORLD_HEIGHT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define INITIAL_WORLD_HEIGHT&#160;&#160;&#160;25</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="Core_8cpp_source.html#l00013">13</a> of file <a class="el" href="Core_8cpp_source.html">Core.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a4f234e5a9fa0a2aef5e54b964cfa084b" name="a4f234e5a9fa0a2aef5e54b964cfa084b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f234e5a9fa0a2aef5e54b964cfa084b">&#9670;&#160;</a></span>INITIAL_WORLD_WIDTH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define INITIAL_WORLD_WIDTH&#160;&#160;&#160;25</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="Core_8cpp_source.html#l00012">12</a> of file <a class="el" href="Core_8cpp_source.html">Core.cpp</a>.</p>
+
+</div>
+</div>
 <a id="a0a8f91f93d75a07f0ae45077db45b3eb" name="a0a8f91f93d75a07f0ae45077db45b3eb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0a8f91f93d75a07f0ae45077db45b3eb">&#9670;&#160;</a></span>MAX_CLIENTS</h2>
 
@@ -137,7 +194,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Core_8cpp_source.html#l00004">4</a> of file <a class="el" href="Core_8cpp_source.html">Core.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Core_8cpp_source.html#l00007">7</a> of file <a class="el" href="Core_8cpp_source.html">Core.cpp</a>.</p>
 
 </div>
 </div>
@@ -153,7 +210,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Core_8cpp_source.html#l00006">6</a> of file <a class="el" href="Core_8cpp_source.html">Core.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Core_8cpp_source.html#l00009">9</a> of file <a class="el" href="Core_8cpp_source.html">Core.cpp</a>.</p>
 
 </div>
 </div>
@@ -169,7 +226,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Core_8cpp_source.html#l00003">3</a> of file <a class="el" href="Core_8cpp_source.html">Core.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Core_8cpp_source.html#l00006">6</a> of file <a class="el" href="Core_8cpp_source.html">Core.cpp</a>.</p>
 
 </div>
 </div>
@@ -185,7 +242,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Core_8cpp_source.html#l00005">5</a> of file <a class="el" href="Core_8cpp_source.html">Core.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Core_8cpp_source.html#l00008">8</a> of file <a class="el" href="Core_8cpp_source.html">Core.cpp</a>.</p>
 
 </div>
 </div>

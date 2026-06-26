@@ -1,7 +1,0 @@
-<map id="zappy::World::sendMessageToPlayersThatAreOnTile" name="zappy::World::sendMessageToPlayersThatAreOnTile">
-<area shape="rect" id="Node000001" title="Sends a message to every player currently standing on the given tile." alt="" coords="5,23,208,63"/>
-<area shape="rect" id="Node000002" href="$classzappy_1_1World.html#a9fce895cc2d62e61b943f7d9e03471db" title="Returns the tile at the given coordinates." alt="" coords="271,5,443,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="208,30,257,25,258,31,208,36"/>
-<area shape="rect" id="Node000003" href="$classzappy_1_1Player.html#aacac68586b00de9ea9a88c007d07f619" title="Sends a raw message to this player&#39;s client socket." alt="" coords="256,55,459,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="208,50,243,54,242,59,208,56"/>
-</map>

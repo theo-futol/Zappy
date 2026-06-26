@@ -38,7 +38,7 @@
 <!-- Node6 -->
 <g id="Node000006" class="node">
 <title>Node6</title>
-<g id="a_Node000006"><a xlink:href="classzappy_1_1Commands.html#a780efbdebf71f3a24cdf54e305edae70" target="_top" xlink:title="Drops a named resource from the inventory onto the current tile.">
+<g id="a_Node000006"><a xlink:href="classzappy_1_1Commands.html#a53449f6fc5060484a738648f260ec0d2" target="_top" xlink:title="Drops a named resource from the inventory onto the current tile.">
 <polygon fill="white" stroke="#666666" points="543.5,-29.5 415.5,-29.5 415.5,-10.5 543.5,-10.5 543.5,-29.5"/>
 <text text-anchor="middle" x="479.5" y="-17.5" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::Commands::Set</text>
 </a>
@@ -130,7 +130,7 @@
 <!-- Node8 -->
 <g id="Node000008" class="node">
 <title>Node8</title>
-<g id="a_Node000008"><a xlink:href="classzappy_1_1CommandParser.html#ac273c38a60fcb6825770e5a4f2ca43c0" target="_top" xlink:title="Builds a parser for one client.">
+<g id="a_Node000008"><a xlink:href="classzappy_1_1CommandParser.html#a741addd675a90a09b183e9518b626962" target="_top" xlink:title="Builds a parser for one client.">
 <polygon fill="white" stroke="#666666" points="208,-30 77,-30 77,0 208,0 208,-30"/>
 <text text-anchor="start" x="85" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::CommandParser</text>
 <text text-anchor="middle" x="142.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">::CommandParser</text>

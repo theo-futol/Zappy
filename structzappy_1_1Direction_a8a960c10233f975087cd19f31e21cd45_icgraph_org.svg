@@ -21,7 +21,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="classzappy_1_1Player.html#a4e5a74128fcd879291a6e6b3cae1168d" target="_top" xlink:title="Direction from this player toward a target tile, accounting for wrap&#45;around.">
+<g id="a_Node000002"><a xlink:href="classzappy_1_1Player.html#a69aa4c35baec090507f985247abb45a2" target="_top" xlink:title="Direction from this player toward a target tile, accounting for wrap&#45;around.">
 <polygon fill="white" stroke="#666666" points="883,-24.5 725,-24.5 725,-5.5 883,-5.5 883,-24.5"/>
 <text text-anchor="middle" x="804" y="-12.5" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::Player::getDirectionTo</text>
 </a>
@@ -57,7 +57,7 @@
 <!-- Node4 -->
 <g id="Node000004" class="node">
 <title>Node4</title>
-<g id="a_Node000004"><a xlink:href="classzappy_1_1Commands.html#a7207ae533290ee19ff3d90b5edda2457" target="_top" xlink:title="Broadcasts text to every other player, tagged with the direction it came from.">
+<g id="a_Node000004"><a xlink:href="classzappy_1_1Commands.html#a08ccc46023666c48a25fc38f2d3b28bb" target="_top" xlink:title="Broadcasts text to every other player, tagged with the direction it came from.">
 <polygon fill="white" stroke="#666666" points="495,-24.5 334,-24.5 334,-5.5 495,-5.5 495,-24.5"/>
 <text text-anchor="middle" x="414.5" y="-12.5" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::Commands::Broadcast</text>
 </a>
@@ -94,7 +94,7 @@
 <!-- Node6 -->
 <g id="Node000006" class="node">
 <title>Node6</title>
-<g id="a_Node000006"><a xlink:href="classzappy_1_1CommandParser.html#ac273c38a60fcb6825770e5a4f2ca43c0" target="_top" xlink:title="Builds a parser for one client.">
+<g id="a_Node000006"><a xlink:href="classzappy_1_1CommandParser.html#a741addd675a90a09b183e9518b626962" target="_top" xlink:title="Builds a parser for one client.">
 <polygon fill="white" stroke="#666666" points="131,-30 0,-30 0,0 131,0 131,-30"/>
 <text text-anchor="start" x="8" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::CommandParser</text>
 <text text-anchor="middle" x="65.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">::CommandParser</text>

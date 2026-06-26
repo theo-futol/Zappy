@@ -1,13 +1,11 @@
 <map id="src/server/ServerException/ServerException.cpp" name="src/server/ServerException/ServerException.cpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="105,5,301,45"/>
-<area shape="rect" id="Node000002" href="$ServerException_8hpp.html" title=" " alt="" coords="125,93,281,119"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="206,46,206,79,201,79,201,46"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="48,5,244,45"/>
+<area shape="rect" id="Node000002" href="$ServerException_8hpp.html" title=" " alt="" coords="68,93,224,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="149,46,149,79,143,79,143,46"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="5,167,92,192"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="180,121,87,163,85,158,177,116"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="117,167,197,192"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="198,120,174,157,170,154,193,118"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="221,167,279,192"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="213,118,237,154,233,157,209,120"/>
-<area shape="rect" id="Node000006" title=" " alt="" coords="304,167,428,192"/>
-<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="231,116,328,159,326,163,228,121"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="132,121,77,160,74,156,129,117"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="117,167,175,192"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="149,119,149,153,143,153,143,119"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="200,167,324,192"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="166,116,233,157,230,162,163,121"/>
 </map>

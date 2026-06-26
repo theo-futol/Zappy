@@ -1,5 +1,7 @@
 <map id="zappy::ClientHandler::addClient" name="zappy::ClientHandler::addClient">
-<area shape="rect" id="Node000001" title="Accepts a new incoming connection, sends the WELCOME handshake, and registers the client and its pars..." alt="" coords="5,5,163,45"/>
-<area shape="rect" id="Node000002" href="$classzappy_1_1Socket.html#af1396d1bb8966c01ad8b62122165c0b9" title="Accepts a pending connection." alt="" coords="211,13,373,38"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="163,23,197,23,197,28,163,28"/>
+<area shape="rect" id="Node000001" title="Accepts a new incoming connection, sends the WELCOME handshake, and registers the client and its pars..." alt="" coords="5,23,163,63"/>
+<area shape="rect" id="Node000002" href="$classzappy_1_1Socket.html#af1396d1bb8966c01ad8b62122165c0b9" title="Accepts a pending connection." alt="" coords="211,5,373,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="163,31,197,27,198,32,163,36"/>
+<area shape="rect" id="Node000003" href="$classzappy_1_1Logger.html#abab39dcd03894b824e5c7b03462dc483" title="Prints one log line to stdout. Omits the &quot;(...)&quot; group when fields is empty." alt="" coords="222,55,362,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="163,50,208,55,208,60,163,55"/>
 </map>

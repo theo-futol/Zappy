@@ -1,12 +1,12 @@
 <map id="zappy::World::getTileAt" name="zappy::World::getTileAt">
 <area shape="rect" id="Node000001" title="Returns the tile the given player is standing on." alt="" coords="677,31,849,56"/>
-<area shape="rect" id="Node000002" href="$classzappy_1_1Commands.html#a780efbdebf71f3a24cdf54e305edae70" title="Drops a named resource from the inventory onto the current tile." alt="" coords="455,5,625,31"/>
+<area shape="rect" id="Node000002" href="$classzappy_1_1Commands.html#a53449f6fc5060484a738648f260ec0d2" title="Drops a named resource from the inventory onto the current tile." alt="" coords="455,5,625,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="664,35,625,30,626,25,664,29"/>
-<area shape="rect" id="Node000005" href="$classzappy_1_1Commands.html#a23dbbcf0459ffacd5f7f69bdae0f3f1d" title="Picks up a named resource from the current tile into the inventory." alt="" coords="451,55,629,80"/>
+<area shape="rect" id="Node000005" href="$classzappy_1_1Commands.html#af68393f7ba46aec892196685895c50a7" title="Picks up a named resource from the current tile into the inventory." alt="" coords="451,55,629,80"/>
 <area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="664,57,630,60,629,55,664,51"/>
 <area shape="rect" id="Node000003" href="$classzappy_1_1CommandParser.html#a629df3248cf7038782f23805ea6c806e" title="Fills _aiCommands with the AI protocol commands and their durations." alt="" coords="228,23,403,63"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="441,32,403,36,403,31,440,27"/>
-<area shape="rect" id="Node000004" href="$classzappy_1_1CommandParser.html#ac273c38a60fcb6825770e5a4f2ca43c0" title="Builds a parser for one client." alt="" coords="5,23,180,63"/>
+<area shape="rect" id="Node000004" href="$classzappy_1_1CommandParser.html#a741addd675a90a09b183e9518b626962" title="Builds a parser for one client." alt="" coords="5,23,180,63"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="214,46,180,46,180,41,214,41"/>
 <area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="437,59,403,55,403,50,437,54"/>
 </map>

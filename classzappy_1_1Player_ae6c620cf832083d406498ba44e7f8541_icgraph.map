@@ -1,8 +1,8 @@
 <map id="zappy::Player::isFrozen" name="zappy::Player::isFrozen">
 <area shape="rect" id="Node000001" title="Returns true while the player is frozen and must not execute any command." alt="" coords="920,45,1091,70"/>
-<area shape="rect" id="Node000002" href="$classzappy_1_1CommandParser.html#a37a54e030a0ef53e8a6a8970e2c829fe" title="Dispatches the next queued command if its time has come." alt="" coords="697,5,872,45"/>
+<area shape="rect" id="Node000002" href="$classzappy_1_1CommandParser.html#aa6b2d70e869ba31da160e28f0eddc23c" title="Dispatches the next queued command if its time has come." alt="" coords="697,5,872,45"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="906,46,872,41,873,35,907,40"/>
-<area shape="rect" id="Node000007" href="$classzappy_1_1CommandParser.html#af47de49c1b3c9fd2ed80834664c6b7f7" title="Reads pending data from the client socket into the command queue." alt="" coords="697,69,872,109"/>
+<area shape="rect" id="Node000007" href="$classzappy_1_1CommandParser.html#a2eaa3e9cec905216d43b7286e6c018a7" title="Reads pending data from the client socket into the command queue." alt="" coords="697,69,872,109"/>
 <area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="907,74,873,79,872,74,906,69"/>
 <area shape="rect" id="Node000003" href="$classzappy_1_1ClientHandler.html#a1ed7cca92089d8c0c1743aa93167af4b" title=" " alt="" coords="488,37,649,77"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="684,43,650,48,649,43,683,38"/>

@@ -1,0 +1,31 @@
+<map id="zappy::Client::write" name="zappy::Client::write">
+<area shape="rect" id="Node000001" title="Writes the given message to the client socket, if it is valid. Logs an error if the write fails." alt="" coords="1341,102,1488,127"/>
+<area shape="rect" id="Node000002" href="$classzappy_1_1Commands.html#afc2159b221207ae6bf4ac860fab8db5f" title="Starts an incantation: validates prerequisites, notifies the initiator and the GUI,..." alt="" coords="1035,73,1293,98"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1328,107,1272,101,1273,95,1328,102"/>
+<area shape="rect" id="Node000008" href="$classzappy_1_1Commands.html#a54be59514213eff7dcab5bd0ffbf273d" title="Attempts to start an elevation ritual on the current tile (see beginIncantation)." alt="" coords="764,185,987,210"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="1383,137,1342,159,1294,177,1215,193,1134,202,1057,206,987,206,987,201,1056,201,1134,197,1214,188,1293,172,1340,154,1381,132"/>
+<area shape="rect" id="Node000011" href="$classzappy_1_1Player.html#a3addc3e7bd95fca7cd1192306f9bd363" title="Flushes any queued messages whose delivery time has arrived." alt="" coords="1061,8,1267,48"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="1375,98,1292,63,1254,51,1255,45,1294,57,1378,93"/>
+<area shape="rect" id="Node000013" href="$classzappy_1_1World.html#a16e90e4f9247dcfdc66d275ab5fc2888" title="Sends a message to every player currently standing on the given tile." alt="" coords="1063,123,1265,163"/>
+<area shape="poly" id="edge13_Node000001_Node000013" title=" " alt="" coords="1328,127,1266,134,1265,129,1327,122"/>
+<area shape="rect" id="Node000003" href="$classzappy_1_1CommandParser.html#a2eaa3e9cec905216d43b7286e6c018a7" title="Reads pending data from the client socket into the command queue." alt="" coords="788,67,963,107"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1021,89,963,89,963,84,1021,83"/>
+<area shape="rect" id="Node000004" href="$classzappy_1_1ClientHandler.html#a1ed7cca92089d8c0c1743aa93167af4b" title=" " alt="" coords="530,69,691,109"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="774,90,692,91,692,86,774,85"/>
+<area shape="rect" id="Node000005" href="$classzappy_1_1ClientHandler.html#afdb8fe8ed8f6188e930880e315fb2c4a" title="Runs the blocking event loop: polls for I/O, accepts new clients, dispatches commands,..." alt="" coords="291,53,449,93"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="516,86,449,81,449,76,516,80"/>
+<area shape="rect" id="Node000006" href="$classzappy_1_1Core.html#a6cedeb79a573e46f2131b71d3ca17a31" title="Builds the world and network handler, then runs the blocking event loop." alt="" coords="108,61,235,86"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="278,76,235,76,235,71,278,71"/>
+<area shape="rect" id="Node000007" href="$main_8cpp.html#a0c99d968a34e803d378692bde2e3f18f" title=" " alt="" coords="5,61,60,86"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="95,76,60,76,60,71,95,71"/>
+<area shape="rect" id="Node000009" href="$classzappy_1_1CommandParser.html#a629df3248cf7038782f23805ea6c806e" title="Fills _aiCommands with the AI protocol commands and their durations." alt="" coords="523,149,698,189"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="750,187,698,181,699,176,751,181"/>
+<area shape="rect" id="Node000010" href="$classzappy_1_1CommandParser.html#a741addd675a90a09b183e9518b626962" title="Builds a parser for one client." alt="" coords="283,149,457,189"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="509,172,458,172,458,167,509,167"/>
+<area shape="rect" id="Node000012" href="$classzappy_1_1ClientHandler.html#acdbdf846181888a63df6190b45da9e42" title="Broadcasts a message to all clients of type GRAPHIC (use for processing the broadcast command)." alt="" coords="505,5,716,45"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="1047,30,716,29,716,23,1047,25"/>
+<area shape="poly" id="edge12_Node000012_Node000005" title=" " alt="" coords="497,51,450,60,448,55,496,45"/>
+<area shape="rect" id="Node000014" href="$classzappy_1_1Commands.html#a2aa5f645033eadf18b4df8461c95ab9c" title="Pushes every other player off the current tile." alt="" coords="784,134,967,159"/>
+<area shape="poly" id="edge14_Node000013_Node000014" title=" " alt="" coords="1049,147,967,148,967,143,1049,142"/>
+<area shape="poly" id="edge15_Node000014_Node000009" title=" " alt="" coords="770,158,699,165,698,159,770,153"/>
+</map>

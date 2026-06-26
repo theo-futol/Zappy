@@ -1,0 +1,5 @@
+<map id="zappy::World::getPlayerById" name="zappy::World::getPlayerById">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,209,31"/>
+<area shape="rect" id="Node000002" href="$classzappy_1_1Player.html#a33f33f30fdbf95af468119bc63bd7caa" title="This player&#39;s stable logical id (its GUI player number)." alt="" coords="257,5,408,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="210,15,243,15,243,21,210,21"/>
+</map>

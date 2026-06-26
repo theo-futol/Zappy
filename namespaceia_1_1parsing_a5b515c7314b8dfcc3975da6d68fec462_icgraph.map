@@ -1,0 +1,16 @@
+<map id="ia.parsing._normalize_line" name="ia.parsing._normalize_line">
+<area shape="rect" id="Node000001" title=" " alt="" coords="737,170,931,195"/>
+<area shape="rect" id="Node000002" href="$namespaceia_1_1parsing.html#a6a56655b81f76bed0ab4d8fd02afbf78" title=" " alt="" coords="501,109,689,134"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="770,169,645,137,646,131,771,164"/>
+<area shape="rect" id="Node000004" href="$namespaceia_1_1parsing.html#a2cb7c0cd9c6b372ed1f4aab6133f718f" title=" " alt="" coords="5,109,211,134"/>
+<area shape="poly" id="edge8_Node000001_Node000004" title=" " alt="" coords="724,199,624,207,507,210,382,205,258,188,222,178,187,164,130,136,132,132,189,159,223,173,259,183,382,200,507,205,624,201,723,194"/>
+<area shape="rect" id="Node000003" href="$namespaceia_1_1parsing.html#a3585217efddf4163e4cac770fce73f25" title=" " alt="" coords="275,5,437,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="555,105,452,60,420,48,422,43,454,55,557,100"/>
+<area shape="rect" id="Node000005" href="$namespaceia_1_1parsing.html#a17c708f8dd686d14ac5408bb34f86e49" title=" " alt="" coords="259,69,453,109"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="487,110,453,105,454,100,488,104"/>
+<area shape="rect" id="Node000006" href="$namespaceia_1_1parsing.html#a6af02ca5ee3692fb6998721c598d8960" title=" " alt="" coords="275,133,437,173"/>
+<area shape="poly" id="edge6_Node000002_Node000006" title=" " alt="" coords="488,138,437,145,437,140,487,133"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="280,52,260,60,138,111,136,106,258,55,278,47"/>
+<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="245,106,207,111,206,106,245,101"/>
+<area shape="poly" id="edge7_Node000006_Node000004" title=" " alt="" coords="261,144,206,137,207,131,262,139"/>
+</map>

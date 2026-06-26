@@ -1,0 +1,16 @@
+<map id="zappy::Commands::Connect_nbr" name="zappy::Commands::Connect_nbr">
+<area shape="rect" id="Node000001" title="Returns the number of free team connection slots (the &quot;Connect_nbr&quot; command)." alt="" coords="5,146,236,171"/>
+<area shape="rect" id="Node000002" href="$structzappy_1_1Team.html#a0b2a1c5b22eabc3d5c7c830e9a32fb21" title="Number of free connection slots remaining." alt="" coords="290,5,482,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="140,144,203,105,283,62,314,48,316,53,285,66,205,110,143,148"/>
+<area shape="rect" id="Node000003" href="$classzappy_1_1Player.html#a33f33f30fdbf95af468119bc63bd7caa" title="This player&#39;s stable logical id (its GUI player number)." alt="" coords="536,95,687,121"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="152,143,212,122,284,105,345,99,408,96,522,98,522,104,408,101,346,104,284,111,214,127,154,148"/>
+<area shape="rect" id="Node000004" href="$classzappy_1_1World.html#a43fb08ea54d522c20d2c27ed281297f4" title="Looks up a player by its logical id, or nullptr if none matches." alt="" coords="284,121,488,146"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="236,145,270,142,271,147,236,150"/>
+<area shape="rect" id="Node000005" href="$classzappy_1_1Client.html#ade4edd70698f2497e09f736734d77ab0" title="Returns the logical id of this client&#39;s player, or &#45;1 if it has none." alt="" coords="292,170,480,195"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="236,166,278,170,278,176,236,172"/>
+<area shape="rect" id="Node000006" href="$classzappy_1_1Player.html#ad714c54e4fcee0484d05ad253ab10ccb" title=" " alt="" coords="299,219,473,245"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="164,169,285,204,320,213,319,219,283,209,162,174"/>
+<area shape="rect" id="Node000007" href="$classzappy_1_1Logger.html#abab39dcd03894b824e5c7b03462dc483" title="Prints one log line to stdout. Omits the &quot;(...)&quot; group when fields is empty." alt="" coords="316,269,456,294"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="141,169,203,211,243,234,285,254,310,262,308,267,283,258,241,238,200,215,138,174"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="488,119,522,115,522,121,489,125"/>
+</map>

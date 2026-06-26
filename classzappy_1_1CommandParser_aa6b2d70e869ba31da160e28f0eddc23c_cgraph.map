@@ -1,0 +1,62 @@
+<map id="zappy::CommandParser::executeNext" name="zappy::CommandParser::executeNext">
+<area shape="rect" id="Node000001" title="Dispatches the next queued command if its time has come." alt="" coords="5,525,180,565"/>
+<area shape="rect" id="Node000002" href="$classzappy_1_1CommandParser.html#af55cf3a6d1c187f570405017ebd8cb6f" title="Routes one command line to the matching handler for the client&#39;s type." alt="" coords="228,553,403,593"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="181,554,215,558,214,563,180,559"/>
+<area shape="rect" id="Node000003" href="$classzappy_1_1Client.html#aafed3af6e0e3c858d9581a3d9df81218" title="Returns the socket descriptor, used to read/write and to poll this client." alt="" coords="481,467,631,493"/>
+<area shape="poly" id="edge28_Node000001_Node000003" title=" " alt="" coords="180,528,228,520,467,488,467,493,228,525,180,533"/>
+<area shape="rect" id="Node000004" href="$classzappy_1_1Client.html#ade4edd70698f2497e09f736734d77ab0" title="Returns the logical id of this client&#39;s player, or &#45;1 if it has none." alt="" coords="462,546,650,571"/>
+<area shape="poly" id="edge30_Node000001_Node000004" title=" " alt="" coords="180,540,228,539,315,537,403,539,449,542,448,548,403,544,315,542,228,544,180,545"/>
+<area shape="rect" id="Node000005" href="$classzappy_1_1Client.html#af3593a65bba2a2527669eb4a05a618b8" title="Returns the connection&#39;s current role." alt="" coords="473,607,639,633"/>
+<area shape="poly" id="edge31_Node000001_Node000005" title=" " alt="" coords="130,563,176,585,229,603,288,614,348,620,460,622,460,628,348,625,287,619,227,608,174,590,128,568"/>
+<area shape="rect" id="Node000006" href="$classzappy_1_1Logger.html#abab39dcd03894b824e5c7b03462dc483" title="Prints one log line to stdout. Omits the &quot;(...)&quot; group when fields is empty." alt="" coords="486,657,626,682"/>
+<area shape="poly" id="edge33_Node000001_Node000006" title=" " alt="" coords="120,564,169,598,198,615,229,628,291,646,355,657,472,667,472,672,354,663,290,651,227,633,196,619,166,602,117,568"/>
+<area shape="rect" id="Node000007" href="$classzappy_1_1CommandParser.html#a2e37f370a7cf95399de6722ef528da83" title="Handles the first line of an AI client: the team&#45;name handshake." alt="" coords="228,260,403,300"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="109,523,287,309,291,312,113,527"/>
+<area shape="rect" id="Node000023" href="$classzappy_1_1World.html#a43fb08ea54d522c20d2c27ed281297f4" title="Looks up a player by its logical id, or nullptr if none matches." alt="" coords="454,418,658,443"/>
+<area shape="poly" id="edge29_Node000001_Node000023" title=" " alt="" coords="139,523,227,491,343,463,451,443,452,448,344,468,229,496,141,528"/>
+<area shape="rect" id="Node000027" href="$classzappy_1_1Player.html#ae6c620cf832083d406498ba44e7f8541" title="Returns true while the player is frozen and must not execute any command." alt="" coords="230,719,401,745"/>
+<area shape="poly" id="edge32_Node000001_Node000027" title=" " alt="" coords="109,564,157,629,191,666,229,698,256,712,253,717,227,702,187,670,153,633,105,567"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="367,551,508,495,510,500,369,556"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="403,565,448,563,449,568,403,571"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="403,588,477,602,476,607,402,593"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="350,591,397,618,452,643,475,650,473,655,450,648,395,623,347,596"/>
+<area shape="poly" id="edge19_Node000007_Node000003" title=" " alt="" coords="329,299,347,333,375,375,410,417,452,452,469,461,467,466,449,457,406,421,370,378,343,336,324,302"/>
+<area shape="rect" id="Node000008" href="$classzappy_1_1World.html#a1ad1d6b64d725ca67581ef9ae97d8289" title="Hatches a player from one of the team&#39;s eggs, chosen at random, spawning it on that egg&#39;s tile and co..." alt="" coords="467,369,645,394"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="352,298,399,323,452,347,495,362,493,367,450,352,397,327,350,302"/>
+<area shape="rect" id="Node000012" href="$classzappy_1_1Player.html#aff283e814b7f01d4ad7398d7c20794e6" title="Current tile position." alt="" coords="727,221,917,246"/>
+<area shape="poly" id="edge25_Node000007_Node000012" title=" " alt="" coords="379,298,440,312,512,321,588,319,625,313,660,302,675,292,684,280,693,267,708,255,723,248,725,253,711,260,697,271,688,283,679,296,662,306,626,318,588,325,511,326,439,317,378,303"/>
+<area shape="rect" id="Node000018" href="$classzappy_1_1World.html#a991347e5787aa696ad62de265c680a96" title="Free connection slots remaining for a team (used to admit new players)." alt="" coords="459,5,653,45"/>
+<area shape="poly" id="edge17_Node000007_Node000018" title=" " alt="" coords="321,258,337,216,364,161,401,104,424,78,449,55,456,50,460,54,452,59,428,82,405,108,369,164,342,218,326,260"/>
+<area shape="rect" id="Node000020" href="$classzappy_1_1Player.html#a70dc9f5c05ea552c47350da37b3bd027" title="Current elevation level (1..8)." alt="" coords="469,70,643,95"/>
+<area shape="poly" id="edge20_Node000007_Node000020" title=" " alt="" coords="324,258,343,224,370,183,406,140,449,104,460,98,463,103,452,109,410,144,375,186,347,227,329,261"/>
+<area shape="rect" id="Node000021" href="$classzappy_1_1World.html#ad35316e4e1203c45ad2f853319775432" title="Map dimensions as (width, height)." alt="" coords="461,119,651,145"/>
+<area shape="poly" id="edge21_Node000007_Node000021" title=" " alt="" coords="331,258,380,205,413,177,449,154,464,147,467,152,452,158,416,182,383,209,334,262"/>
+<area shape="rect" id="Node000022" href="$classzappy_1_1Player.html#a179f8fcc7fbb9a11bda72d37982bc30b" title="Current facing as the protocol&#39;s 1..4 orientation (NORTH=1, EAST=2, SOUTH=3, WEST=4)." alt="" coords="451,169,661,194"/>
+<area shape="poly" id="edge22_Node000007_Node000022" title=" " alt="" coords="346,258,393,229,450,203,473,195,474,200,452,208,396,234,348,262"/>
+<area shape="poly" id="edge23_Node000007_Node000023" title=" " alt="" coords="334,298,383,351,416,379,452,403,470,411,467,416,449,408,413,384,380,355,331,302"/>
+<area shape="rect" id="Node000025" href="$classzappy_1_1Client.html#a084ad3c2c2db76331617ce1d5f2bfddc" title="Associates this client with the player of the given logical id (set at hatch time)." alt="" coords="463,218,649,243"/>
+<area shape="poly" id="edge26_Node000007_Node000025" title=" " alt="" coords="402,260,479,244,481,249,403,265"/>
+<area shape="rect" id="Node000026" href="$classzappy_1_1Client.html#aafc44ed301967697c2a93931f5e51744" title="Sets the connection&#39;s role, e.g. once it has been identified or marked dead." alt="" coords="474,267,638,293"/>
+<area shape="poly" id="edge27_Node000007_Node000026" title=" " alt="" coords="403,277,460,277,460,283,403,283"/>
+<area shape="rect" id="Node000009" href="$classzappy_1_1World.html#a3335c652e2e35588a6e503cb0e8658c2" title="Adds the player pointer to the tile at the given position, if it exists." alt="" coords="714,369,930,394"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="645,379,701,379,701,384,645,384"/>
+<area shape="rect" id="Node000011" href="$structzappy_1_1Team.html#a04a63043edc415dcadb3eda2a746d557" title="Read&#45;only view of all eggs (tile position paired with its egg IDs)." alt="" coords="741,418,903,443"/>
+<area shape="poly" id="edge10_Node000008_Node000011" title=" " alt="" coords="626,391,740,413,739,418,625,397"/>
+<area shape="poly" id="edge11_Node000008_Node000012" title=" " alt="" coords="625,366,660,347,676,325,682,302,689,278,696,266,708,255,715,250,718,255,711,259,700,270,694,280,687,303,681,328,663,351,627,371"/>
+<area shape="rect" id="Node000013" href="$classzappy_1_1World.html#a0f7b0576d14b018ca6fcba792695d853" title="Looks up a team by name, or nullptr if it does not exist." alt="" coords="709,467,935,493"/>
+<area shape="poly" id="edge12_Node000008_Node000013" title=" " alt="" coords="636,392,663,403,678,415,688,428,696,441,711,452,727,460,725,465,708,457,692,445,683,432,674,419,660,408,634,397"/>
+<area shape="rect" id="Node000014" href="$structzappy_1_1Team.html#aad0897588cd6ebe5a589f0ff710a3ee1" title="Removes eggs at a tile (and their slots). With eggID set, removes just that one egg; with count == &#45;1..." alt="" coords="729,517,915,542"/>
+<area shape="poly" id="edge13_Node000008_Node000014" title=" " alt="" coords="644,392,663,403,675,415,682,428,688,454,694,479,700,491,711,502,720,508,717,512,708,506,696,494,689,481,683,455,677,430,671,419,660,407,641,396"/>
+<area shape="rect" id="Node000016" href="$classzappy_1_1Player.html#a16e2f2ea6458b369a60a87f6e26a663c" title="Places the player at (x, y), wrapping into the map bounds." alt="" coords="727,270,917,295"/>
+<area shape="poly" id="edge15_Node000008_Node000016" title=" " alt="" coords="613,366,660,347,674,337,683,326,693,315,708,304,724,297,726,302,711,309,696,319,687,329,678,341,663,352,615,371"/>
+<area shape="rect" id="Node000017" href="$classzappy_1_1Player.html#ab3e4df87dd335792986653bd74d23029" title="Sets the facing direction." alt="" coords="726,319,918,345"/>
+<area shape="poly" id="edge16_Node000008_Node000017" title=" " alt="" coords="625,366,739,345,740,350,626,371"/>
+<area shape="rect" id="Node000010" href="$classzappy_1_1World.html#a9fce895cc2d62e61b943f7d9e03471db" title="Returns the tile at the given coordinates." alt="" coords="983,369,1155,394"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="930,379,969,379,969,384,930,384"/>
+<area shape="rect" id="Node000015" href="$namespacezappy.html#a6f4c56af6fff80513c2388249fd217f4" title=" " alt="" coords="996,517,1141,542"/>
+<area shape="poly" id="edge14_Node000014_Node000015" title=" " alt="" coords="915,527,983,527,983,532,915,532"/>
+<area shape="rect" id="Node000019" href="$structzappy_1_1Team.html#a0b2a1c5b22eabc3d5c7c830e9a32fb21" title="Number of free connection slots remaining." alt="" coords="726,5,918,45"/>
+<area shape="poly" id="edge18_Node000018_Node000019" title=" " alt="" coords="654,23,712,23,712,28,654,28"/>
+<area shape="rect" id="Node000024" href="$classzappy_1_1Player.html#a33f33f30fdbf95af468119bc63bd7caa" title="This player&#39;s stable logical id (its GUI player number)." alt="" coords="747,566,897,591"/>
+<area shape="poly" id="edge24_Node000023_Node000024" title=" " alt="" coords="644,441,663,453,675,465,682,478,688,503,694,528,700,540,711,551,735,565,732,569,708,555,696,543,689,530,683,505,677,480,671,468,660,457,641,446"/>
+</map>

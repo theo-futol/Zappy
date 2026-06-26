@@ -48,7 +48,7 @@
 <script type="application/ecmascript">
 var viewWidth = 1052;
 var viewHeight = 124;
-var sectionId = 'dynsection-33';
+var sectionId = 'dynsection-36';
 </script>
 <script type="application/ecmascript" xlink:href="svg.min.js"/>
 <svg id="graph" class="graph">
@@ -67,7 +67,7 @@ var sectionId = 'dynsection-33';
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="classzappy_1_1Commands.html#a564d2d4c271736c266b5adaf25d12cc2" target="_top" xlink:title="Moves the player one tile forward in its current facing.">
+<g id="a_Node000002"><a xlink:href="classzappy_1_1Commands.html#ab165260a26fd85addbd2fa742cfffbc4" target="_top" xlink:title="Moves the player one tile forward in its current facing.">
 <polygon fill="white" stroke="#666666" points="854.5,-107.5 702.5,-107.5 702.5,-88.5 854.5,-88.5 854.5,-107.5"/>
 <text text-anchor="middle" x="778.5" y="-95.5" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::Commands::Forward</text>
 </a>
@@ -85,7 +85,7 @@ var sectionId = 'dynsection-33';
 <!-- Node5 -->
 <g id="Node000005" class="node">
 <title>Node5</title>
-<g id="a_Node000005"><a xlink:href="classzappy_1_1World.html#aca292b35506844c67b0d62a3e6e3e9e1" target="_top" xlink:title="Removes a player from the world and decrease the number of slots occupied in its team....">
+<g id="a_Node000005"><a xlink:href="classzappy_1_1World.html#a61bd77a5a1cae883aa060469d039fe92" target="_top" xlink:title="Removes a player from the world and decrease the number of slots occupied in its team....">
 <polygon fill="white" stroke="#666666" points="855,-67.5 702,-67.5 702,-48.5 855,-48.5 855,-67.5"/>
 <text text-anchor="middle" x="778.5" y="-55.5" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::World::removePlayer</text>
 </a>
@@ -122,7 +122,7 @@ var sectionId = 'dynsection-33';
 <!-- Node4 -->
 <g id="Node000004" class="node">
 <title>Node4</title>
-<g id="a_Node000004"><a xlink:href="classzappy_1_1CommandParser.html#ac273c38a60fcb6825770e5a4f2ca43c0" target="_top" xlink:title="Builds a parser for one client.">
+<g id="a_Node000004"><a xlink:href="classzappy_1_1CommandParser.html#a741addd675a90a09b183e9518b626962" target="_top" xlink:title="Builds a parser for one client.">
 <polygon fill="white" stroke="#666666" points="496,-116 365,-116 365,-86 496,-86 496,-116"/>
 <text text-anchor="start" x="373" y="-104" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::CommandParser</text>
 <text text-anchor="middle" x="430.5" y="-93" font-family="Helvetica,sans-Serif" font-size="10.00">::CommandParser</text>
@@ -159,7 +159,7 @@ var sectionId = 'dynsection-33';
 <!-- Node10 -->
 <g id="Node000010" class="node">
 <title>Node10</title>
-<g id="a_Node000010"><a xlink:href="classzappy_1_1ClientHandler.html#a84580c1dc7567be8362c01f79afe5d61" target="_top" xlink:title="Removes a client, its parser, and its fd from all internal structures.">
+<g id="a_Node000010"><a xlink:href="classzappy_1_1ClientHandler.html#a7a4d855ae969af7c0a6317fd2a02b214" target="_top" xlink:title="Removes a client, its parser, and its fd from all internal structures.">
 <polygon fill="white" stroke="#666666" points="659.5,-30 541.5,-30 541.5,0 659.5,0 659.5,-30"/>
 <text text-anchor="start" x="549.5" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::ClientHandler</text>
 <text text-anchor="middle" x="600.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">::removeClient</text>

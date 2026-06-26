@@ -48,7 +48,7 @@
 <script type="application/ecmascript">
 var viewWidth = 1059;
 var viewHeight = 38;
-var sectionId = 'dynsection-22';
+var sectionId = 'dynsection-26';
 </script>
 <script type="application/ecmascript" xlink:href="svg.min.js"/>
 <svg id="graph" class="graph">
@@ -67,7 +67,7 @@ var sectionId = 'dynsection-22';
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="classzappy_1_1Commands.html#a7ca4eb4871cd71eab1301aa3c0a792a6" target="_top" xlink:title="Starts an incantation: validates prerequisites, notifies the initiator and the GUI,...">
+<g id="a_Node000002"><a xlink:href="classzappy_1_1Commands.html#afc2159b221207ae6bf4ac860fab8db5f" target="_top" xlink:title="Starts an incantation: validates prerequisites, notifies the initiator and the GUI,...">
 <polygon fill="white" stroke="#666666" points="880,-24.5 686,-24.5 686,-5.5 880,-5.5 880,-24.5"/>
 <text text-anchor="middle" x="783" y="-12.5" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::Commands::beginIncantation</text>
 </a>
@@ -85,7 +85,7 @@ var sectionId = 'dynsection-22';
 <!-- Node3 -->
 <g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="classzappy_1_1CommandParser.html#af47de49c1b3c9fd2ed80834664c6b7f7" target="_top" xlink:title="Reads pending data from the client socket into the command queue.">
+<g id="a_Node000003"><a xlink:href="classzappy_1_1CommandParser.html#a2eaa3e9cec905216d43b7286e6c018a7" target="_top" xlink:title="Reads pending data from the client socket into the command queue.">
 <polygon fill="white" stroke="#666666" points="650,-30 519,-30 519,0 650,0 650,-30"/>
 <text text-anchor="start" x="527" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::CommandParser</text>
 <text text-anchor="middle" x="584.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">::feed</text>

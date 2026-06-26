@@ -1,0 +1,7 @@
+<map id="zappy::Commands::Sst" name="zappy::Commands::Sst">
+<area shape="rect" id="Node000001" title="sst: sets the time unit (ticks per second)." alt="" coords="5,31,176,56"/>
+<area shape="rect" id="Node000002" href="$classzappy_1_1Client.html#aafed3af6e0e3c858d9581a3d9df81218" title="Returns the socket descriptor, used to read/write and to poll this client." alt="" coords="245,5,396,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="176,31,231,25,232,30,176,37"/>
+<area shape="rect" id="Node000003" href="$classzappy_1_1World.html#a93b2bb4700e29ccc111c4b4067d7e742" title="sets the active time unit for the world." alt="" coords="224,55,417,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="176,50,211,53,210,58,176,55"/>
+</map>

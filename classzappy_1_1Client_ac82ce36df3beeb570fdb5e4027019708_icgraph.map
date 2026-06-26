@@ -1,6 +1,6 @@
 <map id="zappy::Client::setBuffer" name="zappy::Client::setBuffer">
 <area shape="rect" id="Node000001" title="Replaces the entire pending buffer." alt="" coords="920,13,1093,38"/>
-<area shape="rect" id="Node000002" href="$classzappy_1_1CommandParser.html#af47de49c1b3c9fd2ed80834664c6b7f7" title="Reads pending data from the client socket into the command queue." alt="" coords="697,5,872,45"/>
+<area shape="rect" id="Node000002" href="$classzappy_1_1CommandParser.html#a2eaa3e9cec905216d43b7286e6c018a7" title="Reads pending data from the client socket into the command queue." alt="" coords="697,5,872,45"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="906,28,872,28,872,23,906,23"/>
 <area shape="rect" id="Node000003" href="$classzappy_1_1ClientHandler.html#a1ed7cca92089d8c0c1743aa93167af4b" title=" " alt="" coords="488,5,649,45"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="684,28,650,28,650,23,684,23"/>

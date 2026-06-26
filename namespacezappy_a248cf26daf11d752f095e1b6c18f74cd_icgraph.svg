@@ -85,7 +85,7 @@ var sectionId = 'dynsection-2';
 <!-- Node3 -->
 <g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="classzappy_1_1Commands.html#a780efbdebf71f3a24cdf54e305edae70" target="_top" xlink:title="Drops a named resource from the inventory onto the current tile.">
+<g id="a_Node000003"><a xlink:href="classzappy_1_1Commands.html#a53449f6fc5060484a738648f260ec0d2" target="_top" xlink:title="Drops a named resource from the inventory onto the current tile.">
 <polygon fill="white" stroke="#666666" points="468.5,-56 340.5,-56 340.5,-37 468.5,-37 468.5,-56"/>
 <text text-anchor="middle" x="404.5" y="-44" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::Commands::Set</text>
 </a>
@@ -103,7 +103,7 @@ var sectionId = 'dynsection-2';
 <!-- Node6 -->
 <g id="Node000006" class="node">
 <title>Node6</title>
-<g id="a_Node000006"><a xlink:href="classzappy_1_1Commands.html#a23dbbcf0459ffacd5f7f69bdae0f3f1d" target="_top" xlink:title="Picks up a named resource from the current tile into the inventory.">
+<g id="a_Node000006"><a xlink:href="classzappy_1_1Commands.html#af68393f7ba46aec892196685895c50a7" target="_top" xlink:title="Picks up a named resource from the current tile into the inventory.">
 <polygon fill="white" stroke="#666666" points="471.5,-19 337.5,-19 337.5,0 471.5,0 471.5,-19"/>
 <text text-anchor="middle" x="404.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::Commands::Take</text>
 </a>
@@ -140,7 +140,7 @@ var sectionId = 'dynsection-2';
 <!-- Node5 -->
 <g id="Node000005" class="node">
 <title>Node5</title>
-<g id="a_Node000005"><a xlink:href="classzappy_1_1CommandParser.html#ac273c38a60fcb6825770e5a4f2ca43c0" target="_top" xlink:title="Builds a parser for one client.">
+<g id="a_Node000005"><a xlink:href="classzappy_1_1CommandParser.html#a741addd675a90a09b183e9518b626962" target="_top" xlink:title="Builds a parser for one client.">
 <polygon fill="white" stroke="#666666" points="131,-42.5 0,-42.5 0,-12.5 131,-12.5 131,-42.5"/>
 <text text-anchor="start" x="8" y="-30.5" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::CommandParser</text>
 <text text-anchor="middle" x="65.5" y="-19.5" font-family="Helvetica,sans-Serif" font-size="10.00">::CommandParser</text>

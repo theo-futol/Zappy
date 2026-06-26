@@ -1,0 +1,5 @@
+<map id="zappy::ClientHandler::getClientByPlayerId" name="zappy::ClientHandler::getClientByPlayerId">
+<area shape="rect" id="Node000001" title="Looks up a client by its associated player&#39;s logical id." alt="" coords="5,5,164,45"/>
+<area shape="rect" id="Node000002" href="$classzappy_1_1Client.html#ade4edd70698f2497e09f736734d77ab0" title="Returns the logical id of this client&#39;s player, or &#45;1 if it has none." alt="" coords="212,13,400,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="164,23,199,23,199,28,164,28"/>
+</map>

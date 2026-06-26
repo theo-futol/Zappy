@@ -1,0 +1,20 @@
+<map id="zappy::Commands::getInventory" name="zappy::Commands::getInventory">
+<area shape="rect" id="Node000001" title="Returns the player&#39;s inventory (resource counts and remaining life)." alt="" coords="5,164,239,189"/>
+<area shape="rect" id="Node000002" href="$classzappy_1_1Inventory.html#a37135508aa9fe63a18b4fab0bc7f01fe" title="Formats the inventory as the protocol inventory reply string." alt="" coords="287,5,524,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="134,162,196,107,239,75,285,48,326,32,328,37,288,52,242,80,199,111,138,166"/>
+<area shape="rect" id="Node000004" href="$classzappy_1_1Player.html#a33f33f30fdbf95af468119bc63bd7caa" title="This player&#39;s stable logical id (its GUI player number)." alt="" coords="587,139,737,164"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="140,162,202,124,243,105,286,91,352,78,405,74,458,79,525,91,580,108,627,130,625,135,578,113,523,97,457,84,405,80,353,83,287,97,245,110,205,129,143,166"/>
+<area shape="rect" id="Node000005" href="$classzappy_1_1Player.html#a7583690b204dac5e1382ba3a80256695" title="This player&#39;s inventory." alt="" coords="305,107,505,132"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="185,161,328,132,329,137,186,167"/>
+<area shape="rect" id="Node000006" href="$classzappy_1_1Inventory.html#a875bcfe3876992de8044423fcff4bacc" title="Returns the held count for an item type." alt="" coords="311,157,499,197"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="239,174,297,174,297,179,239,179"/>
+<area shape="rect" id="Node000007" href="$classzappy_1_1World.html#a43fb08ea54d522c20d2c27ed281297f4" title="Looks up a player by its logical id, or nullptr if none matches." alt="" coords="303,221,507,247"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="186,187,329,216,328,221,185,192"/>
+<area shape="rect" id="Node000008" href="$classzappy_1_1Client.html#ade4edd70698f2497e09f736734d77ab0" title="Returns the logical id of this client&#39;s player, or &#45;1 if it has none." alt="" coords="311,271,499,296"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="145,187,208,222,288,257,314,265,313,270,286,262,205,227,143,192"/>
+<area shape="rect" id="Node000009" href="$classzappy_1_1Logger.html#abab39dcd03894b824e5c7b03462dc483" title="Prints one log line to stdout. Omits the &quot;(...)&quot; group when fields is empty." alt="" coords="335,320,475,345"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="137,188,198,246,241,279,288,306,323,319,321,324,286,311,238,283,194,250,133,192"/>
+<area shape="rect" id="Node000003" href="$namespacezappy.html#aef0d81865578aa094dcbd509e0055a81" title="Converts an ItemType to its protocol name (e.g. LINEMATE &#45;&gt; &quot;linemate&quot;)." alt="" coords="572,5,752,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="524,15,558,15,558,21,524,21"/>
+<area shape="poly" id="edge7_Node000007_Node000004" title=" " alt="" coords="475,219,523,206,621,167,623,172,525,211,477,224"/>
+</map>

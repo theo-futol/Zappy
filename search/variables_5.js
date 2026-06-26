@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['serverisrunning_0',['serverIsRunning',['../classzappy_1_1Core.html#a32d573e400265221c6bacea53d583a4f',1,'zappy::Core']]],
-  ['stones_1',['stones',['../structzappy_1_1ElevationRequirement.html#a665333c6a9be6df85be4722517f31e7c',1,'zappy::ElevationRequirement']]]
+  ['explore_5fturn_5finterval_0',['EXPLORE_TURN_INTERVAL',['../namespaceia_1_1config.html#a9c159d3619a9fc77086a85136ab5568d',1,'ia::config']]],
+  ['exploring_1',['EXPLORING',['../classia_1_1strategy_1_1State.html#ae16432a8438d9d973e769f7441f5d843',1,'ia::strategy::State']]]
 ];

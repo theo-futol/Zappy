@@ -48,7 +48,7 @@
 <script type="application/ecmascript">
 var viewWidth = 1293;
 var viewHeight = 86;
-var sectionId = 'dynsection-13';
+var sectionId = 'dynsection-14';
 </script>
 <script type="application/ecmascript" xlink:href="svg.min.js"/>
 <svg id="graph" class="graph">
@@ -105,7 +105,7 @@ var sectionId = 'dynsection-13';
 <!-- Node3 -->
 <g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="classzappy_1_1Commands.html#a7ca4eb4871cd71eab1301aa3c0a792a6" target="_top" xlink:title="Starts an incantation: validates prerequisites, notifies the initiator and the GUI,...">
+<g id="a_Node000003"><a xlink:href="classzappy_1_1Commands.html#afc2159b221207ae6bf4ac860fab8db5f" target="_top" xlink:title="Starts an incantation: validates prerequisites, notifies the initiator and the GUI,...">
 <polygon fill="white" stroke="#666666" points="890,-72.5 696,-72.5 696,-53.5 890,-53.5 890,-72.5"/>
 <text text-anchor="middle" x="793" y="-60.5" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::Commands::beginIncantation</text>
 </a>
@@ -123,7 +123,7 @@ var sectionId = 'dynsection-13';
 <!-- Node9 -->
 <g id="Node000009" class="node">
 <title>Node9</title>
-<g id="a_Node000009"><a xlink:href="classzappy_1_1Commands.html#a46c4e231666c8d2c3354a8facc95ee17" target="_top" xlink:title="Attempts to start an elevation ritual on the current tile (see beginIncantation).">
+<g id="a_Node000009"><a xlink:href="classzappy_1_1Commands.html#a54be59514213eff7dcab5bd0ffbf273d" target="_top" xlink:title="Attempts to start an elevation ritual on the current tile (see beginIncantation).">
 <polygon fill="white" stroke="#666666" points="876.5,-24.5 709.5,-24.5 709.5,-5.5 876.5,-5.5 876.5,-24.5"/>
 <text text-anchor="middle" x="793" y="-12.5" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::Commands::Incantation</text>
 </a>
@@ -141,7 +141,7 @@ var sectionId = 'dynsection-13';
 <!-- Node4 -->
 <g id="Node000004" class="node">
 <title>Node4</title>
-<g id="a_Node000004"><a xlink:href="classzappy_1_1CommandParser.html#af47de49c1b3c9fd2ed80834664c6b7f7" target="_top" xlink:title="Reads pending data from the client socket into the command queue.">
+<g id="a_Node000004"><a xlink:href="classzappy_1_1CommandParser.html#a2eaa3e9cec905216d43b7286e6c018a7" target="_top" xlink:title="Reads pending data from the client socket into the command queue.">
 <polygon fill="white" stroke="#666666" points="660,-78 529,-78 529,-48 660,-48 660,-78"/>
 <text text-anchor="start" x="537" y="-66" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::CommandParser</text>
 <text text-anchor="middle" x="594.5" y="-55" font-family="Helvetica,sans-Serif" font-size="10.00">::feed</text>
@@ -253,7 +253,7 @@ var sectionId = 'dynsection-13';
 <!-- Node11 -->
 <g id="Node000011" class="node">
 <title>Node11</title>
-<g id="a_Node000011"><a xlink:href="classzappy_1_1CommandParser.html#ac273c38a60fcb6825770e5a4f2ca43c0" target="_top" xlink:title="Builds a parser for one client.">
+<g id="a_Node000011"><a xlink:href="classzappy_1_1CommandParser.html#a741addd675a90a09b183e9518b626962" target="_top" xlink:title="Builds a parser for one client.">
 <polygon fill="white" stroke="#666666" points="493,-30 362,-30 362,0 493,0 493,-30"/>
 <text text-anchor="start" x="370" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::CommandParser</text>
 <text text-anchor="middle" x="427.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">::CommandParser</text>

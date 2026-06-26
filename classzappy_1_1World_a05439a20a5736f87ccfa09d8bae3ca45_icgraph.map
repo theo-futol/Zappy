@@ -1,0 +1,20 @@
+<map id="zappy::World::getTimeUnit" name="zappy::World::getTimeUnit">
+<area shape="rect" id="Node000001" title="Returns the active time unit for the world." alt="" coords="959,70,1153,95"/>
+<area shape="rect" id="Node000002" href="$classzappy_1_1CommandParser.html#a2eaa3e9cec905216d43b7286e6c018a7" title="Reads pending data from the client socket into the command queue." alt="" coords="736,5,911,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="990,69,904,48,906,43,991,64"/>
+<area shape="rect" id="Node000004" href="$classzappy_1_1ClientHandler.html#afdb8fe8ed8f6188e930880e315fb2c4a" title="Runs the blocking event loop: polls for I/O, accepts new clients, dispatches commands,..." alt="" coords="291,31,449,71"/>
+<area shape="poly" id="edge6_Node000001_Node000004" title=" " alt="" coords="945,80,505,60,449,57,449,52,505,55,945,75"/>
+<area shape="rect" id="Node000007" href="$classzappy_1_1Commands.html#af6f193129aa187d8e40c02ca179d7a7e" title="sgt: reports the current time unit (ticks per second)." alt="" coords="738,123,909,149"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="987,101,880,126,879,121,986,96"/>
+<area shape="rect" id="Node000003" href="$classzappy_1_1ClientHandler.html#a1ed7cca92089d8c0c1743aa93167af4b" title=" " alt="" coords="516,5,677,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="722,28,677,28,677,23,722,23"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="503,39,449,45,449,39,502,33"/>
+<area shape="rect" id="Node000005" href="$classzappy_1_1Core.html#a6cedeb79a573e46f2131b71d3ca17a31" title="Builds the world and network handler, then runs the blocking event loop." alt="" coords="108,38,235,63"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="278,53,235,53,235,48,278,48"/>
+<area shape="rect" id="Node000006" href="$main_8cpp.html#a0c99d968a34e803d378692bde2e3f18f" title=" " alt="" coords="5,38,60,63"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="95,53,60,53,60,48,95,48"/>
+<area shape="rect" id="Node000008" href="$classzappy_1_1CommandParser.html#afc4da6302e4998b21a8b2339d7dc372a" title="Fills _graphicCommands with the graphic protocol commands." alt="" coords="505,120,688,160"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="725,140,688,141,688,136,724,135"/>
+<area shape="rect" id="Node000009" href="$classzappy_1_1CommandParser.html#a741addd675a90a09b183e9518b626962" title="Builds a parser for one client." alt="" coords="283,120,457,160"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="491,143,457,143,457,137,491,137"/>
+</map>

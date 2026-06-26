@@ -1,10 +1,10 @@
 <map id="zappy::Commands::Plv" name="zappy::Commands::Plv">
 <area shape="rect" id="Node000001" title="plv: reports a player&#39;s level." alt="" coords="5,25,176,50"/>
-<area shape="rect" id="Node000002" href="$classzappy_1_1Player.html#a7382412b718c7828587ced9e7168bdf3" title="The socket fd linking this player to its client." alt="" coords="480,25,635,50"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="145,22,224,10,328,3,432,10,493,19,492,25,432,15,328,8,224,15,146,27"/>
-<area shape="rect" id="Node000003" href="$classzappy_1_1Player.html#a70dc9f5c05ea552c47350da37b3bd027" title="Current elevation level (1..8)." alt="" coords="241,25,415,50"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="176,35,228,35,228,40,176,40"/>
-<area shape="rect" id="Node000004" href="$classzappy_1_1World.html#a439edc13734fbf59d0d280327b4ba191" title="Looks up a player by its client fd, or nullptr if none matches." alt="" coords="224,74,432,100"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="153,48,254,69,252,74,152,53"/>
-<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="387,72,483,51,485,56,388,77"/>
+<area shape="rect" id="Node000002" href="$classzappy_1_1Player.html#a33f33f30fdbf95af468119bc63bd7caa" title="This player&#39;s stable logical id (its GUI player number)." alt="" coords="476,25,627,50"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="145,22,224,9,326,3,428,9,488,19,487,24,428,15,326,8,224,15,146,27"/>
+<area shape="rect" id="Node000003" href="$classzappy_1_1Player.html#a70dc9f5c05ea552c47350da37b3bd027" title="Current elevation level (1..8)." alt="" coords="239,25,413,50"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="177,35,226,35,226,40,177,40"/>
+<area shape="rect" id="Node000004" href="$classzappy_1_1World.html#a43fb08ea54d522c20d2c27ed281297f4" title="Looks up a player by its logical id, or nullptr if none matches." alt="" coords="224,74,428,99"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="152,48,252,69,251,74,151,53"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="384,71,479,51,480,56,385,77"/>
 </map>

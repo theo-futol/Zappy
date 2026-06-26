@@ -1,0 +1,9 @@
+<map id="ia.client.ZappyAIClient._read_event" name="ia.client.ZappyAIClient._read_event">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,47,180,87"/>
+<area shape="rect" id="Node000002" href="$classia_1_1client_1_1ZappyAIClient.html#a70ea6941a8a1dad5ccf077cd00c913c4" title=" " alt="" coords="239,5,441,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="180,47,262,31,263,36,181,53"/>
+<area shape="rect" id="Node000003" href="$classia_1_1launcher_1_1ClientLauncher.html#a491ed620a5941a355d52b92d5f491d54" title=" " alt="" coords="228,55,452,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="180,65,214,65,214,70,180,70"/>
+<area shape="rect" id="Node000004" href="$classia_1_1client_1_1ZappyAIClient.html#af4b4836dda51a7122bd61ef5e1fe67e7" title=" " alt="" coords="253,105,427,145"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="180,85,241,99,240,104,179,90"/>
+</map>

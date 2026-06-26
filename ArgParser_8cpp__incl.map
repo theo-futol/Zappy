@@ -1,20 +1,18 @@
 <map id="src/server/ArgParser/ArgParser.cpp" name="src/server/ArgParser/ArgParser.cpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="69,5,221,45"/>
-<area shape="rect" id="Node000002" href="$ArgParser_8hpp.html" title=" " alt="" coords="89,93,200,119"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="147,46,147,79,142,79,142,46"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="31,255,90,280"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="90,120,47,137,28,151,14,168,8,187,13,207,25,226,39,243,35,247,20,229,8,209,3,187,9,165,25,147,45,133,88,115"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="24,174,148,199"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="138,120,105,164,101,161,134,117"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="172,174,235,199"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="155,117,188,161,184,164,151,120"/>
-<area shape="rect" id="Node000006" href="$ServerException_8hpp.html" title=" " alt="" coords="259,167,419,207"/>
-<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="174,116,281,159,279,164,172,121"/>
-<area shape="poly" id="edge8_Node000006_Node000003" title=" " alt="" coords="273,209,104,257,102,251,272,204"/>
-<area shape="rect" id="Node000007" title=" " alt="" coords="188,255,275,280"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="315,209,260,248,257,244,311,205"/>
-<area shape="rect" id="Node000008" title=" " alt="" coords="299,255,379,280"/>
-<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="342,207,342,241,337,241,337,207"/>
-<area shape="rect" id="Node000009" title=" " alt="" coords="404,255,528,280"/>
-<area shape="poly" id="edge9_Node000006_Node000009" title=" " alt="" coords="371,205,437,245,434,250,368,209"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="199,5,351,45"/>
+<area shape="rect" id="Node000002" href="$ArgParser_8hpp.html" title=" " alt="" coords="140,101,251,126"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="260,47,218,92,214,88,256,44"/>
+<area shape="rect" id="Node000006" href="$ServerException_8hpp.html" title=" " alt="" coords="281,93,441,133"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="296,44,334,82,330,85,292,47"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="241,181,299,207"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="208,124,252,170,248,173,204,128"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="5,181,129,207"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="178,128,99,176,96,172,175,124"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="153,181,216,207"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="196,127,191,168,185,167,191,126"/>
+<area shape="poly" id="edge7_Node000006_Node000003" title=" " alt="" coords="340,136,296,174,292,170,337,132"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="324,181,411,207"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="365,133,368,167,363,168,360,134"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="435,181,559,207"/>
+<area shape="poly" id="edge8_Node000006_Node000008" title=" " alt="" coords="395,131,466,172,463,177,392,136"/>
 </map>

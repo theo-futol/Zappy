@@ -1,5 +1,9 @@
 <map id="zappy::World::setTileAt" name="zappy::World::setTileAt">
-<area shape="rect" id="Node000001" title="Sets the absolute count of a resource on a tile." alt="" coords="5,5,176,31"/>
-<area shape="rect" id="Node000002" href="$classzappy_1_1World.html#a9fce895cc2d62e61b943f7d9e03471db" title="Returns the tile at the given coordinates." alt="" coords="224,5,396,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="176,15,210,15,210,21,176,21"/>
+<area shape="rect" id="Node000001" title="Sets the absolute count of a resource on a tile." alt="" coords="5,55,176,80"/>
+<area shape="rect" id="Node000002" href="$classzappy_1_1World.html#a9fce895cc2d62e61b943f7d9e03471db" title="Returns the tile at the given coordinates." alt="" coords="228,5,400,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="148,52,242,31,243,36,149,57"/>
+<area shape="rect" id="Node000003" href="$namespacezappy.html#aef0d81865578aa094dcbd509e0055a81" title="Converts an ItemType to its protocol name (e.g. LINEMATE &#45;&gt; &quot;linemate&quot;)." alt="" coords="224,55,404,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="176,65,210,65,210,70,176,70"/>
+<area shape="rect" id="Node000004" href="$classzappy_1_1Logger.html#abab39dcd03894b824e5c7b03462dc483" title="Prints one log line to stdout. Omits the &quot;(...)&quot; group when fields is empty." alt="" coords="244,104,384,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="149,77,243,98,242,104,148,83"/>
 </map>

@@ -1,0 +1,27 @@
+<map id="zappy::Commands::Fork" name="zappy::Commands::Fork">
+<area shape="rect" id="Node000001" title="Lays an egg on the current tile, opening a new team slot." alt="" coords="5,181,184,207"/>
+<area shape="rect" id="Node000002" href="$structzappy_1_1Team.html#a14fde19b9bd6171374642ee8d9b6039b" title="Lays count eggs at the given tile, each adding a slot and a unique ID." alt="" coords="255,5,413,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="103,180,152,117,189,80,231,48,261,33,263,38,233,52,192,84,156,121,107,183"/>
+<area shape="rect" id="Node000004" href="$classzappy_1_1Player.html#a33f33f30fdbf95af468119bc63bd7caa" title="This player&#39;s stable logical id (its GUI player number)." alt="" coords="499,81,649,107"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="106,179,156,134,192,109,231,91,297,76,364,71,430,72,487,77,487,82,429,77,365,76,298,82,233,97,194,114,160,138,109,183"/>
+<area shape="rect" id="Node000005" href="$classzappy_1_1World.html#a43fb08ea54d522c20d2c27ed281297f4" title="Looks up a player by its logical id, or nullptr if none matches." alt="" coords="232,107,436,132"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="126,179,231,141,260,133,261,138,233,146,128,184"/>
+<area shape="rect" id="Node000006" href="$classzappy_1_1Client.html#ade4edd70698f2497e09f736734d77ab0" title="Returns the logical id of this client&#39;s player, or &#45;1 if it has none." alt="" coords="240,156,428,181"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="184,182,226,177,227,183,184,187"/>
+<area shape="rect" id="Node000007" href="$classzappy_1_1Player.html#aff283e814b7f01d4ad7398d7c20794e6" title="Current tile position." alt="" coords="239,205,429,231"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="184,200,225,204,225,210,184,206"/>
+<area shape="rect" id="Node000008" href="$classzappy_1_1Player.html#ad714c54e4fcee0484d05ad253ab10ccb" title=" " alt="" coords="247,255,421,280"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="130,204,233,239,266,249,264,254,231,245,128,209"/>
+<area shape="rect" id="Node000009" href="$classzappy_1_1Logger.html#abab39dcd03894b824e5c7b03462dc483" title="Prints one log line to stdout. Omits the &quot;(...)&quot; group when fields is empty." alt="" coords="504,305,644,331"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="111,205,161,248,196,271,233,289,298,307,366,317,432,321,490,321,490,326,432,327,366,322,297,312,231,294,193,276,158,252,107,209"/>
+<area shape="rect" id="Node000010" href="$classzappy_1_1World.html#a3d970927132d48c4440f41db095da4eb" title="Sets the absolute count of a resource on a tile." alt="" coords="249,356,419,381"/>
+<area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="107,205,156,267,192,303,233,334,264,349,262,354,231,339,189,307,152,270,103,208"/>
+<area shape="rect" id="Node000003" href="$namespacezappy.html#a6f4c56af6fff80513c2388249fd217f4" title=" " alt="" coords="501,5,647,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="414,15,488,15,488,21,414,21"/>
+<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="436,106,484,101,485,106,437,111"/>
+<area shape="poly" id="edge13_Node000010_Node000009" title=" " alt="" coords="395,353,500,331,501,336,396,358"/>
+<area shape="rect" id="Node000011" href="$classzappy_1_1World.html#a9fce895cc2d62e61b943f7d9e03471db" title="Returns the tile at the given coordinates." alt="" coords="488,355,660,380"/>
+<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="419,366,474,365,474,371,419,371"/>
+<area shape="rect" id="Node000012" href="$namespacezappy.html#aef0d81865578aa094dcbd509e0055a81" title="Converts an ItemType to its protocol name (e.g. LINEMATE &#45;&gt; &quot;linemate&quot;)." alt="" coords="484,404,664,429"/>
+<area shape="poly" id="edge12_Node000010_Node000012" title=" " alt="" coords="399,379,497,399,496,404,398,384"/>
+</map>

@@ -1,18 +1,9 @@
 <map id="src/server/ArgParser/ArgParser.hpp" name="src/server/ArgParser/ArgParser.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="68,5,220,45"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="31,181,90,207"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="75,48,40,67,25,80,13,95,8,114,13,134,25,153,39,170,35,173,20,156,8,136,3,114,9,92,21,76,37,62,72,43"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="24,101,148,126"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="133,47,104,90,99,87,129,44"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="172,101,234,126"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="159,44,189,87,185,90,155,47"/>
-<area shape="rect" id="Node000005" href="$ServerException_8hpp.html" title=" " alt="" coords="259,93,419,133"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="188,43,285,85,283,90,186,48"/>
-<area shape="poly" id="edge7_Node000005_Node000002" title=" " alt="" coords="273,136,104,183,102,178,271,131"/>
-<area shape="rect" id="Node000006" title=" " alt="" coords="188,181,274,207"/>
-<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="314,136,260,175,257,171,311,131"/>
-<area shape="rect" id="Node000007" title=" " alt="" coords="299,181,379,207"/>
-<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="342,134,342,167,336,167,336,134"/>
-<area shape="rect" id="Node000008" title=" " alt="" coords="404,181,528,207"/>
-<area shape="poly" id="edge8_Node000005_Node000008" title=" " alt="" coords="371,131,437,172,434,176,368,136"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="75,5,227,45"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,93,64,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="124,48,65,88,62,83,121,43"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="89,93,213,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="153,46,153,79,148,79,148,46"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="237,93,299,119"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="181,43,241,84,238,88,178,48"/>
 </map>

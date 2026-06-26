@@ -20,7 +20,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="classzappy_1_1CommandParser.html#a9777b0807dc3dffe5a6118f149fa5e96" target="_top" xlink:title="Routes one command line to the matching handler for the client&#39;s type.">
+<g id="a_Node000002"><a xlink:href="classzappy_1_1CommandParser.html#af55cf3a6d1c187f570405017ebd8cb6f" target="_top" xlink:title="Routes one command line to the matching handler for the client&#39;s type.">
 <polygon fill="white" stroke="#666666" points="854,-60.79 723,-60.79 723,-30.79 854,-30.79 854,-60.79"/>
 <text text-anchor="start" x="731" y="-48.79" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::CommandParser</text>
 <text text-anchor="middle" x="788.5" y="-37.79" font-family="Helvetica,sans-Serif" font-size="10.00">::_dispatch</text>
@@ -39,7 +39,7 @@
 <!-- Node3 -->
 <g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="classzappy_1_1CommandParser.html#a37a54e030a0ef53e8a6a8970e2c829fe" target="_top" xlink:title="Dispatches the next queued command if its time has come.">
+<g id="a_Node000003"><a xlink:href="classzappy_1_1CommandParser.html#aa6b2d70e869ba31da160e28f0eddc23c" target="_top" xlink:title="Dispatches the next queued command if its time has come.">
 <polygon fill="white" stroke="#666666" points="687,-103.79 556,-103.79 556,-73.79 687,-73.79 687,-103.79"/>
 <text text-anchor="start" x="564" y="-91.79" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::CommandParser</text>
 <text text-anchor="middle" x="621.5" y="-80.79" font-family="Helvetica,sans-Serif" font-size="10.00">::executeNext</text>
@@ -96,7 +96,7 @@
 <!-- Node10 -->
 <g id="Node000010" class="node">
 <title>Node10</title>
-<g id="a_Node000010"><a xlink:href="classzappy_1_1CommandParser.html#af47de49c1b3c9fd2ed80834664c6b7f7" target="_top" xlink:title="Reads pending data from the client socket into the command queue.">
+<g id="a_Node000010"><a xlink:href="classzappy_1_1CommandParser.html#a2eaa3e9cec905216d43b7286e6c018a7" target="_top" xlink:title="Reads pending data from the client socket into the command queue.">
 <polygon fill="white" stroke="#666666" points="854,-146.79 723,-146.79 723,-116.79 854,-116.79 854,-146.79"/>
 <text text-anchor="start" x="731" y="-134.79" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::CommandParser</text>
 <text text-anchor="middle" x="788.5" y="-123.79" font-family="Helvetica,sans-Serif" font-size="10.00">::feed</text>

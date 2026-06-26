@@ -1,0 +1,5 @@
+<map id="zappy::Player::setFrozenUntil" name="zappy::Player::setFrozenUntil">
+<area shape="rect" id="Node000001" title="Freezes the player until the given time point (used while an incantation is underway)." alt="" coords="5,5,185,45"/>
+<area shape="rect" id="Node000002" href="$classzappy_1_1Logger.html#abab39dcd03894b824e5c7b03462dc483" title="Prints one log line to stdout. Omits the &quot;(...)&quot; group when fields is empty." alt="" coords="233,13,373,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="186,23,219,23,219,28,186,28"/>
+</map>

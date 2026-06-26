@@ -1,0 +1,19 @@
+<map id="ia.client.ZappyAIClient.inventory" name="ia.client.ZappyAIClient.inventory">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,95,241,120"/>
+<area shape="rect" id="Node000002" href="$classia_1_1client_1_1ZappyAIClient.html#a3552b5e37104b7d8b373d38fa6b141dc" title=" " alt="" coords="289,87,464,127"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="242,105,276,105,276,110,242,110"/>
+<area shape="rect" id="Node000003" href="$classia_1_1client_1_1ZappyAIClient.html#a70ea6941a8a1dad5ccf077cd00c913c4" title=" " alt="" coords="969,5,1170,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="410,85,456,61,511,41,628,19,747,8,859,5,955,7,955,13,859,11,747,13,629,24,513,46,459,65,412,89"/>
+<area shape="rect" id="Node000004" href="$classia_1_1launcher_1_1ClientLauncher.html#a491ed620a5941a355d52b92d5f491d54" title=" " alt="" coords="957,152,1181,177"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="411,125,458,150,513,169,573,180,636,187,760,191,876,186,973,176,974,182,877,191,760,197,635,192,572,185,511,174,456,154,408,130"/>
+<area shape="rect" id="Node000005" href="$classia_1_1client_1_1ZappyAIClient.html#ac4ddfe1ce6caaf6c5a37aa251fd818a5" title=" " alt="" coords="512,119,687,159"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="465,117,499,122,498,128,464,123"/>
+<area shape="rect" id="Node000006" href="$classia_1_1client_1_1ZappyAIClient.html#a4354dcfb68d949058c8f3179dce5658d" title=" " alt="" coords="512,55,687,95"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="464,92,498,87,499,92,465,97"/>
+<area shape="rect" id="Node000007" href="$classia_1_1client_1_1ZappyAIClient.html#a2d57d52dad737b5b257d3041f4cc95be" title=" " alt="" coords="735,55,909,95"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="687,73,721,73,721,78,687,78"/>
+<area shape="poly" id="edge7_Node000007_Node000003" title=" " alt="" coords="906,53,957,41,998,31,999,36,958,46,907,58"/>
+<area shape="poly" id="edge8_Node000007_Node000004" title=" " alt="" coords="879,93,1022,145,1020,150,877,98"/>
+<area shape="rect" id="Node000008" href="$classia_1_1client_1_1ZappyAIClient.html#af4b4836dda51a7122bd61ef5e1fe67e7" title=" " alt="" coords="982,55,1157,95"/>
+<area shape="poly" id="edge9_Node000007_Node000008" title=" " alt="" coords="910,73,968,73,968,78,910,78"/>
+</map>

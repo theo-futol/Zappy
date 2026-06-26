@@ -1,0 +1,23 @@
+<map id="ia.launcher.ClientLauncher._maybe_spawn_clients" name="ia.launcher.ClientLauncher._maybe_spawn_clients">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,88,203,128"/>
+<area shape="rect" id="Node000002" href="$classia_1_1launcher_1_1ClientLauncher.html#a270f03b8421f6e141ced8e17f2893eeb" title=" " alt="" coords="251,88,448,128"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="203,105,237,105,237,111,203,111"/>
+<area shape="rect" id="Node000003" href="$classia_1_1launcher_1_1ClientLauncher.html#a4433e451c9317d791a73dfa24581aa6e" title=" " alt="" coords="496,5,693,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="409,85,521,47,522,52,410,91"/>
+<area shape="rect" id="Node000004" href="$classia_1_1client_1_1ZappyAIClient.html#a70ea6941a8a1dad5ccf077cd00c913c4" title=" " alt="" coords="753,70,954,95"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="448,100,738,86,739,91,449,106"/>
+<area shape="rect" id="Node000005" href="$classia_1_1launcher_1_1ClientLauncher.html#a491ed620a5941a355d52b92d5f491d54" title=" " alt="" coords="741,119,965,145"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="449,110,728,123,728,129,448,115"/>
+<area shape="rect" id="Node000006" href="$classia_1_1launcher_1_1ClientLauncher.html#a0d94ee1d1fb22f151e90e91e8eac1192" title=" " alt="" coords="496,171,693,211"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="410,125,522,164,521,169,409,131"/>
+<area shape="poly" id="edge7_Node000006_Node000004" title=" " alt="" coords="623,168,676,135,740,104,764,96,765,102,742,109,679,140,626,173"/>
+<area shape="poly" id="edge8_Node000006_Node000005" title=" " alt="" coords="683,168,741,155,783,145,784,150,742,160,684,173"/>
+<area shape="rect" id="Node000007" href="$classia_1_1launcher_1_1ClientLauncher.html#ab716f94cf9da253d72cb9c4cce179d3d" title=" " alt="" coords="755,297,952,337"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="623,209,677,246,742,283,760,290,758,295,740,288,674,251,620,213"/>
+<area shape="rect" id="Node000008" href="$classia_1_1launcher_1_1ClientLauncher.html#a202a58bf9724fd08928610a6fde1c789" title=" " alt="" coords="755,361,952,401"/>
+<area shape="poly" id="edge9_Node000006_Node000008" title=" " alt="" coords="611,209,663,277,701,315,743,347,754,353,751,358,740,352,697,319,659,281,607,213"/>
+<area shape="rect" id="Node000009" href="$classia_1_1launcher_1_1ClientLauncher.html#a82d9f815d2d5073056852c3086c399ca" title=" " alt="" coords="755,169,952,209"/>
+<area shape="poly" id="edge10_Node000006_Node000009" title=" " alt="" coords="693,187,741,187,741,193,694,193"/>
+<area shape="rect" id="Node000010" href="$classia_1_1launcher_1_1ClientLauncher.html#accc89475cf7ae1d050446c8efc737382" title=" " alt="" coords="755,233,952,273"/>
+<area shape="poly" id="edge11_Node000006_Node000010" title=" " alt="" coords="678,208,758,228,757,233,677,213"/>
+</map>

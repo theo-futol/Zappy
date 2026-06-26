@@ -20,7 +20,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="classzappy_1_1World.html#ab344a57c1cabbba19a41136b9b69ccf0" target="_top" xlink:title="Creates a player on the named team and places it in the world.">
+<g id="a_Node000002"><a xlink:href="classzappy_1_1World.html#a1ad1d6b64d725ca67581ef9ae97d8289" target="_top" xlink:title="Hatches a player from one of the team&#39;s eggs, chosen at random, spawning it on that egg&#39;s tile and co...">
 <polygon fill="white" stroke="#666666" points="987,-24.5 853,-24.5 853,-5.5 987,-5.5 987,-24.5"/>
 <text text-anchor="middle" x="920" y="-12.5" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::World::addPlayer</text>
 </a>
@@ -57,7 +57,7 @@
 <!-- Node4 -->
 <g id="Node000004" class="node">
 <title>Node4</title>
-<g id="a_Node000004"><a xlink:href="classzappy_1_1CommandParser.html#a37a54e030a0ef53e8a6a8970e2c829fe" target="_top" xlink:title="Dispatches the next queued command if its time has come.">
+<g id="a_Node000004"><a xlink:href="classzappy_1_1CommandParser.html#aa6b2d70e869ba31da160e28f0eddc23c" target="_top" xlink:title="Dispatches the next queued command if its time has come.">
 <polygon fill="white" stroke="#666666" points="650,-30 519,-30 519,0 650,0 650,-30"/>
 <text text-anchor="start" x="527" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::CommandParser</text>
 <text text-anchor="middle" x="584.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">::executeNext</text>

@@ -6,8 +6,11 @@
 <area shape="rect" id="node3" href="dir_4f21ac8bc69899bce4caaf78fbfec492.html" title="Client" alt="" coords="177,125,237,151"/>
 <area shape="poly" id="edge2" href="dir_000004_000002.html" alt="" coords="111,75,177,116,175,120,108,80"/>
 <area shape="rect" id="edge2-headlabel" href="dir_000004_000002.html" title="1" alt="" coords="172,101,181,116"/>
-<area shape="rect" id="node4" href="dir_8d263310e1a82a7c2dbdbf52fb5226f3.html" title="Simulation" alt="" coords="261,125,353,151"/>
-<area shape="poly" id="edge3" href="dir_000004_000013.html" alt="" coords="126,75,260,118,258,123,125,80"/>
-<area shape="rect" id="edge3-headlabel" href="dir_000004_000013.html" title="1" alt="" coords="252,104,262,119"/>
+<area shape="rect" id="node4" href="dir_829bef148c04d7469d1001fdae5a7da6.html" title="Logger" alt="" coords="261,125,328,151"/>
+<area shape="poly" id="edge3" href="dir_000004_000010.html" alt="" coords="124,75,250,118,248,123,123,80"/>
+<area shape="rect" id="edge3-headlabel" href="dir_000004_000010.html" title="1" alt="" coords="243,104,252,119"/>
+<area shape="rect" id="node5" href="dir_8d263310e1a82a7c2dbdbf52fb5226f3.html" title="Simulation" alt="" coords="353,125,445,151"/>
+<area shape="poly" id="edge4" href="dir_000004_000015.html" alt="" coords="141,75,340,120,338,126,140,80"/>
+<area shape="rect" id="edge4-headlabel" href="dir_000004_000015.html" title="1" alt="" coords="332,106,341,121"/>
 <area shape="rect" id="clust1" href="dir_0a4f5d35a540b1c515425d8403457bb5.html" title="ClientHandler" alt="" coords="16,16,165,161"/>
 </map>

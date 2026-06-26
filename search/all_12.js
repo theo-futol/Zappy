@@ -1,5 +1,20 @@
 var searchData=
 [
-  ['unknown_0',['unknown',['../namespacezappy.html#a27351dc1d35dc62fde06de99d6e6dc21a696b031073e74bf2cb98e5ef201d4aa3',1,'zappy::UNKNOWN'],['../namespacezappy.html#a7def2f3f37d8dd0bd14d9e3c5ac180c5a696b031073e74bf2cb98e5ef201d4aa3',1,'zappy::UNKNOWN']]],
-  ['utils_2ehpp_1',['Utils.hpp',['../Utils_8hpp.html',1,'']]]
+  ['take_0',['take',['../classia_1_1client_1_1ZappyAIClient.html#a31a8f940eef4abfb13c5f0606b7bea75',1,'ia.client.ZappyAIClient.take()'],['../classia_1_1test_1_1FakeClient.html#adc6645854fedfcda7afb089789a9aa38',1,'ia.test.FakeClient.take()'],['../classzappy_1_1Commands.html#af68393f7ba46aec892196685895c50a7',1,'zappy::Commands::Take()']]],
+  ['target_5fcount_1',['target_count',['../classia_1_1launcher_1_1TeamRuntime.html#ab02f8b709f9f106014d89cb37ff1e99b',1,'ia::launcher::TeamRuntime']]],
+  ['target_5ftoken_2',['target_token',['../classia_1_1strategy_1_1Strategy.html#a5c02aa04dccc4f019545f9adf865b105',1,'ia::strategy::Strategy']]],
+  ['team_3',['team',['../structzappy_1_1Team.html',1,'zappy::Team'],['../classia_1_1strategy_1_1Strategy.html#a7092c5cc29cb5490b0163aaab102fe07',1,'ia.strategy.Strategy.team'],['../classia_1_1launcher_1_1TeamRuntime.html#a6acc6cb2d9d292214f6aadc6f530dba5',1,'ia.launcher.TeamRuntime.team'],['../classia_1_1launcher_1_1ManagedClient.html#a61bd048078917b62c2161b74631b0506',1,'ia.launcher.ManagedClient.team'],['../structzappy_1_1Team.html#a72500b00597091772b4ce61f6eca2ea4',1,'zappy::Team::Team()']]],
+  ['team_5fname_4',['team_name',['../classia_1_1client_1_1ZappyAIClient.html#a5501ceabbe923d0e995cd729325e6088',1,'ia::client::ZappyAIClient']]],
+  ['teamruntime_5',['TeamRuntime',['../classia_1_1launcher_1_1TeamRuntime.html',1,'ia::launcher']]],
+  ['teams_6',['teams',['../classia_1_1launcher_1_1ClientLauncher.html#a8c6a85a058d53151d943e51169e5f243',1,'ia::launcher::ClientLauncher']]],
+  ['teams_2ehpp_7',['Teams.hpp',['../Teams_8hpp.html',1,'']]],
+  ['test_2epy_8',['test.py',['../test_8py.html',1,'']]],
+  ['thystame_9',['THYSTAME',['../namespacezappy.html#a7def2f3f37d8dd0bd14d9e3c5ac180c5a0d20733804020bb21e57a0cdb7082f14',1,'zappy']]],
+  ['tile_10',['tile',['../structzappy_1_1tile.html',1,'zappy::tile'],['../structzappy_1_1tile.html#a9611bce2fb60de6631fa06cd9ea33a91',1,'zappy::tile::tile()']]],
+  ['tile_5fpositions_11',['tile_positions',['../namespaceia_1_1observation.html#a6a6aa511dedff765bc278ea2ba5c76ec',1,'ia::observation']]],
+  ['tiles_12',['tiles',['../classia_1_1observation_1_1Observation.html#ad14559a49c985ab052a9d59f1ddba641',1,'ia::observation::Observation']]],
+  ['tna_13',['Tna',['../classzappy_1_1Commands.html#ac94014987879502a909e6c69d69cb4fc',1,'zappy::Commands']]],
+  ['tna_2ecpp_14',['Tna.cpp',['../Tna_8cpp.html',1,'']]],
+  ['token_15',['token',['../classia_1_1strategy_1_1Strategy.html#a95eed6d73aeaf34c9eb960d1978449c2',1,'ia::strategy::Strategy']]],
+  ['type_16',['type',['../structzappy_1_1FlagConfig.html#a7fb43138ac8f61b7b17e973ad43d23fd',1,'zappy::FlagConfig']]]
 ];

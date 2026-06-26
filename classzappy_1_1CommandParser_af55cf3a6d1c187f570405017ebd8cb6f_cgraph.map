@@ -1,0 +1,11 @@
+<map id="zappy::CommandParser::_dispatch" name="zappy::CommandParser::_dispatch">
+<area shape="rect" id="Node000001" title="Routes one command line to the matching handler for the client&#39;s type." alt="" coords="5,73,180,113"/>
+<area shape="rect" id="Node000002" href="$classzappy_1_1Client.html#aafed3af6e0e3c858d9581a3d9df81218" title="Returns the socket descriptor, used to read/write and to poll this client." alt="" coords="247,5,397,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="142,70,227,39,254,32,255,37,229,45,144,75"/>
+<area shape="rect" id="Node000003" href="$classzappy_1_1Client.html#ade4edd70698f2497e09f736734d77ab0" title="Returns the logical id of this client&#39;s player, or &#45;1 if it has none." alt="" coords="228,55,416,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="180,80,214,77,215,82,181,86"/>
+<area shape="rect" id="Node000004" href="$classzappy_1_1Client.html#af3593a65bba2a2527669eb4a05a618b8" title="Returns the connection&#39;s current role." alt="" coords="239,104,405,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="181,99,226,104,225,109,180,104"/>
+<area shape="rect" id="Node000005" href="$classzappy_1_1Logger.html#abab39dcd03894b824e5c7b03462dc483" title="Prints one log line to stdout. Omits the &quot;(...)&quot; group when fields is empty." alt="" coords="252,153,392,179"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="148,110,229,138,259,147,258,152,227,143,146,115"/>
+</map>

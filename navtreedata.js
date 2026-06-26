@@ -30,6 +30,7 @@ var NAVTREE =
       [ "Namespace Members", "namespacemembers.html", [
         [ "All", "namespacemembers.html", null ],
         [ "Functions", "namespacemembers_func.html", null ],
+        [ "Variables", "namespacemembers_vars.html", null ],
         [ "Typedefs", "namespacemembers_type.html", null ],
         [ "Enumerations", "namespacemembers_enum.html", null ],
         [ "Enumerator", "namespacemembers_eval.html", null ]
@@ -41,7 +42,7 @@ var NAVTREE =
       [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", "functions_dup" ],
-        [ "Functions", "functions_func.html", null ],
+        [ "Functions", "functions_func.html", "functions_func" ],
         [ "Variables", "functions_vars.html", null ],
         [ "Typedefs", "functions_type.html", null ]
       ] ]
@@ -60,8 +61,11 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "ArgParser_8cpp.html",
-"classzappy_1_1CommandParser.html#ac4070ffc5bd0bdc69dc9fed51a4e6588",
-"classzappy_1_1World.html#a9fce895cc2d62e61b943f7d9e03471db"
+"classia_1_1launcher_1_1ClientLauncher.html#a491ed620a5941a355d52b92d5f491d54",
+"classzappy_1_1Client.html#ab649f9d468b471e44d79f21f34cfe69f",
+"classzappy_1_1Player.html#adc7feb7e75bd00f5cc7b26adc165824a",
+"model__utils_8py.html#a3b27c0445becc9a9a9953d1d7c65514e",
+"structzappy_1_1tile.html#a9611bce2fb60de6631fa06cd9ea33a91"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

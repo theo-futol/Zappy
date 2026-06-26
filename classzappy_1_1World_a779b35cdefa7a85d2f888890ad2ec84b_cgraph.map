@@ -1,29 +1,32 @@
 <map id="zappy::World::foodCheck" name="zappy::World::foodCheck">
-<area shape="rect" id="Node000001" title="Consumes one food unit per player and kills those who have starved." alt="" coords="5,127,188,153"/>
-<area shape="rect" id="Node000002" href="$classzappy_1_1Player.html#a7382412b718c7828587ced9e7168bdf3" title="The socket fd linking this player to its client." alt="" coords="526,23,681,49"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="107,125,157,74,194,46,235,25,274,14,314,7,395,3,471,8,536,18,535,23,470,13,395,8,314,13,275,19,237,30,197,51,161,78,110,129"/>
-<area shape="rect" id="Node000003" href="$classzappy_1_1Player.html#a7583690b204dac5e1382ba3a80256695" title="This player&#39;s inventory." alt="" coords="245,41,445,66"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="122,125,173,101,235,76,266,67,268,72,237,81,175,105,124,130"/>
-<area shape="rect" id="Node000004" href="$classzappy_1_1Inventory.html#a875bcfe3876992de8044423fcff4bacc" title="Returns the held count for an item type." alt="" coords="251,91,439,131"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="188,126,237,121,237,126,189,132"/>
-<area shape="rect" id="Node000005" href="$classzappy_1_1Inventory.html#acf23fc739876cbff0b178a41e11deb69" title="Removes quantity of the given item." alt="" coords="236,155,453,181"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="189,148,223,151,222,157,188,153"/>
-<area shape="rect" id="Node000006" href="$classzappy_1_1World.html#aca292b35506844c67b0d62a3e6e3e9e1" title="Removes a player from the world and decrease the number of slots occupied in its team...." alt="" coords="243,205,447,230"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="129,150,237,189,271,199,269,204,235,194,127,155"/>
-<area shape="rect" id="Node000013" href="$classzappy_1_1Player.html#a978341e609f445c26e56af3faffb9cfc" title="Sets the life&#45;cycle state." alt="" coords="259,258,430,283"/>
-<area shape="poly" id="edge13_Node000001_Node000013" title=" " alt="" coords="113,151,166,194,200,218,237,239,270,252,268,256,235,244,197,222,162,198,110,155"/>
-<area shape="poly" id="edge6_Node000006_Node000002" title=" " alt="" coords="433,202,452,190,464,175,471,160,475,128,479,95,486,78,500,62,512,53,515,57,503,66,491,81,484,96,480,129,476,161,469,178,455,194,435,207"/>
-<area shape="rect" id="Node000007" href="$classzappy_1_1Player.html#aff283e814b7f01d4ad7398d7c20794e6" title="Current tile position." alt="" coords="508,77,699,102"/>
-<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="429,202,452,190,468,172,475,152,482,131,500,111,508,106,511,110,503,115,487,134,480,153,472,174,455,194,431,207"/>
-<area shape="rect" id="Node000008" href="$classzappy_1_1Player.html#a631fcf2698ec9ac726147ca31184e354" title="Life&#45;cycle state (pending / alive / dead)." alt="" coords="517,126,689,151"/>
-<area shape="poly" id="edge8_Node000006_Node000008" title=" " alt="" coords="414,202,452,190,476,175,500,160,522,153,523,158,502,165,479,180,454,194,415,207"/>
-<area shape="rect" id="Node000009" href="$classzappy_1_1Player.html#ad714c54e4fcee0484d05ad253ab10ccb" title=" " alt="" coords="517,175,690,201"/>
-<area shape="poly" id="edge9_Node000006_Node000009" title=" " alt="" coords="447,203,503,197,504,202,447,208"/>
-<area shape="rect" id="Node000010" href="$structzappy_1_1Team.html#a28b10ed41422bcd6fb1b4fcb58956758" title="Frees one occupied slot (a player left), never going below zero." alt="" coords="502,290,705,315"/>
-<area shape="poly" id="edge10_Node000006_Node000010" title=" " alt="" coords="410,227,455,243,479,259,503,275,525,283,523,288,500,280,476,264,452,248,408,232"/>
-<area shape="rect" id="Node000011" href="$classzappy_1_1World.html#a3904131e585caa94fc0b4d4fb01e11f2" title="Removes the player pointer from the tile at the given position, if any." alt="" coords="501,225,705,265"/>
-<area shape="poly" id="edge11_Node000006_Node000011" title=" " alt="" coords="447,226,488,230,487,235,447,231"/>
-<area shape="rect" id="Node000012" href="$classzappy_1_1World.html#a9fce895cc2d62e61b943f7d9e03471db" title="Returns the tile at the given coordinates." alt="" coords="753,233,925,258"/>
-<area shape="poly" id="edge12_Node000011_Node000012" title=" " alt="" coords="706,243,740,243,740,248,706,248"/>
-<area shape="poly" id="edge14_Node000013_Node000010" title=" " alt="" coords="431,278,489,286,488,291,430,284"/>
+<area shape="rect" id="Node000001" title="Consumes one food unit per player and kills those who have starved." alt="" coords="5,159,188,185"/>
+<area shape="rect" id="Node000002" href="$classzappy_1_1Player.html#a33f33f30fdbf95af468119bc63bd7caa" title="This player&#39;s stable logical id (its GUI player number)." alt="" coords="528,26,679,51"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="103,158,123,129,152,93,190,57,235,30,274,16,315,8,398,3,476,9,541,20,540,26,475,14,398,9,316,13,275,22,237,34,193,61,156,96,127,132,108,161"/>
+<area shape="rect" id="Node000003" href="$classzappy_1_1Player.html#a7583690b204dac5e1382ba3a80256695" title="This player&#39;s inventory." alt="" coords="245,45,445,70"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="112,157,165,119,235,80,259,71,261,76,237,85,168,123,116,161"/>
+<area shape="rect" id="Node000004" href="$classzappy_1_1Inventory.html#a875bcfe3876992de8044423fcff4bacc" title="Returns the held count for an item type." alt="" coords="251,95,439,135"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="152,157,244,135,245,140,153,162"/>
+<area shape="rect" id="Node000005" href="$classzappy_1_1Logger.html#abab39dcd03894b824e5c7b03462dc483" title="Prints one log line to stdout. Omits the &quot;(...)&quot; group when fields is empty." alt="" coords="275,159,415,185"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="188,169,261,169,261,175,188,175"/>
+<area shape="rect" id="Node000006" href="$classzappy_1_1Inventory.html#acf23fc739876cbff0b178a41e11deb69" title="Removes quantity of the given item." alt="" coords="236,209,453,234"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="162,182,267,203,266,209,161,187"/>
+<area shape="rect" id="Node000007" href="$classzappy_1_1World.html#a61bd77a5a1cae883aa060469d039fe92" title="Removes a player from the world and decrease the number of slots occupied in its team...." alt="" coords="243,258,447,283"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="120,183,172,213,237,243,265,252,263,257,235,248,169,217,117,187"/>
+<area shape="rect" id="Node000014" href="$classzappy_1_1Player.html#a978341e609f445c26e56af3faffb9cfc" title="Sets the life&#45;cycle state." alt="" coords="259,339,430,365"/>
+<area shape="poly" id="edge15_Node000001_Node000014" title=" " alt="" coords="112,183,165,234,238,292,304,331,302,336,234,297,161,238,109,187"/>
+<area shape="poly" id="edge7_Node000007_Node000002" title=" " alt="" coords="433,256,452,243,466,226,474,209,477,173,480,135,486,115,499,94,524,72,552,55,555,60,527,76,503,98,491,117,485,136,483,173,479,210,471,229,455,247,436,260"/>
+<area shape="rect" id="Node000008" href="$classzappy_1_1Player.html#aff283e814b7f01d4ad7398d7c20794e6" title="Current tile position." alt="" coords="508,109,699,134"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="431,256,452,243,463,232,469,220,475,195,481,169,488,156,500,143,506,138,509,143,503,147,492,159,486,171,480,196,474,222,467,235,455,247,433,260"/>
+<area shape="rect" id="Node000009" href="$classzappy_1_1Player.html#a631fcf2698ec9ac726147ca31184e354" title="Life&#45;cycle state (pending / alive / dead)." alt="" coords="517,158,689,183"/>
+<area shape="poly" id="edge9_Node000007_Node000009" title=" " alt="" coords="423,255,452,243,466,231,475,219,484,205,500,192,513,186,515,191,503,197,488,209,480,222,470,235,455,248,425,260"/>
+<area shape="rect" id="Node000010" href="$classzappy_1_1Player.html#ad714c54e4fcee0484d05ad253ab10ccb" title=" " alt="" coords="517,207,690,233"/>
+<area shape="poly" id="edge10_Node000007_Node000010" title=" " alt="" coords="410,255,524,233,525,238,411,261"/>
+<area shape="rect" id="Node000011" href="$classzappy_1_1World.html#a9fce895cc2d62e61b943f7d9e03471db" title="Returns the tile at the given coordinates." alt="" coords="753,287,925,313"/>
+<area shape="poly" id="edge11_Node000007_Node000011" title=" " alt="" coords="447,274,739,291,739,297,447,279"/>
+<area shape="rect" id="Node000012" href="$structzappy_1_1Team.html#a28b10ed41422bcd6fb1b4fcb58956758" title="Removes one active player from the team and frees its connection slot. Fork still creates additional ..." alt="" coords="502,373,705,398"/>
+<area shape="poly" id="edge12_Node000007_Node000012" title=" " alt="" coords="374,281,455,324,478,342,503,358,525,366,523,371,500,362,475,347,452,329,371,286"/>
+<area shape="rect" id="Node000013" href="$classzappy_1_1World.html#a3904131e585caa94fc0b4d4fb01e11f2" title="Removes the player pointer from the tile at the given position, if any." alt="" coords="501,308,705,348"/>
+<area shape="poly" id="edge13_Node000007_Node000013" title=" " alt="" coords="403,281,500,302,499,308,402,286"/>
+<area shape="poly" id="edge14_Node000013_Node000011" title=" " alt="" coords="705,313,739,309,740,314,706,319"/>
+<area shape="poly" id="edge16_Node000014_Node000012" title=" " alt="" coords="431,360,491,368,491,374,430,366"/>
 </map>

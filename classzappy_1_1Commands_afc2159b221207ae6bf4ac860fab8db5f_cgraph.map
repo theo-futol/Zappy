@@ -1,0 +1,36 @@
+<map id="zappy::Commands::beginIncantation" name="zappy::Commands::beginIncantation">
+<area shape="rect" id="Node000001" title="Starts an incantation: validates prerequisites, notifies the initiator and the GUI,..." alt="" coords="5,279,264,304"/>
+<area shape="rect" id="Node000002" href="$classzappy_1_1Player.html#a33f33f30fdbf95af468119bc63bd7caa" title="This player&#39;s stable logical id (its GUI player number)." alt="" coords="586,31,737,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="141,277,165,241,203,191,252,140,280,117,311,98,376,71,445,53,512,44,572,40,573,45,512,49,446,59,377,76,313,103,284,122,256,144,207,195,169,244,146,280"/>
+<area shape="rect" id="Node000003" href="$classzappy_1_1Player.html#a70dc9f5c05ea552c47350da37b3bd027" title="Current elevation level (1..8)." alt="" coords="815,111,989,136"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="150,276,217,228,263,201,311,180,374,159,440,144,573,124,697,116,801,116,801,121,698,121,574,129,441,149,376,164,313,184,265,206,220,232,153,281"/>
+<area shape="rect" id="Node000004" href="$classzappy_1_1World.html#a43fb08ea54d522c20d2c27ed281297f4" title="Looks up a player by its logical id, or nullptr if none matches." alt="" coords="312,5,516,31"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="139,277,161,234,198,172,248,106,278,75,311,48,337,33,340,38,313,52,282,79,252,109,202,175,166,236,144,280"/>
+<area shape="rect" id="Node000005" href="$classzappy_1_1Client.html#ade4edd70698f2497e09f736734d77ab0" title="Returns the logical id of this client&#39;s player, or &#45;1 if it has none." alt="" coords="320,501,508,527"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="146,303,171,338,209,385,258,436,313,480,343,494,341,499,311,484,254,440,205,389,167,341,142,306"/>
+<area shape="rect" id="Node000006" href="$classzappy_1_1World.html#ab1b432308478a9dba9cf0a0695bef412" title="Returns the players standing on the tile that are exactly at level." alt="" coords="570,157,753,197"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="159,276,226,244,311,213,374,199,438,189,556,177,557,183,438,194,375,204,313,218,228,248,161,281"/>
+<area shape="rect" id="Node000007" href="$classzappy_1_1Player.html#aff283e814b7f01d4ad7398d7c20794e6" title="Current tile position." alt="" coords="807,217,997,243"/>
+<area shape="poly" id="edge10_Node000001_Node000007" title=" " alt="" coords="195,276,312,257,441,244,571,236,793,229,793,234,571,242,441,250,312,262,196,281"/>
+<area shape="rect" id="Node000009" href="$classzappy_1_1World.html#a9fce895cc2d62e61b943f7d9e03471db" title="Returns the tile at the given coordinates." alt="" coords="575,336,747,361"/>
+<area shape="poly" id="edge11_Node000001_Node000009" title=" " alt="" coords="197,301,312,321,442,334,562,342,561,347,442,339,312,326,196,307"/>
+<area shape="rect" id="Node000010" href="$classzappy_1_1World.html#aad86d2fa98fbe95fed52656c32582b19" title="Checks whether an elevation from level to level + 1 can take place on the tile. Verifies both the min..." alt="" coords="315,271,513,311"/>
+<area shape="poly" id="edge12_Node000001_Node000010" title=" " alt="" coords="264,289,301,289,301,294,264,294"/>
+<area shape="rect" id="Node000012" href="$classzappy_1_1Logger.html#abab39dcd03894b824e5c7b03462dc483" title="Prints one log line to stdout. Omits the &quot;(...)&quot; group when fields is empty." alt="" coords="591,393,731,419"/>
+<area shape="poly" id="edge17_Node000001_Node000012" title=" " alt="" coords="148,302,173,332,211,370,259,407,313,436,352,446,393,452,474,450,550,437,612,420,613,426,551,442,475,455,392,457,351,451,311,440,256,412,208,374,169,336,144,306"/>
+<area shape="rect" id="Node000013" href="$classzappy_1_1Player.html#a25f313ec41f8ac5fb9544df508dfbf87" title="Freezes the player until the given time point (used while an incantation is underway)." alt="" coords="324,386,504,426"/>
+<area shape="poly" id="edge18_Node000001_Node000013" title=" " alt="" coords="166,302,313,365,347,379,345,383,311,370,163,307"/>
+<area shape="rect" id="Node000014" href="$classzappy_1_1Client.html#afd9816d0a687764ad9ee4772739a326e" title="Writes the given message to the client socket, if it is valid. Logs an error if the write fails." alt="" coords="341,551,487,576"/>
+<area shape="poly" id="edge20_Node000001_Node000014" title=" " alt="" coords="144,303,164,348,200,412,250,480,280,511,313,537,329,546,327,550,311,542,277,515,246,483,196,415,160,351,139,305"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="517,26,572,32,572,37,516,31"/>
+<area shape="poly" id="edge7_Node000006_Node000003" title=" " alt="" coords="751,154,830,136,831,142,753,159"/>
+<area shape="poly" id="edge8_Node000006_Node000007" title=" " alt="" coords="753,194,831,212,830,217,751,199"/>
+<area shape="rect" id="Node000008" href="$namespacezappy.html#a6f4c56af6fff80513c2388249fd217f4" title=" " alt="" coords="829,164,975,189"/>
+<area shape="poly" id="edge9_Node000006_Node000008" title=" " alt="" coords="753,174,816,174,816,179,753,179"/>
+<area shape="poly" id="edge14_Node000010_Node000006" title=" " alt="" coords="457,269,604,200,606,205,460,274"/>
+<area shape="poly" id="edge15_Node000010_Node000009" title=" " alt="" coords="502,309,593,330,592,336,500,314"/>
+<area shape="rect" id="Node000011" href="$classzappy_1_1World.html#a34a1fc2900d878a2db5bfb0ee1cf659f" title="Returns the requirements to elevate from level to level + 1, or nullptr if level is out of [1,..." alt="" coords="564,271,759,311"/>
+<area shape="poly" id="edge13_Node000010_Node000011" title=" " alt="" coords="513,289,550,289,550,294,513,294"/>
+<area shape="poly" id="edge16_Node000010_Node000012" title=" " alt="" coords="449,309,502,340,565,372,604,386,602,391,563,376,500,345,446,314"/>
+<area shape="poly" id="edge19_Node000013_Node000012" title=" " alt="" coords="504,403,578,403,578,409,504,409"/>
+</map>

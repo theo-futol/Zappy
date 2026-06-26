@@ -1,19 +1,8 @@
 var searchData=
 [
-  ['parse_0',['parse',['../classzappy_1_1ArgParser.html#a9a88ebf6d2462864575da3a2d5d3ce35',1,'zappy::ArgParser']]],
-  ['pending_1',['PENDING',['../namespacezappy.html#a739d472bdf98c0f9136679f6ffb58113ac69f06e1a9b016d133907b4e5f5864d2',1,'zappy']]],
-  ['pendingcommand_2',['PendingCommand',['../structzappy_1_1PendingCommand.html',1,'zappy']]],
-  ['phiras_3',['PHIRAS',['../namespacezappy.html#a7def2f3f37d8dd0bd14d9e3c5ac180c5a3c1c5a164f11c086dc42d7d43d7274d2',1,'zappy']]],
-  ['pin_4',['Pin',['../classzappy_1_1Commands.html#aaabc46f14a816bcd9536dba35d36640d',1,'zappy::Commands']]],
-  ['pin_2ecpp_5',['Pin.cpp',['../Pin_8cpp.html',1,'']]],
-  ['player_6',['player',['../classzappy_1_1Player.html',1,'zappy::Player'],['../classzappy_1_1Player.html#abccb8c49e9b6854d710c837ca86edbf3',1,'zappy::Player::Player()']]],
-  ['player_2ecpp_7',['Player.cpp',['../Player_8cpp.html',1,'']]],
-  ['player_2ehpp_8',['Player.hpp',['../Player_8hpp.html',1,'']]],
-  ['players_9',['players',['../structzappy_1_1ElevationRequirement.html#ad0732a9a369625c61c915f5ac56a1cf4',1,'zappy::ElevationRequirement']]],
-  ['playerstate_10',['PlayerState',['../namespacezappy.html#a739d472bdf98c0f9136679f6ffb58113',1,'zappy']]],
-  ['plv_11',['Plv',['../classzappy_1_1Commands.html#adde6fad572f1f56741cdb1db66dfdd09',1,'zappy::Commands']]],
-  ['plv_2ecpp_12',['Plv.cpp',['../Plv_8cpp.html',1,'']]],
-  ['position_13',['position',['../structzappy_1_1position.html',1,'zappy']]],
-  ['ppo_14',['Ppo',['../classzappy_1_1Commands.html#a95489f8af16021d203de0dd5c729dc00',1,'zappy::Commands']]],
-  ['ppo_2ecpp_15',['Ppo.cpp',['../Ppo_8cpp.html',1,'']]]
+  ['observation_0',['Observation',['../classia_1_1observation_1_1Observation.html',1,'ia::observation']]],
+  ['observation_2epy_1',['observation.py',['../observation_8py.html',1,'']]],
+  ['on_5fmy_5ftile_2',['on_my_tile',['../classia_1_1observation_1_1Observation.html#aa84a7befc4f26e90d5ca5ae308b36a43',1,'ia::observation::Observation']]],
+  ['operator_3d_3',['operator=',['../classzappy_1_1Client.html#ae96c608dc17d8745a785fa452eeaf1c5',1,'zappy::Client']]],
+  ['operator_3d_3d_4',['operator==',['../namespacezappy.html#a6f4c56af6fff80513c2388249fd217f4',1,'zappy']]]
 ];

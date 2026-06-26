@@ -20,7 +20,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="classzappy_1_1World.html#aac6d20501beeae11b0542eb1e952713b" target="_top" xlink:title="Builds an x&#45;by&#45;y world with empty tiles and no players yet.">
+<g id="a_Node000002"><a xlink:href="classzappy_1_1World.html#a246fcd109eb4eb762e6f170292204196" target="_top" xlink:title="Builds an x&#45;by&#45;y world with empty tiles and no players yet.">
 <polygon fill="white" stroke="#666666" points="113,-19 0,-19 0,0 113,0 113,-19"/>
 <text text-anchor="middle" x="56.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::World::World</text>
 </a>

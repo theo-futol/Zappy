@@ -1,7 +1,0 @@
-<map id="zappy::CommandParser::_dispatch" name="zappy::CommandParser::_dispatch">
-<area shape="rect" id="Node000001" title="Routes one command line to the matching handler for the client&#39;s type." alt="" coords="5,23,180,63"/>
-<area shape="rect" id="Node000002" href="$classzappy_1_1Client.html#aafed3af6e0e3c858d9581a3d9df81218" title="Returns the socket descriptor, used to read/write and to poll this client." alt="" coords="235,5,386,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="180,31,221,26,222,31,181,36"/>
-<area shape="rect" id="Node000003" href="$classzappy_1_1Client.html#af3593a65bba2a2527669eb4a05a618b8" title="Returns the connection&#39;s current role." alt="" coords="228,55,393,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="181,50,215,54,214,59,180,56"/>
-</map>

@@ -1,0 +1,48 @@
+<map id="ia.client.ZappyAIClient._log" name="ia.client.ZappyAIClient._log">
+<area shape="rect" id="Node000001" title=" " alt="" coords="1043,455,1244,480"/>
+<area shape="rect" id="Node000002" href="$classia_1_1client_1_1ZappyAIClient.html#a2d57d52dad737b5b257d3041f4cc95be" title=" " alt="" coords="809,298,983,338"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1115,448,1060,407,993,363,948,341,950,336,996,358,1063,402,1118,444"/>
+<area shape="rect" id="Node000004" href="$classia_1_1client_1_1ZappyAIClient.html#a3552b5e37104b7d8b373d38fa6b141dc" title=" " alt="" coords="318,294,493,334"/>
+<area shape="poly" id="edge17_Node000001_Node000004" title=" " alt="" coords="1065,455,551,349,492,336,493,331,553,343,1066,449"/>
+<area shape="rect" id="Node000017" href="$classia_1_1launcher_1_1ClientLauncher.html#a270f03b8421f6e141ced8e17f2893eeb" title=" " alt="" coords="552,475,749,515"/>
+<area shape="poly" id="edge18_Node000001_Node000017" title=" " alt="" coords="1029,462,917,460,798,466,729,478,728,473,797,461,917,454,1029,457"/>
+<area shape="rect" id="Node000019" href="$classia_1_1launcher_1_1ClientLauncher.html#a4846238e467a122db6643cd5897b143c" title=" " alt="" coords="23,597,241,623"/>
+<area shape="poly" id="edge25_Node000001_Node000019" title=" " alt="" coords="1106,488,1055,511,995,530,892,552,805,566,727,574,653,578,501,581,412,585,307,594,242,601,241,595,306,589,412,580,501,576,653,573,726,569,804,561,891,547,994,525,1053,506,1104,483"/>
+<area shape="rect" id="Node000020" href="$classia_1_1launcher_1_1ClientLauncher.html#aeadcaf625d23946dd68ff3332888a612" title=" " alt="" coords="552,590,749,630"/>
+<area shape="poly" id="edge21_Node000001_Node000020" title=" " alt="" coords="1120,492,1066,535,1032,557,996,574,934,593,869,605,807,612,750,614,749,609,806,606,868,600,932,587,994,569,1030,552,1063,531,1117,487"/>
+<area shape="rect" id="Node000021" href="$classia_1_1launcher_1_1ClientLauncher.html#a0d94ee1d1fb22f151e90e91e8eac1192" title=" " alt="" coords="797,475,995,515"/>
+<area shape="poly" id="edge23_Node000001_Node000021" title=" " alt="" coords="1029,483,995,487,994,482,1029,478"/>
+<area shape="rect" id="Node000003" href="$classia_1_1client_1_1ZappyAIClient.html#a4354dcfb68d949058c8f3179dce5658d" title=" " alt="" coords="563,294,738,334"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="795,319,738,318,738,313,795,314"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="550,317,493,317,493,311,550,311"/>
+<area shape="rect" id="Node000010" href="$classia_1_1client_1_1ZappyAIClient.html#ad52dde7dd4ba0080a00fb67d6a07b4a0" title=" " alt="" coords="9,5,255,31"/>
+<area shape="poly" id="edge16_Node000003_Node000010" title=" " alt="" coords="616,287,554,234,468,168,367,100,313,70,258,44,224,33,225,28,260,40,315,66,369,96,471,163,557,230,619,283"/>
+<area shape="rect" id="Node000005" href="$classia_1_1client_1_1ZappyAIClient.html#af82d6a451a7cb32fb9d55c4f4fe42ff4" title=" " alt="" coords="13,55,251,80"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="382,284,309,168,257,93,236,83,238,78,260,89,313,165,387,281"/>
+<area shape="rect" id="Node000006" href="$classia_1_1client_1_1ZappyAIClient.html#a52d8c5fda58c245ac85a4655d0f4b5c6" title=" " alt="" coords="5,104,259,129"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="384,283,362,249,333,211,298,174,257,143,233,132,235,127,260,138,302,170,338,207,367,246,389,280"/>
+<area shape="rect" id="Node000007" href="$classia_1_1client_1_1ZappyAIClient.html#ab6978e5e81d147af05efdef081b33e7f" title=" " alt="" coords="29,153,235,179"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="376,286,324,237,292,212,258,192,228,181,230,176,260,188,295,208,327,233,379,282"/>
+<area shape="rect" id="Node000008" href="$classia_1_1client_1_1ZappyAIClient.html#ac7cd35840e26b37d189e8c6138a18a4b" title=" " alt="" coords="32,203,232,228"/>
+<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="359,290,311,264,258,242,217,231,218,225,260,237,313,259,361,285"/>
+<area shape="rect" id="Node000009" href="$classia_1_1client_1_1ZappyAIClient.html#a229bbd506db812c6983043c3f0907ed9" title=" " alt="" coords="20,252,244,277"/>
+<area shape="poly" id="edge8_Node000004_Node000009" title=" " alt="" coords="304,299,202,280,203,275,305,293"/>
+<area shape="poly" id="edge9_Node000004_Node000010" title=" " alt="" coords="380,284,343,226,304,158,292,124,287,95,278,69,257,44,239,33,242,28,260,40,283,66,292,93,297,122,309,156,348,223,385,281"/>
+<area shape="rect" id="Node000011" href="$classia_1_1client_1_1ZappyAIClient.html#a4112f097c92800537b87b6342a7fa0b5" title=" " alt="" coords="14,301,250,327"/>
+<area shape="poly" id="edge10_Node000004_Node000011" title=" " alt="" coords="304,317,250,317,250,311,304,311"/>
+<area shape="rect" id="Node000012" href="$classia_1_1client_1_1ZappyAIClient.html#afb29f6a4139446e0754012ee83bc0067" title=" " alt="" coords="35,351,229,376"/>
+<area shape="poly" id="edge11_Node000004_Node000012" title=" " alt="" coords="305,335,203,353,202,348,304,329"/>
+<area shape="rect" id="Node000013" href="$classia_1_1client_1_1ZappyAIClient.html#ad1013211fbad72ed8216d822b50d13fd" title=" " alt="" coords="31,400,233,425"/>
+<area shape="poly" id="edge12_Node000004_Node000013" title=" " alt="" coords="360,343,312,368,260,390,214,402,212,397,258,385,310,363,357,338"/>
+<area shape="rect" id="Node000014" href="$classia_1_1client_1_1ZappyAIClient.html#ad24dd9fa79c8c3fd08b7a1a1fc92071a" title=" " alt="" coords="30,449,234,475"/>
+<area shape="poly" id="edge13_Node000004_Node000014" title=" " alt="" coords="379,346,327,394,295,419,260,439,225,452,223,447,258,434,292,414,324,390,376,342"/>
+<area shape="rect" id="Node000015" href="$classia_1_1client_1_1ZappyAIClient.html#a8e711d32b09f085839edc661f02f5538" title=" " alt="" coords="21,499,243,524"/>
+<area shape="poly" id="edge14_Node000004_Node000015" title=" " alt="" coords="388,348,367,381,337,420,301,457,260,488,231,501,229,496,257,484,298,453,333,416,362,378,384,345"/>
+<area shape="rect" id="Node000016" href="$classia_1_1client_1_1ZappyAIClient.html#a31a8f940eef4abfb13c5f0606b7bea75" title=" " alt="" coords="31,548,233,573"/>
+<area shape="poly" id="edge15_Node000004_Node000016" title=" " alt="" coords="386,347,260,537,235,550,232,546,257,533,381,344"/>
+<area shape="rect" id="Node000018" href="$classia_1_1launcher_1_1ClientLauncher.html#a4b6f7fad94e0377ad71fd7e7afe4dca1" title=" " alt="" coords="307,475,504,515"/>
+<area shape="poly" id="edge19_Node000017_Node000018" title=" " alt="" coords="538,498,504,498,504,493,538,493"/>
+<area shape="poly" id="edge20_Node000018_Node000019" title=" " alt="" coords="331,523,308,536,294,549,285,562,276,575,260,587,230,600,228,595,257,582,272,571,281,559,290,545,305,532,328,519"/>
+<area shape="poly" id="edge22_Node000020_Node000019" title=" " alt="" coords="538,613,242,613,242,607,538,607"/>
+<area shape="poly" id="edge24_Node000021_Node000017" title=" " alt="" coords="783,498,749,498,749,493,783,493"/>
+</map>

@@ -20,7 +20,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="classzappy_1_1World.html#aca292b35506844c67b0d62a3e6e3e9e1" target="_top" xlink:title="Removes a player from the world and decrease the number of slots occupied in its team....">
+<g id="a_Node000002"><a xlink:href="classzappy_1_1World.html#a61bd77a5a1cae883aa060469d039fe92" target="_top" xlink:title="Removes a player from the world and decrease the number of slots occupied in its team....">
 <polygon fill="white" stroke="#666666" points="842,-45.5 689,-45.5 689,-26.5 842,-26.5 842,-45.5"/>
 <text text-anchor="middle" x="765.5" y="-33.5" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::World::removePlayer</text>
 </a>
@@ -56,7 +56,7 @@
 <!-- Node7 -->
 <g id="Node000007" class="node">
 <title>Node7</title>
-<g id="a_Node000007"><a xlink:href="classzappy_1_1ClientHandler.html#a84580c1dc7567be8362c01f79afe5d61" target="_top" xlink:title="Removes a client, its parser, and its fd from all internal structures.">
+<g id="a_Node000007"><a xlink:href="classzappy_1_1ClientHandler.html#a7a4d855ae969af7c0a6317fd2a02b214" target="_top" xlink:title="Removes a client, its parser, and its fd from all internal structures.">
 <polygon fill="white" stroke="#666666" points="653,-30 535,-30 535,0 653,0 653,-30"/>
 <text text-anchor="start" x="543" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::ClientHandler</text>
 <text text-anchor="middle" x="594" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">::removeClient</text>

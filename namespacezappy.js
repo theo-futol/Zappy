@@ -10,6 +10,7 @@ var namespacezappy =
     [ "ElevationRequirement", "structzappy_1_1ElevationRequirement.html", "structzappy_1_1ElevationRequirement" ],
     [ "FlagConfig", "structzappy_1_1FlagConfig.html", "structzappy_1_1FlagConfig" ],
     [ "Inventory", "classzappy_1_1Inventory.html", "classzappy_1_1Inventory" ],
+    [ "Logger", "classzappy_1_1Logger.html", "classzappy_1_1Logger" ],
     [ "PendingCommand", "structzappy_1_1PendingCommand.html", "structzappy_1_1PendingCommand" ],
     [ "Player", "classzappy_1_1Player.html", "classzappy_1_1Player" ],
     [ "position", "structzappy_1_1position.html", "structzappy_1_1position" ],
@@ -32,12 +33,15 @@ var namespacezappy =
       [ "EAST_SOUTH", "namespacezappy.html#a3b9958fd86fc9701b130b8286aeed496a210adfd4c327c3ee6af90f7a072dc983", null ],
       [ "SOUTH", "namespacezappy.html#a3b9958fd86fc9701b130b8286aeed496aa9c49710b0bacaf0c86d16ce0b5c3c44", null ],
       [ "SOUTH_WEST", "namespacezappy.html#a3b9958fd86fc9701b130b8286aeed496a2a51543f6b1eb9911ca38a03fcde2bb6", null ],
-      [ "WEST", "namespacezappy.html#a3b9958fd86fc9701b130b8286aeed496a533b991c9e4fa3765aa3a1059e58ba95", null ]
+      [ "WEST", "namespacezappy.html#a3b9958fd86fc9701b130b8286aeed496a533b991c9e4fa3765aa3a1059e58ba95", null ],
+      [ "NORTH_WEST", "namespacezappy.html#a3b9958fd86fc9701b130b8286aeed496a03997449390a036559ebb18b2923b5cb", null ],
+      [ "NONE", "namespacezappy.html#a3b9958fd86fc9701b130b8286aeed496a2d27f821eaf912632699a9e8fe55a6fd", null ]
     ] ],
     [ "FlagType", "namespacezappy.html#a8aada3090cc8ffbe7382c6e8aa04763b", [
       [ "INT", "namespacezappy.html#a8aada3090cc8ffbe7382c6e8aa04763ba53f93baa3057821107c750323892fa92", null ],
       [ "STRING", "namespacezappy.html#a8aada3090cc8ffbe7382c6e8aa04763ba63b588d5559f64f89a416e656880b949", null ],
-      [ "LIST", "namespacezappy.html#a8aada3090cc8ffbe7382c6e8aa04763ba298cb25408234de02baf2085803a464a", null ]
+      [ "LIST", "namespacezappy.html#a8aada3090cc8ffbe7382c6e8aa04763ba298cb25408234de02baf2085803a464a", null ],
+      [ "FLAG", "namespacezappy.html#a8aada3090cc8ffbe7382c6e8aa04763ba0f4d0db3668dd58cabb9eb409657eaa8", null ]
     ] ],
     [ "ItemType", "namespacezappy.html#a7def2f3f37d8dd0bd14d9e3c5ac180c5", [
       [ "FOOD", "namespacezappy.html#a7def2f3f37d8dd0bd14d9e3c5ac180c5acc9284597026dcc021735c0970ca0c93", null ],

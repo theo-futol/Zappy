@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['value_0',['value',['../structzappy_1_1Direction.html#a294464005fcb0eff8bd5136faa0f7b4b',1,'zappy::Direction']]]
+  ['unbounded_5ftarget_5fper_5fteam_0',['UNBOUNDED_TARGET_PER_TEAM',['../namespaceia_1_1launcher.html#a8b0dc70defac420667014f523841305b',1,'ia::launcher']]],
+  ['unknown_1',['unknown',['../namespacezappy.html#a27351dc1d35dc62fde06de99d6e6dc21a696b031073e74bf2cb98e5ef201d4aa3',1,'zappy::UNKNOWN'],['../namespacezappy.html#a7def2f3f37d8dd0bd14d9e3c5ac180c5a696b031073e74bf2cb98e5ef201d4aa3',1,'zappy::UNKNOWN']]],
+  ['utils_2ehpp_2',['Utils.hpp',['../Utils_8hpp.html',1,'']]]
 ];

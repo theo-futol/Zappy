@@ -9,7 +9,9 @@ var Utils_8hpp =
       [ "EAST_SOUTH", "Utils_8hpp.html#a3b9958fd86fc9701b130b8286aeed496a210adfd4c327c3ee6af90f7a072dc983", null ],
       [ "SOUTH", "Utils_8hpp.html#a3b9958fd86fc9701b130b8286aeed496aa9c49710b0bacaf0c86d16ce0b5c3c44", null ],
       [ "SOUTH_WEST", "Utils_8hpp.html#a3b9958fd86fc9701b130b8286aeed496a2a51543f6b1eb9911ca38a03fcde2bb6", null ],
-      [ "WEST", "Utils_8hpp.html#a3b9958fd86fc9701b130b8286aeed496a533b991c9e4fa3765aa3a1059e58ba95", null ]
+      [ "WEST", "Utils_8hpp.html#a3b9958fd86fc9701b130b8286aeed496a533b991c9e4fa3765aa3a1059e58ba95", null ],
+      [ "NORTH_WEST", "Utils_8hpp.html#a3b9958fd86fc9701b130b8286aeed496a03997449390a036559ebb18b2923b5cb", null ],
+      [ "NONE", "Utils_8hpp.html#a3b9958fd86fc9701b130b8286aeed496a2d27f821eaf912632699a9e8fe55a6fd", null ]
     ] ],
     [ "PlayerState", "Utils_8hpp.html#a739d472bdf98c0f9136679f6ffb58113", [
       [ "PENDING", "Utils_8hpp.html#a739d472bdf98c0f9136679f6ffb58113ac69f06e1a9b016d133907b4e5f5864d2", null ],

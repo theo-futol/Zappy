@@ -1,12 +1,12 @@
 <map id="zappy::Team::removePlayer" name="zappy::Team::removePlayer">
-<area shape="rect" id="Node000001" title="Frees one occupied slot (a player left), never going below zero." alt="" coords="1180,31,1383,56"/>
-<area shape="rect" id="Node000002" href="$classzappy_1_1World.html#aca292b35506844c67b0d62a3e6e3e9e1" title="Removes a player from the world and decrease the number of slots occupied in its team...." alt="" coords="928,55,1132,80"/>
+<area shape="rect" id="Node000001" title="Removes one active player from the team and frees its connection slot. Fork still creates additional ..." alt="" coords="1180,31,1383,56"/>
+<area shape="rect" id="Node000002" href="$classzappy_1_1World.html#a61bd77a5a1cae883aa060469d039fe92" title="Removes a player from the world and decrease the number of slots occupied in its team...." alt="" coords="928,55,1132,80"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1167,57,1132,60,1132,55,1166,52"/>
 <area shape="rect" id="Node000009" href="$classzappy_1_1Player.html#a978341e609f445c26e56af3faffb9cfc" title="Sets the life&#45;cycle state." alt="" coords="945,5,1115,31"/>
 <area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="1166,34,1115,29,1116,24,1167,29"/>
 <area shape="rect" id="Node000003" href="$classzappy_1_1World.html#a779b35cdefa7a85d2f888890ad2ec84b" title="Consumes one food unit per player and kills those who have starved." alt="" coords="697,5,880,31"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="953,54,851,33,852,28,954,49"/>
-<area shape="rect" id="Node000007" href="$classzappy_1_1ClientHandler.html#a84580c1dc7567be8362c01f79afe5d61" title="Removes a client, its parser, and its fd from all internal structures." alt="" coords="710,55,867,95"/>
+<area shape="rect" id="Node000007" href="$classzappy_1_1ClientHandler.html#a7a4d855ae969af7c0a6317fd2a02b214" title="Removes a client, its parser, and its fd from all internal structures." alt="" coords="710,55,867,95"/>
 <area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="915,74,867,75,867,70,914,68"/>
 <area shape="rect" id="Node000004" href="$classzappy_1_1ClientHandler.html#afdb8fe8ed8f6188e930880e315fb2c4a" title="Runs the blocking event loop: polls for I/O, accepts new clients, dispatches commands,..." alt="" coords="283,27,440,67"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="684,28,440,45,440,39,683,23"/>

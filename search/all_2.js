@@ -2,11 +2,19 @@ var searchData=
 [
   ['bct_0',['Bct',['../classzappy_1_1Commands.html#a813e6e04d4fd79daae377ac9e082c091',1,'zappy::Commands']]],
   ['bct_2ecpp_1',['Bct.cpp',['../Bct_8cpp.html',1,'']]],
-  ['beginincantation_2',['beginIncantation',['../classzappy_1_1Commands.html#a7ca4eb4871cd71eab1301aa3c0a792a6',1,'zappy::Commands']]],
+  ['beginincantation_2',['beginIncantation',['../classzappy_1_1Commands.html#afc2159b221207ae6bf4ac860fab8db5f',1,'zappy::Commands']]],
   ['bind_3',['bind',['../classzappy_1_1Socket.html#a6a3c09a75bba538e8fba11a67c10a9d6',1,'zappy::Socket']]],
-  ['broadcast_4',['Broadcast',['../classzappy_1_1Commands.html#a7207ae533290ee19ff3d90b5edda2457',1,'zappy::Commands']]],
+  ['broadcast_4',['broadcast',['../classia_1_1client_1_1ZappyAIClient.html#af82d6a451a7cb32fb9d55c4f4fe42ff4',1,'ia.client.ZappyAIClient.broadcast()'],['../classia_1_1test_1_1FakeClient.html#a47b0539bc2354cb302eb07f89a3f3c61',1,'ia.test.FakeClient.broadcast()'],['../classzappy_1_1Commands.html#a08ccc46023666c48a25fc38f2d3b28bb',1,'zappy::Commands::Broadcast()']]],
   ['broadcast_2ecpp_5',['Broadcast.cpp',['../Broadcast_8cpp.html',1,'']]],
-  ['broadcast_5fmessage_5ftime_5fper_5ftile_6',['BROADCAST_MESSAGE_TIME_PER_TILE',['../Player_8hpp.html#aca9ca18a60c91d329de4c3a3c84db059',1,'Player.hpp']]],
-  ['broadcastguiinfo_7',['broadcastGuiInfo',['../classzappy_1_1ClientHandler.html#a5a06587242beacaa70d84c823647d19b',1,'zappy::ClientHandler']]],
-  ['broadcastmessagetoclients_8',['broadcastMessageToClients',['../classzappy_1_1ClientHandler.html#acdbdf846181888a63df6190b45da9e42',1,'zappy::ClientHandler']]]
+  ['broadcast_2epy_6',['broadcast.py',['../broadcast_8py.html',1,'']]],
+  ['broadcast_5fcooldown_7',['broadcast_cooldown',['../classia_1_1strategy_1_1Strategy.html#abcd42ff5476638c61067d96aa4f0bf50',1,'ia::strategy::Strategy']]],
+  ['broadcast_5fcooldown_5fturns_8',['BROADCAST_COOLDOWN_TURNS',['../namespaceia_1_1config.html#a4bb06fe4ecad5a30ea5433df2c937416',1,'ia::config']]],
+  ['broadcast_5fmessage_5ftime_5fper_5ftile_9',['BROADCAST_MESSAGE_TIME_PER_TILE',['../Player_8hpp.html#aca9ca18a60c91d329de4c3a3c84db059',1,'Player.hpp']]],
+  ['broadcastguiinfo_10',['broadcastGuiInfo',['../classzappy_1_1ClientHandler.html#a5a06587242beacaa70d84c823647d19b',1,'zappy::ClientHandler']]],
+  ['broadcastmessagetoclients_11',['broadcastMessageToClients',['../classzappy_1_1ClientHandler.html#acdbdf846181888a63df6190b45da9e42',1,'zappy::ClientHandler']]],
+  ['buffer_12',['buffer',['../classia_1_1client_1_1ZappyAIClient.html#aeea63fb5f33a1e6c4e7f954a20015492',1,'ia::client::ZappyAIClient']]],
+  ['build_5fplan_5ffrom_5fsound_5fdirection_13',['build_plan_from_sound_direction',['../namespaceia_1_1broadcast.html#ab11f3055be1ac33ed3f37e2606135e98',1,'ia::broadcast']]],
+  ['build_5fplan_5fto_5ftile_14',['build_plan_to_tile',['../namespaceia_1_1utils_1_1model__utils.html#a6ff96cea3c3e1199e14fbbf2a7e9a800',1,'ia::utils::model_utils']]],
+  ['build_5frally_5fmessage_15',['build_rally_message',['../namespaceia_1_1broadcast.html#ad505b859c8d8eec576e363d595c465f9',1,'ia::broadcast']]],
+  ['build_5fvisible_5ftiles_16',['build_visible_tiles',['../namespaceia_1_1observation.html#aa5ca76e81256749393401d26b72372c0',1,'ia::observation']]]
 ];

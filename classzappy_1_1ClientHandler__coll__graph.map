@@ -1,7 +1,7 @@
 <map id="zappy::ClientHandler" name="zappy::ClientHandler">
-<area shape="rect" id="Node000001" title=" " alt="" coords="40,413,260,799"/>
-<area shape="rect" id="Node000002" href="$classzappy_1_1Socket.html" title="Thin RAII wrapper around a single BSD socket file descriptor." alt="" coords="5,55,108,301"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="86,301,107,397,102,398,81,302"/>
-<area shape="rect" id="Node000003" href="$classzappy_1_1World.html" title="The authoritative game state: the map, the players, the teams, and the simulation rules that act on t..." alt="" coords="132,5,355,351"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="208,352,198,398,193,397,203,351"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="39,543,259,928"/>
+<area shape="rect" id="Node000002" href="$classzappy_1_1Socket.html" title="Thin RAII wrapper around a single BSD socket file descriptor." alt="" coords="5,120,108,365"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="82,365,112,526,107,527,77,366"/>
+<area shape="rect" id="Node000003" href="$classzappy_1_1World.html" title="The authoritative game state: the map, the players, the teams, and the simulation rules that act on t..." alt="" coords="133,5,349,480"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="204,481,197,519,195,527,190,526,191,518,199,480"/>
 </map>

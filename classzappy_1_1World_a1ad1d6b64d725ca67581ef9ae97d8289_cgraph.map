@@ -1,0 +1,21 @@
+<map id="zappy::World::addPlayer" name="zappy::World::addPlayer">
+<area shape="rect" id="Node000001" title="Hatches a player from one of the team&#39;s eggs, chosen at random, spawning it on that egg&#39;s tile and co..." alt="" coords="5,153,184,179"/>
+<area shape="rect" id="Node000002" href="$classzappy_1_1World.html#a3335c652e2e35588a6e503cb0e8658c2" title="Adds the player pointer to the tile at the given position, if it exists." alt="" coords="237,5,453,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="104,151,154,97,190,66,231,40,246,33,249,38,233,44,193,70,158,101,108,155"/>
+<area shape="rect" id="Node000004" href="$structzappy_1_1Team.html#a04a63043edc415dcadb3eda2a746d557" title="Read&#45;only view of all eggs (tile position paired with its egg IDs)." alt="" coords="263,55,426,80"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="114,151,165,120,231,89,256,81,257,86,233,94,168,125,116,156"/>
+<area shape="rect" id="Node000005" href="$classzappy_1_1Player.html#aff283e814b7f01d4ad7398d7c20794e6" title="Current tile position." alt="" coords="249,104,440,129"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="159,151,266,129,267,135,160,156"/>
+<area shape="rect" id="Node000006" href="$classzappy_1_1World.html#a0f7b0576d14b018ca6fcba792695d853" title="Looks up a team by name, or nullptr if it does not exist." alt="" coords="232,153,457,179"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="184,163,218,163,218,169,184,169"/>
+<area shape="rect" id="Node000007" href="$structzappy_1_1Team.html#aad0897588cd6ebe5a589f0ff710a3ee1" title="Removes eggs at a tile (and their slots). With eggID set, removes just that one egg; with count == &#45;1..." alt="" coords="252,203,437,228"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="160,176,267,197,266,203,159,181"/>
+<area shape="rect" id="Node000009" href="$classzappy_1_1Player.html#a16e2f2ea6458b369a60a87f6e26a663c" title="Places the player at (x, y), wrapping into the map bounds." alt="" coords="250,252,439,277"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="117,176,168,207,233,237,262,246,260,251,231,242,166,211,114,181"/>
+<area shape="rect" id="Node000010" href="$classzappy_1_1Player.html#ab3e4df87dd335792986653bd74d23029" title="Sets the facing direction." alt="" coords="249,301,441,327"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="108,177,158,230,194,261,233,286,252,295,250,299,231,291,190,265,154,234,104,181"/>
+<area shape="rect" id="Node000003" href="$classzappy_1_1World.html#a9fce895cc2d62e61b943f7d9e03471db" title="Returns the tile at the given coordinates." alt="" coords="505,5,677,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="453,15,491,15,491,21,453,21"/>
+<area shape="rect" id="Node000008" href="$namespacezappy.html#a6f4c56af6fff80513c2388249fd217f4" title=" " alt="" coords="519,203,664,228"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="438,213,505,213,505,218,438,218"/>
+</map>

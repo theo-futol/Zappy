@@ -152,7 +152,7 @@ Private Attributes</h2></td></tr>
 <div class="textblock"><p>Thin RAII wrapper around a single BSD socket file descriptor. </p>
 <p>Mirrors the raw socket() / <a class="el" href="classzappy_1_1Socket.html#a6a3c09a75bba538e8fba11a67c10a9d6" title="Binds the socket to the given port on all interfaces.">bind()</a> / <a class="el" href="classzappy_1_1Socket.html#afbdb71a72ed69f6d421beb6516050bd1" title="Marks the socket as passive/listening.">listen()</a> / <a class="el" href="classzappy_1_1Socket.html#af1396d1bb8966c01ad8b62122165c0b9" title="Accepts a pending connection.">accept()</a> calls but owns the descriptor and closes it on destruction. Used for the server's listening socket. </p>
 
-<p class="definition">Definition at line <a class="el" href="Socket_8hpp_source.html#l00014">14</a> of file <a class="el" href="Socket_8hpp_source.html">Socket.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Socket_8hpp_source.html#l00009">9</a> of file <a class="el" href="Socket_8hpp_source.html">Socket.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a938654493ab1bd2ad0a28ebe9b88a55a" name="a938654493ab1bd2ad0a28ebe9b88a55a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a938654493ab1bd2ad0a28ebe9b88a55a">&#9670;&#160;</a></span>Socket() <span class="overload">[1/2]</span></h2>
@@ -207,7 +207,7 @@ Private Attributes</h2></td></tr>
 
 <p>Adopts an existing, already-open descriptor. </p>
 
-<p class="definition">Definition at line <a class="el" href="Socket_8hpp_source.html#l00024">24</a> of file <a class="el" href="Socket_8hpp_source.html">Socket.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Socket_8hpp_source.html#l00019">19</a> of file <a class="el" href="Socket_8hpp_source.html">Socket.hpp</a>.</p>
 
 </div>
 </div>
@@ -228,7 +228,7 @@ Private Attributes</h2></td></tr>
 
 <p>Closes the owned descriptor if one is held. </p>
 
-<p class="definition">Definition at line <a class="el" href="Socket_8cpp_source.html#l00006">6</a> of file <a class="el" href="Socket_8cpp_source.html">Socket.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Socket_8cpp_source.html#l00009">9</a> of file <a class="el" href="Socket_8cpp_source.html">Socket.cpp</a>.</p>
 
 </div>
 </div>
@@ -251,7 +251,7 @@ Private Attributes</h2></td></tr>
 <p>Accepts a pending connection. </p>
 <dl class="section return"><dt>Returns</dt><dd>the new client fd, or -1 on failure. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Socket_8cpp_source.html#l00032">32</a> of file <a class="el" href="Socket_8cpp_source.html">Socket.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Socket_8cpp_source.html#l00035">35</a> of file <a class="el" href="Socket_8cpp_source.html">Socket.cpp</a>.</p>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
@@ -281,7 +281,7 @@ Private Attributes</h2></td></tr>
 <p>Binds the socket to the given port on all interfaces. </p>
 <dl class="section return"><dt>Returns</dt><dd>false on failure. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Socket_8cpp_source.html#l00018">18</a> of file <a class="el" href="Socket_8cpp_source.html">Socket.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Socket_8cpp_source.html#l00021">21</a> of file <a class="el" href="Socket_8cpp_source.html">Socket.cpp</a>.</p>
 <div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
@@ -327,7 +327,7 @@ Private Attributes</h2></td></tr>
 <p>Opens a new socket (wraps ::socket). </p>
 <dl class="section return"><dt>Returns</dt><dd>false on failure. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Socket_8cpp_source.html#l00012">12</a> of file <a class="el" href="Socket_8cpp_source.html">Socket.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Socket_8cpp_source.html#l00015">15</a> of file <a class="el" href="Socket_8cpp_source.html">Socket.cpp</a>.</p>
 <div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
@@ -353,7 +353,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Socket_8cpp_source.html#l00042">42</a> of file <a class="el" href="Socket_8cpp_source.html">Socket.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Socket_8cpp_source.html#l00045">45</a> of file <a class="el" href="Socket_8cpp_source.html">Socket.cpp</a>.</p>
 <div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-4-summary" class="dynsummary" style="display:block;">
@@ -381,7 +381,7 @@ Private Attributes</h2></td></tr>
 
 <p>Returns the owned descriptor. </p>
 
-<p class="definition">Definition at line <a class="el" href="Socket_8cpp_source.html#l00037">37</a> of file <a class="el" href="Socket_8cpp_source.html">Socket.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Socket_8cpp_source.html#l00040">40</a> of file <a class="el" href="Socket_8cpp_source.html">Socket.cpp</a>.</p>
 
 </div>
 </div>
@@ -403,7 +403,7 @@ Private Attributes</h2></td></tr>
 <p>Marks the socket as passive/listening. </p>
 <dl class="section return"><dt>Returns</dt><dd>false on failure. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Socket_8cpp_source.html#l00027">27</a> of file <a class="el" href="Socket_8cpp_source.html">Socket.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Socket_8cpp_source.html#l00030">30</a> of file <a class="el" href="Socket_8cpp_source.html">Socket.cpp</a>.</p>
 <div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-5-summary" class="dynsummary" style="display:block;">
@@ -432,7 +432,7 @@ Private Attributes</h2></td></tr>
 
 <p>Replaces the owned descriptor. </p>
 
-<p class="definition">Definition at line <a class="el" href="Socket_8cpp_source.html#l00047">47</a> of file <a class="el" href="Socket_8cpp_source.html">Socket.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Socket_8cpp_source.html#l00050">50</a> of file <a class="el" href="Socket_8cpp_source.html">Socket.cpp</a>.</p>
 
 </div>
 </div>
@@ -459,7 +459,7 @@ Private Attributes</h2></td></tr>
 
 <p>Owned descriptor, -1 when none. </p>
 
-<p class="definition">Definition at line <a class="el" href="Socket_8hpp_source.html#l00017">17</a> of file <a class="el" href="Socket_8hpp_source.html">Socket.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Socket_8hpp_source.html#l00012">12</a> of file <a class="el" href="Socket_8hpp_source.html">Socket.hpp</a>.</p>
 
 </div>
 </div>

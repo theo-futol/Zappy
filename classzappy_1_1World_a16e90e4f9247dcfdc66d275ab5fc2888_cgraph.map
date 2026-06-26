@@ -1,0 +1,11 @@
+<map id="zappy::World::sendMessageToPlayersThatAreOnTile" name="zappy::World::sendMessageToPlayersThatAreOnTile">
+<area shape="rect" id="Node000001" title="Sends a message to every player currently standing on the given tile." alt="" coords="5,73,208,113"/>
+<area shape="rect" id="Node000002" href="$classzappy_1_1Player.html#a33f33f30fdbf95af468119bc63bd7caa" title="This player&#39;s stable logical id (its GUI player number)." alt="" coords="275,5,425,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="162,70,255,39,283,32,284,37,257,45,164,75"/>
+<area shape="rect" id="Node000003" href="$classzappy_1_1Client.html#ade4edd70698f2497e09f736734d77ab0" title="Returns the logical id of this client&#39;s player, or &#45;1 if it has none." alt="" coords="256,55,444,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="208,79,242,76,242,81,209,85"/>
+<area shape="rect" id="Node000004" href="$classzappy_1_1World.html#a9fce895cc2d62e61b943f7d9e03471db" title="Returns the tile at the given coordinates." alt="" coords="264,104,436,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="209,100,250,104,250,109,208,105"/>
+<area shape="rect" id="Node000005" href="$classzappy_1_1Client.html#afd9816d0a687764ad9ee4772739a326e" title="Writes the given message to the client socket, if it is valid. Logs an error if the write fails." alt="" coords="277,153,423,179"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="168,110,257,138,288,147,287,152,255,143,167,115"/>
+</map>

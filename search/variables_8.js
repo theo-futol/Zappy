@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['x_0',['x',['../structzappy_1_1position.html#af6c94af33da445dddf6cae488b747956',1,'zappy::position']]]
+  ['host_0',['host',['../classia_1_1client_1_1ZappyAIClient.html#a14e863bae749704f7079687d02d5248c',1,'ia.client.ZappyAIClient.host'],['../classia_1_1launcher_1_1ClientLauncher.html#a7c182c0d1c7c6afb212bd493f2868134',1,'ia.launcher.ClientLauncher.host']]]
 ];

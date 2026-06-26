@@ -1,9 +1,15 @@
 <map id="zappy::Team::addEgg" name="zappy::Team::addEgg">
-<area shape="rect" id="Node000001" title="Lays count eggs at the given tile, each adding a slot and a unique ID." alt="" coords="677,13,836,38"/>
-<area shape="rect" id="Node000002" href="$classzappy_1_1Commands.html#a1f87b8dcf9ba3044afcca829b91c6082" title="Lays an egg on the current tile, opening a new team slot." alt="" coords="451,13,629,38"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="663,28,630,28,630,23,663,23"/>
-<area shape="rect" id="Node000003" href="$classzappy_1_1CommandParser.html#a629df3248cf7038782f23805ea6c806e" title="Fills _aiCommands with the AI protocol commands and their durations." alt="" coords="228,5,403,45"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="437,28,403,28,403,23,437,23"/>
-<area shape="rect" id="Node000004" href="$classzappy_1_1CommandParser.html#ac273c38a60fcb6825770e5a4f2ca43c0" title="Builds a parser for one client." alt="" coords="5,5,180,45"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="214,28,180,28,180,23,214,23"/>
+<area shape="rect" id="Node000001" title="Lays count eggs at the given tile, each adding a slot and a unique ID." alt="" coords="677,35,836,60"/>
+<area shape="rect" id="Node000002" href="$classzappy_1_1World.html#af08f69ff3d95da644be0429cdbe7ee7d" title="Registers a new team, laying initialSlots eggs at random tiles so the first clients have something to..." alt="" coords="454,8,626,33"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="663,39,626,34,627,29,664,33"/>
+<area shape="rect" id="Node000005" href="$classzappy_1_1Commands.html#af375aa807a7f8d0a8bd5bca398b2341b" title="Lays an egg on the current tile, opening a new team slot." alt="" coords="451,59,629,84"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="664,60,630,64,629,59,663,55"/>
+<area shape="rect" id="Node000003" href="$classzappy_1_1Core.html#abfd869c59ea30c7e241b78a45d7e9d01" title="Creates the World from the args (map size, teams)." alt="" coords="234,5,397,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="440,22,397,22,397,16,440,17"/>
+<area shape="rect" id="Node000004" href="$main_8cpp.html#a0c99d968a34e803d378692bde2e3f18f" title=" " alt="" coords="65,5,120,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="220,21,120,21,120,15,220,15"/>
+<area shape="rect" id="Node000006" href="$classzappy_1_1CommandParser.html#a629df3248cf7038782f23805ea6c806e" title="Fills _aiCommands with the AI protocol commands and their durations." alt="" coords="228,55,403,95"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="437,76,403,76,403,71,437,71"/>
+<area shape="rect" id="Node000007" href="$classzappy_1_1CommandParser.html#a741addd675a90a09b183e9518b626962" title="Builds a parser for one client." alt="" coords="5,55,180,95"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="214,78,180,78,180,73,214,73"/>
 </map>

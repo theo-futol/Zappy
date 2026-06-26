@@ -1,9 +1,14 @@
 <map id="zappy::ClientHandler::getClientByFd" name="zappy::ClientHandler::getClientByFd">
-<area shape="rect" id="Node000001" title="Looks up a client by its file descriptor." alt="" coords="488,5,645,45"/>
-<area shape="rect" id="Node000002" href="$classzappy_1_1ClientHandler.html#afdb8fe8ed8f6188e930880e315fb2c4a" title="Runs the blocking event loop: polls for I/O, accepts new clients, dispatches commands,..." alt="" coords="283,5,440,45"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="474,28,440,28,440,23,474,23"/>
-<area shape="rect" id="Node000003" href="$classzappy_1_1Core.html#a6cedeb79a573e46f2131b71d3ca17a31" title="Builds the world and network handler, then runs the blocking event loop." alt="" coords="108,13,235,38"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="269,28,235,28,235,23,269,23"/>
-<area shape="rect" id="Node000004" href="$main_8cpp.html#a0c99d968a34e803d378692bde2e3f18f" title=" " alt="" coords="5,13,60,38"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="95,28,60,28,60,23,95,23"/>
+<area shape="rect" id="Node000001" title="Looks up a client by its file descriptor." alt="" coords="903,5,1060,45"/>
+<area shape="rect" id="Node000002" href="$classzappy_1_1ClientHandler.html#a1ed7cca92089d8c0c1743aa93167af4b" title=" " alt="" coords="488,5,649,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="889,25,855,24,697,24,650,25,649,20,697,19,855,19,889,19"/>
+<area shape="rect" id="Node000006" href="$classzappy_1_1ClientHandler.html#a7a4d855ae969af7c0a6317fd2a02b214" title="Removes a client, its parser, and its fd from all internal structures." alt="" coords="697,33,855,73"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="889,41,855,45,855,40,889,35"/>
+<area shape="rect" id="Node000003" href="$classzappy_1_1ClientHandler.html#afdb8fe8ed8f6188e930880e315fb2c4a" title="Runs the blocking event loop: polls for I/O, accepts new clients, dispatches commands,..." alt="" coords="283,5,440,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="474,28,440,28,440,23,474,23"/>
+<area shape="rect" id="Node000004" href="$classzappy_1_1Core.html#a6cedeb79a573e46f2131b71d3ca17a31" title="Builds the world and network handler, then runs the blocking event loop." alt="" coords="108,13,235,38"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="269,28,235,28,235,23,269,23"/>
+<area shape="rect" id="Node000005" href="$main_8cpp.html#a0c99d968a34e803d378692bde2e3f18f" title=" " alt="" coords="5,13,60,38"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="95,28,60,28,60,23,95,23"/>
+<area shape="poly" id="edge6_Node000006_Node000002" title=" " alt="" coords="684,44,649,39,650,34,684,38"/>
 </map>

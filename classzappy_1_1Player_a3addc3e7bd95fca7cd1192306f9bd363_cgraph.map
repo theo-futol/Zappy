@@ -1,0 +1,7 @@
+<map id="zappy::Player::sendMessageToClient" name="zappy::Player::sendMessageToClient">
+<area shape="rect" id="Node000001" title="Flushes any queued messages whose delivery time has arrived." alt="" coords="5,23,212,63"/>
+<area shape="rect" id="Node000002" href="$classzappy_1_1Client.html#aafed3af6e0e3c858d9581a3d9df81218" title="Returns the socket descriptor, used to read/write and to poll this client." alt="" coords="260,5,411,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="212,29,246,25,246,31,212,34"/>
+<area shape="rect" id="Node000003" href="$classzappy_1_1Client.html#afd9816d0a687764ad9ee4772739a326e" title="Writes the given message to the client socket, if it is valid. Logs an error if the write fails." alt="" coords="262,55,409,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="212,52,248,55,248,61,212,57"/>
+</map>

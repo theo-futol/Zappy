@@ -21,7 +21,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="classzappy_1_1Commands.html#a6c06a9039770e879febc9934b41a2ae4" target="_top" xlink:title="Returns the number of free team connection slots (the &quot;Connect_nbr&quot; command).">
+<g id="a_Node000002"><a xlink:href="classzappy_1_1Commands.html#a3e77a8c64642df3660c66cfd923c13a3" target="_top" xlink:title="Returns the number of free team connection slots (the &quot;Connect_nbr&quot; command).">
 <polygon fill="white" stroke="#666666" points="1026,-70.5 853,-70.5 853,-51.5 1026,-51.5 1026,-70.5"/>
 <text text-anchor="middle" x="939.5" y="-58.5" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::Commands::Connect_nbr</text>
 </a>
@@ -77,7 +77,7 @@
 <!-- Node4 -->
 <g id="Node000004" class="node">
 <title>Node4</title>
-<g id="a_Node000004"><a xlink:href="classzappy_1_1CommandParser.html#ac273c38a60fcb6825770e5a4f2ca43c0" target="_top" xlink:title="Builds a parser for one client.">
+<g id="a_Node000004"><a xlink:href="classzappy_1_1CommandParser.html#a741addd675a90a09b183e9518b626962" target="_top" xlink:title="Builds a parser for one client.">
 <polygon fill="white" stroke="#666666" points="650,-78 519,-78 519,-48 650,-48 650,-78"/>
 <text text-anchor="start" x="527" y="-66" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::CommandParser</text>
 <text text-anchor="middle" x="584.5" y="-55" font-family="Helvetica,sans-Serif" font-size="10.00">::CommandParser</text>
@@ -115,7 +115,7 @@
 <!-- Node7 -->
 <g id="Node000007" class="node">
 <title>Node7</title>
-<g id="a_Node000007"><a xlink:href="classzappy_1_1CommandParser.html#a37a54e030a0ef53e8a6a8970e2c829fe" target="_top" xlink:title="Dispatches the next queued command if its time has come.">
+<g id="a_Node000007"><a xlink:href="classzappy_1_1CommandParser.html#aa6b2d70e869ba31da160e28f0eddc23c" target="_top" xlink:title="Dispatches the next queued command if its time has come.">
 <polygon fill="white" stroke="#666666" points="650,-30 519,-30 519,0 650,0 650,-30"/>
 <text text-anchor="start" x="527" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::CommandParser</text>
 <text text-anchor="middle" x="584.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">::executeNext</text>

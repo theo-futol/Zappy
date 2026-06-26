@@ -1,0 +1,11 @@
+<map id="zappy::World::World" name="zappy::World::World">
+<area shape="rect" id="Node000001" title="Builds an x&#45;by&#45;y world with empty tiles and no players yet." alt="" coords="5,35,156,60"/>
+<area shape="rect" id="Node000002" href="$structzappy_1_1tile.html#a9611bce2fb60de6631fa06cd9ea33a91" title="Builds an empty tile pre&#45;seeded with a zero count for each resource type." alt="" coords="254,5,373,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="156,35,240,24,241,30,156,41"/>
+<area shape="rect" id="Node000003" href="$classzappy_1_1World.html#a42559872b34abdb931c45bb2a1dcb091" title="Periodically replenishes resources across the map (the spawn&#45;rate tick)." alt="" coords="204,55,423,95"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="156,54,191,58,190,63,156,59"/>
+<area shape="rect" id="Node000004" href="$classzappy_1_1World.html#ab0d269a2219c35662581a4d4296a3467" title="Spec&#45;accurate resource generation: tops every resource up to width*height*density (never above,..." alt="" coords="471,23,689,63"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="422,60,457,55,457,61,423,65"/>
+<area shape="rect" id="Node000005" href="$classzappy_1_1World.html#a420188584d7d2f104bb3e7d186266758" title="Legacy resource generation: independently rolls width*height*density random tiles per resource type,..." alt="" coords="471,87,689,127"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="423,86,457,90,457,95,422,91"/>
+</map>

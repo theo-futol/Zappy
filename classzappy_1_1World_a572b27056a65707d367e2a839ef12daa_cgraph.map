@@ -1,11 +1,11 @@
 <map id="zappy::World::getTileAt" name="zappy::World::getTileAt">
 <area shape="rect" id="Node000001" title="Returns the tile the given player is standing on." alt="" coords="5,55,177,80"/>
-<area shape="rect" id="Node000002" href="$classzappy_1_1World.html#a439edc13734fbf59d0d280327b4ba191" title="Looks up a player by its client fd, or nullptr if none matches." alt="" coords="225,5,433,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="153,52,254,31,255,36,154,57"/>
-<area shape="rect" id="Node000004" href="$classzappy_1_1Player.html#aff283e814b7f01d4ad7398d7c20794e6" title="Current tile position." alt="" coords="234,55,425,80"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="178,65,220,65,220,70,178,70"/>
-<area shape="rect" id="Node000005" href="$classzappy_1_1World.html#a9fce895cc2d62e61b943f7d9e03471db" title="Returns the tile at the given coordinates." alt="" coords="243,104,415,129"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="154,77,255,99,254,104,153,83"/>
-<area shape="rect" id="Node000003" href="$classzappy_1_1Player.html#a7382412b718c7828587ced9e7168bdf3" title="The socket fd linking this player to its client." alt="" coords="481,5,636,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="433,15,468,15,468,21,433,21"/>
+<area shape="rect" id="Node000002" href="$classzappy_1_1World.html#a43fb08ea54d522c20d2c27ed281297f4" title="Looks up a player by its logical id, or nullptr if none matches." alt="" coords="225,5,429,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="152,52,252,31,253,36,153,57"/>
+<area shape="rect" id="Node000004" href="$classzappy_1_1Player.html#aff283e814b7f01d4ad7398d7c20794e6" title="Current tile position." alt="" coords="232,55,423,80"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="178,65,218,65,218,70,178,70"/>
+<area shape="rect" id="Node000005" href="$classzappy_1_1World.html#a9fce895cc2d62e61b943f7d9e03471db" title="Returns the tile at the given coordinates." alt="" coords="241,104,413,129"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="153,77,253,98,252,104,152,83"/>
+<area shape="rect" id="Node000003" href="$classzappy_1_1Player.html#a33f33f30fdbf95af468119bc63bd7caa" title="This player&#39;s stable logical id (its GUI player number)." alt="" coords="477,5,628,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="430,15,463,15,463,21,430,21"/>
 </map>

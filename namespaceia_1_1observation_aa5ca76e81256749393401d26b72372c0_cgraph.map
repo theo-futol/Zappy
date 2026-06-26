@@ -1,0 +1,5 @@
+<map id="ia.observation.build_visible_tiles" name="ia.observation.build_visible_tiles">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,156,45"/>
+<area shape="rect" id="Node000002" href="$namespaceia_1_1observation.html#a6a6aa511dedff765bc278ea2ba5c76ec" title=" " alt="" coords="204,5,344,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="156,23,190,23,190,28,156,28"/>
+</map>

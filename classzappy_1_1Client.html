@@ -107,7 +107,7 @@ $(document).ready(function(){initNavTree('classzappy_1_1Client.html',''); initRe
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzappy_1_1Client__coll__graph.svg" width="116" height="296"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzappy_1_1Client__coll__graph.svg" width="124" height="376"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
@@ -125,6 +125,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aafed3af6e0e3c858d9581a3d9df81218" id="r_aafed3af6e0e3c858d9581a3d9df81218"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1Client.html#aafed3af6e0e3c858d9581a3d9df81218">getFd</a> () const</td></tr>
 <tr class="memdesc:aafed3af6e0e3c858d9581a3d9df81218"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the socket descriptor, used to read/write and to poll this client.  <br /></td></tr>
 <tr class="separator:aafed3af6e0e3c858d9581a3d9df81218"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade4edd70698f2497e09f736734d77ab0" id="r_ade4edd70698f2497e09f736734d77ab0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1Client.html#ade4edd70698f2497e09f736734d77ab0">getPlayerId</a> () const</td></tr>
+<tr class="memdesc:ade4edd70698f2497e09f736734d77ab0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the logical id of this client's player, or -1 if it has none.  <br /></td></tr>
+<tr class="separator:ade4edd70698f2497e09f736734d77ab0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a084ad3c2c2db76331617ce1d5f2bfddc" id="r_a084ad3c2c2db76331617ce1d5f2bfddc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1Client.html#a084ad3c2c2db76331617ce1d5f2bfddc">setPlayerId</a> (int playerId)</td></tr>
+<tr class="memdesc:a084ad3c2c2db76331617ce1d5f2bfddc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Associates this client with the player of the given logical id (set at hatch time).  <br /></td></tr>
+<tr class="separator:a084ad3c2c2db76331617ce1d5f2bfddc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af3593a65bba2a2527669eb4a05a618b8" id="r_af3593a65bba2a2527669eb4a05a618b8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacezappy.html#a27351dc1d35dc62fde06de99d6e6dc21">ClientType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1Client.html#af3593a65bba2a2527669eb4a05a618b8">getType</a> () const</td></tr>
 <tr class="memdesc:af3593a65bba2a2527669eb4a05a618b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the connection's current role.  <br /></td></tr>
 <tr class="separator:af3593a65bba2a2527669eb4a05a618b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -140,6 +146,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac82ce36df3beeb570fdb5e4027019708" id="r_ac82ce36df3beeb570fdb5e4027019708"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1Client.html#ac82ce36df3beeb570fdb5e4027019708">setBuffer</a> (const std::string &amp;buffer)</td></tr>
 <tr class="memdesc:ac82ce36df3beeb570fdb5e4027019708"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replaces the entire pending buffer.  <br /></td></tr>
 <tr class="separator:ac82ce36df3beeb570fdb5e4027019708"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd9816d0a687764ad9ee4772739a326e" id="r_afd9816d0a687764ad9ee4772739a326e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1Client.html#afd9816d0a687764ad9ee4772739a326e">write</a> (const std::string &amp;message) const</td></tr>
+<tr class="memdesc:afd9816d0a687764ad9ee4772739a326e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the given message to the client socket, if it is valid. Logs an error if the write fails.  <br /></td></tr>
+<tr class="separator:afd9816d0a687764ad9ee4772739a326e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -149,6 +158,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a4d05fb0bbecd322f9f29c2c77873d0e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab13b5cadc34eb9f74b6b12548a4da25b" id="r_ab13b5cadc34eb9f74b6b12548a4da25b"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1Client.html#ab13b5cadc34eb9f74b6b12548a4da25b">_buffer</a></td></tr>
 <tr class="separator:ab13b5cadc34eb9f74b6b12548a4da25b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fb0b8b66465ff83e46bf0008fd85401" id="r_a5fb0b8b66465ff83e46bf0008fd85401"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1Client.html#a5fb0b8b66465ff83e46bf0008fd85401">_playerId</a> = -1</td></tr>
+<tr class="separator:a5fb0b8b66465ff83e46bf0008fd85401"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A single connected socket: its file descriptor, its role, and its pending I/O buffer. One <a class="el" href="classzappy_1_1Client.html" title="A single connected socket: its file descriptor, its role, and its pending I/O buffer....">Client</a> exists per accepted connection, regardless of whether it turns out to be a graphic or AI client. </p>
@@ -191,7 +202,7 @@ Private Attributes</h2></td></tr>
 
 <p>Wraps an already-accepted socket. A fresh client starts UNKNOWN until its first message reveals whether it is graphic or AI. </p>
 
-<p class="definition">Definition at line <a class="el" href="Client_8hpp_source.html#l00020">20</a> of file <a class="el" href="Client_8hpp_source.html">Client.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Client_8hpp_source.html#l00021">21</a> of file <a class="el" href="Client_8hpp_source.html">Client.hpp</a>.</p>
 
 </div>
 </div>
@@ -212,7 +223,7 @@ Private Attributes</h2></td></tr>
 
 <p>Closes the owned socket. Destroying a <a class="el" href="classzappy_1_1Client.html" title="A single connected socket: its file descriptor, its role, and its pending I/O buffer....">Client</a> releases its fd. </p>
 
-<p class="definition">Definition at line <a class="el" href="Client_8cpp_source.html#l00007">7</a> of file <a class="el" href="Client_8cpp_source.html">Client.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Client_8cpp_source.html#l00009">9</a> of file <a class="el" href="Client_8cpp_source.html">Client.cpp</a>.</p>
 
 </div>
 </div>
@@ -260,7 +271,7 @@ Private Attributes</h2></td></tr>
 
 <p>Mutable access to the pending receive buffer, so callers can append incoming bytes or erase a command once it is parsed. </p>
 
-<p class="definition">Definition at line <a class="el" href="Client_8cpp_source.html#l00023">23</a> of file <a class="el" href="Client_8cpp_source.html">Client.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Client_8cpp_source.html#l00035">35</a> of file <a class="el" href="Client_8cpp_source.html">Client.cpp</a>.</p>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
@@ -288,7 +299,7 @@ Private Attributes</h2></td></tr>
 
 <p>Read-only view of the pending receive buffer. </p>
 
-<p class="definition">Definition at line <a class="el" href="Client_8cpp_source.html#l00018">18</a> of file <a class="el" href="Client_8cpp_source.html">Client.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Client_8cpp_source.html#l00030">30</a> of file <a class="el" href="Client_8cpp_source.html">Client.cpp</a>.</p>
 
 </div>
 </div>
@@ -309,13 +320,41 @@ Private Attributes</h2></td></tr>
 
 <p>Returns the socket descriptor, used to read/write and to poll this client. </p>
 
-<p class="definition">Definition at line <a class="el" href="Client_8cpp_source.html#l00013">13</a> of file <a class="el" href="Client_8cpp_source.html">Client.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Client_8cpp_source.html#l00015">15</a> of file <a class="el" href="Client_8cpp_source.html">Client.cpp</a>.</p>
 <div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classzappy_1_1Client_aafed3af6e0e3c858d9581a3d9df81218_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="ade4edd70698f2497e09f736734d77ab0" name="ade4edd70698f2497e09f736734d77ab0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade4edd70698f2497e09f736734d77ab0">&#9670;&#160;</a></span>getPlayerId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int zappy::Client::getPlayerId </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns the logical id of this client's player, or -1 if it has none. </p>
+
+<p class="definition">Definition at line <a class="el" href="Client_8cpp_source.html#l00020">20</a> of file <a class="el" href="Client_8cpp_source.html">Client.cpp</a>.</p>
+<div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classzappy_1_1Client_ade4edd70698f2497e09f736734d77ab0_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -337,12 +376,12 @@ Private Attributes</h2></td></tr>
 
 <p>Returns the connection's current role. </p>
 
-<p class="definition">Definition at line <a class="el" href="Client_8cpp_source.html#l00028">28</a> of file <a class="el" href="Client_8cpp_source.html">Client.cpp</a>.</p>
-<div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+<p class="definition">Definition at line <a class="el" href="Client_8cpp_source.html#l00040">40</a> of file <a class="el" href="Client_8cpp_source.html">Client.cpp</a>.</p>
+<div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classzappy_1_1Client_af3593a65bba2a2527669eb4a05a618b8_icgraph.svg" width="100%" height="498"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -392,13 +431,42 @@ Private Attributes</h2></td></tr>
 
 <p>Replaces the entire pending buffer. </p>
 
-<p class="definition">Definition at line <a class="el" href="Client_8cpp_source.html#l00038">38</a> of file <a class="el" href="Client_8cpp_source.html">Client.cpp</a>.</p>
-<div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+<p class="definition">Definition at line <a class="el" href="Client_8cpp_source.html#l00050">50</a> of file <a class="el" href="Client_8cpp_source.html">Client.cpp</a>.</p>
+<div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classzappy_1_1Client_ac82ce36df3beeb570fdb5e4027019708_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a084ad3c2c2db76331617ce1d5f2bfddc" name="a084ad3c2c2db76331617ce1d5f2bfddc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a084ad3c2c2db76331617ce1d5f2bfddc">&#9670;&#160;</a></span>setPlayerId()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zappy::Client::setPlayerId </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>playerId</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Associates this client with the player of the given logical id (set at hatch time). </p>
+
+<p class="definition">Definition at line <a class="el" href="Client_8cpp_source.html#l00025">25</a> of file <a class="el" href="Client_8cpp_source.html">Client.cpp</a>.</p>
+<div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classzappy_1_1Client_a084ad3c2c2db76331617ce1d5f2bfddc_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -421,13 +489,42 @@ Private Attributes</h2></td></tr>
 
 <p>Sets the connection's role, e.g. once it has been identified or marked dead. </p>
 
-<p class="definition">Definition at line <a class="el" href="Client_8cpp_source.html#l00033">33</a> of file <a class="el" href="Client_8cpp_source.html">Client.cpp</a>.</p>
-<div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+<p class="definition">Definition at line <a class="el" href="Client_8cpp_source.html#l00045">45</a> of file <a class="el" href="Client_8cpp_source.html">Client.cpp</a>.</p>
+<div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classzappy_1_1Client_aafc44ed301967697c2a93931f5e51744_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="afd9816d0a687764ad9ee4772739a326e" name="afd9816d0a687764ad9ee4772739a326e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd9816d0a687764ad9ee4772739a326e">&#9670;&#160;</a></span>write()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void zappy::Client::write </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>message</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Writes the given message to the client socket, if it is valid. Logs an error if the write fails. </p>
+
+<p class="definition">Definition at line <a class="el" href="Client_8cpp_source.html#l00055">55</a> of file <a class="el" href="Client_8cpp_source.html">Client.cpp</a>.</p>
+<div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classzappy_1_1Client_afd9816d0a687764ad9ee4772739a326e_icgraph.svg" width="100%" height="462"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -478,6 +575,30 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="Client_8hpp_source.html#l00013">13</a> of file <a class="el" href="Client_8hpp_source.html">Client.hpp</a>.</p>
+
+</div>
+</div>
+<a id="a5fb0b8b66465ff83e46bf0008fd85401" name="a5fb0b8b66465ff83e46bf0008fd85401"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5fb0b8b66465ff83e46bf0008fd85401">&#9670;&#160;</a></span>_playerId</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int zappy::Client::_playerId = -1</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="Client_8hpp_source.html#l00016">16</a> of file <a class="el" href="Client_8hpp_source.html">Client.hpp</a>.</p>
 
 </div>
 </div>

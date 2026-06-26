@@ -1,11 +1,13 @@
 <map id="zappy::World::isIncantationValid" name="zappy::World::isIncantationValid">
-<area shape="rect" id="Node000001" title="Checks whether an elevation from level to level + 1 can take place on the tile. Verifies both the min..." alt="" coords="5,69,203,109"/>
+<area shape="rect" id="Node000001" title="Checks whether an elevation from level to level + 1 can take place on the tile. Verifies both the min..." alt="" coords="5,99,203,139"/>
 <area shape="rect" id="Node000002" href="$classzappy_1_1World.html#a34a1fc2900d878a2db5bfb0ee1cf659f" title="Returns the requirements to elevate from level to level + 1, or nullptr if level is out of [1,..." alt="" coords="251,5,445,45"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="180,67,258,46,259,51,182,72"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="150,96,250,55,270,47,272,52,252,60,152,101"/>
 <area shape="rect" id="Node000003" href="$classzappy_1_1World.html#ab1b432308478a9dba9cf0a0695bef412" title="Returns the players standing on the tile that are exactly at level." alt="" coords="257,69,439,109"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="203,87,243,87,243,92,203,92"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="202,104,243,99,244,105,203,109"/>
 <area shape="rect" id="Node000007" href="$classzappy_1_1World.html#a9fce895cc2d62e61b943f7d9e03471db" title="Returns the tile at the given coordinates." alt="" coords="262,134,434,159"/>
-<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="190,107,281,128,279,133,189,112"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="203,127,248,133,248,138,202,133"/>
+<area shape="rect" id="Node000008" href="$classzappy_1_1Logger.html#abab39dcd03894b824e5c7b03462dc483" title="Prints one log line to stdout. Omits the &quot;(...)&quot; group when fields is empty." alt="" coords="278,183,418,209"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="157,136,251,169,279,177,277,182,250,175,155,141"/>
 <area shape="rect" id="Node000004" href="$classzappy_1_1Player.html#a70dc9f5c05ea552c47350da37b3bd027" title="Current elevation level (1..8)." alt="" coords="502,27,675,53"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="439,68,512,53,513,58,440,73"/>
 <area shape="rect" id="Node000005" href="$classzappy_1_1Player.html#aff283e814b7f01d4ad7398d7c20794e6" title="Current tile position." alt="" coords="493,77,684,102"/>

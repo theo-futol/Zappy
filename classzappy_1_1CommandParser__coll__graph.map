@@ -1,10 +1,10 @@
 <map id="zappy::CommandParser" name="zappy::CommandParser">
-<area shape="rect" id="Node000001" title="Per&#45;client command pipeline: reads socket data, splits it into commands, and runs them at the right t..." alt="" coords="64,761,255,1087"/>
-<area shape="rect" id="Node000002" href="$classzappy_1_1Client.html" title="A single connected socket: its file descriptor, its role, and its pending I/O buffer...." alt="" coords="5,413,111,699"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="81,698,90,737,92,745,87,746,85,738,76,700"/>
-<area shape="rect" id="Node000003" href="$classzappy_1_1World.html" title="The authoritative game state: the map, the players, the teams, and the simulation rules that act on t..." alt="" coords="69,5,292,351"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="176,351,174,413,165,745,160,745,169,413,171,351"/>
-<area shape="rect" id="Node000004" href="$classzappy_1_1Commands.html" title="Implements every protocol command&#39;s effect on the world." alt="" coords="237,423,378,689"/>
-<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="241,350,260,407,255,408,236,352"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="257,690,233,747,228,745,252,688"/>
+<area shape="rect" id="Node000001" title="Per&#45;client command pipeline: reads socket data, splits it into commands, and runs them at the right t..." alt="" coords="72,971,263,1276"/>
+<area shape="rect" id="Node000002" href="$classzappy_1_1Client.html" title="A single connected socket: its file descriptor, its role, and its pending I/O buffer...." alt="" coords="5,543,119,908"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="89,907,98,946,100,954,95,955,93,947,83,909"/>
+<area shape="rect" id="Node000003" href="$classzappy_1_1World.html" title="The authoritative game state: the map, the players, the teams, and the simulation rules that act on t..." alt="" coords="81,5,297,480"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="184,480,182,543,173,954,168,954,177,543,178,480"/>
+<area shape="rect" id="Node000004" href="$classzappy_1_1Commands.html" title="Implements every protocol command&#39;s effect on the world." alt="" coords="245,593,386,858"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="254,479,279,576,274,577,248,481"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="269,859,232,956,227,954,264,857"/>
 </map>

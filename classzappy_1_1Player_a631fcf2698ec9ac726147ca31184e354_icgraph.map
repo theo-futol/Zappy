@@ -1,10 +1,10 @@
 <map id="zappy::Player::getState" name="zappy::Player::getState">
 <area shape="rect" id="Node000001" title="Life&#45;cycle state (pending / alive / dead)." alt="" coords="1176,35,1348,60"/>
-<area shape="rect" id="Node000002" href="$classzappy_1_1World.html#aca292b35506844c67b0d62a3e6e3e9e1" title="Removes a player from the world and decrease the number of slots occupied in its team...." alt="" coords="924,35,1128,60"/>
+<area shape="rect" id="Node000002" href="$classzappy_1_1World.html#a61bd77a5a1cae883aa060469d039fe92" title="Removes a player from the world and decrease the number of slots occupied in its team...." alt="" coords="924,35,1128,60"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1162,50,1128,50,1128,45,1162,45"/>
 <area shape="rect" id="Node000003" href="$classzappy_1_1World.html#a779b35cdefa7a85d2f888890ad2ec84b" title="Consumes one food unit per player and kills those who have starved." alt="" coords="488,5,671,31"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="910,42,671,27,671,21,910,37"/>
-<area shape="rect" id="Node000007" href="$classzappy_1_1ClientHandler.html#a84580c1dc7567be8362c01f79afe5d61" title="Removes a client, its parser, and its fd from all internal structures." alt="" coords="719,55,876,95"/>
+<area shape="rect" id="Node000007" href="$classzappy_1_1ClientHandler.html#a7a4d855ae969af7c0a6317fd2a02b214" title="Removes a client, its parser, and its fd from all internal structures." alt="" coords="719,55,876,95"/>
 <area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="910,64,877,68,876,63,910,59"/>
 <area shape="rect" id="Node000004" href="$classzappy_1_1ClientHandler.html#afdb8fe8ed8f6188e930880e315fb2c4a" title="Runs the blocking event loop: polls for I/O, accepts new clients, dispatches commands,..." alt="" coords="283,27,440,67"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="475,35,440,39,440,34,474,29"/>
