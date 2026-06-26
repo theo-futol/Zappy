@@ -27,7 +27,22 @@ Core::Core(ArgParser argParser) : _argParser(std::move(argParser)), _clientHandl
     _argParser.registerFlag("-c", zappy::FlagType::INT, false, "number of initial clients per team");
     _argParser.registerFlag("-f", zappy::FlagType::INT, false, "reciprocal of time unit for execution of actions");
     _argParser.registerFlag("-oldgen", zappy::FlagType::FLAG, false, "use the legacy resource generation algorithm");
+    _argParser.registerFlag("-h", zappy::FlagType::FLAG, false, "display this help message");
     _argParser.parse();
+    if (_argParser.hasFlag("-h"))
+    {
+        std::cout << "Usage: zappy_server [options]\n"
+                  << "Options:\n"
+                  << "  -p <port>          : TCP port number (default: 4242)\n"
+                  << "  -x <width>         : Width of the world (default: 25, max: " << MAX_MAP_SIZE << ")\n"
+                  << "  -y <height>        : Height of the world (default: 25, max: " << MAX_MAP_SIZE << ")\n"
+                  << "  -n <team1> ...     : Names of the teams (default: Team1 Team2, max: " << MAX_TEAMS << ")\n"
+                  << "  -c <clients>       : Number of initial clients per team (default: 24, max: " << MAX_CLIENTS << ")\n"
+                  << "  -f <time_unit>     : Reciprocal of time unit for execution of actions (default: 100, max: " << MAX_F << ")\n"
+                  << "  -oldgen            : Use the legacy resource generation algorithm\n"
+                  << "  -h                 : Display this help message\n";
+        exit(0);
+    }
     if (_argParser.hasFlag("-p"))
         if (_argParser.getInt("-p") > 65535)
             throw ServerException("Port number must be between 0 and 65535");

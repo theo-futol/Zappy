@@ -31,6 +31,8 @@ RECONNECT_STORM="${RECONNECT_STORM:-500}"       # rapid connect/disconnect cycle
 GIANT_LINE_MB="${GIANT_LINE_MB:-8}"             # size of the no-newline blast
 COMMAND_FLOOD="${COMMAND_FLOOD:-5000}"          # commands spammed on one socket
 NET_TIMEOUT="${NET_TIMEOUT:-3}"                 # seconds for a health probe
+GUI_CLIENTS="${GUI_CLIENTS:-1000}"              # GUI threads for mass/thread-flood tests
+GUI_CMD_REPEAT="${GUI_CMD_REPEAT:-50}"          # command-block repeats per GUI thread
 
 # --------------------------------------------------------------------------- #
 # Pretty output
@@ -624,10 +626,9 @@ PYEOF
 #         Tests the server's ability to manage a huge GUI subscriber list     #
 #         and broadcast map events to every one of them without freezing.     #
 atk_gui_mass_connect() {
-    "$PY" - "$HOST" "$PORT" <<'PYEOF'
+    "$PY" - "$HOST" "$PORT" "$GUI_CLIENTS" <<'PYEOF'
 import socket, sys, threading, time
-host, port = sys.argv[1], int(sys.argv[2])
-TARGET = 1000
+host, port, TARGET = sys.argv[1], int(sys.argv[2]), int(sys.argv[3])
 burst  = b"msz\nmct\ntna\nsgt\n"
 lock   = threading.Lock()
 socks  = []
@@ -662,15 +663,14 @@ PYEOF
 #         response. Combines mass-connection pressure with per-socket output  #
 #         buffer saturation across the entire subscriber list at once.        #
 atk_gui_thread_flood() {
-    "$PY" - "$HOST" "$PORT" <<'PYEOF'
+    "$PY" - "$HOST" "$PORT" "$GUI_CLIENTS" "$GUI_CMD_REPEAT" <<'PYEOF'
 import socket, sys, threading, time
-host, port = sys.argv[1], int(sys.argv[2])
-TARGET  = 1000
+host, port, TARGET, repeat = sys.argv[1], int(sys.argv[2]), int(sys.argv[3]), int(sys.argv[4])
 flood   = (
     b"msz\nmct\ntna\nsgt\n"
     b"bct 0 0\nbct 1 1\nbct 2 2\n"
     b"ppo 1\nplv 1\npin 1\n"
-) * 50   # 500 commands per connection
+) * repeat
 
 lock  = threading.Lock()
 socks = []
@@ -727,6 +727,7 @@ main() {
     printf '%s%sZappy server stress test%s\n' "$C_BLD" "$C_YEL" "$C_RST"
     log "Target : $HOST:$PORT   Team: $TEAM"
     log "Flood  : $FLOOD_CONNECTIONS conns, $RECONNECT_STORM reconnects, ${GIANT_LINE_MB}MB blast"
+    log "GUI    : $GUI_CLIENTS clients, ${GUI_CMD_REPEAT}x cmd-block per thread"
 
     title "Pre-flight"
     if ! health_check; then

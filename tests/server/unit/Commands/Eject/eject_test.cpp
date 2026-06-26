@@ -13,6 +13,7 @@ struct EjectFixture
     int a, b;
     zappy::World world;
     std::queue<std::string> broadcastQueue;
+    std::vector<std::unique_ptr<zappy::Client>> clients;
     zappy::Commands *commands;
     zappy::Client *client;
     int playerId;
@@ -51,7 +52,7 @@ Test(Eject, returns_ko_when_caller_has_no_player)
     socketpair(AF_UNIX, SOCK_STREAM, 0, sv);
     zappy::Client ghost(sv[0]);
 
-    std::string res = f.commands->Eject({}, ghost);
+    std::string res = f.commands->Eject({}, ghost, f.clients);
 
     cr_assert_str_eq(res.c_str(), "ko\n");
     close(sv[1]);
@@ -61,7 +62,7 @@ Test(Eject, returns_ko_when_alone_on_the_tile_with_no_egg)
 {
     EjectFixture f;
 
-    std::string res = f.commands->Eject({}, *f.client);
+    std::string res = f.commands->Eject({}, *f.client, f.clients);
 
     cr_assert_str_eq(res.c_str(), "ko\n");
 }
@@ -78,7 +79,7 @@ Test(Eject, ejects_another_player_on_the_same_tile_and_returns_ok)
     ejected->setPosition(0, 0, f.world.getMapSize());
     f.world.addPlayerToTile(ejected, ejected->getPosition());
 
-    std::string res = f.commands->Eject({}, *f.client);
+    std::string res = f.commands->Eject({}, *f.client, f.clients);
 
     cr_assert_str_eq(res.c_str(), "ok\n");
     // The ejector faces NORTH by default, so the victim lands one tile north (wraps to y=4).
@@ -102,7 +103,7 @@ Test(Eject, moves_ejected_player_to_the_destination_tile_list)
     ejected->setPosition(ejector->getPosition().x, ejector->getPosition().y, f.world.getMapSize());
     f.world.addPlayerToTile(ejected, ejected->getPosition());
 
-    f.commands->Eject({}, *f.client);
+    f.commands->Eject({}, *f.client, f.clients);
 
     zappy::tile *originTile = f.world.getTileAt(ejector->getPosition());
     zappy::tile *destTile = f.world.getTileAt(ejected->getPosition());
@@ -127,7 +128,7 @@ Test(Eject, pushes_a_pex_event_with_the_ejector_id)
     socketpair(AF_UNIX, SOCK_STREAM, 0, sv2);
     f.world.addPlayer(sv2[0], "team1");
 
-    f.commands->Eject({}, *f.client);
+    f.commands->Eject({}, *f.client, f.clients);
 
     cr_assert_eq(f.broadcastQueue.size(), 1u);
     std::string expected = "pex " + std::to_string(f.playerId) + "\n";
@@ -144,7 +145,7 @@ Test(Eject, clears_eggs_on_the_tile_and_returns_ok)
     player->getTeam().addEgg(player->getPosition());
     cr_assert(player->getTeam().hasEggAtPosition(player->getPosition()));
 
-    std::string res = f.commands->Eject({}, *f.client);
+    std::string res = f.commands->Eject({}, *f.client, f.clients);
 
     cr_assert_str_eq(res.c_str(), "ok\n");
     cr_assert_not(player->getTeam().hasEggAtPosition(player->getPosition()));
@@ -163,7 +164,7 @@ Test(Eject, ignores_unused_args)
     other->setPosition(ejector->getPosition().x, ejector->getPosition().y, f.world.getMapSize());
     f.world.addPlayerToTile(other, other->getPosition());
 
-    std::string res = f.commands->Eject({"ignored"}, *f.client);
+    std::string res = f.commands->Eject({"ignored"}, *f.client, f.clients);
 
     cr_assert_str_eq(res.c_str(), "ok\n");
     close(sv2[0]);
@@ -187,8 +188,9 @@ Test(Eject, returns_ko_on_a_1x1_map_where_forward_movement_cannot_displace_anyon
     client.setPlayerId(world.addPlayer(sv[0], "team1"));
     world.addPlayer(sv2[0], "team1");
     zappy::Commands commands(&world, &broadcastQueue);
+    std::vector<std::unique_ptr<zappy::Client>> clients;
 
-    std::string res = commands.Eject({}, client);
+    std::string res = commands.Eject({}, client, clients);
 
     cr_assert_str_eq(res.c_str(), "ko\n");
     close(sv[1]);
