@@ -1,4 +1,5 @@
 #include "ArgParser.hpp"
+#include "../ServerException/ServerException.hpp"
 
 namespace zappy
 {

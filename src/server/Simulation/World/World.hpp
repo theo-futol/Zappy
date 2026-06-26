@@ -1,9 +1,7 @@
 #pragma once
-#include <algorithm>
 #include <memory>
 #include <vector>
 #include <queue>
-#include <thread>
 #include <utility>
 
 #include "../Player/Player.hpp"

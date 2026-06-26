@@ -3,9 +3,8 @@
 
 namespace zappy
 {
-std::string Commands::Take(std::vector<std::string> args, Client &client, std::vector<std::unique_ptr<Client>> &clients)
+std::string Commands::Take(std::vector<std::string> args, Client &client, std::vector<std::unique_ptr<Client>> &)
 {
-    (void)clients;
     tile *currentTile = _world->getTileAt(client.getPlayerId());
     if (args.size() < 1 || !currentTile)
         return "ko\n";
@@ -34,9 +33,8 @@ std::string Commands::Take(std::vector<std::string> args, Client &client, std::v
     return "ok\n";
 }
 
-std::string Commands::Set(std::vector<std::string> args, Client &client, std::vector<std::unique_ptr<Client>> &clients)
+std::string Commands::Set(std::vector<std::string> args, Client &client, std::vector<std::unique_ptr<Client>> &)
 {
-    (void)clients;
     tile *currentTile = _world->getTileAt(client.getPlayerId());
     if (args.size() < 1 || !currentTile)
         return "ko\n";

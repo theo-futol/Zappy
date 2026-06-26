@@ -1,4 +1,5 @@
 #include "World.hpp"
+#include <algorithm>
 #include <iostream>
 
 namespace zappy

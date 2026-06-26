@@ -1,12 +1,7 @@
 #pragma once
-#include <unistd.h>
-#include <sys/socket.h>
 #include <string>
-#include <math.h>
-#include <algorithm>
 #include <chrono>
 #include <memory>
-#include <functional>
 
 #include "../../Network/Client/Client.hpp"
 #include "../../ServerException/ServerException.hpp"

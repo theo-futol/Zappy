@@ -1,5 +1,8 @@
 #include "ClientHandler.hpp"
 #include "../../Logger/Logger.hpp"
+#include "../../ServerException/ServerException.hpp"
+#include <algorithm>
+#include <cstring>
 #include <iostream>
 #include <sys/socket.h>
 

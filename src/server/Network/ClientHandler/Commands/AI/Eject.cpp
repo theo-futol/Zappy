@@ -2,10 +2,8 @@
 
 namespace zappy
 {
-std::string Commands::Eject(std::vector<std::string> args, Client &client, std::vector<std::unique_ptr<Client>> &clients)
+std::string Commands::Eject(std::vector<std::string>, Client &client, std::vector<std::unique_ptr<Client>> &clients)
 {
-    (void)args; // Unused parameter
-    (void)clients;
     Player *player = _world->getPlayerById(client.getPlayerId());
     if (!player)
         return "ko\n"; // Player not found

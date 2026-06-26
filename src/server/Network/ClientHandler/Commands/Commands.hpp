@@ -1,5 +1,5 @@
+#pragma once
 #include "../../../Simulation/World/World.hpp"
-#include "../../../Logger/Logger.hpp"
 #include "../../Client/Client.hpp"
 #include <chrono>
 #include <memory>

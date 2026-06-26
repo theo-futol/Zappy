@@ -1,4 +1,6 @@
 #include "Player.hpp"
+#include <algorithm>
+#include <cmath>
 
 namespace zappy
 {

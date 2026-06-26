@@ -2,9 +2,8 @@
 
 namespace zappy
 {
-std::string Commands::Plv(std::vector<std::string> args, Client &client)
+std::string Commands::Plv(std::vector<std::string> args, Client &)
 {
-    (void)client; // Unused parameter
     if (args.size() < 2)
         return "ko\n";
     Player *player = _world->getPlayerById(std::stoi(args[1]));

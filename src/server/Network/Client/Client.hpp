@@ -1,8 +1,5 @@
 #pragma once
 #include <string>
-#include <unistd.h>
-#include <sys/socket.h>
-#include <iostream>
 #include "ClientType.hpp"
 
 namespace zappy

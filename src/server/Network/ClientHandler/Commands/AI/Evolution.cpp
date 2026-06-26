@@ -2,10 +2,8 @@
 
 namespace zappy
 {
-std::string Commands::Fork(std::vector<std::string> args, Client &client, std::vector<std::unique_ptr<Client>> &clients)
+std::string Commands::Fork(std::vector<std::string>, Client &client, std::vector<std::unique_ptr<Client>> &)
 {
-    (void)args; // Unused parameter
-    (void)clients;
     Player *player = _world->getPlayerById(client.getPlayerId());
     if (!player)
     {
@@ -58,9 +56,8 @@ bool Commands::beginIncantation(Client &client, std::chrono::steady_clock::time_
     return true;
 }
 
-std::string Commands::Incantation(std::vector<std::string> args, Client &client, std::vector<std::unique_ptr<Client>> &clients)
+std::string Commands::Incantation(std::vector<std::string>, Client &client, std::vector<std::unique_ptr<Client>> &clients)
 {
-    (void)args; // Unused parameter
     Player *initiator = _world->getPlayerById(client.getPlayerId());
     if (!initiator)
         return "ko\n";

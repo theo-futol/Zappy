@@ -2,10 +2,8 @@
 
 namespace zappy
 {
-std::string Commands::Forward(std::vector<std::string> args, Client &client, std::vector<std::unique_ptr<Client>> &clients)
+std::string Commands::Forward(std::vector<std::string>, Client &client, std::vector<std::unique_ptr<Client>> &)
 {
-    (void)args; // Unused parameter
-    (void)clients;
     Player *player = _world->getPlayerById(client.getPlayerId());
     if (!player)
     {
@@ -21,10 +19,8 @@ std::string Commands::Forward(std::vector<std::string> args, Client &client, std
     Logger::log("014", "Forward : player moved", {{"player_id", std::to_string(player->getId())}, {"x", std::to_string(newPos.x)}, {"y", std::to_string(newPos.y)}});
     return "ok\n";
 }
-std::string Commands::Right(std::vector<std::string> args, Client &client, std::vector<std::unique_ptr<Client>> &clients)
+std::string Commands::Right(std::vector<std::string>, Client &client, std::vector<std::unique_ptr<Client>> &)
 {
-    (void)args; // Unused parameter
-    (void)clients;
     Player *player = _world->getPlayerById(client.getPlayerId());
     if (!player)
         return "dead\n";
@@ -34,10 +30,8 @@ std::string Commands::Right(std::vector<std::string> args, Client &client, std::
     Logger::log("015", "Right : player turned right", {{"player_id", std::to_string(player->getId())}, {"rotation", std::to_string(player->getRotation())}});
     return "ok\n";
 }
-std::string Commands::Left(std::vector<std::string> args, Client &client, std::vector<std::unique_ptr<Client>> &clients)
+std::string Commands::Left(std::vector<std::string>, Client &client, std::vector<std::unique_ptr<Client>> &)
 {
-    (void)args; // Unused parameter
-    (void)clients;
     Player *player = _world->getPlayerById(client.getPlayerId());
     if (!player)
         return "dead\n";

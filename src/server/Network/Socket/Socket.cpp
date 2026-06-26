@@ -1,4 +1,7 @@
 #include "../Socket/Socket.hpp"
+#include <arpa/inet.h>
+#include <sys/socket.h>
+#include <unistd.h>
 
 namespace zappy
 {
