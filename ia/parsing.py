@@ -112,27 +112,45 @@ def parse_look_payload(payload: str) -> list[list[str]]:
         return []
 
     tiles = []
-    for tile in inner.split(","):
-        tiles.append(_parse_look_tile(tile))
+    for index, tile in enumerate(inner.split(",")):
+        tiles.append(_parse_look_tile(tile, is_current_tile=index == 0))
     if tiles and "player" not in tiles[0]:
-        tiles[0].append("player")
+        tiles.insert(0, ["player"])
     return tiles
 
 
-def _parse_look_tile(tile: str) -> list[str]:
+def _parse_look_tile(tile: str, *, is_current_tile: bool = False) -> list[str]:
     items: list[str] = []
-    for part in tile.strip().split():
+    parts = tile.strip().split()
+    index = 0
+    while index < len(parts):
+        part = parts[index]
+        if (
+            part == "player"
+            and index + 1 < len(parts)
+            and parts[index + 1].isdigit()
+        ):
+            quantity = int(parts[index + 1])
+            if is_current_tile:
+                quantity += 1
+            items.extend(["player"] * quantity)
+            index += 2
+            continue
+
         compact_match = _COMPACT_LOOK_ITEM_RE.match(part)
         if compact_match is None:
             items.append(part)
+            index += 1
             continue
 
         resource_name = _normalize_look_item_alias(compact_match.group(1))
         quantity = int(compact_match.group(2))
         if resource_name not in RESOURCE_IDS and resource_name != "player":
             items.append(part)
+            index += 1
             continue
         items.extend([resource_name] * quantity)
+        index += 1
     return items
 
 

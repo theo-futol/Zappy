@@ -7,6 +7,7 @@ import asyncio
 import json
 import re
 import sys
+import time
 from dataclasses import dataclass, field
 from pathlib import Path
 
@@ -17,11 +18,14 @@ DEFAULT_MIN_TARGET_PER_TEAM = 64
 DEFAULT_TARGET_MULTIPLIER = 16
 UNBOUNDED_TARGET_PER_TEAM = 10**9
 DEFAULT_RETRY_INTERVAL = 3.0
+DEFAULT_NO_SLOT_RETRY_INTERVAL = 15.0
+DEFAULT_MAX_NO_SLOT_RETRY_INTERVAL = 60.0
 DEFAULT_STATUS_INTERVAL = 5.0
 DEFAULT_SPAWN_INTERVAL = 0.35
 DEFAULT_POLL_INTERVAL = 0.25
 GAME_OVER_EXIT_CODE = 20
 CLIENT_DEATH_RE = re.compile(r"\bdead\s+level=(\d+)(?:\s+food=(-?\d+))?\b")
+NO_SLOT_RE = re.compile(r"\bEquipe refusee par le serveur\b")
 
 
 @dataclass
@@ -29,6 +33,7 @@ class ManagedClient:
     team: str
     instance_id: int
     process: asyncio.subprocess.Process
+    spawned_at: float
 
 
 @dataclass
@@ -38,6 +43,7 @@ class TeamRuntime:
     active_clients: dict[int, ManagedClient] = field(default_factory=dict)
     next_spawn_at: float = 0.0
     next_instance_id: int = 1
+    no_slot_failures: int = 0
 
 
 class ClientLauncher:
@@ -54,10 +60,19 @@ class ClientLauncher:
             initial_clients_per_team=int(self.server_config["initial_clients_per_team"]),
         )
         self.retry_interval = max(0.2, float(args.retry_interval))
+        self.no_slot_retry_interval = max(
+            self.retry_interval,
+            float(args.no_slot_retry_interval),
+        )
+        self.max_no_slot_retry_interval = max(
+            self.no_slot_retry_interval,
+            float(args.max_no_slot_retry_interval),
+        )
         self.status_interval = max(1.0, float(args.status_interval))
         self.spawn_interval = max(0.05, float(args.spawn_interval))
         self.poll_interval = max(0.05, float(args.poll_interval))
         self._stopping = False
+        self._started_at = time.monotonic()
         self._watch_tasks: set[asyncio.Task[None]] = set()
         self._team_runtimes = {
             team: TeamRuntime(team=team, target_count=self.target_per_team)
@@ -65,6 +80,7 @@ class ClientLauncher:
         }
 
     async def run(self) -> None:
+        self._started_at = time.monotonic()
         self._log(
             "launcher started "
             f"host={self.host} port={self.port} "
@@ -94,10 +110,10 @@ class ClientLauncher:
             if now < runtime.next_spawn_at:
                 continue
 
-            await self._spawn_one_client(runtime)
+            await self._spawn_one_client(runtime, now)
             runtime.next_spawn_at = now + self.spawn_interval
 
-    async def _spawn_one_client(self, runtime: TeamRuntime) -> None:
+    async def _spawn_one_client(self, runtime: TeamRuntime, now: float) -> None:
         instance_id = runtime.next_instance_id
         runtime.next_instance_id += 1
         command = self._build_client_command(runtime.team)
@@ -119,6 +135,7 @@ class ClientLauncher:
             team=runtime.team,
             instance_id=instance_id,
             process=process,
+            spawned_at=now,
         )
         runtime.active_clients[instance_id] = managed_client
         self._log(
@@ -142,6 +159,8 @@ class ClientLauncher:
 
         return_code = await managed_client.process.wait()
         runtime.active_clients.pop(managed_client.instance_id, None)
+        now = asyncio.get_running_loop().time()
+        age = max(0.0, now - managed_client.spawned_at)
 
         if self._stopping:
             return
@@ -154,20 +173,30 @@ class ClientLauncher:
             self._stopping = True
             return
 
-        runtime.next_spawn_at = max(
-            runtime.next_spawn_at,
-            asyncio.get_running_loop().time() + self.retry_interval,
-        )
         reason = self._summarize_stderr(stderr_text)
         death_summary = self._summarize_death(stderr_text)
+
+        if self._is_no_slot_error(stderr_text):
+            retry_delay = self._register_no_slot_failure(runtime)
+            runtime.next_spawn_at = max(runtime.next_spawn_at, now + retry_delay)
+            self._log(
+                f"no slot {runtime.team}#{managed_client.instance_id} "
+                f"retry_in={retry_delay:.1f}s reason={reason} "
+                f"active={len(runtime.active_clients)}/{runtime.target_count}"
+            )
+            return
+
+        runtime.no_slot_failures = 0
+        runtime.next_spawn_at = max(runtime.next_spawn_at, now + self.retry_interval)
         if death_summary is not None:
             self._log(
                 f"died {runtime.team}#{managed_client.instance_id} "
-                f"{death_summary} active={len(runtime.active_clients)}/{runtime.target_count}"
+                f"{death_summary} age={age:.1f}s "
+                f"active={len(runtime.active_clients)}/{runtime.target_count}"
             )
         self._log(
             f"stopped {runtime.team}#{managed_client.instance_id} "
-            f"code={return_code} reason={reason} "
+            f"code={return_code} age={age:.1f}s reason={reason} "
             f"active={len(runtime.active_clients)}/{runtime.target_count}"
         )
 
@@ -207,14 +236,8 @@ class ClientLauncher:
             str(self.port),
             "--team",
             team_name,
-            "--objective",
-            self.args.objective,
-            "--inventory-refresh",
-            str(self.args.inventory_refresh),
         ]
 
-        if self.args.max_actions is not None:
-            command.extend(["--max-actions", str(self.args.max_actions)])
         if not self.args.show_client_logs:
             command.append("--quiet")
         return command
@@ -242,8 +265,20 @@ class ClientLauncher:
             return f"level={level}"
         return f"level={level} food={food}"
 
+    def _is_no_slot_error(self, stderr_text: str) -> bool:
+        return NO_SLOT_RE.search(stderr_text) is not None
+
+    def _register_no_slot_failure(self, runtime: TeamRuntime) -> float:
+        retry_delay = min(
+            self.max_no_slot_retry_interval,
+            self.no_slot_retry_interval * (2 ** runtime.no_slot_failures),
+        )
+        runtime.no_slot_failures += 1
+        return retry_delay
+
     def _log(self, message: str) -> None:
-        print(f"[launcher] {message}")
+        elapsed = time.monotonic() - self._started_at
+        print(f"[launcher t={elapsed:.1f}s] {message}")
 
 
 def load_server_config(config_path: Path) -> dict[str, object]:
@@ -324,6 +359,18 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         type=float,
         default=DEFAULT_RETRY_INTERVAL,
         help="Seconds to wait before retrying after a client exits.",
+    )
+    parser.add_argument(
+        "--no-slot-retry-interval",
+        type=float,
+        default=DEFAULT_NO_SLOT_RETRY_INTERVAL,
+        help="Initial seconds to wait after the server refuses a team because no slot is available.",
+    )
+    parser.add_argument(
+        "--max-no-slot-retry-interval",
+        type=float,
+        default=DEFAULT_MAX_NO_SLOT_RETRY_INTERVAL,
+        help="Maximum backoff after repeated no-slot refusals.",
     )
     parser.add_argument(
         "--spawn-interval",

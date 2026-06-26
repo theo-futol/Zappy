@@ -2,10 +2,8 @@
 
 namespace zappy
 {
-std::string Commands::Mct(std::vector<std::string> args, Client &client)
+std::string Commands::Mct(std::vector<std::string>, Client &client)
 {
-    (void)args;   // Unused parameter
-    (void)client; // Unused parameter
     std::pair<int, int> mapSize = _world->getMapSize();
     std::string response;
     for (int x = 0; x < mapSize.first; ++x)
