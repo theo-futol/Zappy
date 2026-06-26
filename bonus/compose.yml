@@ -10,8 +10,6 @@ services:
       TEAMS: ${ZAPPY_TEAMS:-REDS BLUES}
       CLIENTS: ${ZAPPY_CLIENTS:-3}
       FREQ: ${ZAPPY_FREQ:-100}
-    volumes:
-      - ./protocol.txt:/app/protocol.txt:ro
     expose:
       - "${ZAPPY_PORT:-4242}"
     networks:
@@ -31,6 +29,8 @@ services:
       - server
     networks:
       - zappy-net
+    volumes:
+      - ./ZapLauncher/prompt_database:/prompt_database
 
 networks:
   zappy-net:
