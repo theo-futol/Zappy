@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import asyncio
 import json
+import os
 import re
 import sys
 import time
@@ -12,7 +13,7 @@ from dataclasses import dataclass, field
 from pathlib import Path
 
 
-REPO_ROOT = Path(__file__).resolve().parent.parent
+REPO_ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_SERVER_CONFIG = REPO_ROOT / "ai_lab" / "config.json"
 DEFAULT_MIN_TARGET_PER_TEAM = 64
 DEFAULT_TARGET_MULTIPLIER = 16
@@ -51,13 +52,19 @@ class ClientLauncher:
     def __init__(self, args: argparse.Namespace) -> None:
         self.args = args
         self.repo_root = REPO_ROOT
-        self.server_config = load_server_config(Path(args.server_config))
+        self.src_root = self.repo_root / "src"
+        server_config = load_server_config(Path(args.server_config))
         self.host = args.host
-        self.port = args.port if args.port is not None else int(self.server_config["port"])
-        self.teams = args.teams or list(self.server_config["teams"])
-        self.target_per_team = resolve_target_per_team(
+        self.port = (
+            args.port
+            if args.port is not None
+            else int(server_config.get("port", 4242))
+        )
+        config_teams = [str(team) for team in server_config.get("teams", [])]
+        self.teams = args.teams or config_teams or ["team1", "team2"]
+        target_count = resolve_target_per_team(
             requested_target=args.target_per_team,
-            initial_clients_per_team=int(self.server_config["initial_clients_per_team"]),
+            initial_clients_per_team=int(server_config.get("initial_clients_per_team", 1)),
         )
         self.retry_interval = max(0.2, float(args.retry_interval))
         self.no_slot_retry_interval = max(
@@ -75,7 +82,7 @@ class ClientLauncher:
         self._started_at = time.monotonic()
         self._watch_tasks: set[asyncio.Task[None]] = set()
         self._team_runtimes = {
-            team: TeamRuntime(team=team, target_count=self.target_per_team)
+            team: TeamRuntime(team=team, target_count=target_count)
             for team in self.teams
         }
 
@@ -84,7 +91,7 @@ class ClientLauncher:
         self._log(
             "launcher started "
             f"host={self.host} port={self.port} "
-            f"teams={','.join(self.teams)} target_per_team={format_target(self.target_per_team)}"
+            f"teams={','.join(self.teams)}"
         )
 
         last_status_at = 0.0
@@ -124,11 +131,20 @@ class ClientLauncher:
             stdout_setting = asyncio.subprocess.DEVNULL
             stderr_setting = asyncio.subprocess.PIPE
 
+        env = os.environ.copy()
+        existing_pythonpath = env.get("PYTHONPATH")
+        env["PYTHONPATH"] = (
+            str(self.src_root)
+            if not existing_pythonpath
+            else str(self.src_root) + os.pathsep + existing_pythonpath
+        )
+
         process = await asyncio.create_subprocess_exec(
             *command,
             cwd=str(self.repo_root),
             stdout=stdout_setting,
             stderr=stderr_setting,
+            env=env,
         )
 
         managed_client = ManagedClient(
@@ -246,7 +262,7 @@ class ClientLauncher:
         parts = []
         for runtime in self._team_runtimes.values():
             parts.append(
-                f"{runtime.team}={len(runtime.active_clients)}/{format_target(runtime.target_count)}"
+                f"{runtime.team}={len(runtime.active_clients)}/{runtime.target_count}"
             )
         return "status " + " ".join(parts)
 
@@ -282,6 +298,8 @@ class ClientLauncher:
 
 
 def load_server_config(config_path: Path) -> dict[str, object]:
+    if not config_path.exists():
+        return {}
     with config_path.open("r", encoding="utf-8") as config_file:
         return json.load(config_file)
 
@@ -297,14 +315,8 @@ def resolve_target_per_team(
         return max(1, int(requested_target))
     return max(
         DEFAULT_MIN_TARGET_PER_TEAM,
-        int(initial_clients_per_team) * DEFAULT_TARGET_MULTIPLIER,
+        max(1, int(initial_clients_per_team)) * DEFAULT_TARGET_MULTIPLIER,
     )
-
-
-def format_target(target_per_team: int) -> str:
-    if target_per_team >= UNBOUNDED_TARGET_PER_TEAM:
-        return "unbounded"
-    return str(target_per_team)
 
 
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:

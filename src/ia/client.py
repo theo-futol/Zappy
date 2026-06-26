@@ -272,11 +272,12 @@ class ZappyAIClient:
 
 
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Client IA Zappy.")
-    parser.add_argument("--host", default="127.0.0.1", help="Hote TCP du serveur.")
-    parser.add_argument("--port", type=int, default=4242, help="Port TCP du serveur.")
-    parser.add_argument("--team", required=True, help="Nom de l'equipe Zappy.")
-    parser.add_argument("--quiet", action="store_true", help="Desactive les logs du client.")
+    parser = argparse.ArgumentParser(description="Zappy AI client.", add_help=False)
+    parser.add_argument("--help", action="help", help="Show this help message and exit.")
+    parser.add_argument("-h", "--host", default="localhost", help="Server TCP host.")
+    parser.add_argument("-p", "--port", type=int, default=4242, help="Server TCP port.")
+    parser.add_argument("-n", "--team", required=True, help="Zappy team name.")
+    parser.add_argument("--quiet", action="store_true", help="Disable client logs.")
     return parser.parse_args(argv)
 
 
