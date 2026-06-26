@@ -10,12 +10,10 @@ services:
       TEAMS: ${ZAPPY_TEAMS:-REDS BLUES}
       CLIENTS: ${ZAPPY_CLIENTS:-3}
       FREQ: ${ZAPPY_FREQ:-100}
-      RULES: /app/protocol.txt
     volumes:
       - ./protocol.txt:/app/protocol.txt:ro
     expose:
       - "${ZAPPY_PORT:-4242}"
-      - "${ZAPPY_RULES_PORT:-4243}"
     networks:
       - zappy-net
 
@@ -27,7 +25,6 @@ services:
       API_KEY: ${API_KEY:-}
       ZAPPY_SERVER_HOST: ${ZAPPY_SERVER_HOST:-server}
       ZAPPY_SERVER_PORT: ${ZAPPY_PORT:-4242}
-      ZAPPY_RULES_PORT: ${ZAPPY_RULES_PORT:-4243}
     ports:
       - "${ZAPLAUNCHER_PORT:-8000}:8000"
     depends_on:
