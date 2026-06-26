@@ -10,7 +10,6 @@
   },
   "scripts": {
     "prepare": "husky",
-    "build": "echo 'No build step defined.'",
-    "test": "echo 'No tests defined.'"
+    "test": "./tests/server/start_test.sh 1 0 0"
   }
 }
