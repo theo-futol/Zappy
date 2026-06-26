@@ -1,4 +1,6 @@
 #include "Client.hpp"
+#include <iostream>
+#include <sys/socket.h>
 #include <unistd.h>
 #include <utility>
 
@@ -13,6 +15,16 @@ Client::~Client()
 int Client::getFd() const
 {
     return _fd;
+}
+
+int Client::getPlayerId() const
+{
+    return _playerId;
+}
+
+void Client::setPlayerId(int playerId)
+{
+    _playerId = playerId;
 }
 
 const std::string &Client::getBuffer() const
@@ -38,6 +50,16 @@ void Client::setType(ClientType type)
 void Client::setBuffer(const std::string &buffer)
 {
     _buffer = buffer;
+}
+
+void Client::write(const std::string &message) const
+{
+    if (_fd < 0)
+    {
+        std::cout << "[ERROR-440] " << _fd << std::endl; // TO DO
+        return;
+    }
+    send(_fd, message.c_str(), message.size(), MSG_NOSIGNAL); // MSG_NOSIGNAL: never SIGPIPE if the client is disconnected
 }
 
 } // namespace zappy

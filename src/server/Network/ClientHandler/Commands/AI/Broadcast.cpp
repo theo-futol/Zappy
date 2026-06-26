@@ -2,18 +2,26 @@
 
 namespace zappy
 {
-std::string Commands::Broadcast(std::vector<std::string> args, Client &client)
+std::string Commands::Broadcast(std::vector<std::string> args, Client &client, std::vector<std::unique_ptr<Client>> &)
 {
-    Player *player = _world->getPlayerByFd(client.getFd());
+    Player *player = _world->getPlayerById(client.getPlayerId());
     if (!player || args.size() != 1 || args[0].empty())
+    {
+        Logger::log("8421", "Broadcast : failed", {{"player_id", std::to_string(client.getPlayerId())}});
         return "ko\n";
+    }
     for (const auto &target : _world->getPlayers())
-        if (target->getFd() != client.getFd())
-            player->addMessageToQueue("message " + std::to_string(player->getDirectionTo(*target, _world->getMapSize()) / 45 + 1) + ", " + args[0] + "\n",
-                                      player->getDistanceTo(*target, _world->getMapSize()) * BROADCAST_MESSAGE_TIME_PER_TILE, player->getFd());
-    player->sortQueueByTimeNeeded();
-    _broadcastQueue->push("pbc " + std::to_string(player->getFd()) + " " + args[0] + "\n");
-    std::cout << "Player " << player->getFd() << " is broadcasting\n";
+    {
+        if (target->getId() == player->getId())
+            continue;
+
+        int direction = Direction::getDirectionValue(target->getDirectionTo(*player, _world->getMapSize()));
+        int delay = player->getDistanceTo(*target, _world->getMapSize()) * BROADCAST_MESSAGE_TIME_PER_TILE;
+        target->addMessageToQueue("message " + std::to_string(direction) + ", " + args[0] + "\n", delay, target->getFd());
+        target->sortQueueByTimeNeeded();
+    }
+    _broadcastQueue->push("pbc " + std::to_string(player->getId()) + " " + args[0] + "\n");
+    Logger::log("011", "Broadcast : message sent", {{"player_id", std::to_string(player->getId())}, {"message", args[0]}});
     return "ok\n";
 }
 } // namespace zappy

@@ -1,6 +1,5 @@
 #pragma once
 #include "../Utils.hpp"
-#include <memory>
 #include <string>
 #include <vector>
 
@@ -18,7 +17,7 @@ struct Team
 {
     std::string _name;
     int _teamID;
-    int _slotsAvailable;                                      // Eggs will be counted as slots available for the team
+    int _slotsAvailable;                                      // Free connection slots for the team
     int _slotsOccupied;                                       // Number of players currently in the team
     std::vector<std::pair<position, std::vector<int>>> _eggs; // Vector of pair (position, list of egg IDs) representing the eggs of the team
     bool _hasWin;                                             // Indicate if the team has won the game
@@ -29,24 +28,28 @@ struct Team
     /// @brief True if a new player may still connect to this team.
     bool hasAvailableSlots() const
     {
-        return _slotsOccupied < _slotsAvailable;
+        return _slotsAvailable > 0;
     }
     /// @brief Number of free connection slots remaining.
     int getAvailableSlots() const
     {
-        return _slotsAvailable - _slotsOccupied;
+        return _slotsAvailable;
     }
     /// @brief Marks one slot as taken (a player connected).
     void addPlayer()
     {
+        if (_slotsAvailable > 0)
+            --_slotsAvailable;
         ++_slotsOccupied;
     }
-    /// @brief Frees one occupied slot (a player left), never going below zero.
+    /// @brief Removes one active player from the team and frees its connection slot.
+    ///        Fork still creates additional free slots.
     void removePlayer()
     {
-        if (_slotsOccupied > 0){
+        if (_slotsOccupied > 0)
+        {
             --_slotsOccupied;
-            --_slotsAvailable;
+            ++_slotsAvailable;
         }
     }
     /// @brief Lays count eggs at the given tile, each adding a slot and a unique ID.
