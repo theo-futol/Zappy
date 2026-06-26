@@ -1,4 +1,4 @@
-BINARY_PATH="${PWD}/../../zappy_server"
+BINARY_PATH="${PWD}/zappy_server"
 
 COMMANDS_TO_RUN=(
     # empty parameters
