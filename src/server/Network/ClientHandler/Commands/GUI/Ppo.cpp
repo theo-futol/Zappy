@@ -12,7 +12,7 @@ std::string Commands::Ppo(std::vector<std::string> args, Client &client)
     if (!player)
         return "ko\n";
     position pos = player->getPosition();
-    int rotation = player->getRotation();
-    return "ppo " + std::to_string(player->getId()) + " " + std::to_string(pos.x) + " " + std::to_string(pos.y) + " " + std::to_string(rotation) + "\n";
+    int orientation = player->getOrientation();
+    return "ppo " + std::to_string(player->getId()) + " " + std::to_string(pos.x) + " " + std::to_string(pos.y) + " " + std::to_string(orientation) + "\n";
 }
 } // namespace zappy

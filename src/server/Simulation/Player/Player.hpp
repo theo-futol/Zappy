@@ -52,6 +52,8 @@ class Player
     const position &getPosition() const;
     /// @brief Current facing, in degrees (see Degrees).
     int getRotation() const;
+    /// @brief Current facing as the protocol's 1..4 orientation (NORTH=1, EAST=2, SOUTH=3, WEST=4).
+    int getOrientation() const;
     /// @brief Current elevation level (1..8).
     int getLevel() const;
     /// @brief This player's inventory.
