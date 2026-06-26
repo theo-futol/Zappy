@@ -12,27 +12,16 @@ ClientHandler::~ClientHandler()
 {
 }
 
-ClientHandler::ClientHandler(int port, int initialClientCapacity, int f, World *world, bool *serverIsRunning, std::string protocolContent)
-    : _protocolContent(std::move(protocolContent)), _f(f), _lastResourceUpdate(std::chrono::steady_clock::now()), _lastFoodUpdate(std::chrono::steady_clock::now()), _world(world),
-      _serverIsRunning(serverIsRunning), _broadcastQueue()
+ClientHandler::ClientHandler(int port, int initialClientCapacity, int f, World *world, bool *serverIsRunning)
+    : _f(f), _lastResourceUpdate(std::chrono::steady_clock::now()), _lastFoodUpdate(std::chrono::steady_clock::now()), _world(world), _serverIsRunning(serverIsRunning),
+      _broadcastQueue()
 {
     _tcpSocket.create(AF_INET, SOCK_STREAM, 0);
     _tcpSocket.bind(port);
     _tcpSocket.listen();
 
-    _fds.reserve(initialClientCapacity + 2);
+    _fds.reserve(initialClientCapacity + 1);
     _fds.push_back({.fd = _tcpSocket.getFd(), .events = POLLIN, .revents = 0});
-
-    if (!_protocolContent.empty())
-    {
-        _httpSocket.create(AF_INET, SOCK_STREAM, 0);
-        int opt = 1;
-        setsockopt(_httpSocket.getFd(), SOL_SOCKET, SO_REUSEADDR, &opt, sizeof(opt));
-        _httpSocket.bind(port + 1);
-        _httpSocket.listen();
-        _fds.push_back({.fd = _httpSocket.getFd(), .events = POLLIN, .revents = 0});
-        std::cout << "Protocol endpoint listening on port " << port + 1 << std::endl;
-    }
 }
 
 void ClientHandler::handleClients(void)
@@ -68,16 +57,6 @@ void ClientHandler::handleClients(void)
         }
         if (_fds[0].revents & POLLIN)
             addClient();
-
-        if (_httpSocket.getFd() >= 0)
-        {
-            for (auto &pfd : _fds)
-                if (pfd.fd == _httpSocket.getFd() && (pfd.revents & POLLIN))
-                {
-                    _serveProtocol();
-                    break;
-                }
-        }
 
         now = std::chrono::steady_clock::now();
         if (now - _lastResourceUpdate >= resourceIntervalMs)
@@ -121,8 +100,6 @@ void ClientHandler::clientEventHandling()
 {
     for (size_t i = 1; i < _fds.size(); i++)
     {
-        if (_fds[i].fd == _httpSocket.getFd())
-            continue;
         if (_fds[i].revents & POLLHUP)
         {
             Client *client = getClientByFd(_fds[i].fd);
@@ -232,26 +209,6 @@ void ClientHandler::broadcastGuiInfo()
 std::queue<std::string> &ClientHandler::getBroadcastQueue()
 {
     return _broadcastQueue;
-}
-
-void ClientHandler::_serveProtocol()
-{
-    int clientFd = _httpSocket.accept();
-    if (clientFd < 0)
-        return;
-    char buf[4096];
-    recv(clientFd, buf, sizeof(buf), 0);
-    std::string response = "HTTP/1.1 200 OK\r\n"
-                           "Content-Type: text/plain; charset=utf-8\r\n"
-                           "Content-Length: " +
-                           std::to_string(_protocolContent.size()) +
-                           "\r\n"
-                           "Connection: close\r\n"
-                           "\r\n" +
-                           _protocolContent;
-    send(clientFd, response.c_str(), response.size(), MSG_NOSIGNAL);
-    close(clientFd);
-    std::cerr << "Protocol prompt sent !" << std::endl;
 }
 
 void ClientHandler::writeToClient(int fd, const std::string &message)

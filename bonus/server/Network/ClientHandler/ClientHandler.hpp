@@ -24,8 +24,6 @@ namespace zappy
     {
         private:
             Socket _tcpSocket;                                          ///< Listening TCP socket.
-            Socket _httpSocket;                                         ///< Listening HTTP socket for /protocol (inactive when fd == -1).
-            std::string _protocolContent;                               ///< Protocol prompt content served at GET /protocol.
             int _f;                                                     ///< Reciprocal of the time unit (from -f arg).
             std::vector<pollfd> _fds;                                   ///< Monitored file descriptors (index 0 = listening socket).
             std::vector<std::unique_ptr<Client>> _clients;              ///< Connected clients.
@@ -40,8 +38,6 @@ namespace zappy
             void broadcastGuiInfo();
             /// @brief Broadcasts a message to all clients of type GRAPHIC (use for processing the broadcast command).
             void broadcastMessageToClients();
-            /// @brief Accepts one HTTP connection on _httpSocket, returns the protocol content, closes the connection.
-            void _serveProtocol();
 
         public:
             /// @brief Constructs a handler, binds and listens on the given port.
@@ -50,7 +46,7 @@ namespace zappy
             /// @param f                    Reciprocal of the time unit (default: 100).
             /// @param world                Non-owning pointer to the simulation world.
             /// @param serverIsRunning      Pointer to the flag controlling the main loop.
-            ClientHandler(int port, int initialClientCapacity, int f = 100, World *world = nullptr, bool *serverIsRunning = nullptr, std::string protocolContent = "");
+            ClientHandler(int port, int initialClientCapacity, int f = 100, World *world = nullptr, bool *serverIsRunning = nullptr);
 
             ~ClientHandler();
 

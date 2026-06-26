@@ -1,6 +1,4 @@
 #include "Core.hpp"
-#include <fstream>
-#include <iterator>
 
 #define MAX_MAP_SIZE 1024
 #define MAX_CLIENTS 256
@@ -26,17 +24,7 @@ Core::Core(ArgParser argParser) : _argParser(std::move(argParser)), _clientHandl
     _argParser.registerFlag("-c", zappy::FlagType::INT, false, "number of initial clients per team");
     _argParser.registerFlag("-f", zappy::FlagType::INT, false, "reciprocal of time unit for execution of actions");
     _argParser.registerFlag("-oldgen", zappy::FlagType::FLAG, false, "use the legacy resource generation algorithm");
-    _argParser.registerFlag("--rules", zappy::FlagType::STRING, false, "path to a protocol prompt file to serve over HTTP");
     _argParser.parse();
-    if (_argParser.hasFlag("--rules"))
-    {
-        std::string path = _argParser.getString("--rules");
-        std::ifstream file(path);
-        if (!file.is_open())
-            throw ServerException("Cannot open rules file: " + path);
-        _rulesContent = std::string(std::istreambuf_iterator<char>(file), {});
-        std::cout << "Loaded rules from: " << path << " (" << _rulesContent.size() << " bytes)" << std::endl;
-    }
     if (_argParser.getInt("-p") > 65535)
         throw ServerException("Port number must be between 0 and 65535");
     if (_argParser.hasFlag("-x"))
@@ -63,7 +51,7 @@ void Core::setClientHandler()
     int f = _argParser.hasFlag("-f") ? _argParser.getInt("-f") : 100;
     int cFlag = _argParser.hasFlag("-c") ? _argParser.getInt("-c") : INITIAL_CLIENT_CAPACITY;
     int initialClientCapacity = cFlag * _argParser.getList("-n").size();
-    _clientHandler = std::make_unique<ClientHandler>(port, initialClientCapacity, f, _world.get(), &serverIsRunning, _rulesContent);
+    _clientHandler = std::make_unique<ClientHandler>(port, initialClientCapacity, f, _world.get(), &serverIsRunning);
     setWorldBroadcast();
 }
 
