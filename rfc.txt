@@ -27,6 +27,11 @@ Table of Contents
        5.1.  Client/AI Commands
        5.2.  GUI Protocol
    6.  Security Considerations
+   7.  Server Logging
+       7.1.  Log Format
+       7.2.  Code Ranges
+       7.3.  Hex Extension for Dense Blocks
+       7.4.  Implementation and Examples
 
 
 1.  Introduction
@@ -486,6 +491,218 @@ Table of Contents
 6.  Security Considerations
 
    [To be completed.]
+
+
+7.  Server Logging
+
+7.1.  Log Format
+
+   Every notable server event is recorded by the `Logger` class
+   (src/server/Logger/Logger.hpp) through the `Logger::log` method.
+   Each entry follows a fixed structure:
+
+        code - message (key=value, key=value, ...)
+
+   The parenthesised key=value group is omitted when no fields are
+   attached to the event.  Examples:
+
+        030 - Client : connection established
+        015 - Right : player turned right (rotation=90)
+        8422 - Incantation : failed, conditions not met at start
+
+   Codes are 3 or 4 decimal digits.  The first digit (or first two
+   digits for 84xx) identifies the semantic category of the event;
+   the remaining digits identify the specific event within that
+   category.
+
+7.2.  Code Ranges
+
+   Three categories are currently defined:
+
+   0xx -- Success
+        The operation completed normally.  The sub-ranges are:
+
+        00x   Poll / event-loop lifecycle.
+              Example: 000 -- Poll initialised successfully.
+
+        01x   Command execution (one code per AI command).
+              All fourteen player commands each have a dedicated
+              success code; see Section 7.3 for the hex-extension
+              rule that allows more than ten codes in this block.
+
+        02x   World events (resource spawning).
+              Example: 020 -- resource spawned on a tile.
+                       021 -- automatic periodic resource spawn.
+
+        03x   Client connection lifecycle.
+              Example: 030 -- connection established.
+                       032 -- client disconnected cleanly.
+
+        04x   Player lifecycle and state.
+              Example: 040 -- player created.
+                       041 -- player levelled up.
+                       042 -- player frozen (incantation started).
+                       043 -- player unfrozen (incantation ended).
+                       044 -- player died.
+
+        05x   Parsing.
+              Example: 050 -- command recognised and dispatched.
+
+   1xx -- Information
+        Informational events that do not indicate success or failure.
+
+        11x   Parsing / input.
+              Example: 110 -- raw input received by CommandParser.
+
+        12x   Client connection events (attempt / disconnection).
+              Example: 120 -- new connection attempt detected.
+                       121 -- disconnection detected.
+
+   84xx -- Failure
+        An operation could not be completed.  The sub-ranges are:
+
+        840x  Poll / event-loop errors.
+              Example: 8400 -- poll failed, unknown error.
+                       8401 -- poll failed, out of memory (ENOMEM).
+
+        841x  Parsing errors.
+              Example: 8410 -- unknown command received.
+
+        842x  Command execution failures (one code per AI command).
+              Example: 8422 -- Incantation failed, conditions not
+                               met at start.
+                       8426 -- Take failed, item not on tile.
+
+        843x  Client connection failures.
+              Example: 8432 -- client disconnected unexpectedly.
+
+        844x  Player action rejections and egg destruction.
+              Example: 8441 -- action rejected, player is frozen.
+                       8442 -- action rejected, player is dead.
+                       8443 -- egg destroyed by ejection.
+
+        845x  World update failures.
+              Example: 8451 -- tile update failed.
+
+7.3.  Hex Extension for Dense Blocks
+
+   Each log code is at most four characters long, as required by the
+   BNF grammar ("3DIGIT / 4DIGIT").  The 01x command block covers
+   fourteen AI commands, which exceeds the ten slots available with a
+   single decimal digit (0-9).
+
+   Once the decimal digits 010-019 are exhausted, the block continues
+   counting in hexadecimal for the last character: 01A, 01B, 01C.
+   The same convention applies to any other block that needs more than
+   ten codes.  The full 01x command mapping is:
+
+        010  Fork
+        011  Broadcast
+        012  Incantation : started
+        013  Incantation : completed
+        014  Forward
+        015  Right
+        016  Left
+        017  Look
+        018  Inventory
+        019  Eject
+        01A  Take
+        01B  Set
+        01C  Connect_nbr
+
+7.4.  Implementation and Examples
+
+   Logs are emitted by calling `Logger::log` at the relevant call
+   site.  The call sites are co-located with the operation they
+   describe; there is no centralised logging middleware.
+
+   Representative call sites and their codes:
+
+        ClientHandler::handleClients  (before the poll loop)
+             000 - Poll : initialized successfully
+
+        ClientHandler::addClient
+             120 - Client : new connection attempt
+             030 - Client : connection established
+
+        ClientHandler::removeClient
+             032 - Client : disconnected cleanly
+             8432 - Client : disconnected unexpectedly
+
+        CommandParser::feed
+             110 - Parsing : input received
+
+        CommandParser::_dispatch
+             050 - Parsing : command valid
+             8410 - Parsing : unknown command
+
+        CommandParser::executeNext
+             8441 - Player : action rejected, player is frozen
+             8442 - Player : action rejected, player is dead
+
+        Commands::Forward
+             014 - Forward : player moved
+             8424 - Forward : failed
+
+        Commands::Right / Commands::Left
+             015 - Right : player turned right (rotation=<degrees>)
+             016 - Left  : player turned left  (rotation=<degrees>)
+
+        Commands::Look
+             017 - Look : response sent (response=<tile-list>)
+
+        Commands::getInventory
+             018 - Inventory : response sent (<item>=<count>, ...)
+
+        Commands::Broadcast
+             011 - Broadcast : message sent
+             8421 - Broadcast : failed
+
+        Commands::Fork
+             010 - Fork : new egg laid
+             8420 - Fork : failed
+
+        Commands::Eject
+             019 - Eject : players ejected
+             8425 - Eject : failed, no players to eject
+             8443 - Player : egg destroyed by ejection
+
+        Commands::Take
+             01A - Take : item taken
+             8426 - Take : failed, item not on tile
+
+        Commands::Set
+             01B - Set : item dropped
+             8427 - Set : failed
+
+        Commands::Connect_nbr
+             01C - Connect_nbr : response sent
+
+        Commands::beginIncantation
+             012 - Incantation : started
+             8422 - Incantation : failed, conditions not met at start
+
+        Commands::Incantation
+             013 - Incantation : completed
+             041 - Player : level up
+             043 - Player : unfrozen
+             8423 - Incantation : failed, conditions not met at end
+
+        Player::Player (constructor)
+             040 - Player : created
+
+        Player::setFrozenUntil
+             042 - Player : frozen
+
+        World::foodCheck
+             044 - Player : died
+
+        World::setTileAt
+             020 - World : resource spawned on tile
+             8451 - World : tile update failed
+
+        World::ressourcePassiveGeneration
+             021 - World : automatic resource spawn
 
 
 Authors' Addresses
