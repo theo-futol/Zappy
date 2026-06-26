@@ -33,9 +33,9 @@ make zappy_ai
 ./zappy_ai -p 4242 -n Team1 -h localhost
 ```
 
-`zappy_ai` is a small shell launcher that runs `python3 -m ia.client` from the
-repository root. The `PYTHON` environment variable can select another
-interpreter:
+`zappy_ai` is a small shell launcher that adds `src` to `PYTHONPATH`, then runs
+`python3 -m ia.client` from the repository root. The `PYTHON` environment
+variable can select another interpreter:
 
 ```bash
 PYTHON=python3.12 make zappy_ai
@@ -217,7 +217,12 @@ clients.
 
 ## Launcher
 
-`launcher.py` supervises several `python -m ia.client` processes.
+`launcher.py` supervises several `python -m ia.client` processes. When launched
+manually from the repository root, expose the `src` package directory:
+
+```bash
+PYTHONPATH=src python3 -m ia.launcher --teams Team1 Team2 --target-per-team 25
+```
 
 It:
 

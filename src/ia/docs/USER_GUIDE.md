@@ -31,7 +31,7 @@ make
 In another terminal:
 
 ```bash
-python3 -m ia.launcher --host 127.0.0.1 --port 4242 --teams Team1 Team2 --target-per-team 25
+PYTHONPATH=src python3 -m ia.launcher --host 127.0.0.1 --port 4242 --teams Team1 Team2 --target-per-team 25
 ```
 
 The launcher keeps the requested number of active clients per team. If a player
@@ -60,7 +60,7 @@ Because the subject uses `-h` for the host, help is available with `--help`.
 Recommended command:
 
 ```bash
-python3 -m ia.launcher --host 127.0.0.1 --port 4242 --teams Team1 Team2 --target-per-team 25
+PYTHONPATH=src python3 -m ia.launcher --host 127.0.0.1 --port 4242 --teams Team1 Team2 --target-per-team 25
 ```
 
 Useful launcher options:

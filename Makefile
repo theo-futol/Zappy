@@ -9,7 +9,7 @@ CC = clang++
 PROJECT_NAME = zappy
 SERVER_BIN   = $(PROJECT_NAME)_server
 AI_BIN       = $(PROJECT_NAME)_ai
-AI_SOURCES   = $(shell find ia -type f -name "*.py")
+AI_SOURCES   = $(shell find src/ia -type f -name "*.py")
 
 all: $(SERVER_BIN) $(AI_BIN)
 
@@ -21,6 +21,8 @@ $(AI_BIN): $(AI_SOURCES) Makefile
 		'#!/bin/sh' \
 		'APP_DIR=$$(CDPATH= cd -- "$$(dirname -- "$$0")" && pwd)' \
 		'cd "$$APP_DIR" || exit 1' \
+		'PYTHONPATH="$$APP_DIR/src$${PYTHONPATH:+:$$PYTHONPATH}"' \
+		'export PYTHONPATH' \
 		'exec "$${PYTHON:-python3}" -m ia.client "$$@"' \
 		> $@
 	@chmod +x $@
