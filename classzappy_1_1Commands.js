@@ -5,6 +5,7 @@ var classzappy_1_1Commands =
     [ "Bct", "classzappy_1_1Commands.html#a813e6e04d4fd79daae377ac9e082c091", null ],
     [ "beginIncantation", "classzappy_1_1Commands.html#afc2159b221207ae6bf4ac860fab8db5f", null ],
     [ "Broadcast", "classzappy_1_1Commands.html#a08ccc46023666c48a25fc38f2d3b28bb", null ],
+    [ "buildPipiMessage", "classzappy_1_1Commands.html#ab80dd4d34e9f778e13d3ddba78134a15", null ],
     [ "Connect_nbr", "classzappy_1_1Commands.html#a3e77a8c64642df3660c66cfd923c13a3", null ],
     [ "Eject", "classzappy_1_1Commands.html#a2aa5f645033eadf18b4df8461c95ab9c", null ],
     [ "Fork", "classzappy_1_1Commands.html#af375aa807a7f8d0a8bd5bca398b2341b", null ],

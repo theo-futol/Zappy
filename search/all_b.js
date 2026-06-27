@@ -2,7 +2,7 @@ var searchData=
 [
   ['last_5ffood_0',['last_food',['../classia_1_1client_1_1ZappyAIClient.html#a2b2f64d67c427b01126170d676dcb0c5',1,'ia::client::ZappyAIClient']]],
   ['launcher_2epy_1',['launcher.py',['../launcher_8py.html',1,'']]],
-  ['left_2',['left',['../classia_1_1client_1_1ZappyAIClient.html#afb29f6a4139446e0754012ee83bc0067',1,'ia.client.ZappyAIClient.left()'],['../classia_1_1test_1_1FakeClient.html#a7b6c2ad9ea53d8651e95bf180b64d223',1,'ia.test.FakeClient.left()'],['../classzappy_1_1Commands.html#ade07e2832499ca58858a149d03043914',1,'zappy::Commands::Left()']]],
+  ['left_2',['left',['../classzappy_1_1Commands.html#ade07e2832499ca58858a149d03043914',1,'zappy::Commands::Left()'],['../classia_1_1client_1_1ZappyAIClient.html#afb29f6a4139446e0754012ee83bc0067',1,'ia.client.ZappyAIClient.left()'],['../classia_1_1test_1_1FakeClient.html#a7b6c2ad9ea53d8651e95bf180b64d223',1,'ia.test.FakeClient.left()']]],
   ['level_3',['level',['../classia_1_1strategy_1_1Strategy.html#ad1fb11aaad31e9d322a12df4af648026',1,'ia::strategy::Strategy']]],
   ['level_5frequirements_4',['LEVEL_REQUIREMENTS',['../namespaceia_1_1utils_1_1model__utils.html#a3b27c0445becc9a9a9953d1d7c65514e',1,'ia::utils::model_utils']]],
   ['levelup_5',['levelUp',['../classzappy_1_1Player.html#a3778f33e2e87435d681ad1c158d89b1d',1,'zappy::Player']]],

@@ -46,7 +46,7 @@
   </g>
 </defs>
 <script type="application/ecmascript">
-var viewWidth = 1104;
+var viewWidth = 1101;
 var viewHeight = 1390;
 var sectionId = 'dynsection-8';
 </script>
@@ -58,9 +58,9 @@ var sectionId = 'dynsection-8';
 <g id="Node000001" class="node">
 <title>Node1</title>
 <g id="a_Node000001"><a xlink:title=" ">
-<polygon fill="#999999" stroke="#666666" points="121,-657.95 0,-657.95 0,-627.95 121,-627.95 121,-657.95"/>
-<text text-anchor="start" x="8" y="-645.95" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::ClientHandler</text>
-<text text-anchor="middle" x="60.5" y="-634.95" font-family="Helvetica,sans-Serif" font-size="10.00">::clientEventHandling</text>
+<polygon fill="#999999" stroke="#666666" points="121,-512.3 0,-512.3 0,-482.3 121,-482.3 121,-512.3"/>
+<text text-anchor="start" x="8" y="-500.3" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::ClientHandler</text>
+<text text-anchor="middle" x="60.5" y="-489.3" font-family="Helvetica,sans-Serif" font-size="10.00">::clientEventHandling</text>
 </a>
 </g>
 </g>
@@ -68,9 +68,9 @@ var sectionId = 'dynsection-8';
 <g id="Node000002" class="node">
 <title>Node2</title>
 <g id="a_Node000002"><a xlink:href="classzappy_1_1CommandParser.html#aa6b2d70e869ba31da160e28f0eddc23c" target="_top" xlink:title="Dispatches the next queued command if its time has come.">
-<polygon fill="white" stroke="#666666" points="288,-895.95 157,-895.95 157,-865.95 288,-865.95 288,-895.95"/>
-<text text-anchor="start" x="165" y="-883.95" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::CommandParser</text>
-<text text-anchor="middle" x="222.5" y="-872.95" font-family="Helvetica,sans-Serif" font-size="10.00">::executeNext</text>
+<polygon fill="white" stroke="#666666" points="288,-940.3 157,-940.3 157,-910.3 288,-910.3 288,-940.3"/>
+<text text-anchor="start" x="165" y="-928.3" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::CommandParser</text>
+<text text-anchor="middle" x="222.5" y="-917.3" font-family="Helvetica,sans-Serif" font-size="10.00">::executeNext</text>
 </a>
 </g>
 </g>
@@ -78,8 +78,8 @@ var sectionId = 'dynsection-8';
 <g id="edge1_Node000001_Node000002" class="edge">
 <title>Node1&#45;&gt;Node2</title>
 <g id="a_edge1_Node000001_Node000002"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M71.46,-658.13C88.74,-684.45 125.46,-740.19 157,-786.95 173.24,-811.03 192.06,-838.39 205.16,-857.36"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="202.36,-859.46 210.92,-865.69 208.12,-855.48 202.36,-859.46"/>
+<path fill="none" stroke="#63b8ff" d="M64.58,-512.5C74.39,-559.4 107.21,-705.55 157,-818.3 170.34,-848.51 190.63,-880.64 204.88,-901.71"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="202.04,-903.76 210.58,-910.03 207.81,-899.8 202.04,-903.76"/>
 </a>
 </g>
 </g>
@@ -87,17 +87,17 @@ var sectionId = 'dynsection-8';
 <g id="Node000005" class="node">
 <title>Node5</title>
 <g id="a_Node000005"><a xlink:href="classzappy_1_1Client.html#ade4edd70698f2497e09f736734d77ab0" target="_top" xlink:title="Returns the logical id of this client&#39;s player, or &#45;1 if it has none.">
-<polygon fill="white" stroke="#666666" points="703.5,-712.45 562.5,-712.45 562.5,-693.45 703.5,-693.45 703.5,-712.45"/>
-<text text-anchor="middle" x="633" y="-700.45" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::Client::getPlayerId</text>
+<polygon fill="white" stroke="#666666" points="702,-604.8 561,-604.8 561,-585.8 702,-585.8 702,-604.8"/>
+<text text-anchor="middle" x="631.5" y="-592.8" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::Client::getPlayerId</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node5 -->
-<g id="edge70_Node000001_Node000005" class="edge">
+<g id="edge77_Node000001_Node000005" class="edge">
 <title>Node1&#45;&gt;Node5</title>
-<g id="a_edge70_Node000001_Node000005"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M121.21,-649.23C224.39,-660.08 436.1,-682.34 551.93,-694.53"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="551.84,-698.04 562.15,-695.6 552.58,-691.07 551.84,-698.04"/>
+<g id="a_edge77_Node000001_Node000005"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M121.05,-507.56C228.41,-526.05 453.61,-564.84 565.1,-584.04"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="564.75,-587.53 575.2,-585.78 565.94,-580.63 564.75,-587.53"/>
 </a>
 </g>
 </g>
@@ -105,129 +105,129 @@ var sectionId = 'dynsection-8';
 <g id="Node000007" class="node">
 <title>Node7</title>
 <g id="a_Node000007"><a xlink:href="classzappy_1_1Logger.html#abab39dcd03894b824e5c7b03462dc483" target="_top" xlink:title="Prints one log line to stdout. Omits the &quot;(...)&quot; group when fields is empty.">
-<polygon fill="white" stroke="#666666" points="885,-712.45 780,-712.45 780,-693.45 885,-693.45 885,-712.45"/>
-<text text-anchor="middle" x="832.5" y="-700.45" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::Logger::log</text>
+<polygon fill="white" stroke="#666666" points="882,-678.8 777,-678.8 777,-659.8 882,-659.8 882,-678.8"/>
+<text text-anchor="middle" x="829.5" y="-666.8" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::Logger::log</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node7 -->
-<g id="edge72_Node000001_Node000007" class="edge">
+<g id="edge79_Node000001_Node000007" class="edge">
 <title>Node1&#45;&gt;Node7</title>
-<g id="a_edge72_Node000001_Node000007"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M63.33,-658.07C69.26,-701.34 91.54,-827.47 157,-904.95 212.11,-970.17 241.45,-978.11 324,-999.95 407.36,-1022 435.24,-1024.13 518,-999.95 536.22,-994.62 536.8,-984.99 554,-976.95 620.72,-945.74 660.25,-979.36 712,-926.95 750.82,-887.63 722.35,-856.89 748,-807.95 766.06,-773.5 796.09,-739.31 814.79,-719.71"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="817.36,-722.08 821.81,-712.47 812.33,-717.21 817.36,-722.08"/>
+<g id="a_edge79_Node000001_Node000007"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M70.76,-512.47C86.2,-536.81 119.27,-585.03 157,-616.3 221.75,-669.98 242.4,-684.92 324,-705.3 490.35,-746.87 696.45,-704.08 784.88,-681.44"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="786.02,-684.76 794.82,-678.85 784.26,-677.98 786.02,-684.76"/>
 </a>
 </g>
 </g>
-<!-- Node24 -->
-<g id="Node000024" class="node">
-<title>Node24</title>
-<g id="a_Node000024"><a xlink:href="classzappy_1_1World.html#a43fb08ea54d522c20d2c27ed281297f4" target="_top" xlink:title="Looks up a player by its logical id, or nullptr if none matches.">
-<polygon fill="white" stroke="#666666" points="709.5,-198.45 556.5,-198.45 556.5,-179.45 709.5,-179.45 709.5,-198.45"/>
-<text text-anchor="middle" x="633" y="-186.45" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::World::getPlayerById</text>
+<!-- Node20 -->
+<g id="Node000020" class="node">
+<title>Node20</title>
+<g id="a_Node000020"><a xlink:href="classzappy_1_1Player.html#a33f33f30fdbf95af468119bc63bd7caa" target="_top" xlink:title="This player&#39;s stable logical id (its GUI player number).">
+<polygon fill="white" stroke="#666666" points="886,-219.8 773,-219.8 773,-200.8 886,-200.8 886,-219.8"/>
+<text text-anchor="middle" x="829.5" y="-207.8" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::Player::getId</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node24 -->
-<g id="edge69_Node000001_Node000024" class="edge">
-<title>Node1&#45;&gt;Node24</title>
-<g id="a_edge69_Node000001_Node000024"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M63.9,-627.5C75.83,-556.85 135.88,-263.61 324,-163.95 414.52,-115.99 541.37,-153.48 599.98,-175.64"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="598.86,-178.95 609.45,-179.31 601.39,-172.43 598.86,-178.95"/>
+<!-- Node1&#45;&gt;Node20 -->
+<g id="edge75_Node000001_Node000020" class="edge">
+<title>Node1&#45;&gt;Node20</title>
+<g id="a_edge75_Node000001_Node000020"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M62.36,-481.97C66.68,-410.76 88.68,-113.36 157,-58.3 363.95,108.47 718.02,-129.16 807.49,-194.48"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="805.63,-197.46 815.75,-200.58 809.78,-191.83 805.63,-197.46"/>
 </a>
 </g>
 </g>
-<!-- Node25 -->
-<g id="Node000025" class="node">
-<title>Node25</title>
-<g id="a_Node000025"><a xlink:href="classzappy_1_1Player.html#a33f33f30fdbf95af468119bc63bd7caa" target="_top" xlink:title="This player&#39;s stable logical id (its GUI player number).">
-<polygon fill="white" stroke="#666666" points="889,-160.45 776,-160.45 776,-141.45 889,-141.45 889,-160.45"/>
-<text text-anchor="middle" x="832.5" y="-148.45" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::Player::getId</text>
+<!-- Node28 -->
+<g id="Node000028" class="node">
+<title>Node28</title>
+<g id="a_Node000028"><a xlink:href="classzappy_1_1World.html#a43fb08ea54d522c20d2c27ed281297f4" target="_top" xlink:title="Looks up a player by its logical id, or nullptr if none matches.">
+<polygon fill="white" stroke="#666666" points="708,-280.8 555,-280.8 555,-261.8 708,-261.8 708,-280.8"/>
+<text text-anchor="middle" x="631.5" y="-268.8" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::World::getPlayerById</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node25 -->
-<g id="edge68_Node000001_Node000025" class="edge">
-<title>Node1&#45;&gt;Node25</title>
-<g id="a_edge68_Node000001_Node000025"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M61.52,-627.93C61.98,-545.07 68.79,-144.67 157,-69.95 354.7,97.53 709.8,-82.08 806.57,-136.41"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="804.93,-139.51 815.36,-141.4 808.39,-133.42 804.93,-139.51"/>
+<!-- Node1&#45;&gt;Node28 -->
+<g id="edge76_Node000001_Node000028" class="edge">
+<title>Node1&#45;&gt;Node28</title>
+<g id="a_edge76_Node000001_Node000028"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M67.79,-482.04C91.36,-427.26 180.51,-240.9 324,-184.3 404.21,-152.67 444.13,-139.83 518,-184.3 547.3,-201.94 527.06,-231.24 554,-252.3 556.32,-254.12 558.8,-255.77 561.38,-257.26"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="560.01,-260.49 570.53,-261.75 563.1,-254.2 560.01,-260.49"/>
 </a>
 </g>
 </g>
-<!-- Node29 -->
-<g id="Node000029" class="node">
-<title>Node29</title>
-<g id="a_Node000029"><a xlink:href="classzappy_1_1CommandParser.html#a2eaa3e9cec905216d43b7286e6c018a7" target="_top" xlink:title="Reads pending data from the client socket into the command queue.">
-<polygon fill="white" stroke="#666666" points="288,-448.95 157,-448.95 157,-418.95 288,-418.95 288,-448.95"/>
-<text text-anchor="start" x="165" y="-436.95" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::CommandParser</text>
-<text text-anchor="middle" x="222.5" y="-425.95" font-family="Helvetica,sans-Serif" font-size="10.00">::feed</text>
+<!-- Node32 -->
+<g id="Node000032" class="node">
+<title>Node32</title>
+<g id="a_Node000032"><a xlink:href="classzappy_1_1CommandParser.html#a2eaa3e9cec905216d43b7286e6c018a7" target="_top" xlink:title="Reads pending data from the client socket into the command queue.">
+<polygon fill="white" stroke="#666666" points="288,-379.3 157,-379.3 157,-349.3 288,-349.3 288,-379.3"/>
+<text text-anchor="start" x="165" y="-367.3" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::CommandParser</text>
+<text text-anchor="middle" x="222.5" y="-356.3" font-family="Helvetica,sans-Serif" font-size="10.00">::feed</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node29 -->
-<g id="edge35_Node000001_Node000029" class="edge">
-<title>Node1&#45;&gt;Node29</title>
-<g id="a_edge35_Node000001_Node000029"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M73.01,-627.92C100.62,-591.85 170.77,-500.21 203.8,-457.07"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="206.58,-459.19 209.88,-449.12 201.02,-454.93 206.58,-459.19"/>
+<!-- Node1&#45;&gt;Node32 -->
+<g id="edge42_Node000001_Node000032" class="edge">
+<title>Node1&#45;&gt;Node32</title>
+<g id="a_edge42_Node000001_Node000032"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M79.85,-482.05C108.31,-458.4 163.15,-412.8 195.62,-385.82"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="197.91,-388.47 203.36,-379.38 193.43,-383.08 197.91,-388.47"/>
 </a>
 </g>
 </g>
-<!-- Node39 -->
-<g id="Node000039" class="node">
-<title>Node39</title>
-<g id="a_Node000039"><a xlink:href="classzappy_1_1ClientHandler.html#a8bc3ac9dab9d6e463e75303feaaf5dbf" target="_top" xlink:title="Looks up a client by its file descriptor.">
-<polygon fill="white" stroke="#666666" points="480,-814.95 362,-814.95 362,-784.95 480,-784.95 480,-814.95"/>
-<text text-anchor="start" x="370" y="-802.95" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::ClientHandler</text>
-<text text-anchor="middle" x="421" y="-791.95" font-family="Helvetica,sans-Serif" font-size="10.00">::getClientByFd</text>
+<!-- Node42 -->
+<g id="Node000042" class="node">
+<title>Node42</title>
+<g id="a_Node000042"><a xlink:href="classzappy_1_1ClientHandler.html#a8bc3ac9dab9d6e463e75303feaaf5dbf" target="_top" xlink:title="Looks up a client by its file descriptor.">
+<polygon fill="white" stroke="#666666" points="480,-821.3 362,-821.3 362,-791.3 480,-791.3 480,-821.3"/>
+<text text-anchor="start" x="370" y="-809.3" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::ClientHandler</text>
+<text text-anchor="middle" x="421" y="-798.3" font-family="Helvetica,sans-Serif" font-size="10.00">::getClientByFd</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node39 -->
-<g id="edge66_Node000001_Node000039" class="edge">
-<title>Node1&#45;&gt;Node39</title>
-<g id="a_edge66_Node000001_Node000039"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M74.51,-657.98C91.6,-676.8 123.4,-708.76 157,-726.95 218.59,-760.28 296.73,-779.46 351.78,-789.71"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="351.32,-793.19 361.78,-791.53 352.56,-786.3 351.32,-793.19"/>
+<!-- Node1&#45;&gt;Node42 -->
+<g id="edge73_Node000001_Node000042" class="edge">
+<title>Node1&#45;&gt;Node42</title>
+<g id="a_edge73_Node000001_Node000042"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M61.45,-512.56C62.22,-560.47 71.66,-708.86 157,-777.3 211.34,-820.89 293.59,-823.01 351.61,-817.5"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="352.21,-820.96 361.79,-816.44 351.48,-814 352.21,-820.96"/>
 </a>
 </g>
 </g>
-<!-- Node40 -->
-<g id="Node000040" class="node">
-<title>Node40</title>
-<g id="a_Node000040"><a xlink:href="classzappy_1_1CommandParser.html#ac4070ffc5bd0bdc69dc9fed51a4e6588" target="_top" xlink:title="Returns true if the client has been banned for flooding (too many queued commands).">
-<polygon fill="white" stroke="#666666" points="288,-108.95 157,-108.95 157,-78.95 288,-78.95 288,-108.95"/>
-<text text-anchor="start" x="165" y="-96.95" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::CommandParser</text>
-<text text-anchor="middle" x="222.5" y="-85.95" font-family="Helvetica,sans-Serif" font-size="10.00">::isBanned</text>
+<!-- Node43 -->
+<g id="Node000043" class="node">
+<title>Node43</title>
+<g id="a_Node000043"><a xlink:href="classzappy_1_1CommandParser.html#ac4070ffc5bd0bdc69dc9fed51a4e6588" target="_top" xlink:title="Returns true if the client has been banned for flooding (too many queued commands).">
+<polygon fill="white" stroke="#666666" points="288,-97.3 157,-97.3 157,-67.3 288,-67.3 288,-97.3"/>
+<text text-anchor="start" x="165" y="-85.3" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::CommandParser</text>
+<text text-anchor="middle" x="222.5" y="-74.3" font-family="Helvetica,sans-Serif" font-size="10.00">::isBanned</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node40 -->
-<g id="edge71_Node000001_Node000040" class="edge">
-<title>Node1&#45;&gt;Node40</title>
-<g id="a_edge71_Node000001_Node000040"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M62.41,-627.85C67.29,-551.14 92.65,-205.02 157,-122.95 159.33,-119.97 162.04,-117.29 165,-114.88"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="167.1,-117.68 173.32,-109.1 163.11,-111.93 167.1,-117.68"/>
+<!-- Node1&#45;&gt;Node43 -->
+<g id="edge78_Node000001_Node000043" class="edge">
+<title>Node1&#45;&gt;Node43</title>
+<g id="a_edge78_Node000001_Node000043"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M63.45,-482.23C71.98,-418.32 107.79,-170.27 157,-111.3 159.58,-108.21 162.56,-105.43 165.79,-102.94"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="167.87,-105.77 174.27,-97.33 164,-99.93 167.87,-105.77"/>
 </a>
 </g>
 </g>
-<!-- Node41 -->
-<g id="Node000041" class="node">
-<title>Node41</title>
-<g id="a_Node000041"><a xlink:href="classzappy_1_1ClientHandler.html#a7a4d855ae969af7c0a6317fd2a02b214" target="_top" xlink:title="Removes a client, its parser, and its fd from all internal structures.">
-<polygon fill="white" stroke="#666666" points="281.5,-717.95 163.5,-717.95 163.5,-687.95 281.5,-687.95 281.5,-717.95"/>
-<text text-anchor="start" x="171.5" y="-705.95" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::ClientHandler</text>
-<text text-anchor="middle" x="222.5" y="-694.95" font-family="Helvetica,sans-Serif" font-size="10.00">::removeClient</text>
+<!-- Node44 -->
+<g id="Node000044" class="node">
+<title>Node44</title>
+<g id="a_Node000044"><a xlink:href="classzappy_1_1ClientHandler.html#a7a4d855ae969af7c0a6317fd2a02b214" target="_top" xlink:title="Removes a client, its parser, and its fd from all internal structures.">
+<polygon fill="white" stroke="#666666" points="281.5,-607.3 163.5,-607.3 163.5,-577.3 281.5,-577.3 281.5,-607.3"/>
+<text text-anchor="start" x="171.5" y="-595.3" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::ClientHandler</text>
+<text text-anchor="middle" x="222.5" y="-584.3" font-family="Helvetica,sans-Serif" font-size="10.00">::removeClient</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node41 -->
-<g id="edge73_Node000001_Node000041" class="edge">
-<title>Node1&#45;&gt;Node41</title>
-<g id="a_edge73_Node000001_Node000041"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M101.87,-658.09C123.18,-666.08 149.5,-675.95 172.02,-684.39"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="170.82,-687.68 181.42,-687.92 173.28,-681.13 170.82,-687.68"/>
+<!-- Node1&#45;&gt;Node44 -->
+<g id="edge80_Node000001_Node000044" class="edge">
+<title>Node1&#45;&gt;Node44</title>
+<g id="a_edge80_Node000001_Node000044"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M86.85,-512.36C113.92,-528.43 156.99,-554 187.1,-571.88"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="185.62,-575.07 196,-577.17 189.19,-569.05 185.62,-575.07"/>
 </a>
 </g>
 </g>
@@ -235,9 +235,9 @@ var sectionId = 'dynsection-8';
 <g id="Node000003" class="node">
 <title>Node3</title>
 <g id="a_Node000003"><a xlink:href="classzappy_1_1CommandParser.html#af55cf3a6d1c187f570405017ebd8cb6f" target="_top" xlink:title="Routes one command line to the matching handler for the client&#39;s type.">
-<polygon fill="white" stroke="#666666" points="486.5,-938.95 355.5,-938.95 355.5,-908.95 486.5,-908.95 486.5,-938.95"/>
-<text text-anchor="start" x="363.5" y="-926.95" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::CommandParser</text>
-<text text-anchor="middle" x="421" y="-915.95" font-family="Helvetica,sans-Serif" font-size="10.00">::_dispatch</text>
+<polygon fill="white" stroke="#666666" points="486.5,-983.3 355.5,-983.3 355.5,-953.3 486.5,-953.3 486.5,-983.3"/>
+<text text-anchor="start" x="363.5" y="-971.3" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::CommandParser</text>
+<text text-anchor="middle" x="421" y="-960.3" font-family="Helvetica,sans-Serif" font-size="10.00">::_dispatch</text>
 </a>
 </g>
 </g>
@@ -245,8 +245,8 @@ var sectionId = 'dynsection-8';
 <g id="edge2_Node000002_Node000003" class="edge">
 <title>Node2&#45;&gt;Node3</title>
 <g id="a_edge2_Node000002_Node000003"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M288.11,-895.09C306.41,-899.09 326.48,-903.48 345.33,-907.61"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="344.83,-911.08 355.35,-909.8 346.33,-904.24 344.83,-911.08"/>
+<path fill="none" stroke="#63b8ff" d="M288.11,-939.44C306.41,-943.45 326.48,-947.84 345.33,-951.96"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="344.83,-955.44 355.35,-954.16 346.33,-948.6 344.83,-955.44"/>
 </a>
 </g>
 </g>
@@ -254,26 +254,26 @@ var sectionId = 'dynsection-8';
 <g id="Node000004" class="node">
 <title>Node4</title>
 <g id="a_Node000004"><a xlink:href="classzappy_1_1Client.html#aafed3af6e0e3c858d9581a3d9df81218" target="_top" xlink:title="Returns the socket descriptor, used to read/write and to poll this client.">
-<polygon fill="white" stroke="#666666" points="689.5,-809.45 576.5,-809.45 576.5,-790.45 689.5,-790.45 689.5,-809.45"/>
-<text text-anchor="middle" x="633" y="-797.45" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::Client::getFd</text>
+<polygon fill="white" stroke="#666666" points="688,-794.8 575,-794.8 575,-775.8 688,-775.8 688,-794.8"/>
+<text text-anchor="middle" x="631.5" y="-782.8" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::Client::getFd</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node4 -->
-<g id="edge29_Node000002_Node000004" class="edge">
+<g id="edge36_Node000002_Node000004" class="edge">
 <title>Node2&#45;&gt;Node4</title>
-<g id="a_edge29_Node000002_Node000004"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M288.09,-888.51C350.16,-892.9 445.02,-891.92 518,-856.95 538.98,-846.89 533.88,-830.62 554,-818.95 557.97,-816.64 562.22,-814.62 566.59,-812.83"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="568.12,-816 576.34,-809.31 565.74,-809.42 568.12,-816"/>
+<g id="a_edge36_Node000002_Node000004"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M288.17,-938.49C352.97,-947.82 452.27,-951.1 518,-901.3 554.65,-873.54 519.72,-834.95 554,-804.3 557.42,-801.25 561.26,-798.66 565.34,-796.48"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="566.93,-799.61 574.62,-792.33 564.06,-793.22 566.93,-799.61"/>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node5 -->
-<g id="edge31_Node000002_Node000005" class="edge">
+<g id="edge38_Node000002_Node000005" class="edge">
 <title>Node2&#45;&gt;Node5</title>
-<g id="a_edge31_Node000002_Node000005"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M283.67,-865.89C296.92,-862.77 310.91,-859.62 324,-856.95 409.69,-839.45 442.15,-867.49 518,-823.95 539.62,-811.54 537.17,-799.33 554,-780.95 573.93,-759.17 598.14,-735.34 614.24,-719.83"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="617.07,-721.97 621.86,-712.52 612.22,-716.92 617.07,-721.97"/>
+<g id="a_edge38_Node000002_Node000005"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M284.79,-910.24C297.72,-907.19 311.29,-904.07 324,-901.3 409.86,-882.65 450.95,-920.09 518,-863.3 552.77,-833.85 536.73,-809.47 554,-767.3 577.03,-711.06 606.97,-645.76 621.63,-614.25"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="624.93,-615.46 625.98,-604.92 618.58,-612.5 624.93,-615.46"/>
 </a>
 </g>
 </g>
@@ -281,26 +281,26 @@ var sectionId = 'dynsection-8';
 <g id="Node000006" class="node">
 <title>Node6</title>
 <g id="a_Node000006"><a xlink:href="classzappy_1_1Client.html#af3593a65bba2a2527669eb4a05a618b8" target="_top" xlink:title="Returns the connection&#39;s current role.">
-<polygon fill="white" stroke="#666666" points="695,-846.45 571,-846.45 571,-827.45 695,-827.45 695,-846.45"/>
-<text text-anchor="middle" x="633" y="-834.45" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::Client::getType</text>
+<polygon fill="white" stroke="#666666" points="693.5,-831.8 569.5,-831.8 569.5,-812.8 693.5,-812.8 693.5,-831.8"/>
+<text text-anchor="middle" x="631.5" y="-819.8" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::Client::getType</text>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node6 -->
-<g id="edge32_Node000002_Node000006" class="edge">
+<g id="edge39_Node000002_Node000006" class="edge">
 <title>Node2&#45;&gt;Node6</title>
-<g id="a_edge32_Node000002_Node000006"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M239.68,-896.23C258.32,-912.68 290.68,-937.86 324,-947.95 406.52,-972.93 441.07,-986.89 518,-947.95 542.11,-935.74 535.26,-918.41 554,-898.95 571.01,-881.28 593.09,-864.17 609.42,-852.42"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="611.69,-855.1 617.83,-846.47 607.65,-849.38 611.69,-855.1"/>
+<g id="a_edge39_Node000002_Node000006"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M239.68,-940.58C258.32,-957.04 290.68,-982.22 324,-992.3 406.52,-1017.29 448.05,-1042.72 518,-992.3 559.05,-962.72 525.19,-925.9 554,-884.3 567.39,-864.98 588.47,-848.52 605.11,-837.43"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="607.3,-840.18 613.83,-831.84 603.52,-834.29 607.3,-840.18"/>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node7 -->
-<g id="edge34_Node000002_Node000007" class="edge">
+<g id="edge41_Node000002_Node000007" class="edge">
 <title>Node2&#45;&gt;Node7</title>
-<g id="a_edge34_Node000002_Node000007"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M234.01,-896.18C250.29,-918.26 283.94,-958.25 324,-973.95 404.28,-1005.39 438.57,-1007.49 518,-973.95 539.14,-965.02 534.37,-948.82 554,-936.95 616.68,-899.02 657.07,-938.43 712,-889.95 741.84,-863.61 727.44,-842.03 748,-807.95 768.1,-774.62 797.55,-740.05 815.57,-720.07"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="818.37,-722.19 822.53,-712.45 813.2,-717.47 818.37,-722.19"/>
+<g id="a_edge41_Node000002_Node000007"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M233.66,-940.48C249.73,-962.95 283.4,-1004.15 324,-1020.3 404.12,-1052.18 447.3,-1069.65 518,-1020.3 556.05,-993.75 520.16,-954.06 554,-922.3 606.4,-873.13 653.81,-922.32 709,-876.3 736.17,-853.65 727.73,-836.18 745,-805.3 769.09,-762.23 800.08,-713.26 816.71,-687.45"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="819.65,-689.34 822.14,-679.04 813.78,-685.54 819.65,-689.34"/>
 </a>
 </g>
 </g>
@@ -308,9 +308,9 @@ var sectionId = 'dynsection-8';
 <g id="Node000008" class="node">
 <title>Node8</title>
 <g id="a_Node000008"><a xlink:href="classzappy_1_1CommandParser.html#a2e37f370a7cf95399de6722ef528da83" target="_top" xlink:title="Handles the first line of an AI client: the team&#45;name handshake.">
-<polygon fill="white" stroke="#666666" points="486.5,-1100.95 355.5,-1100.95 355.5,-1070.95 486.5,-1070.95 486.5,-1100.95"/>
-<text text-anchor="start" x="363.5" y="-1088.95" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::CommandParser</text>
-<text text-anchor="middle" x="421" y="-1077.95" font-family="Helvetica,sans-Serif" font-size="10.00">::_handleHandshake</text>
+<polygon fill="white" stroke="#666666" points="486.5,-1107.3 355.5,-1107.3 355.5,-1077.3 486.5,-1077.3 486.5,-1107.3"/>
+<text text-anchor="start" x="363.5" y="-1095.3" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::CommandParser</text>
+<text text-anchor="middle" x="421" y="-1084.3" font-family="Helvetica,sans-Serif" font-size="10.00">::_handleHandshake</text>
 </a>
 </g>
 </g>
@@ -318,35 +318,35 @@ var sectionId = 'dynsection-8';
 <g id="edge7_Node000002_Node000008" class="edge">
 <title>Node2&#45;&gt;Node8</title>
 <g id="a_edge7_Node000002_Node000008"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M232.33,-896.3C248.28,-923.2 283.99,-979.74 324,-1018.95 342.17,-1036.75 365.52,-1053.17 384.65,-1065.29"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="383.04,-1068.41 393.38,-1070.72 386.73,-1062.46 383.04,-1068.41"/>
-</a>
-</g>
-</g>
-<!-- Node2&#45;&gt;Node24 -->
-<g id="edge30_Node000002_Node000024" class="edge">
-<title>Node2&#45;&gt;Node24</title>
-<g id="a_edge30_Node000002_Node000024"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M231.63,-865.72C245.68,-838.65 274.31,-779.99 288,-726.95 306.48,-655.3 279.18,-454.82 324,-395.95 380.19,-322.13 454.98,-387.02 518,-318.95 552.53,-281.66 518.1,-243.45 552.63,-205.57"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="555.18,-207.97 559.91,-198.5 550.3,-202.95 555.18,-207.97"/>
-</a>
-</g>
-</g>
-<!-- Node28 -->
-<g id="Node000028" class="node">
-<title>Node28</title>
-<g id="a_Node000028"><a xlink:href="classzappy_1_1Player.html#ae6c620cf832083d406498ba44e7f8541" target="_top" xlink:title="Returns true while the player is frozen and must not execute any command.">
-<polygon fill="white" stroke="#666666" points="485,-614.45 357,-614.45 357,-595.45 485,-595.45 485,-614.45"/>
-<text text-anchor="middle" x="421" y="-602.45" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::Player::isFrozen</text>
+<path fill="none" stroke="#63b8ff" d="M230.5,-940.69C244.27,-969.21 277.6,-1030.36 324,-1063.3 330.66,-1068.03 338.11,-1072 345.82,-1075.33"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="344.75,-1078.67 355.34,-1079.09 347.32,-1072.16 344.75,-1078.67"/>
 </a>
 </g>
 </g>
 <!-- Node2&#45;&gt;Node28 -->
-<g id="edge33_Node000002_Node000028" class="edge">
+<g id="edge37_Node000002_Node000028" class="edge">
 <title>Node2&#45;&gt;Node28</title>
-<g id="a_edge33_Node000002_Node000028"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M234.34,-865.71C268.05,-818.37 370.89,-673.92 407.17,-622.97"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="410.19,-624.77 413.13,-614.59 404.48,-620.71 410.19,-624.77"/>
+<g id="a_edge37_Node000002_Node000028"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M242.72,-910.3C262.12,-895.94 293.5,-874.81 324,-863.3 405.83,-832.44 459.39,-895.22 518,-830.3 598.6,-741.04 476.8,-382.52 554,-290.3 554.99,-289.12 556.04,-288.01 557.14,-286.96"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="559.26,-289.74 565.12,-280.91 555.04,-284.16 559.26,-289.74"/>
+</a>
+</g>
+</g>
+<!-- Node31 -->
+<g id="Node000031" class="node">
+<title>Node31</title>
+<g id="a_Node000031"><a xlink:href="classzappy_1_1Player.html#ae6c620cf832083d406498ba44e7f8541" target="_top" xlink:title="Returns true while the player is frozen and must not execute any command.">
+<polygon fill="white" stroke="#666666" points="485,-696.8 357,-696.8 357,-677.8 485,-677.8 485,-696.8"/>
+<text text-anchor="middle" x="421" y="-684.8" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::Player::isFrozen</text>
+</a>
+</g>
+</g>
+<!-- Node2&#45;&gt;Node31 -->
+<g id="edge40_Node000002_Node000031" class="edge">
+<title>Node2&#45;&gt;Node31</title>
+<g id="a_edge40_Node000002_Node000031"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M232.94,-910.05C249.85,-883.18 286.98,-826.11 324,-782.3 348.87,-752.87 381.38,-722.07 401.46,-703.8"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="403.93,-706.29 409.01,-696.99 399.24,-701.09 403.93,-706.29"/>
 </a>
 </g>
 </g>
@@ -354,8 +354,8 @@ var sectionId = 'dynsection-8';
 <g id="edge3_Node000003_Node000004" class="edge">
 <title>Node3&#45;&gt;Node4</title>
 <g id="a_edge3_Node000003_Node000004"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M486.76,-912.5C498.05,-908.34 509.03,-902.67 518,-894.95 546.32,-870.56 525.02,-842.55 554,-818.95 557.85,-815.81 562.14,-813.18 566.67,-810.97"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="568.34,-814.07 576.25,-807.02 565.67,-807.6 568.34,-814.07"/>
+<path fill="none" stroke="#63b8ff" d="M486.97,-958.49C498.51,-954.2 509.52,-948.06 518,-939.3 561.18,-894.68 509.72,-847.84 554,-804.3 557.48,-800.89 561.47,-798.05 565.76,-795.71"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="567.28,-798.86 574.93,-791.54 564.38,-792.49 567.28,-798.86"/>
 </a>
 </g>
 </g>
@@ -363,8 +363,8 @@ var sectionId = 'dynsection-8';
 <g id="edge4_Node000003_Node000005" class="edge">
 <title>Node3&#45;&gt;Node5</title>
 <g id="a_edge4_Node000003_Node000005"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M451.51,-908.78C472.25,-896.93 499.5,-878.83 518,-856.95 542.13,-828.41 532.47,-811.5 554,-780.95 570.88,-757 595.43,-733.82 612.47,-719.04"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="614.81,-721.64 620.16,-712.5 610.27,-716.31 614.81,-721.64"/>
+<path fill="none" stroke="#63b8ff" d="M454.58,-953.11C475.64,-941.68 502,-924.1 518,-901.3 553.43,-850.83 533.41,-825.43 554,-767.3 574.2,-710.29 605.18,-645.81 620.79,-614.47"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="624.1,-615.67 625.46,-605.16 617.84,-612.53 624.1,-615.67"/>
 </a>
 </g>
 </g>
@@ -372,8 +372,8 @@ var sectionId = 'dynsection-8';
 <g id="edge5_Node000003_Node000006" class="edge">
 <title>Node3&#45;&gt;Node6</title>
 <g id="a_edge5_Node000003_Node000006"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M486.73,-908.9C497.54,-905.14 508.36,-900.53 518,-894.95 537.04,-883.91 534.99,-872.03 554,-860.95 561.65,-856.49 570.21,-852.78 578.78,-849.71"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="580.03,-852.99 588.42,-846.52 577.83,-846.34 580.03,-852.99"/>
+<path fill="none" stroke="#63b8ff" d="M486.73,-957.56C498.15,-953.34 509.19,-947.47 518,-939.3 550.51,-909.18 521.65,-876.6 554,-846.3 558.36,-842.22 563.41,-838.83 568.79,-836.02"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="570.44,-839.12 578.11,-831.81 567.55,-832.74 570.44,-839.12"/>
 </a>
 </g>
 </g>
@@ -381,17 +381,17 @@ var sectionId = 'dynsection-8';
 <g id="edge6_Node000003_Node000007" class="edge">
 <title>Node3&#45;&gt;Node7</title>
 <g id="a_edge6_Node000003_Node000007"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M486.75,-911.2C566.33,-895.17 693.2,-868.23 712,-855.95 734.32,-841.36 731.7,-829.05 748,-807.95 771.92,-776.98 800.4,-741.44 817.16,-720.66"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="820.02,-722.7 823.58,-712.72 814.57,-718.3 820.02,-722.7"/>
+<path fill="none" stroke="#63b8ff" d="M486.32,-953.28C497.52,-948.92 508.58,-943.37 518,-936.3 540.49,-919.44 531.09,-900.59 554,-884.3 612.27,-842.89 650.7,-882.67 709,-841.3 738.59,-820.31 794.66,-727.54 817.95,-687.65"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="821.01,-689.33 823,-678.93 814.96,-685.82 821.01,-689.33"/>
 </a>
 </g>
 </g>
 <!-- Node8&#45;&gt;Node4 -->
-<g id="edge20_Node000008_Node000004" class="edge">
+<g id="edge27_Node000008_Node000004" class="edge">
 <title>Node8&#45;&gt;Node4</title>
-<g id="a_edge20_Node000008_Node000004"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M435.08,-1070.87C455.54,-1046.57 495.13,-996.53 518,-947.95 543.35,-894.09 511.22,-860.33 554,-818.95 557.78,-815.29 562.15,-812.29 566.85,-809.85"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="568.42,-812.98 576.21,-805.79 565.64,-806.55 568.42,-812.98"/>
+<g id="a_edge27_Node000008_Node000004"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M442.45,-1077.08C464.74,-1059.3 499.65,-1027.79 518,-992.3 557.07,-916.73 495.5,-866.07 554,-804.3 557.41,-800.71 561.38,-797.75 565.7,-795.31"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="567.35,-798.41 574.95,-791.03 564.41,-792.05 567.35,-798.41"/>
 </a>
 </g>
 </g>
@@ -399,8 +399,8 @@ var sectionId = 'dynsection-8';
 <g id="Node000009" class="node">
 <title>Node9</title>
 <g id="a_Node000009"><a xlink:href="classzappy_1_1World.html#a1ad1d6b64d725ca67581ef9ae97d8289" target="_top" xlink:title="Hatches a player from one of the team&#39;s eggs, chosen at random, spawning it on that egg&#39;s tile and co...">
-<polygon fill="white" stroke="#666666" points="700,-1271.45 566,-1271.45 566,-1252.45 700,-1252.45 700,-1271.45"/>
-<text text-anchor="middle" x="633" y="-1259.45" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::World::addPlayer</text>
+<polygon fill="white" stroke="#666666" points="698.5,-1171.8 564.5,-1171.8 564.5,-1152.8 698.5,-1152.8 698.5,-1171.8"/>
+<text text-anchor="middle" x="631.5" y="-1159.8" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::World::addPlayer</text>
 </a>
 </g>
 </g>
@@ -408,8 +408,8 @@ var sectionId = 'dynsection-8';
 <g id="edge8_Node000008_Node000009" class="edge">
 <title>Node8&#45;&gt;Node9</title>
 <g id="a_edge8_Node000008_Node000009"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M431.18,-1101.39C450.19,-1132.03 496.88,-1200.76 554,-1237.95 560.84,-1242.4 568.55,-1246.06 576.39,-1249.07"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="575.37,-1252.42 585.97,-1252.41 577.68,-1245.81 575.37,-1252.42"/>
+<path fill="none" stroke="#63b8ff" d="M466.73,-1107.32C504.24,-1119.92 557.22,-1137.7 592.66,-1149.6"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="591.57,-1152.93 602.16,-1152.79 593.8,-1146.29 591.57,-1152.93"/>
 </a>
 </g>
 </g>
@@ -417,27 +417,27 @@ var sectionId = 'dynsection-8';
 <g id="Node000013" class="node">
 <title>Node13</title>
 <g id="a_Node000013"><a xlink:href="classzappy_1_1Player.html#aff283e814b7f01d4ad7398d7c20794e6" target="_top" xlink:title="Current tile position.">
-<polygon fill="white" stroke="#666666" points="1096,-1041.45 953,-1041.45 953,-1022.45 1096,-1022.45 1096,-1041.45"/>
-<text text-anchor="middle" x="1024.5" y="-1029.45" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::Player::getPosition</text>
+<polygon fill="white" stroke="#666666" points="1093,-959.8 950,-959.8 950,-940.8 1093,-940.8 1093,-959.8"/>
+<text text-anchor="middle" x="1021.5" y="-947.8" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::Player::getPosition</text>
 </a>
 </g>
 </g>
 <!-- Node8&#45;&gt;Node13 -->
-<g id="edge26_Node000008_Node000013" class="edge">
+<g id="edge33_Node000008_Node000013" class="edge">
 <title>Node8&#45;&gt;Node13</title>
-<g id="a_edge26_Node000008_Node000013"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M432.57,-1100.98C452.59,-1127.97 498.99,-1183.81 554,-1204.95 619.55,-1230.13 648.2,-1234.29 712,-1204.95 734.34,-1194.67 727.7,-1176.81 748,-1162.95 813.7,-1118.09 845.9,-1139.63 917,-1103.95 949.11,-1087.83 982.96,-1063.51 1003.65,-1047.67"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1005.92,-1050.35 1011.68,-1041.46 1001.63,-1044.82 1005.92,-1050.35"/>
+<g id="a_edge33_Node000008_Node000013"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M430.69,-1107.39C449.47,-1138.83 496.8,-1212.02 554,-1255.3 684.85,-1354.33 783.48,-1436.76 914,-1337.3 974.51,-1291.2 1009.27,-1042.27 1018.19,-969.99"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1021.68,-970.31 1019.4,-959.97 1014.73,-969.47 1021.68,-970.31"/>
 </a>
 </g>
 </g>
 <!-- Node19 -->
 <g id="Node000019" class="node">
 <title>Node19</title>
-<g id="a_Node000019"><a xlink:href="classzappy_1_1World.html#a991347e5787aa696ad62de265c680a96" target="_top" xlink:title="Free connection slots remaining for a team (used to admit new players).">
-<polygon fill="white" stroke="#666666" points="706,-1046.95 560,-1046.95 560,-1016.95 706,-1016.95 706,-1046.95"/>
-<text text-anchor="start" x="568" y="-1034.95" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::World::getAvailable</text>
-<text text-anchor="middle" x="633" y="-1023.95" font-family="Helvetica,sans-Serif" font-size="10.00">SlotsForTeam</text>
+<g id="a_Node000019"><a xlink:href="classzappy_1_1Commands.html#ab80dd4d34e9f778e13d3ddba78134a15" target="_top" xlink:title="Builds a passive &quot;pipi&quot; snapshot line (position, orientation, level, inventory) for one player.">
+<polygon fill="white" stroke="#666666" points="709,-1080.3 554,-1080.3 554,-1050.3 709,-1050.3 709,-1080.3"/>
+<text text-anchor="start" x="562" y="-1068.3" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::Commands::buildPipi</text>
+<text text-anchor="middle" x="631.5" y="-1057.3" font-family="Helvetica,sans-Serif" font-size="10.00">Message</text>
 </a>
 </g>
 </g>
@@ -445,107 +445,126 @@ var sectionId = 'dynsection-8';
 <g id="edge18_Node000008_Node000019" class="edge">
 <title>Node8&#45;&gt;Node19</title>
 <g id="a_edge18_Node000008_Node000019"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M480.5,-1070.9C506.33,-1064.26 536.87,-1056.41 563.74,-1049.5"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="564.64,-1052.88 573.45,-1047 562.9,-1046.1 564.64,-1052.88"/>
-</a>
-</g>
-</g>
-<!-- Node21 -->
-<g id="Node000021" class="node">
-<title>Node21</title>
-<g id="a_Node000021"><a xlink:href="classzappy_1_1Player.html#a70dc9f5c05ea552c47350da37b3bd027" target="_top" xlink:title="Current elevation level (1..8).">
-<polygon fill="white" stroke="#666666" points="1089.5,-998.45 959.5,-998.45 959.5,-979.45 1089.5,-979.45 1089.5,-998.45"/>
-<text text-anchor="middle" x="1024.5" y="-986.45" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::Player::getLevel</text>
-</a>
-</g>
-</g>
-<!-- Node8&#45;&gt;Node21 -->
-<g id="edge21_Node000008_Node000021" class="edge">
-<title>Node8&#45;&gt;Node21</title>
-<g id="a_edge21_Node000008_Node000021"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M486.64,-1072.7C497.69,-1068.72 508.62,-1063.58 518,-1056.95 540.07,-1041.35 530.14,-1020.64 554,-1007.95 620.33,-972.67 834.26,-978.32 949.06,-984.27"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="949,-987.77 959.17,-984.8 949.37,-980.78 949,-987.77"/>
-</a>
-</g>
-</g>
-<!-- Node22 -->
-<g id="Node000022" class="node">
-<title>Node22</title>
-<g id="a_Node000022"><a xlink:href="classzappy_1_1World.html#ad35316e4e1203c45ad2f853319775432" target="_top" xlink:title="Map dimensions as (width, height).">
-<polygon fill="white" stroke="#666666" points="704,-1195.45 562,-1195.45 562,-1176.45 704,-1176.45 704,-1195.45"/>
-<text text-anchor="middle" x="633" y="-1183.45" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::World::getMapSize</text>
-</a>
-</g>
-</g>
-<!-- Node8&#45;&gt;Node22 -->
-<g id="edge22_Node000008_Node000022" class="edge">
-<title>Node8&#45;&gt;Node22</title>
-<g id="a_edge22_Node000008_Node000022"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M441.89,-1101.24C466.78,-1119.67 511.35,-1150.35 554,-1167.95 559.06,-1170.03 564.41,-1171.9 569.83,-1173.58"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="569.07,-1177 579.65,-1176.37 570.99,-1170.27 569.07,-1177"/>
+<path fill="none" stroke="#63b8ff" d="M486.54,-1083.95C504.67,-1081.6 524.68,-1079.01 543.87,-1076.52"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="544.35,-1079.99 553.82,-1075.23 543.45,-1073.05 544.35,-1079.99"/>
 </a>
 </g>
 </g>
 <!-- Node23 -->
 <g id="Node000023" class="node">
 <title>Node23</title>
-<g id="a_Node000023"><a xlink:href="classzappy_1_1Player.html#a179f8fcc7fbb9a11bda72d37982bc30b" target="_top" xlink:title="Current facing as the protocol&#39;s 1..4 orientation (NORTH=1, EAST=2, SOUTH=3, WEST=4).">
-<polygon fill="white" stroke="#666666" points="712,-1158.45 554,-1158.45 554,-1139.45 712,-1139.45 712,-1158.45"/>
-<text text-anchor="middle" x="633" y="-1146.45" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::Player::getOrientation</text>
+<g id="a_Node000023"><a xlink:href="classzappy_1_1Player.html#a70dc9f5c05ea552c47350da37b3bd027" target="_top" xlink:title="Current elevation level (1..8).">
+<polygon fill="white" stroke="#666666" points="1086.5,-691.8 956.5,-691.8 956.5,-672.8 1086.5,-672.8 1086.5,-691.8"/>
+<text text-anchor="middle" x="1021.5" y="-679.8" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::Player::getLevel</text>
 </a>
 </g>
 </g>
 <!-- Node8&#45;&gt;Node23 -->
-<g id="edge23_Node000008_Node000023" class="edge">
+<g id="edge28_Node000008_Node000023" class="edge">
 <title>Node8&#45;&gt;Node23</title>
-<g id="a_edge23_Node000008_Node000023"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M462.69,-1101.02C488.61,-1110.32 523.03,-1122.12 554,-1130.95 561.52,-1133.09 569.5,-1135.16 577.37,-1137.09"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="576.71,-1140.53 587.25,-1139.44 578.34,-1133.72 576.71,-1140.53"/>
+<g id="a_edge28_Node000008_Node000023"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M475,-1077.21C490.47,-1070.69 506.33,-1061.64 518,-1049.3 548.75,-1016.81 520.81,-985.3 554,-955.3 606.95,-907.45 654.13,-958.95 709,-913.3 737.42,-889.66 719.76,-865.32 745,-838.3 813.47,-765.04 924.27,-716.97 982.3,-695.39"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="983.62,-698.63 991.82,-691.92 981.22,-692.06 983.62,-698.63"/>
+</a>
+</g>
+</g>
+<!-- Node24 -->
+<g id="Node000024" class="node">
+<title>Node24</title>
+<g id="a_Node000024"><a xlink:href="classzappy_1_1Player.html#a179f8fcc7fbb9a11bda72d37982bc30b" target="_top" xlink:title="Current facing as the protocol&#39;s 1..4 orientation (NORTH=1, EAST=2, SOUTH=3, WEST=4).">
+<polygon fill="white" stroke="#666666" points="908.5,-914.8 750.5,-914.8 750.5,-895.8 908.5,-895.8 908.5,-914.8"/>
+<text text-anchor="middle" x="829.5" y="-902.8" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::Player::getOrientation</text>
 </a>
 </g>
 </g>
 <!-- Node8&#45;&gt;Node24 -->
-<g id="edge24_Node000008_Node000024" class="edge">
+<g id="edge30_Node000008_Node000024" class="edge">
 <title>Node8&#45;&gt;Node24</title>
-<g id="a_edge24_Node000008_Node000024"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M437.09,-1070.61C459.47,-1046.73 500.69,-998.16 518,-947.95 610.99,-678.19 464.22,-577.79 554,-306.95 567.17,-267.23 597.36,-228.11 616.08,-206.39"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="618.87,-208.51 622.86,-198.69 613.62,-203.88 618.87,-208.51"/>
+<g id="a_edge30_Node000008_Node000024"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M480.49,-1077.24C493.08,-1073.28 506.16,-1068.61 518,-1063.3 535.11,-1055.64 536.69,-1048.51 554,-1041.3 619.48,-1014.04 653.81,-1047.86 709,-1003.3 737.46,-980.33 717,-952.84 745,-929.3 749.93,-925.16 755.53,-921.74 761.44,-918.9"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="763.08,-922.01 770.95,-914.91 760.37,-915.56 763.08,-922.01"/>
 </a>
 </g>
 </g>
-<!-- Node26 -->
-<g id="Node000026" class="node">
-<title>Node26</title>
-<g id="a_Node000026"><a xlink:href="classzappy_1_1Client.html#a084ad3c2c2db76331617ce1d5f2bfddc" target="_top" xlink:title="Associates this client with the player of the given logical id (set at hatch time).">
-<polygon fill="white" stroke="#666666" points="703,-1121.45 563,-1121.45 563,-1102.45 703,-1102.45 703,-1121.45"/>
-<text text-anchor="middle" x="633" y="-1109.45" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::Client::setPlayerId</text>
+<!-- Node25 -->
+<g id="Node000025" class="node">
+<title>Node25</title>
+<g id="a_Node000025"><a xlink:href="classzappy_1_1World.html#a991347e5787aa696ad62de265c680a96" target="_top" xlink:title="Free connection slots remaining for a team (used to admit new players).">
+<polygon fill="white" stroke="#666666" points="704.5,-994.3 558.5,-994.3 558.5,-964.3 704.5,-964.3 704.5,-994.3"/>
+<text text-anchor="start" x="566.5" y="-982.3" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::World::getAvailable</text>
+<text text-anchor="middle" x="631.5" y="-971.3" font-family="Helvetica,sans-Serif" font-size="10.00">SlotsForTeam</text>
 </a>
 </g>
 </g>
-<!-- Node8&#45;&gt;Node26 -->
-<g id="edge27_Node000008_Node000026" class="edge">
-<title>Node8&#45;&gt;Node26</title>
-<g id="a_edge27_Node000008_Node000026"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M486.72,-1093.96C507.53,-1096.54 530.82,-1099.42 552.56,-1102.11"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="552.4,-1105.62 562.76,-1103.37 553.26,-1098.67 552.4,-1105.62"/>
+<!-- Node8&#45;&gt;Node25 -->
+<g id="edge25_Node000008_Node000025" class="edge">
+<title>Node8&#45;&gt;Node25</title>
+<g id="a_edge25_Node000008_Node000025"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M486.69,-1079.56C497.8,-1075.53 508.73,-1070.24 518,-1063.3 541.39,-1045.8 531.22,-1026.6 554,-1008.3 558.36,-1004.8 563.19,-1001.69 568.24,-998.93"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="570.1,-1001.92 577.51,-994.34 567,-995.64 570.1,-1001.92"/>
 </a>
 </g>
 </g>
 <!-- Node27 -->
 <g id="Node000027" class="node">
 <title>Node27</title>
-<g id="a_Node000027"><a xlink:href="classzappy_1_1Client.html#aafc44ed301967697c2a93931f5e51744" target="_top" xlink:title="Sets the connection&#39;s role, e.g. once it has been identified or marked dead.">
-<polygon fill="white" stroke="#666666" points="694.5,-1084.45 571.5,-1084.45 571.5,-1065.45 694.5,-1065.45 694.5,-1084.45"/>
-<text text-anchor="middle" x="633" y="-1072.45" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::Client::setType</text>
+<g id="a_Node000027"><a xlink:href="classzappy_1_1World.html#ad35316e4e1203c45ad2f853319775432" target="_top" xlink:title="Map dimensions as (width, height).">
+<polygon fill="white" stroke="#666666" points="702.5,-1245.8 560.5,-1245.8 560.5,-1226.8 702.5,-1226.8 702.5,-1245.8"/>
+<text text-anchor="middle" x="631.5" y="-1233.8" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::World::getMapSize</text>
 </a>
 </g>
 </g>
 <!-- Node8&#45;&gt;Node27 -->
-<g id="edge28_Node000008_Node000027" class="edge">
+<g id="edge29_Node000008_Node000027" class="edge">
 <title>Node8&#45;&gt;Node27</title>
-<g id="a_edge28_Node000008_Node000027"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M486.72,-1082.56C510.34,-1081.32 537.17,-1079.91 561.28,-1078.65"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="561.63,-1082.14 571.44,-1078.12 561.27,-1075.15 561.63,-1082.14"/>
+<g id="a_edge29_Node000008_Node000027"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M433.24,-1107.39C454,-1134.11 501.08,-1189.62 554,-1218.3 557.48,-1220.19 561.15,-1221.88 564.92,-1223.39"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="563.88,-1226.73 574.47,-1226.8 566.23,-1220.14 563.88,-1226.73"/>
+</a>
+</g>
+</g>
+<!-- Node8&#45;&gt;Node28 -->
+<g id="edge31_Node000008_Node000028" class="edge">
+<title>Node8&#45;&gt;Node28</title>
+<g id="a_edge31_Node000008_Node000028"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M443.79,-1077.2C466.92,-1059.76 502.24,-1028.75 518,-992.3 549,-920.62 504.33,-350.58 554,-290.3 554.98,-289.12 556.02,-288 557.12,-286.94"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="559.24,-289.72 565.05,-280.86 554.99,-284.16 559.24,-289.72"/>
+</a>
+</g>
+</g>
+<!-- Node29 -->
+<g id="Node000029" class="node">
+<title>Node29</title>
+<g id="a_Node000029"><a xlink:href="classzappy_1_1Client.html#a084ad3c2c2db76331617ce1d5f2bfddc" target="_top" xlink:title="Associates this client with the player of the given logical id (set at hatch time).">
+<polygon fill="white" stroke="#666666" points="701.5,-1208.8 561.5,-1208.8 561.5,-1189.8 701.5,-1189.8 701.5,-1208.8"/>
+<text text-anchor="middle" x="631.5" y="-1196.8" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::Client::setPlayerId</text>
+</a>
+</g>
+</g>
+<!-- Node8&#45;&gt;Node29 -->
+<g id="edge34_Node000008_Node000029" class="edge">
+<title>Node8&#45;&gt;Node29</title>
+<g id="a_edge34_Node000008_Node000029"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M439.97,-1107.58C464.27,-1127.45 509.68,-1161.93 554,-1181.3 558.72,-1183.37 563.72,-1185.22 568.8,-1186.87"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="568.06,-1190.3 578.64,-1189.8 570.06,-1183.59 568.06,-1190.3"/>
+</a>
+</g>
+</g>
+<!-- Node30 -->
+<g id="Node000030" class="node">
+<title>Node30</title>
+<g id="a_Node000030"><a xlink:href="classzappy_1_1Client.html#aafc44ed301967697c2a93931f5e51744" target="_top" xlink:title="Sets the connection&#39;s role, e.g. once it has been identified or marked dead.">
+<polygon fill="white" stroke="#666666" points="693,-1117.8 570,-1117.8 570,-1098.8 693,-1098.8 693,-1117.8"/>
+<text text-anchor="middle" x="631.5" y="-1105.8" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::Client::setType</text>
+</a>
+</g>
+</g>
+<!-- Node8&#45;&gt;Node30 -->
+<g id="edge35_Node000008_Node000030" class="edge">
+<title>Node8&#45;&gt;Node30</title>
+<g id="a_edge35_Node000008_Node000030"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M486.54,-1097.26C509.77,-1099.04 536.1,-1101.06 559.83,-1102.88"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="559.58,-1106.37 569.82,-1103.65 560.12,-1099.39 559.58,-1106.37"/>
 </a>
 </g>
 </g>
@@ -553,8 +572,8 @@ var sectionId = 'dynsection-8';
 <g id="Node000010" class="node">
 <title>Node10</title>
 <g id="a_Node000010"><a xlink:href="classzappy_1_1World.html#a3335c652e2e35588a6e503cb0e8658c2" target="_top" xlink:title="Adds the player pointer to the tile at the given position, if it exists.">
-<polygon fill="white" stroke="#666666" points="913.5,-835.45 751.5,-835.45 751.5,-816.45 913.5,-816.45 913.5,-835.45"/>
-<text text-anchor="middle" x="832.5" y="-823.45" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::World::addPlayerToTile</text>
+<polygon fill="white" stroke="#666666" points="910.5,-1103.8 748.5,-1103.8 748.5,-1084.8 910.5,-1084.8 910.5,-1103.8"/>
+<text text-anchor="middle" x="829.5" y="-1091.8" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::World::addPlayerToTile</text>
 </a>
 </g>
 </g>
@@ -562,8 +581,8 @@ var sectionId = 'dynsection-8';
 <g id="edge9_Node000009_Node000010" class="edge">
 <title>Node9&#45;&gt;Node10</title>
 <g id="a_edge9_Node000009_Node000010"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M654.74,-1252.43C672.84,-1243.01 698.27,-1226.83 712,-1204.95 759.3,-1129.55 721.23,-1092.83 748,-1007.95 767.62,-945.72 803.35,-876.91 821.03,-844.62"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="824.31,-845.91 826.09,-835.47 818.18,-842.53 824.31,-845.91"/>
+<path fill="none" stroke="#63b8ff" d="M655.11,-1152.74C677.67,-1143.38 713.41,-1128.99 745,-1118.3 757.18,-1114.18 770.5,-1110.15 782.85,-1106.59"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="783.85,-1109.95 792.52,-1103.86 781.94,-1103.22 783.85,-1109.95"/>
 </a>
 </g>
 </g>
@@ -571,8 +590,8 @@ var sectionId = 'dynsection-8';
 <g id="Node000012" class="node">
 <title>Node12</title>
 <g id="a_Node000012"><a xlink:href="structzappy_1_1Team.html#a04a63043edc415dcadb3eda2a746d557" target="_top" xlink:title="Read&#45;only view of all eggs (tile position paired with its egg IDs).">
-<polygon fill="white" stroke="#666666" points="893.5,-1271.45 771.5,-1271.45 771.5,-1252.45 893.5,-1252.45 893.5,-1271.45"/>
-<text text-anchor="middle" x="832.5" y="-1259.45" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::Team::getEggs</text>
+<polygon fill="white" stroke="#666666" points="890.5,-1253.8 768.5,-1253.8 768.5,-1234.8 890.5,-1234.8 890.5,-1253.8"/>
+<text text-anchor="middle" x="829.5" y="-1241.8" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::Team::getEggs</text>
 </a>
 </g>
 </g>
@@ -580,8 +599,8 @@ var sectionId = 'dynsection-8';
 <g id="edge11_Node000009_Node000012" class="edge">
 <title>Node9&#45;&gt;Node12</title>
 <g id="a_edge11_Node000009_Node000012"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M700.04,-1261.95C719.62,-1261.95 741.12,-1261.95 760.97,-1261.95"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="761.18,-1265.45 771.18,-1261.95 761.18,-1258.45 761.18,-1265.45"/>
+<path fill="none" stroke="#63b8ff" d="M689,-1171.82C696.04,-1174.29 702.89,-1177.39 709,-1181.3 730.57,-1195.12 723.22,-1212.83 745,-1226.3 749.19,-1228.9 753.71,-1231.12 758.38,-1233.03"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="757.57,-1236.46 768.17,-1236.51 759.92,-1229.86 757.57,-1236.46"/>
 </a>
 </g>
 </g>
@@ -589,8 +608,8 @@ var sectionId = 'dynsection-8';
 <g id="edge12_Node000009_Node000013" class="edge">
 <title>Node9&#45;&gt;Node13</title>
 <g id="a_edge12_Node000009_Node000013"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M676.18,-1252.42C688.17,-1248.8 700.96,-1244.04 712,-1237.95 730.48,-1227.74 729.3,-1216.75 748,-1206.95 816.74,-1170.91 851.72,-1204.92 917,-1162.95 962.21,-1133.88 997.3,-1079.23 1013.57,-1050.57"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1016.75,-1052.05 1018.52,-1041.6 1010.62,-1048.66 1016.75,-1052.05"/>
+<path fill="none" stroke="#63b8ff" d="M698.69,-1156.88C770.48,-1149.95 879.45,-1136.05 914,-1113.3 967.99,-1077.76 1000.74,-1004.37 1013.86,-969.51"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1017.19,-970.6 1017.31,-960.01 1010.61,-968.22 1017.19,-970.6"/>
 </a>
 </g>
 </g>
@@ -598,8 +617,8 @@ var sectionId = 'dynsection-8';
 <g id="Node000014" class="node">
 <title>Node14</title>
 <g id="a_Node000014"><a xlink:href="classzappy_1_1World.html#a0f7b0576d14b018ca6fcba792695d853" target="_top" xlink:title="Looks up a team by name, or nullptr if it does not exist.">
-<polygon fill="white" stroke="#666666" points="917,-1234.45 748,-1234.45 748,-1215.45 917,-1215.45 917,-1234.45"/>
-<text text-anchor="middle" x="832.5" y="-1222.45" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::World::getTeamByName</text>
+<polygon fill="white" stroke="#666666" points="914,-1216.8 745,-1216.8 745,-1197.8 914,-1197.8 914,-1216.8"/>
+<text text-anchor="middle" x="829.5" y="-1204.8" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::World::getTeamByName</text>
 </a>
 </g>
 </g>
@@ -607,8 +626,8 @@ var sectionId = 'dynsection-8';
 <g id="edge13_Node000009_Node000014" class="edge">
 <title>Node9&#45;&gt;Node14</title>
 <g id="a_edge13_Node000009_Node000014"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M684.86,-1252.42C711.02,-1247.52 743.1,-1241.51 770.57,-1236.36"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="771.28,-1239.79 780.47,-1234.51 769.99,-1232.91 771.28,-1239.79"/>
+<path fill="none" stroke="#63b8ff" d="M671.24,-1171.84C692.9,-1177.11 720.42,-1183.71 745,-1189.3 754.23,-1191.41 764.05,-1193.58 773.59,-1195.66"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="772.87,-1199.08 783.39,-1197.78 774.36,-1192.24 772.87,-1199.08"/>
 </a>
 </g>
 </g>
@@ -616,8 +635,8 @@ var sectionId = 'dynsection-8';
 <g id="Node000015" class="node">
 <title>Node15</title>
 <g id="a_Node000015"><a xlink:href="structzappy_1_1Team.html#aad0897588cd6ebe5a589f0ff710a3ee1" target="_top" xlink:title="Removes eggs at a tile (and their slots). With eggID set, removes just that one egg; with count == &#45;1...">
-<polygon fill="white" stroke="#666666" points="902,-1382.45 763,-1382.45 763,-1363.45 902,-1363.45 902,-1382.45"/>
-<text text-anchor="middle" x="832.5" y="-1370.45" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::Team::removeEgg</text>
+<polygon fill="white" stroke="#666666" points="899,-1290.8 760,-1290.8 760,-1271.8 899,-1271.8 899,-1290.8"/>
+<text text-anchor="middle" x="829.5" y="-1278.8" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::Team::removeEgg</text>
 </a>
 </g>
 </g>
@@ -625,8 +644,8 @@ var sectionId = 'dynsection-8';
 <g id="edge14_Node000009_Node000015" class="edge">
 <title>Node9&#45;&gt;Node15</title>
 <g id="a_edge14_Node000009_Node000015"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M642.69,-1271.59C660.46,-1290.7 703.11,-1333.36 748,-1354.95 752.09,-1356.92 756.41,-1358.67 760.82,-1360.24"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="760.03,-1363.66 770.62,-1363.37 762.16,-1356.99 760.03,-1363.66"/>
+<path fill="none" stroke="#63b8ff" d="M693.52,-1171.83C699.11,-1174.32 704.4,-1177.42 709,-1181.3 739.44,-1206.95 714.17,-1238.13 745,-1263.3 746.82,-1264.79 748.73,-1266.16 750.72,-1267.43"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="749.41,-1270.69 759.88,-1272.32 752.71,-1264.52 749.41,-1270.69"/>
 </a>
 </g>
 </g>
@@ -634,8 +653,8 @@ var sectionId = 'dynsection-8';
 <g id="Node000017" class="node">
 <title>Node17</title>
 <g id="a_Node000017"><a xlink:href="classzappy_1_1Player.html#a16e2f2ea6458b369a60a87f6e26a663c" target="_top" xlink:title="Places the player at (x, y), wrapping into the map bounds.">
-<polygon fill="white" stroke="#666666" points="903.5,-1345.45 761.5,-1345.45 761.5,-1326.45 903.5,-1326.45 903.5,-1345.45"/>
-<text text-anchor="middle" x="832.5" y="-1333.45" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::Player::setPosition</text>
+<polygon fill="white" stroke="#666666" points="900.5,-1179.8 758.5,-1179.8 758.5,-1160.8 900.5,-1160.8 900.5,-1179.8"/>
+<text text-anchor="middle" x="829.5" y="-1167.8" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::Player::setPosition</text>
 </a>
 </g>
 </g>
@@ -643,8 +662,8 @@ var sectionId = 'dynsection-8';
 <g id="edge16_Node000009_Node000017" class="edge">
 <title>Node9&#45;&gt;Node17</title>
 <g id="a_edge16_Node000009_Node000017"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M650.44,-1271.63C672.12,-1284.01 711.76,-1305.35 748,-1317.95 754.4,-1320.17 761.17,-1322.17 767.99,-1323.97"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="767.41,-1327.43 777.96,-1326.44 769.09,-1320.63 767.41,-1327.43"/>
+<path fill="none" stroke="#63b8ff" d="M698.58,-1165C714.51,-1165.65 731.69,-1166.35 748.18,-1167.03"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="748.21,-1170.53 758.34,-1167.44 748.49,-1163.54 748.21,-1170.53"/>
 </a>
 </g>
 </g>
@@ -652,8 +671,8 @@ var sectionId = 'dynsection-8';
 <g id="Node000018" class="node">
 <title>Node18</title>
 <g id="a_Node000018"><a xlink:href="classzappy_1_1Player.html#ab3e4df87dd335792986653bd74d23029" target="_top" xlink:title="Sets the facing direction.">
-<polygon fill="white" stroke="#666666" points="904.5,-1308.45 760.5,-1308.45 760.5,-1289.45 904.5,-1289.45 904.5,-1308.45"/>
-<text text-anchor="middle" x="832.5" y="-1296.45" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::Player::setRotation</text>
+<polygon fill="white" stroke="#666666" points="901.5,-1327.8 757.5,-1327.8 757.5,-1308.8 901.5,-1308.8 901.5,-1327.8"/>
+<text text-anchor="middle" x="829.5" y="-1315.8" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::Player::setRotation</text>
 </a>
 </g>
 </g>
@@ -661,8 +680,8 @@ var sectionId = 'dynsection-8';
 <g id="edge17_Node000009_Node000018" class="edge">
 <title>Node9&#45;&gt;Node18</title>
 <g id="a_edge17_Node000009_Node000018"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M684.86,-1271.48C711.02,-1276.38 743.1,-1282.39 770.57,-1287.53"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="769.99,-1290.99 780.47,-1289.39 771.28,-1284.1 769.99,-1290.99"/>
+<path fill="none" stroke="#63b8ff" d="M695.14,-1171.82C700.21,-1174.32 704.93,-1177.44 709,-1181.3 749.04,-1219.38 704.37,-1262.86 745,-1300.3 746.16,-1301.37 747.36,-1302.38 748.61,-1303.34"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="747.07,-1306.5 757.39,-1308.88 750.81,-1300.58 747.07,-1306.5"/>
 </a>
 </g>
 </g>
@@ -670,8 +689,8 @@ var sectionId = 'dynsection-8';
 <g id="Node000011" class="node">
 <title>Node11</title>
 <g id="a_Node000011"><a xlink:href="classzappy_1_1World.html#a9fce895cc2d62e61b943f7d9e03471db" target="_top" xlink:title="Returns the tile at the given coordinates.">
-<polygon fill="white" stroke="#666666" points="1089,-284.45 960,-284.45 960,-265.45 1089,-265.45 1089,-284.45"/>
-<text text-anchor="middle" x="1024.5" y="-272.45" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::World::getTileAt</text>
+<polygon fill="white" stroke="#666666" points="1086,-559.8 957,-559.8 957,-540.8 1086,-540.8 1086,-559.8"/>
+<text text-anchor="middle" x="1021.5" y="-547.8" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::World::getTileAt</text>
 </a>
 </g>
 </g>
@@ -679,8 +698,8 @@ var sectionId = 'dynsection-8';
 <g id="edge10_Node000010_Node000011" class="edge">
 <title>Node10&#45;&gt;Node11</title>
 <g id="a_edge10_Node000010_Node000011"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M843.7,-816.27C861.4,-798.89 897.73,-760.52 917,-720.95 991.47,-567.99 1015.82,-359.61 1021.84,-294.93"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1025.36,-294.83 1022.76,-284.57 1018.39,-294.22 1025.36,-294.83"/>
+<path fill="none" stroke="#63b8ff" d="M854.7,-1084.74C874.24,-1075.64 900.6,-1059.97 914,-1037.3 998.98,-893.55 896.38,-821.45 950,-663.3 962.47,-626.51 988.94,-589.35 1005.66,-568.14"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1008.61,-570.06 1012.16,-560.08 1003.16,-565.67 1008.61,-570.06"/>
 </a>
 </g>
 </g>
@@ -688,8 +707,8 @@ var sectionId = 'dynsection-8';
 <g id="Node000016" class="node">
 <title>Node16</title>
 <g id="a_Node000016"><a xlink:href="namespacezappy.html#a6f4c56af6fff80513c2388249fd217f4" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="1079,-1230.45 970,-1230.45 970,-1211.45 1079,-1211.45 1079,-1230.45"/>
-<text text-anchor="middle" x="1024.5" y="-1218.45" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::operator==</text>
+<polygon fill="white" stroke="#666666" points="1076,-857.8 967,-857.8 967,-838.8 1076,-838.8 1076,-857.8"/>
+<text text-anchor="middle" x="1021.5" y="-845.8" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::operator==</text>
 </a>
 </g>
 </g>
@@ -697,18 +716,17 @@ var sectionId = 'dynsection-8';
 <g id="edge15_Node000015_Node000016" class="edge">
 <title>Node15&#45;&gt;Node16</title>
 <g id="a_edge15_Node000015_Node000016"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M899.04,-1363.44C905.35,-1361.18 911.46,-1358.39 917,-1354.95 963.52,-1326.05 998.25,-1269.33 1014.06,-1239.81"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1017.34,-1241.08 1018.85,-1230.59 1011.13,-1237.85 1017.34,-1241.08"/>
+<path fill="none" stroke="#63b8ff" d="M899.25,-1274.3C904.78,-1271.53 909.83,-1267.93 914,-1263.3 963.53,-1208.34 920.96,-1000.36 950,-932.3 961.49,-905.37 984.63,-880.47 1001.27,-864.89"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1003.78,-867.34 1008.83,-858.02 999.08,-862.15 1003.78,-867.34"/>
 </a>
 </g>
 </g>
-<!-- Node20 -->
-<g id="Node000020" class="node">
-<title>Node20</title>
-<g id="a_Node000020"><a xlink:href="structzappy_1_1Team.html#a0b2a1c5b22eabc3d5c7c830e9a32fb21" target="_top" xlink:title="Number of free connection slots remaining.">
-<polygon fill="white" stroke="#666666" points="904.5,-1094.95 760.5,-1094.95 760.5,-1064.95 904.5,-1064.95 904.5,-1094.95"/>
-<text text-anchor="start" x="768.5" y="-1082.95" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::Team::getAvailable</text>
-<text text-anchor="middle" x="832.5" y="-1071.95" font-family="Helvetica,sans-Serif" font-size="10.00">Slots</text>
+<!-- Node19&#45;&gt;Node13 -->
+<g id="edge24_Node000019_Node000013" class="edge">
+<title>Node19&#45;&gt;Node13</title>
+<g id="a_edge24_Node000019_Node000013"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M709.16,-1069.43C767.46,-1069.83 848.53,-1064.37 914,-1037.3 951.62,-1021.75 986.37,-988.32 1005.39,-967.73"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1008.23,-969.8 1012.32,-960.03 1003.03,-965.12 1008.23,-969.8"/>
 </a>
 </g>
 </g>
@@ -716,544 +734,617 @@ var sectionId = 'dynsection-8';
 <g id="edge19_Node000019_Node000020" class="edge">
 <title>Node19&#45;&gt;Node20</title>
 <g id="a_edge19_Node000019_Node000020"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M695.95,-1047C716.26,-1051.94 739,-1057.47 759.96,-1062.56"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="759.23,-1065.98 769.77,-1064.94 760.88,-1059.18 759.23,-1065.98"/>
+<path fill="none" stroke="#63b8ff" d="M661.38,-1050.16C678.46,-1039.52 698.71,-1023.58 709,-1003.3 781.82,-859.86 673.38,-424.35 745,-280.3 757,-256.18 781.49,-237.23 800.87,-225.16"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="802.81,-228.08 809.62,-219.96 799.23,-222.06 802.81,-228.08"/>
 </a>
 </g>
 </g>
-<!-- Node24&#45;&gt;Node25 -->
-<g id="edge25_Node000024_Node000025" class="edge">
-<title>Node24&#45;&gt;Node25</title>
-<g id="a_edge25_Node000024_Node000025"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M683.58,-179.41C710.35,-174.26 743.58,-167.86 771.76,-162.44"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="772.74,-165.82 781.9,-160.49 771.42,-158.94 772.74,-165.82"/>
+<!-- Node21 -->
+<g id="Node000021" class="node">
+<title>Node21</title>
+<g id="a_Node000021"><a xlink:href="classzappy_1_1Player.html#a7583690b204dac5e1382ba3a80256695" target="_top" xlink:title="This player&#39;s inventory.">
+<polygon fill="white" stroke="#666666" points="904.5,-1027.8 754.5,-1027.8 754.5,-1008.8 904.5,-1008.8 904.5,-1027.8"/>
+<text text-anchor="middle" x="829.5" y="-1015.8" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::Player::getInventory</text>
 </a>
 </g>
 </g>
-<!-- Node29&#45;&gt;Node4 -->
-<g id="edge57_Node000029_Node000004" class="edge">
-<title>Node29&#45;&gt;Node4</title>
-<g id="a_edge57_Node000029_Node000004"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M240.76,-449.22C259.85,-465.34 292.14,-490.38 324,-504.95 404.78,-541.88 456.19,-489.16 518,-552.95 571.14,-607.79 517.72,-653.75 554,-720.95 567.85,-746.6 592.56,-769.52 610.47,-783.98"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="608.6,-786.96 618.63,-790.37 612.92,-781.45 608.6,-786.96"/>
+<!-- Node19&#45;&gt;Node21 -->
+<g id="edge20_Node000019_Node000021" class="edge">
+<title>Node19&#45;&gt;Node21</title>
+<g id="a_edge20_Node000019_Node000021"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M695.05,-1050.3C722.15,-1043.81 753.43,-1036.31 778.89,-1030.2"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="779.79,-1033.58 788.7,-1027.85 778.16,-1026.78 779.79,-1033.58"/>
 </a>
 </g>
 </g>
-<!-- Node29&#45;&gt;Node5 -->
-<g id="edge60_Node000029_Node000005" class="edge">
-<title>Node29&#45;&gt;Node5</title>
-<g id="a_edge60_Node000029_Node000005"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M266.81,-448.95C284.46,-454.86 305.11,-461.52 324,-466.95 409.37,-491.49 456.03,-451.31 518,-514.95 570.06,-568.41 503.45,-624.05 554,-678.95 557.51,-682.76 561.61,-685.97 566.05,-688.68"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="564.48,-691.8 574.97,-693.28 567.69,-685.58 564.48,-691.8"/>
+<!-- Node22 -->
+<g id="Node000022" class="node">
+<title>Node22</title>
+<g id="a_Node000022"><a xlink:href="classzappy_1_1Inventory.html#ae39a467d579b96abd514a9068b914959" target="_top" xlink:title="Mutable access to the underlying item counts, indexed by ItemType.">
+<polygon fill="white" stroke="#666666" points="902.5,-990.8 756.5,-990.8 756.5,-971.8 902.5,-971.8 902.5,-990.8"/>
+<text text-anchor="middle" x="829.5" y="-978.8" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::Inventory::getItems</text>
 </a>
 </g>
 </g>
-<!-- Node29&#45;&gt;Node6 -->
-<g id="edge62_Node000029_Node000006" class="edge">
-<title>Node29&#45;&gt;Node6</title>
-<g id="a_edge62_Node000029_Node000006"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M232.88,-448.97C248.62,-472.85 282.72,-519.2 324,-542.95 400.55,-586.98 457.61,-521.51 518,-585.95 589.65,-662.4 482.68,-742.18 554,-818.95 556.44,-821.57 559.18,-823.85 562.13,-825.83"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="560.5,-828.92 570.95,-830.63 563.84,-822.77 560.5,-828.92"/>
+<!-- Node19&#45;&gt;Node22 -->
+<g id="edge21_Node000019_Node000022" class="edge">
+<title>Node19&#45;&gt;Node22</title>
+<g id="a_edge21_Node000019_Node000022"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M681.75,-1050.17C691.15,-1046.32 700.65,-1041.7 709,-1036.3 728,-1024.02 725.19,-1011.24 745,-1000.3 749.17,-998 753.61,-995.98 758.18,-994.2"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="759.41,-997.47 767.71,-990.88 757.11,-990.86 759.41,-997.47"/>
 </a>
 </g>
 </g>
-<!-- Node29&#45;&gt;Node7 -->
-<g id="edge64_Node000029_Node000007" class="edge">
-<title>Node29&#45;&gt;Node7</title>
-<g id="a_edge64_Node000029_Node000007"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M288.02,-432.91C364.18,-433.07 484.72,-438.08 518,-466.95 566.21,-508.76 510.78,-558.99 554,-605.95 584.88,-639.5 707.88,-673.48 779.34,-690.94"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="778.94,-694.44 789.49,-693.39 780.59,-687.64 778.94,-694.44"/>
+<!-- Node19&#45;&gt;Node23 -->
+<g id="edge22_Node000019_Node000023" class="edge">
+<title>Node19&#45;&gt;Node23</title>
+<g id="a_edge22_Node000019_Node000023"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M687.66,-1050.23C695.39,-1046.52 702.8,-1041.94 709,-1036.3 735.78,-1011.98 716.64,-985.76 745,-963.3 805.43,-915.45 855.84,-974.9 914,-924.3 947.75,-894.94 932.37,-871.42 950,-830.3 970.28,-783.01 997.08,-728.7 1011.07,-700.87"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1014.23,-702.39 1015.61,-691.88 1007.98,-699.23 1014.23,-702.39"/>
 </a>
 </g>
 </g>
-<!-- Node29&#45;&gt;Node24 -->
-<g id="edge59_Node000029_Node000024" class="edge">
-<title>Node29&#45;&gt;Node24</title>
-<g id="a_edge59_Node000029_Node000024"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M225,-418.77C230.05,-376.81 250.46,-259.02 324,-207.95 401.17,-154.36 517.15,-165.27 582.55,-177.46"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="582.11,-180.95 592.6,-179.42 583.45,-174.07 582.11,-180.95"/>
+<!-- Node19&#45;&gt;Node24 -->
+<g id="edge23_Node000019_Node000024" class="edge">
+<title>Node19&#45;&gt;Node24</title>
+<g id="a_edge23_Node000019_Node000024"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M689.9,-1050.15C696.96,-1046.48 703.58,-1041.93 709,-1036.3 743.8,-1000.16 708.74,-963.98 745,-929.3 749.09,-925.4 753.77,-922.12 758.78,-919.37"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="760.56,-922.4 768.11,-914.97 757.57,-916.07 760.56,-922.4"/>
 </a>
 </g>
 </g>
-<!-- Node29&#45;&gt;Node25 -->
-<g id="edge58_Node000029_Node000025" class="edge">
-<title>Node29&#45;&gt;Node25</title>
-<g id="a_edge58_Node000029_Node000025"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M223.75,-418.62C225.46,-371.23 237.8,-226.54 324,-164.95 468.47,-61.72 699.83,-112.28 791.87,-138.52"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="791.04,-141.92 801.62,-141.36 793,-135.2 791.04,-141.92"/>
+<!-- Node26 -->
+<g id="Node000026" class="node">
+<title>Node26</title>
+<g id="a_Node000026"><a xlink:href="structzappy_1_1Team.html#a0b2a1c5b22eabc3d5c7c830e9a32fb21" target="_top" xlink:title="Number of free connection slots remaining.">
+<polygon fill="white" stroke="#666666" points="901.5,-877.3 757.5,-877.3 757.5,-847.3 901.5,-847.3 901.5,-877.3"/>
+<text text-anchor="start" x="765.5" y="-865.3" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::Team::getAvailable</text>
+<text text-anchor="middle" x="829.5" y="-854.3" font-family="Helvetica,sans-Serif" font-size="10.00">Slots</text>
 </a>
 </g>
 </g>
-<!-- Node29&#45;&gt;Node28 -->
-<g id="edge63_Node000029_Node000028" class="edge">
-<title>Node29&#45;&gt;Node28</title>
-<g id="a_edge63_Node000029_Node000028"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M229.47,-449.14C242.11,-479.24 274.52,-546.51 324,-580.95 331.12,-585.9 339.17,-589.84 347.5,-592.96"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="346.39,-596.28 356.99,-596.15 348.63,-589.65 346.39,-596.28"/>
+<!-- Node25&#45;&gt;Node26 -->
+<g id="edge26_Node000025_Node000026" class="edge">
+<title>Node25&#45;&gt;Node26</title>
+<g id="a_edge26_Node000025_Node000026"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M686.57,-964.26C694.62,-960.52 702.41,-955.93 709,-950.3 733.52,-929.36 719.75,-907.36 745,-887.3 747.28,-885.5 749.68,-883.82 752.19,-882.26"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="753.93,-885.3 761.02,-877.42 750.57,-879.16 753.93,-885.3"/>
 </a>
 </g>
 </g>
-<!-- Node30 -->
-<g id="Node000030" class="node">
-<title>Node30</title>
-<g id="a_Node000030"><a xlink:href="classzappy_1_1Commands.html#afc2159b221207ae6bf4ac860fab8db5f" target="_top" xlink:title="Starts an incantation: validates prerequisites, notifies the initiator and the GUI,...">
-<polygon fill="white" stroke="#666666" points="518,-424.45 324,-424.45 324,-405.45 518,-405.45 518,-424.45"/>
-<text text-anchor="middle" x="421" y="-412.45" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::Commands::beginIncantation</text>
+<!-- Node28&#45;&gt;Node20 -->
+<g id="edge32_Node000028_Node000020" class="edge">
+<title>Node28&#45;&gt;Node20</title>
+<g id="a_edge32_Node000028_Node000020"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M673.98,-261.76C685.39,-258.93 697.72,-255.68 709,-252.3 737.94,-243.65 770.23,-232.19 793.95,-223.42"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="795.4,-226.62 803.55,-219.85 792.96,-220.06 795.4,-226.62"/>
 </a>
 </g>
 </g>
-<!-- Node29&#45;&gt;Node30 -->
-<g id="edge36_Node000029_Node000030" class="edge">
-<title>Node29&#45;&gt;Node30</title>
-<g id="a_edge36_Node000029_Node000030"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M288.11,-427.7C296.31,-426.91 304.87,-426.08 313.51,-425.24"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="314.06,-428.71 323.68,-424.26 313.39,-421.74 314.06,-428.71"/>
+<!-- Node32&#45;&gt;Node4 -->
+<g id="edge64_Node000032_Node000004" class="edge">
+<title>Node32&#45;&gt;Node4</title>
+<g id="a_edge64_Node000032_Node000004"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M239.84,-379.47C259.71,-397.89 294.28,-429.92 324,-457.3 410.05,-536.6 439.45,-548.57 518,-635.3 558.42,-679.94 599.17,-738.39 618.66,-767.38"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="615.76,-769.33 624.22,-775.71 621.58,-765.45 615.76,-769.33"/>
 </a>
 </g>
 </g>
-<!-- Node36 -->
-<g id="Node000036" class="node">
-<title>Node36</title>
-<g id="a_Node000036"><a xlink:href="classzappy_1_1Client.html#a4f92c61fc28933a5028c593325a394b7" target="_top" xlink:title="Mutable access to the pending receive buffer, so callers can append incoming bytes or erase a command...">
-<polygon fill="white" stroke="#666666" points="486.5,-310.45 355.5,-310.45 355.5,-291.45 486.5,-291.45 486.5,-310.45"/>
-<text text-anchor="middle" x="421" y="-298.45" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::Client::getBuffer</text>
+<!-- Node32&#45;&gt;Node5 -->
+<g id="edge67_Node000032_Node000005" class="edge">
+<title>Node32&#45;&gt;Node5</title>
+<g id="a_edge67_Node000032_Node000005"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M266,-379.4C342.97,-407.03 499.24,-464.63 518,-483.3 547.94,-513.12 522.89,-542.71 554,-571.3 558.4,-575.35 563.47,-578.71 568.87,-581.5"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="567.65,-584.79 578.21,-585.7 570.52,-578.41 567.65,-584.79"/>
 </a>
 </g>
 </g>
-<!-- Node29&#45;&gt;Node36 -->
-<g id="edge56_Node000029_Node000036" class="edge">
-<title>Node29&#45;&gt;Node36</title>
-<g id="a_edge56_Node000029_Node000036"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M233.21,-418.66C249.17,-394.85 283.27,-349.11 324,-324.95 331.87,-320.28 340.61,-316.52 349.53,-313.48"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="350.74,-316.77 359.25,-310.47 348.66,-310.09 350.74,-316.77"/>
-</a>
-</g>
-</g>
-<!-- Node37 -->
-<g id="Node000037" class="node">
-<title>Node37</title>
-<g id="a_Node000037"><a xlink:href="classzappy_1_1World.html#a05439a20a5736f87ccfa09d8bae3ca45" target="_top" xlink:title="Returns the active time unit for the world.">
-<polygon fill="white" stroke="#666666" points="494,-273.45 348,-273.45 348,-254.45 494,-254.45 494,-273.45"/>
-<text text-anchor="middle" x="421" y="-261.45" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::World::getTimeUnit</text>
-</a>
-</g>
-</g>
-<!-- Node29&#45;&gt;Node37 -->
-<g id="edge61_Node000029_Node000037" class="edge">
-<title>Node29&#45;&gt;Node37</title>
-<g id="a_edge61_Node000029_Node000037"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M228.78,-418.94C240.55,-387.84 272.08,-316.41 324,-281.95 328.39,-279.03 333.13,-276.56 338.07,-274.47"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="339.6,-277.63 347.77,-270.89 337.18,-271.06 339.6,-277.63"/>
-</a>
-</g>
-</g>
-<!-- Node38 -->
-<g id="Node000038" class="node">
-<title>Node38</title>
-<g id="a_Node000038"><a xlink:href="classzappy_1_1Client.html#ac82ce36df3beeb570fdb5e4027019708" target="_top" xlink:title="Replaces the entire pending buffer.">
-<polygon fill="white" stroke="#666666" points="486,-236.45 356,-236.45 356,-217.45 486,-217.45 486,-236.45"/>
-<text text-anchor="middle" x="421" y="-224.45" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::Client::setBuffer</text>
-</a>
-</g>
-</g>
-<!-- Node29&#45;&gt;Node38 -->
-<g id="edge65_Node000029_Node000038" class="edge">
-<title>Node29&#45;&gt;Node38</title>
-<g id="a_edge65_Node000029_Node000038"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M226.82,-418.74C235.63,-382.29 263.21,-289.62 324,-244.95 330.61,-240.09 338.14,-236.43 346.02,-233.68"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="347.18,-236.99 355.76,-230.76 345.17,-230.28 347.18,-236.99"/>
-</a>
-</g>
-</g>
-<!-- Node30&#45;&gt;Node5 -->
-<g id="edge40_Node000030_Node000005" class="edge">
-<title>Node30&#45;&gt;Node5</title>
-<g id="a_edge40_Node000030_Node000005"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M446.85,-424.49C468.97,-434.28 500.47,-451.68 518,-476.95 560.55,-538.25 514.51,-577.63 554,-640.95 566.44,-660.89 587.64,-677.12 604.8,-687.97"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="603.47,-691.26 613.84,-693.43 607.09,-685.26 603.47,-691.26"/>
-</a>
-</g>
-</g>
-<!-- Node30&#45;&gt;Node7 -->
-<g id="edge52_Node000030_Node000007" class="edge">
-<title>Node30&#45;&gt;Node7</title>
-<g id="a_edge52_Node000030_Node000007"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M495.55,-424.48C503.86,-428.01 511.61,-432.7 518,-438.95 561.19,-481.14 511.25,-527.3 554,-569.95 605.52,-621.34 646.65,-580.92 712,-612.95 751.91,-632.5 791.87,-666.13 813.97,-686.28"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="811.81,-689.06 821.53,-693.28 816.57,-683.92 811.81,-689.06"/>
-</a>
-</g>
-</g>
-<!-- Node30&#45;&gt;Node11 -->
-<g id="edge46_Node000030_Node000011" class="edge">
-<title>Node30&#45;&gt;Node11</title>
-<g id="a_edge46_Node000030_Node000011"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M457.09,-405.31C476.79,-398.51 500.79,-387.76 518,-371.95 542.32,-349.6 529.28,-328.84 554,-306.95 610.71,-256.71 648.55,-284.35 712,-242.95 730.69,-230.75 727.32,-216.34 748,-207.95 817.59,-179.69 844.83,-187.13 917,-207.95 951.34,-217.85 985.29,-242.47 1005.32,-258.94"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1003.12,-261.66 1013.01,-265.44 1007.63,-256.31 1003.12,-261.66"/>
-</a>
-</g>
-</g>
-<!-- Node30&#45;&gt;Node13 -->
-<g id="edge45_Node000030_Node000013" class="edge">
-<title>Node30&#45;&gt;Node13</title>
-<g id="a_edge45_Node000030_Node000013"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M486.91,-424.47C497.33,-426.18 507.98,-428.03 518,-429.95 604.84,-446.56 627.69,-447.32 712,-473.95 805.89,-503.6 858.92,-478.44 917,-557.95 976.17,-638.96 891.39,-928.77 953,-1007.95 955.85,-1011.6 959.28,-1014.71 963.07,-1017.34"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="961.47,-1020.45 971.88,-1022.39 964.95,-1014.38 961.47,-1020.45"/>
-</a>
-</g>
-</g>
-<!-- Node30&#45;&gt;Node21 -->
-<g id="edge38_Node000030_Node000021" class="edge">
-<title>Node30&#45;&gt;Node21</title>
-<g id="a_edge38_Node000030_Node000021"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M482.96,-405.44C505.25,-402.4 530.71,-399.44 554,-397.95 624.08,-393.45 644.46,-378.72 712,-397.95 815.08,-427.29 854.65,-437.77 917,-524.95 1020.86,-670.15 1025.27,-900.66 1024.12,-969.14"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1020.62,-969.27 1023.88,-979.35 1027.61,-969.44 1020.62,-969.27"/>
-</a>
-</g>
-</g>
-<!-- Node30&#45;&gt;Node24 -->
-<g id="edge39_Node000030_Node000024" class="edge">
-<title>Node30&#45;&gt;Node24</title>
-<g id="a_edge39_Node000030_Node000024"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M496.92,-405.4C504.79,-401.86 512.07,-397.16 518,-390.95 573.76,-332.59 499.82,-272.77 554,-212.95 557.48,-209.11 561.55,-205.87 565.98,-203.15"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="567.62,-206.25 574.88,-198.53 564.39,-200.04 567.62,-206.25"/>
-</a>
-</g>
-</g>
-<!-- Node30&#45;&gt;Node25 -->
-<g id="edge37_Node000030_Node000025" class="edge">
-<title>Node30&#45;&gt;Node25</title>
-<g id="a_edge37_Node000030_Node000025"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M496.13,-405.3C504.23,-401.79 511.78,-397.12 518,-390.95 563.58,-345.67 509.03,-296.83 554,-250.95 605.03,-198.89 648,-241.84 712,-206.95 730.8,-196.7 729.25,-185.27 748,-174.95 756.34,-170.36 765.63,-166.57 774.91,-163.47"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="776.02,-166.8 784.54,-160.49 773.95,-160.11 776.02,-166.8"/>
-</a>
-</g>
-</g>
-<!-- Node31 -->
-<g id="Node000031" class="node">
-<title>Node31</title>
-<g id="a_Node000031"><a xlink:href="classzappy_1_1World.html#ab1b432308478a9dba9cf0a0695bef412" target="_top" xlink:title="Returns the players standing on the tile that are exactly at level.">
-<polygon fill="white" stroke="#666666" points="901,-1046.95 764,-1046.95 764,-1016.95 901,-1016.95 901,-1046.95"/>
-<text text-anchor="start" x="772" y="-1034.95" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::World::getPlayers</text>
-<text text-anchor="middle" x="832.5" y="-1023.95" font-family="Helvetica,sans-Serif" font-size="10.00">OnTileAtLevel</text>
-</a>
-</g>
-</g>
-<!-- Node30&#45;&gt;Node31 -->
-<g id="edge41_Node000030_Node000031" class="edge">
-<title>Node30&#45;&gt;Node31</title>
-<g id="a_edge41_Node000030_Node000031"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M457.38,-424.49C477.93,-431.79 502.71,-443.92 518,-462.95 559.05,-514.04 512.82,-554.96 554,-605.95 603.21,-666.87 663.61,-622.37 712,-683.95 757.31,-741.6 724.94,-775.35 748,-844.95 768.04,-905.41 800.92,-972.83 818.86,-1007.86"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="815.8,-1009.57 823.5,-1016.85 822.02,-1006.36 815.8,-1009.57"/>
-</a>
-</g>
-</g>
-<!-- Node32 -->
-<g id="Node000032" class="node">
-<title>Node32</title>
-<g id="a_Node000032"><a xlink:href="classzappy_1_1World.html#aad86d2fa98fbe95fed52656c32582b19" target="_top" xlink:title="Checks whether an elevation from level to level + 1 can take place on the tile. Verifies both the min...">
-<polygon fill="white" stroke="#666666" points="707,-512.95 559,-512.95 559,-482.95 707,-482.95 707,-512.95"/>
-<text text-anchor="start" x="567" y="-500.95" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::World::isIncantation</text>
-<text text-anchor="middle" x="633" y="-489.95" font-family="Helvetica,sans-Serif" font-size="10.00">Valid</text>
-</a>
-</g>
-</g>
-<!-- Node30&#45;&gt;Node32 -->
-<g id="edge47_Node000030_Node000032" class="edge">
-<title>Node30&#45;&gt;Node32</title>
-<g id="a_edge47_Node000030_Node000032"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M478.11,-424.49C491.6,-427.99 505.67,-432.69 518,-438.95 536.57,-448.38 535.98,-458.5 554,-468.95 560.36,-472.63 567.27,-476 574.27,-479.03"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="573.23,-482.39 583.81,-482.95 575.89,-475.91 573.23,-482.39"/>
-</a>
-</g>
-</g>
-<!-- Node34 -->
-<g id="Node000034" class="node">
-<title>Node34</title>
-<g id="a_Node000034"><a xlink:href="classzappy_1_1Player.html#a25f313ec41f8ac5fb9544df508dfbf87" target="_top" xlink:title="Freezes the player until the given time point (used while an incantation is underway).">
-<polygon fill="white" stroke="#666666" points="700.5,-560.95 565.5,-560.95 565.5,-530.95 700.5,-530.95 700.5,-560.95"/>
-<text text-anchor="start" x="573.5" y="-548.95" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::Player::setFrozen</text>
-<text text-anchor="middle" x="633" y="-537.95" font-family="Helvetica,sans-Serif" font-size="10.00">Until</text>
-</a>
-</g>
-</g>
-<!-- Node30&#45;&gt;Node34 -->
-<g id="edge53_Node000030_Node000034" class="edge">
-<title>Node30&#45;&gt;Node34</title>
-<g id="a_edge53_Node000030_Node000034"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M492.79,-424.61C501.94,-428.08 510.66,-432.72 518,-438.95 548.67,-464.95 524.04,-495.13 554,-521.95 555.31,-523.12 556.67,-524.23 558.08,-525.29"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="556.31,-528.31 566.61,-530.77 560.1,-522.42 556.31,-528.31"/>
-</a>
-</g>
-</g>
-<!-- Node35 -->
-<g id="Node000035" class="node">
-<title>Node35</title>
-<g id="a_Node000035"><a xlink:href="classzappy_1_1Client.html#afd9816d0a687764ad9ee4772739a326e" target="_top" xlink:title="Writes the given message to the client socket, if it is valid. Logs an error if the write fails.">
-<polygon fill="white" stroke="#666666" points="688,-426.45 578,-426.45 578,-407.45 688,-407.45 688,-426.45"/>
-<text text-anchor="middle" x="633" y="-414.45" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::Client::write</text>
-</a>
-</g>
-</g>
-<!-- Node30&#45;&gt;Node35 -->
-<g id="edge55_Node000030_Node000035" class="edge">
-<title>Node30&#45;&gt;Node35</title>
-<g id="a_edge55_Node000030_Node000035"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M518.09,-415.86C534.92,-416.02 552.06,-416.19 567.76,-416.33"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="567.82,-419.84 577.85,-416.43 567.89,-412.84 567.82,-419.84"/>
-</a>
-</g>
-</g>
-<!-- Node31&#45;&gt;Node13 -->
-<g id="edge43_Node000031_Node000013" class="edge">
-<title>Node31&#45;&gt;Node13</title>
-<g id="a_edge43_Node000031_Node000013"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M901.02,-1031.95C914.58,-1031.95 928.96,-1031.95 942.92,-1031.95"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="942.98,-1035.45 952.98,-1031.95 942.98,-1028.45 942.98,-1035.45"/>
-</a>
-</g>
-</g>
-<!-- Node31&#45;&gt;Node16 -->
-<g id="edge44_Node000031_Node000016" class="edge">
-<title>Node31&#45;&gt;Node16</title>
-<g id="a_edge44_Node000031_Node000016"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M901.18,-1046.69C906.79,-1049.29 912.16,-1052.35 917,-1055.95 969.34,-1094.82 1002.91,-1167.68 1016.55,-1202.06"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1013.29,-1203.34 1020.14,-1211.42 1019.82,-1200.83 1013.29,-1203.34"/>
-</a>
-</g>
-</g>
-<!-- Node31&#45;&gt;Node21 -->
-<g id="edge42_Node000031_Node000021" class="edge">
-<title>Node31&#45;&gt;Node21</title>
-<g id="a_edge42_Node000031_Node000021"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M899.95,-1016.91C923.43,-1011.59 949.47,-1005.7 971.57,-1000.7"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="972.44,-1004.09 981.42,-998.47 970.9,-997.26 972.44,-1004.09"/>
+<!-- Node32&#45;&gt;Node6 -->
+<g id="edge69_Node000032_Node000006" class="edge">
+<title>Node32&#45;&gt;Node6</title>
+<g id="a_edge69_Node000032_Node000006"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M227.86,-379.37C238.78,-414.84 270.32,-504.76 324,-560.3 392.58,-631.27 457.43,-590.39 518,-668.3 556.38,-717.67 509.18,-760.71 554,-804.3 555.93,-806.18 558.01,-807.87 560.21,-809.4"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="558.8,-812.62 569.23,-814.5 562.25,-806.53 558.8,-812.62"/>
 </a>
 </g>
 </g>
 <!-- Node32&#45;&gt;Node7 -->
-<g id="edge51_Node000032_Node000007" class="edge">
+<g id="edge71_Node000032_Node000007" class="edge">
 <title>Node32&#45;&gt;Node7</title>
-<g id="a_edge51_Node000032_Node000007"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M699.4,-513.1C703.94,-515.61 708.21,-518.54 712,-521.95 742.21,-549.1 726.5,-571.49 748,-605.95 767.25,-636.79 796,-667.84 814.25,-686.22"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="811.8,-688.73 821.37,-693.29 816.74,-683.76 811.8,-688.73"/>
+<g id="a_edge71_Node000032_Node000007"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M288.04,-363.49C364.22,-363.92 484.78,-369.34 518,-398.3 566.43,-440.52 508.32,-493.13 554,-538.3 604.44,-588.18 652.51,-533.41 709,-576.3 734.99,-596.04 719.96,-619.37 745,-640.3 753.03,-647.02 762.71,-652.21 772.59,-656.22"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="771.48,-659.54 782.07,-659.71 773.89,-652.97 771.48,-659.54"/>
 </a>
 </g>
 </g>
-<!-- Node32&#45;&gt;Node11 -->
-<g id="edge50_Node000032_Node000011" class="edge">
-<title>Node32&#45;&gt;Node11</title>
-<g id="a_edge50_Node000032_Node000011"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M707.07,-485.75C767.43,-473.04 853.23,-448.66 917,-404.95 960.91,-374.84 996.34,-321.6 1013.06,-293.5"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1016.18,-295.1 1018.18,-284.69 1010.13,-291.58 1016.18,-295.1"/>
+<!-- Node32&#45;&gt;Node20 -->
+<g id="edge65_Node000032_Node000020" class="edge">
+<title>Node32&#45;&gt;Node20</title>
+<g id="a_edge65_Node000032_Node000020"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M226.58,-349.08C234.86,-312.72 261.34,-221.08 324,-184.3 479.7,-92.91 711.2,-165.31 795.93,-197.18"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="794.7,-200.46 805.29,-200.76 797.2,-193.92 794.7,-200.46"/>
+</a>
+</g>
+</g>
+<!-- Node32&#45;&gt;Node28 -->
+<g id="edge66_Node000032_Node000028" class="edge">
+<title>Node32&#45;&gt;Node28</title>
+<g id="a_edge66_Node000032_Node000028"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M228.24,-349.29C239.16,-317.58 269.45,-244.31 324,-215.3 400.13,-174.83 438.57,-181.76 518,-215.3 539.14,-224.23 534.1,-240.88 554,-252.3 557.91,-254.55 562.08,-256.53 566.38,-258.28"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="565.36,-261.63 575.95,-261.75 567.74,-255.05 565.36,-261.63"/>
 </a>
 </g>
 </g>
 <!-- Node32&#45;&gt;Node31 -->
-<g id="edge49_Node000032_Node000031" class="edge">
+<g id="edge70_Node000032_Node000031" class="edge">
 <title>Node32&#45;&gt;Node31</title>
-<g id="a_edge49_Node000032_Node000031"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M702.35,-513.14C705.93,-515.65 709.2,-518.56 712,-521.95 758.06,-577.57 729.05,-775.25 748,-844.95 764.63,-906.1 798.58,-972.75 817.67,-1007.6"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="814.73,-1009.5 822.63,-1016.55 820.85,-1006.11 814.73,-1009.5"/>
+<g id="a_edge70_Node000032_Node000031"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M228.12,-379.37C246.37,-438.64 312.91,-653.06 324,-663.3 330.6,-669.4 338.51,-674.01 346.93,-677.48"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="346,-680.87 356.59,-680.94 348.35,-674.28 346,-680.87"/>
 </a>
 </g>
 </g>
 <!-- Node33 -->
 <g id="Node000033" class="node">
 <title>Node33</title>
-<g id="a_Node000033"><a xlink:href="classzappy_1_1World.html#a34a1fc2900d878a2db5bfb0ee1cf659f" target="_top" xlink:title="Returns the requirements to elevate from level to level + 1, or nullptr if level is out of [1,...">
-<polygon fill="white" stroke="#666666" points="905.5,-596.95 759.5,-596.95 759.5,-566.95 905.5,-566.95 905.5,-596.95"/>
-<text text-anchor="start" x="767.5" y="-584.95" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::World::getElevation</text>
-<text text-anchor="middle" x="832.5" y="-573.95" font-family="Helvetica,sans-Serif" font-size="10.00">Requirement</text>
+<g id="a_Node000033"><a xlink:href="classzappy_1_1Commands.html#afc2159b221207ae6bf4ac860fab8db5f" target="_top" xlink:title="Starts an incantation: validates prerequisites, notifies the initiator and the GUI,...">
+<polygon fill="white" stroke="#666666" points="518,-243.8 324,-243.8 324,-224.8 518,-224.8 518,-243.8"/>
+<text text-anchor="middle" x="421" y="-231.8" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::Commands::beginIncantation</text>
 </a>
 </g>
 </g>
 <!-- Node32&#45;&gt;Node33 -->
-<g id="edge48_Node000032_Node000033" class="edge">
+<g id="edge43_Node000032_Node000033" class="edge">
 <title>Node32&#45;&gt;Node33</title>
-<g id="a_edge48_Node000032_Node000033"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M692.6,-513.06C699.32,-515.64 705.92,-518.59 712,-521.95 730.48,-532.16 729.7,-542.41 748,-552.95 754.49,-556.69 761.54,-560.05 768.7,-563.05"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="767.91,-566.5 778.5,-566.92 770.48,-559.99 767.91,-566.5"/>
+<g id="a_edge43_Node000032_Node000033"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M232.43,-349.11C247.79,-324.46 281.65,-276.13 324,-252.3 327.22,-250.49 330.59,-248.86 334.05,-247.39"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="335.3,-250.66 343.42,-243.85 332.83,-244.11 335.3,-250.66"/>
 </a>
 </g>
 </g>
-<!-- Node34&#45;&gt;Node7 -->
-<g id="edge54_Node000034_Node000007" class="edge">
-<title>Node34&#45;&gt;Node7</title>
-<g id="a_edge54_Node000034_Node000007"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M685.19,-561.08C694.49,-564.9 703.82,-569.5 712,-574.95 736.16,-591.05 790.81,-654.4 816.99,-685.51"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="814.46,-687.95 823.57,-693.37 819.83,-683.46 814.46,-687.95"/>
+<!-- Node39 -->
+<g id="Node000039" class="node">
+<title>Node39</title>
+<g id="a_Node000039"><a xlink:href="classzappy_1_1Client.html#a4f92c61fc28933a5028c593325a394b7" target="_top" xlink:title="Mutable access to the pending receive buffer, so callers can append incoming bytes or erase a command...">
+<polygon fill="white" stroke="#666666" points="486.5,-354.8 355.5,-354.8 355.5,-335.8 486.5,-335.8 486.5,-354.8"/>
+<text text-anchor="middle" x="421" y="-342.8" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::Client::getBuffer</text>
 </a>
 </g>
 </g>
-<!-- Node39&#45;&gt;Node4 -->
-<g id="edge67_Node000039_Node000004" class="edge">
-<title>Node39&#45;&gt;Node4</title>
-<g id="a_edge67_Node000039_Node000004"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M480.22,-799.95C506.8,-799.95 538.42,-799.95 565.89,-799.95"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="566.2,-803.45 576.2,-799.95 566.2,-796.45 566.2,-803.45"/>
+<!-- Node32&#45;&gt;Node39 -->
+<g id="edge63_Node000032_Node000039" class="edge">
+<title>Node32&#45;&gt;Node39</title>
+<g id="a_edge63_Node000032_Node000039"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M288.11,-358.06C306.41,-356.29 326.48,-354.35 345.33,-352.53"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="345.73,-356 355.35,-351.56 345.06,-349.03 345.73,-356"/>
 </a>
 </g>
 </g>
-<!-- Node41&#45;&gt;Node4 -->
-<g id="edge75_Node000041_Node000004" class="edge">
-<title>Node41&#45;&gt;Node4</title>
-<g id="a_edge75_Node000041_Node000004"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M271.09,-717.96C287.75,-723 306.63,-728.47 324,-732.95 348.29,-739.2 495.78,-770.87 577.54,-788.33"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="576.9,-791.78 587.41,-790.44 578.36,-784.93 576.9,-791.78"/>
+<!-- Node40 -->
+<g id="Node000040" class="node">
+<title>Node40</title>
+<g id="a_Node000040"><a xlink:href="classzappy_1_1World.html#a05439a20a5736f87ccfa09d8bae3ca45" target="_top" xlink:title="Returns the active time unit for the world.">
+<polygon fill="white" stroke="#666666" points="494,-317.8 348,-317.8 348,-298.8 494,-298.8 494,-317.8"/>
+<text text-anchor="middle" x="421" y="-305.8" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::World::getTimeUnit</text>
 </a>
 </g>
 </g>
-<!-- Node41&#45;&gt;Node5 -->
-<g id="edge76_Node000041_Node000005" class="edge">
-<title>Node41&#45;&gt;Node5</title>
-<g id="a_edge76_Node000041_Node000005"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M281.59,-702.95C352.43,-702.95 472.5,-702.95 552.03,-702.95"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="552.49,-706.45 562.49,-702.95 552.49,-699.45 552.49,-706.45"/>
+<!-- Node32&#45;&gt;Node40 -->
+<g id="edge68_Node000032_Node000040" class="edge">
+<title>Node32&#45;&gt;Node40</title>
+<g id="a_edge68_Node000032_Node000040"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M258.8,-349.21C277.85,-341.51 301.91,-332.5 324,-326.3 332.42,-323.94 341.35,-321.8 350.23,-319.89"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="351.13,-323.28 360.22,-317.83 349.72,-316.42 351.13,-323.28"/>
 </a>
 </g>
 </g>
-<!-- Node41&#45;&gt;Node7 -->
-<g id="edge77_Node000041_Node000007" class="edge">
-<title>Node41&#45;&gt;Node7</title>
-<g id="a_edge77_Node000041_Node000007"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M281.86,-709.3C373.55,-718.32 556.92,-732.56 712,-720.95 730.89,-719.53 751.32,-716.88 769.85,-714.03"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="770.6,-717.46 779.93,-712.44 769.5,-710.54 770.6,-717.46"/>
+<!-- Node41 -->
+<g id="Node000041" class="node">
+<title>Node41</title>
+<g id="a_Node000041"><a xlink:href="classzappy_1_1Client.html#ac82ce36df3beeb570fdb5e4027019708" target="_top" xlink:title="Replaces the entire pending buffer.">
+<polygon fill="white" stroke="#666666" points="486,-280.8 356,-280.8 356,-261.8 486,-261.8 486,-280.8"/>
+<text text-anchor="middle" x="421" y="-268.8" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::Client::setBuffer</text>
 </a>
 </g>
 </g>
-<!-- Node41&#45;&gt;Node39 -->
-<g id="edge74_Node000041_Node000039" class="edge">
-<title>Node41&#45;&gt;Node39</title>
-<g id="a_edge74_Node000041_Node000039"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M242.09,-718.07C261.52,-733.24 293.37,-756.37 324,-770.95 332.9,-775.18 342.56,-778.96 352.21,-782.28"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="351.23,-785.65 361.83,-785.45 353.42,-779 351.23,-785.65"/>
+<!-- Node32&#45;&gt;Node41 -->
+<g id="edge72_Node000032_Node000041" class="edge">
+<title>Node32&#45;&gt;Node41</title>
+<g id="a_edge72_Node000032_Node000041"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M239.09,-349.02C257.69,-331.7 290.5,-303.99 324,-289.3 330.91,-286.27 338.32,-283.75 345.84,-281.66"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="346.94,-284.99 355.77,-279.14 345.22,-278.21 346.94,-284.99"/>
 </a>
 </g>
 </g>
-<!-- Node42 -->
-<g id="Node000042" class="node">
-<title>Node42</title>
-<g id="a_Node000042"><a xlink:href="classzappy_1_1World.html#a61bd77a5a1cae883aa060469d039fe92" target="_top" xlink:title="Removes a player from the world and decrease the number of slots occupied in its team....">
-<polygon fill="white" stroke="#666666" points="709.5,-335.45 556.5,-335.45 556.5,-316.45 709.5,-316.45 709.5,-335.45"/>
-<text text-anchor="middle" x="633" y="-323.45" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::World::removePlayer</text>
+<!-- Node33&#45;&gt;Node5 -->
+<g id="edge47_Node000033_Node000005" class="edge">
+<title>Node33&#45;&gt;Node5</title>
+<g id="a_edge47_Node000033_Node000005"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M507.91,-244.01C511.58,-246.35 514.98,-249.09 518,-252.3 605.83,-345.58 489.47,-427.63 554,-538.3 564.77,-556.78 584.13,-571.11 600.68,-580.79"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="599.07,-583.9 609.51,-585.68 602.46,-577.77 599.07,-583.9"/>
 </a>
 </g>
 </g>
-<!-- Node41&#45;&gt;Node42 -->
-<g id="edge78_Node000041_Node000042" class="edge">
-<title>Node41&#45;&gt;Node42</title>
-<g id="a_edge78_Node000041_Node000042"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M226.42,-687.77C237.52,-631.68 278.71,-437.21 324,-395.95 384.05,-341.23 477.74,-326.4 546.03,-323.62"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="546.46,-327.1 556.34,-323.28 546.23,-320.11 546.46,-327.1"/>
+<!-- Node33&#45;&gt;Node7 -->
+<g id="edge59_Node000033_Node000007" class="edge">
+<title>Node33&#45;&gt;Node7</title>
+<g id="a_edge59_Node000033_Node000007"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M507.27,-243.95C511.16,-246.29 514.77,-249.06 518,-252.3 581.35,-316.06 492.63,-385.64 554,-451.3 602.51,-503.2 659.23,-439.62 709,-490.3 758.55,-540.77 696.3,-594.02 745,-645.3 751.11,-651.74 758.83,-656.49 767.09,-659.98"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="765.99,-663.3 776.58,-663.41 768.37,-656.72 765.99,-663.3"/>
 </a>
 </g>
 </g>
-<!-- Node42&#45;&gt;Node11 -->
-<g id="edge83_Node000042_Node000011" class="edge">
-<title>Node42&#45;&gt;Node11</title>
-<g id="a_edge83_Node000042_Node000011"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M661.74,-316.43C684.6,-309.02 718.02,-299.13 748,-293.95 815.71,-282.24 893.96,-277.68 949.73,-275.94"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="949.97,-279.44 959.87,-275.65 949.77,-272.44 949.97,-279.44"/>
+<!-- Node33&#45;&gt;Node11 -->
+<g id="edge53_Node000033_Node000011" class="edge">
+<title>Node33&#45;&gt;Node11</title>
+<g id="a_edge53_Node000033_Node000011"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M431.48,-224.73C451.77,-205.02 501.79,-160.41 554,-144.3 706.89,-97.14 787.32,-46.57 914,-144.3 977.12,-193 1010.14,-455.02 1018.4,-530.16"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1014.97,-530.98 1019.52,-540.55 1021.93,-530.23 1014.97,-530.98"/>
 </a>
 </g>
 </g>
-<!-- Node42&#45;&gt;Node13 -->
-<g id="edge80_Node000042_Node000013" class="edge">
-<title>Node42&#45;&gt;Node13</title>
-<g id="a_edge80_Node000042_Node000013"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M647.92,-335.62C704.58,-374.99 914.95,-521.33 917,-524.95 970.12,-618.56 887.13,-922.82 953,-1007.95 955.84,-1011.61 959.26,-1014.72 963.05,-1017.36"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="961.44,-1020.47 971.85,-1022.41 964.92,-1014.4 961.44,-1020.47"/>
+<!-- Node33&#45;&gt;Node13 -->
+<g id="edge52_Node000033_Node000013" class="edge">
+<title>Node33&#45;&gt;Node13</title>
+<g id="a_edge52_Node000033_Node000013"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M505.94,-243.93C510.27,-246.26 514.34,-249.03 518,-252.3 558.86,-288.87 512,-335.06 554,-370.3 615.74,-422.11 858.23,-356.12 914,-414.3 983.88,-487.21 911.45,-773.97 950,-867.3 961.1,-894.18 984.32,-918.73 1001.08,-934.04"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="998.9,-936.78 1008.71,-940.78 1003.54,-931.54 998.9,-936.78"/>
 </a>
 </g>
 </g>
-<!-- Node42&#45;&gt;Node25 -->
-<g id="edge79_Node000042_Node000025" class="edge">
-<title>Node42&#45;&gt;Node25</title>
-<g id="a_edge79_Node000042_Node000025"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M641.99,-316.44C659.82,-295.53 704.67,-244.5 748,-207.95 766.56,-192.29 789.46,-176.9 806.57,-166.07"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="808.79,-168.81 815.42,-160.55 805.09,-162.87 808.79,-168.81"/>
+<!-- Node33&#45;&gt;Node20 -->
+<g id="edge44_Node000033_Node000020" class="edge">
+<title>Node33&#45;&gt;Node20</title>
+<g id="a_edge44_Node000033_Node000020"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M477.38,-224.76C500.93,-221.12 528.73,-217.35 554,-215.3 625.23,-209.55 707.17,-208.82 762.85,-209.21"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="762.9,-212.71 772.93,-209.29 762.96,-205.71 762.9,-212.71"/>
 </a>
 </g>
 </g>
-<!-- Node43 -->
-<g id="Node000043" class="node">
-<title>Node43</title>
-<g id="a_Node000043"><a xlink:href="classzappy_1_1Player.html#a631fcf2698ec9ac726147ca31184e354" target="_top" xlink:title="Life&#45;cycle state (pending / alive / dead).">
-<polygon fill="white" stroke="#666666" points="897,-396.45 768,-396.45 768,-377.45 897,-377.45 897,-396.45"/>
-<text text-anchor="middle" x="832.5" y="-384.45" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::Player::getState</text>
+<!-- Node33&#45;&gt;Node23 -->
+<g id="edge45_Node000033_Node000023" class="edge">
+<title>Node33&#45;&gt;Node23</title>
+<g id="a_edge45_Node000033_Node000023"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M439.69,-224.72C510.19,-187.93 774.1,-64.13 914,-191.3 976.27,-247.91 923.16,-488.54 950,-568.3 962.59,-605.72 989.45,-643.6 1006.14,-664.91"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1003.41,-667.1 1012.39,-672.72 1008.88,-662.73 1003.41,-667.1"/>
 </a>
 </g>
 </g>
-<!-- Node42&#45;&gt;Node43 -->
-<g id="edge81_Node000042_Node000043" class="edge">
-<title>Node42&#45;&gt;Node43</title>
-<g id="a_edge81_Node000042_Node000043"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M657.28,-335.53C680.11,-344.69 716.05,-358.47 748,-367.95 756.49,-370.47 765.55,-372.84 774.46,-375"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="773.87,-378.46 784.41,-377.35 775.48,-371.65 773.87,-378.46"/>
+<!-- Node33&#45;&gt;Node28 -->
+<g id="edge46_Node000033_Node000028" class="edge">
+<title>Node33&#45;&gt;Node28</title>
+<g id="a_edge46_Node000033_Node000028"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M475.69,-243.83C503.43,-248.76 537.47,-254.8 566.56,-259.96"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="566.17,-263.44 576.63,-261.74 567.39,-256.55 566.17,-263.44"/>
 </a>
 </g>
 </g>
-<!-- Node44 -->
-<g id="Node000044" class="node">
-<title>Node44</title>
-<g id="a_Node000044"><a xlink:href="classzappy_1_1Player.html#ad714c54e4fcee0484d05ad253ab10ccb" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="897.5,-359.45 767.5,-359.45 767.5,-340.45 897.5,-340.45 897.5,-359.45"/>
-<text text-anchor="middle" x="832.5" y="-347.45" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::Player::getTeam</text>
+<!-- Node34 -->
+<g id="Node000034" class="node">
+<title>Node34</title>
+<g id="a_Node000034"><a xlink:href="classzappy_1_1World.html#ab1b432308478a9dba9cf0a0695bef412" target="_top" xlink:title="Returns the players standing on the tile that are exactly at level.">
+<polygon fill="white" stroke="#666666" points="898,-367.3 761,-367.3 761,-337.3 898,-337.3 898,-367.3"/>
+<text text-anchor="start" x="769" y="-355.3" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::World::getPlayers</text>
+<text text-anchor="middle" x="829.5" y="-344.3" font-family="Helvetica,sans-Serif" font-size="10.00">OnTileAtLevel</text>
 </a>
 </g>
 </g>
-<!-- Node42&#45;&gt;Node44 -->
-<g id="edge82_Node000042_Node000044" class="edge">
-<title>Node42&#45;&gt;Node44</title>
-<g id="a_edge82_Node000042_Node000044"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M709.51,-335.12C725.14,-337.02 741.6,-339.02 757.19,-340.92"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="756.94,-344.41 767.29,-342.14 757.79,-337.46 756.94,-344.41"/>
+<!-- Node33&#45;&gt;Node34 -->
+<g id="edge48_Node000033_Node000034" class="edge">
+<title>Node33&#45;&gt;Node34</title>
+<g id="a_edge48_Node000033_Node000034"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M504.64,-243.92C509.41,-246.23 513.91,-249 518,-252.3 550.22,-278.35 520.1,-314.48 554,-338.3 611.2,-378.51 692.85,-377.28 752.22,-368.87"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="752.93,-372.3 762.29,-367.35 751.88,-365.38 752.93,-372.3"/>
+</a>
+</g>
+</g>
+<!-- Node35 -->
+<g id="Node000035" class="node">
+<title>Node35</title>
+<g id="a_Node000035"><a xlink:href="classzappy_1_1World.html#aad86d2fa98fbe95fed52656c32582b19" target="_top" xlink:title="Checks whether an elevation from level to level + 1 can take place on the tile. Verifies both the min...">
+<polygon fill="white" stroke="#666666" points="705.5,-329.3 557.5,-329.3 557.5,-299.3 705.5,-299.3 705.5,-329.3"/>
+<text text-anchor="start" x="565.5" y="-317.3" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::World::isIncantation</text>
+<text text-anchor="middle" x="631.5" y="-306.3" font-family="Helvetica,sans-Serif" font-size="10.00">Valid</text>
+</a>
+</g>
+</g>
+<!-- Node33&#45;&gt;Node35 -->
+<g id="edge54_Node000033_Node000035" class="edge">
+<title>Node33&#45;&gt;Node35</title>
+<g id="a_edge54_Node000033_Node000035"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M497.94,-243.95C504.92,-246.19 511.72,-248.94 518,-252.3 538.22,-263.15 534.53,-277.17 554,-289.3 557.37,-291.41 560.94,-293.35 564.62,-295.14"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="563.37,-298.42 573.93,-299.3 566.23,-292.03 563.37,-298.42"/>
+</a>
+</g>
+</g>
+<!-- Node37 -->
+<g id="Node000037" class="node">
+<title>Node37</title>
+<g id="a_Node000037"><a xlink:href="classzappy_1_1Player.html#a25f313ec41f8ac5fb9544df508dfbf87" target="_top" xlink:title="Freezes the player until the given time point (used while an incantation is underway).">
+<polygon fill="white" stroke="#666666" points="699,-529.3 564,-529.3 564,-499.3 699,-499.3 699,-529.3"/>
+<text text-anchor="start" x="572" y="-517.3" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::Player::setFrozen</text>
+<text text-anchor="middle" x="631.5" y="-506.3" font-family="Helvetica,sans-Serif" font-size="10.00">Until</text>
+</a>
+</g>
+</g>
+<!-- Node33&#45;&gt;Node37 -->
+<g id="edge60_Node000033_Node000037" class="edge">
+<title>Node33&#45;&gt;Node37</title>
+<g id="a_edge60_Node000033_Node000037"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M507.38,-243.85C511.23,-246.22 514.81,-249.02 518,-252.3 590.9,-327.58 488.04,-403.88 554,-485.3 556.42,-488.29 559.19,-490.98 562.2,-493.38"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="560.43,-496.41 570.67,-499.13 564.36,-490.62 560.43,-496.41"/>
+</a>
+</g>
+</g>
+<!-- Node38 -->
+<g id="Node000038" class="node">
+<title>Node38</title>
+<g id="a_Node000038"><a xlink:href="classzappy_1_1Client.html#afd9816d0a687764ad9ee4772739a326e" target="_top" xlink:title="Writes the given message to the client socket, if it is valid. Logs an error if the write fails.">
+<polygon fill="white" stroke="#666666" points="686.5,-243.8 576.5,-243.8 576.5,-224.8 686.5,-224.8 686.5,-243.8"/>
+<text text-anchor="middle" x="631.5" y="-231.8" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::Client::write</text>
+</a>
+</g>
+</g>
+<!-- Node33&#45;&gt;Node38 -->
+<g id="edge62_Node000033_Node000038" class="edge">
+<title>Node33&#45;&gt;Node38</title>
+<g id="a_edge62_Node000033_Node000038"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M518.01,-234.3C534.25,-234.3 550.76,-234.3 565.94,-234.3"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="566.23,-237.8 576.23,-234.3 566.23,-230.8 566.23,-237.8"/>
+</a>
+</g>
+</g>
+<!-- Node34&#45;&gt;Node13 -->
+<g id="edge50_Node000034_Node000013" class="edge">
+<title>Node34&#45;&gt;Node13</title>
+<g id="a_edge50_Node000034_Node000013"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M898.2,-367.53C904.25,-371.19 909.7,-375.71 914,-381.3 979.99,-467.17 908.92,-767.1 950,-867.3 961.03,-894.21 984.26,-918.75 1001.05,-934.05"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="998.87,-936.8 1008.69,-940.79 1003.5,-931.55 998.87,-936.8"/>
+</a>
+</g>
+</g>
+<!-- Node34&#45;&gt;Node16 -->
+<g id="edge51_Node000034_Node000016" class="edge">
+<title>Node34&#45;&gt;Node16</title>
+<g id="a_edge51_Node000034_Node000016"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M897.58,-367.47C903.83,-371.13 909.5,-375.67 914,-381.3 958.55,-437.02 930.39,-631.71 950,-700.3 964.07,-749.53 993.18,-802.66 1009.25,-829.9"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1006.38,-831.93 1014.52,-838.71 1012.39,-828.33 1006.38,-831.93"/>
+</a>
+</g>
+</g>
+<!-- Node34&#45;&gt;Node23 -->
+<g id="edge49_Node000034_Node000023" class="edge">
+<title>Node34&#45;&gt;Node23</title>
+<g id="a_edge49_Node000034_Node000023"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M896.34,-367.37C902.98,-371.05 909.08,-375.62 914,-381.3 969.38,-445.3 919.23,-489.46 950,-568.3 964.28,-604.91 990.4,-642.83 1006.52,-664.4"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1003.92,-666.75 1012.76,-672.59 1009.49,-662.52 1003.92,-666.75"/>
+</a>
+</g>
+</g>
+<!-- Node35&#45;&gt;Node7 -->
+<g id="edge58_Node000035_Node000007" class="edge">
+<title>Node35&#45;&gt;Node7</title>
+<g id="a_edge58_Node000035_Node000007"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M647.58,-329.51C665.03,-347.98 693.36,-380.84 709,-414.3 739.86,-480.34 711.91,-509.36 745,-574.3 761.14,-605.98 790.25,-635.58 809.48,-653.07"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="807.25,-655.76 817.05,-659.79 811.9,-650.53 807.25,-655.76"/>
+</a>
+</g>
+</g>
+<!-- Node35&#45;&gt;Node11 -->
+<g id="edge57_Node000035_Node000011" class="edge">
+<title>Node35&#45;&gt;Node11</title>
+<g id="a_edge57_Node000035_Node000011"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M677.32,-299.3C702.63,-291.12 731.78,-282.26 745,-280.3 819.3,-269.32 851.9,-238.05 914,-280.3 999.98,-338.82 1016.55,-478.48 1019.74,-530.41"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1016.25,-530.8 1020.26,-540.61 1023.24,-530.45 1016.25,-530.8"/>
+</a>
+</g>
+</g>
+<!-- Node35&#45;&gt;Node34 -->
+<g id="edge56_Node000035_Node000034" class="edge">
+<title>Node35&#45;&gt;Node34</title>
+<g id="a_edge56_Node000035_Node000034"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M705.76,-328.51C720.43,-331.35 735.88,-334.35 750.7,-337.22"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="750.35,-340.72 760.83,-339.19 751.68,-333.85 750.35,-340.72"/>
+</a>
+</g>
+</g>
+<!-- Node36 -->
+<g id="Node000036" class="node">
+<title>Node36</title>
+<g id="a_Node000036"><a xlink:href="classzappy_1_1World.html#a34a1fc2900d878a2db5bfb0ee1cf659f" target="_top" xlink:title="Returns the requirements to elevate from level to level + 1, or nullptr if level is out of [1,...">
+<polygon fill="white" stroke="#666666" points="902.5,-319.3 756.5,-319.3 756.5,-289.3 902.5,-289.3 902.5,-319.3"/>
+<text text-anchor="start" x="764.5" y="-307.3" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::World::getElevation</text>
+<text text-anchor="middle" x="829.5" y="-296.3" font-family="Helvetica,sans-Serif" font-size="10.00">Requirement</text>
+</a>
+</g>
+</g>
+<!-- Node35&#45;&gt;Node36 -->
+<g id="edge55_Node000035_Node000036" class="edge">
+<title>Node35&#45;&gt;Node36</title>
+<g id="a_edge55_Node000035_Node000036"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M705.76,-310.57C718.93,-309.89 732.74,-309.19 746.15,-308.51"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="746.5,-311.99 756.3,-307.99 746.14,-305 746.5,-311.99"/>
+</a>
+</g>
+</g>
+<!-- Node37&#45;&gt;Node7 -->
+<g id="edge61_Node000037_Node000007" class="edge">
+<title>Node37&#45;&gt;Node7</title>
+<g id="a_edge61_Node000037_Node000007"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M689.44,-529.33C696.65,-533.03 703.44,-537.62 709,-543.3 742.6,-577.69 710.01,-612.34 745,-645.3 751.38,-651.32 759.17,-655.84 767.4,-659.23"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="766.22,-662.53 776.82,-662.61 768.58,-655.94 766.22,-662.53"/>
+</a>
+</g>
+</g>
+<!-- Node42&#45;&gt;Node4 -->
+<g id="edge74_Node000042_Node000004" class="edge">
+<title>Node42&#45;&gt;Node4</title>
+<g id="a_edge74_Node000042_Node000004"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M480.08,-800.45C506.36,-797.81 537.55,-794.67 564.7,-791.93"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="565.29,-795.39 574.89,-790.91 564.59,-788.43 565.29,-795.39"/>
+</a>
+</g>
+</g>
+<!-- Node44&#45;&gt;Node4 -->
+<g id="edge82_Node000044_Node000004" class="edge">
+<title>Node44&#45;&gt;Node4</title>
+<g id="a_edge82_Node000044_Node000004"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M232.59,-607.31C248.17,-631.7 282.36,-679.8 324,-705.3 398.9,-751.18 499.63,-770.95 564.82,-779.34"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="564.61,-782.84 574.96,-780.59 565.47,-775.89 564.61,-782.84"/>
+</a>
+</g>
+</g>
+<!-- Node44&#45;&gt;Node5 -->
+<g id="edge83_Node000044_Node000005" class="edge">
+<title>Node44&#45;&gt;Node5</title>
+<g id="a_edge83_Node000044_Node000005"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M281.81,-592.73C352.28,-593.25 471.22,-594.13 550.3,-594.71"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="550.67,-598.22 560.7,-594.79 550.72,-591.22 550.67,-598.22"/>
+</a>
+</g>
+</g>
+<!-- Node44&#45;&gt;Node7 -->
+<g id="edge84_Node000044_Node000007" class="edge">
+<title>Node44&#45;&gt;Node7</title>
+<g id="a_edge84_Node000044_Node000007"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M281.51,-599.69C395.77,-614.23 649.04,-646.46 766.48,-661.41"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="766.37,-664.93 776.73,-662.72 767.25,-657.98 766.37,-664.93"/>
+</a>
+</g>
+</g>
+<!-- Node44&#45;&gt;Node42 -->
+<g id="edge81_Node000044_Node000042" class="edge">
+<title>Node44&#45;&gt;Node42</title>
+<g id="a_edge81_Node000044_Node000042"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M231.37,-607.37C246.58,-635.53 282.23,-697.13 324,-739.3 341.9,-757.38 365.25,-773.8 384.44,-785.86"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="382.85,-788.99 393.2,-791.25 386.52,-783.03 382.85,-788.99"/>
 </a>
 </g>
 </g>
 <!-- Node45 -->
 <g id="Node000045" class="node">
 <title>Node45</title>
-<g id="a_Node000045"><a xlink:href="structzappy_1_1Team.html#a28b10ed41422bcd6fb1b4fcb58956758" target="_top" xlink:title="Removes one active player from the team and frees its connection slot. Fork still creates additional ...">
-<polygon fill="white" stroke="#666666" points="908.5,-322.45 756.5,-322.45 756.5,-303.45 908.5,-303.45 908.5,-322.45"/>
-<text text-anchor="middle" x="832.5" y="-310.45" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::Team::removePlayer</text>
+<g id="a_Node000045"><a xlink:href="classzappy_1_1World.html#a61bd77a5a1cae883aa060469d039fe92" target="_top" xlink:title="Removes a player from the world and decrease the number of slots occupied in its team....">
+<polygon fill="white" stroke="#666666" points="708,-442.8 555,-442.8 555,-423.8 708,-423.8 708,-442.8"/>
+<text text-anchor="middle" x="631.5" y="-430.8" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::World::removePlayer</text>
 </a>
 </g>
 </g>
-<!-- Node42&#45;&gt;Node45 -->
-<g id="edge84_Node000042_Node000045" class="edge">
-<title>Node42&#45;&gt;Node45</title>
-<g id="a_edge84_Node000042_Node000045"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M709.51,-320.98C721.51,-320.19 733.99,-319.37 746.19,-318.56"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="746.61,-322.04 756.36,-317.89 746.15,-315.06 746.61,-322.04"/>
+<!-- Node44&#45;&gt;Node45 -->
+<g id="edge85_Node000044_Node000045" class="edge">
+<title>Node44&#45;&gt;Node45</title>
+<g id="a_edge85_Node000044_Node000045"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M262.16,-577.2C341.34,-546.27 520.87,-476.13 596.21,-446.7"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="597.67,-449.89 605.71,-442.99 595.12,-443.37 597.67,-449.89"/>
+</a>
+</g>
+</g>
+<!-- Node45&#45;&gt;Node11 -->
+<g id="edge90_Node000045_Node000011" class="edge">
+<title>Node45&#45;&gt;Node11</title>
+<g id="a_edge90_Node000045_Node000011"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M686.45,-442.9C694.8,-446.33 702.72,-450.99 709,-457.3 747.36,-495.88 701.24,-541.98 745,-574.3 819.35,-629.22 937.68,-587.97 991.79,-564.13"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="993.46,-567.22 1001.13,-559.91 990.57,-560.84 993.46,-567.22"/>
+</a>
+</g>
+</g>
+<!-- Node45&#45;&gt;Node13 -->
+<g id="edge87_Node000045_Node000013" class="edge">
+<title>Node45&#45;&gt;Node13</title>
+<g id="a_edge87_Node000045_Node000013"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M703.69,-442.99C705.56,-444.28 707.34,-445.72 709,-447.3 760.17,-496.12 696.22,-551.1 745,-602.3 798.86,-658.84 861.97,-592.08 914,-650.3 979.14,-723.21 908.87,-778.62 950,-867.3 962.24,-893.69 985.22,-918.33 1001.62,-933.8"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="999.33,-936.45 1009.07,-940.63 1004.06,-931.29 999.33,-936.45"/>
+</a>
+</g>
+</g>
+<!-- Node45&#45;&gt;Node20 -->
+<g id="edge86_Node000045_Node000020" class="edge">
+<title>Node45&#45;&gt;Node20</title>
+<g id="a_edge86_Node000045_Node000020"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M640.95,-423.63C655.51,-406.79 685.98,-370.78 709,-338.3 726.55,-313.55 725.12,-303.23 745,-280.3 763.42,-259.06 788.61,-238.88 806.49,-225.69"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="808.57,-228.51 814.62,-219.81 804.47,-222.84 808.57,-228.51"/>
 </a>
 </g>
 </g>
 <!-- Node46 -->
 <g id="Node000046" class="node">
 <title>Node46</title>
-<g id="a_Node000046"><a xlink:href="classzappy_1_1World.html#a3904131e585caa94fc0b4d4fb01e11f2" target="_top" xlink:title="Removes the player pointer from the tile at the given position, if any.">
-<polygon fill="white" stroke="#666666" points="909,-246.95 756,-246.95 756,-216.95 909,-216.95 909,-246.95"/>
-<text text-anchor="start" x="764" y="-234.95" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::World::removePlayer</text>
-<text text-anchor="middle" x="832.5" y="-223.95" font-family="Helvetica,sans-Serif" font-size="10.00">FromTile</text>
+<g id="a_Node000046"><a xlink:href="classzappy_1_1Player.html#a631fcf2698ec9ac726147ca31184e354" target="_top" xlink:title="Life&#45;cycle state (pending / alive / dead).">
+<polygon fill="white" stroke="#666666" points="894,-516.8 765,-516.8 765,-497.8 894,-497.8 894,-516.8"/>
+<text text-anchor="middle" x="829.5" y="-504.8" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::Player::getState</text>
 </a>
 </g>
 </g>
-<!-- Node42&#45;&gt;Node46 -->
-<g id="edge85_Node000042_Node000046" class="edge">
-<title>Node42&#45;&gt;Node46</title>
-<g id="a_edge85_Node000042_Node000046"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M648.66,-316.42C669.93,-302.87 710.87,-277.81 748,-260.95 756.21,-257.22 765.05,-253.68 773.8,-250.43"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="775,-253.71 783.22,-247.02 772.62,-247.13 775,-253.71"/>
+<!-- Node45&#45;&gt;Node46 -->
+<g id="edge88_Node000045_Node000046" class="edge">
+<title>Node45&#45;&gt;Node46</title>
+<g id="a_edge88_Node000045_Node000046"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M673.47,-442.81C685.35,-446.44 698.05,-451.22 709,-457.3 727.45,-467.57 726.15,-478.79 745,-488.3 749.81,-490.73 754.93,-492.85 760.18,-494.71"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="759.14,-498.05 769.73,-497.76 761.27,-491.38 759.14,-498.05"/>
 </a>
 </g>
 </g>
-<!-- Node46&#45;&gt;Node11 -->
-<g id="edge86_Node000046_Node000011" class="edge">
-<title>Node46&#45;&gt;Node11</title>
-<g id="a_edge86_Node000046_Node000011"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M899.95,-246.99C923.43,-252.3 949.47,-258.19 971.57,-263.19"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="970.9,-266.63 981.42,-265.42 972.44,-259.8 970.9,-266.63"/>
+<!-- Node47 -->
+<g id="Node000047" class="node">
+<title>Node47</title>
+<g id="a_Node000047"><a xlink:href="classzappy_1_1Player.html#ad714c54e4fcee0484d05ad253ab10ccb" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#666666" points="894.5,-479.8 764.5,-479.8 764.5,-460.8 894.5,-460.8 894.5,-479.8"/>
+<text text-anchor="middle" x="829.5" y="-467.8" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::Player::getTeam</text>
+</a>
+</g>
+</g>
+<!-- Node45&#45;&gt;Node47 -->
+<g id="edge89_Node000045_Node000047" class="edge">
+<title>Node45&#45;&gt;Node47</title>
+<g id="a_edge89_Node000045_Node000047"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M682.97,-442.83C708.82,-447.71 740.49,-453.69 767.68,-458.82"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="767.38,-462.33 777.86,-460.74 768.68,-455.45 767.38,-462.33"/>
+</a>
+</g>
+</g>
+<!-- Node48 -->
+<g id="Node000048" class="node">
+<title>Node48</title>
+<g id="a_Node000048"><a xlink:href="structzappy_1_1Team.html#a28b10ed41422bcd6fb1b4fcb58956758" target="_top" xlink:title="Removes one active player from the team and frees its connection slot. Fork still creates additional ...">
+<polygon fill="white" stroke="#666666" points="905.5,-442.8 753.5,-442.8 753.5,-423.8 905.5,-423.8 905.5,-442.8"/>
+<text text-anchor="middle" x="829.5" y="-430.8" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::Team::removePlayer</text>
+</a>
+</g>
+</g>
+<!-- Node45&#45;&gt;Node48 -->
+<g id="edge91_Node000045_Node000048" class="edge">
+<title>Node45&#45;&gt;Node48</title>
+<g id="a_edge91_Node000045_Node000048"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M708.28,-433.3C719.69,-433.3 731.53,-433.3 743.13,-433.3"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="743.25,-436.8 753.25,-433.3 743.25,-429.8 743.25,-436.8"/>
+</a>
+</g>
+</g>
+<!-- Node49 -->
+<g id="Node000049" class="node">
+<title>Node49</title>
+<g id="a_Node000049"><a xlink:href="classzappy_1_1World.html#a3904131e585caa94fc0b4d4fb01e11f2" target="_top" xlink:title="Removes the player pointer from the tile at the given position, if any.">
+<polygon fill="white" stroke="#666666" points="906,-565.3 753,-565.3 753,-535.3 906,-535.3 906,-565.3"/>
+<text text-anchor="start" x="761" y="-553.3" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::World::removePlayer</text>
+<text text-anchor="middle" x="829.5" y="-542.3" font-family="Helvetica,sans-Serif" font-size="10.00">FromTile</text>
+</a>
+</g>
+</g>
+<!-- Node45&#45;&gt;Node49 -->
+<g id="edge92_Node000045_Node000049" class="edge">
+<title>Node45&#45;&gt;Node49</title>
+<g id="a_edge92_Node000045_Node000049"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M682.71,-442.89C692.14,-446.32 701.4,-450.98 709,-457.3 735.29,-479.18 718.57,-503.61 745,-525.3 747.05,-526.99 749.2,-528.55 751.45,-530.01"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="750.05,-533.25 760.47,-535.15 753.51,-527.16 750.05,-533.25"/>
+</a>
+</g>
+</g>
+<!-- Node49&#45;&gt;Node11 -->
+<g id="edge93_Node000049_Node000011" class="edge">
+<title>Node49&#45;&gt;Node11</title>
+<g id="a_edge93_Node000049_Node000011"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M906.14,-550.3C919.5,-550.3 933.39,-550.3 946.7,-550.3"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="946.74,-553.8 956.74,-550.3 946.74,-546.8 946.74,-553.8"/>
 </a>
 </g>
 </g>

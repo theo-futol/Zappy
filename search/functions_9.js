@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['left_0',['left',['../classia_1_1client_1_1ZappyAIClient.html#afb29f6a4139446e0754012ee83bc0067',1,'ia.client.ZappyAIClient.left()'],['../classia_1_1test_1_1FakeClient.html#a7b6c2ad9ea53d8651e95bf180b64d223',1,'ia.test.FakeClient.left()'],['../classzappy_1_1Commands.html#ade07e2832499ca58858a149d03043914',1,'zappy::Commands::Left()']]],
+  ['left_0',['left',['../classzappy_1_1Commands.html#ade07e2832499ca58858a149d03043914',1,'zappy::Commands::Left()'],['../classia_1_1client_1_1ZappyAIClient.html#afb29f6a4139446e0754012ee83bc0067',1,'ia.client.ZappyAIClient.left()'],['../classia_1_1test_1_1FakeClient.html#a7b6c2ad9ea53d8651e95bf180b64d223',1,'ia.test.FakeClient.left()']]],
   ['levelup_1',['levelUp',['../classzappy_1_1Player.html#a3778f33e2e87435d681ad1c158d89b1d',1,'zappy::Player']]],
   ['listen_2',['listen',['../classzappy_1_1Socket.html#afbdb71a72ed69f6d421beb6516050bd1',1,'zappy::Socket']]],
   ['load_5fserver_5fconfig_3',['load_server_config',['../namespaceia_1_1launcher.html#ae448dda4aa1ed5741d2ba94a0a936728',1,'ia::launcher']]],

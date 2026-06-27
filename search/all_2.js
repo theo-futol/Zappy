@@ -16,5 +16,6 @@ var searchData=
   ['build_5fplan_5ffrom_5fsound_5fdirection_13',['build_plan_from_sound_direction',['../namespaceia_1_1broadcast.html#ab11f3055be1ac33ed3f37e2606135e98',1,'ia::broadcast']]],
   ['build_5fplan_5fto_5ftile_14',['build_plan_to_tile',['../namespaceia_1_1utils_1_1model__utils.html#a6ff96cea3c3e1199e14fbbf2a7e9a800',1,'ia::utils::model_utils']]],
   ['build_5frally_5fmessage_15',['build_rally_message',['../namespaceia_1_1broadcast.html#ad505b859c8d8eec576e363d595c465f9',1,'ia::broadcast']]],
-  ['build_5fvisible_5ftiles_16',['build_visible_tiles',['../namespaceia_1_1observation.html#aa5ca76e81256749393401d26b72372c0',1,'ia::observation']]]
+  ['build_5fvisible_5ftiles_16',['build_visible_tiles',['../namespaceia_1_1observation.html#aa5ca76e81256749393401d26b72372c0',1,'ia::observation']]],
+  ['buildpipimessage_17',['buildPipiMessage',['../classzappy_1_1Commands.html#ab80dd4d34e9f778e13d3ddba78134a15',1,'zappy::Commands']]]
 ];
