@@ -1,0 +1,20 @@
+<map id="zappy::Commands::buildBctMessage" name="zappy::Commands::buildBctMessage">
+<area shape="rect" id="Node000001" title="Builds a &quot;bct&quot; broadcast line (resource counts) for the tile at the given position." alt="" coords="908,47,1111,87"/>
+<area shape="rect" id="Node000002" href="$classzappy_1_1Commands.html#a813e6e04d4fd79daae377ac9e082c091" title="bct: reports the content of a single tile." alt="" coords="685,5,856,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="898,47,832,33,833,28,899,42"/>
+<area shape="rect" id="Node000006" href="$classzappy_1_1Commands.html#a53449f6fc5060484a738648f260ec0d2" title="Drops a named resource from the inventory onto the current tile." alt="" coords="685,55,856,80"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="895,70,856,70,856,65,895,65"/>
+<area shape="rect" id="Node000008" href="$classzappy_1_1Commands.html#af68393f7ba46aec892196685895c50a7" title="Picks up a named resource from the current tile into the inventory." alt="" coords="681,104,860,129"/>
+<area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="899,93,833,107,832,101,898,88"/>
+<area shape="rect" id="Node000003" href="$classzappy_1_1CommandParser.html#afc4da6302e4998b21a8b2339d7dc372a" title="Fills _graphicCommands with the graphic protocol commands." alt="" coords="228,19,411,59"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="671,14,569,12,459,17,411,23,411,18,458,11,569,7,671,9"/>
+<area shape="rect" id="Node000005" href="$classzappy_1_1Commands.html#a1a7f248b1d94f2e36e819787e17e2e9a" title="mct: reports the content of every tile on the map." alt="" coords="459,27,633,52"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="671,30,634,34,633,28,671,25"/>
+<area shape="rect" id="Node000004" href="$classzappy_1_1CommandParser.html#a741addd675a90a09b183e9518b626962" title="Builds a parser for one client." alt="" coords="5,49,180,89"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="215,56,180,60,180,55,214,50"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="444,42,411,42,411,37,444,37"/>
+<area shape="rect" id="Node000007" href="$classzappy_1_1CommandParser.html#a629df3248cf7038782f23805ea6c806e" title="Fills _aiCommands with the AI protocol commands and their durations." alt="" coords="459,77,633,117"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="672,83,634,88,633,83,671,78"/>
+<area shape="poly" id="edge8_Node000007_Node000004" title=" " alt="" coords="445,93,180,77,180,71,445,88"/>
+<area shape="poly" id="edge10_Node000008_Node000007" title=" " alt="" coords="667,110,633,107,634,102,668,105"/>
+</map>

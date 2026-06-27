@@ -1,0 +1,5 @@
+<map id="zappy::World::broadcastTileContent" name="zappy::World::broadcastTileContent">
+<area shape="rect" id="Node000001" title="Pushes a &quot;bct&quot; broadcast line for the tile at the given position, if a broadcast queue is set." alt="" coords="5,5,207,45"/>
+<area shape="rect" id="Node000002" href="$classzappy_1_1World.html#a9fce895cc2d62e61b943f7d9e03471db" title="Returns the tile at the given coordinates." alt="" coords="255,13,427,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="207,23,241,23,241,28,207,28"/>
+</map>

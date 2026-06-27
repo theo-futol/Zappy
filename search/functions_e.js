@@ -11,6 +11,6 @@ var searchData=
   ['resourcepassivegeneration_8',['resourcePassiveGeneration',['../classzappy_1_1World.html#a42559872b34abdb931c45bb2a1dcb091',1,'zappy::World']]],
   ['resourcepassivegenerationeven_9',['resourcePassiveGenerationEven',['../classzappy_1_1World.html#ab0d269a2219c35662581a4d4296a3467',1,'zappy::World']]],
   ['resourcepassivegenerationlegacy_10',['resourcePassiveGenerationLegacy',['../classzappy_1_1World.html#a420188584d7d2f104bb3e7d186266758',1,'zappy::World']]],
-  ['right_11',['right',['../classzappy_1_1Commands.html#a435fe325b6e98a927fa217dd4b3c0523',1,'zappy::Commands::Right()'],['../classia_1_1client_1_1ZappyAIClient.html#ad24dd9fa79c8c3fd08b7a1a1fc92071a',1,'ia.client.ZappyAIClient.right()'],['../classia_1_1test_1_1FakeClient.html#a723068f6ec84b3451a041077ea5a65b4',1,'ia.test.FakeClient.right()']]],
+  ['right_11',['right',['../classia_1_1client_1_1ZappyAIClient.html#ad24dd9fa79c8c3fd08b7a1a1fc92071a',1,'ia.client.ZappyAIClient.right()'],['../classia_1_1test_1_1FakeClient.html#a723068f6ec84b3451a041077ea5a65b4',1,'ia.test.FakeClient.right()'],['../classzappy_1_1Commands.html#a435fe325b6e98a927fa217dd4b3c0523',1,'zappy::Commands::Right()']]],
   ['run_12',['run',['../classzappy_1_1Core.html#a6cedeb79a573e46f2131b71d3ca17a31',1,'zappy::Core::run()'],['../classia_1_1client_1_1ZappyAIClient.html#acf191a81fbbbb81e60a298c2a10c1e6f',1,'ia.client.ZappyAIClient.run()'],['../classia_1_1launcher_1_1ClientLauncher.html#a4846238e467a122db6643cd5897b143c',1,'ia.launcher.ClientLauncher.run()']]]
 ];

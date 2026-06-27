@@ -63,9 +63,9 @@ var NAVTREEINDEX =
 "ArgParser_8cpp.html",
 "classia_1_1launcher_1_1ClientLauncher.html#a4846238e467a122db6643cd5897b143c",
 "classzappy_1_1Client.html#ab13b5cadc34eb9f74b6b12548a4da25b",
-"classzappy_1_1Player.html#ac1d535eb2e4d5e176a5761db7038fbc1",
-"model__utils_8py.html#a17eb4d4b37f216fb13b4d8201fdbabe2",
-"structzappy_1_1tile.html#a0a202af52fafa90e112eb71f0dcc1081"
+"classzappy_1_1Player.html#aa8d42939328209e67758a6f3db5e6263",
+"launcher_8py.html#a810bf64dccd65c6f7bcd26cd407f1258",
+"structzappy_1_1Team.html#af0eb53b2557146e18fca81887430ed52"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

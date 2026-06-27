@@ -1,0 +1,9 @@
+<map id="zappy::Commands::buildPpoMessage" name="zappy::Commands::buildPpoMessage">
+<area shape="rect" id="Node000001" title="Builds a &quot;ppo&quot; broadcast line (position, orientation) for one player." alt="" coords="5,47,212,87"/>
+<area shape="rect" id="Node000002" href="$classzappy_1_1Player.html#a33f33f30fdbf95af468119bc63bd7caa" title="This player&#39;s stable logical id (its GUI player number)." alt="" coords="290,5,441,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="212,45,285,31,286,36,213,50"/>
+<area shape="rect" id="Node000003" href="$classzappy_1_1Player.html#a179f8fcc7fbb9a11bda72d37982bc30b" title="Current facing as the protocol&#39;s 1..4 orientation (NORTH=1, EAST=2, SOUTH=3, WEST=4)." alt="" coords="260,55,471,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="212,65,247,65,247,70,212,70"/>
+<area shape="rect" id="Node000004" href="$classzappy_1_1Player.html#aff283e814b7f01d4ad7398d7c20794e6" title="Current tile position." alt="" coords="270,104,461,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="213,85,286,99,285,104,212,90"/>
+</map>

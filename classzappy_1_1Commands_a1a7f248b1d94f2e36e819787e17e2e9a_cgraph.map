@@ -1,9 +1,12 @@
 <map id="zappy::Commands::Mct" name="zappy::Commands::Mct">
-<area shape="rect" id="Node000001" title="mct: reports the content of every tile on the map." alt="" coords="5,31,180,56"/>
-<area shape="rect" id="Node000002" href="$classzappy_1_1Commands.html#a813e6e04d4fd79daae377ac9e082c091" title="bct: reports the content of a single tile." alt="" coords="237,5,408,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="180,31,223,26,224,32,181,36"/>
-<area shape="rect" id="Node000004" href="$classzappy_1_1World.html#ad35316e4e1203c45ad2f853319775432" title="Map dimensions as (width, height)." alt="" coords="228,55,417,80"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="181,50,215,53,214,59,180,55"/>
-<area shape="rect" id="Node000003" href="$classzappy_1_1World.html#a9fce895cc2d62e61b943f7d9e03471db" title="Returns the tile at the given coordinates." alt="" coords="465,5,637,31"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="408,15,451,15,451,21,408,21"/>
+<area shape="rect" id="Node000001" title="mct: reports the content of every tile on the map." alt="" coords="5,66,180,91"/>
+<area shape="rect" id="Node000002" href="$classzappy_1_1Commands.html#a813e6e04d4fd79daae377ac9e082c091" title="bct: reports the content of a single tile." alt="" coords="237,41,408,66"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="180,66,223,62,224,67,181,72"/>
+<area shape="rect" id="Node000005" href="$classzappy_1_1World.html#ad35316e4e1203c45ad2f853319775432" title="Map dimensions as (width, height)." alt="" coords="228,90,417,115"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="181,85,215,89,214,94,180,90"/>
+<area shape="rect" id="Node000003" href="$classzappy_1_1Commands.html#acfb6b5845e722a7de548d0f1cee10d4f" title="Builds a &quot;bct&quot; broadcast line (resource counts) for the tile at the given position." alt="" coords="465,5,668,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="408,41,451,36,452,41,408,46"/>
+<area shape="rect" id="Node000004" href="$classzappy_1_1World.html#a9fce895cc2d62e61b943f7d9e03471db" title="Returns the tile at the given coordinates." alt="" coords="716,42,888,67"/>
+<area shape="poly" id="edge4_Node000002_Node000004" title=" " alt="" coords="408,53,465,55,668,55,702,54,702,60,668,60,465,60,408,59"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="668,35,703,40,702,45,668,41"/>
 </map>

@@ -1,0 +1,7 @@
+<map id="zappy::Commands::buildPlvMessage" name="zappy::Commands::buildPlvMessage">
+<area shape="rect" id="Node000001" title="Builds a &quot;plv&quot; broadcast line (level) for one player." alt="" coords="5,23,208,63"/>
+<area shape="rect" id="Node000002" href="$classzappy_1_1Player.html#a33f33f30fdbf95af468119bc63bd7caa" title="This player&#39;s stable logical id (its GUI player number)." alt="" coords="267,5,418,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="208,30,253,25,254,30,209,35"/>
+<area shape="rect" id="Node000003" href="$classzappy_1_1Player.html#a70dc9f5c05ea552c47350da37b3bd027" title="Current elevation level (1..8)." alt="" coords="256,55,429,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="209,51,242,54,242,60,208,56"/>
+</map>

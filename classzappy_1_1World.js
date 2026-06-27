@@ -5,6 +5,7 @@ var classzappy_1_1World =
     [ "addPlayer", "classzappy_1_1World.html#a1ad1d6b64d725ca67581ef9ae97d8289", null ],
     [ "addPlayerToTile", "classzappy_1_1World.html#a3335c652e2e35588a6e503cb0e8658c2", null ],
     [ "addTeam", "classzappy_1_1World.html#af08f69ff3d95da644be0429cdbe7ee7d", null ],
+    [ "broadcastTileContent", "classzappy_1_1World.html#a42f9bf905589c6b0b32ca7c88fbe3436", null ],
     [ "checkWinningCondition", "classzappy_1_1World.html#ab6ac66d9af830c2fc55c7c1787987470", null ],
     [ "foodCheck", "classzappy_1_1World.html#a779b35cdefa7a85d2f888890ad2ec84b", null ],
     [ "getAvailableSlotsForTeam", "classzappy_1_1World.html#a991347e5787aa696ad62de265c680a96", null ],

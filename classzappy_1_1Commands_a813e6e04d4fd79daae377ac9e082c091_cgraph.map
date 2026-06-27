@@ -1,5 +1,8 @@
 <map id="zappy::Commands::Bct" name="zappy::Commands::Bct">
-<area shape="rect" id="Node000001" title="bct: reports the content of a single tile." alt="" coords="5,5,176,31"/>
-<area shape="rect" id="Node000002" href="$classzappy_1_1World.html#a9fce895cc2d62e61b943f7d9e03471db" title="Returns the tile at the given coordinates." alt="" coords="224,5,396,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="176,15,210,15,210,21,176,21"/>
+<area shape="rect" id="Node000001" title="bct: reports the content of a single tile." alt="" coords="5,42,176,67"/>
+<area shape="rect" id="Node000002" href="$classzappy_1_1Commands.html#acfb6b5845e722a7de548d0f1cee10d4f" title="Builds a &quot;bct&quot; broadcast line (resource counts) for the tile at the given position." alt="" coords="224,5,427,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="176,41,210,37,211,42,177,47"/>
+<area shape="rect" id="Node000003" href="$classzappy_1_1World.html#a9fce895cc2d62e61b943f7d9e03471db" title="Returns the tile at the given coordinates." alt="" coords="475,42,647,67"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="176,54,224,55,427,55,461,54,461,60,427,60,224,60,176,59"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="427,35,461,40,461,45,426,41"/>
 </map>

@@ -46,7 +46,7 @@
   </g>
 </defs>
 <script type="application/ecmascript">
-var viewWidth = 521;
+var viewWidth = 873;
 var viewHeight = 100;
 var sectionId = 'dynsection-1';
 </script>
@@ -119,22 +119,68 @@ var sectionId = 'dynsection-1';
 </a>
 </g>
 </g>
-<!-- Node5 -->
-<g id="Node000005" class="node">
-<title>Node5</title>
-<g id="a_Node000005"><a xlink:href="classzappy_1_1World.html#a420188584d7d2f104bb3e7d186266758" target="_top" xlink:title="Legacy resource generation: independently rolls width*height*density random tiles per resource type,...">
+<!-- Node7 -->
+<g id="Node000007" class="node">
+<title>Node7</title>
+<g id="a_Node000007"><a xlink:href="classzappy_1_1World.html#a420188584d7d2f104bb3e7d186266758" target="_top" xlink:title="Legacy resource generation: independently rolls width*height*density random tiles per resource type,...">
 <polygon fill="white" stroke="#666666" points="513,-30 349,-30 349,0 513,0 513,-30"/>
 <text text-anchor="start" x="357" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::World::resourcePassive</text>
 <text text-anchor="middle" x="431" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">GenerationLegacy</text>
 </a>
 </g>
 </g>
-<!-- Node3&#45;&gt;Node5 -->
-<g id="edge4_Node000003_Node000005" class="edge">
-<title>Node3&#45;&gt;Node5</title>
-<g id="a_edge4_Node000003_Node000005"><a xlink:title=" ">
+<!-- Node3&#45;&gt;Node7 -->
+<g id="edge6_Node000003_Node000007" class="edge">
+<title>Node3&#45;&gt;Node7</title>
+<g id="a_edge6_Node000003_Node000007"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M313.11,-29.17C321.55,-28.15 330.17,-27.1 338.72,-26.06"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="339.19,-29.53 348.7,-24.85 338.35,-22.58 339.19,-29.53"/>
+</a>
+</g>
+</g>
+<!-- Node5 -->
+<g id="Node000005" class="node">
+<title>Node5</title>
+<g id="a_Node000005"><a xlink:href="classzappy_1_1World.html#a42f9bf905589c6b0b32ca7c88fbe3436" target="_top" xlink:title="Pushes a &quot;bct&quot; broadcast line for the tile at the given position, if a broadcast queue is set.">
+<polygon fill="white" stroke="#666666" points="700,-54 549,-54 549,-24 700,-24 700,-54"/>
+<text text-anchor="start" x="557" y="-42" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::World::broadcastTile</text>
+<text text-anchor="middle" x="624.5" y="-31" font-family="Helvetica,sans-Serif" font-size="10.00">Content</text>
+</a>
+</g>
+</g>
+<!-- Node4&#45;&gt;Node5 -->
+<g id="edge4_Node000004_Node000005" class="edge">
+<title>Node4&#45;&gt;Node5</title>
+<g id="a_edge4_Node000004_Node000005"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M513.21,-52.82C521.71,-51.76 530.37,-50.67 538.9,-49.6"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="539.37,-53.07 548.85,-48.36 538.5,-46.13 539.37,-53.07"/>
+</a>
+</g>
+</g>
+<!-- Node6 -->
+<g id="Node000006" class="node">
+<title>Node6</title>
+<g id="a_Node000006"><a xlink:href="classzappy_1_1World.html#a9fce895cc2d62e61b943f7d9e03471db" target="_top" xlink:title="Returns the tile at the given coordinates.">
+<polygon fill="white" stroke="#666666" points="865,-48.5 736,-48.5 736,-29.5 865,-29.5 865,-48.5"/>
+<text text-anchor="middle" x="800.5" y="-36.5" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::World::getTileAt</text>
+</a>
+</g>
+</g>
+<!-- Node5&#45;&gt;Node6 -->
+<g id="edge5_Node000005_Node000006" class="edge">
+<title>Node5&#45;&gt;Node6</title>
+<g id="a_edge5_Node000005_Node000006"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M700.05,-39C708.51,-39 717.13,-39 725.58,-39"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="725.78,-42.5 735.78,-39 725.78,-35.5 725.78,-42.5"/>
+</a>
+</g>
+</g>
+<!-- Node7&#45;&gt;Node5 -->
+<g id="edge7_Node000007_Node000005" class="edge">
+<title>Node7&#45;&gt;Node5</title>
+<g id="a_edge7_Node000007_Node000005"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M513.21,-25.18C521.71,-26.24 530.37,-27.33 538.9,-28.4"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="538.5,-31.87 548.85,-29.64 539.37,-24.93 538.5,-31.87"/>
 </a>
 </g>
 </g>

@@ -1,12 +1,14 @@
 <map id="zappy::Commands::Ppo" name="zappy::Commands::Ppo">
-<area shape="rect" id="Node000001" title="ppo: reports a player&#39;s position and orientation." alt="" coords="5,54,180,79"/>
-<area shape="rect" id="Node000002" href="$classzappy_1_1Player.html#a33f33f30fdbf95af468119bc63bd7caa" title="This player&#39;s stable logical id (its GUI player number)." alt="" coords="487,28,637,54"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="118,51,168,30,227,13,286,5,333,3,439,13,498,23,497,28,438,18,333,8,287,10,229,18,170,35,120,56"/>
-<area shape="rect" id="Node000003" href="$classzappy_1_1Player.html#a179f8fcc7fbb9a11bda72d37982bc30b" title="Current facing as the protocol&#39;s 1..4 orientation (NORTH=1, EAST=2, SOUTH=3, WEST=4)." alt="" coords="228,28,439,54"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="180,55,214,51,215,56,181,60"/>
-<area shape="rect" id="Node000004" href="$classzappy_1_1World.html#a43fb08ea54d522c20d2c27ed281297f4" title="Looks up a player by its logical id, or nullptr if none matches." alt="" coords="231,78,435,103"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="181,72,218,76,217,81,180,78"/>
-<area shape="rect" id="Node000005" href="$classzappy_1_1Player.html#aff283e814b7f01d4ad7398d7c20794e6" title="Current tile position." alt="" coords="238,127,429,152"/>
-<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="128,77,229,112,263,121,261,126,227,117,126,82"/>
-<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="392,75,488,54,489,59,393,80"/>
+<area shape="rect" id="Node000001" title="ppo: reports a player&#39;s position and orientation." alt="" coords="5,35,180,60"/>
+<area shape="rect" id="Node000002" href="$classzappy_1_1Commands.html#aaf731a65205404334d3f8bf78981cb3c" title="Builds a &quot;ppo&quot; broadcast line (position, orientation) for one player." alt="" coords="228,55,435,95"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="181,55,215,59,214,64,180,60"/>
+<area shape="rect" id="Node000006" href="$classzappy_1_1World.html#a43fb08ea54d522c20d2c27ed281297f4" title="Looks up a player by its logical id, or nullptr if none matches." alt="" coords="229,5,433,31"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="180,34,215,30,216,35,181,39"/>
+<area shape="rect" id="Node000003" href="$classzappy_1_1Player.html#a33f33f30fdbf95af468119bc63bd7caa" title="This player&#39;s stable logical id (its GUI player number)." alt="" coords="513,7,663,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="423,53,515,32,517,38,424,58"/>
+<area shape="rect" id="Node000004" href="$classzappy_1_1Player.html#a179f8fcc7fbb9a11bda72d37982bc30b" title="Current facing as the protocol&#39;s 1..4 orientation (NORTH=1, EAST=2, SOUTH=3, WEST=4)." alt="" coords="483,60,693,85"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="435,72,469,71,469,77,435,77"/>
+<area shape="rect" id="Node000005" href="$classzappy_1_1Player.html#aff283e814b7f01d4ad7398d7c20794e6" title="Current tile position." alt="" coords="493,109,683,135"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="435,91,504,104,503,109,434,97"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="433,16,499,16,499,22,433,21"/>
 </map>

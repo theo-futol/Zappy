@@ -1,39 +1,48 @@
 <map id="zappy::Commands::Set" name="zappy::Commands::Set">
-<area shape="rect" id="Node000001" title="Drops a named resource from the inventory onto the current tile." alt="" coords="5,281,176,307"/>
-<area shape="rect" id="Node000002" href="$classzappy_1_1Commands.html#ab80dd4d34e9f778e13d3ddba78134a15" title="Builds a passive &quot;pipi&quot; snapshot line (position, orientation, level, inventory) for one player." alt="" coords="229,217,436,257"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="144,279,234,257,235,263,146,284"/>
-<area shape="rect" id="Node000003" href="$classzappy_1_1Player.html#a33f33f30fdbf95af468119bc63bd7caa" title="This player&#39;s stable logical id (its GUI player number)." alt="" coords="748,65,899,91"/>
-<area shape="poly" id="edge8_Node000001_Node000003" title=" " alt="" coords="92,280,105,236,129,175,146,143,168,112,193,84,223,61,257,43,294,28,370,10,448,3,526,6,601,15,669,29,776,59,774,64,668,34,600,20,526,11,448,9,371,15,295,33,259,48,225,66,197,88,172,115,151,145,134,177,110,238,97,282"/>
-<area shape="rect" id="Node000004" href="$classzappy_1_1Player.html#a7583690b204dac5e1382ba3a80256695" title="This player&#39;s inventory." alt="" coords="495,413,695,439"/>
-<area shape="poly" id="edge9_Node000001_Node000004" title=" " alt="" coords="160,279,223,273,297,274,372,287,409,300,443,317,462,337,469,359,475,380,491,400,499,405,496,409,488,404,470,383,463,361,457,340,440,322,407,305,371,292,296,279,223,278,160,284"/>
-<area shape="rect" id="Node000008" href="$classzappy_1_1Player.html#aff283e814b7f01d4ad7398d7c20794e6" title="Current tile position." alt="" coords="499,164,690,189"/>
-<area shape="poly" id="edge14_Node000001_Node000008" title=" " alt="" coords="104,279,154,239,187,219,223,202,289,184,358,174,425,169,485,168,485,173,425,174,358,179,290,190,225,207,190,223,157,244,107,283"/>
-<area shape="rect" id="Node000009" href="$classzappy_1_1Inventory.html#a875bcfe3876992de8044423fcff4bacc" title="Returns the held count for an item type." alt="" coords="239,331,427,371"/>
-<area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="146,304,235,326,234,331,144,309"/>
-<area shape="rect" id="Node000010" href="$classzappy_1_1World.html#a43fb08ea54d522c20d2c27ed281297f4" title="Looks up a player by its logical id, or nullptr if none matches." alt="" coords="493,65,697,91"/>
-<area shape="poly" id="edge11_Node000001_Node000010" title=" " alt="" coords="94,280,109,243,135,193,173,142,196,120,223,101,257,85,293,73,368,59,442,57,507,61,507,67,442,62,369,65,294,78,259,90,225,106,200,124,177,146,140,196,114,246,99,282"/>
-<area shape="rect" id="Node000011" href="$classzappy_1_1Client.html#ade4edd70698f2497e09f736734d77ab0" title="Returns the logical id of this client&#39;s player, or &#45;1 if it has none." alt="" coords="239,396,427,421"/>
-<area shape="poly" id="edge13_Node000001_Node000011" title=" " alt="" coords="108,305,158,343,191,363,225,381,249,390,247,395,223,386,188,368,155,347,105,309"/>
-<area shape="rect" id="Node000012" href="$classzappy_1_1World.html#a572b27056a65707d367e2a839ef12daa" title="Returns the tile the given player is standing on." alt="" coords="247,116,419,141"/>
-<area shape="poly" id="edge15_Node000001_Node000012" title=" " alt="" coords="99,280,147,222,183,188,223,158,256,143,258,148,225,163,186,192,151,225,103,283"/>
-<area shape="rect" id="Node000014" href="$classzappy_1_1Logger.html#abab39dcd03894b824e5c7b03462dc483" title="Prints one log line to stdout. Omits the &quot;(...)&quot; group when fields is empty." alt="" coords="263,445,403,471"/>
-<area shape="poly" id="edge19_Node000001_Node000014" title=" " alt="" coords="102,305,149,367,185,402,225,432,251,443,248,448,223,436,181,406,145,370,98,309"/>
-<area shape="rect" id="Node000015" href="$classzappy_1_1Inventory.html#acf23fc739876cbff0b178a41e11deb69" title="Removes quantity of the given item." alt="" coords="224,495,441,520"/>
-<area shape="poly" id="edge20_Node000001_Node000015" title=" " alt="" coords="100,306,116,342,142,390,179,440,201,462,226,481,235,487,233,492,222,486,198,466,175,443,138,392,111,344,95,308"/>
-<area shape="rect" id="Node000016" href="$namespacezappy.html#a248cf26daf11d752f095e1b6c18f74cd" title="Parses a protocol name into an ItemType, returning UNKNOWN if unrecognized." alt="" coords="243,544,422,569"/>
-<area shape="poly" id="edge21_Node000001_Node000016" title=" " alt="" coords="98,306,111,350,136,411,173,476,198,506,226,531,233,536,230,540,222,535,194,509,169,479,131,413,106,352,93,308"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="436,242,498,242,565,236,634,222,699,198,732,178,761,152,804,100,808,104,765,156,735,182,701,203,635,227,566,241,498,247,436,247"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="416,255,443,274,456,290,463,307,467,339,471,371,478,386,491,400,497,404,493,409,488,404,474,389,466,372,462,340,458,308,452,293,440,277,413,259"/>
-<area shape="rect" id="Node000005" href="$classzappy_1_1Inventory.html#ae39a467d579b96abd514a9068b914959" title="Mutable access to the underlying item counts, indexed by ItemType." alt="" coords="497,265,692,291"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="437,250,501,261,500,266,436,256"/>
-<area shape="rect" id="Node000006" href="$classzappy_1_1Player.html#a70dc9f5c05ea552c47350da37b3bd027" title="Current elevation level (1..8)." alt="" coords="508,315,681,340"/>
-<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="396,255,443,273,466,287,490,300,517,309,515,314,488,305,464,292,440,278,394,259"/>
-<area shape="rect" id="Node000007" href="$classzappy_1_1Player.html#a179f8fcc7fbb9a11bda72d37982bc30b" title="Current facing as the protocol&#39;s 1..4 orientation (NORTH=1, EAST=2, SOUTH=3, WEST=4)." alt="" coords="489,364,700,389"/>
-<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="412,255,443,273,460,294,467,314,475,333,491,351,499,356,497,361,488,355,470,336,462,316,455,296,440,277,409,259"/>
-<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="420,214,525,190,526,195,421,219"/>
-<area shape="poly" id="edge12_Node000010_Node000003" title=" " alt="" coords="697,75,734,75,734,81,697,81"/>
-<area shape="poly" id="edge17_Node000012_Node000008" title=" " alt="" coords="403,139,512,159,511,164,402,144"/>
-<area shape="poly" id="edge16_Node000012_Node000010" title=" " alt="" coords="399,113,514,91,515,96,400,119"/>
-<area shape="rect" id="Node000013" href="$classzappy_1_1World.html#a9fce895cc2d62e61b943f7d9e03471db" title="Returns the tile at the given coordinates." alt="" coords="509,115,681,140"/>
-<area shape="poly" id="edge18_Node000012_Node000013" title=" " alt="" coords="419,126,495,125,495,131,419,131"/>
+<area shape="rect" id="Node000001" title="Drops a named resource from the inventory onto the current tile." alt="" coords="5,433,176,459"/>
+<area shape="rect" id="Node000002" href="$classzappy_1_1Commands.html#acfb6b5845e722a7de548d0f1cee10d4f" title="Builds a &quot;bct&quot; broadcast line (resource counts) for the tile at the given position." alt="" coords="231,490,434,530"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="141,456,244,484,242,489,139,461"/>
+<area shape="rect" id="Node000004" href="$classzappy_1_1Commands.html#a88f99364e1d0018320f90773e58e700d" title="Builds a &quot;pin&quot; broadcast line (position, inventory) for one player." alt="" coords="231,210,434,250"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="96,432,113,399,141,355,178,308,222,267,243,254,246,258,226,271,182,311,146,358,118,402,100,435"/>
+<area shape="rect" id="Node000005" href="$classzappy_1_1Player.html#a33f33f30fdbf95af468119bc63bd7caa" title="This player&#39;s stable logical id (its GUI player number)." alt="" coords="748,307,899,332"/>
+<area shape="poly" id="edge15_Node000001_Node000005" title=" " alt="" coords="101,458,119,487,146,525,182,562,203,578,225,590,282,609,330,612,379,603,441,590,519,575,579,559,634,533,698,488,734,453,765,414,808,343,812,346,770,417,738,457,702,492,637,537,581,564,520,580,442,595,380,608,330,617,281,614,223,595,200,582,178,566,142,528,114,490,96,460"/>
+<area shape="rect" id="Node000006" href="$classzappy_1_1Player.html#a7583690b204dac5e1382ba3a80256695" title="This player&#39;s inventory." alt="" coords="495,156,695,181"/>
+<area shape="poly" id="edge16_Node000001_Node000006" title=" " alt="" coords="92,432,104,385,127,320,145,285,166,251,192,221,223,196,257,177,294,163,332,154,371,149,446,146,513,152,513,157,446,152,371,154,333,159,295,168,259,182,225,200,196,225,170,254,149,287,132,322,109,387,97,433"/>
+<area shape="rect" id="Node000008" href="$classzappy_1_1Player.html#aff283e814b7f01d4ad7398d7c20794e6" title="Current tile position." alt="" coords="499,307,690,332"/>
+<area shape="poly" id="edge21_Node000001_Node000008" title=" " alt="" coords="100,431,149,381,184,354,223,333,289,314,358,304,425,301,486,303,486,309,425,307,358,309,290,319,225,338,187,358,152,385,104,435"/>
+<area shape="rect" id="Node000009" href="$classzappy_1_1Commands.html#ab80dd4d34e9f778e13d3ddba78134a15" title="Builds a passive &quot;pipi&quot; snapshot line (position, orientation, level, inventory) for one player." alt="" coords="229,95,436,135"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="92,432,103,381,127,306,144,265,165,224,191,186,222,152,238,140,242,144,226,156,196,189,170,227,149,267,132,308,108,382,97,433"/>
+<area shape="rect" id="Node000012" href="$classzappy_1_1Inventory.html#a875bcfe3876992de8044423fcff4bacc" title="Returns the held count for an item type." alt="" coords="239,426,427,466"/>
+<area shape="poly" id="edge17_Node000001_Node000012" title=" " alt="" coords="176,443,225,443,225,449,176,449"/>
+<area shape="rect" id="Node000013" href="$classzappy_1_1World.html#a43fb08ea54d522c20d2c27ed281297f4" title="Looks up a player by its logical id, or nullptr if none matches." alt="" coords="493,356,697,381"/>
+<area shape="poly" id="edge18_Node000001_Node000013" title=" " alt="" coords="105,431,154,394,187,375,223,361,298,346,375,342,448,345,512,351,511,357,448,350,375,347,299,351,225,366,190,380,157,398,108,435"/>
+<area shape="rect" id="Node000014" href="$classzappy_1_1Client.html#ade4edd70698f2497e09f736734d77ab0" title="Returns the logical id of this client&#39;s player, or &#45;1 if it has none." alt="" coords="239,555,427,580"/>
+<area shape="poly" id="edge20_Node000001_Node000014" title=" " alt="" coords="107,457,157,498,190,520,225,540,247,548,246,553,223,544,187,525,154,502,104,461"/>
+<area shape="rect" id="Node000015" href="$classzappy_1_1World.html#a572b27056a65707d367e2a839ef12daa" title="Returns the tile the given player is standing on." alt="" coords="247,376,419,401"/>
+<area shape="poly" id="edge22_Node000001_Node000015" title=" " alt="" coords="143,431,223,411,264,402,265,407,225,417,145,436"/>
+<area shape="rect" id="Node000016" href="$classzappy_1_1Logger.html#abab39dcd03894b824e5c7b03462dc483" title="Prints one log line to stdout. Omits the &quot;(...)&quot; group when fields is empty." alt="" coords="263,656,403,681"/>
+<area shape="poly" id="edge26_Node000001_Node000016" title=" " alt="" coords="100,458,116,493,143,541,180,591,202,614,226,634,252,649,249,653,222,639,198,618,176,595,139,544,111,496,95,460"/>
+<area shape="rect" id="Node000017" href="$classzappy_1_1Inventory.html#acf23fc739876cbff0b178a41e11deb69" title="Removes quantity of the given item." alt="" coords="224,705,441,731"/>
+<area shape="poly" id="edge27_Node000001_Node000017" title=" " alt="" coords="97,458,110,503,134,567,172,635,197,666,226,692,233,697,230,701,222,696,193,669,168,638,129,569,105,505,92,459"/>
+<area shape="rect" id="Node000018" href="$namespacezappy.html#a248cf26daf11d752f095e1b6c18f74cd" title="Parses a protocol name into an ItemType, returning UNKNOWN if unrecognized." alt="" coords="243,755,422,780"/>
+<area shape="poly" id="edge28_Node000001_Node000018" title=" " alt="" coords="96,459,106,512,128,589,145,631,167,671,193,709,226,741,233,746,230,751,222,745,189,712,162,674,140,633,123,591,101,513,91,460"/>
+<area shape="rect" id="Node000003" href="$classzappy_1_1World.html#a9fce895cc2d62e61b943f7d9e03471db" title="Returns the tile at the given coordinates." alt="" coords="509,452,681,477"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="434,490,507,477,508,482,435,495"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="435,244,700,291,750,301,749,306,700,297,434,249"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="416,207,489,190,524,182,525,187,490,195,418,212"/>
+<area shape="rect" id="Node000007" href="$classzappy_1_1Inventory.html#ae39a467d579b96abd514a9068b914959" title="Mutable access to the underlying item counts, indexed by ItemType." alt="" coords="497,205,692,231"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="434,223,483,220,484,226,434,228"/>
+<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="391,247,442,266,490,285,537,300,536,305,488,290,440,271,389,253"/>
+<area shape="poly" id="edge9_Node000009_Node000005" title=" " alt="" coords="385,93,452,73,534,60,577,59,620,63,662,74,701,92,728,111,750,135,784,190,807,247,819,292,814,294,802,248,780,193,746,138,724,115,699,96,660,79,619,68,577,65,534,66,453,79,386,98"/>
+<area shape="poly" id="edge10_Node000009_Node000006" title=" " alt="" coords="432,133,519,151,518,156,431,138"/>
+<area shape="poly" id="edge11_Node000009_Node000007" title=" " alt="" coords="370,133,426,162,490,190,519,199,517,204,488,195,423,167,368,138"/>
+<area shape="poly" id="edge14_Node000009_Node000008" title=" " alt="" coords="363,133,443,196,491,240,566,297,562,301,488,244,440,200,360,138"/>
+<area shape="rect" id="Node000010" href="$classzappy_1_1Player.html#a70dc9f5c05ea552c47350da37b3bd027" title="Current elevation level (1..8)." alt="" coords="508,5,681,31"/>
+<area shape="poly" id="edge12_Node000009_Node000010" title=" " alt="" coords="377,93,488,47,535,32,536,37,490,53,379,98"/>
+<area shape="rect" id="Node000011" href="$classzappy_1_1Player.html#a179f8fcc7fbb9a11bda72d37982bc30b" title="Current facing as the protocol&#39;s 1..4 orientation (NORTH=1, EAST=2, SOUTH=3, WEST=4)." alt="" coords="489,107,700,132"/>
+<area shape="poly" id="edge13_Node000009_Node000011" title=" " alt="" coords="436,114,476,115,476,120,436,120"/>
+<area shape="poly" id="edge19_Node000013_Node000005" title=" " alt="" coords="654,353,750,332,751,338,655,359"/>
+<area shape="poly" id="edge25_Node000015_Node000003" title=" " alt="" coords="393,399,442,411,546,445,544,450,441,417,392,404"/>
+<area shape="poly" id="edge24_Node000015_Node000008" title=" " alt="" coords="375,373,489,341,522,333,523,338,490,346,376,378"/>
+<area shape="poly" id="edge23_Node000015_Node000013" title=" " alt="" coords="419,379,478,375,479,380,419,385"/>
 </map>

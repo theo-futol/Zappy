@@ -1,0 +1,7 @@
+<map id="zappy::World::resourcePassiveGenerationLegacy" name="zappy::World::resourcePassiveGenerationLegacy">
+<area shape="rect" id="Node000001" title="Legacy resource generation: independently rolls width*height*density random tiles per resource type,..." alt="" coords="5,5,224,45"/>
+<area shape="rect" id="Node000002" href="$classzappy_1_1World.html#a42f9bf905589c6b0b32ca7c88fbe3436" title="Pushes a &quot;bct&quot; broadcast line for the tile at the given position, if a broadcast queue is set." alt="" coords="272,5,473,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="224,23,258,23,258,28,224,28"/>
+<area shape="rect" id="Node000003" href="$classzappy_1_1World.html#a9fce895cc2d62e61b943f7d9e03471db" title="Returns the tile at the given coordinates." alt="" coords="521,13,693,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="473,23,507,23,507,28,473,28"/>
+</map>

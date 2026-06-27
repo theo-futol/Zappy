@@ -6,6 +6,11 @@
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="156,54,191,58,190,63,156,59"/>
 <area shape="rect" id="Node000004" href="$classzappy_1_1World.html#ab0d269a2219c35662581a4d4296a3467" title="Spec&#45;accurate resource generation: tops every resource up to width*height*density (never above,..." alt="" coords="471,23,689,63"/>
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="422,60,457,55,457,61,423,65"/>
-<area shape="rect" id="Node000005" href="$classzappy_1_1World.html#a420188584d7d2f104bb3e7d186266758" title="Legacy resource generation: independently rolls width*height*density random tiles per resource type,..." alt="" coords="471,87,689,127"/>
-<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="423,86,457,90,457,95,422,91"/>
+<area shape="rect" id="Node000007" href="$classzappy_1_1World.html#a420188584d7d2f104bb3e7d186266758" title="Legacy resource generation: independently rolls width*height*density random tiles per resource type,..." alt="" coords="471,87,689,127"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="423,86,457,90,457,95,422,91"/>
+<area shape="rect" id="Node000005" href="$classzappy_1_1World.html#a42f9bf905589c6b0b32ca7c88fbe3436" title="Pushes a &quot;bct&quot; broadcast line for the tile at the given position, if a broadcast queue is set." alt="" coords="737,55,939,95"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="690,54,724,59,724,64,689,60"/>
+<area shape="rect" id="Node000006" href="$classzappy_1_1World.html#a9fce895cc2d62e61b943f7d9e03471db" title="Returns the tile at the given coordinates." alt="" coords="987,63,1159,88"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="939,73,973,73,973,78,939,78"/>
+<area shape="poly" id="edge7_Node000007_Node000005" title=" " alt="" coords="689,91,724,87,724,92,690,96"/>
 </map>
