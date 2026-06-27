@@ -86,15 +86,9 @@
     <div id="canvas-container"></div>
 
     <script>
-        // Configuration
-        let BRIDGE_HOST = window.location.hostname || 'localhost';
-        if (window.location.protocol === 'file:') {
-            const userInput = prompt("Enter bridge IP for mobile viewing (leave empty for localhost):", "192.168.");
-            if (userInput) BRIDGE_HOST = userInput;
-        }
-        const port = '8081';
-        const API_URL = `http://${BRIDGE_HOST}:${port}/api/state`;
-        const WS_URL = `ws://${BRIDGE_HOST}:${port}`;
+        // Configuration — derived from the page's own origin so any host/port works
+        const API_URL = `${window.location.protocol}//${window.location.host}/api/state`;
+        const WS_URL = `ws://${window.location.host}`;
 
         // Engine State
         let app;

@@ -23,6 +23,7 @@ services:
       API_KEY: ${API_KEY:-}
       ZAPPY_SERVER_HOST: ${ZAPPY_SERVER_HOST:-server}
       ZAPPY_SERVER_PORT: ${ZAPPY_PORT:-4242}
+      ZAPPY_CLIENTS: ${ZAPPY_CLIENTS:-3}
     ports:
       - "${ZAPLAUNCHER_PORT:-8000}:8000"
     depends_on:
@@ -31,6 +32,22 @@ services:
       - zappy-net
     volumes:
       - ./ZapLauncher/prompt_database:/prompt_database
+
+  gui:
+    build:
+      context: ./GUI
+      dockerfile: Dockerfile
+    environment:
+      ZAPPY_SERVER_HOST: ${ZAPPY_SERVER_HOST:-server}
+      ZAPPY_SERVER_PORT: ${ZAPPY_PORT:-4242}
+      GUI_PORT: ${GUI_PORT:-8081}
+      TILE_UPDATE_INTERVAL_MS: ${TILE_UPDATE_INTERVAL_MS:-5000}
+    ports:
+      - "${GUI_PORT:-8081}:8081"
+    depends_on:
+      - server
+    networks:
+      - zappy-net
 
 networks:
   zappy-net:

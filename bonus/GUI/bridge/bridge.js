@@ -1,11 +1,24 @@
 import net from 'node:net';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { WebSocketServer, WebSocket } from 'ws';
 import http from 'http';
 
-const TCP_HOST = process.argv[2] || 'localhost';
-const TCP_PORT = parseInt(process.argv[3], 10) || 4242;
-const WEB_PORT = parseInt(process.argv[4], 10) || 8081;
-const TILE_UPDATE_INTERVAL_MS = parseInt(process.argv[5], 10) || 5000;
+const TCP_HOST = process.env.ZAPPY_SERVER_HOST || 'localhost';
+const TCP_PORT = parseInt(process.env.ZAPPY_SERVER_PORT, 10) || 4242;
+const WEB_PORT = parseInt(process.env.GUI_PORT, 10) || 8081;
+const TILE_UPDATE_INTERVAL_MS = parseInt(process.env.TILE_UPDATE_INTERVAL_MS, 10) || 5000;
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const BROWSER_DIR = path.join(__dirname, '..', 'browser');
+const MIME = {
+    '.html': 'text/html',
+    '.js':   'application/javascript',
+    '.css':  'text/css',
+    '.png':  'image/png',
+    '.ico':  'image/x-icon',
+};
 
 let mapUpdateInterval = null;
 
@@ -20,13 +33,23 @@ let GameState = {
 
 const server = http.createServer((req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
-    
+
     if (req.url === '/api/state' && req.method === 'GET') {
         res.writeHead(200, { 'Content-Type': 'application/json' });
         res.end(JSON.stringify(GameState));
-    } else {
+        return;
+    }
+
+    const urlPath = req.url === '/' ? '/index.html' : req.url.split('?')[0];
+    const filePath = path.join(BROWSER_DIR, urlPath);
+    const ext = path.extname(filePath);
+    try {
+        const data = fs.readFileSync(filePath);
+        res.writeHead(200, { 'Content-Type': MIME[ext] || 'application/octet-stream' });
+        res.end(data);
+    } catch {
         res.writeHead(404);
-        res.end();
+        res.end('Not found');
     }
 });
 
