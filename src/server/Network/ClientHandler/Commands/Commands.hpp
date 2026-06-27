@@ -71,5 +71,7 @@ namespace zappy
             std::string Mct(std::vector<std::string> args, Client &client);
             /// @brief tna: reports the name of every team.
             std::string Tna(std::vector<std::string> args, Client &client);
+            /// @brief Builds a passive "pipi" snapshot line (position, orientation, level, inventory) for one player.
+            std::string buildPipiMessage(Player &player) const;
     };
 }
