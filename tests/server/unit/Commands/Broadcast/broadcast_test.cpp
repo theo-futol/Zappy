@@ -4,7 +4,6 @@
 #include <criterion/criterion.h>
 #include <ctime>
 #include <fcntl.h>
-#include <functional>
 #include <queue>
 #include <string>
 #include <sys/socket.h>
@@ -15,6 +14,7 @@ struct BroadcastFixture
     int a, b;
     zappy::World world;
     std::queue<std::string> broadcastQueue;
+    std::vector<std::unique_ptr<zappy::Client>> clients;
     zappy::Commands *commands;
     zappy::Client *client;
     int playerId;
@@ -52,7 +52,7 @@ Test(Broadcast, returns_ko_when_caller_has_no_player)
     socketpair(AF_UNIX, SOCK_STREAM, 0, sv);
     zappy::Client ghost(sv[0]);
 
-    std::string res = f.commands->Broadcast({"hello"}, ghost);
+    std::string res = f.commands->Broadcast({"hello"}, ghost, f.clients);
 
     cr_assert_str_eq(res.c_str(), "ko\n");
     close(sv[1]);
@@ -62,7 +62,7 @@ Test(Broadcast, returns_ko_when_no_argument_is_given)
 {
     BroadcastFixture f;
 
-    std::string res = f.commands->Broadcast({}, *f.client);
+    std::string res = f.commands->Broadcast({}, *f.client, f.clients);
 
     cr_assert_str_eq(res.c_str(), "ko\n");
 }
@@ -71,7 +71,7 @@ Test(Broadcast, returns_ko_when_too_many_arguments_are_given)
 {
     BroadcastFixture f;
 
-    std::string res = f.commands->Broadcast({"hello", "world"}, *f.client);
+    std::string res = f.commands->Broadcast({"hello", "world"}, *f.client, f.clients);
 
     cr_assert_str_eq(res.c_str(), "ko\n");
 }
@@ -80,7 +80,7 @@ Test(Broadcast, returns_ko_when_message_is_empty)
 {
     BroadcastFixture f;
 
-    std::string res = f.commands->Broadcast({""}, *f.client);
+    std::string res = f.commands->Broadcast({""}, *f.client, f.clients);
 
     cr_assert_str_eq(res.c_str(), "ko\n");
 }
@@ -89,7 +89,7 @@ Test(Broadcast, returns_ok_for_a_valid_single_word_message)
 {
     BroadcastFixture f;
 
-    std::string res = f.commands->Broadcast({"hello"}, *f.client);
+    std::string res = f.commands->Broadcast({"hello"}, *f.client, f.clients);
 
     cr_assert_str_eq(res.c_str(), "ok\n");
 }
@@ -98,7 +98,7 @@ Test(Broadcast, pushes_a_pbc_event_with_the_caller_id_and_text)
 {
     BroadcastFixture f;
 
-    f.commands->Broadcast({"hello"}, *f.client);
+    f.commands->Broadcast({"hello"}, *f.client, f.clients);
 
     cr_assert_eq(f.broadcastQueue.size(), 1u);
     std::string expected = "pbc " + std::to_string(f.playerId) + " hello\n";
@@ -110,10 +110,10 @@ Test(Broadcast, does_not_queue_a_message_for_a_lone_player)
     BroadcastFixture f;
     zappy::Player *player = f.world.getPlayerById(f.playerId);
 
-    f.commands->Broadcast({"hello"}, *f.client);
+    f.commands->Broadcast({"hello"}, *f.client, f.clients);
     // Nothing should be readable on the sender's own socket since it is the
     // only player in the world (no targets to notify).
-    f.commands->Broadcast({"again"}, *f.client); // calling again must stay stable / not crash
+    f.commands->Broadcast({"again"}, *f.client, f.clients); // calling again must stay stable / not crash
     (void)player;
 
     char buf[64];
@@ -132,16 +132,17 @@ Test(Broadcast, notifies_other_players_with_a_direction_tagged_message)
     zappy::Player *target = f.world.getPlayerById(targetId);
     target->setPosition(0, 0, f.world.getMapSize()); // same tile as the sender => distance 0
 
-    std::string res = f.commands->Broadcast({"hi"}, *f.client);
+    std::string res = f.commands->Broadcast({"hi"}, *f.client, f.clients);
     cr_assert_str_eq(res.c_str(), "ok\n");
 
     // The message is queued with timeNeeded = distance * 7 = 0, so it is sent
     // as soon as sendMessageToClient() is invoked on the target. The
-    // implementation queues the message against the *target's* own fd
-    // (target->getFd()), so it is delivered on the target's socket peer
-    // (sv2[1]), not the sender's.
-    std::function<void(int, const std::string &)> sendFunction = [](int fd, const std::string &message) { send(fd, message.c_str(), message.size(), 0); };
-    target->sendMessageToClient(std::clock(), sendFunction);
+    // implementation looks up the Client by fd in the clients vector and writes
+    // to it, so the peer sv2[1] must receive the message.
+    std::vector<std::unique_ptr<zappy::Client>> localClients;
+    localClients.push_back(std::make_unique<zappy::Client>(sv2[0]));
+    target->sendMessageToClient(std::clock(), localClients);
+    localClients.clear(); // closes sv2[0] via Client destructor
 
     char buf[64] = {0};
     int flags = fcntl(sv2[1], F_GETFL, 0);
@@ -152,8 +153,7 @@ Test(Broadcast, notifies_other_players_with_a_direction_tagged_message)
     cr_assert(received.rfind("message ", 0) == 0);
     cr_assert(received.find("hi") != std::string::npos);
 
-    close(sv2[0]);
-    close(sv2[1]);
+    close(sv2[1]); // sv2[0] already closed by localClients.clear()
 }
 
 Test(Broadcast, queues_a_delayed_message_for_a_target_on_a_distant_tile)
@@ -165,14 +165,13 @@ Test(Broadcast, queues_a_delayed_message_for_a_target_on_a_distant_tile)
     zappy::Player *target = f.world.getPlayerById(targetId);
     target->setPosition(3, 4, f.world.getMapSize()); // distance > 0 from the sender at (0,0)
 
-    std::string res = f.commands->Broadcast({"far"}, *f.client);
+    std::string res = f.commands->Broadcast({"far"}, *f.client, f.clients);
 
     cr_assert_str_eq(res.c_str(), "ok\n");
     // With a non-zero distance, timeNeeded > 0 so the message must NOT be
     // ready immediately: nothing should be readable yet on the sender's peer.
     zappy::Player *sender = f.world.getPlayerById(f.playerId);
-    std::function<void(int, const std::string &)> sendFunction = [](int fd, const std::string &message) { send(fd, message.c_str(), message.size(), 0); };
-    sender->sendMessageToClient(std::clock(), sendFunction);
+    sender->sendMessageToClient(std::clock(), f.clients);
 
     char buf[64];
     int flags = fcntl(f.b, F_GETFL, 0);

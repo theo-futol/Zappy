@@ -15,6 +15,7 @@ struct EvolutionFixture
     int a, b;
     zappy::World world;
     std::queue<std::string> broadcastQueue;
+    std::vector<std::unique_ptr<zappy::Client>> clients;
     zappy::Commands *commands;
     zappy::Client *client;
     int playerId;
@@ -27,7 +28,8 @@ struct EvolutionFixture
         b = sv[1];
         int flags = fcntl(b, F_GETFL, 0);
         fcntl(b, F_SETFL, flags | O_NONBLOCK);
-        client = new zappy::Client(a);
+        clients.push_back(std::make_unique<zappy::Client>(a));
+        client = clients[0].get();
         world.addTeam("team1", 0, 5);
         playerId = world.addPlayer(a, "team1");
         client->setPlayerId(playerId);
@@ -43,7 +45,7 @@ struct EvolutionFixture
     ~EvolutionFixture()
     {
         delete commands;
-        delete client;
+        // client is owned by clients[0]; the vector destructor closes the fd.
         close(b);
     }
 
@@ -62,7 +64,7 @@ Test(Fork, returns_ko_when_caller_has_no_player)
     socketpair(AF_UNIX, SOCK_STREAM, 0, sv);
     zappy::Client ghost(sv[0]);
 
-    std::string res = f.commands->Fork({}, ghost);
+    std::string res = f.commands->Fork({}, ghost, f.clients);
 
     cr_assert_str_eq(res.c_str(), "ko\n");
     close(sv[0]);
@@ -74,7 +76,7 @@ Test(Fork, lays_an_egg_at_the_player_position_and_returns_ok)
     EvolutionFixture f;
     zappy::Player *player = f.world.getPlayerById(f.playerId);
 
-    std::string res = f.commands->Fork({}, *f.client);
+    std::string res = f.commands->Fork({}, *f.client, f.clients);
 
     cr_assert_str_eq(res.c_str(), "ok\n");
     zappy::tile *tilePtr = f.world.getTileAt(player->getPosition());
@@ -93,7 +95,7 @@ Test(Evolution, beginIncantation_returns_false_when_caller_has_no_player)
     socketpair(AF_UNIX, SOCK_STREAM, 0, sv);
     zappy::Client ghost(sv[0]);
 
-    bool started = f.commands->beginIncantation(ghost, std::chrono::steady_clock::now());
+    bool started = f.commands->beginIncantation(ghost, std::chrono::steady_clock::now(), f.clients);
 
     cr_assert_not(started);
     close(sv[0]);
@@ -107,7 +109,7 @@ Test(Evolution, beginIncantation_fails_when_conditions_are_not_met)
     // No linemate stone on the tile: requirement for level 1 -> 2 is not met.
     f.world.setTileAt(player->getPosition(), zappy::ItemType::LINEMATE, 0);
 
-    bool started = f.commands->beginIncantation(*f.client, std::chrono::steady_clock::now());
+    bool started = f.commands->beginIncantation(*f.client, std::chrono::steady_clock::now(), f.clients);
 
     cr_assert_not(started);
     zappy::tile *tilePtr = f.world.getTileAt(player->getPosition());
@@ -123,7 +125,7 @@ Test(Evolution, beginIncantation_succeeds_and_freezes_participants)
     zappy::Player *player = f.world.getPlayerById(f.playerId);
     f.world.setTileAt(player->getPosition(), zappy::ItemType::LINEMATE, 1);
 
-    bool started = f.commands->beginIncantation(*f.client, std::chrono::steady_clock::now() + std::chrono::seconds(10));
+    bool started = f.commands->beginIncantation(*f.client, std::chrono::steady_clock::now() + std::chrono::seconds(10), f.clients);
 
     cr_assert(started);
     zappy::tile *tilePtr = f.world.getTileAt(player->getPosition());
@@ -144,7 +146,7 @@ Test(Incantation, returns_ko_when_caller_has_no_player)
     socketpair(AF_UNIX, SOCK_STREAM, 0, sv);
     zappy::Client ghost(sv[0]);
 
-    std::string res = f.commands->Incantation({}, ghost);
+    std::string res = f.commands->Incantation({}, ghost, f.clients);
 
     cr_assert_str_eq(res.c_str(), "ko\n");
     close(sv[0]);
@@ -157,7 +159,7 @@ Test(Incantation, fails_when_conditions_are_not_met_and_notifies_participants)
     zappy::Player *player = f.world.getPlayerById(f.playerId);
     f.world.setTileAt(player->getPosition(), zappy::ItemType::LINEMATE, 0);
 
-    std::string res = f.commands->Incantation({}, *f.client);
+    std::string res = f.commands->Incantation({}, *f.client, f.clients);
 
     cr_assert(res.empty());
     zappy::tile *tilePtr = f.world.getTileAt(player->getPosition());
@@ -178,7 +180,7 @@ Test(Incantation, succeeds_levels_up_participants_and_consumes_stones)
     zappy::Player *player = f.world.getPlayerById(f.playerId);
     f.world.setTileAt(player->getPosition(), zappy::ItemType::LINEMATE, 1);
 
-    std::string res = f.commands->Incantation({}, *f.client);
+    std::string res = f.commands->Incantation({}, *f.client, f.clients);
 
     cr_assert(res.empty());
     cr_assert_eq(player->getLevel(), 2);

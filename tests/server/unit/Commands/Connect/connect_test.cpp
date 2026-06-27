@@ -12,6 +12,7 @@ struct ConnectFixture
     int a, b;
     zappy::World world;
     std::queue<std::string> broadcastQueue;
+    std::vector<std::unique_ptr<zappy::Client>> clients;
     zappy::Commands *commands;
     zappy::Client *client;
 
@@ -36,7 +37,7 @@ Test(Connect, returns_ko_when_the_caller_has_no_player)
 {
     ConnectFixture f;
 
-    std::string res = f.commands->Connect_nbr({}, *f.client);
+    std::string res = f.commands->Connect_nbr({}, *f.client, f.clients);
 
     cr_assert_str_eq(res.c_str(), "ko\n");
 }
@@ -47,7 +48,7 @@ Test(Connect, returns_all_slots_when_team_is_empty)
     f.world.addTeam("team1", 0, 3);
     f.client->setPlayerId(f.world.addPlayer(f.a, "team1"));
 
-    std::string res = f.commands->Connect_nbr({}, *f.client);
+    std::string res = f.commands->Connect_nbr({}, *f.client, f.clients);
 
     // 3 initial slots, one taken by this player => 2 left.
     cr_assert_str_eq(res.c_str(), "2\n");
@@ -63,7 +64,7 @@ Test(Connect, decreases_as_more_players_join_the_team)
     socketpair(AF_UNIX, SOCK_STREAM, 0, sv2);
     f.world.addPlayer(sv2[0], "team1");
 
-    std::string res = f.commands->Connect_nbr({}, *f.client);
+    std::string res = f.commands->Connect_nbr({}, *f.client, f.clients);
 
     cr_assert_str_eq(res.c_str(), "1\n");
     close(sv2[0]);
@@ -76,7 +77,7 @@ Test(Connect, returns_zero_when_team_is_full)
     f.world.addTeam("team1", 0, 1);
     f.client->setPlayerId(f.world.addPlayer(f.a, "team1"));
 
-    std::string res = f.commands->Connect_nbr({}, *f.client);
+    std::string res = f.commands->Connect_nbr({}, *f.client, f.clients);
 
     cr_assert_str_eq(res.c_str(), "0\n");
 }
@@ -87,7 +88,7 @@ Test(Connect, ignores_unused_args)
     f.world.addTeam("team1", 0, 5);
     f.client->setPlayerId(f.world.addPlayer(f.a, "team1"));
 
-    std::string res = f.commands->Connect_nbr({"unexpected", "args"}, *f.client);
+    std::string res = f.commands->Connect_nbr({"unexpected", "args"}, *f.client, f.clients);
 
     cr_assert_str_eq(res.c_str(), "4\n");
 }

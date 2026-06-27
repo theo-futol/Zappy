@@ -14,6 +14,7 @@ struct LookFixture
     int a, b;
     zappy::World world;
     std::queue<std::string> broadcastQueue;
+    std::vector<std::unique_ptr<zappy::Client>> clients;
     zappy::Commands *commands;
     zappy::Client *client;
     int playerId;
@@ -51,7 +52,7 @@ Test(Look, returns_ko_when_caller_has_no_player)
     socketpair(AF_UNIX, SOCK_STREAM, 0, sv);
     zappy::Client ghost(sv[0]);
 
-    std::string res = f.commands->Look({}, ghost);
+    std::string res = f.commands->Look({}, ghost, f.clients);
 
     cr_assert_str_eq(res.c_str(), "ko\n");
     close(sv[1]);
@@ -61,7 +62,7 @@ Test(Look, result_is_wrapped_in_brackets_and_newline_terminated)
 {
     LookFixture f;
 
-    std::string res = f.commands->Look({}, *f.client);
+    std::string res = f.commands->Look({}, *f.client, f.clients);
 
     cr_assert(res.front() == '[');
     cr_assert(res.back() == '\n');
@@ -74,7 +75,7 @@ Test(Look, reports_resource_counts_on_the_players_own_tile)
     zappy::Player *player = f.world.getPlayerById(f.playerId);
     f.world.setTileAt(player->getPosition(), zappy::ItemType::LINEMATE, 3);
 
-    std::string res = f.commands->Look({}, *f.client);
+    std::string res = f.commands->Look({}, *f.client, f.clients);
 
     cr_assert(res.find("linemate:3") != std::string::npos);
 }
@@ -83,7 +84,7 @@ Test(Look, default_level_one_player_sees_four_tiles)
 {
     LookFixture f;
 
-    std::string res = f.commands->Look({}, *f.client);
+    std::string res = f.commands->Look({}, *f.client, f.clients);
 
     // Rows 0 and 1 (1 + 3 = 4 tiles) are joined by (4 - 1) = 3 separators; the
     // implementation emits one "," between every pair of tiles seen.
@@ -102,7 +103,7 @@ Test(Look, reports_other_players_present_on_a_seen_tile)
     other->setPosition(0, 0, f.world.getMapSize());
     f.world.addPlayerToTile(other, other->getPosition());
 
-    std::string res = f.commands->Look({}, *f.client);
+    std::string res = f.commands->Look({}, *f.client, f.clients);
 
     // The implementation does not number players; it emits one "player " token
     // per player standing on the tile (including the observer itself).
@@ -118,7 +119,7 @@ Test(Look, observer_alone_is_reported_as_present_on_its_own_tile)
 {
     LookFixture f;
 
-    std::string res = f.commands->Look({}, *f.client);
+    std::string res = f.commands->Look({}, *f.client, f.clients);
 
     // The observer's own tile is non-empty (it stands there), so exactly one
     // "player " marker is emitted for that tile.
@@ -131,7 +132,7 @@ Test(Look, higher_level_increases_the_number_of_tiles_seen)
     zappy::Player *player = f.world.getPlayerById(f.playerId);
     player->levelUp(); // level 2 now
 
-    std::string res = f.commands->Look({}, *f.client);
+    std::string res = f.commands->Look({}, *f.client, f.clients);
     // Rows 0,1,2 (1 + 3 + 5 = 9 tiles) are joined by (9 - 1) = 8 separators.
     cr_assert_eq(static_cast<size_t>(std::count(res.begin(), res.end(), ',')), 8u);
 }
@@ -140,7 +141,7 @@ Test(Look, ignores_unused_args)
 {
     LookFixture f;
 
-    std::string res = f.commands->Look({"ignored", "args"}, *f.client);
+    std::string res = f.commands->Look({"ignored", "args"}, *f.client, f.clients);
 
     cr_assert(res.front() == '[');
     cr_assert(res.back() == '\n');
@@ -152,7 +153,7 @@ Test(Look, works_when_facing_east)
     zappy::Player *player = f.world.getPlayerById(f.playerId);
     player->setRotation(zappy::Degrees::EAST);
 
-    std::string res = f.commands->Look({}, *f.client);
+    std::string res = f.commands->Look({}, *f.client, f.clients);
 
     cr_assert(res.front() == '[');
     cr_assert(res.back() == '\n');
@@ -164,7 +165,7 @@ Test(Look, works_when_facing_south)
     zappy::Player *player = f.world.getPlayerById(f.playerId);
     player->setRotation(zappy::Degrees::SOUTH);
 
-    std::string res = f.commands->Look({}, *f.client);
+    std::string res = f.commands->Look({}, *f.client, f.clients);
 
     cr_assert(res.front() == '[');
     cr_assert(res.back() == '\n');
@@ -176,7 +177,7 @@ Test(Look, works_when_facing_west)
     zappy::Player *player = f.world.getPlayerById(f.playerId);
     player->setRotation(zappy::Degrees::WEST);
 
-    std::string res = f.commands->Look({}, *f.client);
+    std::string res = f.commands->Look({}, *f.client, f.clients);
 
     cr_assert(res.front() == '[');
     cr_assert(res.back() == '\n');
@@ -193,7 +194,7 @@ Test(Look, wraps_on_the_positive_x_boundary_when_facing_east)
     f.world.setTileAt({0, 2}, zappy::ItemType::THYSTAME, 9);
     f.world.setTileAt({0, 3}, zappy::ItemType::THYSTAME, 9);
 
-    std::string res = f.commands->Look({}, *f.client);
+    std::string res = f.commands->Look({}, *f.client, f.clients);
 
     cr_assert(res.find("thystame:9") != std::string::npos);
 }
@@ -209,7 +210,7 @@ Test(Look, wraps_on_the_positive_y_boundary_when_facing_south)
     f.world.setTileAt({2, 0}, zappy::ItemType::THYSTAME, 9);
     f.world.setTileAt({3, 0}, zappy::ItemType::THYSTAME, 9);
 
-    std::string res = f.commands->Look({}, *f.client);
+    std::string res = f.commands->Look({}, *f.client, f.clients);
 
     cr_assert(res.find("thystame:9") != std::string::npos);
 }

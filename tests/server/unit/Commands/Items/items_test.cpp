@@ -13,6 +13,7 @@ struct ItemsFixture
     int a, b;
     zappy::World world;
     std::queue<std::string> broadcastQueue;
+    std::vector<std::unique_ptr<zappy::Client>> clients;
     zappy::Commands *commands;
     zappy::Client *client;
     int playerId;
@@ -55,7 +56,7 @@ Test(Take, returns_ko_when_no_args_are_given)
 {
     ItemsFixture f;
 
-    std::string res = f.commands->Take({}, *f.client);
+    std::string res = f.commands->Take({}, *f.client, f.clients);
 
     cr_assert_str_eq(res.c_str(), "ko\n");
 }
@@ -67,7 +68,7 @@ Test(Take, returns_ko_when_caller_has_no_tile)
     socketpair(AF_UNIX, SOCK_STREAM, 0, sv);
     zappy::Client ghost(sv[0]);
 
-    std::string res = f.commands->Take({"food"}, ghost);
+    std::string res = f.commands->Take({"food"}, ghost, f.clients);
 
     cr_assert_str_eq(res.c_str(), "ko\n");
     close(sv[0]);
@@ -78,7 +79,7 @@ Test(Take, returns_ko_for_an_unknown_item_name)
 {
     ItemsFixture f;
 
-    std::string res = f.commands->Take({"notanitem"}, *f.client);
+    std::string res = f.commands->Take({"notanitem"}, *f.client, f.clients);
 
     cr_assert_str_eq(res.c_str(), "ko\n");
 }
@@ -90,7 +91,7 @@ Test(Take, returns_ko_when_the_item_is_not_present_on_the_tile)
     // Passive resource generation seeds the map randomly; force the tile empty.
     f.world.setTileAt(player->getPosition(), zappy::ItemType::LINEMATE, 0);
 
-    std::string res = f.commands->Take({"linemate"}, *f.client);
+    std::string res = f.commands->Take({"linemate"}, *f.client, f.clients);
 
     cr_assert_str_eq(res.c_str(), "ko\n");
 }
@@ -101,7 +102,7 @@ Test(Take, picks_up_an_item_updates_inventory_and_tile_and_broadcasts_pgt)
     zappy::Player *player = f.world.getPlayerById(f.playerId);
     f.world.setTileAt(player->getPosition(), zappy::ItemType::LINEMATE, 2);
 
-    std::string res = f.commands->Take({"linemate"}, *f.client);
+    std::string res = f.commands->Take({"linemate"}, *f.client, f.clients);
 
     cr_assert_str_eq(res.c_str(), "ok\n");
     cr_assert_eq(f.tileItemCount(zappy::ItemType::LINEMATE), 1);
@@ -116,7 +117,7 @@ Test(Set, returns_ko_when_no_args_are_given)
 {
     ItemsFixture f;
 
-    std::string res = f.commands->Set({}, *f.client);
+    std::string res = f.commands->Set({}, *f.client, f.clients);
 
     cr_assert_str_eq(res.c_str(), "ko\n");
 }
@@ -128,7 +129,7 @@ Test(Set, returns_ko_when_caller_has_no_tile)
     socketpair(AF_UNIX, SOCK_STREAM, 0, sv);
     zappy::Client ghost(sv[0]);
 
-    std::string res = f.commands->Set({"food"}, ghost);
+    std::string res = f.commands->Set({"food"}, ghost, f.clients);
 
     cr_assert_str_eq(res.c_str(), "ko\n");
     close(sv[0]);
@@ -139,7 +140,7 @@ Test(Set, returns_ko_for_an_unknown_item_name)
 {
     ItemsFixture f;
 
-    std::string res = f.commands->Set({"notanitem"}, *f.client);
+    std::string res = f.commands->Set({"notanitem"}, *f.client, f.clients);
 
     cr_assert_str_eq(res.c_str(), "ko\n");
 }
@@ -148,7 +149,7 @@ Test(Set, returns_ko_when_the_player_does_not_have_the_item)
 {
     ItemsFixture f;
 
-    std::string res = f.commands->Set({"linemate"}, *f.client);
+    std::string res = f.commands->Set({"linemate"}, *f.client, f.clients);
 
     cr_assert_str_eq(res.c_str(), "ko\n");
 }
@@ -161,7 +162,7 @@ Test(Set, drops_an_item_updates_inventory_and_tile_and_broadcasts_pdr)
     f.world.setTileAt(player->getPosition(), zappy::ItemType::LINEMATE, 0);
     player->getInventory().addItem(zappy::ItemType::LINEMATE, 2);
 
-    std::string res = f.commands->Set({"linemate"}, *f.client);
+    std::string res = f.commands->Set({"linemate"}, *f.client, f.clients);
 
     cr_assert_str_eq(res.c_str(), "ok\n");
     cr_assert_eq(player->getInventory().getItemCount(zappy::ItemType::LINEMATE), 1);
