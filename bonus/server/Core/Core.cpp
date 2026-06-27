@@ -1,4 +1,5 @@
 #include "Core.hpp"
+#include "../Network/ClientHandler/WaitClientHandler/WaitClientHandler.hpp"
 #include "../ServerException/ServerException.hpp"
 #include <algorithm>
 #include <iostream>
@@ -27,6 +28,7 @@ Core::Core(ArgParser argParser) : _argParser(std::move(argParser)), _clientHandl
     _argParser.registerFlag("-c", zappy::FlagType::INT, false, "number of initial clients per team");
     _argParser.registerFlag("-f", zappy::FlagType::INT, false, "reciprocal of time unit for execution of actions");
     _argParser.registerFlag("-oldgen", zappy::FlagType::FLAG, false, "use the legacy resource generation algorithm");
+    _argParser.registerFlag("--wait-timeout", zappy::FlagType::INT, false, "per-turn wait timeout in milliseconds; enables serial-turn mode");
     _argParser.parse();
     if (_argParser.hasFlag("-p"))
         if (_argParser.getInt("-p") > 65535)
@@ -55,6 +57,9 @@ Core::Core(ArgParser argParser) : _argParser(std::move(argParser)), _clientHandl
     if (_argParser.hasFlag("-f"))
         if (_argParser.getInt("-f") < 1 || _argParser.getInt("-f") > MAX_F)
             throw ServerException("Invalid value for flag '-f', must be between 1 and " + std::to_string(MAX_F));
+    if (_argParser.hasFlag("--wait-timeout"))
+        if (_argParser.getInt("--wait-timeout") < 1)
+            throw ServerException("--wait-timeout must be a positive integer (milliseconds)");
     serverIsRunning = true;
 }
 
@@ -64,7 +69,15 @@ void Core::setClientHandler()
     int cFlag = _argParser.hasFlag("-c") ? _argParser.getInt("-c") : INITIAL_CLIENT_CAPACITY;
     int nFlag = _argParser.hasFlag("-n") ? static_cast<int>(_argParser.getList("-n").size()) : 10;
     int initialClientCapacity = cFlag * nFlag;
-    _clientHandler = std::make_unique<ClientHandler>(port, initialClientCapacity, _world.get(), &serverIsRunning);
+    if (_argParser.hasFlag("--wait-timeout"))
+    {
+        int waitTimeout = _argParser.getInt("--wait-timeout");
+        _clientHandler = std::make_unique<WaitClientHandler>(port, initialClientCapacity, _world.get(), &serverIsRunning, waitTimeout);
+    }
+    else
+    {
+        _clientHandler = std::make_unique<ClientHandler>(port, initialClientCapacity, _world.get(), &serverIsRunning);
+    }
     setWorldBroadcast();
 }
 

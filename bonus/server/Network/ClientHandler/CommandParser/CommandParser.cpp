@@ -105,7 +105,7 @@ bool CommandParser::feed(std::vector<std::unique_ptr<Client>> &clients)
         iss >> cmd;
         auto it = _aiCommands.find(cmd);
         int cost = (it != _aiCommands.end()) ? it->second.first : 0;
-        auto base = _commandQueue.empty() ? std::chrono::steady_clock::now() : _commandQueue.back().readyAt;
+        auto base = commandQueueBase();
         auto readyAt = base + std::chrono::milliseconds(cost * 1000 / _world->getTimeUnit());
         if (cmd == "Incantation" && _client->getType() == ClientType::AI)
         {
@@ -119,7 +119,7 @@ bool CommandParser::feed(std::vector<std::unique_ptr<Client>> &clients)
             if (!_commands.beginIncantation(*_client, readyAt, clients))
                 continue;
         }
-        _commandQueue.push({line, readyAt});
+        _commandQueue.push_back({line, readyAt});
     }
     _client->setBuffer(buffer);
     return true;
@@ -141,7 +141,7 @@ bool CommandParser::executeNext(std::vector<std::unique_ptr<Client>> &clients)
         commandName >> command;
         Logger::log("8442", "Player : action rejected, player is dead", {{"player_id", std::to_string(_client->getPlayerId())}, {"command", command}});
         send(_client->getFd(), "dead\n", 5, MSG_NOSIGNAL);
-        _commandQueue.pop();
+        _commandQueue.pop_front();
         return true;
     }
     if (_client->getType() == ClientType::AI)
@@ -160,7 +160,7 @@ bool CommandParser::executeNext(std::vector<std::unique_ptr<Client>> &clients)
     if (std::chrono::steady_clock::now() < _commandQueue.front().readyAt)
         return false;
     std::string line = _commandQueue.front().line;
-    _commandQueue.pop();
+    _commandQueue.pop_front();
     puts("ok");
     if (_client->getType() == ClientType::UNKNOWN)
         _handleHandshake(line);
@@ -252,6 +252,11 @@ void CommandParser::_dispatch(const std::string &line, std::vector<std::unique_p
             send(_client->getFd(), "suc\n", 4, MSG_NOSIGNAL);
         }
     }
+}
+
+std::chrono::steady_clock::time_point CommandParser::commandQueueBase() const
+{
+    return _commandQueue.empty() ? std::chrono::steady_clock::now() : _commandQueue.back().readyAt;
 }
 
 bool CommandParser::isBanned() const

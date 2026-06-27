@@ -162,7 +162,7 @@ void ClientHandler::addClient()
     Logger::log("030", "Client : WELCOME handshake sent", {{"fd", std::to_string(clientFd)}});
     _clients.push_back(std::make_unique<Client>(clientFd));
     Logger::log("030", "Client : connection established", {{"fd", std::to_string(clientFd)}, {"type", "UNKNOWN"}});
-    _parsers[clientFd] = std::make_unique<CommandParser>(_clients.back().get(), _world, &_broadcastQueue);
+    _parsers[clientFd] = makeParser(_clients.back().get(), _world, &_broadcastQueue);
     Logger::log("030", "Client : command parser created", {{"fd", std::to_string(clientFd)}});
     _fds.push_back({.fd = clientFd, .events = POLLIN, .revents = 0});
     Logger::log("030", "Client : connection established", {{"fd", std::to_string(clientFd)}, {"type", "UNKNOWN"}});
@@ -213,6 +213,11 @@ void ClientHandler::broadcastGuiInfo()
             if (client->getType() == ClientType::GRAPHIC)
                 send(client->getFd(), message.c_str(), message.size(), MSG_NOSIGNAL);
     }
+}
+
+std::unique_ptr<CommandParser> ClientHandler::makeParser(Client *client, World *world, std::queue<std::string> *broadcastQueue)
+{
+    return std::make_unique<CommandParser>(client, world, broadcastQueue);
 }
 
 std::queue<std::string> &ClientHandler::getBroadcastQueue()
