@@ -17,6 +17,7 @@ std::string Commands::Forward(std::vector<std::string>, Client &client, std::vec
     _world->addPlayerToTile(player, player->getPosition());
     position newPos = player->getPosition();
     _broadcastQueue->push(buildPipiMessage(*player));
+    _broadcastQueue->push(buildPpoMessage(*player));
     Logger::log("014", "Forward : player moved", {{"player_id", std::to_string(player->getId())}, {"x", std::to_string(newPos.x)}, {"y", std::to_string(newPos.y)}});
     return "ok\n";
 }
@@ -29,6 +30,7 @@ std::string Commands::Right(std::vector<std::string>, Client &client, std::vecto
 
     player->setRotation(newRotation);
     _broadcastQueue->push(buildPipiMessage(*player));
+    _broadcastQueue->push(buildPpoMessage(*player));
     Logger::log("015", "Right : player turned right", {{"player_id", std::to_string(player->getId())}, {"rotation", std::to_string(player->getRotation())}});
     return "ok\n";
 }
@@ -41,6 +43,7 @@ std::string Commands::Left(std::vector<std::string>, Client &client, std::vector
 
     player->setRotation(newRotation);
     _broadcastQueue->push(buildPipiMessage(*player));
+    _broadcastQueue->push(buildPpoMessage(*player));
     Logger::log("016", "Left : player turned left", {{"player_id", std::to_string(player->getId())}, {"rotation", std::to_string(player->getRotation())}});
     return "ok\n";
 }
