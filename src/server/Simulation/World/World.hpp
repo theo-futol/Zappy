@@ -61,6 +61,9 @@ class World
     ///        randomly across the map.
     void resourcePassiveGenerationEven();
 
+    /// @brief Pushes a "bct" broadcast line for the tile at the given position, if a broadcast queue is set.
+    void broadcastTileContent(position pos);
+
   public:
     /// @brief Builds an x-by-y world with empty tiles and no players yet.
     World(int x, int y, int f, bool useOldGen = false);

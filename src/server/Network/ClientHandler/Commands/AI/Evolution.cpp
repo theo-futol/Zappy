@@ -93,7 +93,7 @@ std::string Commands::Incantation(std::vector<std::string>, Client &client, std:
     {
         participant->levelUp();
         Logger::log("041", "Player : level up", {{"player_id", std::to_string(participant->getId())}, {"level", std::to_string(participant->getLevel())}});
-        _broadcastQueue->push("plv " + std::to_string(participant->getId()) + " " + std::to_string(participant->getLevel()) + "\n");
+        _broadcastQueue->push(buildPlvMessage(*participant));
         _broadcastQueue->push(buildPipiMessage(*participant));
         Client *participantClient =
             find_if(clients.begin(), clients.end(), [participant](const std::unique_ptr<Client> &c) { return c->getPlayerId() == participant->getId(); })->get();

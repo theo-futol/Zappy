@@ -73,5 +73,13 @@ namespace zappy
             std::string Tna(std::vector<std::string> args, Client &client);
             /// @brief Builds a passive "pipi" snapshot line (position, orientation, level, inventory) for one player.
             std::string buildPipiMessage(Player &player) const;
+            /// @brief Builds a "ppo" broadcast line (position, orientation) for one player.
+            std::string buildPpoMessage(Player &player) const;
+            /// @brief Builds a "plv" broadcast line (level) for one player.
+            std::string buildPlvMessage(Player &player) const;
+            /// @brief Builds a "pin" broadcast line (position, inventory) for one player.
+            std::string buildPinMessage(Player &player) const;
+            /// @brief Builds a "bct" broadcast line (resource counts) for the tile at the given position.
+            std::string buildBctMessage(position pos) const;
     };
 }
