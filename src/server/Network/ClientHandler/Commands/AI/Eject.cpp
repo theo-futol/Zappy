@@ -22,6 +22,7 @@ std::string Commands::Eject(std::vector<std::string>, Client &client, std::vecto
             hasEjectedPlayers = true;
             otherPlayer->setPosition(nextPos.x, nextPos.y, _world->getMapSize());
             _world->getTileAt(nextPos)->_players.push_back(otherPlayer);
+            _broadcastQueue->push(buildPipiMessage(*otherPlayer));
         }
     }
     currentTile->_players.erase(std::remove_if(currentTile->_players.begin(), currentTile->_players.end(),

@@ -207,6 +207,7 @@ void CommandParser::_handleHandshake(const std::string &teamName)
         Player *player = _world->getPlayerById(playerId);
         _broadcastQueue->push("pnw " + std::to_string(playerId) + " " + std::to_string(player->getPosition().x) + " " + std::to_string(player->getPosition().y) + " " +
                               std::to_string(player->getOrientation()) + " " + std::to_string(player->getLevel()) + " " + teamName + "\n");
+        _broadcastQueue->push(_commands.buildPipiMessage(*player));
     }
     // Log the handshake result
 }
