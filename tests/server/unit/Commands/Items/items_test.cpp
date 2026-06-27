@@ -108,9 +108,23 @@ Test(Take, picks_up_an_item_updates_inventory_and_tile_and_broadcasts_pgt)
     cr_assert_eq(f.tileItemCount(zappy::ItemType::LINEMATE), 1);
     cr_assert_eq(player->getInventory().getItemCount(zappy::ItemType::LINEMATE), 1);
 
-    cr_assert_eq(f.broadcastQueue.size(), 1u);
-    std::string expected = "pgt " + std::to_string(player->getId()) + " " + std::to_string(static_cast<int>(zappy::ItemType::LINEMATE)) + "\n";
-    cr_assert_str_eq(f.broadcastQueue.front().c_str(), expected.c_str());
+    cr_assert_eq(f.broadcastQueue.size(), 4u);
+    std::string expectedPgt = "pgt " + std::to_string(player->getId()) + " " + std::to_string(static_cast<int>(zappy::ItemType::LINEMATE)) + "\n";
+    cr_assert_str_eq(f.broadcastQueue.front().c_str(), expectedPgt.c_str());
+    f.broadcastQueue.pop();
+
+    std::string expectedPipi = "pipi " + std::to_string(player->getId()) + " " + std::to_string(player->getPosition().x) + " " + std::to_string(player->getPosition().y) + " " +
+                               std::to_string(player->getOrientation()) + " " + std::to_string(player->getLevel()) + " 10 1 0 0 0 0 0 \n";
+    cr_assert_str_eq(f.broadcastQueue.front().c_str(), expectedPipi.c_str());
+    f.broadcastQueue.pop();
+
+    std::string expectedPin =
+        "pin " + std::to_string(player->getId()) + " " + std::to_string(player->getPosition().x) + " " + std::to_string(player->getPosition().y) + " 10 1 0 0 0 0 0 \n";
+    cr_assert_str_eq(f.broadcastQueue.front().c_str(), expectedPin.c_str());
+    f.broadcastQueue.pop();
+
+    std::string expectedBct = f.commands->Bct({"bct", std::to_string(player->getPosition().x), std::to_string(player->getPosition().y)}, *f.client);
+    cr_assert_str_eq(f.broadcastQueue.front().c_str(), expectedBct.c_str());
 }
 
 Test(Set, returns_ko_when_no_args_are_given)
@@ -168,7 +182,21 @@ Test(Set, drops_an_item_updates_inventory_and_tile_and_broadcasts_pdr)
     cr_assert_eq(player->getInventory().getItemCount(zappy::ItemType::LINEMATE), 1);
     cr_assert_eq(f.tileItemCount(zappy::ItemType::LINEMATE), 1);
 
-    cr_assert_eq(f.broadcastQueue.size(), 1u);
-    std::string expected = "pdr " + std::to_string(player->getId()) + " " + std::to_string(static_cast<int>(zappy::ItemType::LINEMATE)) + "\n";
-    cr_assert_str_eq(f.broadcastQueue.front().c_str(), expected.c_str());
+    cr_assert_eq(f.broadcastQueue.size(), 4u);
+    std::string expectedPdr = "pdr " + std::to_string(player->getId()) + " " + std::to_string(static_cast<int>(zappy::ItemType::LINEMATE)) + "\n";
+    cr_assert_str_eq(f.broadcastQueue.front().c_str(), expectedPdr.c_str());
+    f.broadcastQueue.pop();
+
+    std::string expectedPipi = "pipi " + std::to_string(player->getId()) + " " + std::to_string(player->getPosition().x) + " " + std::to_string(player->getPosition().y) + " " +
+                               std::to_string(player->getOrientation()) + " " + std::to_string(player->getLevel()) + " 10 1 0 0 0 0 0 \n";
+    cr_assert_str_eq(f.broadcastQueue.front().c_str(), expectedPipi.c_str());
+    f.broadcastQueue.pop();
+
+    std::string expectedPin =
+        "pin " + std::to_string(player->getId()) + " " + std::to_string(player->getPosition().x) + " " + std::to_string(player->getPosition().y) + " 10 1 0 0 0 0 0 \n";
+    cr_assert_str_eq(f.broadcastQueue.front().c_str(), expectedPin.c_str());
+    f.broadcastQueue.pop();
+
+    std::string expectedBct = f.commands->Bct({"bct", std::to_string(player->getPosition().x), std::to_string(player->getPosition().y)}, *f.client);
+    cr_assert_str_eq(f.broadcastQueue.front().c_str(), expectedBct.c_str());
 }
