@@ -40,6 +40,7 @@ struct EvolutionFixture
         spawned->setPosition(0, 0, world.getMapSize());
         world.addPlayerToTile(spawned, spawned->getPosition());
         spawned->getTeam().removeEgg(spawned->getPosition(), -1);
+        world.setBroadCastQueue(&broadcastQueue);
         commands = new zappy::Commands(&world, &broadcastQueue);
     }
     ~EvolutionFixture()
@@ -196,11 +197,24 @@ Test(Incantation, succeeds_levels_up_participants_and_consumes_stones)
     std::string reply = f.read_reply();
     cr_assert_str_eq(reply.c_str(), "Current level: 2\n");
 
-    cr_assert_eq(f.broadcastQueue.size(), 2u);
+    cr_assert_eq(f.broadcastQueue.size(), 4u);
+
+    // Consuming the incantation stones rebroadcasts the tile content first.
+    std::string bctMsg = f.broadcastQueue.front();
+    f.broadcastQueue.pop();
+    std::string expectedBct = f.commands->Bct({"bct", std::to_string(player->getPosition().x), std::to_string(player->getPosition().y)}, *f.client);
+    cr_assert_str_eq(bctMsg.c_str(), expectedBct.c_str());
+
     std::string plvMsg = f.broadcastQueue.front();
     f.broadcastQueue.pop();
     std::string expectedPlv = "plv " + std::to_string(player->getId()) + " 2\n";
     cr_assert_str_eq(plvMsg.c_str(), expectedPlv.c_str());
+
+    std::string pipiMsg = f.broadcastQueue.front();
+    f.broadcastQueue.pop();
+    std::string expectedPipi = "pipi " + std::to_string(player->getId()) + " " + std::to_string(player->getPosition().x) + " " + std::to_string(player->getPosition().y) + " " +
+                               std::to_string(player->getOrientation()) + " " + std::to_string(player->getLevel()) + " 10 0 0 0 0 0 0 \n";
+    cr_assert_str_eq(pipiMsg.c_str(), expectedPipi.c_str());
 
     std::string pieMsg = f.broadcastQueue.front();
     std::string expectedPie = "pie " + std::to_string(player->getPosition().x) + " " + std::to_string(player->getPosition().y) + " 1\n";

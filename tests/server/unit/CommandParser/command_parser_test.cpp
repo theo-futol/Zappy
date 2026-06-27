@@ -141,8 +141,10 @@ Test(CommandParser, handshake_pushes_a_pnw_event_to_the_broadcast_queue)
     f.parser->feed(f.clients);
     f.parser->executeNext(f.clients);
 
-    cr_assert_eq(f.broadcastQueue.size(), 1u);
+    cr_assert_eq(f.broadcastQueue.size(), 2u);
     cr_assert(f.broadcastQueue.front().rfind("pnw ", 0) == 0);
+    f.broadcastQueue.pop();
+    cr_assert(f.broadcastQueue.front().rfind("pipi ", 0) == 0);
 }
 
 Test(CommandParser, known_AI_command_is_dispatched_and_replies_ok)
