@@ -11,3 +11,4 @@ ia/utils/__pycache__
 venv
 *.gc*
 *.pdf
+docs
