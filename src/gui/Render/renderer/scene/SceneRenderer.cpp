@@ -11,9 +11,9 @@
 
 #include <glm/ext/matrix_transform.hpp>
 #include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
 
 #include "Graphics/modelloader/ModelLoader.hpp"
-#include "Graphics/modelslicer/ModelSlicer.hpp"
 #include "Graphics/primitives/Primitives.hpp"
 #include "Model/map/Map.hpp"
 #include "Model/resourceset/ResourceSet.hpp"
@@ -136,29 +136,52 @@ void SceneRenderer::drawBroadcasts(Shader &shader, const RenderContext &context)
     _pings.erase(std::remove_if(_pings.begin(), _pings.end(), [&](const BroadcastPing &ping) { return context.time - ping.start > BroadcastDuration; }), _pings.end());
 }
 
+void SceneRenderer::drawVictory(const RenderContext &context)
+{
+    Shader *shader = _assets.shader("phong");
+
+    if (shader == nullptr || _golems.empty())
+        return;
+
+    std::size_t theme = context.state.teamIndex(context.state.winner()) % _golems.size();
+    RenderModel &model = *_golems[theme];
+    Vec3 eye(0.0f, 1.3f, 4.3f);
+    Mat4 view = glm::lookAt(eye, Vec3(0.0f, 1.05f, 0.0f), Vec3(0.0f, 1.0f, 0.0f));
+
+    shader->use();
+    shader->setUniform("uView", view);
+    shader->setUniform("uProjection", context.projection);
+    shader->setUniform("uLightPos", Vec3(3.0f, 5.0f, 4.0f));
+    shader->setUniform("uViewPos", eye);
+    shader->setUniform("uLightColor", LightColor);
+    shader->setUniform("uTexture", 0);
+    shader->setUniform("uBaseColor", ModelColor);
+
+    Mat4 base = glm::rotate(Mat4(1.0f), glm::radians(context.time * 35.0f), Vec3(0.0f, 1.0f, 0.0f)) * glm::scale(Mat4(1.0f), Vec3(2.6f)) * model.unitTransform();
+
+    if (model.skinned())
+    {
+        int robot = model.animationIndex(RobotClipName);
+        std::vector<Mat4> joints = (robot >= 0) ? model.poseJoints(static_cast<std::size_t>(robot), model.animationDuration(static_cast<std::size_t>(robot))) : model.bindJoints();
+
+        model.drawSkinned(*shader, base, joints);
+    }
+    else
+        model.drawInstanced(*shader, std::vector<Mat4>{base});
+}
+
 void SceneRenderer::loadResources(AssetCache &assets)
 {
-    static const std::array<const char *, ResourceSet::Count> needles = {
-        "",                            // Food: drawn from its own whole model
-        "green_cristal_baseColor",     // Linemate
-        "green_cristal.001_baseColor", // Deraumere
-        "green_cristal_3_baseColor",   // Sibur
-        "rock2_baseColor",             // Mendiane
-        "rock4_baseColor",             // Phiras
-        "rock8_baseColor"              // Thystame
-    };
     ModelLoader loader;
-    ModelSlicer slicer;
-    Model crystal = loader.load(CrystalModelPath);
-    std::string crystalDirectory = directoryOf(CrystalModelPath);
 
     _resources.resize(ResourceSet::Count);
     _resources[static_cast<std::size_t>(ResourceType::Food)] = std::make_unique<RenderModel>(loader.load(FoodModelPath), assets, "res_food", directoryOf(FoodModelPath));
-    for (std::size_t i = 0; i < ResourceSet::Count; ++i)
+    // Stones (Linemate..Thystame = indices 1..6): one whole model each, in assets/resources/<index>/scene.gltf.
+    for (std::size_t i = 1; i < ResourceSet::Count; ++i)
     {
-        if (needles[i][0] == '\0')
-            continue;
-        _resources[i] = std::make_unique<RenderModel>(slicer.byTexture(crystal, needles[i]), assets, "res#" + std::to_string(i), crystalDirectory);
+        std::string path = std::string(StoneModelDir) + std::to_string(i) + "/scene.gltf";
+
+        _resources[i] = std::make_unique<RenderModel>(loader.load(path), assets, "res#" + std::to_string(i), directoryOf(path));
     }
 }
 
@@ -184,6 +207,37 @@ Vec3 SceneRenderer::resourceSpot(std::size_t index)
     float offsetZ = (static_cast<float>(row) - 1.0f) * ResourceSpacing;
 
     return Vec3(offsetX, 0.0f, offsetZ);
+}
+
+Vec3 SceneRenderer::resourceTint(std::size_t index)
+{
+    static const std::array<Vec3, ResourceSet::Count> tints = {
+        Vec3(0.45f, 0.85f, 0.45f), // Food: green
+        Vec3(0.35f, 0.60f, 0.95f), // Linemate: blue
+        Vec3(0.90f, 0.55f, 0.20f), // Deraumere: amber
+        Vec3(0.20f, 0.80f, 0.70f), // Sibur: teal
+        Vec3(0.75f, 0.40f, 0.95f), // Mendiane: violet
+        Vec3(0.95f, 0.35f, 0.35f), // Phiras: red
+        Vec3(0.95f, 0.90f, 0.70f)  // Thystame: pale gold
+    };
+
+    return tints[index % tints.size()];
+}
+
+float SceneRenderer::resourceTilt(std::size_t index)
+{
+    // Degrees around X to lay an up-axis-wrong model flat. Tune per asset (0 = as authored).
+    static const std::array<float, ResourceSet::Count> tilts = {
+        0.0f,   // Food
+        0.0f,   // Linemate
+        -90.0f, // Deraumere: authored standing -> lay it down
+        0.0f,   // Sibur
+        0.0f,   // Mendiane
+        0.0f,   // Phiras
+        0.0f    // Thystame
+    };
+
+    return tilts[index % tilts.size()];
 }
 
 std::string SceneRenderer::directoryOf(const std::string &path)
@@ -286,6 +340,11 @@ void SceneRenderer::render(const RenderContext &context)
 
     if (shader == nullptr)
         return;
+    if (!context.state.winner().empty())
+    {
+        drawVictory(context);
+        return;
+    }
 
     const Map &map = context.state.map();
     Vec3 eye = Vec3(glm::inverse(context.view)[3]);
@@ -373,15 +432,19 @@ void SceneRenderer::render(const RenderContext &context)
             {
                 if (_resources[type] == nullptr || tile.resources().get(static_cast<ResourceType>(type)) <= 0)
                     continue;
+                Mat4 tilt = glm::rotate(Mat4(1.0f), glm::radians(resourceTilt(type)), Vec3(1.0f, 0.0f, 0.0f));
                 Mat4 base = glm::translate(Mat4(1.0f), point.position) * frame * glm::translate(Mat4(1.0f), resourceSpot(type)) * glm::scale(Mat4(1.0f), Vec3(ResourceScale)) *
-                            _resources[type]->unitTransform();
+                            tilt * _resources[type]->unitTransform();
 
                 resourceBases[type].push_back(base);
             }
         }
     for (std::size_t type = 0; type < ResourceSet::Count; ++type)
         if (_resources[type] != nullptr)
+        {
+            shader->setUniform("uBaseColor", resourceTint(type));
             _resources[type]->drawInstanced(*shader, resourceBases[type]);
+        }
 
     const IEntity *selected = context.state.selectedEntity();
 

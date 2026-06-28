@@ -91,7 +91,21 @@ void TextRenderer::setScreenSize(int width, int height)
     _shader->setUniform("uProjection", glm::ortho(0.0f, static_cast<float>(width), 0.0f, static_cast<float>(height)));
 }
 
-void TextRenderer::drawText(const std::string &text, float x, float y, Color color)
+float TextRenderer::measure(const std::string &text, float scale) const
+{
+    float width = 0.0f;
+
+    for (char character : text)
+    {
+        std::map<char, Glyph>::const_iterator found = _glyphs.find(character);
+
+        if (found != _glyphs.end())
+            width += static_cast<float>(found->second.advance >> 6) * scale;
+    }
+    return width;
+}
+
+void TextRenderer::drawText(const std::string &text, float x, float y, Color color, float scale)
 {
     if (_shader == nullptr)
         return;
@@ -110,10 +124,10 @@ void TextRenderer::drawText(const std::string &text, float x, float y, Color col
             continue;
 
         const Glyph &glyph = found->second;
-        float xpos = x + static_cast<float>(glyph.bearingX);
-        float ypos = y - static_cast<float>(glyph.height - glyph.bearingY);
-        float w = static_cast<float>(glyph.width);
-        float h = static_cast<float>(glyph.height);
+        float xpos = x + static_cast<float>(glyph.bearingX) * scale;
+        float ypos = y - static_cast<float>(glyph.height - glyph.bearingY) * scale;
+        float w = static_cast<float>(glyph.width) * scale;
+        float h = static_cast<float>(glyph.height) * scale;
         float vertices[6][4] = {
             {xpos, ypos + h, 0.0f, 0.0f}, {xpos, ypos, 0.0f, 1.0f},     {xpos + w, ypos, 1.0f, 1.0f},
             {xpos, ypos + h, 0.0f, 0.0f}, {xpos + w, ypos, 1.0f, 1.0f}, {xpos + w, ypos + h, 1.0f, 0.0f},
@@ -122,7 +136,7 @@ void TextRenderer::drawText(const std::string &text, float x, float y, Color col
         glBindTexture(GL_TEXTURE_2D, glyph.textureId);
         glBufferSubData(GL_ARRAY_BUFFER, 0, sizeof(vertices), vertices);
         glDrawArrays(GL_TRIANGLES, 0, 6);
-        x += static_cast<float>(glyph.advance >> 6);
+        x += static_cast<float>(glyph.advance >> 6) * scale;
     }
     glBindBuffer(GL_ARRAY_BUFFER, 0);
     glBindVertexArray(0);

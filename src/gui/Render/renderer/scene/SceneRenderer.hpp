@@ -90,6 +90,20 @@ class SceneRenderer : public IRenderer
     static Vec3 resourceSpot(std::size_t index);
 
     /**
+     * @brief Distinct fallback color for a resource type (used for its untextured parts).
+     * @param index ResourceType index (0..ResourceSet::Count - 1).
+     * @return The tint applied when a resource primitive has no base-color texture.
+     */
+    static Vec3 resourceTint(std::size_t index);
+
+    /**
+     * @brief Extra tilt (degrees around X) applied to a resource model, to fix its up-axis.
+     * @param index ResourceType index (0..ResourceSet::Count - 1).
+     * @return The tilt in degrees (0 = upright as authored).
+     */
+    static float resourceTilt(std::size_t index);
+
+    /**
      * @brief Draws a flat colored marker on a tile, lying on the surface (hover/selection feedback).
      * @param shader Phong shader, already bound with the frame uniforms.
      * @param point Surface point of the tile (position + normal + tangent).
@@ -121,6 +135,12 @@ class SceneRenderer : public IRenderer
      * @param context Per-frame context (broadcast list, mapping and time).
      */
     void drawBroadcasts(Shader &shader, const RenderContext &context);
+
+    /**
+     * @brief Draws the end-of-game view: the winning team's model, large and slowly spinning.
+     * @param context Per-frame context (winner team and camera projection for the aspect).
+     */
+    void drawVictory(const RenderContext &context);
 
     /**
      * @struct BroadcastPing
@@ -213,7 +233,7 @@ class SceneRenderer : public IRenderer
     std::vector<BroadcastPing> _pings;                   ///< Active broadcast ripples being animated.
     long _seenBroadcastSeq = 0;                          ///< Highest broadcast sequence already turned into a ripple.
 
-    static constexpr const char *CrystalModelPath = "assets/resources/crystal/scene.gltf"; ///< Crystal pack (sliced per stone).
+    static constexpr const char *StoneModelDir = "assets/resources/crystal/";              ///< Folder holding one model per stone, named 1..6.
     static constexpr const char *FoodModelPath = "assets/resources/food/scene.gltf";       ///< Food model (used whole).
     static constexpr float ResourceScale = 0.3f;                                           ///< Size of a resource model, in tiles.
     static constexpr float ResourceSpacing = 0.28f;                                        ///< In-tile spacing between resource spots.

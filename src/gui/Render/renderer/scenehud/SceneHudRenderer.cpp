@@ -112,8 +112,6 @@ void SceneHudRenderer::drawBar(const RenderContext &context) const
         _text.drawText(state.teams()[i], teamsX + static_cast<float>(i) * TeamStep + SwatchSize + 8.0f, textY, state.teamColor(state.teams()[i]));
     if (!state.winner().empty())
         _text.drawText("WINNER  " + state.winner(), static_cast<float>(_width) * 0.5f, textY, Color{0.35f, 1.0f, 0.45f, 1.0f});
-    if (!state.messages().empty())
-        _text.drawText(state.messages().back().text, static_cast<float>(_width) * 0.62f, textY, state.messages().back().color);
 }
 
 float SceneHudRenderer::panelHeightFor(const IEntity &selected) const
@@ -323,6 +321,37 @@ void SceneHudRenderer::drawMenuButton() const
     _text.drawText("MENU", menu.x + 12.0f, menu.y + 5.0f, toColor(AccentColor));
 }
 
+void SceneHudRenderer::drawVictoryBanner(const RenderContext &context) const
+{
+    const GameState &state = context.state;
+
+    if (state.winner().empty())
+        return;
+
+    Shader *shader = _assets.shader("basic");
+    Mesh *mesh = _assets.mesh("quad");
+    float bandHeight = 180.0f;
+    float bandY = static_cast<float>(_height) * 0.5f - bandHeight * 0.5f;
+
+    if (shader != nullptr && mesh != nullptr)
+    {
+        shader->use();
+        shader->setUniform("uView", Mat4(1.0f));
+        shader->setUniform("uProjection", glm::ortho(0.0f, static_cast<float>(_width), 0.0f, static_cast<float>(_height)));
+        drawRect(*shader, *mesh, 0.0f, bandY, static_cast<float>(_width), bandHeight, BarColor);
+        drawRect(*shader, *mesh, 0.0f, bandY + bandHeight - 3.0f, static_cast<float>(_width), 3.0f, AccentColor);
+        drawRect(*shader, *mesh, 0.0f, bandY, static_cast<float>(_width), 3.0f, AccentColor);
+    }
+
+    std::string title = "VICTOIRE";
+    std::string team = state.winner();
+    float titleScale = 3.2f;
+    float teamScale = 2.0f;
+
+    _text.drawText(title, (static_cast<float>(_width) - _text.measure(title, titleScale)) / 2.0f, bandY + bandHeight * 0.55f, toColor(AccentColor), titleScale);
+    _text.drawText(team, (static_cast<float>(_width) - _text.measure(team, teamScale)) / 2.0f, bandY + bandHeight * 0.20f, state.teamColor(team), teamScale);
+}
+
 void SceneHudRenderer::render(const RenderContext &context)
 {
     drawBar(context);
@@ -330,6 +359,7 @@ void SceneHudRenderer::render(const RenderContext &context)
     drawStatePanel(context);
     drawTilePanel(context);
     drawMenuButton();
+    drawVictoryBanner(context);
 }
 
 } // namespace Zappy

@@ -1,0 +1,11 @@
+Model Information:
+* title:	Love Lotus
+* source:	https://sketchfab.com/3d-models/love-lotus-a9c14622bf10433c8655ac43fd70abe2
+* author:	Stark (https://sketchfab.com/stark3d)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Love Lotus" (https://sketchfab.com/3d-models/love-lotus-a9c14622bf10433c8655ac43fd70abe2) by Stark (https://sketchfab.com/stark3d) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

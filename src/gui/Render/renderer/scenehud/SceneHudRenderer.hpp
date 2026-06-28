@@ -160,6 +160,12 @@ class SceneHudRenderer : public IRenderer
     /** @brief Draws the top-left "MENU" button. */
     void drawMenuButton() const;
 
+    /**
+     * @brief Draws the centered end-of-game banner (big "VICTOIRE" + winning team), if any.
+     * @param context Per-frame rendering context.
+     */
+    void drawVictoryBanner(const RenderContext &context) const;
+
     /** @brief Rectangle of the "decrease time unit" button. @return The button. */
     Button minusButton() const;
 

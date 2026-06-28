@@ -12,7 +12,6 @@
 #include "Model/tile/Tile.hpp"
 #include "interface/IEntity.hpp"
 #include "types/GridPosition.hpp"
-#include "types/LogMessage.hpp"
 #include "types/Mat.hpp"
 
 namespace Zappy
@@ -177,18 +176,20 @@ void HudRenderer::render(const RenderContext &context)
             ++line;
         }
     }
-    const std::vector<LogMessage> &log = state.messages();
-    if (!log.empty())
+    if (!state.winner().empty() && shader != nullptr && mesh != nullptr)
     {
-        float topY = Margin + static_cast<float>(log.size() - 1) * LineHeight;
-        float lineY = topY;
+        float bandHeight = 170.0f;
+        float bandY = static_cast<float>(_height) * 0.5f - bandHeight * 0.5f;
+        std::string title = "VICTOIRE";
+        std::string team = state.winner();
+        float titleScale = 3.0f;
+        float teamScale = 1.9f;
 
-        _text.drawText("LOG", contentX, topY + LineHeight, label);
-        for (const LogMessage &message : log)
-        {
-            _text.drawText(message.text, contentX, lineY, message.color);
-            lineY -= LineHeight;
-        }
+        drawRect(*shader, *mesh, 0.0f, bandY, static_cast<float>(_width), bandHeight, Vec3(0.07f, 0.07f, 0.09f));
+        drawRect(*shader, *mesh, 0.0f, bandY + bandHeight - 3.0f, static_cast<float>(_width), 3.0f, AccentColor);
+        drawRect(*shader, *mesh, 0.0f, bandY, static_cast<float>(_width), 3.0f, AccentColor);
+        _text.drawText(title, (static_cast<float>(_width) - _text.measure(title, titleScale)) / 2.0f, bandY + bandHeight * 0.55f, Color{0.95f, 0.55f, 0.15f, 1.0f}, titleScale);
+        _text.drawText(team, (static_cast<float>(_width) - _text.measure(team, teamScale)) / 2.0f, bandY + bandHeight * 0.20f, state.teamColor(team), teamScale);
     }
 }
 

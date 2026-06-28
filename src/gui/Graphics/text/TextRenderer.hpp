@@ -78,8 +78,17 @@ class TextRenderer
      * @param x Screen X position (left of the first glyph).
      * @param y Screen Y baseline position.
      * @param color Text color.
+     * @param scale Glyph scale factor (1.0 = the loaded pixel size).
      */
-    void drawText(const std::string &text, float x, float y, Color color);
+    void drawText(const std::string &text, float x, float y, Color color, float scale = 1.0f);
+
+    /**
+     * @brief Pixel width a string would occupy when drawn.
+     * @param text Text to measure.
+     * @param scale Glyph scale factor (matches drawText).
+     * @return The advance width in pixels.
+     */
+    float measure(const std::string &text, float scale = 1.0f) const;
 
   private:
     /**
