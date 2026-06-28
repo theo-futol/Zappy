@@ -50,6 +50,7 @@ if [ "$STRESS_TEST" -ne 0 ] || [ "$FUNCTIONAL_TEST" -ne 0 ]; then
     make zappy_server || { echo "Compilation of zappy_server failed."; exit 1; }
     ./zappy_server -c 5 -n team1 team2 -p 4242 -x 10 -y 10 -f 100 &
     SERVER_PID=$!
+    sleep 1
 fi
 
 echo
