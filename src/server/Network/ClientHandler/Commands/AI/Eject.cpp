@@ -11,6 +11,11 @@ std::string Commands::Eject(std::vector<std::string>, Client &client, std::vecto
     position nextPos = player->nextPosition(_world->getMapSize());
     bool hasEjectedEggs = player->getTeam().hasEggAtPosition(playerPos);
     bool hasEjectedPlayers = false;
+    std::vector<int> destroyedEggIds;
+    for (const auto &eggGroup : player->getTeam().getEggs())
+        if (eggGroup.first == playerPos)
+            for (const Egg &egg : eggGroup.second)
+                destroyedEggIds.push_back(egg.id);
 
     // move all players to nextPosition
     tile *currentTile = _world->getTileAt(playerPos);
@@ -35,6 +40,8 @@ std::string Commands::Eject(std::vector<std::string>, Client &client, std::vecto
     _world->setTileAt(playerPos, ItemType::EGG, 0);
     player->getTeam().removeEgg(playerPos, -1, -1);
     _broadcastQueue->push("pex " + std::to_string(player->getId()) + "\n");
+    for (int eggId : destroyedEggIds)
+        _broadcastQueue->push("edi " + std::to_string(eggId) + "\n");
     if (hasEjectedEggs || hasEjectedPlayers)
     {
         Logger::log("019", "Eject : players ejected", {{"player_id", std::to_string(player->getId())}, {"x", std::to_string(nextPos.x)}, {"y", std::to_string(nextPos.y)}});

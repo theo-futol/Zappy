@@ -11,9 +11,9 @@ std::string Commands::buildPpoMessage(Player &player) const
 std::string Commands::Ppo(std::vector<std::string> args, Client &)
 {
 
-    if (args.size() < 2)
-        return "ko\n";
-    Player *player = _world->getPlayerById(std::stoi(args[1]));
+    if (args.size() < 1)
+        return "sbp\n";
+    Player *player = _world->getPlayerById(std::stoi(args[0]));
     if (!player)
         return "ko\n";
     return buildPpoMessage(*player);

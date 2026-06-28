@@ -8,7 +8,7 @@ std::string Commands::Sst(std::vector<std::string> args, Client &client)
     try
     {
         if (args.size() < 1)
-            return "ko\n";
+            return "sbp\n";
         int newF = std::stoi(args[0]);
         if (newF < 1 || newF > 1000)
             return "ko\n";
@@ -18,7 +18,7 @@ std::string Commands::Sst(std::vector<std::string> args, Client &client)
     }
     catch (...)
     {
-        return "ko\n";
+        return "sbp\n";
     }
     return "";
 }

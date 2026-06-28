@@ -23,8 +23,9 @@ Test(WorldBroadcast, removeIncantationStones_broadcasts_the_updated_tile_content
     zappy::World world(5, 5, 100);
     std::queue<std::string> broadcastQueue;
     world.setBroadCastQueue(&broadcastQueue);
+    for (int i = static_cast<int>(zappy::ItemType::FOOD); i <= static_cast<int>(zappy::ItemType::THYSTAME); ++i)
+        world.setTileAt({0, 0}, static_cast<zappy::ItemType>(i), 0);
     world.setTileAt({0, 0}, zappy::ItemType::LINEMATE, 1);
-    world.setTileAt({0, 0}, zappy::ItemType::FOOD, 0);
 
     world.removeIncantationStones(0, 0, 1);
 
