@@ -2,14 +2,18 @@
 
 namespace zappy
 {
-std::string Commands::Plv(std::vector<std::string> args, Client &client)
+std::string Commands::buildPlvMessage(Player &player) const
 {
-    (void)client; // Unused parameter
+    return "plv " + std::to_string(player.getId()) + " " + std::to_string(player.getLevel()) + "\n";
+}
+
+std::string Commands::Plv(std::vector<std::string> args, Client &)
+{
     if (args.size() < 2)
         return "ko\n";
     Player *player = _world->getPlayerById(std::stoi(args[1]));
     if (!player)
         return "ko\n";
-    return "plv " + std::to_string(player->getId()) + " " + std::to_string(player->getLevel()) + "\n";
+    return buildPlvMessage(*player);
 }
 } // namespace zappy

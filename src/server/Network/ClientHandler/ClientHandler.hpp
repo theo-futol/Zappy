@@ -4,14 +4,11 @@
 #include <vector>
 #include <chrono>
 #include <unordered_map>
-#include <string.h>
-#include <algorithm>
 
 #include "../Client/Client.hpp"
 #include "../Socket/Socket.hpp"
 #include "CommandParser/CommandParser.hpp"
 #include "../../Simulation/World/World.hpp"
-#include "../../ServerException/ServerException.hpp"
 
 /// @brief Manages all TCP client connections and drives the main network event loop.
 ///
@@ -59,6 +56,7 @@ namespace zappy
 
             /// @brief Removes a client, its parser, and its fd from all internal structures.
             /// @param fd File descriptor of the client to remove.
+            /// @param reason Optional reason for the removal, used for logging.
             void removeClient(int fd, const std::string &reason = "unknown");
 
             /// @brief Looks up a client by its file descriptor.
@@ -70,8 +68,6 @@ namespace zappy
             /// @param playerId Player id to search for.
             /// @return Pointer to the matching Client, or nullptr if not found.
             Client *getClientByPlayerId(int playerId) const;
-
-            void writeToClient(int fd, const std::string &message);
 
             std::queue<std::string> &getBroadcastQueue();
     };

@@ -1,5 +1,7 @@
 #include "World.hpp"
+#include <algorithm>
 #include <iostream>
+#include <set>
 
 namespace zappy
 {
@@ -36,6 +38,7 @@ void World::resourcePassiveGenerationLegacy()
     const std::vector<std::pair<ItemType, double>> resourceDensity = {{ItemType::FOOD, 0.5},     {ItemType::LINEMATE, 0.3}, {ItemType::DERAUMERE, 0.5}, {ItemType::SIBUR, 0.1},
                                                                       {ItemType::MENDIANE, 0.1}, {ItemType::PHIRAS, 0.08},  {ItemType::THYSTAME, 0.05}};
     int totalTiles = _map.size() * (_map.empty() ? 0 : _map[0].size());
+    std::set<std::pair<int, int>> changedTiles;
 
     for (const auto &[type, density] : resourceDensity)
     {
@@ -47,9 +50,14 @@ void World::resourcePassiveGenerationLegacy()
             std::vector<std::pair<zappy::ItemType, int>> &tileCoords = _map[x][y]._items;
             auto it = std::find_if(tileCoords.begin(), tileCoords.end(), [type](const std::pair<ItemType, int> &item) { return item.first == type; });
             if (it != tileCoords.end())
+            {
                 it->second += 1;
+                changedTiles.emplace(x, y);
+            }
         }
     }
+    for (const auto &[x, y] : changedTiles)
+        broadcastTileContent({x, y});
 }
 
 /// @brief Spec-accurate algorithm: tops every resource up to map_width * map_height *
@@ -66,6 +74,7 @@ void World::resourcePassiveGenerationEven()
         return;
     int width = static_cast<int>(_map.size());
     int height = static_cast<int>(_map[0].size());
+    std::set<std::pair<int, int>> changedTiles;
 
     for (const auto &[type, density] : resourceDensity)
     {
@@ -89,9 +98,14 @@ void World::resourcePassiveGenerationEven()
             std::vector<std::pair<ItemType, int>> &tileItems = _map[x][y]._items;
             auto it = std::find_if(tileItems.begin(), tileItems.end(), [type](const std::pair<ItemType, int> &item) { return item.first == type; });
             if (it != tileItems.end())
+            {
                 it->second += 1;
+                changedTiles.emplace(x, y);
+            }
         }
     }
+    for (const auto &[x, y] : changedTiles)
+        broadcastTileContent({x, y});
 }
 
 std::vector<std::unique_ptr<Player>> &World::getPlayers()
@@ -154,6 +168,19 @@ tile *World::getTileAt(position pos)
     if (pos.x >= static_cast<int>(_map.size()) || pos.y >= static_cast<int>(_map[0].size()))
         return nullptr;
     return &_map[pos.x][pos.y];
+}
+
+void World::broadcastTileContent(position pos)
+{
+    tile *tilePtr = getTileAt(pos);
+
+    if (!_broadcastQueue || !tilePtr)
+        return;
+    std::string message = "bct " + std::to_string(pos.x) + " " + std::to_string(pos.y);
+    for (const auto &item : tilePtr->_items)
+        message += " " + std::to_string(item.second);
+    message += "\n";
+    _broadcastQueue->push(message);
 }
 
 void World::setTileAt(position pos, ItemType itemType, int count)
@@ -246,14 +273,22 @@ void World::addPlayerToTile(Player *player, position pos)
         tilePtr->_players.push_back(player);
 }
 
-void World::sendMessageToPlayersThatAreOnTile(position pos, const std::string &message)
+void World::sendMessageToPlayersThatAreOnTile(position pos, const std::string &message, std::vector<std::unique_ptr<Client>> &clients)
 {
     tile *tilePtr = getTileAt(pos);
 
     if (!tilePtr)
         return;
+    std::vector<Client *> clientsOnTile;
     for (const auto &player : tilePtr->_players)
-        player->writeToClient(message);
+        for (const auto &client : clients)
+            if (client->getPlayerId() == player->getId())
+            {
+                clientsOnTile.push_back(client.get());
+                break;
+            }
+    for (Client *client : clientsOnTile)
+        client->write(message);
 }
 
 void World::setBroadCastQueue(std::queue<std::string> *broadcastQueue)
@@ -357,6 +392,15 @@ void World::removeIncantationStones(int x, int y, int level)
                 item.second = std::max(0, item.second - needed);
                 break;
             }
+    broadcastTileContent({x, y});
+}
+
+Team *World::getWinningTeam() const
+{
+    for (const auto &team : _teams)
+        if (team->_hasWin)
+            return team.get();
+    return nullptr;
 }
 
 bool World::checkWinningCondition()
@@ -377,6 +421,7 @@ bool World::checkWinningCondition()
             {
                 _broadcastQueue->push("seg " + team->_name + "\n");
                 team->_hasWin = true;
+                std::cout << "Team " << team->_name << " has won the game!" << std::endl;
                 return true;
             }
         }

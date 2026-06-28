@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Critical for mobile compatibility to prevent zooming and ensure proper scaling -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Zappy 3D Viewer</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: #111;
+            color: #fff;
+            font-family: monospace;
+        }
+        #canvas-container {
+            width: 100vw;
+            height: 100vh;
+            display: block;
+        }
+        #ui-overlay {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            pointer-events: none;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            border-radius: 5px;
+            transform: scale(0.8);
+            transform-origin: top left;
+        }
+        .status-offline { color: #ff4444; }
+        .status-online { color: #44ff44; }
+        #broadcast-log {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 300px;
+            max-height: 60vh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            pointer-events: none;
+            z-index: 1000;
+        }
+        .bc-entry {
+            background: rgba(0, 0, 0, 0.82);
+            padding: 7px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            font-family: monospace;
+            color: #ddd;
+            line-height: 1.4;
+            transition: opacity 0.5s;
+        }
+        @keyframes bcSlideIn {
+            from { opacity: 0; transform: translateX(20px); }
+            to   { opacity: 1; transform: translateX(0); }
+        }
+        .bc-entry { animation: bcSlideIn 0.15s ease; }
+        #focus-vignette {
+            display: none;
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at center, transparent 15%, rgba(0, 0, 0, 0.72) 100%);
+            pointer-events: none;
+            z-index: 500;
+            opacity: 0;
+            transition: opacity 0.35s;
+        }
+    </style>
+    <!-- Load PixiJS and NippleJS via CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.3.2/pixi.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/nipplejs/0.10.1/nipplejs.min.js"></script>
+</head>
+<body>
+
+    <div id="ui-overlay">
+        <div>System: Zappy Bridge</div>
+        <div>Status: <span id="connection-status" class="status-offline">DISCONNECTED</span></div>
+        <div id="player-count">Players: 0</div>
+        <div id="team-stats" style="margin-top: 10px; font-size: 14px; background: rgba(0,0,0,0.5); padding: 5px; border-radius: 5px;"></div>
+        <button onclick="document.getElementById('legend').style.display='block'" style="pointer-events: auto; margin-top: 10px; cursor: pointer; background: #333; color: white; border: 1px solid white; padding: 5px; border-radius: 3px;">Help / Legend</button>
+    </div>
+    
+    <div id="tile-info" style="display: none; position: absolute; bottom: 20px; left: 20px; background: rgba(0, 0, 0, 0.85); padding: 15px; border-radius: 10px; border: 2px solid white; color: white; z-index: 9999; font-family: sans-serif; pointer-events: auto;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+            <h3 style="margin: 0;">Tile (<span id="tile-info-x"></span>, <span id="tile-info-y"></span>)</h3>
+            <span onclick="document.getElementById('tile-info').style.display='none'" style="cursor: pointer; font-size: 20px; margin-left: 20px;">&times;</span>
+        </div>
+        <div id="tile-info-content" style="display: flex; flex-wrap: wrap; gap: 10px; max-width: 250px;"></div>
+        <div id="tile-info-players" style="display:none; margin-top: 10px; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 8px; font-size: 13px;"></div>
+    </div>
+
+    <div id="player-info" style="display: none; position: absolute; bottom: 20px; left: 20px; background: rgba(0, 0, 0, 0.85); padding: 15px; border-radius: 10px; border: 2px solid #ffd700; color: white; z-index: 9999; font-family: sans-serif; pointer-events: auto;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+            <h3 style="margin: 0; color: #ffd700;">Player <span id="player-info-id"></span></h3>
+            <span onclick="untrackPlayer()" style="cursor: pointer; font-size: 20px; margin-left: 20px;">&times;</span>
+        </div>
+        <div>Team: <strong id="player-info-team"></strong></div>
+        <div>Level: <strong id="player-info-level"></strong></div>
+        <div>Last Action: <strong id="player-info-action">None</strong></div>
+    </div>
+    
+    <div id="legend" style="display: none; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(0,0,0,0.95); padding: 20px; border: 2px solid white; z-index: 999999; color: white; border-radius: 10px; font-family: sans-serif;">
+        <h3 style="margin-top: 0; color: #ffd700; text-align: center;">Resource Legend</h3>
+        <ul style="list-style: none; padding: 0; font-size: 18px; line-height: 1.8;">
+            <li><span style="color: #88cc44;">Food:</span> Bush</li>
+            <li><span style="color: #ff3333;">Linemate:</span> Red Crystal</li>
+            <li><span style="color: #888888;">Deraumere:</span> Black Crystal</li>
+            <li><span style="color: #ffff00;">Sibur:</span> Yellow Crystal</li>
+            <li><span style="color: #00ff00;">Mendiane:</span> Green Crystal</li>
+            <li><span style="color: #ee82ee;">Phiras:</span> Violet Crystal</li>
+            <li><span style="color: #ffffff;">Thystame:</span> White Crystal</li>
+        </ul>
+        <button onclick="document.getElementById('legend').style.display='none'" style="width: 100%; padding: 10px; cursor: pointer; background: #555; color: white; border: none; font-size: 16px; border-radius: 5px;">Close</button>
+    </div>
+    
+    <div id="end-game-banner" style="display: none; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(0, 0, 0, 0.95); padding: 50px; border-radius: 15px; border: 4px solid #ffd700; color: #ffd700; text-align: center; font-size: 32px; font-family: sans-serif; font-weight: bold; z-index: 99999; box-shadow: 0 0 40px #ffd700; flex-direction: column; justify-content: center; align-items: center;">
+    </div>
+    
+    <div id="focus-vignette"></div>
+    <div id="broadcast-log"></div>
+
+    <div id="joystick-zone" style="position: absolute; bottom: 40px; right: 40px; width: 150px; height: 150px; z-index: 99999;"></div>
+
+    <div id="canvas-container"></div>
+
+    <script>
+        // Configuration — derived from the page's own origin so any host/port works
+        const API_URL = `${window.location.protocol}//${window.location.host}/api/state`;
+        const WS_URL = `ws://${window.location.host}`;
+
+        // Engine State
+        let app;
+        let mapContainer;
+        let joystickManager = null;
+        const joystickVector = { x: 0, y: 0 };
+        const playerTeams = {}; // Track player teams for stats
+        const playerMeshes = {}; // Will hold Pixi containers/graphics
+        const tileMeshes = {};
+        const TILE_SIZE = 50;
+        let mapWidth = 10;
+        let mapHeight = 10;
+        let isDragging = false;
+        let dragStart = { x: 0, y: 0 };
+        
+        let trackedPlayerId = null;
+        let isCameraLocked = false;
+        
+        function toIso(x, y) {
+            return {
+                x: (x - y) * TILE_SIZE,
+                y: (x + y) * (TILE_SIZE / 2)
+            };
+        }
+        
+        const keys = {
+            ArrowUp: false, ArrowDown: false, ArrowLeft: false, ArrowRight: false,
+            w: false, a: false, s: false, d: false
+        };
+
+        window.addEventListener('keydown', (e) => {
+            if (keys.hasOwnProperty(e.key)) keys[e.key] = true;
+            if (keys.hasOwnProperty(e.key.toLowerCase())) keys[e.key.toLowerCase()] = true;
+        });
+
+        window.addEventListener('keyup', (e) => {
+            if (keys.hasOwnProperty(e.key)) keys[e.key] = false;
+            if (keys.hasOwnProperty(e.key.toLowerCase())) keys[e.key.toLowerCase()] = false;
+        });
+        
+        function moveCamera(dx, dy) {
+            if (!mapContainer) return;
+            if (isCameraLocked) untrackPlayer();
+            mapContainer.x -= dx; 
+            mapContainer.y -= dy;
+        }
+
+        function untrackPlayer() {
+            trackedPlayerId = null;
+            isCameraLocked = false;
+            document.getElementById('player-info').style.display = 'none';
+            _clearFocus();
+        }
+
+        function onPlayerClick(id) {
+            const player = playerMeshes[id];
+            if (!player) return;
+            document.getElementById('tile-info').style.display = 'none';
+            document.getElementById('player-info').style.display = 'block';
+            document.getElementById('player-info-id').innerText = id;
+            document.getElementById('player-info-team').innerText = playerTeams[id];
+            document.getElementById('player-info-team').style.color = getTeamColor(playerTeams[id]);
+            document.getElementById('player-info-level').innerText = player.userData.levelText ? player.userData.levelText.text.replace('Lv.', '') : '1';
+            document.getElementById('player-info-action').innerText = player.userData.lastAction || 'None';
+            trackedPlayerId = id;
+            isCameraLocked = true;
+            _applyFocus(id);
+        }
+
+        function _applyFocus(focusId) {
+            for (const pid in playerMeshes) {
+                playerMeshes[pid].alpha = String(pid) === String(focusId) ? 1.0 : 0.18;
+            }
+            const v = document.getElementById('focus-vignette');
+            v.style.display = 'block';
+            void v.offsetWidth; // force reflow so the transition fires
+            v.style.opacity = '1';
+        }
+
+        function _clearFocus() {
+            for (const pid in playerMeshes) {
+                playerMeshes[pid].alpha = 1.0;
+            }
+            const v = document.getElementById('focus-vignette');
+            v.style.opacity = '0';
+            setTimeout(() => { v.style.display = 'none'; }, 350);
+        }
+
+        function onTileClick(x, y) {
+            const tileGroup = tileMeshes[`${x},${y}`];
+            if (!tileGroup) return;
+            untrackPlayer();
+            document.getElementById('tile-info-x').innerText = x;
+            document.getElementById('tile-info-y').innerText = y;
+
+            const resources = tileGroup.userData.resources || {};
+            const content = document.getElementById('tile-info-content');
+            content.innerHTML = '';
+            for (const res in RESOURCE_ASSETS) {
+                const count = resources[res] || 0;
+                const src = RESOURCE_ASSETS[res] + '4.png';
+                content.innerHTML += `
+                    <div style="display: flex; align-items: center; background: rgba(255,255,255,0.1); padding: 5px; border-radius: 5px; width: 60px;">
+                        <img src="${src}" style="width: 24px; height: 24px; image-rendering: pixelated; margin-right: 5px;" />
+                        <span>${count}</span>
+                    </div>
+                `;
+            }
+
+            const playersHere = Object.entries(playerMeshes).filter(
+                ([, mesh]) => mesh.userData.tileX === x && mesh.userData.tileY === y
+            );
+            const playersEl = document.getElementById('tile-info-players');
+            if (playersHere.length > 0) {
+                let html = `<strong>Players (${playersHere.length}):</strong><br>`;
+                for (const [pid, mesh] of playersHere) {
+                    const team = playerTeams[pid] || '?';
+                    const color = getTeamColor(team);
+                    const level = mesh.userData.levelText ? mesh.userData.levelText.text.replace('Lv.', '') : '?';
+                    html += `<span style="color:${color}">■</span> P${pid} &nbsp;<span style="color:#aaa">${team}</span> &nbsp;Lv.${level}<br>`;
+                }
+                playersEl.innerHTML = html;
+                playersEl.style.display = 'block';
+            } else {
+                playersEl.style.display = 'none';
+            }
+
+            document.getElementById('tile-info').style.display = 'block';
+        }
+
+        init2D();
+        connectToBridge();
+
+        // --- 1. 2D Scene Initialization (PixiJS) ---
+        function init2D() {
+            const container = document.getElementById('canvas-container');
+
+            // Set alpha mode to premultiply to avoid edge bleeding and halos on sprites
+            PIXI.BaseTexture.defaultOptions.alphaMode = PIXI.ALPHA_MODES.PREMULTIPLY_ON_UPLOAD;
+            // Set scale mode to nearest for sharp pixel art scaling
+            PIXI.BaseTexture.defaultOptions.scaleMode = PIXI.SCALE_MODES.NEAREST;
+
+            app = new PIXI.Application({
+                resizeTo: window,
+                backgroundColor: 0x1a1a2e,
+                resolution: window.devicePixelRatio || 1,
+                autoDensity: true,
+                antialias: true // Enable anti-aliasing to smooth diagonal edges
+            });
+            container.appendChild(app.view);
+
+            mapContainer = new PIXI.Container();
+            mapContainer.sortableChildren = true;
+            app.stage.addChild(mapContainer);
+            
+            mapContainer.x = window.innerWidth / 2;
+            mapContainer.y = window.innerHeight / 2;
+
+            app.stage.eventMode = 'static';
+            app.stage.hitArea = new PIXI.Rectangle(-100000, -100000, 200000, 200000);
+            
+            app.stage.on('pointerdown', (e) => {
+                isDragging = true;
+                dragStart = { x: e.global.x - mapContainer.x, y: e.global.y - mapContainer.y };
+            });
+            app.stage.on('pointerup', () => isDragging = false);
+            app.stage.on('pointerupoutside', () => isDragging = false);
+            app.stage.on('pointermove', (e) => {
+                if (isDragging) {
+                    mapContainer.x = e.global.x - dragStart.x;
+                    mapContainer.y = e.global.y - dragStart.y;
+                    if (isCameraLocked) untrackPlayer();
+                }
+            });
+
+            // Zooming
+            app.view.addEventListener('wheel', (e) => {
+                e.preventDefault();
+                const zoomFactor = 1.1;
+                let scaleMultiplier = e.deltaY > 0 ? (1 / zoomFactor) : zoomFactor;
+
+                const pointer = new PIXI.Point(e.clientX, e.clientY);
+                const local = mapContainer.toLocal(pointer);
+
+                mapContainer.scale.x *= scaleMultiplier;
+                mapContainer.scale.y *= scaleMultiplier;
+                mapContainer.scale.x = Math.max(0.1, Math.min(mapContainer.scale.x, 5));
+                mapContainer.scale.y = Math.max(0.1, Math.min(mapContainer.scale.y, 5));
+
+                const newPointer = mapContainer.toGlobal(local);
+                mapContainer.x += pointer.x - newPointer.x;
+                mapContainer.y += pointer.y - newPointer.y;
+            }, { passive: false });
+
+            // Pinch to zoom
+            let initialPinchDistance = null;
+            let initialScale = 1;
+            
+            app.view.addEventListener('touchstart', (e) => {
+                if (e.touches.length === 2) {
+                    isDragging = false;
+                    const dx = e.touches[0].clientX - e.touches[1].clientX;
+                    const dy = e.touches[0].clientY - e.touches[1].clientY;
+                    initialPinchDistance = Math.sqrt(dx * dx + dy * dy);
+                    initialScale = mapContainer.scale.x;
+                }
+            });
+            
+            app.view.addEventListener('touchmove', (e) => {
+                if (e.touches.length === 2 && initialPinchDistance) {
+                    e.preventDefault();
+                    const dx = e.touches[0].clientX - e.touches[1].clientX;
+                    const dy = e.touches[0].clientY - e.touches[1].clientY;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    
+                    let scale = initialScale * (distance / initialPinchDistance);
+                    scale = Math.max(0.1, Math.min(scale, 5));
+                    
+                    const cx = (e.touches[0].clientX + e.touches[1].clientX) / 2;
+                    const cy = (e.touches[0].clientY + e.touches[1].clientY) / 2;
+                    const pointer = new PIXI.Point(cx, cy);
+                    const local = mapContainer.toLocal(pointer);
+                    
+                    mapContainer.scale.set(scale);
+                    
+                    const newPointer = mapContainer.toGlobal(local);
+                    mapContainer.x += pointer.x - newPointer.x;
+                    mapContainer.y += pointer.y - newPointer.y;
+                }
+            }, { passive: false });
+            
+            app.view.addEventListener('touchend', (e) => {
+                if (e.touches.length < 2) {
+                    initialPinchDistance = null;
+                }
+            });
+
+            window.addEventListener('resize', () => {
+                app.renderer.resize(window.innerWidth, window.innerHeight);
+            });
+
+            if (typeof nipplejs !== 'undefined' && ('ontouchstart' in window || navigator.maxTouchPoints > 0)) {
+                const zone = document.getElementById('joystick-zone');
+                joystickManager = nipplejs.create({
+                    zone: zone,
+                    mode: 'static',
+                    position: { left: '50%', top: '50%' },
+                    color: 'white'
+                });
+
+                joystickManager.on('move', (evt, data) => {
+                    if (data && data.vector) {
+                        joystickVector.x = data.vector.x;
+                        joystickVector.y = data.vector.y;
+                    }
+                });
+
+                joystickManager.on('end', () => {
+                    joystickVector.x = 0;
+                    joystickVector.y = 0;
+                });
+            } else {
+                document.getElementById('joystick-zone').style.display = 'none';
+            }
+
+            app.ticker.add((delta) => {
+                const speed = 10 * delta;
+                let kx = 0; let ky = 0;
+                
+                if (keys.ArrowUp || keys.w) ky -= speed;
+                if (keys.ArrowDown || keys.s) ky += speed;
+                if (keys.ArrowLeft || keys.a) kx -= speed;
+                if (keys.ArrowRight || keys.d) kx += speed;
+                
+                if (kx !== 0 || ky !== 0) moveCamera(kx, ky);
+
+                if (joystickVector.x !== 0 || joystickVector.y !== 0) {
+                    moveCamera(joystickVector.x * speed, -joystickVector.y * speed);
+                }
+
+                if (isCameraLocked && trackedPlayerId && playerMeshes[trackedPlayerId]) {
+                    const player = playerMeshes[trackedPlayerId];
+                    mapContainer.pivot.x += (player.position.x - mapContainer.pivot.x) * 0.1;
+                    mapContainer.pivot.y += (player.position.y - mapContainer.pivot.y) * 0.1;
+                    mapContainer.x = window.innerWidth / 2;
+                    mapContainer.y = window.innerHeight / 2;
+                }
+            });
+        }
+
+        // --- 2. Network Integration ---
+        async function connectToBridge() {
+            try {
+                const response = await fetch(API_URL);
+                if (!response.ok) throw new Error("HTTP state fetch failed");
+                const state = await response.json();
+                
+                buildMap(state.mapSize.x, state.mapSize.y);
+                
+                for (const key in state.tiles) {
+                    const t = state.tiles[key];
+                    updateTileResources(t.x, t.y, t.resources);
+                }
+                
+                for (const id in state.players) {
+                    spawnPlayer(id, state.players[id]);
+                }
+                
+                initWebSocket();
+            } catch (err) {
+                console.error("Failed to fetch initial state:", err);
+                setTimeout(connectToBridge, 5000);
+            }
+        }
+
+        function initWebSocket() {
+            const ws = new WebSocket(WS_URL);
+            const statusEl = document.getElementById('connection-status');
+
+            ws.onopen = () => {
+                statusEl.textContent = 'CONNECTED';
+                statusEl.className = 'status-online';
+            };
+
+            ws.onclose = () => {
+                statusEl.textContent = 'DISCONNECTED';
+                statusEl.className = 'status-offline';
+                setTimeout(initWebSocket, 3000);
+            };
+
+            ws.onmessage = (message) => {
+                const payload = JSON.parse(message.data);
+                handleEvent(payload);
+            };
+        }
+
+        // --- 3. Game State Synchronization ---
+        function handleEvent(payload) {
+            switch(payload.type) {
+                case 'msz':
+                    buildMap(payload.data.x, payload.data.y);
+                    break;
+                case 'bct':
+                    updateTileResources(payload.data.x, payload.data.y, payload.data.resources);
+                    break;
+                case 'pic':
+                    setTileIncantation(payload.data.x, payload.data.y, true);
+                    break;
+                case 'pie':
+                    setTileIncantation(payload.data.x, payload.data.y, false);
+                    break;
+                case 'pnw':
+                    spawnPlayer(payload.data.id, payload.data);
+                    updatePlayerAction(payload.data.id, 'Spawned');
+                    break;
+                case 'plv':
+                    if (playerMeshes[payload.data.id] && playerMeshes[payload.data.id].userData.levelText) {
+                        playerMeshes[payload.data.id].userData.levelText.text = 'Lv.' + payload.data.level;
+                    }
+                    updatePlayerAction(payload.data.id, 'Level Up');
+                    break;
+                case 'ppo':
+                    movePlayer(payload.data.id, payload.data.x, payload.data.y, payload.data.orientation);
+                    updatePlayerAction(payload.data.id, 'Moved');
+                    break;
+                case 'pipi':
+                    movePlayer(payload.data.id, payload.data.x, payload.data.y, payload.data.orientation);
+                    break;
+                case 'pdr':
+                    updatePlayerAction(payload.data.id, 'Dropped resource');
+                    break;
+                case 'pgt':
+                    updatePlayerAction(payload.data.id, 'Collected resource');
+                    break;
+                case 'pdi':
+                    removePlayer(payload.data.id);
+                    break;
+                case 'seg':
+                    displayEndGame(payload.data.teamName);
+                    break;
+                case 'players_sync':
+                    for (const id in payload.data) {
+                        const p = payload.data[id];
+                        if (!playerMeshes[id]) {
+                            spawnPlayer(id, p);
+                        } else {
+                            movePlayer(id, p.x, p.y, p.orientation);
+                        }
+                    }
+                    break;
+                case 'pbc':
+                    showBroadcast(payload.data.id, payload.data.message);
+                    break;
+            }
+            updateUI();
+        }
+
+        function showBroadcast(id, rawMessage) {
+            const decoded = rawMessage.replace(/_/g, ' ');
+            const team = playerTeams[id] || '';
+            const color = getTeamColor(team);
+
+            // --- Log panel entry ---
+            const log = document.getElementById('broadcast-log');
+            const entry = document.createElement('div');
+            entry.className = 'bc-entry';
+            entry.style.borderLeft = `3px solid ${color}`;
+            entry.innerHTML = `<span style="color:${color};font-weight:bold">P${id}</span>`
+                + (team ? ` <span style="color:#888">${team}</span>` : '')
+                + `<br>${decoded}`;
+            log.insertBefore(entry, log.firstChild);
+            while (log.children.length > 10) log.removeChild(log.lastChild);
+            setTimeout(() => {
+                entry.style.opacity = '0';
+                setTimeout(() => entry.parentNode && entry.remove(), 500);
+            }, 12000);
+
+            // --- PixiJS speech bubble above the player ---
+            const player = playerMeshes[id];
+            if (!player) return;
+            const colorInt = parseInt(color.replace('#', ''), 16);
+            const bubble = new PIXI.Text(decoded, {
+                fontFamily: 'Arial',
+                fontSize: 13,
+                fill: 0xffffff,
+                stroke: 0x000000,
+                strokeThickness: 3,
+                align: 'center',
+                wordWrap: true,
+                wordWrapWidth: 160
+            });
+            bubble.anchor.set(0.5, 1);
+            bubble.y = -TILE_SIZE * 2.8;
+
+            const bg = new PIXI.Graphics();
+            const pad = 6;
+            bg.beginFill(colorInt, 0.25);
+            bg.lineStyle(1, colorInt, 0.8);
+            bg.drawRoundedRect(
+                -bubble.width / 2 - pad,
+                bubble.y - bubble.height - pad,
+                bubble.width + pad * 2,
+                bubble.height + pad * 2,
+                4
+            );
+            bg.endFill();
+
+            player.addChild(bg);
+            player.addChild(bubble);
+
+            let elapsed = 0;
+            const DURATION = 8000;
+            const tick = (delta) => {
+                elapsed += PIXI.Ticker.shared.deltaMS;
+                const fadeStart = DURATION - 1500;
+                if (elapsed > fadeStart) {
+                    const alpha = Math.max(0, (DURATION - elapsed) / 1500);
+                    bubble.alpha = alpha;
+                    bg.alpha = alpha;
+                }
+                if (elapsed >= DURATION) {
+                    player.removeChild(bubble);
+                    player.removeChild(bg);
+                    bubble.destroy();
+                    bg.destroy();
+                    PIXI.Ticker.shared.remove(tick);
+                }
+            };
+            PIXI.Ticker.shared.add(tick);
+        }
+
+        function updatePlayerAction(id, actionStr) {
+            if (playerMeshes[id]) {
+                playerMeshes[id].userData.lastAction = actionStr;
+                if (trackedPlayerId === id) {
+                    document.getElementById('player-info-action').innerText = actionStr;
+                }
+            }
+        }
+
+        function setTileIncantation(x, y, isIncanting) {
+            const key = `${x},${y}`;
+            const tileGroup = tileMeshes[key];
+            if (!tileGroup) return;
+            
+            if (isIncanting) {
+                tileGroup.userData.sprite.tint = 0xff00ff; // Purple glow
+            } else {
+                tileGroup.userData.sprite.tint = 0xffffff; // Reset to normal
+            }
+        }
+
+        const RESOURCE_ASSETS = {
+            food:      'assets/map/2 Objects/Bushes/',
+            linemate:  'assets/crystals/linemate/Red_crystal',
+            deraumere: 'assets/crystals/deraumere/Black_crystal',
+            sibur:     'assets/crystals/sibur/Yellow_crystal',
+            mendiane:  'assets/crystals/mendian/Blue_crystal',
+            phiras:    'assets/crystals/phiras/Violet_crystal',
+            thystame:  'assets/crystals/thystame/White_crystal'
+        };
+
+        function updateTileResources(x, y, resources) {
+            const key = `${x},${y}`;
+            const tileGroup = tileMeshes[key];
+            if (!tileGroup) return;
+
+            tileGroup.userData.resources = resources; // save state
+            const group = tileGroup.userData.resourceGroup;
+            group.removeChildren();
+
+            const positions = [
+                {x: 0.2, y: 0.2}, {x: 0.5, y: 0.2}, {x: 0.8, y: 0.2},
+                {x: 0.2, y: 0.5}, {x: 0.8, y: 0.5},
+                {x: 0.2, y: 0.8}, {x: 0.8, y: 0.8}
+            ];
+
+            let posIdx = 0;
+            for (const res in resources) {
+                const count = resources[res];
+                if (count > 0 && RESOURCE_ASSETS[res] && posIdx < positions.length) {
+                    const cx = positions[posIdx].x - 0.5;
+                    const cy = positions[posIdx].y - 0.5;
+                    // Group the resources tighter together
+                    const px = (cx - cy) * (TILE_SIZE * 0.6);
+                    const py = (cx + cy) * ((TILE_SIZE / 2) * 0.6);
+
+                    let sizeIndex = 4;
+                    if (count === 2) sizeIndex = 3;
+                    else if (count === 3) sizeIndex = 2;
+                    else if (count >= 4) sizeIndex = 1;
+
+                    const spritePath = RESOURCE_ASSETS[res] + sizeIndex + '.png';
+                    const sprite = PIXI.Sprite.from(spritePath);
+                    sprite.anchor.set(0.5, 0.5);
+                    sprite.x = px;
+                    sprite.y = py;
+                    sprite.scale.set(1.0); // 30% smaller
+                    
+                    group.addChild(sprite);
+                    posIdx++;
+                }
+            }
+        }
+
+        function buildMap(width, height) {
+            if (width === 0 || height === 0) return;
+            mapWidth = width;
+            mapHeight = height;
+
+            mapContainer.removeChildren();
+            for (const key in tileMeshes) {
+                delete tileMeshes[key];
+            }
+
+            const PADDING = 15; // Infinity water border
+            for (let x = -PADDING; x < width + PADDING; x++) {
+                for (let y = -PADDING; y < height + PADDING; y++) {
+                    const isWater = (x < 0 || x >= width || y < 0 || y >= height);
+                    
+                    const tileGroup = new PIXI.Container();
+                    
+                    const tileSprite = PIXI.Sprite.from(isWater ? 'water.png' : 'grass.png');
+                    tileSprite.anchor.set(0.5, 0.5);
+                    tileSprite.rotation = Math.PI / 4; // Rotate 45 degrees
+                    tileSprite.scale.set(2.21); // Width across diagonal = ~100
+                    
+                    const ground = new PIXI.Container();
+                    ground.addChild(tileSprite);
+                    ground.scale.y = 0.5; // Isometric squish
+                    tileGroup.addChild(ground);
+                    
+                    const pos = toIso(x, y);
+                    tileGroup.x = pos.x;
+                    tileGroup.y = pos.y;
+                    tileGroup.zIndex = x + y - (isWater ? 0.1 : 0);
+                    
+                    if (!isWater) {
+                        tileGroup.userData = { sprite: tileSprite, resourceGroup: new PIXI.Container(), resources: {} };
+                        // Don't need to un-scale resource group because it's not inside the squished ground
+                        tileGroup.addChild(tileGroup.userData.resourceGroup);
+                        
+                        tileGroup.eventMode = 'static';
+                        tileGroup.cursor = 'pointer';
+                        tileGroup.on('pointertap', (e) => {
+                            e.stopPropagation();
+                            onTileClick(x, y);
+                        });
+                        
+                        tileMeshes[`${x},${y}`] = tileGroup;
+                    }
+
+                    mapContainer.addChild(tileGroup);
+                }
+            }
+
+            for(let id in playerMeshes) {
+                mapContainer.addChild(playerMeshes[id]);
+            }
+
+            const centerPos = toIso((width - 1) / 2, (height - 1) / 2);
+            mapContainer.pivot.set(centerPos.x, centerPos.y);
+            mapContainer.position.set(window.innerWidth / 2, window.innerHeight / 2);
+        }
+
+        function spawnPlayer(id, data) {
+            if (playerMeshes[id]) return;
+            playerTeams[id] = data.team;
+
+            const playerGroup = new PIXI.Container();
+            playerGroup.userData = { nose: null };
+            const teamColorHex = parseInt(getTeamColor(data.team).replace('#', '0x'), 16);
+            
+            // Draw a colored ellipse shadow/base to show the team color
+            const base = new PIXI.Graphics();
+            base.beginFill(teamColorHex, 0.7);
+            base.drawEllipse(0, 0, TILE_SIZE * 0.4, TILE_SIZE * 0.2);
+            base.endFill();
+
+            // Load Golem Sprite
+            const sprite = PIXI.Sprite.from('Golem_01_Idle_000.png');
+            sprite.anchor.set(0.5, 0.9); // Anchor to feet
+            sprite.scale.set(0.12); // Adjust scale to fit on tiles
+
+            // Nose orientation indicator
+            const nose = new PIXI.Graphics();
+            nose.beginFill(0xffffff);
+            nose.lineStyle(1, 0x000000);
+            nose.drawCircle(0, 0, TILE_SIZE * 0.1);
+            nose.endFill();
+            playerGroup.userData.nose = nose;
+
+            // Player Level Text
+            const levelText = new PIXI.Text('Lv.' + (data.level || 1), {
+                fontFamily: 'Arial',
+                fontSize: 16,
+                fill: 0xffffff,
+                fontWeight: 'bold',
+                stroke: 0x000000,
+                strokeThickness: 3
+            });
+            levelText.anchor.set(0.5, 1);
+            levelText.y = -TILE_SIZE * 1.5; // Position above head
+            playerGroup.userData.levelText = levelText;
+
+            playerGroup.addChild(base);
+            playerGroup.addChild(sprite);
+            playerGroup.addChild(nose);
+            playerGroup.addChild(levelText);
+            
+            playerGroup.eventMode = 'static';
+            playerGroup.cursor = 'pointer';
+            playerGroup.on('pointertap', (e) => {
+                e.stopPropagation();
+                onPlayerClick(id);
+            });
+            playerGroup.userData = { nose: nose, levelText: levelText, lastAction: 'Spawned' };
+
+            mapContainer.addChild(playerGroup);
+            playerMeshes[id] = playerGroup;
+
+            if (trackedPlayerId !== null && String(id) !== String(trackedPlayerId)) {
+                playerGroup.alpha = 0.18;
+            }
+
+            movePlayer(id, data.x, data.y, data.orientation);
+            updateUI();
+        }
+
+        function movePlayer(id, x, y, orientation) {
+            const player = playerMeshes[id];
+            if (!player) return;
+
+            player.userData.tileX = x;
+            player.userData.tileY = y;
+
+            const pos = toIso(x, y);
+            player.x = pos.x;
+            player.y = pos.y;
+            player.zIndex = x + y + 0.1;
+
+            const nose = player.userData.nose;
+            let dx = 0; let dy = 0;
+            if (orientation === 1) { dx = 0; dy = -1; }
+            else if (orientation === 2) { dx = 1; dy = 0; }
+            else if (orientation === 3) { dx = 0; dy = 1; }
+            else if (orientation === 4) { dx = -1; dy = 0; }
+
+            const noseIso = toIso(dx, dy);
+            nose.position.set(noseIso.x * 0.35, (noseIso.y * 0.35) - TILE_SIZE * 0.4);
+        }
+
+        function removePlayer(id) {
+            const player = playerMeshes[id];
+            if (player) {
+                mapContainer.removeChild(player);
+                player.destroy();
+                delete playerMeshes[id];
+                delete playerTeams[id];
+            }
+            updateUI();
+        }
+
+        // --- Utilities ---
+        const TEAM_COLORS = [
+            '#FF3333', '#33FF33', '#3333FF', '#FFFF33',
+            '#FF33FF', '#33FFFF', '#FFAA33', '#AA33AA',
+            '#33AA33', '#3333AA', '#AA3333', '#AAAA33',
+            '#33AAAA', '#FFB6C1', '#7B68EE', '#FA8072'
+        ];
+
+        function getTeamColor(teamName) {
+            if (!teamName) return '#ffffff';
+            let hash = 0;
+            for (let i = 0; i < teamName.length; i++) {
+                hash = teamName.charCodeAt(i) + ((hash << 5) - hash);
+            }
+            const index = Math.abs(hash) % TEAM_COLORS.length;
+            return TEAM_COLORS[index];
+        }
+
+        function displayEndGame(teamName) {
+            const el = document.getElementById('end-game-banner');
+            const teamColor = getTeamColor(teamName);
+            el.innerHTML = `
+                <div style="position: absolute; top: 10px; right: 20px;">
+                    <span onclick="document.getElementById('end-game-banner').style.display='none'" style="cursor:pointer; font-size: 36px; color: white; opacity: 0.8; pointer-events: auto;">&times;</span>
+                </div>
+                🏆 SIMULATION ENDED 🏆<br><br>
+                <div style="margin: 20px 0; position: relative; display: inline-block;">
+                    <div style="width: 80px; height: 40px; background: ${teamColor}; border-radius: 50%; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); opacity: 0.8;"></div>
+                    <img src="Golem_01_Idle_000.png" style="width: 100px; position: relative; z-index: 1; image-rendering: pixelated;" />
+                </div>
+                <br>Team <strong style="color: ${teamColor}; font-size: 40px;">${teamName}</strong> has won!
+            `;
+            el.style.display = 'flex';
+        }
+
+        function updateUI() {
+            document.getElementById('player-count').textContent = `Players: ${Object.keys(playerMeshes).length}`;
+            
+            const teamCounts = {};
+            for (const id in playerTeams) {
+                const team = playerTeams[id];
+                teamCounts[team] = (teamCounts[team] || 0) + 1;
+            }
+            
+            let html = '<strong style="color: #ffd700;">Active Teams:</strong><br>';
+            for (const team in teamCounts) {
+                const color = getTeamColor(team);
+                html += `<span style="color: ${color}; font-size: 16px;">■</span> ${team}: ${teamCounts[team]}<br>`;
+            }
+            document.getElementById('team-stats').innerHTML = html;
+        }
+    </script>
+</body>
+</html>

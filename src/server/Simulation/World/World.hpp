@@ -1,9 +1,7 @@
 #pragma once
-#include <algorithm>
 #include <memory>
 #include <vector>
 #include <queue>
-#include <thread>
 #include <utility>
 
 #include "../Player/Player.hpp"
@@ -62,6 +60,9 @@ class World
     ///        width*height*density (never above, never below 1), spread evenly and
     ///        randomly across the map.
     void resourcePassiveGenerationEven();
+
+    /// @brief Pushes a "bct" broadcast line for the tile at the given position, if a broadcast queue is set.
+    void broadcastTileContent(position pos);
 
   public:
     /// @brief Builds an x-by-y world with empty tiles and no players yet.
@@ -136,7 +137,7 @@ class World
     void addPlayerToTile(Player *player, position pos);
 
     /// @brief Sends a message to every player currently standing on the given tile.
-    void sendMessageToPlayersThatAreOnTile(position pos, const std::string &message);
+    void sendMessageToPlayersThatAreOnTile(position pos, const std::string &message, std::vector<std::unique_ptr<Client>> &clients);
 
     /// @brief Removes a player from the world and decrease the number of slots occupied in its team. The player is removed from the tile it was standing on and from the list of players in the world.
     void removePlayer(int id);
@@ -146,5 +147,8 @@ class World
     /// @brief sets the active time unit for the world.
     /// @param f 
     void setTimeUnit(int f);
+    /// @brief Returns the team that has won the game, or nullptr if no team has won.
+    /// @return 
+    Team *getWinningTeam() const;
 };
 } // namespace zappy
