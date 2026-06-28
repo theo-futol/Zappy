@@ -15,7 +15,11 @@ Socket::~Socket()
 bool Socket::create(int domain, int type, int protocol)
 {
     _socket = socket(domain, type, protocol);
-    return _socket != -1;
+    if (_socket == -1)
+        return false;
+    int enable = 1;
+    setsockopt(_socket, SOL_SOCKET, SO_REUSEADDR, &enable, sizeof(enable));
+    return true;
 }
 
 bool Socket::bind(int port)
