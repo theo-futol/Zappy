@@ -44,20 +44,20 @@ struct PpoFixture
     }
 };
 
-Test(Ppo, returns_ko_when_no_args_are_given)
+Test(Ppo, returns_sbp_when_no_args_are_given)
 {
     PpoFixture f;
 
     std::string res = f.commands->Ppo({}, *f.client);
 
-    cr_assert_str_eq(res.c_str(), "ko\n");
+    cr_assert_str_eq(res.c_str(), "sbp\n");
 }
 
 Test(Ppo, returns_ko_for_an_unknown_player_id)
 {
     PpoFixture f;
 
-    std::string res = f.commands->Ppo({"ppo", "999"}, *f.client);
+    std::string res = f.commands->Ppo({"999"}, *f.client);
 
     cr_assert_str_eq(res.c_str(), "ko\n");
 }
@@ -66,7 +66,7 @@ Test(Ppo, reports_position_and_default_north_orientation)
 {
     PpoFixture f;
 
-    std::string res = f.commands->Ppo({"ppo", std::to_string(f.playerId)}, *f.client);
+    std::string res = f.commands->Ppo({std::to_string(f.playerId)}, *f.client);
 
     std::string expected = "ppo " + std::to_string(f.playerId) + " 0 0 1\n";
     cr_assert_str_eq(res.c_str(), expected.c_str());
@@ -78,7 +78,7 @@ Test(Ppo, reflects_rotation_changes)
     zappy::Player *player = f.world.getPlayerById(f.playerId);
     player->setRotation(zappy::Degrees::EAST);
 
-    std::string res = f.commands->Ppo({"ppo", std::to_string(f.playerId)}, *f.client);
+    std::string res = f.commands->Ppo({std::to_string(f.playerId)}, *f.client);
 
     std::string expected = "ppo " + std::to_string(f.playerId) + " 0 0 2\n";
     cr_assert_str_eq(res.c_str(), expected.c_str());
@@ -89,7 +89,7 @@ Test(Ppo, buildPpoMessage_matches_the_command_reply)
     PpoFixture f;
     zappy::Player *player = f.world.getPlayerById(f.playerId);
 
-    std::string viaCommand = f.commands->Ppo({"ppo", std::to_string(f.playerId)}, *f.client);
+    std::string viaCommand = f.commands->Ppo({std::to_string(f.playerId)}, *f.client);
     std::string viaBuilder = f.commands->buildPpoMessage(*player);
 
     cr_assert_str_eq(viaCommand.c_str(), viaBuilder.c_str());

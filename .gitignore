@@ -1,6 +1,17 @@
 .husky
 *.js
 node_modules
+nath/
+
+# Build artifacts
+*.o
+*.d
+zappy_gui
+
+# clangd / tooling
+compile_commands.json
+.cache/
+.clangd
 *.o
 zappy_*
 __pycache__/
@@ -11,3 +22,4 @@ ia/utils/__pycache__
 venv
 *.gc*
 *.pdf
+docs

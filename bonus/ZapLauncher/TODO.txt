@@ -1,0 +1,2 @@
+- Go furthur into the Trantor RP 
+- Make LLMs use tools correctly

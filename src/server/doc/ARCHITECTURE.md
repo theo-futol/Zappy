@@ -10,15 +10,15 @@ src/server
 ├── Core
 ├── Logger
 ├── Network
-│   ├── Client
-│   ├── ClientHandler
-│   │   ├── CommandParser
-│   │   └── Commands
+│   ├── Client              # Handles both AI and GRAPHIC client types
+│   ├── ClientHandler       # Handles incoming commands from clients
+│   │   ├── CommandParser   # Parses and validates commands from clients
+│   │   └── Commands        # Individual command implementations for both AI and GUI clients
 │   │       ├── AI
 │   │       └── GUI
-│   └── Socket
-├── ServerException
-└── Simulation
+│   └── Socket              # Encapsulation of the socket communication used to construct the server
+├── ServerException         # Custom exception class used across the server 
+└── Simulation              # The simulation environment, including the game world, players, and items
     ├── Player
     │   └── Inventory
     └── World

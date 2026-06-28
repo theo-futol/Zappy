@@ -17,12 +17,19 @@ std::string Commands::buildBctMessage(position pos) const
 
 std::string Commands::Bct(std::vector<std::string> args, Client &)
 {
-    if (args.size() < 3)
-        return "ko\n";
-    int x = std::stoi(args[1]);
-    int y = std::stoi(args[2]);
-    if (!_world->getTileAt({x, y}))
-        return "ko\n";
-    return buildBctMessage({x, y});
+    if (args.size() < 2)
+        return "sbp\n";
+    try
+    {
+        int x = std::stoi(args[0]);
+        int y = std::stoi(args[1]);
+        if (!_world->getTileAt({x, y}))
+            return "ko\n";
+        return buildBctMessage({x, y});
+    }
+    catch (...)
+    {
+        return "sbp\n";
+    }
 }
 } // namespace zappy

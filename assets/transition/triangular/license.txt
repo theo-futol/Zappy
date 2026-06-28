@@ -1,0 +1,11 @@
+Model Information:
+* title:	Triangular Animated Portal
+* source:	https://sketchfab.com/3d-models/triangular-animated-portal-58b8817efd7042d1adf9d2c595f120b1
+* author:	st4ng (https://sketchfab.com/st4ng)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Triangular Animated Portal" (https://sketchfab.com/3d-models/triangular-animated-portal-58b8817efd7042d1adf9d2c595f120b1) by st4ng (https://sketchfab.com/st4ng) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

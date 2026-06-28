@@ -35,4 +35,4 @@ All error paths throw `zappy::ServerException` (see [ServerException.md](ServerE
 
 ## Relationship with Core
 
-`ArgParser` itself defines no Zappy-specific flags. `Core`'s constructor (see [Core.md](Core.md)) is the place where the actual server flags (`-p`, `-x`, `-y`, `-n`, `-c`, `-f`) are registered and range-validated. This separation means `ArgParser` could be reused for a different tool with a different flag set without modification.
+`ArgParser` itself defines no Zappy-specific flags. `Core`'s constructor (see [Core.md](Core.md)) is the place where the actual server flags (`-p`, `-x`, `-y`, `-n`, `-c`, `-f`, `-oldgen`) are registered and range-validated. This separation means `ArgParser` could be reused for a different tool with a different flag set without modification.

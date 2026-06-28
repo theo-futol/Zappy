@@ -2,8 +2,12 @@
 
 ## Behaviour & Purpose
 
+<<<<<<< HEAD
 Zappy is **Epitech's PGE project** (Practical/Generic Engineering project), the
 end-of-year project of the second year of the Epitech curriculum.
+=======
+Zappy is **Epitech's project**, the end-of-year project of the second year of the Epitech curriculum.
+>>>>>>> server/main
 
 The goal of the project is to build a network survival game, *Trantor*, in
 which several teams of autonomous AI clients compete on a shared, wrap-around
@@ -34,22 +38,11 @@ Zappy/
 ├── src/
 │   ├── main.cpp                  # Entry point of the zappy_server binary
 │   └── server/
-│       ├── Core/                 # Bootstraps the server: argument parsing, signal handling
-│       ├── ArgParser/            # Registers and parses the CLI flags (-p, -x, -y, -n, -c, -f)
-│       ├── ServerException/      # Server-specific exception types
-│       ├── Network/
-│       │   ├── Socket/           # Transport layer: accepts connections, reads/writes raw data
-│       │   ├── ClientHandler/    # Retrieves client input via `poll`, queues it per client
-│       │   │   ├── CommandParser/ # Parses queued input and dispatches to the right Commands
-│       │   │   └── Commands/      # One implementation per protocol command (Look, Take, ...)
-│       │   └── Client/            # Represents a connected client (AI or GUI) and its state
-│       ├── Simulation/
-│       │   ├── World/             # Map, tiles, resource spawning rules
-│       │   └── Player/            # Player state: position, level, inventory, eggs
-│       └── doc/                  # Server-side design notes (RFC draft)
+│   └── ia/                       # AI client implementation
+│   └── gui/                      # GUI client implementation 
 ├── rfc.txt                       # Full protocol/architecture RFC (server, AI, GUI)
-├── Makefile                       # Top-level build rules (zappy_server, zappy_gui, zappy_ai)
-└── dev/                            # Contributor tooling (branching/commit conventions)
+├── Makefile                      # Top-level build rules (zappy_server, zappy_gui, zappy_ai)
+└── dev/                          # Contributor tooling (branching/commit conventions)
 ```
 
 - **GUI** (`zappy_gui`): *(to be completed)*
@@ -88,7 +81,7 @@ server must be running before either client connects to it.
 #### Server
 
 ```bash
-./zappy_server -p port -x width -y height -n name1 name2 ... -c clientsNb -f freq
+./zappy_server -p port -x width -y height -n name1 name2 ... -c clientsNb -f freq -oldgen
 ```
 
 | Option | Description |
@@ -99,6 +92,7 @@ server must be running before either client connects to it.
 | `-n name1 name2 ...` | Names of the teams |
 | `-c clientsNb` | Number of initial client slots per team |
 | `-f freq` | Reciprocal of the time unit used for executing actions |
+| `-oldgen` | Use the old generation algorithm for resource spawning (optional) |
 
 Example:
 

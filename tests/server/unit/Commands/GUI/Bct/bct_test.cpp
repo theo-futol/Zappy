@@ -44,20 +44,20 @@ struct BctFixture
     }
 };
 
-Test(Bct, returns_ko_when_fewer_than_two_args_are_given)
+Test(Bct, returns_sbp_when_fewer_than_two_args_are_given)
 {
     BctFixture f;
 
-    std::string res = f.commands->Bct({"bct", "0"}, *f.client);
+    std::string res = f.commands->Bct({"0"}, *f.client);
 
-    cr_assert_str_eq(res.c_str(), "ko\n");
+    cr_assert_str_eq(res.c_str(), "sbp\n");
 }
 
 Test(Bct, returns_ko_for_a_tile_outside_the_map)
 {
     BctFixture f;
 
-    std::string res = f.commands->Bct({"bct", "99", "99"}, *f.client);
+    std::string res = f.commands->Bct({"99", "99"}, *f.client);
 
     cr_assert_str_eq(res.c_str(), "ko\n");
 }
@@ -73,7 +73,7 @@ Test(Bct, reports_resource_counts_for_a_tile)
     f.world.setTileAt({1, 1}, zappy::ItemType::PHIRAS, 0);
     f.world.setTileAt({1, 1}, zappy::ItemType::THYSTAME, 0);
 
-    std::string res = f.commands->Bct({"bct", "1", "1"}, *f.client);
+    std::string res = f.commands->Bct({"1", "1"}, *f.client);
 
     cr_assert_str_eq(res.c_str(), "bct 1 1 2 3 0 0 0 0 0\n");
 }
@@ -82,7 +82,7 @@ Test(Bct, buildBctMessage_matches_the_command_reply)
 {
     BctFixture f;
 
-    std::string viaCommand = f.commands->Bct({"bct", "0", "0"}, *f.client);
+    std::string viaCommand = f.commands->Bct({"0", "0"}, *f.client);
     std::string viaBuilder = f.commands->buildBctMessage({0, 0});
 
     cr_assert_str_eq(viaCommand.c_str(), viaBuilder.c_str());

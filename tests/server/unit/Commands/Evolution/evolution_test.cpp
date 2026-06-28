@@ -202,7 +202,7 @@ Test(Incantation, succeeds_levels_up_participants_and_consumes_stones)
     // Consuming the incantation stones rebroadcasts the tile content first.
     std::string bctMsg = f.broadcastQueue.front();
     f.broadcastQueue.pop();
-    std::string expectedBct = f.commands->Bct({"bct", std::to_string(player->getPosition().x), std::to_string(player->getPosition().y)}, *f.client);
+    std::string expectedBct = f.commands->Bct({std::to_string(player->getPosition().x), std::to_string(player->getPosition().y)}, *f.client);
     cr_assert_str_eq(bctMsg.c_str(), expectedBct.c_str());
 
     std::string plvMsg = f.broadcastQueue.front();

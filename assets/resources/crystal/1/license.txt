@@ -1,0 +1,11 @@
+Model Information:
+* title:	Crystal Tower
+* source:	https://sketchfab.com/3d-models/crystal-tower-77c60777de3d4882a198305df4b643f9
+* author:	cgrunner (https://sketchfab.com/cgrunner)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Crystal Tower" (https://sketchfab.com/3d-models/crystal-tower-77c60777de3d4882a198305df4b643f9) by cgrunner (https://sketchfab.com/cgrunner) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
