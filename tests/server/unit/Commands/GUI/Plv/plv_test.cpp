@@ -48,20 +48,20 @@ struct PlvFixture
     }
 };
 
-Test(Plv, returns_ko_when_no_args_are_given)
+Test(Plv, returns_sbp_when_no_args_are_given)
 {
     PlvFixture f;
 
     std::string res = f.commands->Plv({}, *f.client);
 
-    cr_assert_str_eq(res.c_str(), "ko\n");
+    cr_assert_str_eq(res.c_str(), "sbp\n");
 }
 
 Test(Plv, returns_ko_for_an_unknown_player_id)
 {
     PlvFixture f;
 
-    std::string res = f.commands->Plv({"plv", "999"}, *f.client);
+    std::string res = f.commands->Plv({"999"}, *f.client);
 
     cr_assert_str_eq(res.c_str(), "ko\n");
 }
@@ -70,7 +70,7 @@ Test(Plv, reports_level_one_for_a_freshly_hatched_player)
 {
     PlvFixture f;
 
-    std::string res = f.commands->Plv({"plv", std::to_string(f.playerId)}, *f.client);
+    std::string res = f.commands->Plv({std::to_string(f.playerId)}, *f.client);
 
     std::string expected = "plv " + std::to_string(f.playerId) + " 1\n";
     cr_assert_str_eq(res.c_str(), expected.c_str());
@@ -81,7 +81,7 @@ Test(Plv, buildPlvMessage_matches_the_command_reply)
     PlvFixture f;
     zappy::Player *player = f.world.getPlayerById(f.playerId);
 
-    std::string viaCommand = f.commands->Plv({"plv", std::to_string(f.playerId)}, *f.client);
+    std::string viaCommand = f.commands->Plv({std::to_string(f.playerId)}, *f.client);
     std::string viaBuilder = f.commands->buildPlvMessage(*player);
 
     cr_assert_str_eq(viaCommand.c_str(), viaBuilder.c_str());

@@ -2,6 +2,7 @@
 #include "Network/ClientHandler/CommandParser/CommandParser.hpp"
 #include "Simulation/Player/Teams.hpp"
 #include "Simulation/World/World.hpp"
+#include <algorithm>
 #include <chrono>
 #include <criterion/criterion.h>
 #include <fcntl.h>
@@ -108,7 +109,7 @@ Test(CommandParser, handshake_with_known_team_promotes_client_to_AI_and_replies_
     cr_assert_str_eq(reply.c_str(), "5\n10 10\n");
 }
 
-Test(CommandParser, handshake_with_GRAPHIC_promotes_client_to_GRAPHIC_and_sends_no_reply)
+Test(CommandParser, handshake_with_GRAPHIC_promotes_client_to_GRAPHIC_and_sends_the_initial_snapshot)
 {
     ParserFixture f;
     f.send_line("GRAPHIC");
@@ -117,8 +118,10 @@ Test(CommandParser, handshake_with_GRAPHIC_promotes_client_to_GRAPHIC_and_sends_
     cr_assert(f.parser->executeNext(f.clients));
     cr_assert_eq(f.client->getType(), zappy::ClientType::GRAPHIC);
 
+    // No players are connected yet, but the team's 5 initial eggs are reported.
     std::string reply = f.read_reply();
-    cr_assert(reply.empty());
+    cr_assert_eq(std::count(reply.begin(), reply.end(), '\n'), 5);
+    cr_assert(reply.find("pnw") == std::string::npos);
 }
 
 Test(CommandParser, handshake_with_unknown_team_replies_ko_and_keeps_client_AI)
@@ -187,6 +190,7 @@ Test(CommandParser, unknown_graphic_command_replies_suc)
     f.send_line("GRAPHIC");
     f.parser->feed(f.clients);
     f.parser->executeNext(f.clients);
+    f.read_reply(); // drain the initial eggs snapshot sent on GUI connect
 
     f.send_line("not_a_graphic_cmd");
     f.parser->feed(f.clients);
@@ -202,6 +206,7 @@ Test(CommandParser, known_graphic_command_is_dispatched)
     f.send_line("GRAPHIC");
     f.parser->feed(f.clients);
     f.parser->executeNext(f.clients);
+    f.read_reply(); // drain the initial eggs snapshot sent on GUI connect
 
     f.send_line("msz");
     f.parser->feed(f.clients);

@@ -44,20 +44,20 @@ struct PinFixture
     }
 };
 
-Test(Pin, returns_ko_when_no_args_are_given)
+Test(Pin, returns_sbp_when_no_args_are_given)
 {
     PinFixture f;
 
     std::string res = f.commands->Pin({}, *f.client);
 
-    cr_assert_str_eq(res.c_str(), "ko\n");
+    cr_assert_str_eq(res.c_str(), "sbp\n");
 }
 
 Test(Pin, returns_ko_for_an_unknown_player_id)
 {
     PinFixture f;
 
-    std::string res = f.commands->Pin({"pin", "999"}, *f.client);
+    std::string res = f.commands->Pin({"999"}, *f.client);
 
     cr_assert_str_eq(res.c_str(), "ko\n");
 }
@@ -66,7 +66,7 @@ Test(Pin, reports_position_and_the_default_inventory)
 {
     PinFixture f;
 
-    std::string res = f.commands->Pin({"pin", std::to_string(f.playerId)}, *f.client);
+    std::string res = f.commands->Pin({std::to_string(f.playerId)}, *f.client);
 
     std::string expected = "pin " + std::to_string(f.playerId) + " 0 0 10 0 0 0 0 0 0 \n";
     cr_assert_str_eq(res.c_str(), expected.c_str());
@@ -78,7 +78,7 @@ Test(Pin, reflects_inventory_changes)
     zappy::Player *player = f.world.getPlayerById(f.playerId);
     player->getInventory().addItem(zappy::ItemType::LINEMATE, 3);
 
-    std::string res = f.commands->Pin({"pin", std::to_string(f.playerId)}, *f.client);
+    std::string res = f.commands->Pin({std::to_string(f.playerId)}, *f.client);
 
     std::string expected = "pin " + std::to_string(f.playerId) + " 0 0 10 3 0 0 0 0 0 \n";
     cr_assert_str_eq(res.c_str(), expected.c_str());
@@ -89,7 +89,7 @@ Test(Pin, buildPinMessage_matches_the_command_reply)
     PinFixture f;
     zappy::Player *player = f.world.getPlayerById(f.playerId);
 
-    std::string viaCommand = f.commands->Pin({"pin", std::to_string(f.playerId)}, *f.client);
+    std::string viaCommand = f.commands->Pin({std::to_string(f.playerId)}, *f.client);
     std::string viaBuilder = f.commands->buildPinMessage(*player);
 
     cr_assert_str_eq(viaCommand.c_str(), viaBuilder.c_str());
