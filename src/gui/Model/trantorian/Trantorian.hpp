@@ -41,7 +41,7 @@ class Trantorian : public AMapEntity
     std::vector<std::string> infoLines() const override;
 
     /** @brief Team name. @return The team. */
-    const std::string &team() const;
+    const std::string &team() const override;
 
     /** @brief Player level. @return The level. */
     int level() const;

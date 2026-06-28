@@ -23,13 +23,29 @@ Shader &AssetCache::loadShader(const std::string &id, const std::string &vertexP
     }
 }
 
-Mesh &AssetCache::createMesh(const std::string &id, const std::vector<float> &vertices, const std::vector<unsigned int> &indices)
+Texture &AssetCache::loadTexture(const std::string &id, const std::string &path)
+{
+    try
+    {
+        std::unique_ptr<Texture> texture = std::make_unique<Texture>(path);
+        Texture &ref = *texture;
+
+        _textures[id] = std::move(texture);
+        return ref;
+    }
+    catch (const Texture::TextureException &e)
+    {
+        throw AssetCacheException("texture '" + id + "': " + std::string(e.what()));
+    }
+}
+
+Mesh &AssetCache::createMesh(const std::string &id, const std::vector<float> &vertices, const std::vector<unsigned int> &indices, const std::vector<unsigned int> &attributeSizes)
 {
     try
     {
         std::unique_ptr<Mesh> mesh = std::make_unique<Mesh>();
 
-        mesh->upload(vertices, indices);
+        mesh->upload(vertices, indices, attributeSizes);
         Mesh &ref = *mesh;
         _meshes[id] = std::move(mesh);
         return ref;

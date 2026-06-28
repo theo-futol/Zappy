@@ -59,6 +59,14 @@ class HudRenderer : public IRenderer
      */
     std::string handleClick(double px, double py, const GameState &state) const;
 
+    /**
+     * @brief Whether a click hit the "MENU" button (return to the main menu).
+     * @param px Click X in pixels (window top-left origin).
+     * @param py Click Y in pixels (window top-left origin).
+     * @return True if the menu button was clicked.
+     */
+    bool menuButtonHit(double px, double py) const;
+
   private:
     /**
      * @struct Button
@@ -79,6 +87,7 @@ class HudRenderer : public IRenderer
     static constexpr float SeparatorWidth = 3.0f; ///< Width of the left accent line.
     static constexpr float LogoSize = 36.0f;      ///< Placeholder logo/icon box side.
     static constexpr float ButtonSize = 26.0f;    ///< Side of a time-unit button.
+    static constexpr float MenuButtonWidth = 84.0f; ///< Width of the MENU button.
     static constexpr float ButtonGap = 8.0f;      ///< Gap between the two time-unit buttons.
     static constexpr int MinTimeUnit = 1;         ///< Lowest time unit a button can request.
     static constexpr int MaxTimeUnit = 10000;     ///< Highest time unit a button can request.
@@ -109,6 +118,9 @@ class HudRenderer : public IRenderer
 
     /** @brief Rectangle of the "increase time unit" button. @return The button. */
     Button plusButton() const;
+
+    /** @brief Rectangle of the "MENU" button in the panel title bar. @return The button. */
+    Button menuButton() const;
 
     /**
      * @brief Hit-test of a button against a point (bottom-left origin).

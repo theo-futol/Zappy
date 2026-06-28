@@ -30,6 +30,12 @@ class IEntity
     virtual std::string getEntityType() const = 0;
 
     /**
+     * @brief Team the entity belongs to.
+     * @return The owning team name.
+     */
+    virtual const std::string &team() const = 0;
+
+    /**
      * @brief Protocol number within the entity's category.
      * @return The entity number.
      */

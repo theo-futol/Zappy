@@ -101,6 +101,13 @@ class Window
     static void keyCallback(GLFWwindow *window, int key, int scancode, int action, int mods);
 
     /**
+     * @brief GLFW character callback; pushes a Char event carrying the Unicode codepoint.
+     * @param window Native window.
+     * @param codepoint Unicode codepoint of the typed character.
+     */
+    static void charCallback(GLFWwindow *window, unsigned int codepoint);
+
+    /**
      * @brief GLFW framebuffer-resize callback; pushes a Resize event.
      * @param window Native window.
      * @param width New framebuffer width.

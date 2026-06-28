@@ -14,6 +14,7 @@ enum class EventType
     Resize,
     KeyPress,
     KeyRelease,
+    Char,
     MouseMove,
     MouseButton,
     Scroll
@@ -26,7 +27,7 @@ enum class EventType
 struct Event
 {
     EventType type;     ///< Event category.
-    int key;            ///< Key or mouse button code (backend-neutral).
+    int key;            ///< Key or mouse button code (backend-neutral); Unicode codepoint for Char events.
     bool pressed;       ///< True on press, false on release (keys, mouse buttons).
     double mouseX;      ///< Cursor X position.
     double mouseY;      ///< Cursor Y position.

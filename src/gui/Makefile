@@ -6,16 +6,16 @@ CC  = clang
 BINARY_LOCATION ?= zappy_gui
 
 ## Includes relative to this directory (src/gui), plus vendored libs and pkg-config deps.
-CPPFLAGS = -I. -Ilib/glad/include -Ilib/stb $(shell pkg-config --cflags glfw3 freetype2)
+CPPFLAGS = -I. -Ilib/glad/include -Ilib/stb -Ilib/cgltf $(shell pkg-config --cflags glfw3 freetype2)
 ## -Wno-unused-private-field: tolerate not-yet-used fields of WIP stub classes
 ## (Texture, TextRenderer, HudRenderer). Drop it once those classes are implemented.
 CXXFLAGS = -Wall -Wextra -Werror -std=c++20 -Wno-unused-private-field
 LDLIBS   = $(shell pkg-config --libs glfw3 freetype2) -lGL -ldl
 DEPFLAGS = -MMD -MP
 
-## C++ sources of the GUI + the vendored GLAD loader (C).
+## C++ sources of the GUI + the vendored C loaders (GLAD, cgltf).
 CXX_SRC = $(shell find . -type f -name "*.cpp")
-C_SRC   = lib/glad/src/glad.c
+C_SRC   = lib/glad/src/glad.c lib/cgltf/cgltf.c
 OBJ     = $(CXX_SRC:.cpp=.o) $(C_SRC:.c=.o)
 DEP     = $(OBJ:.o=.d)
 

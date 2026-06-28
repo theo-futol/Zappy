@@ -1,0 +1,11 @@
+Model Information:
+* title:	Alien Egg
+* source:	https://sketchfab.com/3d-models/alien-egg-c715b6f06c5b42f7a95f1973293de2b4
+* author:	resistance-studios (https://sketchfab.com/resistance-studios)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Alien Egg" (https://sketchfab.com/3d-models/alien-egg-c715b6f06c5b42f7a95f1973293de2b4) by resistance-studios (https://sketchfab.com/resistance-studios) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

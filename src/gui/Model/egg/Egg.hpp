@@ -37,7 +37,7 @@ class Egg : public AMapEntity
     std::vector<std::string> infoLines() const override;
 
     /** @brief Team name. @return The team. */
-    const std::string &team() const;
+    const std::string &team() const override;
 
   private:
     std::string _team; ///< Owning team name.

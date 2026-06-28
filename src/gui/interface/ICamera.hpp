@@ -15,6 +15,13 @@ class ICamera
     virtual ~ICamera() = default;
 
     /**
+     * @brief Updates the viewport size so the projection keeps the right aspect ratio.
+     * @param width Viewport width in pixels.
+     * @param height Viewport height in pixels.
+     */
+    virtual void setViewport(int width, int height) = 0;
+
+    /**
      * @brief View matrix for the current frame.
      * @return The view transform.
      */

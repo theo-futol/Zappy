@@ -4,9 +4,13 @@
 #include <memory>
 #include <string>
 
+#include "Graphics/context/GraphicsContext.hpp"
+#include "Graphics/window/Window.hpp"
+#include "Menu/mainmenu/MainMenu.hpp"
 #include "Model/gamestate/GameState.hpp"
 #include "Network/service/NetworkService.hpp"
 #include "Render/rendersystem/RenderSystem.hpp"
+#include "types/RenderMode.hpp"
 
 namespace Zappy
 {
@@ -53,12 +57,19 @@ class Core
     void init();
 
     /**
-     * @brief Runs the main loop until the window closes or the game ends.
+     * @brief Runs the application: alternates the main menu and a game session until the user quits.
      * @throws CoreException On a fatal runtime error.
      */
     void run();
 
   private:
+    /**
+     * @brief Connects and runs one game session with the current host/port/mode.
+     * @param error Receives a message if the connection failed (caller shows it in the menu).
+     * @return True to return to the menu (MENU button, dropped server or failed connect), false to quit.
+     */
+    bool runSession(std::string &error);
+
     /**
      * @brief Parses -p (port) and -h (host) from the command line.
      * @param argc Argument count.
@@ -75,13 +86,28 @@ class Core
      */
     static int parsePort(const std::string &value);
 
-    static constexpr const char *USAGE = "USAGE: ./zappy_gui -p port -h machine"; ///< Command-line usage.
+    /**
+     * @brief Parses the display mode value of the -m flag.
+     * @param value Mode string ("2d" or "3d").
+     * @return The matching RenderMode.
+     * @throws CoreException If the value is neither "2d" nor "3d".
+     */
+    static RenderMode parseMode(const std::string &value);
+
+    static constexpr const char *USAGE = "USAGE: ./zappy_gui -p port -h machine [-m 2d|3d|torus]"; ///< Command-line usage.
+    static constexpr int WindowWidth = 1280;                                                 ///< Initial window width.
+    static constexpr int WindowHeight = 720;                                                 ///< Initial window height.
+    static constexpr const char *WindowTitle = "Zappy";                                      ///< Window title.
 
     GameState _state;                         ///< Single source of truth.
+    std::unique_ptr<Window> _window;          ///< Persistent window/context, shared by the menu and the game.
+    std::unique_ptr<GraphicsContext> _context; ///< Persistent OpenGL state, shared by the menu and the game.
+    std::unique_ptr<MainMenu> _menu;          ///< Persistent configuration menu (shares the window).
     std::unique_ptr<NetworkService> _network; ///< Server connection and pipeline.
     std::unique_ptr<RenderSystem> _render;    ///< Window and rendering.
     std::string _host;                        ///< Server hostname.
     int _port;                                ///< Server port.
+    RenderMode _mode;                         ///< Display mode (-m), defaults to 2D.
 };
 
 } // namespace Zappy

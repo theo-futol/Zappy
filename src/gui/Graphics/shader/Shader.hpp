@@ -59,6 +59,9 @@ class Shader
     /** @brief Sets a mat4 uniform. @param name Uniform name. @param value Matrix value. */
     void setUniform(const std::string &name, const Mat4 &value);
 
+    /** @brief Sets a mat3 uniform. @param name Uniform name. @param value Matrix value. */
+    void setUniform(const std::string &name, const Mat3 &value);
+
     /** @brief Sets a vec3 uniform. @param name Uniform name. @param value Vector value. */
     void setUniform(const std::string &name, const Vec3 &value);
 

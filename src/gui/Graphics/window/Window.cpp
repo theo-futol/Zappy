@@ -45,6 +45,7 @@ void Window::registerCallbacks()
 {
     glfwSetWindowCloseCallback(_window, closeCallback);
     glfwSetKeyCallback(_window, keyCallback);
+    glfwSetCharCallback(_window, charCallback);
     glfwSetFramebufferSizeCallback(_window, framebufferSizeCallback);
     glfwSetScrollCallback(_window, scrollCallback);
     glfwSetMouseButtonCallback(_window, mouseButtonCallback);
@@ -70,9 +71,25 @@ void Window::keyCallback(GLFWwindow *window, int key, int scancode, int action, 
 
     (void)scancode;
     (void)mods;
-    if (key != GLFW_KEY_ESCAPE || action != GLFW_PRESS)
+    if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)
+    {
+        event.type = EventType::Close;
+        fromGlfw(window)->_events.push_back(event);
         return;
-    event.type = EventType::Close;
+    }
+    if (action == GLFW_REPEAT)
+        return;
+    event.type = (action == GLFW_PRESS) ? EventType::KeyPress : EventType::KeyRelease;
+    event.key = key;
+    fromGlfw(window)->_events.push_back(event);
+}
+
+void Window::charCallback(GLFWwindow *window, unsigned int codepoint)
+{
+    Event event{};
+
+    event.type = EventType::Char;
+    event.key = static_cast<int>(codepoint);
     fromGlfw(window)->_events.push_back(event);
 }
 

@@ -56,14 +56,24 @@ class AssetCache
     Shader &loadShader(const std::string &id, const std::string &vertexPath, const std::string &fragmentPath);
 
     /**
+     * @brief Loads an image into a texture and caches it under an id.
+     * @param id Symbolic texture identifier.
+     * @param path Path to the image file.
+     * @return Reference to the cached texture.
+     * @throws AssetCacheException On an image load or decode error.
+     */
+    Texture &loadTexture(const std::string &id, const std::string &path);
+
+    /**
      * @brief Creates and uploads a mesh, then caches it under an id.
      * @param id Symbolic mesh identifier.
      * @param vertices Interleaved vertex attributes.
      * @param indices Element indices.
+     * @param attributeSizes Component count of each attribute, in layout order (see Mesh::upload).
      * @return Reference to the cached mesh.
      * @throws AssetCacheException On a mesh upload error.
      */
-    Mesh &createMesh(const std::string &id, const std::vector<float> &vertices, const std::vector<unsigned int> &indices);
+    Mesh &createMesh(const std::string &id, const std::vector<float> &vertices, const std::vector<unsigned int> &indices, const std::vector<unsigned int> &attributeSizes);
 
     /**
      * @brief Looks up a texture by id.

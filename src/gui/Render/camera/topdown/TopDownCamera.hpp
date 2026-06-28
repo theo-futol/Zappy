@@ -20,7 +20,7 @@ class TopDownCamera : public ICamera
      * @param width Viewport width in pixels.
      * @param height Viewport height in pixels.
      */
-    void setViewport(int width, int height);
+    void setViewport(int width, int height) override;
 
     /** @brief View matrix. @return The view transform. */
     Mat4 view() const override;

@@ -1,9 +1,13 @@
 #include "Model/gamestate/GameState.hpp"
 
+#include <algorithm>
+#include <iterator>
+
 namespace Zappy
 {
 
-GameState::GameState() : _map(), _entities(), _teams(), _timeUnit(0), _winner(), _palette(), _teamColors(), _messages(), _selectedKey(), _hasSelection(false)
+GameState::GameState()
+    : _map(), _entities(), _teams(), _timeUnit(0), _winner(), _palette(), _teamColors(), _messages(), _selectedKey(), _hasSelection(false), _hoveredTile(), _hasHover(false)
 {
 }
 
@@ -64,6 +68,15 @@ Color GameState::teamColor(const std::string &team) const
     return Color{1.0f, 1.0f, 1.0f, 1.0f};
 }
 
+std::size_t GameState::teamIndex(const std::string &team) const
+{
+    auto it = std::find(_teams.begin(), _teams.end(), team);
+
+    if (it != _teams.end())
+        return static_cast<std::size_t>(std::distance(_teams.begin(), it));
+    return 0;
+}
+
 void GameState::setTimeUnit(int timeUnit)
 {
     _timeUnit = timeUnit;
@@ -117,6 +130,27 @@ const IEntity *GameState::selectedEntity() const
     if (it == _entities.end())
         return nullptr;
     return it->second.get();
+}
+
+void GameState::setHoveredTile(GridPosition tile)
+{
+    _hoveredTile = tile;
+    _hasHover = true;
+}
+
+void GameState::clearHoveredTile()
+{
+    _hasHover = false;
+}
+
+bool GameState::hasHoveredTile() const
+{
+    return _hasHover;
+}
+
+GridPosition GameState::hoveredTile() const
+{
+    return _hoveredTile;
 }
 
 } // namespace Zappy

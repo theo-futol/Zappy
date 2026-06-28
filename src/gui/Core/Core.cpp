@@ -8,37 +8,37 @@
 namespace Zappy
 {
 
-Core::Core(int argc, char **argv) : _state(), _network(nullptr), _render(nullptr), _host("localhost"), _port(0)
+Core::Core(int argc, char **argv) : _state(), _window(nullptr), _context(nullptr), _menu(nullptr), _network(nullptr), _render(nullptr), _host(), _port(0), _mode(RenderMode::TwoD)
 {
     parseArguments(argc, argv);
 }
 
 void Core::parseArguments(int argc, char **argv)
 {
-    bool hasPort = false;
-    bool hasHost = false;
-
     for (int i = 1; i < argc; ++i)
     {
         std::string arg = argv[i];
 
         if (arg == "-p" && i + 1 < argc)
-        {
             _port = parsePort(argv[++i]);
-            hasPort = true;
-        }
         else if (arg == "-h" && i + 1 < argc)
-        {
             _host = argv[++i];
-            hasHost = true;
-        }
+        else if (arg == "-m" && i + 1 < argc)
+            _mode = parseMode(argv[++i]);
         else
-        {
             throw CoreException(USAGE);
-        }
     }
-    if (!hasPort || !hasHost)
-        throw CoreException(USAGE);
+}
+
+RenderMode Core::parseMode(const std::string &value)
+{
+    if (value == "2d")
+        return RenderMode::TwoD;
+    if (value == "3d")
+        return RenderMode::ThreeD;
+    if (value == "torus" || value == "3dtorus")
+        return RenderMode::ThreeDTorus;
+    throw CoreException(USAGE);
 }
 
 int Core::parsePort(const std::string &value)
@@ -66,27 +66,52 @@ void Core::init()
 {
     try
     {
+        _window = std::make_unique<Window>(WindowWidth, WindowHeight, WindowTitle);
+        _context = std::make_unique<GraphicsContext>();
+        _context->configureDefaults();
+        _menu = std::make_unique<MainMenu>(*_window, *_context);
+        _menu->init();
+    }
+    catch (const Window::WindowException &e)
+    {
+        throw CoreException("Window error: " + std::string(e.what()));
+    }
+    catch (const MainMenu::MainMenuException &e)
+    {
+        throw CoreException("Menu error: " + std::string(e.what()));
+    }
+}
+
+bool Core::runSession(std::string &error)
+{
+    bool backToMenu = false;
+
+    _state = GameState();
+    try
+    {
         _network = std::make_unique<NetworkService>(_state, std::make_unique<TcpSocket>());
         _network->connect(_host, _port);
-        _render = std::make_unique<RenderSystem>(1280, 720, "Zappy");
+        _render = std::make_unique<RenderSystem>(*_window, *_context, _mode);
         _render->init();
     }
     catch (const NetworkService::NetworkServiceException &e)
     {
-        throw CoreException("Network service error: " + std::string(e.what()));
+        error = std::string("Connexion impossible: ") + e.what();
+        _render.reset();
+        _network.reset();
+        return true;
     }
     catch (const INetwork::INetworkException &e)
     {
-        throw CoreException("Network socket error: " + std::string(e.what()));
+        error = std::string("Connexion impossible: ") + e.what();
+        _render.reset();
+        _network.reset();
+        return true;
     }
     catch (const RenderSystem::RenderSystemException &e)
     {
         throw CoreException("Render system error: " + std::string(e.what()));
     }
-}
-
-void Core::run()
-{
     while (_render->processInput(_state))
     {
         try
@@ -97,9 +122,38 @@ void Core::run()
         }
         catch (const NetworkService::NetworkServiceException &e)
         {
-            throw CoreException("Network error: " + std::string(e.what()));
+            error = std::string("Connexion perdue: ") + e.what();
+            backToMenu = true;
+            break;
         }
         _render->render(_state);
+    }
+    if (_render->wantsMenu())
+        backToMenu = true;
+    _render.reset();
+    _network.reset();
+    return backToMenu;
+}
+
+void Core::run()
+{
+    std::string error;
+
+    while (true)
+    {
+        _menu->setDefaults(_host, _port, _mode);
+        _menu->setError(error);
+        error.clear();
+
+        MenuConfig config = _menu->run();
+
+        if (config.result == MenuResult::Quit)
+            break;
+        _host = config.host;
+        _port = config.port;
+        _mode = config.mode;
+        if (!runSession(error))
+            break;
     }
 }
 

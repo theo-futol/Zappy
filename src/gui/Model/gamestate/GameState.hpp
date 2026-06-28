@@ -11,6 +11,7 @@
 #include "interface/IEntity.hpp"
 #include "types/Color.hpp"
 #include "types/EntityKey.hpp"
+#include "types/GridPosition.hpp"
 #include "types/LogMessage.hpp"
 
 namespace Zappy
@@ -73,6 +74,13 @@ class GameState
      */
     Color teamColor(const std::string &team) const;
 
+    /**
+     * @brief Arrival index of a team, i.e. its position in registration order.
+     * @param team Team name.
+     * @return The 0-based index, or 0 if the team is unknown.
+     */
+    std::size_t teamIndex(const std::string &team) const;
+
     /** @brief Sets the current time unit. @param timeUnit New time unit. */
     void setTimeUnit(int timeUnit);
 
@@ -110,6 +118,21 @@ class GameState
      */
     const IEntity *selectedEntity() const;
 
+    /**
+     * @brief Sets the tile the cursor currently hovers (for highlighting).
+     * @param tile Hovered tile coordinates.
+     */
+    void setHoveredTile(GridPosition tile);
+
+    /** @brief Clears the hovered tile (cursor off the map). */
+    void clearHoveredTile();
+
+    /** @brief Whether a tile is currently hovered. @return True if hovering a tile. */
+    bool hasHoveredTile() const;
+
+    /** @brief Currently hovered tile (valid only when hasHoveredTile()). @return The tile. */
+    GridPosition hoveredTile() const;
+
   private:
     static constexpr std::size_t MaxMessages = 6; ///< Cap on retained log lines.
 
@@ -123,6 +146,8 @@ class GameState
     std::vector<LogMessage> _messages;                       ///< Bounded log of recent messages.
     EntityKey _selectedKey;                                  ///< Identity of the selected entity.
     bool _hasSelection;                                      ///< Whether an entity is selected.
+    GridPosition _hoveredTile;                               ///< Tile under the cursor (when hovering).
+    bool _hasHover;                                          ///< Whether a tile is hovered.
 };
 
 } // namespace Zappy

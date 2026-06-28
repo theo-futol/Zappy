@@ -56,9 +56,20 @@ HudRenderer::Button HudRenderer::minusButton() const
     return Button{static_cast<float>(_width) - Margin - 2.0f * ButtonSize - ButtonGap, headerLineY() - 6.0f, ButtonSize, ButtonSize};
 }
 
+HudRenderer::Button HudRenderer::menuButton() const
+{
+    return Button{static_cast<float>(_width) - Margin - MenuButtonWidth, static_cast<float>(_height) - TitleHeight + (TitleHeight - ButtonSize) / 2.0f, MenuButtonWidth,
+                  ButtonSize};
+}
+
 bool HudRenderer::contains(const Button &button, float px, float py)
 {
     return px >= button.x && px <= button.x + button.width && py >= button.y && py <= button.y + button.height;
+}
+
+bool HudRenderer::menuButtonHit(double px, double py) const
+{
+    return contains(menuButton(), static_cast<float>(px), static_cast<float>(_height) - static_cast<float>(py));
 }
 
 std::string HudRenderer::handleClick(double px, double py, const GameState &state) const
@@ -86,6 +97,7 @@ void HudRenderer::render(const RenderContext &context)
     float teamsTop = headerY - 3.0f * LineHeight;
     Button minus = minusButton();
     Button plus = plusButton();
+    Button menu = menuButton();
 
     if (shader != nullptr && mesh != nullptr)
     {
@@ -106,12 +118,14 @@ void HudRenderer::render(const RenderContext &context)
         }
         drawRect(*shader, *mesh, minus.x, minus.y, minus.width, minus.height, ButtonColor);
         drawRect(*shader, *mesh, plus.x, plus.y, plus.width, plus.height, ButtonColor);
+        drawRect(*shader, *mesh, menu.x, menu.y, menu.width, menu.height, ButtonColor);
     }
     Color label{0.80f, 0.83f, 0.90f, 1.0f};
     _text.drawText("ZAPPY", contentX + LogoSize + 14.0f, static_cast<float>(_height) - TitleHeight / 2.0f - 8.0f, Color{0.07f, 0.07f, 0.09f, 1.0f});
     _text.drawText("TIME UNIT  " + std::to_string(state.timeUnit()), contentX, headerY, label);
     _text.drawText("-", minus.x + 9.0f, headerY, label);
     _text.drawText("+", plus.x + 6.0f, headerY, label);
+    _text.drawText("MENU", menu.x + 10.0f, menu.y + 5.0f, Color{0.95f, 0.55f, 0.15f, 1.0f});
     _text.drawText("TEAMS", contentX, headerY - 2.0f * LineHeight, label);
     int row = 0;
     for (const std::string &team : state.teams())
