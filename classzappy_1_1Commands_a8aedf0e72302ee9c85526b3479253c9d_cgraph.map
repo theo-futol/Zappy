@@ -1,24 +1,26 @@
 <map id="zappy::Commands::Look" name="zappy::Commands::Look">
-<area shape="rect" id="Node000001" title="Returns what the player sees on the tiles within its vision cone." alt="" coords="5,213,187,238"/>
-<area shape="rect" id="Node000002" href="$classzappy_1_1Player.html#a33f33f30fdbf95af468119bc63bd7caa" title="This player&#39;s stable logical id (its GUI player number)." alt="" coords="487,64,637,89"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="99,212,114,172,141,120,181,66,205,43,233,25,271,10,311,4,352,4,393,9,467,30,526,55,524,60,465,35,391,15,352,9,312,9,273,15,236,29,209,47,185,70,146,122,119,175,104,214"/>
-<area shape="rect" id="Node000003" href="$classzappy_1_1Player.html#a70dc9f5c05ea552c47350da37b3bd027" title="Current elevation level (1..8)." alt="" coords="250,40,423,65"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="103,211,152,145,190,107,233,74,246,67,248,72,236,78,193,111,156,149,107,214"/>
-<area shape="rect" id="Node000004" href="$classzappy_1_1World.html#ad35316e4e1203c45ad2f853319775432" title="Map dimensions as (width, height)." alt="" coords="242,89,431,114"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="109,211,161,168,196,144,234,123,252,116,254,121,236,128,199,148,164,172,113,215"/>
-<area shape="rect" id="Node000005" href="$classzappy_1_1World.html#a43fb08ea54d522c20d2c27ed281297f4" title="Looks up a player by its logical id, or nullptr if none matches." alt="" coords="235,138,439,164"/>
-<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="128,210,234,172,263,164,264,170,235,177,130,215"/>
-<area shape="rect" id="Node000006" href="$classzappy_1_1Client.html#ade4edd70698f2497e09f736734d77ab0" title="Returns the logical id of this client&#39;s player, or &#45;1 if it has none." alt="" coords="243,188,431,213"/>
-<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="187,213,229,209,229,214,187,219"/>
-<area shape="rect" id="Node000007" href="$classzappy_1_1Player.html#aff283e814b7f01d4ad7398d7c20794e6" title="Current tile position." alt="" coords="241,237,432,262"/>
-<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="187,232,228,236,227,241,187,237"/>
-<area shape="rect" id="Node000008" href="$classzappy_1_1Player.html#a90f0e1c135399b478553f45d2eea9af2" title="Current facing, in degrees (see Degrees)." alt="" coords="240,286,433,312"/>
-<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="132,236,235,271,268,280,267,285,234,276,130,241"/>
-<area shape="rect" id="Node000009" href="$classzappy_1_1World.html#a9fce895cc2d62e61b943f7d9e03471db" title="Returns the tile at the given coordinates." alt="" coords="251,336,423,361"/>
-<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="113,236,165,278,199,301,236,320,258,329,256,334,234,325,197,305,162,282,110,240"/>
-<area shape="rect" id="Node000010" href="$namespacezappy.html#aef0d81865578aa094dcbd509e0055a81" title="Converts an ItemType to its protocol name (e.g. LINEMATE &#45;&gt; &quot;linemate&quot;)." alt="" coords="247,385,427,410"/>
-<area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="108,237,157,301,194,338,236,370,252,378,250,383,233,374,190,342,153,305,103,240"/>
-<area shape="rect" id="Node000011" href="$classzappy_1_1Logger.html#abab39dcd03894b824e5c7b03462dc483" title="Prints one log line to stdout. Omits the &quot;(...)&quot; group when fields is empty." alt="" coords="267,434,407,460"/>
-<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="105,237,122,274,150,323,188,376,211,399,236,419,255,429,252,434,233,424,207,403,184,379,145,326,117,276,100,240"/>
-<area shape="poly" id="edge5_Node000005_Node000002" title=" " alt="" coords="394,136,438,123,519,92,521,97,440,128,395,141"/>
+<area shape="rect" id="Node000001" title="Returns what the player sees on the tiles within its vision cone." alt="" coords="5,269,187,294"/>
+<area shape="rect" id="Node000002" href="$classzappy_1_1ServerException.html#a2f00549ed3cc8295caaf6a5399ba17dc" title="Builds the exception; the throw site is captured automatically via the defaulted source_location argu..." alt="" coords="249,5,424,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="100,268,116,228,144,173,183,114,207,87,233,62,252,49,255,54,236,66,211,90,187,117,149,176,121,230,104,270"/>
+<area shape="rect" id="Node000003" href="$classzappy_1_1Player.html#a33f33f30fdbf95af468119bc63bd7caa" title="This player&#39;s stable logical id (its GUI player number)." alt="" coords="487,145,637,170"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="100,267,117,233,145,187,184,141,208,121,234,106,272,92,312,86,352,87,393,92,467,112,525,136,523,141,465,118,392,97,352,92,312,92,273,97,236,110,211,126,188,145,150,190,122,235,105,270"/>
+<area shape="rect" id="Node000004" href="$classzappy_1_1Player.html#a70dc9f5c05ea552c47350da37b3bd027" title="Current elevation level (1..8)." alt="" coords="250,121,423,146"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="106,267,156,212,193,181,233,155,248,148,251,153,236,160,196,186,160,216,110,270"/>
+<area shape="rect" id="Node000005" href="$classzappy_1_1World.html#ad35316e4e1203c45ad2f853319775432" title="Map dimensions as (width, height)." alt="" coords="242,170,431,195"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="116,266,168,235,234,204,257,197,258,202,236,209,170,240,118,271"/>
+<area shape="rect" id="Node000006" href="$classzappy_1_1World.html#a43fb08ea54d522c20d2c27ed281297f4" title="Looks up a player by its logical id, or nullptr if none matches." alt="" coords="235,219,439,245"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="158,266,260,245,261,250,159,271"/>
+<area shape="rect" id="Node000007" href="$classzappy_1_1Client.html#ade4edd70698f2497e09f736734d77ab0" title="Returns the logical id of this client&#39;s player, or &#45;1 if it has none." alt="" coords="243,269,431,294"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="187,279,229,279,229,284,187,284"/>
+<area shape="rect" id="Node000008" href="$classzappy_1_1Player.html#aff283e814b7f01d4ad7398d7c20794e6" title="Current tile position." alt="" coords="241,318,432,343"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="159,291,261,313,260,318,158,297"/>
+<area shape="rect" id="Node000009" href="$classzappy_1_1Player.html#a90f0e1c135399b478553f45d2eea9af2" title="Current facing, in degrees (see Degrees)." alt="" coords="240,367,433,393"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="119,292,171,322,236,352,262,361,260,366,234,357,168,326,116,296"/>
+<area shape="rect" id="Node000010" href="$classzappy_1_1World.html#a9fce895cc2d62e61b943f7d9e03471db" title="Returns the tile at the given coordinates." alt="" coords="251,417,423,442"/>
+<area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="110,292,161,346,196,376,236,402,254,410,252,415,233,406,193,380,157,350,106,296"/>
+<area shape="rect" id="Node000011" href="$namespacezappy.html#aef0d81865578aa094dcbd509e0055a81" title="Converts an ItemType to its protocol name (e.g. LINEMATE &#45;&gt; &quot;linemate&quot;)." alt="" coords="247,466,427,491"/>
+<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="106,293,124,325,153,368,191,413,236,451,250,459,247,463,233,456,187,417,149,371,120,328,101,295"/>
+<area shape="rect" id="Node000012" href="$classzappy_1_1Logger.html#abab39dcd03894b824e5c7b03462dc483" title="Prints one log line to stdout. Omits the &quot;(...)&quot; group when fields is empty." alt="" coords="267,515,407,541"/>
+<area shape="poly" id="edge12_Node000001_Node000012" title=" " alt="" coords="104,293,119,334,146,390,185,450,209,477,236,500,255,511,253,516,233,505,205,481,181,453,142,393,114,336,99,295"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="394,217,438,204,519,173,521,178,440,209,395,222"/>
 </map>

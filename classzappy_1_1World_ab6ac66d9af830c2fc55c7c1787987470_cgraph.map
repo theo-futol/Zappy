@@ -1,7 +1,5 @@
 <map id="zappy::World::checkWinningCondition" name="zappy::World::checkWinningCondition">
-<area shape="rect" id="Node000001" title="Returns true once a team has reached the win condition (6 players lvl 8)." alt="" coords="5,23,209,63"/>
-<area shape="rect" id="Node000002" href="$classzappy_1_1Player.html#a70dc9f5c05ea552c47350da37b3bd027" title="Current elevation level (1..8)." alt="" coords="257,5,431,31"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="209,30,243,26,244,31,210,35"/>
-<area shape="rect" id="Node000003" href="$classzappy_1_1Player.html#ad714c54e4fcee0484d05ad253ab10ccb" title=" " alt="" coords="257,55,431,80"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="210,51,244,55,243,60,209,56"/>
+<area shape="rect" id="Node000001" title="Returns true once a team has reached the win condition (6 players lvl 8)." alt="" coords="5,5,209,45"/>
+<area shape="rect" id="Node000002" href="$classzappy_1_1Player.html#a70dc9f5c05ea552c47350da37b3bd027" title="Current elevation level (1..8)." alt="" coords="257,13,431,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="210,23,244,23,244,28,210,28"/>
 </map>
