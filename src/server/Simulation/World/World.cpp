@@ -214,7 +214,12 @@ void World::addTeam(const std::string &name, int teamID, int initialSlots)
 {
     auto team = std::make_shared<Team>(name, teamID, 0);
     for (int i = 0; i < initialSlots; ++i)
-        team->addEgg(position{rand() % _mapSize.first, rand() % _mapSize.second});
+    {
+        position eggPos{rand() % _mapSize.first, rand() % _mapSize.second};
+        int eggId = team->addEgg(eggPos);
+        if (_broadcastQueue)
+            _broadcastQueue->push("enw " + std::to_string(eggId) + " -1 " + std::to_string(eggPos.x) + " " + std::to_string(eggPos.y) + "\n");
+    }
     _teams.push_back(team);
 }
 
@@ -238,14 +243,16 @@ int World::addPlayer(int fd, const std::string &teamName)
         return -1;
     std::vector<std::pair<position, int>> hatchable;
     for (const auto &eggGroup : team->getEggs())
-        for (int eggId : eggGroup.second)
-            hatchable.emplace_back(eggGroup.first, eggId);
+        for (const Egg &egg : eggGroup.second)
+            hatchable.emplace_back(eggGroup.first, egg.id);
     if (hatchable.empty())
         return -1; // no egg to hatch from: caller disconnects the client
 
     const auto &[spawn, eggId] = hatchable[rand() % hatchable.size()];
     team->removeEgg(spawn, 1, eggId);
     ++team->_slotsOccupied;
+    if (_broadcastQueue)
+        _broadcastQueue->push("ebo " + std::to_string(eggId) + "\n");
 
     int id = _nextPlayerId;
     _nextPlayerId++;
@@ -444,4 +451,15 @@ void World::removePlayer(int id)
         (*it)->getTeam().removePlayer();
     _players.erase(it);
 }
+
+Map &World::getMap()
+{
+    return _map;
+}
+
+Map const &World::getMap() const
+{
+    return _map;
+}
+
 } // namespace zappy

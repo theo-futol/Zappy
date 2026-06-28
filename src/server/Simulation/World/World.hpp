@@ -150,5 +150,8 @@ class World
     /// @brief Returns the team that has won the game, or nullptr if no team has won.
     /// @return 
     Team *getWinningTeam() const;
+
+    Map &getMap();
+    const Map &getMap() const;
 };
 } // namespace zappy

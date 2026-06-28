@@ -75,5 +75,7 @@ namespace zappy
         void _dispatch(const std::string &line, std::vector<std::unique_ptr<Client>> &clients);
         /// @brief Handles the first line of an AI client: the team-name handshake.
         void _handleHandshake(const std::string &teamName);
+        /// @brief Handles the first line of a graphic client: sends the initial world state.
+        void _handleGuiClient();
     };
 } // namespace zappy
