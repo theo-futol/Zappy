@@ -27,4 +27,14 @@ const ResourceSet &Tile::resources() const
     return _resources;
 }
 
+bool Tile::incanting() const
+{
+    return _incanting;
+}
+
+void Tile::setIncanting(bool incanting)
+{
+    _incanting = incanting;
+}
+
 } // namespace Zappy

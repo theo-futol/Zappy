@@ -2,6 +2,8 @@
 
 #include <array>
 #include <cstddef>
+#include <string>
+#include <vector>
 
 #include "types/ResourceType.hpp"
 
@@ -35,6 +37,13 @@ class ResourceSet
      * @param value New count.
      */
     void set(ResourceType type, int value);
+
+    /**
+     * @brief One "Name: count" line per resource, for display in a HUD bubble.
+     * @param skipEmpty When true, resources with a count of 0 are omitted.
+     * @return The description lines (empty if skipEmpty and nothing is present).
+     */
+    std::vector<std::string> describe(bool skipEmpty) const;
 
   private:
     std::array<int, Count> _counts; ///< Per-resource counts indexed by ResourceType.

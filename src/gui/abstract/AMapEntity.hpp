@@ -40,6 +40,9 @@ class AMapEntity : public IEntity
     /** @brief Current facing orientation. @return The orientation. */
     Orientation orientation() const override;
 
+    /** @brief Elevation level; 0 by default (entities without a level). @return The level. */
+    int level() const override;
+
     /** @brief Updates the grid position. @param position New grid position. */
     void setPosition(GridPosition position) override;
 

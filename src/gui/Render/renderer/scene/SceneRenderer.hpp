@@ -98,6 +98,41 @@ class SceneRenderer : public IRenderer
     void drawHighlight(Shader &shader, const WorldPoint &point, const Vec3 &color) const;
 
     /**
+     * @brief Draws a flat square marker of a given size on a tile, lying on the surface.
+     * @param shader Phong shader, already bound with the frame uniforms.
+     * @param point Surface point of the tile.
+     * @param sizeTiles Side length of the marker, in tiles.
+     * @param color Marker color.
+     */
+    void drawMarker(Shader &shader, const WorldPoint &point, float sizeTiles, const Vec3 &color) const;
+
+    /**
+     * @brief Draws a flat ring on a tile, lying on the surface (expanding broadcast ripple).
+     * @param shader Phong shader, already bound with the frame uniforms.
+     * @param point Surface point of the tile.
+     * @param diameter Outer diameter of the ring, in tiles.
+     * @param color Ring color.
+     */
+    void drawRing(Shader &shader, const WorldPoint &point, float diameter, const Vec3 &color) const;
+
+    /**
+     * @brief Spawns rings for new broadcasts and draws the active expanding ripples.
+     * @param shader Phong shader, already bound with the frame uniforms.
+     * @param context Per-frame context (broadcast list, mapping and time).
+     */
+    void drawBroadcasts(Shader &shader, const RenderContext &context);
+
+    /**
+     * @struct BroadcastPing
+     * @brief An in-flight broadcast ripple: where it started and when.
+     */
+    struct BroadcastPing
+    {
+        GridPosition origin; ///< Tile the ripple expands from.
+        float start;         ///< Time the ripple began (seconds).
+    };
+
+    /**
      * @brief Builds the orthonormal surface frame at a tile (tangent = +X, normal = +Y, bitangent = +Z).
      * @param point Surface point (position + normal + tangent) from the projection.
      * @return A rotation matrix mapping a model's local axes onto the surface.
@@ -125,6 +160,7 @@ class SceneRenderer : public IRenderer
         int clip = -1;              ///< Currently playing transform clip, or -1 when settled.
         float clipStart = 0.0f;     ///< Time the current transform clip started (seconds).
         bool initialized = false;   ///< Whether the tiles have been seeded for this entity.
+        int lastLevel = -1;         ///< Last seen player level (to detect a level-up); -1 until seeded.
     };
 
     /**
@@ -155,11 +191,12 @@ class SceneRenderer : public IRenderer
      * @param state Entity animation state (from updateMovement).
      * @param model The entity's render model (queried for clip indices and durations).
      * @param time Current time in seconds.
+     * @param level Current player level (a rise plays the hero transform once).
      * @param clip Output: clip index to pose.
      * @param poseTime Output: time within that clip to pose.
      * @return True if a valid Transformer pose was produced; false to fall back to a default.
      */
-    bool transformerPose(EntityAnim &state, const RenderModel &model, float time, int &clip, float &poseTime);
+    bool transformerPose(EntityAnim &state, const RenderModel &model, float time, int level, int &clip, float &poseTime);
 
     AssetCache &_assets;                  ///< Shared GPU resource cache.
     std::unique_ptr<RenderModel> _ground; ///< Ground model, tiled per map cell.
@@ -168,26 +205,36 @@ class SceneRenderer : public IRenderer
     std::vector<std::unique_ptr<RenderModel>> _eggs;      ///< Egg model per theme (index = theme).
     std::vector<std::unique_ptr<RenderModel>> _resources; ///< Resource model per ResourceType (index = type).
     Mesh *_highlight;                                     ///< Flat quad for tile markers (owned by the AssetCache).
+    Mesh *_ring;                                          ///< Flat ring for broadcast ripples (owned by the AssetCache).
     float _torusMajor;                                   ///< Torus major radius R (world units), set by the render system.
     float _torusMinor;                                   ///< Torus minor radius r (world units), set by the render system.
     bool _torusWorld;                                    ///< True to draw the torus shell, false for the flat tiled ground.
     std::map<EntityKey, EntityAnim> _entityAnim;         ///< Per-entity Transformer animation state, across frames.
+    std::vector<BroadcastPing> _pings;                   ///< Active broadcast ripples being animated.
+    long _seenBroadcastSeq = 0;                          ///< Highest broadcast sequence already turned into a ripple.
 
     static constexpr const char *CrystalModelPath = "assets/resources/crystal/scene.gltf"; ///< Crystal pack (sliced per stone).
     static constexpr const char *FoodModelPath = "assets/resources/food/scene.gltf";       ///< Food model (used whole).
     static constexpr float ResourceScale = 0.3f;                                           ///< Size of a resource model, in tiles.
     static constexpr float ResourceSpacing = 0.28f;                                        ///< In-tile spacing between resource spots.
     static constexpr float HighlightLift = 0.02f;                                          ///< Height of a tile marker above the ground.
+    static constexpr float BroadcastLift = 0.10f;                                          ///< Height of a broadcast ring above the ground (avoids z-fighting).
     static constexpr float HighlightSize = 0.95f;                                          ///< Side of a tile marker, in tiles.
     static constexpr float IdleBeforeRobot = 1.5f;                                         ///< Seconds of stillness before morphing back to robot.
     static constexpr float MoveDuration = 0.3f;                                            ///< Seconds to slide from one tile to the next.
+    static constexpr float IncantSpinSpeed = 220.0f;                                       ///< Degrees per second a player spins while incanting.
+    static constexpr float BroadcastDuration = 1.1f;                                       ///< Seconds a broadcast ripple expands.
+    static constexpr float BroadcastMaxTiles = 9.0f;                                       ///< Final diameter of a broadcast ripple, in tiles.
     static constexpr const char *VehicleClipName = "transform_to_vehicle";                 ///< Clip morphing robot -> vehicle.
     static constexpr const char *RobotClipName = "transform_to_robot";                     ///< Clip morphing vehicle -> robot.
+    static constexpr const char *HeroClipName = "transform_to_robot_hero";                 ///< Flashier transform played on level-up.
 
     static const Vec3 LightColor;   ///< Color/intensity of the light.
     static const Vec3 ModelColor;   ///< Base color used for untextured primitives.
     static const Vec3 HoverColor;   ///< Marker color of the hovered tile.
     static const Vec3 SelectColor;  ///< Marker color of the selected entity's tile.
+    static const Vec3 IncantColor;     ///< Marker color pulsing under an incanting tile.
+    static const Vec3 BroadcastColor;  ///< Color of a broadcast ripple.
 };
 
 } // namespace Zappy

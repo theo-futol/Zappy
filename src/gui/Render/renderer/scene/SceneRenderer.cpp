@@ -32,16 +32,20 @@ const Vec3 SceneRenderer::LightColor(1.0f, 1.0f, 1.0f);
 const Vec3 SceneRenderer::ModelColor(0.70f, 0.80f, 0.90f);
 const Vec3 SceneRenderer::HoverColor(1.0f, 0.9f, 0.3f);
 const Vec3 SceneRenderer::SelectColor(0.2f, 1.0f, 0.6f);
+const Vec3 SceneRenderer::IncantColor(0.6f, 0.2f, 1.0f);
+const Vec3 SceneRenderer::BroadcastColor(0.45f, 0.80f, 0.95f);
 
 SceneRenderer::SceneRenderer(AssetCache &assets, const Model &ground, const std::string &groundDirectory)
     : _assets(assets), _ground(std::make_unique<RenderModel>(ground, assets, "ground", groundDirectory)), _registry(), _golems(), _eggs(), _resources(), _highlight(nullptr),
-      _torusMajor(12.5f), _torusMinor(3.0f), _torusWorld(true)
+      _ring(nullptr), _torusMajor(12.5f), _torusMinor(3.0f), _torusWorld(true)
 {
     MeshData highlightQuad = Primitives::groundQuad();
+    MeshData broadcastRing = Primitives::groundRing(48, 0.22f);
 
     loadThemes(assets);
     loadResources(assets);
     _highlight = &assets.createMesh("highlight_quad", highlightQuad.vertices, highlightQuad.indices, {3, 3, 2});
+    _ring = &assets.createMesh("broadcast_ring", broadcastRing.vertices, broadcastRing.indices, {3, 3, 2});
 }
 
 void SceneRenderer::setTorusRadii(float major, float minor)
@@ -84,14 +88,52 @@ Mat4 SceneRenderer::tileFrame(const WorldPoint &point)
     return frame;
 }
 
-void SceneRenderer::drawHighlight(Shader &shader, const WorldPoint &point, const Vec3 &color) const
+void SceneRenderer::drawMarker(Shader &shader, const WorldPoint &point, float sizeTiles, const Vec3 &color) const
 {
-    Mat4 model = glm::translate(Mat4(1.0f), point.position + point.normal * HighlightLift) * tileFrame(point) * glm::scale(Mat4(1.0f), Vec3(HighlightSize, 1.0f, HighlightSize));
+    Mat4 model = glm::translate(Mat4(1.0f), point.position + point.normal * HighlightLift) * tileFrame(point) * glm::scale(Mat4(1.0f), Vec3(sizeTiles, 1.0f, sizeTiles));
 
     shader.setUniform("uNormalMatrix", Mat3(1.0f));
     shader.setUniform("uHasTexture", 0);
     shader.setUniform("uBaseColor", color);
     _highlight->drawInstanced(std::vector<Mat4>{model});
+}
+
+void SceneRenderer::drawHighlight(Shader &shader, const WorldPoint &point, const Vec3 &color) const
+{
+    drawMarker(shader, point, HighlightSize, color);
+}
+
+void SceneRenderer::drawRing(Shader &shader, const WorldPoint &point, float diameter, const Vec3 &color) const
+{
+    Mat4 model = glm::translate(Mat4(1.0f), point.position + point.normal * BroadcastLift) * tileFrame(point) * glm::scale(Mat4(1.0f), Vec3(diameter, 1.0f, diameter));
+
+    shader.setUniform("uNormalMatrix", Mat3(1.0f));
+    shader.setUniform("uHasTexture", 0);
+    shader.setUniform("uBaseColor", color);
+    _ring->drawInstanced(std::vector<Mat4>{model});
+}
+
+void SceneRenderer::drawBroadcasts(Shader &shader, const RenderContext &context)
+{
+    for (const GameState::Broadcast &broadcast : context.state.broadcasts())
+        if (broadcast.sequence > _seenBroadcastSeq)
+        {
+            _seenBroadcastSeq = broadcast.sequence;
+            _pings.push_back(BroadcastPing{broadcast.origin, context.time});
+        }
+    for (const BroadcastPing &ping : _pings)
+    {
+        float progress = (context.time - ping.start) / BroadcastDuration;
+
+        if (progress < 0.0f || progress > 1.0f)
+            continue;
+
+        WorldPoint point = context.mapping.toWorld(ping.origin.x, ping.origin.y);
+        float diameter = glm::mix(0.4f, BroadcastMaxTiles, progress);
+
+        drawRing(shader, point, diameter, BroadcastColor);
+    }
+    _pings.erase(std::remove_if(_pings.begin(), _pings.end(), [&](const BroadcastPing &ping) { return context.time - ping.start > BroadcastDuration; }), _pings.end());
 }
 
 void SceneRenderer::loadResources(AssetCache &assets)
@@ -192,13 +234,25 @@ WorldPoint SceneRenderer::entityWorld(const EntityAnim &state, const IProjection
     return result;
 }
 
-bool SceneRenderer::transformerPose(EntityAnim &state, const RenderModel &model, float time, int &clip, float &poseTime)
+bool SceneRenderer::transformerPose(EntityAnim &state, const RenderModel &model, float time, int level, int &clip, float &poseTime)
 {
     int vehicleClip = model.animationIndex(VehicleClipName);
     int robotClip = model.animationIndex(RobotClipName);
+    int heroClip = model.animationIndex(HeroClipName);
 
     if (vehicleClip < 0 || robotClip < 0)
         return false;
+    if (heroClip < 0)
+        heroClip = robotClip;
+    if (state.lastLevel < 0)
+        state.lastLevel = level;
+    else if (level > state.lastLevel)
+    {
+        state.clip = heroClip;
+        state.clipStart = time;
+        state.vehicle = false;
+    }
+    state.lastLevel = level;
 
     bool wantVehicle = (time - state.moveStart) < IdleBeforeRobot;
 
@@ -275,9 +329,11 @@ void SceneRenderer::render(const RenderContext &context)
         WorldPoint point = entityWorld(state, context.mapping, context.time);
         std::size_t theme = context.state.teamIndex(entity.team()) % themeCount;
         bool isEgg = entity.getEntityType() == "egg";
+        bool incanting = map.at(entity.position().x, entity.position().y).incanting();
         const RenderModel &model = isEgg ? *_eggs[theme] : *_golems[theme];
         float yaw = orientationYaw(entity.orientation()) * (_torusWorld ? 1.0f : -1.0f);
-        Mat4 facing = glm::rotate(Mat4(1.0f), glm::radians(yaw), Vec3(0.0f, 1.0f, 0.0f));
+        float spin = (incanting && !isEgg) ? std::fmod(context.time * IncantSpinSpeed, 360.0f) : 0.0f;
+        Mat4 facing = glm::rotate(Mat4(1.0f), glm::radians(yaw + spin), Vec3(0.0f, 1.0f, 0.0f));
         Mat4 base = glm::translate(Mat4(1.0f), point.position) * tileFrame(point) * facing * model.unitTransform();
 
         if (model.skinned())
@@ -285,7 +341,7 @@ void SceneRenderer::render(const RenderContext &context)
             int clip = 0;
             float poseTime = 0.0f;
 
-            if (isEgg || !transformerPose(state, model, context.time, clip, poseTime))
+            if (isEgg || !transformerPose(state, model, context.time, entity.level(), clip, poseTime))
             {
                 float duration = model.animationDuration(0);
 
@@ -307,6 +363,12 @@ void SceneRenderer::render(const RenderContext &context)
             WorldPoint point = context.mapping.toWorld(gridX, gridY);
             Mat4 frame = tileFrame(point);
 
+            if (tile.incanting())
+            {
+                float pulse = 0.45f + 0.55f * std::sin(context.time * 6.0f);
+
+                drawHighlight(*shader, point, IncantColor * pulse);
+            }
             for (std::size_t type = 0; type < ResourceSet::Count; ++type)
             {
                 if (_resources[type] == nullptr || tile.resources().get(static_cast<ResourceType>(type)) <= 0)
@@ -331,6 +393,7 @@ void SceneRenderer::render(const RenderContext &context)
     }
     if (selected != nullptr)
         drawHighlight(*shader, context.mapping.toWorld(selected->position().x, selected->position().y), SelectColor);
+    drawBroadcasts(*shader, context);
 }
 
 } // namespace Zappy

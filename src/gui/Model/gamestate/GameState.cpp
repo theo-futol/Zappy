@@ -7,7 +7,8 @@ namespace Zappy
 {
 
 GameState::GameState()
-    : _map(), _entities(), _teams(), _timeUnit(0), _winner(), _palette(), _teamColors(), _messages(), _selectedKey(), _hasSelection(false), _hoveredTile(), _hasHover(false)
+    : _map(), _entities(), _teams(), _timeUnit(0), _winner(), _palette(), _teamColors(), _messages(), _selectedKey(), _hasSelection(false), _hoveredTile(), _hasHover(false),
+      _selectedTile(), _hasSelectedTile(false), _broadcasts(), _broadcastSeq(0)
 {
 }
 
@@ -109,6 +110,18 @@ const std::vector<LogMessage> &GameState::messages() const
     return _messages;
 }
 
+void GameState::addBroadcast(int player, GridPosition origin)
+{
+    _broadcasts.push_back(Broadcast{++_broadcastSeq, player, origin});
+    if (_broadcasts.size() > MaxBroadcasts)
+        _broadcasts.erase(_broadcasts.begin());
+}
+
+const std::vector<GameState::Broadcast> &GameState::broadcasts() const
+{
+    return _broadcasts;
+}
+
 void GameState::selectEntity(const EntityKey &key)
 {
     _selectedKey = key;
@@ -151,6 +164,27 @@ bool GameState::hasHoveredTile() const
 GridPosition GameState::hoveredTile() const
 {
     return _hoveredTile;
+}
+
+void GameState::selectTile(GridPosition tile)
+{
+    _selectedTile = tile;
+    _hasSelectedTile = true;
+}
+
+void GameState::clearSelectedTile()
+{
+    _hasSelectedTile = false;
+}
+
+bool GameState::hasSelectedTile() const
+{
+    return _hasSelectedTile;
+}
+
+GridPosition GameState::selectedTile() const
+{
+    return _selectedTile;
 }
 
 } // namespace Zappy

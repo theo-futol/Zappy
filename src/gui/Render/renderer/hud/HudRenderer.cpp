@@ -9,7 +9,9 @@
 
 #include "Command/commandbuilder/CommandBuilder.hpp"
 #include "Model/gamestate/GameState.hpp"
+#include "Model/tile/Tile.hpp"
 #include "interface/IEntity.hpp"
+#include "types/GridPosition.hpp"
 #include "types/LogMessage.hpp"
 #include "types/Mat.hpp"
 
@@ -138,6 +140,29 @@ void HudRenderer::render(const RenderContext &context)
         float winnerY = teamsTop - static_cast<float>(state.teams().size()) * LineHeight - LineHeight;
 
         _text.drawText("WINNER  " + state.winner(), contentX, winnerY, Color{0.35f, 1.0f, 0.45f, 1.0f});
+    }
+    if (state.hasSelectedTile())
+    {
+        GridPosition tilePos = state.selectedTile();
+        const Tile &tile = state.map().at(tilePos.x, tilePos.y);
+        std::vector<std::string> resources = tile.resources().describe(true);
+        float tileY = static_cast<float>(_height) * 0.80f;
+        int line = 1;
+
+        _text.drawText("TILE  " + std::to_string(tilePos.x) + ", " + std::to_string(tilePos.y), contentX, tileY, Color{0.95f, 0.55f, 0.15f, 1.0f});
+        if (tile.incanting())
+        {
+            _text.drawText("INCANTATION", contentX, tileY - static_cast<float>(line) * LineHeight, Color{0.70f, 0.45f, 1.0f, 1.0f});
+            ++line;
+        }
+        if (resources.empty())
+            _text.drawText("(vide)", contentX, tileY - static_cast<float>(line) * LineHeight, label);
+        else
+            for (const std::string &resource : resources)
+            {
+                _text.drawText(resource, contentX, tileY - static_cast<float>(line) * LineHeight, label);
+                ++line;
+            }
     }
     const IEntity *selected = state.selectedEntity();
     if (selected != nullptr)

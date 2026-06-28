@@ -1,6 +1,10 @@
 #include "Protocol/handler/game/GameEventHandler.hpp"
 
 #include <cstddef>
+#include <string>
+
+#include "interface/IEntity.hpp"
+#include "types/EntityKey.hpp"
 
 namespace Zappy
 {
@@ -29,11 +33,17 @@ void GameEventHandler::handleBroadcast(const std::vector<std::string> &args, Gam
     if (args.empty())
         return;
 
-    std::string text = "#" + args[0] + ":";
+    int number = entityNumber(args[0]);
+    std::string text = "#" + std::to_string(number) + ":";
 
     for (std::size_t i = 1; i < args.size(); ++i)
         text += " " + args[i];
     state.addMessage(text, BroadcastColor);
+
+    IEntity *sender = state.getEntity(EntityKey{"player", number});
+
+    if (sender != nullptr)
+        state.addBroadcast(number, sender->position());
 }
 
 void GameEventHandler::handleServerMessage(const std::vector<std::string> &args, GameState &state)

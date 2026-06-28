@@ -456,6 +456,10 @@ void RenderSystem::selectEntityAt(int tileX, int tileY, GameState &state)
 {
     const IEntity *picked = nullptr;
 
+    if (tileX >= 0 && tileX < state.map().width() && tileY >= 0 && tileY < state.map().height())
+        state.selectTile(GridPosition{tileX, tileY});
+    else
+        state.clearSelectedTile();
     for (const std::pair<const EntityKey, std::unique_ptr<IEntity>> &entry : state.entities())
     {
         GridPosition position = entry.second->position();

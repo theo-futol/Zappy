@@ -1,5 +1,7 @@
 #include "Protocol/handler/incantation/IncantationEventHandler.hpp"
 
+#include <exception>
+
 namespace Zappy
 {
 
@@ -10,12 +12,23 @@ std::vector<std::string> IncantationEventHandler::keys() const
 
 void IncantationEventHandler::handle(const std::string &key, const std::vector<std::string> &args, GameState &state)
 {
-    (void)key;
-    (void)args;
-    (void)state;
-    // pic/pie are purely visual events (incantation animation on a tile). The v1 model has
-    // no incantation state, and resource changes from a successful ritual arrive via bct.
-    // This handler is the documented seam: the render phase will add the model support it needs.
+    // pic X Y L #n...  -> incantation starts on tile (X, Y).
+    // pie X Y R        -> incantation ends on tile (X, Y) with result R.
+    if (args.size() < 2)
+        return;
+    try
+    {
+        int x = std::stoi(args[0]);
+        int y = std::stoi(args[1]);
+
+        if (x < 0 || y < 0 || x >= state.map().width() || y >= state.map().height())
+            return;
+        state.map().at(x, y).setIncanting(key == "pic");
+    }
+    catch (const std::exception &)
+    {
+        // Malformed coordinates: ignore the event rather than crash the GUI.
+    }
 }
 
 } // namespace Zappy

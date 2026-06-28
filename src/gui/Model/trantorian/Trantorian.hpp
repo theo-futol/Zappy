@@ -44,7 +44,7 @@ class Trantorian : public AMapEntity
     const std::string &team() const override;
 
     /** @brief Player level. @return The level. */
-    int level() const;
+    int level() const override;
 
     /** @brief Sets the player level. @param level New level. */
     void setLevel(int level);

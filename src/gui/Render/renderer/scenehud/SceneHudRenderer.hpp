@@ -146,6 +146,12 @@ class SceneHudRenderer : public IRenderer
     void drawStatePanel(const RenderContext &context) const;
 
     /**
+     * @brief Draws the bottom-left tile panel (resources of the selected tile), if any.
+     * @param context Per-frame rendering context.
+     */
+    void drawTilePanel(const RenderContext &context) const;
+
+    /**
      * @brief Draws the top-right time-unit box (value and -/+ buttons).
      * @param context Per-frame rendering context.
      */

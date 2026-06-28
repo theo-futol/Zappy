@@ -133,8 +133,45 @@ class GameState
     /** @brief Currently hovered tile (valid only when hasHoveredTile()). @return The tile. */
     GridPosition hoveredTile() const;
 
+    /**
+     * @brief Marks a tile as selected (its resources are shown in the HUD).
+     * @param tile Selected tile coordinates.
+     */
+    void selectTile(GridPosition tile);
+
+    /** @brief Clears the tile selection. */
+    void clearSelectedTile();
+
+    /** @brief Whether a tile is currently selected. @return True if a tile is selected. */
+    bool hasSelectedTile() const;
+
+    /** @brief Currently selected tile (valid only when hasSelectedTile()). @return The tile. */
+    GridPosition selectedTile() const;
+
+    /**
+     * @struct Broadcast
+     * @brief A broadcast event: where it came from, tagged with a monotonic sequence.
+     */
+    struct Broadcast
+    {
+        long sequence;       ///< Ever-increasing id so renderers can detect new events.
+        int player;          ///< Number of the broadcasting player (for per-player throttling).
+        GridPosition origin; ///< Tile the broadcasting player stood on.
+    };
+
+    /**
+     * @brief Records a broadcast originating from a player (for the ripple animation).
+     * @param player Number of the broadcasting player.
+     * @param origin Tile of the broadcasting player.
+     */
+    void addBroadcast(int player, GridPosition origin);
+
+    /** @brief Recent broadcasts (bounded), newest last. @return The broadcast list. */
+    const std::vector<Broadcast> &broadcasts() const;
+
   private:
-    static constexpr std::size_t MaxMessages = 6; ///< Cap on retained log lines.
+    static constexpr std::size_t MaxMessages = 6;     ///< Cap on retained log lines.
+    static constexpr std::size_t MaxBroadcasts = 32;  ///< Cap on retained broadcast events.
 
     Map _map;                                                ///< Toroidal world map.
     std::map<EntityKey, std::unique_ptr<IEntity>> _entities; ///< All map entities.
@@ -148,6 +185,10 @@ class GameState
     bool _hasSelection;                                      ///< Whether an entity is selected.
     GridPosition _hoveredTile;                               ///< Tile under the cursor (when hovering).
     bool _hasHover;                                          ///< Whether a tile is hovered.
+    GridPosition _selectedTile;                              ///< Selected tile (when hasSelectedTile()).
+    bool _hasSelectedTile;                                   ///< Whether a tile is selected.
+    std::vector<Broadcast> _broadcasts;                      ///< Bounded log of recent broadcast events.
+    long _broadcastSeq;                                      ///< Monotonic counter feeding Broadcast::sequence.
 };
 
 } // namespace Zappy

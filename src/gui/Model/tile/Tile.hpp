@@ -27,9 +27,16 @@ class Tile
     /** @brief Read-only access to the ground resources. @return The resource set. */
     const ResourceSet &resources() const;
 
+    /** @brief Whether an incantation is currently happening on this tile. @return True if incanting. */
+    bool incanting() const;
+
+    /** @brief Sets the incantation state of the tile. @param incanting New state. */
+    void setIncanting(bool incanting);
+
   private:
     GridPosition _position; ///< Grid coordinates of the tile.
     ResourceSet _resources; ///< Resources lying on the ground.
+    bool _incanting = false; ///< True while an incantation runs on this tile.
 };
 
 } // namespace Zappy

@@ -24,10 +24,9 @@ std::vector<std::string> Trantorian::infoLines() const
 
     lines.push_back("TEAM  " + _team);
     lines.push_back("LEVEL  " + std::to_string(_level));
-    lines.push_back("INV  F" + std::to_string(_inventory.get(ResourceType::Food)) + " L" + std::to_string(_inventory.get(ResourceType::Linemate)) + " D" +
-                    std::to_string(_inventory.get(ResourceType::Deraumere)) + " S" + std::to_string(_inventory.get(ResourceType::Sibur)));
-    lines.push_back("     M" + std::to_string(_inventory.get(ResourceType::Mendiane)) + " P" + std::to_string(_inventory.get(ResourceType::Phiras)) + " T" +
-                    std::to_string(_inventory.get(ResourceType::Thystame)));
+    lines.push_back("INVENTORY");
+    for (const std::string &resource : _inventory.describe(false))
+        lines.push_back("  " + resource);
     return lines;
 }
 

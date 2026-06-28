@@ -24,6 +24,11 @@ Orientation AMapEntity::orientation() const
     return _orientation;
 }
 
+int AMapEntity::level() const
+{
+    return 0;
+}
+
 void AMapEntity::setPosition(GridPosition position)
 {
     _position = position;

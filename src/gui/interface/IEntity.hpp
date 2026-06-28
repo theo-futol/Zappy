@@ -48,6 +48,12 @@ class IEntity
     virtual GridPosition position() const = 0;
 
     /**
+     * @brief Player elevation level, or 0 for entities without a level (e.g. eggs).
+     * @return The level.
+     */
+    virtual int level() const = 0;
+
+    /**
      * @brief Current facing orientation.
      * @return The entity orientation.
      */

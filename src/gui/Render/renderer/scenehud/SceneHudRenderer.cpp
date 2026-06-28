@@ -9,7 +9,9 @@
 
 #include "Command/commandbuilder/CommandBuilder.hpp"
 #include "Model/gamestate/GameState.hpp"
+#include "Model/tile/Tile.hpp"
 #include "interface/IEntity.hpp"
+#include "types/GridPosition.hpp"
 #include "types/Mat.hpp"
 
 namespace Zappy
@@ -202,6 +204,46 @@ void SceneHudRenderer::drawStatePanel(const RenderContext &context) const
         _text.drawText(_pov ? "VUE: POV" : "VUE: 3EME", mode.x + 10.0f, mode.y + 5.0f, toColor(AccentColor));
 }
 
+void SceneHudRenderer::drawTilePanel(const RenderContext &context) const
+{
+    const GameState &state = context.state;
+
+    if (!state.hasSelectedTile())
+        return;
+
+    GridPosition tilePos = state.selectedTile();
+    const Tile &tile = state.map().at(tilePos.x, tilePos.y);
+    std::vector<std::string> lines = tile.resources().describe(true);
+
+    if (tile.incanting())
+        lines.insert(lines.begin(), "INCANTATION");
+    if (lines.empty())
+        lines.push_back("(vide)");
+
+    float panelHeight = CardPadding * 2.0f + static_cast<float>(lines.size() + 1) * LineHeight;
+    float panelX = Margin;
+    float panelY = Margin;
+    Shader *shader = _assets.shader("basic");
+    Mesh *mesh = _assets.mesh("quad");
+
+    if (shader != nullptr && mesh != nullptr)
+    {
+        shader->use();
+        shader->setUniform("uView", Mat4(1.0f));
+        shader->setUniform("uProjection", glm::ortho(0.0f, static_cast<float>(_width), 0.0f, static_cast<float>(_height)));
+        drawRect(*shader, *mesh, panelX, panelY, PanelWidth, panelHeight, CardColor);
+        drawRect(*shader, *mesh, panelX, panelY + panelHeight - 3.0f, PanelWidth, 3.0f, AccentColor);
+    }
+    _text.drawText("TILE  " + std::to_string(tilePos.x) + ", " + std::to_string(tilePos.y), panelX + CardPadding, panelY + panelHeight - CardPadding - LineHeight + 4.0f,
+                   toColor(AccentColor));
+    for (std::size_t i = 0; i < lines.size(); ++i)
+    {
+        float lineY = panelY + panelHeight - CardPadding - static_cast<float>(i + 2) * LineHeight + 4.0f;
+
+        _text.drawText(lines[i], panelX + CardPadding, lineY, toColor(LabelColor));
+    }
+}
+
 SceneHudRenderer::Button SceneHudRenderer::minusButton() const
 {
     float boxX = static_cast<float>(_width) - BoxWidth - Margin;
@@ -286,6 +328,7 @@ void SceneHudRenderer::render(const RenderContext &context)
     drawBar(context);
     drawTimeBox(context);
     drawStatePanel(context);
+    drawTilePanel(context);
     drawMenuButton();
 }
 

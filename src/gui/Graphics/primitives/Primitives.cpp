@@ -1,7 +1,14 @@
 #include "Graphics/primitives/Primitives.hpp"
 
+#include <cmath>
+
 namespace Zappy
 {
+
+namespace
+{
+constexpr float Tau = 6.28318530718f; ///< 2*pi.
+} // namespace
 
 MeshData Primitives::quad()
 {
@@ -39,6 +46,54 @@ MeshData Primitives::triangle()
         },
         {0, 1, 2},
     };
+}
+
+MeshData Primitives::groundRing(std::size_t segments, float thickness)
+{
+    MeshData data;
+    float outer = 0.5f;
+    float inner = outer * (1.0f - thickness);
+
+    for (std::size_t i = 0; i <= segments; ++i)
+    {
+        float angle = Tau * static_cast<float>(i) / static_cast<float>(segments);
+        float c = std::cos(angle);
+        float s = std::sin(angle);
+
+        data.vertices.insert(data.vertices.end(), {inner * c, 0.0f, inner * s, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f});
+        data.vertices.insert(data.vertices.end(), {outer * c, 0.0f, outer * s, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f});
+    }
+    for (unsigned int i = 0; i < static_cast<unsigned int>(segments); ++i)
+    {
+        unsigned int a = i * 2;
+
+        data.indices.insert(data.indices.end(), {a, a + 1, a + 3, a, a + 3, a + 2});
+    }
+    return data;
+}
+
+MeshData Primitives::ring(std::size_t segments, float thickness)
+{
+    MeshData data;
+    float outer = 0.5f;
+    float inner = outer * (1.0f - thickness);
+
+    for (std::size_t i = 0; i <= segments; ++i)
+    {
+        float angle = Tau * static_cast<float>(i) / static_cast<float>(segments);
+        float c = std::cos(angle);
+        float s = std::sin(angle);
+
+        data.vertices.insert(data.vertices.end(), {inner * c, inner * s, 0.0f});
+        data.vertices.insert(data.vertices.end(), {outer * c, outer * s, 0.0f});
+    }
+    for (unsigned int i = 0; i < static_cast<unsigned int>(segments); ++i)
+    {
+        unsigned int a = i * 2;
+
+        data.indices.insert(data.indices.end(), {a, a + 1, a + 3, a, a + 3, a + 2});
+    }
+    return data;
 }
 
 MeshData Primitives::cube()
