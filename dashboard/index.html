@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZapLauncher Dashboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <h1>ZapLauncher</h1>
+  <div class="topbar-actions">
+    <div class="status-indicator" title="API → server connection">
+      <span class="dot waiting" id="api-dot"></span>
+      <span class="status-label">Server</span>
+    </div>
+    <input id="api-base" type="text" spellcheck="false" title="API base URL">
+    <button id="btn-prompt-db" class="btn ghost">Prompt database</button>
+    <button id="btn-new-personality" class="btn ghost">+ Personality</button>
+    <button id="btn-toggle-feed" class="btn ghost feed-toggle-btn">Live Feed</button>
+  </div>
+</header>
+
+<nav class="tabs" id="team-tabs"></nav>
+
+<main class="layout">
+  <aside class="feed-panel" id="feed-panel">
+    <div class="feed-header">
+      <span>Live Feed</span>
+      <button id="btn-clear-feed" class="btn small ghost">Clear</button>
+    </div>
+    <div class="feed-list" id="feed-list"></div>
+  </aside>
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <span>Agents</span>
+      <div style="display:flex;gap:4px">
+        <button id="btn-configure-team" class="btn small ghost" disabled>Configure</button>
+        <button id="btn-new-agent" class="btn small" disabled>+ Agent</button>
+      </div>
+    </div>
+    <ul id="agent-list" class="agent-list"></ul>
+  </aside>
+
+  <section class="main-panel" id="main-panel">
+    <div class="empty-state" id="empty-state">
+      Select a team, then an agent, to see its profile and conversation.
+    </div>
+
+    <div class="agent-view hidden" id="agent-view">
+      <div class="profile">
+        <div class="profile-header">
+          <div>
+            <h2 id="agent-title"></h2>
+            <span class="muted" id="agent-team"></span>
+          </div>
+          <div class="profile-actions">
+            <button id="btn-edit-agent" class="btn small">Edit prompts</button>
+          </div>
+        </div>
+
+        <div class="prompt-block">
+          <div class="prompt-block-header">
+            <strong>Personality prompt</strong>
+          </div>
+          <textarea id="personality-prompt" class="prompt-text" readonly></textarea>
+        </div>
+
+        <div class="prompt-block">
+          <button class="disclosure" id="toggle-cached">▸ Cached prompt (protocol + lore + team)</button>
+          <textarea id="cached-prompt" class="prompt-text hidden" readonly></textarea>
+        </div>
+
+        <div class="edit-actions hidden" id="edit-actions">
+          <button id="btn-save-agent" class="btn">Save</button>
+          <button id="btn-cancel-edit" class="btn ghost">Cancel</button>
+        </div>
+      </div>
+
+      <div class="conv-tabs" id="conv-tabs">
+        <button class="conv-tab active" data-tab="conversation">Conversation</button>
+        <button class="conv-tab" data-tab="logs">Logs</button>
+      </div>
+
+      <div class="conversation" id="conversation"></div>
+
+      <div class="actions-bar" id="actions-bar">
+        <div class="actions-row">
+          <button class="btn small ghost action-btn" data-action="forward">Forward</button>
+          <button class="btn small ghost action-btn" data-action="left">Left</button>
+          <button class="btn small ghost action-btn" data-action="right">Right</button>
+          <button class="btn small ghost action-btn" data-action="look">Look</button>
+          <button class="btn small ghost action-btn" data-action="inventory">Inventory</button>
+          <button class="btn small ghost action-btn" data-action="connect_nbr">Slots</button>
+          <button class="btn small ghost action-btn" data-action="eject">Eject</button>
+          <button class="btn small ghost action-btn" data-action="fork">Fork</button>
+          <button class="btn small ghost action-btn" data-action="incantation">Incantation</button>
+          <button class="btn small ghost action-btn" data-action="broadcast" data-needs-arg="Message">Broadcast…</button>
+          <button class="btn small ghost action-btn" data-action="take" data-needs-arg="Object">Take…</button>
+          <button class="btn small ghost action-btn" data-action="set" data-needs-arg="Object">Set…</button>
+        </div>
+        <div class="action-arg-row hidden" id="action-arg-row">
+          <span class="action-arg-label" id="action-arg-label"></span>
+          <input type="text" id="action-arg-input" autocomplete="off">
+          <button class="btn small" id="action-arg-go">Go</button>
+          <button class="btn small ghost" id="action-arg-cancel">✕</button>
+        </div>
+      </div>
+
+      <form class="prompt-form" id="prompt-form">
+        <input id="prompt-input" type="text" placeholder="Message this agent…" autocomplete="off">
+        <button type="submit" class="btn">Send</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<div class="toast" id="toast"></div>
+
+<div class="modal-overlay hidden" id="modal-overlay">
+  <div class="modal" id="modal"></div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
