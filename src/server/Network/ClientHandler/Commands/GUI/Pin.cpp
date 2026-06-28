@@ -16,9 +16,16 @@ std::string Commands::Pin(std::vector<std::string> args, Client &)
 {
     if (args.size() < 1)
         return "sbp\n";
-    Player *player = _world->getPlayerById(std::stoi(args[0]));
-    if (!player)
-        return "ko\n";
-    return buildPinMessage(*player);
+    try
+    {
+        Player *player = _world->getPlayerById(std::stoi(args[0]));
+        if (!player)
+            return "ko\n";
+        return buildPinMessage(*player);
+    }
+    catch (...)
+    {
+        return "sbp\n";
+    }
 }
 } // namespace zappy
