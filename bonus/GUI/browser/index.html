@@ -31,6 +31,44 @@
         }
         .status-offline { color: #ff4444; }
         .status-online { color: #44ff44; }
+        #broadcast-log {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 300px;
+            max-height: 60vh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            pointer-events: none;
+            z-index: 1000;
+        }
+        .bc-entry {
+            background: rgba(0, 0, 0, 0.82);
+            padding: 7px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            font-family: monospace;
+            color: #ddd;
+            line-height: 1.4;
+            transition: opacity 0.5s;
+        }
+        @keyframes bcSlideIn {
+            from { opacity: 0; transform: translateX(20px); }
+            to   { opacity: 1; transform: translateX(0); }
+        }
+        .bc-entry { animation: bcSlideIn 0.15s ease; }
+        #focus-vignette {
+            display: none;
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at center, transparent 15%, rgba(0, 0, 0, 0.72) 100%);
+            pointer-events: none;
+            z-index: 500;
+            opacity: 0;
+            transition: opacity 0.35s;
+        }
     </style>
     <!-- Load PixiJS and NippleJS via CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.3.2/pixi.min.js"></script>
@@ -81,6 +119,9 @@
     <div id="end-game-banner" style="display: none; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(0, 0, 0, 0.95); padding: 50px; border-radius: 15px; border: 4px solid #ffd700; color: #ffd700; text-align: center; font-size: 32px; font-family: sans-serif; font-weight: bold; z-index: 99999; box-shadow: 0 0 40px #ffd700; flex-direction: column; justify-content: center; align-items: center;">
     </div>
     
+    <div id="focus-vignette"></div>
+    <div id="broadcast-log"></div>
+
     <div id="joystick-zone" style="position: absolute; bottom: 40px; right: 40px; width: 150px; height: 150px; z-index: 99999;"></div>
 
     <div id="canvas-container"></div>
@@ -140,6 +181,7 @@
             trackedPlayerId = null;
             isCameraLocked = false;
             document.getElementById('player-info').style.display = 'none';
+            _clearFocus();
         }
 
         function onPlayerClick(id) {
@@ -154,6 +196,26 @@
             document.getElementById('player-info-action').innerText = player.userData.lastAction || 'None';
             trackedPlayerId = id;
             isCameraLocked = true;
+            _applyFocus(id);
+        }
+
+        function _applyFocus(focusId) {
+            for (const pid in playerMeshes) {
+                playerMeshes[pid].alpha = String(pid) === String(focusId) ? 1.0 : 0.18;
+            }
+            const v = document.getElementById('focus-vignette');
+            v.style.display = 'block';
+            void v.offsetWidth; // force reflow so the transition fires
+            v.style.opacity = '1';
+        }
+
+        function _clearFocus() {
+            for (const pid in playerMeshes) {
+                playerMeshes[pid].alpha = 1.0;
+            }
+            const v = document.getElementById('focus-vignette');
+            v.style.opacity = '0';
+            setTimeout(() => { v.style.display = 'none'; }, 350);
         }
 
         function onTileClick(x, y) {
@@ -415,7 +477,6 @@
                     break;
                 case 'pipi':
                     movePlayer(payload.data.id, payload.data.x, payload.data.y, payload.data.orientation);
-                    updatePlayerAction(payload.data.id, 'Incanting');
                     break;
                 case 'pdr':
                     updatePlayerAction(payload.data.id, 'Dropped resource');
@@ -429,8 +490,95 @@
                 case 'seg':
                     displayEndGame(payload.data.teamName);
                     break;
+                case 'players_sync':
+                    for (const id in payload.data) {
+                        const p = payload.data[id];
+                        if (!playerMeshes[id]) {
+                            spawnPlayer(id, p);
+                        } else {
+                            movePlayer(id, p.x, p.y, p.orientation);
+                        }
+                    }
+                    break;
+                case 'pbc':
+                    showBroadcast(payload.data.id, payload.data.message);
+                    break;
             }
             updateUI();
+        }
+
+        function showBroadcast(id, rawMessage) {
+            const decoded = rawMessage.replace(/_/g, ' ');
+            const team = playerTeams[id] || '';
+            const color = getTeamColor(team);
+
+            // --- Log panel entry ---
+            const log = document.getElementById('broadcast-log');
+            const entry = document.createElement('div');
+            entry.className = 'bc-entry';
+            entry.style.borderLeft = `3px solid ${color}`;
+            entry.innerHTML = `<span style="color:${color};font-weight:bold">P${id}</span>`
+                + (team ? ` <span style="color:#888">${team}</span>` : '')
+                + `<br>${decoded}`;
+            log.insertBefore(entry, log.firstChild);
+            while (log.children.length > 10) log.removeChild(log.lastChild);
+            setTimeout(() => {
+                entry.style.opacity = '0';
+                setTimeout(() => entry.parentNode && entry.remove(), 500);
+            }, 12000);
+
+            // --- PixiJS speech bubble above the player ---
+            const player = playerMeshes[id];
+            if (!player) return;
+            const colorInt = parseInt(color.replace('#', ''), 16);
+            const bubble = new PIXI.Text(decoded, {
+                fontFamily: 'Arial',
+                fontSize: 13,
+                fill: 0xffffff,
+                stroke: 0x000000,
+                strokeThickness: 3,
+                align: 'center',
+                wordWrap: true,
+                wordWrapWidth: 160
+            });
+            bubble.anchor.set(0.5, 1);
+            bubble.y = -TILE_SIZE * 2.8;
+
+            const bg = new PIXI.Graphics();
+            const pad = 6;
+            bg.beginFill(colorInt, 0.25);
+            bg.lineStyle(1, colorInt, 0.8);
+            bg.drawRoundedRect(
+                -bubble.width / 2 - pad,
+                bubble.y - bubble.height - pad,
+                bubble.width + pad * 2,
+                bubble.height + pad * 2,
+                4
+            );
+            bg.endFill();
+
+            player.addChild(bg);
+            player.addChild(bubble);
+
+            let elapsed = 0;
+            const DURATION = 8000;
+            const tick = (delta) => {
+                elapsed += PIXI.Ticker.shared.deltaMS;
+                const fadeStart = DURATION - 1500;
+                if (elapsed > fadeStart) {
+                    const alpha = Math.max(0, (DURATION - elapsed) / 1500);
+                    bubble.alpha = alpha;
+                    bg.alpha = alpha;
+                }
+                if (elapsed >= DURATION) {
+                    player.removeChild(bubble);
+                    player.removeChild(bg);
+                    bubble.destroy();
+                    bg.destroy();
+                    PIXI.Ticker.shared.remove(tick);
+                }
+            };
+            PIXI.Ticker.shared.add(tick);
         }
 
         function updatePlayerAction(id, actionStr) {
@@ -622,6 +770,10 @@
 
             mapContainer.addChild(playerGroup);
             playerMeshes[id] = playerGroup;
+
+            if (trackedPlayerId !== null && String(id) !== String(trackedPlayerId)) {
+                playerGroup.alpha = 0.18;
+            }
 
             movePlayer(id, data.x, data.y, data.orientation);
             updateUI();

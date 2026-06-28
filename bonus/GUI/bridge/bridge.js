@@ -61,8 +61,19 @@ wss.on('connection', (ws) => {
 
     ws.on('close', () => {
         console.log('client disconnected');
-    }); 
+    });
+    ws.on('error', (err) => {
+        console.error('WebSocket client error:', err.message);
+    });
 });
+
+// Push all current player positions to browsers every second so they
+// never need to reload just to see movement (works even when individual
+// pipi events are missed due to connection timing).
+setInterval(() => {
+    if (wss.clients.size === 0) return;
+    broadcast({ type: 'players_sync', data: GameState.players });
+}, 1000);
 
 function broadcast(data) {
     const msg = JSON.stringify(data);
