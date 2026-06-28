@@ -19,10 +19,17 @@ std::string Commands::Bct(std::vector<std::string> args, Client &)
 {
     if (args.size() < 2)
         return "sbp\n";
-    int x = std::stoi(args[0]);
-    int y = std::stoi(args[1]);
-    if (!_world->getTileAt({x, y}))
-        return "ko\n";
-    return buildBctMessage({x, y});
+    try
+    {
+        int x = std::stoi(args[0]);
+        int y = std::stoi(args[1]);
+        if (!_world->getTileAt({x, y}))
+            return "ko\n";
+        return buildBctMessage({x, y});
+    }
+    catch (...)
+    {
+        return "sbp\n";
+    }
 }
 } // namespace zappy
