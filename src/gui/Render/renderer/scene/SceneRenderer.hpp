@@ -113,32 +113,53 @@ class SceneRenderer : public IRenderer
 
     /**
      * @struct EntityAnim
-     * @brief Per-entity animation state for the Transformer move/idle morph.
+     * @brief Per-entity animation state: tile-to-tile slide plus Transformer move/idle morph.
      */
     struct EntityAnim
     {
-        GridPosition lastPos{0, 0}; ///< Last seen grid position (to detect movement).
-        float lastMoveTime = -1000.0f; ///< Time of the last position change (seconds).
+        GridPosition fromPos{0, 0}; ///< Tile the current slide starts from.
+        GridPosition toPos{0, 0};   ///< Current target tile (the latest server position).
+        float moveStart = -1000.0f; ///< Time of the last position change (seconds).
+        bool sliding = false;       ///< Whether a tile-to-tile slide is in progress.
         bool vehicle = false;       ///< Current settled form: true = vehicle, false = robot.
         int clip = -1;              ///< Currently playing transform clip, or -1 when settled.
         float clipStart = 0.0f;     ///< Time the current transform clip started (seconds).
-        bool initialized = false;   ///< Whether lastPos has been seeded for this entity.
+        bool initialized = false;   ///< Whether the tiles have been seeded for this entity.
     };
 
     /**
-     * @brief Advances the Transformer state machine for one entity and returns what to draw.
+     * @brief Updates an entity's movement state from its latest position.
      *
-     * Detects movement (position change), morphs to the vehicle form while moving and back
-     * to the robot form after an idle delay, holding the end pose of the relevant clip.
+     * Detects a position change; an adjacent step starts a slide, a wrap/large jump snaps.
      * @param key Entity identity (state is kept per key across frames).
-     * @param position Current grid position of the entity.
+     * @param position Current grid position from the server.
+     * @param time Current time in seconds.
+     * @return The (mutable) animation state for this entity.
+     */
+    EntityAnim &updateMovement(const EntityKey &key, GridPosition position, float time);
+
+    /**
+     * @brief The entity's interpolated surface point, sliding from its previous tile.
+     * @param state Entity animation state (from updateMovement).
+     * @param mapping Grid-to-world projection.
+     * @param time Current time in seconds.
+     * @return The world point to place the entity at this frame.
+     */
+    WorldPoint entityWorld(const EntityAnim &state, const IProjection &mapping, float time) const;
+
+    /**
+     * @brief Advances the Transformer morph state machine for one entity and returns what to draw.
+     *
+     * Morphs to the vehicle form while moving and back to the robot form after an idle delay,
+     * holding the end pose of the relevant clip.
+     * @param state Entity animation state (from updateMovement).
      * @param model The entity's render model (queried for clip indices and durations).
      * @param time Current time in seconds.
      * @param clip Output: clip index to pose.
      * @param poseTime Output: time within that clip to pose.
      * @return True if a valid Transformer pose was produced; false to fall back to a default.
      */
-    bool transformerPose(const EntityKey &key, GridPosition position, const RenderModel &model, float time, int &clip, float &poseTime);
+    bool transformerPose(EntityAnim &state, const RenderModel &model, float time, int &clip, float &poseTime);
 
     AssetCache &_assets;                  ///< Shared GPU resource cache.
     std::unique_ptr<RenderModel> _ground; ///< Ground model, tiled per map cell.
@@ -159,6 +180,7 @@ class SceneRenderer : public IRenderer
     static constexpr float HighlightLift = 0.02f;                                          ///< Height of a tile marker above the ground.
     static constexpr float HighlightSize = 0.95f;                                          ///< Side of a tile marker, in tiles.
     static constexpr float IdleBeforeRobot = 1.5f;                                         ///< Seconds of stillness before morphing back to robot.
+    static constexpr float MoveDuration = 0.3f;                                            ///< Seconds to slide from one tile to the next.
     static constexpr const char *VehicleClipName = "transform_to_vehicle";                 ///< Clip morphing robot -> vehicle.
     static constexpr const char *RobotClipName = "transform_to_robot";                     ///< Clip morphing vehicle -> robot.
 

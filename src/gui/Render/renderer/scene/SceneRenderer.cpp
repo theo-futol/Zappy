@@ -151,7 +151,48 @@ std::string SceneRenderer::directoryOf(const std::string &path)
     return (slash == std::string::npos) ? std::string(".") : path.substr(0, slash);
 }
 
-bool SceneRenderer::transformerPose(const EntityKey &key, GridPosition position, const RenderModel &model, float time, int &clip, float &poseTime)
+SceneRenderer::EntityAnim &SceneRenderer::updateMovement(const EntityKey &key, GridPosition position, float time)
+{
+    EntityAnim &state = _entityAnim[key];
+
+    if (!state.initialized)
+    {
+        state.initialized = true;
+        state.fromPos = position;
+        state.toPos = position;
+    }
+    if (position.x != state.toPos.x || position.y != state.toPos.y)
+    {
+        int dx = position.x - state.toPos.x;
+        int dy = position.y - state.toPos.y;
+        bool adjacent = (dx >= -1 && dx <= 1 && dy >= -1 && dy <= 1);
+
+        state.fromPos = adjacent ? state.toPos : position;
+        state.toPos = position;
+        state.moveStart = time;
+        state.sliding = adjacent;
+    }
+    return state;
+}
+
+WorldPoint SceneRenderer::entityWorld(const EntityAnim &state, const IProjection &mapping, float time) const
+{
+    WorldPoint to = mapping.toWorld(state.toPos.x, state.toPos.y);
+    float alpha = (state.sliding && MoveDuration > 0.0f) ? glm::clamp((time - state.moveStart) / MoveDuration, 0.0f, 1.0f) : 1.0f;
+
+    if (alpha >= 1.0f)
+        return to;
+
+    WorldPoint from = mapping.toWorld(state.fromPos.x, state.fromPos.y);
+    WorldPoint result;
+
+    result.position = glm::mix(from.position, to.position, alpha);
+    result.normal = glm::normalize(glm::mix(from.normal, to.normal, alpha));
+    result.tangent = glm::normalize(glm::mix(from.tangent, to.tangent, alpha));
+    return result;
+}
+
+bool SceneRenderer::transformerPose(EntityAnim &state, const RenderModel &model, float time, int &clip, float &poseTime)
 {
     int vehicleClip = model.animationIndex(VehicleClipName);
     int robotClip = model.animationIndex(RobotClipName);
@@ -159,20 +200,7 @@ bool SceneRenderer::transformerPose(const EntityKey &key, GridPosition position,
     if (vehicleClip < 0 || robotClip < 0)
         return false;
 
-    EntityAnim &state = _entityAnim[key];
-
-    if (!state.initialized)
-    {
-        state.initialized = true;
-        state.lastPos = position;
-    }
-    if (position.x != state.lastPos.x || position.y != state.lastPos.y)
-    {
-        state.lastPos = position;
-        state.lastMoveTime = time;
-    }
-
-    bool wantVehicle = (time - state.lastMoveTime) < IdleBeforeRobot;
+    bool wantVehicle = (time - state.moveStart) < IdleBeforeRobot;
 
     if (state.clip < 0 && wantVehicle != state.vehicle)
     {
@@ -243,11 +271,13 @@ void SceneRenderer::render(const RenderContext &context)
     for (const std::pair<const EntityKey, std::unique_ptr<IEntity>> &entry : context.state.entities())
     {
         const IEntity &entity = *entry.second;
-        WorldPoint point = context.mapping.toWorld(entity.position().x, entity.position().y);
+        EntityAnim &state = updateMovement(entry.first, entity.position(), context.time);
+        WorldPoint point = entityWorld(state, context.mapping, context.time);
         std::size_t theme = context.state.teamIndex(entity.team()) % themeCount;
         bool isEgg = entity.getEntityType() == "egg";
         const RenderModel &model = isEgg ? *_eggs[theme] : *_golems[theme];
-        Mat4 facing = glm::rotate(Mat4(1.0f), glm::radians(orientationYaw(entity.orientation())), Vec3(0.0f, 1.0f, 0.0f));
+        float yaw = orientationYaw(entity.orientation()) * (_torusWorld ? 1.0f : -1.0f);
+        Mat4 facing = glm::rotate(Mat4(1.0f), glm::radians(yaw), Vec3(0.0f, 1.0f, 0.0f));
         Mat4 base = glm::translate(Mat4(1.0f), point.position) * tileFrame(point) * facing * model.unitTransform();
 
         if (model.skinned())
@@ -255,7 +285,7 @@ void SceneRenderer::render(const RenderContext &context)
             int clip = 0;
             float poseTime = 0.0f;
 
-            if (isEgg || !transformerPose(entry.first, entity.position(), model, context.time, clip, poseTime))
+            if (isEgg || !transformerPose(state, model, context.time, clip, poseTime))
             {
                 float duration = model.animationDuration(0);
 
