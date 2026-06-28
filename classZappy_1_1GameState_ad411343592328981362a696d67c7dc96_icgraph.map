@@ -1,0 +1,13 @@
+<map id="Zappy::GameState::teamColor" name="Zappy::GameState::teamColor">
+<area shape="rect" id="Node000001" title="Distinct display color assigned to a team (when it was registered)." alt="" coords="547,77,765,102"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1EggEventHandler.html#ae99537c5f3c48c2278c930ba2089120e" title="Creates an egg from an enw message (egg laid by a player)." alt="" coords="296,5,479,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="588,76,472,48,473,43,589,71"/>
+<area shape="rect" id="Node000004" href="$classZappy_1_1TrantorianEventHandler.html#a499edc947d19f72ea021ac491d7ec048" title="Creates a Trantorian from a pnw message." alt="" coords="276,69,499,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="533,92,499,92,499,87,533,87"/>
+<area shape="rect" id="Node000006" href="$classZappy_1_1HudRenderer.html#a811888ec303fe1cfdfa3373f70decbc1" title="Draws the styled HUD overlay for the current frame." alt="" coords="310,133,465,173"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="589,108,466,138,464,132,588,103"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1EggEventHandler.html#af10d8140274bf77c4609eb8cecdc72b7" title="Applies an egg message to the state." alt="" coords="25,5,208,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="282,28,208,28,208,23,282,23"/>
+<area shape="rect" id="Node000005" href="$classZappy_1_1TrantorianEventHandler.html#ac0f18428ea3bebd13edcd95914ba5663" title="Applies a Trantorian message to the state." alt="" coords="5,69,228,109"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="262,92,228,92,228,87,262,87"/>
+</map>

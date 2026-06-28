@@ -1,0 +1,34 @@
+<map id="Zappy::TrantorianEventHandler::handleTrantorianResourceTaken" name="Zappy::TrantorianEventHandler::handleTrantorianResourceTaken">
+<area shape="rect" id="Node000001" title="Handles a pgt message: the player picks one resource up from its tile." alt="" coords="5,307,241,347"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1TrantorianEventHandler.html#a1c9310bcdc745bc3855a5cb2bd6874aa" title="Moves one resource unit between a player&#39;s inventory and its ground tile." alt="" coords="289,307,512,347"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="242,325,275,325,275,330,242,330"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1Map.html#adab8af111676b71092be4c141821fe43" title="Access to a tile, with toroidal wrapping of the coordinates." alt="" coords="612,5,731,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="405,306,421,253,452,181,472,142,497,105,525,71,558,41,577,30,598,23,600,28,580,35,562,45,529,74,501,108,477,145,456,183,426,254,410,308"/>
+<area shape="rect" id="Node000005" href="$classZappy_1_1AEventHandler.html#a3ba38d2410b06460d0d23411b9dc7210" title="Parses an entity number token of the form &quot;#n&quot;." alt="" coords="588,55,755,95"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="409,306,431,265,464,214,507,159,558,112,580,99,582,104,562,116,511,163,469,217,436,268,414,308"/>
+<area shape="rect" id="Node000006" href="$classZappy_1_1AEventHandler.html#a753a24b4a29ada4f0f7134a386e4cd99" title="Parses an integer token, tolerant of malformed input." alt="" coords="853,85,1019,125"/>
+<area shape="poly" id="edge15_Node000002_Node000006" title=" " alt="" coords="412,305,435,272,468,230,510,189,559,156,609,139,681,126,839,108,839,114,682,131,611,144,561,160,513,193,472,234,439,275,416,308"/>
+<area shape="rect" id="Node000007" href="$classZappy_1_1ResourceSet.html#afa07062fff037ec72c95df9d15df7e4f" title="Returns the count of a resource." alt="" coords="581,171,761,196"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="421,305,480,255,518,229,559,206,581,198,583,202,561,211,521,233,483,260,424,309"/>
+<area shape="rect" id="Node000008" href="$classZappy_1_1TrantorianEventHandler.html#a84f43a738e2f4c06375b5e49b8e549c6" title="Looks up a player and narrows it to its concrete Trantorian type." alt="" coords="560,221,783,261"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="459,305,559,271,589,262,590,267,561,277,461,310"/>
+<area shape="rect" id="Node000010" href="$classZappy_1_1Map.html#a7085133e48e18b0e3b653dfa09d9bb1d" title="Map height." alt="" coords="598,285,745,311"/>
+<area shape="poly" id="edge9_Node000002_Node000010" title=" " alt="" coords="512,313,584,305,585,310,512,318"/>
+<area shape="rect" id="Node000011" href="$classZappy_1_1Trantorian.html#a7dbbcf56c254ce9e1669370e46079d96" title="Mutable carried inventory." alt="" coords="600,335,743,375"/>
+<area shape="poly" id="edge10_Node000002_Node000011" title=" " alt="" coords="512,336,587,344,586,349,512,341"/>
+<area shape="rect" id="Node000012" href="$classZappy_1_1GameState.html#abd6471abf9d8148da897c524115909fc" title="Mutable access to the map." alt="" coords="581,400,761,425"/>
+<area shape="poly" id="edge11_Node000002_Node000012" title=" " alt="" coords="451,345,561,385,596,394,594,399,559,390,449,350"/>
+<area shape="rect" id="Node000013" href="$classZappy_1_1AMapEntity.html#afb70c76df59fc12f86292f8a6c509fb9" title="Current grid position." alt="" coords="595,450,747,490"/>
+<area shape="poly" id="edge12_Node000002_Node000013" title=" " alt="" coords="427,346,486,391,561,436,583,445,581,450,559,440,483,395,424,350"/>
+<area shape="rect" id="Node000014" href="$classZappy_1_1Tile.html#a2c7ada0bdea030850e8b48651b570b18" title="Mutable access to the ground resources." alt="" coords="589,515,754,540"/>
+<area shape="poly" id="edge13_Node000002_Node000014" title=" " alt="" coords="417,346,440,380,473,422,514,464,561,500,577,507,574,512,559,504,510,468,469,426,435,383,412,349"/>
+<area shape="rect" id="Node000015" href="$classZappy_1_1ResourceSet.html#ad988d909e6b3bd5ca5cdb03c5ee32453" title="Sets the count of a resource." alt="" coords="582,564,761,589"/>
+<area shape="poly" id="edge14_Node000002_Node000015" title=" " alt="" coords="412,346,433,390,464,445,508,503,533,528,561,550,571,556,569,561,559,555,530,532,504,506,460,448,428,392,408,348"/>
+<area shape="rect" id="Node000016" href="$classZappy_1_1Map.html#ae3b126c54208662331ad1d17686e6d21" title="Map width." alt="" coords="600,613,743,639"/>
+<area shape="poly" id="edge16_Node000002_Node000016" title=" " alt="" coords="410,347,427,398,457,468,478,504,502,540,530,572,561,600,588,613,586,618,559,604,526,576,498,543,473,507,453,470,422,400,405,348"/>
+<area shape="rect" id="Node000004" href="$classZappy_1_1Map.html#a0d20484476cb0e8da18f185e9ac7f8a1" title="Computes the row&#45;major storage index for wrapped coordinates." alt="" coords="865,5,1007,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="731,15,851,15,851,21,731,21"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="755,82,839,91,839,97,755,87"/>
+<area shape="rect" id="Node000009" href="$classZappy_1_1GameState.html#a523df5ec4dd7ee8bfd3f930c89962bd4" title="Looks up an entity by key." alt="" coords="831,228,1041,253"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="783,238,817,238,817,243,783,243"/>
+</map>

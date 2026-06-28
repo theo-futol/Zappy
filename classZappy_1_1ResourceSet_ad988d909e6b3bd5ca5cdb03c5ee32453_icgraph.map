@@ -1,0 +1,24 @@
+<map id="Zappy::ResourceSet::set" name="Zappy::ResourceSet::set">
+<area shape="rect" id="Node000001" title="Sets the count of a resource." alt="" coords="851,173,1029,198"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1AEventHandler.html#a70efb8e8a2b290eab529b85f46f72de5" title="Reads the seven resource counts (q0..q6) starting at an offset." alt="" coords="608,101,775,141"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="876,172,769,144,771,139,877,167"/>
+<area shape="rect" id="Node000008" href="$classZappy_1_1TrantorianEventHandler.html#a1c9310bcdc745bc3855a5cb2bd6874aa" title="Moves one resource unit between a player&#39;s inventory and its ground tile." alt="" coords="580,197,803,237"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="837,201,803,206,803,200,837,196"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1MapEventHandler.html#a56f0688289a92600f466106449b9a1cd" title="Fills one tile&#39;s ground resources from a bct message." alt="" coords="311,5,497,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="632,99,531,60,491,48,492,43,533,55,634,94"/>
+<area shape="rect" id="Node000005" href="$classZappy_1_1TrantorianEventHandler.html#a2c0774d521895c315a8a0f71330faeb5" title="Replaces a player&#39;s carried inventory from a pin message." alt="" coords="276,69,532,109"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="594,113,532,106,532,101,594,108"/>
+<area shape="rect" id="Node000007" href="$classZappy_1_1TrantorianEventHandler.html#a37488895eb160f03878b968922c9b0d5" title="Applies the server&#39;s &quot;pipi&quot; full snapshot (position, orientation, level, inventory)." alt="" coords="293,133,515,173"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="595,135,516,144,515,138,594,129"/>
+<area shape="rect" id="Node000004" href="$classZappy_1_1MapEventHandler.html#a20bc6868e641a76cddd09264dfe6a7bb" title="Applies a map message to the state." alt="" coords="23,5,210,45"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="297,28,210,28,210,23,297,23"/>
+<area shape="rect" id="Node000006" href="$classZappy_1_1TrantorianEventHandler.html#ac0f18428ea3bebd13edcd95914ba5663" title="Applies a Trantorian message to the state." alt="" coords="5,165,228,205"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="305,115,277,124,164,168,162,163,275,119,303,110"/>
+<area shape="poly" id="edge7_Node000007_Node000006" title=" " alt="" coords="279,170,229,176,228,170,279,165"/>
+<area shape="rect" id="Node000009" href="$classZappy_1_1TrantorianEventHandler.html#a86b125e49d7147bd2d6e86864ec89077" title="Handles a pdr message: the player drops one resource onto its tile." alt="" coords="277,197,531,237"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="566,220,532,220,532,215,566,215"/>
+<area shape="rect" id="Node000010" href="$classZappy_1_1TrantorianEventHandler.html#af321fc899d383100df04caf1fa462202" title="Handles a pgt message: the player picks one resource up from its tile." alt="" coords="286,261,522,301"/>
+<area shape="poly" id="edge11_Node000008_Node000010" title=" " alt="" coords="588,243,495,264,494,259,587,238"/>
+<area shape="poly" id="edge10_Node000009_Node000006" title=" " alt="" coords="263,204,228,200,229,195,263,199"/>
+<area shape="poly" id="edge12_Node000010_Node000006" title=" " alt="" coords="303,260,275,252,162,208,164,203,277,247,305,255"/>
+</map>

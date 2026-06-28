@@ -1,0 +1,3 @@
+<map id="Zappy::InputHandler" name="Zappy::InputHandler">
+<area shape="rect" id="Node000001" title="Translates window events into camera control, click detection and quit decisions." alt="" coords="5,5,163,711"/>
+</map>

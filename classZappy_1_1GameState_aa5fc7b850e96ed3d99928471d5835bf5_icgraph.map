@@ -1,0 +1,11 @@
+<map id="Zappy::GameState::removeEntity" name="Zappy::GameState::removeEntity">
+<area shape="rect" id="Node000001" title="Removes an entity by key." alt="" coords="539,37,740,77"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1EggEventHandler.html#a528586c18dceb79285e2bbd5fdfb2b75" title="Removes a hatched egg from an ebo message (a client connected to it)." alt="" coords="290,5,473,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="525,46,472,39,473,34,526,41"/>
+<area shape="rect" id="Node000004" href="$classZappy_1_1EntityCommonHandler.html#a99b76a40a563f4bb7e3c9cd4f7f9d02a" title="Removes an entity from the state (pdi for players, edi for eggs)." alt="" coords="272,69,491,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="526,74,491,78,490,73,525,69"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1EggEventHandler.html#af10d8140274bf77c4609eb8cecdc72b7" title="Applies an egg message to the state." alt="" coords="23,5,206,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="276,28,206,28,206,23,276,23"/>
+<area shape="rect" id="Node000005" href="$classZappy_1_1EntityCommonHandler.html#ab1e49f6db3b5b5acf66d561c43ea5058" title="Applies a common entity message to the state." alt="" coords="5,69,224,109"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="258,92,224,92,224,87,258,87"/>
+</map>

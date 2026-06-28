@@ -1,0 +1,5 @@
+<map id="Zappy::TextRenderer::TextRendererException" name="Zappy::TextRenderer::TextRendererException">
+<area shape="rect" id="Node000001" title="Error raised while initializing FreeType or loading a font." alt="" coords="5,119,195,219"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="47,5,153,71"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="103,84,103,119,97,119,97,84"/>
+</map>

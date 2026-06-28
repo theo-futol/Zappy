@@ -1,10 +1,10 @@
 <map id="zappy::CommandParser" name="zappy::CommandParser">
-<area shape="rect" id="Node000001" title="Per&#45;client command pipeline: reads socket data, splits it into commands, and runs them at the right t..." alt="" coords="72,991,263,1296"/>
+<area shape="rect" id="Node000001" title="Per&#45;client command pipeline: reads socket data, splits it into commands, and runs them at the right t..." alt="" coords="72,991,263,1316"/>
 <area shape="rect" id="Node000002" href="$classzappy_1_1Client.html" title="A single connected socket: its file descriptor, its role, and its pending I/O buffer...." alt="" coords="5,563,119,928"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="89,927,98,966,100,974,95,975,93,967,83,929"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="89,927,98,966,100,974,95,975,93,967,84,929"/>
 <area shape="rect" id="Node000003" href="$classzappy_1_1World.html" title="The authoritative game state: the map, the players, the teams, and the simulation rules that act on t..." alt="" coords="81,5,297,500"/>
 <area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="184,500,182,563,173,974,168,974,177,563,178,500"/>
 <area shape="rect" id="Node000004" href="$classzappy_1_1Commands.html" title="Implements every protocol command&#39;s effect on the world." alt="" coords="245,613,386,878"/>
 <area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="255,499,280,596,275,597,250,501"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="269,879,232,976,227,974,264,877"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="270,879,234,976,229,974,265,877"/>
 </map>

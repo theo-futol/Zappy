@@ -1,0 +1,7 @@
+<map id="Zappy::AssetCache::mesh" name="Zappy::AssetCache::mesh">
+<area shape="rect" id="Node000001" title="Looks up a mesh by id." alt="" coords="211,45,401,70"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1HudRenderer.html#a811888ec303fe1cfdfa3373f70decbc1" title="Draws the styled HUD overlay for the current frame." alt="" coords="7,5,161,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="203,45,161,39,162,34,204,40"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1MapRenderer.html#a0b2fcc444f807a100f47ffc96c4153f6" title="Draws the terrain and ground resources." alt="" coords="5,69,163,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="205,75,163,81,162,75,204,69"/>
+</map>

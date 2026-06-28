@@ -113,24 +113,24 @@ $(document).ready(function(){initNavTree('classzappy_1_1World.html',''); initRes
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a246fcd109eb4eb762e6f170292204196" id="r_a246fcd109eb4eb762e6f170292204196"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1World.html#a246fcd109eb4eb762e6f170292204196">World</a> (int x, int y, int f, bool useOldGen=false)</td></tr>
+<tr class="memitem:a246fcd109eb4eb762e6f170292204196" id="r_a246fcd109eb4eb762e6f170292204196"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1World.html#a246fcd109eb4eb762e6f170292204196">World</a> (int <a class="el" href="glad_8h.html#a92d0386e5c19fb81ea88c9f99644ab1d">x</a>, int <a class="el" href="glad_8h.html#a66ddd433d2cacfe27f5906b7e86faeed">y</a>, int <a class="el" href="glad_8h.html#ae29c29480f1260cc37ad71203904ea4d">f</a>, bool useOldGen=false)</td></tr>
 <tr class="memdesc:a246fcd109eb4eb762e6f170292204196"><td class="mdescLeft">&#160;</td><td class="mdescRight">Builds an x-by-y world with empty tiles and no players yet.  <br /></td></tr>
 <tr class="separator:a246fcd109eb4eb762e6f170292204196"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a11a48f8825955c732106a44c3ebdf5da" id="r_a11a48f8825955c732106a44c3ebdf5da"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1World.html#a11a48f8825955c732106a44c3ebdf5da">~World</a> ()=default</td></tr>
 <tr class="separator:a11a48f8825955c732106a44c3ebdf5da"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aad86d2fa98fbe95fed52656c32582b19" id="r_aad86d2fa98fbe95fed52656c32582b19"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1World.html#aad86d2fa98fbe95fed52656c32582b19">isIncantationValid</a> (int x, int y, int level)</td></tr>
+<tr class="memitem:aad86d2fa98fbe95fed52656c32582b19" id="r_aad86d2fa98fbe95fed52656c32582b19"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1World.html#aad86d2fa98fbe95fed52656c32582b19">isIncantationValid</a> (int <a class="el" href="glad_8h.html#a92d0386e5c19fb81ea88c9f99644ab1d">x</a>, int <a class="el" href="glad_8h.html#a66ddd433d2cacfe27f5906b7e86faeed">y</a>, int <a class="el" href="glad_8h.html#abc60a79088789bd61297bf5f9ff500d1">level</a>)</td></tr>
 <tr class="memdesc:aad86d2fa98fbe95fed52656c32582b19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether an elevation from <code>level</code> to <code>level + 1</code> can take place on the tile. Verifies both the minimum number of same-level players and the required stones.  <br /></td></tr>
 <tr class="separator:aad86d2fa98fbe95fed52656c32582b19"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34a1fc2900d878a2db5bfb0ee1cf659f" id="r_a34a1fc2900d878a2db5bfb0ee1cf659f"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structzappy_1_1ElevationRequirement.html">ElevationRequirement</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1World.html#a34a1fc2900d878a2db5bfb0ee1cf659f">getElevationRequirement</a> (int level) const</td></tr>
+<tr class="memitem:a34a1fc2900d878a2db5bfb0ee1cf659f" id="r_a34a1fc2900d878a2db5bfb0ee1cf659f"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structzappy_1_1ElevationRequirement.html">ElevationRequirement</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1World.html#a34a1fc2900d878a2db5bfb0ee1cf659f">getElevationRequirement</a> (int <a class="el" href="glad_8h.html#abc60a79088789bd61297bf5f9ff500d1">level</a>) const</td></tr>
 <tr class="memdesc:a34a1fc2900d878a2db5bfb0ee1cf659f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the requirements to elevate from <code>level</code> to <code>level + 1</code>, or nullptr if <code>level</code> is out of [1, 7].  <br /></td></tr>
 <tr class="separator:a34a1fc2900d878a2db5bfb0ee1cf659f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab1b432308478a9dba9cf0a0695bef412" id="r_ab1b432308478a9dba9cf0a0695bef412"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classzappy_1_1Player.html">Player</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1World.html#ab1b432308478a9dba9cf0a0695bef412">getPlayersOnTileAtLevel</a> (int x, int y, int level)</td></tr>
+<tr class="memitem:ab1b432308478a9dba9cf0a0695bef412" id="r_ab1b432308478a9dba9cf0a0695bef412"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classzappy_1_1Player.html">Player</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1World.html#ab1b432308478a9dba9cf0a0695bef412">getPlayersOnTileAtLevel</a> (int <a class="el" href="glad_8h.html#a92d0386e5c19fb81ea88c9f99644ab1d">x</a>, int <a class="el" href="glad_8h.html#a66ddd433d2cacfe27f5906b7e86faeed">y</a>, int <a class="el" href="glad_8h.html#abc60a79088789bd61297bf5f9ff500d1">level</a>)</td></tr>
 <tr class="memdesc:ab1b432308478a9dba9cf0a0695bef412"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the players standing on the tile that are exactly at <code>level</code>.  <br /></td></tr>
 <tr class="separator:ab1b432308478a9dba9cf0a0695bef412"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a353dcd17b411d7adefd995b3476b1ea4" id="r_a353dcd17b411d7adefd995b3476b1ea4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1World.html#a353dcd17b411d7adefd995b3476b1ea4">removeIncantationStones</a> (int x, int y, int level)</td></tr>
+<tr class="memitem:a353dcd17b411d7adefd995b3476b1ea4" id="r_a353dcd17b411d7adefd995b3476b1ea4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="glad_8h.html#a950fc91edb4504f62f1c577bf4727c29">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1World.html#a353dcd17b411d7adefd995b3476b1ea4">removeIncantationStones</a> (int <a class="el" href="glad_8h.html#a92d0386e5c19fb81ea88c9f99644ab1d">x</a>, int <a class="el" href="glad_8h.html#a66ddd433d2cacfe27f5906b7e86faeed">y</a>, int <a class="el" href="glad_8h.html#abc60a79088789bd61297bf5f9ff500d1">level</a>)</td></tr>
 <tr class="memdesc:a353dcd17b411d7adefd995b3476b1ea4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes from the tile the stones consumed by an elevation from <code>level</code> to <code>level + 1</code>.  <br /></td></tr>
 <tr class="separator:a353dcd17b411d7adefd995b3476b1ea4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a42559872b34abdb931c45bb2a1dcb091" id="r_a42559872b34abdb931c45bb2a1dcb091"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1World.html#a42559872b34abdb931c45bb2a1dcb091">resourcePassiveGeneration</a> ()</td></tr>
+<tr class="memitem:a42559872b34abdb931c45bb2a1dcb091" id="r_a42559872b34abdb931c45bb2a1dcb091"><td class="memItemLeft" align="right" valign="top"><a class="el" href="glad_8h.html#a950fc91edb4504f62f1c577bf4727c29">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1World.html#a42559872b34abdb931c45bb2a1dcb091">resourcePassiveGeneration</a> ()</td></tr>
 <tr class="memdesc:a42559872b34abdb931c45bb2a1dcb091"><td class="mdescLeft">&#160;</td><td class="mdescRight">Periodically replenishes resources across the map (the spawn-rate tick).  <br /></td></tr>
 <tr class="separator:a42559872b34abdb931c45bb2a1dcb091"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab6ac66d9af830c2fc55c7c1787987470" id="r_ab6ac66d9af830c2fc55c7c1787987470"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1World.html#ab6ac66d9af830c2fc55c7c1787987470">checkWinningCondition</a> ()</td></tr>
@@ -144,15 +144,15 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a1ae471ce1c5239de029c030e47710937"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1f1b69056789480abf28fafa62b4ce81" id="r_a1f1b69056789480abf28fafa62b4ce81"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; std::unique_ptr&lt; <a class="el" href="classzappy_1_1Player.html">Player</a> &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1World.html#a1f1b69056789480abf28fafa62b4ce81">getPlayers</a> () const</td></tr>
 <tr class="separator:a1f1b69056789480abf28fafa62b4ce81"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a43fb08ea54d522c20d2c27ed281297f4" id="r_a43fb08ea54d522c20d2c27ed281297f4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classzappy_1_1Player.html">Player</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1World.html#a43fb08ea54d522c20d2c27ed281297f4">getPlayerById</a> (int id)</td></tr>
+<tr class="memitem:a43fb08ea54d522c20d2c27ed281297f4" id="r_a43fb08ea54d522c20d2c27ed281297f4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classzappy_1_1Player.html">Player</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1World.html#a43fb08ea54d522c20d2c27ed281297f4">getPlayerById</a> (int <a class="el" href="glad_8h.html#a58c2a664503e14ffb8f21012aabff3e9">id</a>)</td></tr>
 <tr class="memdesc:a43fb08ea54d522c20d2c27ed281297f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Looks up a player by its logical id, or nullptr if none matches.  <br /></td></tr>
 <tr class="separator:a43fb08ea54d522c20d2c27ed281297f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7f5526d40e57cf68f11a5c577acc98d9" id="r_a7f5526d40e57cf68f11a5c577acc98d9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classzappy_1_1Player.html">Player</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1World.html#a7f5526d40e57cf68f11a5c577acc98d9">getPlayerById</a> (int id) const</td></tr>
+<tr class="memitem:a7f5526d40e57cf68f11a5c577acc98d9" id="r_a7f5526d40e57cf68f11a5c577acc98d9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classzappy_1_1Player.html">Player</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1World.html#a7f5526d40e57cf68f11a5c577acc98d9">getPlayerById</a> (int <a class="el" href="glad_8h.html#a58c2a664503e14ffb8f21012aabff3e9">id</a>) const</td></tr>
 <tr class="separator:a7f5526d40e57cf68f11a5c577acc98d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad35316e4e1203c45ad2f853319775432" id="r_ad35316e4e1203c45ad2f853319775432"><td class="memItemLeft" align="right" valign="top">std::pair&lt; int, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1World.html#ad35316e4e1203c45ad2f853319775432">getMapSize</a> () const</td></tr>
 <tr class="memdesc:ad35316e4e1203c45ad2f853319775432"><td class="mdescLeft">&#160;</td><td class="mdescRight">Map dimensions as (width, height).  <br /></td></tr>
 <tr class="separator:ad35316e4e1203c45ad2f853319775432"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a90583ba922f8a981c645259558511518" id="r_a90583ba922f8a981c645259558511518"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1World.html#a90583ba922f8a981c645259558511518">setBroadCastQueue</a> (std::queue&lt; std::string &gt; *broadcastQueue)</td></tr>
+<tr class="memitem:a90583ba922f8a981c645259558511518" id="r_a90583ba922f8a981c645259558511518"><td class="memItemLeft" align="right" valign="top"><a class="el" href="glad_8h.html#a950fc91edb4504f62f1c577bf4727c29">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1World.html#a90583ba922f8a981c645259558511518">setBroadCastQueue</a> (std::queue&lt; std::string &gt; *broadcastQueue)</td></tr>
 <tr class="memdesc:a90583ba922f8a981c645259558511518"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the queue used to push world events out to graphic clients.  <br /></td></tr>
 <tr class="separator:a90583ba922f8a981c645259558511518"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acc46f4ab94b9cd7dc0df5adf581195e9" id="r_acc46f4ab94b9cd7dc0df5adf581195e9"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::shared_ptr&lt; <a class="el" href="structzappy_1_1Team.html">Team</a> &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1World.html#acc46f4ab94b9cd7dc0df5adf581195e9">getTeams</a> ()</td></tr>
@@ -164,52 +164,56 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a9fce895cc2d62e61b943f7d9e03471db" id="r_a9fce895cc2d62e61b943f7d9e03471db"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structzappy_1_1tile.html">tile</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1World.html#a9fce895cc2d62e61b943f7d9e03471db">getTileAt</a> (<a class="el" href="structzappy_1_1position.html">position</a> pos)</td></tr>
 <tr class="memdesc:a9fce895cc2d62e61b943f7d9e03471db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the tile at the given coordinates.  <br /></td></tr>
 <tr class="separator:a9fce895cc2d62e61b943f7d9e03471db"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3d970927132d48c4440f41db095da4eb" id="r_a3d970927132d48c4440f41db095da4eb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1World.html#a3d970927132d48c4440f41db095da4eb">setTileAt</a> (<a class="el" href="structzappy_1_1position.html">position</a> pos, <a class="el" href="namespacezappy.html#a7def2f3f37d8dd0bd14d9e3c5ac180c5">ItemType</a> itemType, int count)</td></tr>
+<tr class="memitem:a3d970927132d48c4440f41db095da4eb" id="r_a3d970927132d48c4440f41db095da4eb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="glad_8h.html#a950fc91edb4504f62f1c577bf4727c29">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1World.html#a3d970927132d48c4440f41db095da4eb">setTileAt</a> (<a class="el" href="structzappy_1_1position.html">position</a> pos, <a class="el" href="namespacezappy.html#a7def2f3f37d8dd0bd14d9e3c5ac180c5">ItemType</a> itemType, int <a class="el" href="glad_8h.html#a4e867eee5910f6b2df6123b47ab70dae">count</a>)</td></tr>
 <tr class="memdesc:a3d970927132d48c4440f41db095da4eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the absolute count of a resource on a tile.  <br /></td></tr>
 <tr class="separator:a3d970927132d48c4440f41db095da4eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a991347e5787aa696ad62de265c680a96" id="r_a991347e5787aa696ad62de265c680a96"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1World.html#a991347e5787aa696ad62de265c680a96">getAvailableSlotsForTeam</a> (const std::string &amp;teamName) const</td></tr>
 <tr class="memdesc:a991347e5787aa696ad62de265c680a96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free connection slots remaining for a team (used to admit new players).  <br /></td></tr>
 <tr class="separator:a991347e5787aa696ad62de265c680a96"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af08f69ff3d95da644be0429cdbe7ee7d" id="r_af08f69ff3d95da644be0429cdbe7ee7d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1World.html#af08f69ff3d95da644be0429cdbe7ee7d">addTeam</a> (const std::string &amp;name, int teamID, int initialSlots)</td></tr>
+<tr class="memitem:af08f69ff3d95da644be0429cdbe7ee7d" id="r_af08f69ff3d95da644be0429cdbe7ee7d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="glad_8h.html#a950fc91edb4504f62f1c577bf4727c29">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1World.html#af08f69ff3d95da644be0429cdbe7ee7d">addTeam</a> (const std::string &amp;<a class="el" href="glad_8h.html#a5c4947d4516dd7cfa3505ce3a648a4ef">name</a>, int teamID, int initialSlots)</td></tr>
 <tr class="memdesc:af08f69ff3d95da644be0429cdbe7ee7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers a new team, laying initialSlots eggs at random tiles so the first clients have something to hatch from (one egg == one free slot).  <br /></td></tr>
 <tr class="separator:af08f69ff3d95da644be0429cdbe7ee7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0f7b0576d14b018ca6fcba792695d853" id="r_a0f7b0576d14b018ca6fcba792695d853"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="structzappy_1_1Team.html">Team</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1World.html#a0f7b0576d14b018ca6fcba792695d853">getTeamByName</a> (const std::string &amp;name)</td></tr>
+<tr class="memitem:a0f7b0576d14b018ca6fcba792695d853" id="r_a0f7b0576d14b018ca6fcba792695d853"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="structzappy_1_1Team.html">Team</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1World.html#a0f7b0576d14b018ca6fcba792695d853">getTeamByName</a> (const std::string &amp;<a class="el" href="glad_8h.html#a5c4947d4516dd7cfa3505ce3a648a4ef">name</a>)</td></tr>
 <tr class="memdesc:a0f7b0576d14b018ca6fcba792695d853"><td class="mdescLeft">&#160;</td><td class="mdescRight">Looks up a team by name, or nullptr if it does not exist.  <br /></td></tr>
 <tr class="separator:a0f7b0576d14b018ca6fcba792695d853"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1ad1d6b64d725ca67581ef9ae97d8289" id="r_a1ad1d6b64d725ca67581ef9ae97d8289"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1World.html#a1ad1d6b64d725ca67581ef9ae97d8289">addPlayer</a> (int fd, const std::string &amp;teamName)</td></tr>
 <tr class="memdesc:a1ad1d6b64d725ca67581ef9ae97d8289"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hatches a player from one of the team's eggs, chosen at random, spawning it on that egg's tile and consuming the egg. The new player is reached through client fd. Returns the new player's logical id, or -1 if the team does not exist or has no egg left, in which case no player is created.  <br /></td></tr>
 <tr class="separator:a1ad1d6b64d725ca67581ef9ae97d8289"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3904131e585caa94fc0b4d4fb01e11f2" id="r_a3904131e585caa94fc0b4d4fb01e11f2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1World.html#a3904131e585caa94fc0b4d4fb01e11f2">removePlayerFromTile</a> (<a class="el" href="classzappy_1_1Player.html">Player</a> *player, <a class="el" href="structzappy_1_1position.html">position</a> pos)</td></tr>
+<tr class="memitem:a3904131e585caa94fc0b4d4fb01e11f2" id="r_a3904131e585caa94fc0b4d4fb01e11f2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="glad_8h.html#a950fc91edb4504f62f1c577bf4727c29">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1World.html#a3904131e585caa94fc0b4d4fb01e11f2">removePlayerFromTile</a> (<a class="el" href="classzappy_1_1Player.html">Player</a> *player, <a class="el" href="structzappy_1_1position.html">position</a> pos)</td></tr>
 <tr class="memdesc:a3904131e585caa94fc0b4d4fb01e11f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes the player pointer from the tile at the given position, if any.  <br /></td></tr>
 <tr class="separator:a3904131e585caa94fc0b4d4fb01e11f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3335c652e2e35588a6e503cb0e8658c2" id="r_a3335c652e2e35588a6e503cb0e8658c2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1World.html#a3335c652e2e35588a6e503cb0e8658c2">addPlayerToTile</a> (<a class="el" href="classzappy_1_1Player.html">Player</a> *player, <a class="el" href="structzappy_1_1position.html">position</a> pos)</td></tr>
+<tr class="memitem:a3335c652e2e35588a6e503cb0e8658c2" id="r_a3335c652e2e35588a6e503cb0e8658c2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="glad_8h.html#a950fc91edb4504f62f1c577bf4727c29">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1World.html#a3335c652e2e35588a6e503cb0e8658c2">addPlayerToTile</a> (<a class="el" href="classzappy_1_1Player.html">Player</a> *player, <a class="el" href="structzappy_1_1position.html">position</a> pos)</td></tr>
 <tr class="memdesc:a3335c652e2e35588a6e503cb0e8658c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds the player pointer to the tile at the given position, if it exists.  <br /></td></tr>
 <tr class="separator:a3335c652e2e35588a6e503cb0e8658c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16e90e4f9247dcfdc66d275ab5fc2888" id="r_a16e90e4f9247dcfdc66d275ab5fc2888"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1World.html#a16e90e4f9247dcfdc66d275ab5fc2888">sendMessageToPlayersThatAreOnTile</a> (<a class="el" href="structzappy_1_1position.html">position</a> pos, const std::string &amp;message, std::vector&lt; std::unique_ptr&lt; <a class="el" href="classzappy_1_1Client.html">Client</a> &gt; &gt; &amp;clients)</td></tr>
+<tr class="memitem:a16e90e4f9247dcfdc66d275ab5fc2888" id="r_a16e90e4f9247dcfdc66d275ab5fc2888"><td class="memItemLeft" align="right" valign="top"><a class="el" href="glad_8h.html#a950fc91edb4504f62f1c577bf4727c29">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1World.html#a16e90e4f9247dcfdc66d275ab5fc2888">sendMessageToPlayersThatAreOnTile</a> (<a class="el" href="structzappy_1_1position.html">position</a> pos, const std::string &amp;message, std::vector&lt; std::unique_ptr&lt; <a class="el" href="classzappy_1_1Client.html">Client</a> &gt; &gt; &amp;clients)</td></tr>
 <tr class="memdesc:a16e90e4f9247dcfdc66d275ab5fc2888"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a message to every player currently standing on the given tile.  <br /></td></tr>
 <tr class="separator:a16e90e4f9247dcfdc66d275ab5fc2888"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a61bd77a5a1cae883aa060469d039fe92" id="r_a61bd77a5a1cae883aa060469d039fe92"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1World.html#a61bd77a5a1cae883aa060469d039fe92">removePlayer</a> (int id)</td></tr>
+<tr class="memitem:a61bd77a5a1cae883aa060469d039fe92" id="r_a61bd77a5a1cae883aa060469d039fe92"><td class="memItemLeft" align="right" valign="top"><a class="el" href="glad_8h.html#a950fc91edb4504f62f1c577bf4727c29">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1World.html#a61bd77a5a1cae883aa060469d039fe92">removePlayer</a> (int <a class="el" href="glad_8h.html#a58c2a664503e14ffb8f21012aabff3e9">id</a>)</td></tr>
 <tr class="memdesc:a61bd77a5a1cae883aa060469d039fe92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes a player from the world and decrease the number of slots occupied in its team. The player is removed from the tile it was standing on and from the list of players in the world.  <br /></td></tr>
 <tr class="separator:a61bd77a5a1cae883aa060469d039fe92"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a05439a20a5736f87ccfa09d8bae3ca45" id="r_a05439a20a5736f87ccfa09d8bae3ca45"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1World.html#a05439a20a5736f87ccfa09d8bae3ca45">getTimeUnit</a> () const</td></tr>
 <tr class="memdesc:a05439a20a5736f87ccfa09d8bae3ca45"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the active time unit for the world.  <br /></td></tr>
 <tr class="separator:a05439a20a5736f87ccfa09d8bae3ca45"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a93b2bb4700e29ccc111c4b4067d7e742" id="r_a93b2bb4700e29ccc111c4b4067d7e742"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1World.html#a93b2bb4700e29ccc111c4b4067d7e742">setTimeUnit</a> (int f)</td></tr>
+<tr class="memitem:a93b2bb4700e29ccc111c4b4067d7e742" id="r_a93b2bb4700e29ccc111c4b4067d7e742"><td class="memItemLeft" align="right" valign="top"><a class="el" href="glad_8h.html#a950fc91edb4504f62f1c577bf4727c29">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1World.html#a93b2bb4700e29ccc111c4b4067d7e742">setTimeUnit</a> (int <a class="el" href="glad_8h.html#ae29c29480f1260cc37ad71203904ea4d">f</a>)</td></tr>
 <tr class="memdesc:a93b2bb4700e29ccc111c4b4067d7e742"><td class="mdescLeft">&#160;</td><td class="mdescRight">sets the active time unit for the world.  <br /></td></tr>
 <tr class="separator:a93b2bb4700e29ccc111c4b4067d7e742"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2cbe63c0d49892221552eb22d64b1953" id="r_a2cbe63c0d49892221552eb22d64b1953"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structzappy_1_1Team.html">Team</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1World.html#a2cbe63c0d49892221552eb22d64b1953">getWinningTeam</a> () const</td></tr>
 <tr class="memdesc:a2cbe63c0d49892221552eb22d64b1953"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the team that has won the game, or nullptr if no team has won.  <br /></td></tr>
 <tr class="separator:a2cbe63c0d49892221552eb22d64b1953"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe67d47d75f1d1d616e057b5eded8304" id="r_afe67d47d75f1d1d616e057b5eded8304"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacezappy.html#ac8050a0907cb1bcba945169d218a510c">Map</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1World.html#afe67d47d75f1d1d616e057b5eded8304">getMap</a> ()</td></tr>
+<tr class="separator:afe67d47d75f1d1d616e057b5eded8304"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89dcdff749116fae3421f9823899cab8" id="r_a89dcdff749116fae3421f9823899cab8"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespacezappy.html#ac8050a0907cb1bcba945169d218a510c">Map</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1World.html#a89dcdff749116fae3421f9823899cab8">getMap</a> () const</td></tr>
+<tr class="separator:a89dcdff749116fae3421f9823899cab8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
-<tr class="memitem:a420188584d7d2f104bb3e7d186266758" id="r_a420188584d7d2f104bb3e7d186266758"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1World.html#a420188584d7d2f104bb3e7d186266758">resourcePassiveGenerationLegacy</a> ()</td></tr>
+<tr class="memitem:a420188584d7d2f104bb3e7d186266758" id="r_a420188584d7d2f104bb3e7d186266758"><td class="memItemLeft" align="right" valign="top"><a class="el" href="glad_8h.html#a950fc91edb4504f62f1c577bf4727c29">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1World.html#a420188584d7d2f104bb3e7d186266758">resourcePassiveGenerationLegacy</a> ()</td></tr>
 <tr class="memdesc:a420188584d7d2f104bb3e7d186266758"><td class="mdescLeft">&#160;</td><td class="mdescRight">Legacy resource generation: independently rolls width*height*density random tiles per resource type, incrementing whatever is already there. Kept byte-for-byte as the original behavior, enabled via -oldgen.  <br /></td></tr>
 <tr class="separator:a420188584d7d2f104bb3e7d186266758"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab0d269a2219c35662581a4d4296a3467" id="r_ab0d269a2219c35662581a4d4296a3467"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1World.html#ab0d269a2219c35662581a4d4296a3467">resourcePassiveGenerationEven</a> ()</td></tr>
+<tr class="memitem:ab0d269a2219c35662581a4d4296a3467" id="r_ab0d269a2219c35662581a4d4296a3467"><td class="memItemLeft" align="right" valign="top"><a class="el" href="glad_8h.html#a950fc91edb4504f62f1c577bf4727c29">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1World.html#ab0d269a2219c35662581a4d4296a3467">resourcePassiveGenerationEven</a> ()</td></tr>
 <tr class="memdesc:ab0d269a2219c35662581a4d4296a3467"><td class="mdescLeft">&#160;</td><td class="mdescRight">Spec-accurate resource generation: tops every resource up to width*height*density (never above, never below 1), spread evenly and randomly across the map.  <br /></td></tr>
 <tr class="separator:ab0d269a2219c35662581a4d4296a3467"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a42f9bf905589c6b0b32ca7c88fbe3436" id="r_a42f9bf905589c6b0b32ca7c88fbe3436"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1World.html#a42f9bf905589c6b0b32ca7c88fbe3436">broadcastTileContent</a> (<a class="el" href="structzappy_1_1position.html">position</a> pos)</td></tr>
+<tr class="memitem:a42f9bf905589c6b0b32ca7c88fbe3436" id="r_a42f9bf905589c6b0b32ca7c88fbe3436"><td class="memItemLeft" align="right" valign="top"><a class="el" href="glad_8h.html#a950fc91edb4504f62f1c577bf4727c29">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1World.html#a42f9bf905589c6b0b32ca7c88fbe3436">broadcastTileContent</a> (<a class="el" href="structzappy_1_1position.html">position</a> pos)</td></tr>
 <tr class="memdesc:a42f9bf905589c6b0b32ca7c88fbe3436"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pushes a "bct" broadcast line for the tile at the given position, if a broadcast queue is set.  <br /></td></tr>
 <tr class="separator:a42f9bf905589c6b0b32ca7c88fbe3436"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -342,7 +346,7 @@ Private Attributes</h2></td></tr>
 
 <p>Hatches a player from one of the team's eggs, chosen at random, spawning it on that egg's tile and consuming the egg. The new player is reached through client fd. Returns the new player's logical id, or -1 if the team does not exist or has no egg left, in which case no player is created. </p>
 
-<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00234">234</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00239">239</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
 <div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
@@ -367,7 +371,7 @@ Private Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void zappy::World::addPlayerToTile </td>
+          <td class="memname"><a class="el" href="glad_8h.html#a950fc91edb4504f62f1c577bf4727c29">void</a> zappy::World::addPlayerToTile </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classzappy_1_1Player.html">Player</a> *&#160;</td>
           <td class="paramname"><em>player</em>, </td>
@@ -388,7 +392,7 @@ Private Attributes</h2></td></tr>
 
 <p>Adds the player pointer to the tile at the given position, if it exists. </p>
 
-<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00269">269</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00276">276</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
 <div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-4-summary" class="dynsummary" style="display:block;">
@@ -413,7 +417,7 @@ Private Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void zappy::World::addTeam </td>
+          <td class="memname"><a class="el" href="glad_8h.html#a950fc91edb4504f62f1c577bf4727c29">void</a> zappy::World::addTeam </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>name</em>, </td>
@@ -468,7 +472,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void zappy::World::broadcastTileContent </td>
+          <td class="memname"><a class="el" href="glad_8h.html#a950fc91edb4504f62f1c577bf4727c29">void</a> zappy::World::broadcastTileContent </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structzappy_1_1position.html">position</a>&#160;</td>
           <td class="paramname"><em>pos</em></td><td>)</td>
@@ -519,7 +523,7 @@ Private Attributes</h2></td></tr>
 
 <p>Returns true once a team has reached the win condition (6 players lvl 8). </p>
 
-<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00406">406</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00413">413</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
 <div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-10-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-10-summary" class="dynsummary" style="display:block;">
@@ -555,7 +559,7 @@ Private Attributes</h2></td></tr>
 <p>Consumes one food unit per player and kills those who have starved. </p>
 <dl class="section return"><dt>Returns</dt><dd>The ids of the players that died of starvation this tick. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00299">299</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00306">306</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
 <div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-12-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-12-summary" class="dynsummary" style="display:block;">
@@ -627,7 +631,7 @@ Private Attributes</h2></td></tr>
 
 <p>Returns the requirements to elevate from <code>level</code> to <code>level + 1</code>, or nullptr if <code>level</code> is out of [1, 7]. </p>
 
-<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00332">332</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00339">339</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
 <div id="dynsection-16" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-16-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-16-summary" class="dynsummary" style="display:block;">
@@ -635,6 +639,44 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-16-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classzappy_1_1World_a34a1fc2900d878a2db5bfb0ee1cf659f_icgraph.svg" width="100%" height="386"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
+
+</div>
+</div>
+<a id="afe67d47d75f1d1d616e057b5eded8304" name="afe67d47d75f1d1d616e057b5eded8304"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe67d47d75f1d1d616e057b5eded8304">&#9670;&#160;</a></span>getMap() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacezappy.html#ac8050a0907cb1bcba945169d218a510c">Map</a> &amp; zappy::World::getMap </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00455">455</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a89dcdff749116fae3421f9823899cab8" name="a89dcdff749116fae3421f9823899cab8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89dcdff749116fae3421f9823899cab8">&#9670;&#160;</a></span>getMap() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespacezappy.html#ac8050a0907cb1bcba945169d218a510c">Map</a> const  &amp; zappy::World::getMap </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00460">460</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
 
 </div>
 </div>
@@ -752,7 +794,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-21-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-21-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classzappy_1_1World_a1ae471ce1c5239de029c030e47710937_icgraph.svg" width="100%" height="381"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classzappy_1_1World_a1ae471ce1c5239de029c030e47710937_icgraph.svg" width="100%" height="424"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -810,7 +852,7 @@ Private Attributes</h2></td></tr>
 
 <p>Returns the players standing on the tile that are exactly at <code>level</code>. </p>
 
-<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00339">339</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00346">346</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
 <div id="dynsection-22" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-22-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-22-summary" class="dynsummary" style="display:block;">
@@ -846,7 +888,7 @@ Private Attributes</h2></td></tr>
 
 <p>Looks up a team by name, or nullptr if it does not exist. </p>
 
-<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00221">221</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00226">226</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
 <div id="dynsection-24" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-24-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-24-summary" class="dynsummary" style="display:block;">
@@ -874,13 +916,13 @@ Private Attributes</h2></td></tr>
 
 <p>All teams in the game. </p>
 
-<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00229">229</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00234">234</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
 <div id="dynsection-25" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-25-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-25-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-25-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classzappy_1_1World_acc46f4ab94b9cd7dc0df5adf581195e9_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classzappy_1_1World_acc46f4ab94b9cd7dc0df5adf581195e9_icgraph.svg" width="100%" height="386"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -997,7 +1039,7 @@ Private Attributes</h2></td></tr>
 <p>Returns the team that has won the game, or nullptr if no team has won. </p>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00398">398</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00405">405</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
 <div id="dynsection-30" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-30-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-30-summary" class="dynsummary" style="display:block;">
@@ -1042,7 +1084,7 @@ Private Attributes</h2></td></tr>
 
 <p>Checks whether an elevation from <code>level</code> to <code>level + 1</code> can take place on the tile. Verifies both the minimum number of same-level players and the required stones. </p>
 
-<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00350">350</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00357">357</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
 <div id="dynsection-31" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-31-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-31-summary" class="dynsummary" style="display:block;">
@@ -1067,7 +1109,7 @@ Private Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void zappy::World::removeIncantationStones </td>
+          <td class="memname"><a class="el" href="glad_8h.html#a950fc91edb4504f62f1c577bf4727c29">void</a> zappy::World::removeIncantationStones </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>x</em>, </td>
@@ -1094,7 +1136,7 @@ Private Attributes</h2></td></tr>
 
 <p>Removes from the tile the stones consumed by an elevation from <code>level</code> to <code>level + 1</code>. </p>
 
-<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00381">381</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00388">388</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
 <div id="dynsection-33" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-33-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-33-summary" class="dynsummary" style="display:block;">
@@ -1119,7 +1161,7 @@ Private Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void zappy::World::removePlayer </td>
+          <td class="memname"><a class="el" href="glad_8h.html#a950fc91edb4504f62f1c577bf4727c29">void</a> zappy::World::removePlayer </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>id</em></td><td>)</td>
@@ -1130,7 +1172,7 @@ Private Attributes</h2></td></tr>
 
 <p>Removes a player from the world and decrease the number of slots occupied in its team. The player is removed from the tile it was standing on and from the list of players in the world. </p>
 
-<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00432">432</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00439">439</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
 <div id="dynsection-35" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-35-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-35-summary" class="dynsummary" style="display:block;">
@@ -1155,7 +1197,7 @@ Private Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void zappy::World::removePlayerFromTile </td>
+          <td class="memname"><a class="el" href="glad_8h.html#a950fc91edb4504f62f1c577bf4727c29">void</a> zappy::World::removePlayerFromTile </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classzappy_1_1Player.html">Player</a> *&#160;</td>
           <td class="paramname"><em>player</em>, </td>
@@ -1176,7 +1218,7 @@ Private Attributes</h2></td></tr>
 
 <p>Removes the player pointer from the tile at the given position, if any. </p>
 
-<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00261">261</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00268">268</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
 <div id="dynsection-37" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-37-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-37-summary" class="dynsummary" style="display:block;">
@@ -1201,7 +1243,7 @@ Private Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void zappy::World::resourcePassiveGeneration </td>
+          <td class="memname"><a class="el" href="glad_8h.html#a950fc91edb4504f62f1c577bf4727c29">void</a> zappy::World::resourcePassiveGeneration </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -1240,7 +1282,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void zappy::World::resourcePassiveGenerationEven </td>
+          <td class="memname"><a class="el" href="glad_8h.html#a950fc91edb4504f62f1c577bf4727c29">void</a> zappy::World::resourcePassiveGenerationEven </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -1284,7 +1326,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void zappy::World::resourcePassiveGenerationLegacy </td>
+          <td class="memname"><a class="el" href="glad_8h.html#a950fc91edb4504f62f1c577bf4727c29">void</a> zappy::World::resourcePassiveGenerationLegacy </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -1325,7 +1367,7 @@ Private Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void zappy::World::sendMessageToPlayersThatAreOnTile </td>
+          <td class="memname"><a class="el" href="glad_8h.html#a950fc91edb4504f62f1c577bf4727c29">void</a> zappy::World::sendMessageToPlayersThatAreOnTile </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structzappy_1_1position.html">position</a>&#160;</td>
           <td class="paramname"><em>pos</em>, </td>
@@ -1352,7 +1394,7 @@ Private Attributes</h2></td></tr>
 
 <p>Sends a message to every player currently standing on the given tile. </p>
 
-<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00276">276</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00283">283</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
 <div id="dynsection-45" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-45-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-45-summary" class="dynsummary" style="display:block;">
@@ -1377,7 +1419,7 @@ Private Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void zappy::World::setBroadCastQueue </td>
+          <td class="memname"><a class="el" href="glad_8h.html#a950fc91edb4504f62f1c577bf4727c29">void</a> zappy::World::setBroadCastQueue </td>
           <td>(</td>
           <td class="paramtype">std::queue&lt; std::string &gt; *&#160;</td>
           <td class="paramname"><em>broadcastQueue</em></td><td>)</td>
@@ -1388,7 +1430,7 @@ Private Attributes</h2></td></tr>
 
 <p>Sets the queue used to push world events out to graphic clients. </p>
 
-<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00294">294</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00301">301</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
 <div id="dynsection-47" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-47-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-47-summary" class="dynsummary" style="display:block;">
@@ -1406,7 +1448,7 @@ Private Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void zappy::World::setTileAt </td>
+          <td class="memname"><a class="el" href="glad_8h.html#a950fc91edb4504f62f1c577bf4727c29">void</a> zappy::World::setTileAt </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="structzappy_1_1position.html">position</a>&#160;</td>
           <td class="paramname"><em>pos</em>, </td>
@@ -1458,7 +1500,7 @@ Private Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void zappy::World::setTimeUnit </td>
+          <td class="memname"><a class="el" href="glad_8h.html#a950fc91edb4504f62f1c577bf4727c29">void</a> zappy::World::setTimeUnit </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>f</em></td><td>)</td>

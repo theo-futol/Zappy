@@ -1,0 +1,5 @@
+<map id="Zappy::SceneRenderer::drawVictory" name="Zappy::SceneRenderer::drawVictory">
+<area shape="rect" id="Node000001" title="Draws the end&#45;of&#45;game view: the winning team&#39;s model, large and slowly spinning." alt="" coords="221,5,389,45"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1SceneRenderer.html#a30d5d84cff8f8084328a40a42671d376" title="Draws the ground and the entities for the frame." alt="" coords="5,5,173,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="207,28,174,28,174,23,207,23"/>
+</map>

@@ -1,0 +1,15 @@
+<map id="Zappy::RenderSystem::resolveFollowed" name="Zappy::RenderSystem::resolveFollowed">
+<area shape="rect" id="Node000001" title="Resolves the entity currently followed, auto&#45;detaching if it is gone or not a player." alt="" coords="5,105,171,145"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1RenderSystem.html#a27cdf2ff0686b5e8db6c3654fe30770e" title="Stops following and recenters the orbit camera on the map center." alt="" coords="240,47,405,87"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="170,102,226,88,227,93,171,107"/>
+<area shape="rect" id="Node000006" href="$classZappy_1_1IEntity.html#aa483e3d82e7596ad06086ffa44665217" title="Open category of the entity." alt="" coords="219,112,427,137"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="171,122,205,122,205,127,171,127"/>
+<area shape="rect" id="Node000007" href="$classZappy_1_1GameState.html#a183322669da6d2f09e3ec2590039330e" title="Currently selected entity, resolved live (null if none or it is gone)." alt="" coords="219,162,426,202"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="171,142,227,156,226,161,170,147"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1Map.html#a7085133e48e18b0e3b653dfa09d9bb1d" title="Map height." alt="" coords="491,5,638,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="405,48,488,31,489,36,406,53"/>
+<area shape="rect" id="Node000004" href="$classZappy_1_1GameState.html#aa9d3554ce327fc5a69b5a358d48fbe0b" title="Read&#45;only access to the map." alt="" coords="475,55,655,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="405,65,461,65,461,70,405,70"/>
+<area shape="rect" id="Node000005" href="$classZappy_1_1Map.html#ae3b126c54208662331ad1d17686e6d21" title="Map width." alt="" coords="493,104,636,129"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="406,81,489,99,488,104,405,87"/>
+</map>

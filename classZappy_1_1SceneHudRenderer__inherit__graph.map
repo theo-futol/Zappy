@@ -1,0 +1,5 @@
+<map id="Zappy::SceneHudRenderer" name="Zappy::SceneHudRenderer">
+<area shape="rect" id="Node000001" title="Screen&#45;space HUD for the 3D view: a bottom info bar and a floating selection card." alt="" coords="5,139,192,1084"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1IRenderer.html" title="Contract for one stage of the rendering pipeline." alt="" coords="36,5,161,91"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="101,105,101,138,96,138,96,105"/>
+</map>

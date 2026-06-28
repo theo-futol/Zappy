@@ -1,0 +1,25 @@
+<map id="src/gui/types/Model.hpp" name="src/gui/types/Model.hpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="452,5,629,31"/>
+<area shape="rect" id="Node000002" href="$ModelLoader_8hpp.html" title=" " alt="" coords="117,167,329,207"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="508,39,261,169,258,164,505,35"/>
+<area shape="rect" id="Node000006" href="$ModelSlicer_8hpp.html" title=" " alt="" coords="824,79,1031,119"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="611,31,835,76,834,81,610,36"/>
+<area shape="rect" id="Node000008" href="$SceneRenderer_8hpp.html" title=" " alt="" coords="353,167,547,207"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="530,44,463,168,458,165,526,42"/>
+<area shape="rect" id="Node000009" href="$RenderModel_8hpp.html" title=" " alt="" coords="550,79,753,119"/>
+<area shape="poly" id="edge10_Node000001_Node000009" title=" " alt="" coords="570,36,626,76,623,81,567,41"/>
+<area shape="rect" id="Node000003" href="$ModelLoader_8cpp.html" title=" " alt="" coords="5,255,217,295"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="189,217,138,257,135,252,186,213"/>
+<area shape="rect" id="Node000004" href="$SceneRenderer_8cpp.html" title=" " alt="" coords="242,255,434,295"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="261,213,314,252,311,257,258,217"/>
+<area shape="rect" id="Node000005" href="$RenderSystem_8cpp.html" title=" " alt="" coords="459,255,668,295"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="312,207,490,252,488,257,310,213"/>
+<area shape="rect" id="Node000007" href="$ModelSlicer_8cpp.html" title=" " alt="" coords="849,167,1056,207"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="939,131,950,166,945,167,934,133"/>
+<area shape="poly" id="edge8_Node000008_Node000004" title=" " alt="" coords="416,217,364,257,361,252,412,213"/>
+<area shape="poly" id="edge9_Node000008_Node000005" title=" " alt="" coords="487,213,540,252,537,257,484,217"/>
+<area shape="poly" id="edge13_Node000009_Node000005" title=" " alt="" coords="722,121,755,138,782,158,791,169,796,182,795,195,788,208,764,233,734,251,702,263,669,271,667,266,700,258,732,246,761,229,784,205,790,193,790,182,786,172,778,161,753,142,720,126"/>
+<area shape="poly" id="edge11_Node000009_Node000008" title=" " alt="" coords="595,127,495,169,493,164,593,122"/>
+<area shape="rect" id="Node000010" href="$RenderModel_8cpp.html" title=" " alt="" coords="571,167,774,207"/>
+<area shape="poly" id="edge12_Node000009_Node000010" title=" " alt="" coords="662,132,671,166,665,167,657,133"/>
+</map>

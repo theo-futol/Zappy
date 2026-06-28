@@ -1,0 +1,15 @@
+<map id="Zappy::INetwork::INetworkException::INetworkException" name="Zappy::INetwork::INetworkException::INetworkException">
+<area shape="rect" id="Node000001" title=" " alt="" coords="773,73,991,113"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1TcpSocket_1_1TcpSocketException.html#a334a1b5c3574dd033673fde9c5ae3263" title=" " alt="" coords="503,73,725,113"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="759,95,726,95,726,90,759,90"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1TcpSocket.html#ae6a42460d82e6fa08e36f24f118118d9" title=" " alt="" coords="248,5,455,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="540,71,454,45,410,33,411,28,455,39,542,66"/>
+<area shape="rect" id="Node000004" href="$classZappy_1_1TcpSocket.html#a6fde032e4154b455f8e0762292bd19e2" title="Opens the connection to the server." alt="" coords="255,55,448,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="489,83,448,79,449,74,489,78"/>
+<area shape="rect" id="Node000006" href="$classZappy_1_1TcpSocket.html#addd5cc281f2169f9c890012a876b7fa0" title="Reads the data currently available from the server." alt="" coords="256,104,447,129"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="489,107,447,111,446,105,489,101"/>
+<area shape="rect" id="Node000007" href="$classZappy_1_1TcpSocket.html#a68a81fbce3bd0c3001cd4963e220e287" title="Sends raw data to the server." alt="" coords="265,153,438,179"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="537,119,455,143,407,156,406,151,454,138,536,114"/>
+<area shape="rect" id="Node000005" href="$classia_1_1client_1_1ZappyAIClient.html#acf191a81fbbbb81e60a298c2a10c1e6f" title=" " alt="" coords="5,55,200,80"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="241,70,200,70,200,65,241,65"/>
+</map>

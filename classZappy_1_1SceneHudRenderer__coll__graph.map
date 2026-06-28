@@ -1,0 +1,9 @@
+<map id="Zappy::SceneHudRenderer" name="Zappy::SceneHudRenderer">
+<area shape="rect" id="Node000001" title="Screen&#45;space HUD for the 3D view: a bottom info bar and a floating selection card." alt="" coords="131,473,317,1379"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1IRenderer.html" title="Contract for one stage of the rendering pipeline." alt="" coords="5,165,131,251"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="83,263,133,496,128,497,77,265"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1AssetCache.html" title="Owns the shared GPU resources, keyed by symbolic id, loaded once." alt="" coords="155,95,293,321"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="227,321,227,457,221,457,221,321"/>
+<area shape="rect" id="Node000004" href="$classZappy_1_1TextRenderer.html" title="Renders text using FreeType; the only place FreeType is touched." alt="" coords="318,5,466,411"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="347,412,324,512,319,511,342,410"/>
+</map>

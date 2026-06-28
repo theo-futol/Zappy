@@ -10,7 +10,7 @@
 <area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="474,60,440,60,440,55,474,55"/>
 <area shape="rect" id="Node000005" href="$classzappy_1_1Core.html#a6cedeb79a573e46f2131b71d3ca17a31" title="Builds the world and network handler, then runs the blocking event loop." alt="" coords="108,45,235,70"/>
 <area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="269,60,235,60,235,55,269,55"/>
-<area shape="rect" id="Node000006" href="$main_8cpp.html#a0c99d968a34e803d378692bde2e3f18f" title=" " alt="" coords="5,45,60,70"/>
+<area shape="rect" id="Node000006" href="$server_2main_8cpp.html#a0c99d968a34e803d378692bde2e3f18f" title=" " alt="" coords="5,45,60,70"/>
 <area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="95,60,60,60,60,55,95,55"/>
 <area shape="poly" id="edge7_Node000007_Node000003" title=" " alt="" coords="683,77,649,72,650,67,684,72"/>
 </map>

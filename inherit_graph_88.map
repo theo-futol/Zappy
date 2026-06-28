@@ -1,0 +1,19 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" href="$classZappy_1_1ICommandHandler.html" title="Contract for translating one or more protocol messages into model mutations." alt="" coords="5,153,197,179"/>
+<area shape="rect" id="Node000001" href="$classZappy_1_1AEventHandler.html" title="Abstract base for protocol handlers; factors the shared parsing helpers." alt="" coords="245,153,412,179"/>
+<area shape="poly" id="edge23_Node000000_Node000001" title=" " alt="" coords="212,163,245,163,245,169,212,169"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1EggEventHandler.html" title="Handles egg&#45;specific messages: laying (enw) and connection/hatch (ebo)." alt="" coords="484,5,667,31"/>
+<area shape="poly" id="edge24_Node000001_Node000002" title=" " alt="" coords="346,141,393,89,424,62,459,40,487,28,489,33,461,44,427,66,397,93,350,144"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1EntityCommonHandler.html" title="Handles attributes common to any entity: position (ppo) and removal (pdi, edi)." alt="" coords="466,55,685,80"/>
+<area shape="poly" id="edge25_Node000001_Node000003" title=" " alt="" coords="358,143,404,115,459,89,496,78,498,83,461,94,407,120,360,148"/>
+<area shape="rect" id="Node000004" href="$classZappy_1_1GameEventHandler.html" title="Handles global/server messages: sgt, sst, seg, smg, suc, sbp and broadcast (pbc)." alt="" coords="477,104,674,129"/>
+<area shape="poly" id="edge26_Node000001_Node000004" title=" " alt="" coords="405,148,510,127,511,132,406,153"/>
+<area shape="rect" id="Node000005" href="$classZappy_1_1IncantationEventHandler.html" title="Handles incantation messages: start (pic) and end (pie)." alt="" coords="460,153,691,179"/>
+<area shape="poly" id="edge27_Node000001_Node000005" title=" " alt="" coords="426,163,460,163,460,169,426,169"/>
+<area shape="rect" id="Node000006" href="$classZappy_1_1MapEventHandler.html" title="Handles map&#45;related messages: size (msz), tile content (bct), full map (mct)." alt="" coords="482,203,669,228"/>
+<area shape="poly" id="edge28_Node000001_Node000006" title=" " alt="" coords="406,179,511,200,510,205,405,184"/>
+<area shape="rect" id="Node000007" href="$classZappy_1_1TeamEventHandler.html" title="Handles the team name message (tna)." alt="" coords="479,252,672,277"/>
+<area shape="poly" id="edge29_Node000001_Node000007" title=" " alt="" coords="361,184,407,211,461,237,502,249,501,254,459,242,405,216,359,189"/>
+<area shape="rect" id="Node000008" href="$classZappy_1_1TrantorianEventHandler.html" title="Handles Trantorian&#45;specific messages: pnw, plv, pin, pex, pfk, pdr, pgt, pipi." alt="" coords="464,301,687,327"/>
+<area shape="poly" id="edge30_Node000001_Node000008" title=" " alt="" coords="350,188,397,238,428,265,461,286,493,299,491,304,459,291,424,269,393,242,346,191"/>
+</map>

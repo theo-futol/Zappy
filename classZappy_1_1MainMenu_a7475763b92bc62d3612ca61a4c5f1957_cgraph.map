@@ -1,0 +1,5 @@
+<map id="Zappy::MainMenu::panelBottom" name="Zappy::MainMenu::panelBottom">
+<area shape="rect" id="Node000001" title="Y of the centered panel&#39;s bottom edge." alt="" coords="5,5,236,31"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1Window.html#aea1ad498e106ef34dd2440e08457f386" title="Window height." alt="" coords="284,5,455,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="236,15,270,15,270,21,236,21"/>
+</map>

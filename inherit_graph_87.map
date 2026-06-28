@@ -1,0 +1,9 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" href="$classZappy_1_1ICamera.html" title="Contract for a camera providing view and projection matrices." alt="" coords="5,55,131,80"/>
+<area shape="rect" id="Node000001" href="$classZappy_1_1FreeCamera.html" title="Free&#45;fly perspective camera: move with the keyboard, look with the mouse." alt="" coords="194,5,343,31"/>
+<area shape="poly" id="edge20_Node000000_Node000001" title=" " alt="" coords="133,49,216,28,217,33,134,54"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1OrbitCamera.html" title="Perspective camera that orbits a target point (the 3D&#45;mode camera)." alt="" coords="192,55,345,80"/>
+<area shape="poly" id="edge21_Node000000_Node000002" title=" " alt="" coords="144,65,192,65,192,70,144,70"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1TopDownCamera.html" title="Orthographic top&#45;down camera (the v1 camera)." alt="" coords="179,104,359,129"/>
+<area shape="poly" id="edge22_Node000000_Node000003" title=" " alt="" coords="134,81,217,101,216,107,133,86"/>
+</map>

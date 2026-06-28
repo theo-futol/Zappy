@@ -1,0 +1,7 @@
+<map id="Zappy::TrantorianEventHandler" name="Zappy::TrantorianEventHandler">
+<area shape="rect" id="Node000001" title="Handles Trantorian&#45;specific messages: pnw, plv, pin, pex, pfk, pdr, pgt, pipi." alt="" coords="5,332,243,661"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1AEventHandler.html" title="Abstract base for protocol handlers; factors the shared parsing helpers." alt="" coords="45,159,203,284"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="127,298,127,332,121,332,121,298"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1ICommandHandler.html" title="Contract for translating one or more protocol messages into model mutations." alt="" coords="32,5,216,111"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="127,124,127,158,121,158,121,124"/>
+</map>

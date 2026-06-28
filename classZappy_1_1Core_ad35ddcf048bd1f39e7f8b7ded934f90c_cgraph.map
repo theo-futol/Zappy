@@ -1,0 +1,11 @@
+<map id="Zappy::Core::run" name="Zappy::Core::run">
+<area shape="rect" id="Node000001" title="Runs the application: alternates the main menu and a game session until the user quits." alt="" coords="5,77,135,102"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1Core.html#aa86fe0f0253c1331cd03b6e0fdc97e7e" title="Connects and runs one game session with the current host/port/mode." alt="" coords="183,77,361,102"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="135,87,169,87,169,92,135,92"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1INetwork_1_1INetworkException.html#a25476a236f2cd960beecf1adf667fb20" title=" " alt="" coords="430,5,626,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="323,74,434,46,435,51,325,79"/>
+<area shape="rect" id="Node000004" href="$classZappy_1_1NetworkService_1_1NetworkServiceException.html#a1922adfe28aefbf5f45b9cd544b47530" title=" " alt="" coords="409,69,647,109"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="362,87,396,87,396,92,362,92"/>
+<area shape="rect" id="Node000005" href="$classZappy_1_1RenderSystem_1_1RenderSystemException.html#a6e0967282c49cd0b05b88443b0442642" title=" " alt="" coords="413,133,643,173"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="325,100,435,127,434,133,323,105"/>
+</map>

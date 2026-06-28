@@ -121,7 +121,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7c5ce94a23371f7be838ef38517f43f7" id="r_a7c5ce94a23371f7be838ef38517f43f7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1Socket.html#a7c5ce94a23371f7be838ef38517f43f7">~Socket</a> ()</td></tr>
 <tr class="memdesc:a7c5ce94a23371f7be838ef38517f43f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes the owned descriptor if one is held.  <br /></td></tr>
 <tr class="separator:a7c5ce94a23371f7be838ef38517f43f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a33bb7774fac8006b8004d0ec1b13b0e8" id="r_a33bb7774fac8006b8004d0ec1b13b0e8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1Socket.html#a33bb7774fac8006b8004d0ec1b13b0e8">create</a> (int domain, int type, int protocol)</td></tr>
+<tr class="memitem:a33bb7774fac8006b8004d0ec1b13b0e8" id="r_a33bb7774fac8006b8004d0ec1b13b0e8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1Socket.html#a33bb7774fac8006b8004d0ec1b13b0e8">create</a> (int domain, int <a class="el" href="glad_8h.html#a890efa53b3d7deeeced6f3a0d6653ed3">type</a>, int protocol)</td></tr>
 <tr class="memdesc:a33bb7774fac8006b8004d0ec1b13b0e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Opens a new socket (wraps ::socket).  <br /></td></tr>
 <tr class="separator:a33bb7774fac8006b8004d0ec1b13b0e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6a3c09a75bba538e8fba11a67c10a9d6" id="r_a6a3c09a75bba538e8fba11a67c10a9d6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1Socket.html#a6a3c09a75bba538e8fba11a67c10a9d6">bind</a> (int port)</td></tr>
@@ -138,7 +138,7 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a3ee29147718a5751117331acbc8432a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0fbd375d1839a1679781be7bb4cdaadb" id="r_a0fbd375d1839a1679781be7bb4cdaadb"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1Socket.html#a0fbd375d1839a1679781be7bb4cdaadb">getFd</a> ()</td></tr>
 <tr class="separator:a0fbd375d1839a1679781be7bb4cdaadb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a23b81f51d93f411e6b623b698bd85f9d" id="r_a23b81f51d93f411e6b623b698bd85f9d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1Socket.html#a23b81f51d93f411e6b623b698bd85f9d">setSocket</a> (int socket)</td></tr>
+<tr class="memitem:a23b81f51d93f411e6b623b698bd85f9d" id="r_a23b81f51d93f411e6b623b698bd85f9d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="glad_8h.html#a950fc91edb4504f62f1c577bf4727c29">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1Socket.html#a23b81f51d93f411e6b623b698bd85f9d">setSocket</a> (int socket)</td></tr>
 <tr class="memdesc:a23b81f51d93f411e6b623b698bd85f9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replaces the owned descriptor.  <br /></td></tr>
 <tr class="separator:a23b81f51d93f411e6b623b698bd85f9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -251,7 +251,7 @@ Private Attributes</h2></td></tr>
 <p>Accepts a pending connection. </p>
 <dl class="section return"><dt>Returns</dt><dd>the new client fd, or -1 on failure. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Socket_8cpp_source.html#l00035">35</a> of file <a class="el" href="Socket_8cpp_source.html">Socket.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Socket_8cpp_source.html#l00039">39</a> of file <a class="el" href="Socket_8cpp_source.html">Socket.cpp</a>.</p>
 <div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
@@ -281,7 +281,7 @@ Private Attributes</h2></td></tr>
 <p>Binds the socket to the given port on all interfaces. </p>
 <dl class="section return"><dt>Returns</dt><dd>false on failure. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Socket_8cpp_source.html#l00021">21</a> of file <a class="el" href="Socket_8cpp_source.html">Socket.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Socket_8cpp_source.html#l00025">25</a> of file <a class="el" href="Socket_8cpp_source.html">Socket.cpp</a>.</p>
 <div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
@@ -353,7 +353,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="Socket_8cpp_source.html#l00045">45</a> of file <a class="el" href="Socket_8cpp_source.html">Socket.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Socket_8cpp_source.html#l00049">49</a> of file <a class="el" href="Socket_8cpp_source.html">Socket.cpp</a>.</p>
 <div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-4-summary" class="dynsummary" style="display:block;">
@@ -381,7 +381,7 @@ Private Attributes</h2></td></tr>
 
 <p>Returns the owned descriptor. </p>
 
-<p class="definition">Definition at line <a class="el" href="Socket_8cpp_source.html#l00040">40</a> of file <a class="el" href="Socket_8cpp_source.html">Socket.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Socket_8cpp_source.html#l00044">44</a> of file <a class="el" href="Socket_8cpp_source.html">Socket.cpp</a>.</p>
 
 </div>
 </div>
@@ -403,7 +403,7 @@ Private Attributes</h2></td></tr>
 <p>Marks the socket as passive/listening. </p>
 <dl class="section return"><dt>Returns</dt><dd>false on failure. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="Socket_8cpp_source.html#l00030">30</a> of file <a class="el" href="Socket_8cpp_source.html">Socket.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Socket_8cpp_source.html#l00034">34</a> of file <a class="el" href="Socket_8cpp_source.html">Socket.cpp</a>.</p>
 <div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-5-summary" class="dynsummary" style="display:block;">
@@ -421,7 +421,7 @@ Private Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void zappy::Socket::setSocket </td>
+          <td class="memname"><a class="el" href="glad_8h.html#a950fc91edb4504f62f1c577bf4727c29">void</a> zappy::Socket::setSocket </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>socket</em></td><td>)</td>
@@ -432,7 +432,7 @@ Private Attributes</h2></td></tr>
 
 <p>Replaces the owned descriptor. </p>
 
-<p class="definition">Definition at line <a class="el" href="Socket_8cpp_source.html#l00050">50</a> of file <a class="el" href="Socket_8cpp_source.html">Socket.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="Socket_8cpp_source.html#l00054">54</a> of file <a class="el" href="Socket_8cpp_source.html">Socket.cpp</a>.</p>
 
 </div>
 </div>

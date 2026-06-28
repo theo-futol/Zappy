@@ -1,0 +1,5 @@
+<map id="Zappy::RenderSystem::initTwoD" name="Zappy::RenderSystem::initTwoD">
+<area shape="rect" id="Node000001" title="Loads the 2D pipeline: top&#45;down camera, planar projection, assets, renderers, HUD." alt="" coords="219,5,384,45"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1RenderSystem.html#ad4906e38daaf30cc7bf7e1b5b02ddd36" title="Creates the window and context and loads the renderers and assets." alt="" coords="5,5,171,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="205,28,171,28,171,23,205,23"/>
+</map>

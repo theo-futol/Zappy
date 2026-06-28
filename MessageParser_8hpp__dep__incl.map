@@ -1,0 +1,15 @@
+<map id="src/gui/Protocol/parser/MessageParser.hpp" name="src/gui/Protocol/parser/MessageParser.hpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="285,5,451,45"/>
+<area shape="rect" id="Node000002" href="$NetworkService_8hpp.html" title=" " alt="" coords="183,93,358,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="338,56,294,95,290,91,335,52"/>
+<area shape="rect" id="Node000007" href="$MessageParser_8cpp.html" title=" " alt="" coords="382,93,549,133"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="401,52,446,91,442,95,398,56"/>
+<area shape="rect" id="Node000003" href="$gui_2Core_2Core_8cpp.html" title=" " alt="" coords="5,189,165,214"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="219,142,111,191,109,186,216,137"/>
+<area shape="rect" id="Node000004" href="$gui_2Core_2Core_8hpp.html" title=" " alt="" coords="190,189,351,214"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="273,147,273,188,268,188,268,147"/>
+<area shape="rect" id="Node000006" href="$NetworkService_8cpp.html" title=" " alt="" coords="375,181,550,221"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="326,137,422,179,420,184,324,141"/>
+<area shape="rect" id="Node000005" href="$gui_2main_8cpp.html" title=" " alt="" coords="206,269,335,295"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="273,228,273,269,268,269,268,228"/>
+</map>

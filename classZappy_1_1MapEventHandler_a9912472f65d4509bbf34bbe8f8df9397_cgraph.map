@@ -1,0 +1,11 @@
+<map id="Zappy::MapEventHandler::handleMapSize" name="Zappy::MapEventHandler::handleMapSize">
+<area shape="rect" id="Node000001" title="Resizes the map from a msz message." alt="" coords="5,47,192,87"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1GameState.html#abd6471abf9d8148da897c524115909fc" title="Mutable access to the map." alt="" coords="240,5,420,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="192,45,256,31,257,36,193,50"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1Map.html#ad6f24aa6f9b725bdbeb7b099242ef196" title="Resizes the map and (re)allocates its tiles." alt="" coords="257,55,403,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="192,65,243,65,243,70,192,70"/>
+<area shape="rect" id="Node000005" href="$classZappy_1_1AEventHandler.html#a753a24b4a29ada4f0f7134a386e4cd99" title="Parses an integer token, tolerant of malformed input." alt="" coords="247,105,413,145"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="181,85,236,99,235,104,179,90"/>
+<area shape="rect" id="Node000004" href="$classZappy_1_1Tile.html#a6f035112a232eebf863b85fef76bbf23" title=" " alt="" coords="468,55,595,80"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="403,65,454,65,454,70,403,70"/>
+</map>

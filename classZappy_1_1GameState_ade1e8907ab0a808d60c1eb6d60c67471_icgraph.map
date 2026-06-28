@@ -1,0 +1,7 @@
+<map id="Zappy::GameState::clearHoveredTile" name="Zappy::GameState::clearHoveredTile">
+<area shape="rect" id="Node000001" title="Clears the hovered tile (cursor off the map)." alt="" coords="432,13,695,38"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1RenderSystem.html#adfbf14cc26cf7f6db0d8f363d457fd04" title="Updates the hovered tile in the state from the current cursor position (3D mode)." alt="" coords="219,5,384,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="419,28,384,28,384,23,419,23"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1RenderSystem.html#a27989df681554438f03fcaab6338cac3" title="Polls input and updates the camera and selection." alt="" coords="5,5,171,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="205,28,171,28,171,23,205,23"/>
+</map>

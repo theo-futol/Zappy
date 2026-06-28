@@ -1,0 +1,18 @@
+<map id="src/gui/types/Model.hpp" name="src/gui/types/Model.hpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="197,5,375,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,79,76,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="247,33,90,79,88,74,246,28"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="101,79,159,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="262,33,169,75,167,70,260,28"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="184,79,247,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="276,33,238,71,234,67,272,29"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="271,79,445,104"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="300,29,338,67,335,71,296,33"/>
+<area shape="rect" id="Node000006" href="$Mat_8hpp.html" title=" " alt="" coords="469,79,583,104"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="325,28,475,72,473,77,324,33"/>
+<area shape="rect" id="Node000008" href="$Vec_8hpp.html" title=" " alt="" coords="608,79,721,104"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="347,28,595,74,594,80,346,33"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="543,152,647,177"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="539,102,577,140,573,144,536,106"/>
+<area shape="poly" id="edge8_Node000008_Node000007" title=" " alt="" coords="655,106,618,144,614,140,651,102"/>
+</map>

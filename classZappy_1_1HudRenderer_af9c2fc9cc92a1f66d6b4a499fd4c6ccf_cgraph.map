@@ -1,0 +1,7 @@
+<map id="Zappy::HudRenderer::menuButtonHit" name="Zappy::HudRenderer::menuButtonHit">
+<area shape="rect" id="Node000001" title="Whether a click hit the &quot;MENU&quot; button (return to the main menu)." alt="" coords="5,37,160,77"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1HudRenderer.html#abef7b0f626b6535854fa5752c159fd4b" title="Hit&#45;test of a button against a point (bottom&#45;left origin)." alt="" coords="208,5,363,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="160,43,194,37,195,42,161,48"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1HudRenderer.html#abfce11b91e6a0800d9b4b34cd9b4bdcc" title="Rectangle of the &quot;MENU&quot; button in the panel title bar." alt="" coords="208,69,363,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="161,67,195,72,194,78,160,72"/>
+</map>

@@ -1,0 +1,20 @@
+<map id="Zappy::SceneHudRenderer::panelHeightFor" name="Zappy::SceneHudRenderer::panelHeightFor">
+<area shape="rect" id="Node000001" title="Total height of the state panel for a selected entity (lines + buttons)." alt="" coords="976,152,1171,192"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1SceneHudRenderer.html#a5734e5ee95fdeb205c598b23cf1f555d" title="Draws the fixed state panel (below the time box) for the selected entity, if any." alt="" coords="248,69,443,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="980,197,876,215,751,223,684,221,617,214,552,200,489,177,473,165,463,151,455,137,441,123,419,112,422,107,444,119,459,134,468,148,477,161,492,172,553,194,618,209,685,216,751,218,875,209,979,192"/>
+<area shape="rect" id="Node000004" href="$classZappy_1_1SceneHudRenderer.html#aabbda8931d9f8cb5c4b1cd093e0aca88" title="Bottom edge (in pixels) of the state panel for a selected entity." alt="" coords="733,95,928,135"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="974,151,915,137,917,132,975,146"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1SceneHudRenderer.html#adcd42e4b83012ca45e4a31cc376277a9" title="Draws the HUD for the current frame." alt="" coords="5,69,200,109"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="234,92,200,92,200,87,234,87"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="719,112,443,97,443,92,719,106"/>
+<area shape="rect" id="Node000005" href="$classZappy_1_1SceneHudRenderer.html#a0f038ffde50094d9ec0539bed6ad2a33" title="Rectangle of the follow/detach button (bottom row of the state panel)." alt="" coords="491,8,685,48"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="760,93,644,51,646,46,762,88"/>
+<area shape="rect" id="Node000007" href="$classZappy_1_1SceneHudRenderer.html#ac440bfa6c038572d80d543c4e663d85f" title="Rectangle of the view&#45;mode button (second row, shown only while following)." alt="" coords="491,123,685,163"/>
+<area shape="poly" id="edge8_Node000004_Node000007" title=" " alt="" coords="720,130,686,134,685,129,719,125"/>
+<area shape="poly" id="edge6_Node000005_Node000002" title=" " alt="" coords="495,54,426,72,424,67,494,49"/>
+<area shape="rect" id="Node000006" href="$classZappy_1_1SceneHudRenderer.html#aff991d17a91b1b2e0e6fc9045fdbf533" title="Whether a click hit the follow/detach button of the state panel." alt="" coords="248,5,443,45"/>
+<area shape="poly" id="edge7_Node000005_Node000006" title=" " alt="" coords="477,29,443,29,443,24,477,24"/>
+<area shape="poly" id="edge9_Node000007_Node000002" title=" " alt="" coords="483,122,436,112,437,107,484,117"/>
+<area shape="rect" id="Node000008" href="$classZappy_1_1SceneHudRenderer.html#a567cb802c4617d51e3a48e06329e9069" title="Whether a click hit the view&#45;mode (3rd&#45;person/POV) button of the state panel." alt="" coords="248,133,443,173"/>
+<area shape="poly" id="edge10_Node000007_Node000008" title=" " alt="" coords="477,150,443,152,443,146,477,145"/>
+</map>

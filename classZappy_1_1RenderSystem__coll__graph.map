@@ -1,0 +1,23 @@
+<map id="Zappy::RenderSystem" name="Zappy::RenderSystem">
+<area shape="rect" id="Node000001" title="Owns the window, GPU resources and renderers; drives one frame of output." alt="" coords="608,968,777,1813"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1Window.html" title="Encapsulates the GLFW window and OpenGL context; the only place GLFW is touched." alt="" coords="5,290,204,815"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="175,815,196,861,219,904,260,966,305,1026,405,1138,507,1235,597,1312,593,1316,503,1239,402,1142,301,1029,255,969,214,907,191,863,170,817"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1GraphicsContext.html" title="Configures global OpenGL pipeline state (depth test, blending, viewport)." alt="" coords="229,490,399,615"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="329,615,362,750,385,828,414,904,456,996,504,1087,601,1249,597,1252,500,1090,451,999,409,906,380,830,356,751,324,617"/>
+<area shape="rect" id="Node000004" href="$classZappy_1_1TopDownCamera.html" title="Orthographic top&#45;down camera (the v1 camera)." alt="" coords="424,330,596,775"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="561,775,607,985,602,986,556,776"/>
+<area shape="rect" id="Node000005" href="$classZappy_1_1ICamera.html" title="Contract for a camera providing view and projection matrices." alt="" coords="634,5,751,151"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="631,163,610,201,583,265,561,331,556,329,578,263,605,199,626,161"/>
+<area shape="rect" id="Node000006" href="$classZappy_1_1OrbitCamera.html" title="Perspective camera that orbits a target point (the 3D&#45;mode camera)." alt="" coords="620,250,765,855"/>
+<area shape="poly" id="edge6_Node000006_Node000005" title=" " alt="" coords="695,165,695,250,690,250,690,165"/>
+<area shape="rect" id="Node000010" href="$classZappy_1_1FreeCamera.html" title="Free&#45;fly perspective camera: move with the keyboard, look with the mouse." alt="" coords="790,330,931,775"/>
+<area shape="poly" id="edge11_Node000010_Node000005" title=" " alt="" coords="760,161,780,199,805,263,825,329,820,330,800,264,776,201,755,164"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="695,856,695,951,690,951,690,856"/>
+<area shape="rect" id="Node000007" href="$classZappy_1_1TorusProjection.html" title="3D&#45;mode projection wrapping the (toroidal) Zappy grid onto a real 3D torus." alt="" coords="956,410,1117,695"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="1009,696,981,800,946,906,910,992,870,1077,788,1233,783,1231,865,1075,905,990,941,904,976,799,1004,695"/>
+<area shape="rect" id="Node000008" href="$classZappy_1_1IProjection.html" title="Contract mapping grid coordinates to a point on the rendered world surface." alt="" coords="971,35,1102,121"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="1039,134,1039,410,1034,410,1034,134"/>
+<area shape="rect" id="Node000009" href="$classZappy_1_1InputHandler.html" title="Translates window events into camera control, click detection and quit decisions." alt="" coords="1142,200,1299,905"/>
+<area shape="poly" id="edge9_Node000001_Node000009" title=" " alt="" coords="1144,883,1132,907,1097,967,1056,1026,967,1136,875,1232,792,1310,788,1306,871,1228,963,1132,1052,1022,1092,964,1128,904,1140,880"/>
+<area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="819,776,783,953,778,952,813,775"/>
+</map>

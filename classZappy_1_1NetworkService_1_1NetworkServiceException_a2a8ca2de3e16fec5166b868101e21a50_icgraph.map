@@ -1,0 +1,11 @@
+<map id="Zappy::NetworkService::NetworkServiceException::NetworkServiceException" name="Zappy::NetworkService::NetworkServiceException::NetworkServiceException">
+<area shape="rect" id="Node000001" title=" " alt="" coords="469,62,667,117"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1NetworkService.html#a43f30968fc171d5383e2af939b4fa127" title="Connects to the server and authenticates as the GUI." alt="" coords="248,5,421,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="455,61,408,48,409,43,457,56"/>
+<area shape="rect" id="Node000004" href="$classZappy_1_1NetworkService.html#a13f2433fe1fcc17a0f40c34dcfcad5c4" title="Sends a ready&#45;built command line to the server (e.g." alt="" coords="248,69,421,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="456,92,421,92,421,87,456,87"/>
+<area shape="rect" id="Node000005" href="$classZappy_1_1NetworkService.html#a583a443d69d8654318c1f96ae7563d3c" title="Drains all currently available server data and applies it to the state." alt="" coords="248,133,421,173"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="457,123,409,136,408,131,455,117"/>
+<area shape="rect" id="Node000003" href="$classia_1_1client_1_1ZappyAIClient.html#acf191a81fbbbb81e60a298c2a10c1e6f" title=" " alt="" coords="5,13,200,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="234,28,200,28,200,23,234,23"/>
+</map>

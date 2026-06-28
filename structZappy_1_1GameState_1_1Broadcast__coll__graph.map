@@ -1,0 +1,5 @@
+<map id="Zappy::GameState::Broadcast" name="Zappy::GameState::Broadcast">
+<area shape="rect" id="Node000001" title="A broadcast event: where it came from, tagged with a monotonic sequence." alt="" coords="5,153,213,239"/>
+<area shape="rect" id="Node000002" href="$structZappy_1_1GridPosition.html" title="Integer coordinates on the toroidal game grid." alt="" coords="39,5,180,91"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="112,91,112,137,107,137,107,91"/>
+</map>

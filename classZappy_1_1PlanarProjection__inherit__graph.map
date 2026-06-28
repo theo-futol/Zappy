@@ -1,0 +1,5 @@
+<map id="Zappy::PlanarProjection" name="Zappy::PlanarProjection">
+<area shape="rect" id="Node000001" title="Flat top&#45;down projection: maps grid cell (x, y) to world point (x, y, 0)." alt="" coords="5,139,173,204"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1IProjection.html" title="Contract mapping grid coordinates to a point on the rendered world surface." alt="" coords="24,5,155,91"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="92,104,92,138,87,138,87,104"/>
+</map>

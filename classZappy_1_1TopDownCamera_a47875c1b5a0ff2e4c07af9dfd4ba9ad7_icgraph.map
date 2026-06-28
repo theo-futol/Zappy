@@ -1,0 +1,7 @@
+<map id="Zappy::TopDownCamera::viewportWidth" name="Zappy::TopDownCamera::viewportWidth">
+<area shape="rect" id="Node000001" title="World viewport width in pixels." alt="" coords="432,5,612,45"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1RenderSystem.html#ac94c2b0bb1b34c74fbc18359405968fa" title="Picks the entity under a 2D (top&#45;down) click and updates the selection." alt="" coords="219,5,384,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="419,28,384,28,384,23,419,23"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1RenderSystem.html#a27989df681554438f03fcaab6338cac3" title="Polls input and updates the camera and selection." alt="" coords="5,5,171,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="205,28,171,28,171,23,205,23"/>
+</map>

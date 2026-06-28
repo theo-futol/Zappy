@@ -1,0 +1,7 @@
+<map id="src/gui/interface/INetwork.hpp" name="src/gui/interface/INetwork.hpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,224,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="23,79,110,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="109,33,84,69,80,66,105,30"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="135,79,193,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="125,29,150,66,146,69,121,33"/>
+</map>

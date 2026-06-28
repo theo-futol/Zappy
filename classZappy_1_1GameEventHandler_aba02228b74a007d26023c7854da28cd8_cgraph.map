@@ -1,0 +1,5 @@
+<map id="Zappy::GameEventHandler::handleServerMessage" name="Zappy::GameEventHandler::handleServerMessage">
+<area shape="rect" id="Node000001" title="Logs a server message (smg)." alt="" coords="5,5,203,45"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1GameState.html#a17e71b501965af0430ea71cc193db44b" title="Appends a message to the bounded log (oldest dropped past the cap)." alt="" coords="251,13,484,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="203,23,237,23,237,28,203,28"/>
+</map>

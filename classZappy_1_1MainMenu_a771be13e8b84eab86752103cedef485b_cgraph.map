@@ -1,0 +1,50 @@
+<map id="Zappy::MainMenu::run" name="Zappy::MainMenu::run">
+<area shape="rect" id="Node000001" title="Runs the menu loop until the user validates or quits." alt="" coords="5,424,172,449"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1MainMenu.html#a86ba1e26802f4d356f635d93128107fa" title="Draws one frame of the menu." alt="" coords="220,399,399,424"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="172,424,206,420,207,426,173,430"/>
+<area shape="rect" id="Node000019" href="$classZappy_1_1Window.html#a0f0475130c5d82c6b2debced1cd62760" title="Whether the window is still open." alt="" coords="222,448,397,473"/>
+<area shape="poly" id="edge29_Node000001_Node000019" title=" " alt="" coords="173,443,209,447,208,452,172,448"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1Window.html#a6dff61fc3d6f4f0af5607eac9463bbfc" title="Clears the framebuffer." alt="" coords="475,5,636,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="309,398,315,334,335,238,353,185,376,132,406,84,445,41,461,31,464,35,448,45,411,87,381,135,357,187,340,239,320,335,314,399"/>
+<area shape="rect" id="Node000004" href="$classZappy_1_1MainMenu.html#a86c2ab46dcd82a39bcad8fd535dfc0e3" title="Draws a text field (background, focus border, label and value)." alt="" coords="453,55,658,95"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="310,398,322,346,346,270,364,228,386,186,413,147,445,112,461,100,464,104,448,116,417,150,391,189,369,230,351,271,327,347,315,399"/>
+<area shape="rect" id="Node000005" href="$classZappy_1_1Window.html#aea1ad498e106ef34dd2440e08457f386" title="Window height." alt="" coords="2019,145,2189,171"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="311,398,325,354,351,292,369,260,390,228,416,200,445,176,495,147,540,130,582,121,623,118,711,124,821,130,1591,130,1813,136,2005,148,2005,153,1813,141,1591,135,821,135,711,129,623,123,583,126,541,135,497,152,448,180,419,204,394,232,373,263,355,295,330,356,316,399"/>
+<area shape="rect" id="Node000006" href="$classZappy_1_1MainMenu.html#acd674a29a227b3051114070400c3252d" title="Rectangle of the host text field." alt="" coords="1487,316,1692,341"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="315,397,333,367,362,328,400,288,445,257,498,235,544,222,587,217,627,217,713,225,821,231,1085,231,1149,234,1213,240,1339,260,1450,286,1536,309,1534,314,1449,291,1338,265,1213,245,1149,239,1085,237,821,237,713,230,627,222,587,222,545,227,500,240,448,262,403,292,366,331,338,370,320,400"/>
+<area shape="rect" id="Node000007" href="$classZappy_1_1MainMenu.html#a7475763b92bc62d3612ca61a4c5f1957" title="Y of the centered panel&#39;s bottom edge." alt="" coords="1740,171,1971,196"/>
+<area shape="poly" id="edge17_Node000002_Node000007" title=" " alt="" coords="313,397,329,360,357,310,395,259,419,237,445,218,496,193,542,177,584,169,625,168,712,175,821,181,1339,181,1726,181,1726,186,1339,186,821,186,712,180,625,173,585,175,543,182,498,197,448,223,422,241,399,263,361,313,334,363,318,399"/>
+<area shape="rect" id="Node000008" href="$classZappy_1_1MainMenu.html#a692d60cf91e3382c24251674bfe21652" title="X of the centered panel&#39;s left edge." alt="" coords="1752,589,1959,615"/>
+<area shape="poly" id="edge18_Node000002_Node000008" title=" " alt="" coords="382,422,400,435,415,453,422,472,424,510,426,546,434,562,448,577,495,607,538,623,579,628,620,626,710,610,762,603,821,599,1339,599,1738,599,1738,605,1339,605,821,605,762,608,711,615,621,631,579,634,537,628,493,612,445,581,429,565,421,547,418,510,416,473,410,456,397,439,379,426"/>
+<area shape="rect" id="Node000009" href="$classZappy_1_1Window.html#af7def2e51c9498c9962c3346b6c6fb91" title="Window width." alt="" coords="2021,615,2187,640"/>
+<area shape="poly" id="edge28_Node000002_Node000009" title=" " alt="" coords="383,422,401,435,418,460,425,487,426,513,423,538,420,564,421,588,429,610,448,632,479,648,521,657,571,661,626,661,821,650,1591,650,1815,644,2008,632,2008,638,1815,649,1591,655,821,655,627,666,571,666,520,662,477,653,445,636,425,613,416,589,415,563,417,538,420,512,420,487,413,463,397,439,380,426"/>
+<area shape="rect" id="Node000010" href="$classZappy_1_1MainMenu.html#a50c362e6a155fe505ea4bbd9058d1d39" title="Rectangle of the &quot;3D flat&quot; mode button." alt="" coords="712,423,932,463"/>
+<area shape="poly" id="edge10_Node000002_Node000010" title=" " alt="" coords="399,414,699,433,698,438,399,420"/>
+<area shape="rect" id="Node000011" href="$classZappy_1_1MainMenu.html#ae15bfb478af9299fef0a952e94e1654a" title="Rectangle of the &quot;2D&quot; mode button." alt="" coords="980,423,1188,463"/>
+<area shape="poly" id="edge16_Node000002_Node000011" title=" " alt="" coords="378,422,400,435,411,446,418,458,424,483,430,505,437,515,448,524,485,542,523,556,563,565,603,571,686,570,769,559,848,539,920,515,1032,467,1034,472,922,520,849,545,770,564,687,576,603,576,562,571,521,561,483,547,445,528,433,519,425,507,419,484,413,460,407,449,397,439,376,426"/>
+<area shape="rect" id="Node000012" href="$classZappy_1_1MainMenu.html#a9775fbd32327285b596a5c2cb91392c2" title="Rectangle of the port text field." alt="" coords="1236,373,1439,399"/>
+<area shape="poly" id="edge19_Node000002_Node000012" title=" " alt="" coords="399,406,447,405,1223,386,1223,391,447,410,399,411"/>
+<area shape="rect" id="Node000013" href="$classZappy_1_1MainMenu.html#a98603c329b0a83b85ff35d8762725cec" title="Rectangle of the &quot;3D torus&quot; mode button." alt="" coords="447,474,664,514"/>
+<area shape="poly" id="edge14_Node000002_Node000013" title=" " alt="" coords="359,422,400,434,448,453,486,467,484,472,446,458,398,439,357,427"/>
+<area shape="rect" id="Node000014" href="$classZappy_1_1MainMenu.html#a240a375487263c5680795e6af71b3c0f" title="Rectangle of the quit button." alt="" coords="448,272,663,297"/>
+<area shape="poly" id="edge20_Node000002_Node000014" title=" " alt="" coords="324,396,376,356,445,314,485,299,487,304,448,319,379,361,327,401"/>
+<area shape="rect" id="Node000015" href="$classZappy_1_1MainMenu.html#a63cb9bee8c326ed603c31394e2cc88c5" title="Rectangle of the validate button." alt="" coords="723,309,921,349"/>
+<area shape="poly" id="edge27_Node000002_Node000015" title=" " alt="" coords="343,396,391,379,446,365,582,343,709,331,709,337,583,348,447,370,393,385,345,401"/>
+<area shape="rect" id="Node000016" href="$classZappy_1_1GraphicsContext.html#a55e73e8eaf2ab8dce0d287ca6b489d36" title="Enables or disables depth testing (disabled for 2D overlays like the HUD)." alt="" coords="466,690,645,730"/>
+<area shape="poly" id="edge24_Node000002_Node000016" title=" " alt="" coords="384,422,401,435,421,465,429,495,430,524,426,553,423,582,423,611,430,640,449,670,460,680,457,684,445,673,425,642,417,612,417,582,421,553,425,524,424,495,416,467,397,439,380,426"/>
+<area shape="rect" id="Node000017" href="$classZappy_1_1GraphicsContext.html#a7c912501255e076dd44e71d39bf790da" title="Sets the OpenGL viewport." alt="" coords="466,754,645,794"/>
+<area shape="poly" id="edge25_Node000002_Node000017" title=" " alt="" coords="384,422,401,435,415,455,426,474,434,513,433,552,425,590,418,627,416,665,425,703,434,721,449,740,456,748,452,751,445,744,430,724,420,704,411,665,413,627,420,589,427,551,429,514,421,476,411,457,397,439,381,426"/>
+<area shape="rect" id="Node000018" href="$classZappy_1_1Window.html#a8d0ceefc09b9471611dc1f4af446ed1f" title="Swaps the front and back buffers." alt="" coords="451,819,660,844"/>
+<area shape="poly" id="edge26_Node000002_Node000018" title=" " alt="" coords="385,422,401,435,418,459,430,483,436,506,439,530,435,577,424,623,414,669,410,714,413,736,420,759,431,782,449,804,453,809,449,812,445,808,427,784,415,761,408,738,405,714,409,668,419,622,429,576,433,530,431,507,425,484,413,462,397,439,382,426"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="1613,313,1818,200,1820,205,1615,318"/>
+<area shape="poly" id="edge8_Node000006_Node000008" title=" " alt="" coords="1605,340,1834,577,1830,581,1601,343"/>
+<area shape="poly" id="edge7_Node000007_Node000005" title=" " alt="" coords="1971,169,2005,165,2005,171,1971,174"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="1959,610,2008,615,2007,620,1959,615"/>
+<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="932,441,967,441,967,446,932,446"/>
+<area shape="poly" id="edge12_Node000011_Node000012" title=" " alt="" coords="1172,421,1267,399,1268,404,1174,426"/>
+<area shape="poly" id="edge13_Node000012_Node000006" title=" " alt="" coords="1393,371,1519,342,1520,347,1395,376"/>
+<area shape="poly" id="edge15_Node000013_Node000010" title=" " alt="" coords="661,471,702,463,703,469,662,477"/>
+<area shape="poly" id="edge21_Node000014_Node000015" title=" " alt="" coords="633,295,710,307,709,313,632,300"/>
+<area shape="poly" id="edge22_Node000015_Node000006" title=" " alt="" coords="921,326,1472,326,1472,331,921,331"/>
+<area shape="poly" id="edge23_Node000015_Node000011" title=" " alt="" coords="870,346,1026,415,1024,420,868,351"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="ia.strategy.Strategy._required_players" name="ia.strategy.Strategy._required_players">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,55,156,95"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1IEntity.html#aa4bf5ab5fd6ae0bf0d5db8090abc7bd2" title="Player elevation level, or 0 for entities without a level (e.g." alt="" coords="205,5,355,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="150,53,221,32,222,37,152,58"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1AMapEntity.html#a272f44b95b6aa772f5a80999b1546b09" title="Elevation level; 0 by default (entities without a level)." alt="" coords="204,55,356,95"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="156,73,190,73,190,78,156,78"/>
+<area shape="rect" id="Node000004" href="$classZappy_1_1Trantorian.html#a3712c927c606be292d7338a81ff90868" title="Player level." alt="" coords="209,119,351,159"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="145,93,205,113,203,118,143,98"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="Zappy::EntityCommonHandler::handlePosition" name="Zappy::EntityCommonHandler::handlePosition">
+<area shape="rect" id="Node000001" title="Updates a player&#39;s position and orientation from a ppo message." alt="" coords="272,5,491,45"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1EntityCommonHandler.html#ab1e49f6db3b5b5acf66d561c43ea5058" title="Applies a common entity message to the state." alt="" coords="5,5,224,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="258,28,224,28,224,23,258,23"/>
+</map>

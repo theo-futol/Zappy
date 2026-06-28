@@ -1,0 +1,5 @@
+<map id="Zappy::EntityRenderer" name="Zappy::EntityRenderer">
+<area shape="rect" id="Node000001" title="Draws every on&#45;map entity uniformly via its declared appearance." alt="" coords="5,139,173,264"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1IRenderer.html" title="Contract for one stage of the rendering pipeline." alt="" coords="27,5,152,91"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="92,104,92,138,87,138,87,104"/>
+</map>

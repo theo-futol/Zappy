@@ -1,0 +1,5 @@
+<map id="Zappy::AEventHandler" name="Zappy::AEventHandler">
+<area shape="rect" id="Node000001" title="Abstract base for protocol handlers; factors the shared parsing helpers." alt="" coords="18,159,177,284"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1ICommandHandler.html" title="Contract for translating one or more protocol messages into model mutations." alt="" coords="5,5,189,111"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="100,124,100,158,95,158,95,124"/>
+</map>

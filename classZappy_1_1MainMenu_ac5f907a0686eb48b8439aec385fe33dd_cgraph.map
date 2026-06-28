@@ -1,0 +1,9 @@
+<map id="Zappy::MainMenu::init" name="Zappy::MainMenu::init">
+<area shape="rect" id="Node000001" title="Loads the menu assets (basic shader, quad mesh, font)." alt="" coords="5,63,172,88"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1Primitives.html#a607be44f04c3b44adaf13b9dc767125d" title="Unit quad centered on the origin, lying on the XY plane." alt="" coords="242,5,418,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="141,60,219,41,260,31,261,36,221,46,142,65"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1TextRenderer_1_1TextRendererException.html#acb9aa7a61d21681157d606f528f4b616" title=" " alt="" coords="220,55,440,95"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="172,73,206,73,206,78,172,78"/>
+<area shape="rect" id="Node000004" href="$classZappy_1_1AssetCache_1_1AssetCacheException.html#aca83e33b37d264371dacbb9030372878" title=" " alt="" coords="229,119,431,159"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="138,86,241,113,240,118,137,91"/>
+</map>

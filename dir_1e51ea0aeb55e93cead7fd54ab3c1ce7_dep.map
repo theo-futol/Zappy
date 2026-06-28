@@ -1,0 +1,10 @@
+<map id="src/gui/Render/projection/torus" name="src/gui/Render/projection/torus">
+<area shape="rect" id="node1" href="dir_1e51ea0aeb55e93cead7fd54ab3c1ce7.html" title="torus" alt="" coords="54,52,109,77"/>
+<area shape="rect" id="node2" href="dir_0374ba05457b356fc20bc8e050b66c61.html" title="types" alt="" coords="5,125,64,151"/>
+<area shape="poly" id="edge1" href="dir_000086_000089.html" alt="" coords="76,79,52,115,48,112,71,76"/>
+<area shape="rect" id="edge1-headlabel" href="dir_000086_000089.html" title="1" alt="" coords="55,107,64,122"/>
+<area shape="rect" id="node3" href="dir_15ae648eadc0f6ecf808f69f77cb7de0.html" title="interface" alt="" coords="88,125,168,151"/>
+<area shape="poly" id="edge2" href="dir_000086_000037.html" alt="" coords="91,76,115,112,111,115,87,79"/>
+<area shape="rect" id="edge2-headlabel" href="dir_000086_000037.html" title="1" alt="" coords="113,98,122,113"/>
+<area shape="rect" id="clust1" href="dir_475842d2a241099fb2a9a7a0de293a33.html" title="projection" alt="" coords="39,16,125,88"/>
+</map>

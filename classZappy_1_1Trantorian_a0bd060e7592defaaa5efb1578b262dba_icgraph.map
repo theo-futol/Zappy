@@ -1,0 +1,23 @@
+<map id="Zappy::Trantorian::team" name="Zappy::Trantorian::team">
+<area shape="rect" id="Node000001" title="Team name." alt="" coords="924,86,1101,111"/>
+<area shape="rect" id="Node000002" href="$classia_1_1strategy_1_1Strategy.html#a7b7b297b6fbc6fe701318661b3cad9b5" title=" " alt="" coords="247,5,399,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="951,85,876,69,745,53,614,41,399,30,400,25,614,36,745,47,876,64,953,80"/>
+<area shape="rect" id="Node000004" href="$classia_1_1strategy_1_1Strategy.html#a58693c49048a2657bc49cd562b2202c4" title=" " alt="" coords="709,79,860,119"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="910,101,860,101,860,96,910,96"/>
+<area shape="rect" id="Node000008" href="$classZappy_1_1EggEventHandler.html#aab05947c1a9964e573c5333cb8d4a428" title="Resolves the team of an egg&#39;s parent player." alt="" coords="693,175,876,215"/>
+<area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="970,119,834,177,832,172,968,114"/>
+<area shape="rect" id="Node000003" href="$classia_1_1strategy_1_1Strategy.html#a9a38a8af29b18d2f8683ec0b65a0982c" title=" " alt="" coords="5,45,184,70"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="234,41,185,47,184,42,233,35"/>
+<area shape="rect" id="Node000005" href="$classia_1_1strategy_1_1Strategy.html#ad52d3664f5831789d358a334496fab41" title=" " alt="" coords="479,63,629,103"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="696,95,629,91,630,85,696,90"/>
+<area shape="rect" id="Node000007" href="$classia_1_1strategy_1_1Strategy.html#abfcac0e166ce9275850bb113ebc28a42" title=" " alt="" coords="479,127,629,167"/>
+<area shape="poly" id="edge7_Node000004_Node000007" title=" " alt="" coords="696,120,630,134,629,128,695,114"/>
+<area shape="rect" id="Node000006" href="$classia_1_1strategy_1_1Strategy.html#a80efd785879b0eedb51c45e704cb1c4a" title=" " alt="" coords="248,69,399,109"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="465,88,399,90,399,85,465,83"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="234,80,184,72,185,67,235,74"/>
+<area shape="poly" id="edge8_Node000007_Node000006" title=" " alt="" coords="465,127,398,111,399,105,466,122"/>
+<area shape="rect" id="Node000009" href="$classZappy_1_1EggEventHandler.html#ae99537c5f3c48c2278c930ba2089120e" title="Creates an egg from an enw message (egg laid by a player)." alt="" coords="463,191,645,231"/>
+<area shape="poly" id="edge10_Node000008_Node000009" title=" " alt="" coords="680,205,646,207,645,202,680,199"/>
+<area shape="rect" id="Node000010" href="$classZappy_1_1EggEventHandler.html#af10d8140274bf77c4609eb8cecdc72b7" title="Applies an egg message to the state." alt="" coords="232,191,415,231"/>
+<area shape="poly" id="edge11_Node000009_Node000010" title=" " alt="" coords="449,213,415,213,415,208,449,208"/>
+</map>

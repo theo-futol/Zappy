@@ -1,0 +1,26 @@
+<map id="Zappy::GameState::map" name="Zappy::GameState::map">
+<area shape="rect" id="Node000001" title="Read&#45;only access to the map." alt="" coords="648,187,828,213"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1RenderSystem.html#a27cdf2ff0686b5e8db6c3654fe30770e" title="Stops following and recenters the orbit camera on the map center." alt="" coords="433,84,599,124"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="697,184,599,138,570,127,572,122,601,134,700,179"/>
+<area shape="rect" id="Node000005" href="$classZappy_1_1RenderSystem.html#a3fa8ea9f652b5de2ef12401086df2875" title="Draws one frame from the given state." alt="" coords="5,5,171,45"/>
+<area shape="poly" id="edge10_Node000001_Node000005" title=" " alt="" coords="717,179,667,125,634,98,599,74,546,51,490,33,432,21,374,14,263,11,171,17,171,11,263,6,374,9,433,16,491,28,548,46,601,70,638,93,671,122,720,175"/>
+<area shape="rect" id="Node000006" href="$classZappy_1_1RenderSystem.html#ad7e374d22bd0b05889f04633014d355d" title="Finds the tile under a screen point by projecting every tile and taking the nearest one." alt="" coords="433,148,599,188"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="636,188,599,183,599,177,636,183"/>
+<area shape="rect" id="Node000009" href="$classZappy_1_1HudRenderer.html#a811888ec303fe1cfdfa3373f70decbc1" title="Draws the styled HUD overlay for the current frame." alt="" coords="439,212,593,252"/>
+<area shape="poly" id="edge11_Node000001_Node000009" title=" " alt="" coords="636,217,594,224,593,218,635,212"/>
+<area shape="rect" id="Node000010" href="$classZappy_1_1MapRenderer.html#a0b2fcc444f807a100f47ffc96c4153f6" title="Draws the terrain and ground resources." alt="" coords="437,276,595,316"/>
+<area shape="poly" id="edge12_Node000001_Node000010" title=" " alt="" coords="700,221,601,266,572,278,570,273,599,262,697,216"/>
+<area shape="rect" id="Node000011" href="$classZappy_1_1SceneRenderer.html#a30d5d84cff8f8084328a40a42671d376" title="Draws the ground and the entities for the frame." alt="" coords="432,340,600,380"/>
+<area shape="poly" id="edge13_Node000001_Node000011" title=" " alt="" coords="719,225,669,277,636,305,601,330,579,342,576,338,599,326,633,301,665,273,715,221"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1RenderSystem.html#a27989df681554438f03fcaab6338cac3" title="Polls input and updates the camera and selection." alt="" coords="5,148,171,188"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="420,114,323,124,219,139,163,151,162,145,218,133,322,118,420,108"/>
+<area shape="rect" id="Node000004" href="$classZappy_1_1RenderSystem.html#a69ac1b3aa829d3329a879e22afdda150" title="Resolves the entity currently followed, auto&#45;detaching if it is gone or not a player." alt="" coords="219,33,384,73"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="420,84,384,75,385,70,421,79"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="205,43,171,39,171,34,206,38"/>
+<area shape="rect" id="Node000007" href="$classZappy_1_1RenderSystem.html#a1c7eed6821b73667148ba9b9f2e3b547" title="Picks the entity under a 3D click by casting a ray onto the ground." alt="" coords="219,212,384,252"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="436,195,370,215,368,209,434,190"/>
+<area shape="rect" id="Node000008" href="$classZappy_1_1RenderSystem.html#adfbf14cc26cf7f6db0d8f363d457fd04" title="Updates the hovered tile in the state from the current cursor position (3D mode)." alt="" coords="219,148,384,188"/>
+<area shape="poly" id="edge8_Node000006_Node000008" title=" " alt="" coords="420,171,384,171,384,165,420,165"/>
+<area shape="poly" id="edge7_Node000007_Node000003" title=" " alt="" coords="220,210,154,191,156,185,221,205"/>
+<area shape="poly" id="edge9_Node000008_Node000003" title=" " alt="" coords="205,171,171,171,171,165,205,165"/>
+</map>

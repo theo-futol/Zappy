@@ -1,0 +1,5 @@
+<map id="Zappy::GameState::hasSelectedTile" name="Zappy::GameState::hasSelectedTile">
+<area shape="rect" id="Node000001" title="Whether a tile is currently selected." alt="" coords="208,13,463,38"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1HudRenderer.html#a811888ec303fe1cfdfa3373f70decbc1" title="Draws the styled HUD overlay for the current frame." alt="" coords="5,5,160,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="194,28,160,28,160,23,194,23"/>
+</map>

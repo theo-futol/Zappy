@@ -1,0 +1,10 @@
+<map id="Zappy::GameState::addMessage" name="Zappy::GameState::addMessage">
+<area shape="rect" id="Node000001" title="Appends a message to the bounded log (oldest dropped past the cap)." alt="" coords="496,45,729,70"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1GameEventHandler.html#a15f701f48abb53338ca7c89973820fb4" title="Logs a player broadcast (pbc) message." alt="" coords="251,5,448,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="494,46,448,40,449,35,495,40"/>
+<area shape="rect" id="Node000004" href="$classZappy_1_1GameEventHandler.html#aba02228b74a007d26023c7854da28cd8" title="Logs a server message (smg)." alt="" coords="251,69,448,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="495,74,449,80,448,75,494,69"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1GameEventHandler.html#a5cbeec25606987f50cfaf287df78d42c" title="Applies a global/server message to the state." alt="" coords="5,37,203,77"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="237,43,203,47,202,42,237,37"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="237,77,202,73,203,68,237,72"/>
+</map>

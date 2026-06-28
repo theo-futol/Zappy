@@ -7,6 +7,7 @@ var namespacezappy =
     [ "Commands", "classzappy_1_1Commands.html", "classzappy_1_1Commands" ],
     [ "Core", "classzappy_1_1Core.html", "classzappy_1_1Core" ],
     [ "Direction", "structzappy_1_1Direction.html", "structzappy_1_1Direction" ],
+    [ "Egg", "structzappy_1_1Egg.html", "structzappy_1_1Egg" ],
     [ "ElevationRequirement", "structzappy_1_1ElevationRequirement.html", "structzappy_1_1ElevationRequirement" ],
     [ "FlagConfig", "structzappy_1_1FlagConfig.html", "structzappy_1_1FlagConfig" ],
     [ "Inventory", "classzappy_1_1Inventory.html", "classzappy_1_1Inventory" ],

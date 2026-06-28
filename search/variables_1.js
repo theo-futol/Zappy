@@ -1,6 +1,26 @@
 var searchData=
 [
-  ['active_5fclients_0',['active_clients',['../classia_1_1launcher_1_1TeamRuntime.html#a85ba486f31aa4b4b86856c99dd5f1d64',1,'ia::launcher::TeamRuntime']]],
-  ['args_1',['args',['../classia_1_1launcher_1_1ClientLauncher.html#af8c69a0ed108f784f0801d1311888cc5',1,'ia::launcher::ClientLauncher']]],
-  ['available_5fslots_2',['available_slots',['../classia_1_1client_1_1ZappyAIClient.html#a337fcac7dc2c98f71da6070a51af14fc',1,'ia.client.ZappyAIClient.available_slots'],['../classia_1_1test_1_1FakeClient.html#a226f3c37d11192c162f88bf79daf11af',1,'ia.test.FakeClient.available_slots']]]
+  ['a_0',['a',['../structZappy_1_1Color.html#ab2b9b0b8913fdfb2ac7c465a5d0bdef2',1,'Zappy::Color']]],
+  ['accentcolor_1',['accentcolor',['../classZappy_1_1HudRenderer.html#a68a30e5abcd13ad1b0ac86598897d391',1,'Zappy::HudRenderer::AccentColor'],['../classZappy_1_1SceneHudRenderer.html#a0c7dad8c763739b033f7217cf059799a',1,'Zappy::SceneHudRenderer::AccentColor']]],
+  ['accessors_2',['accessors',['../structcgltf__data.html#a94140404af12d07c338b0286a602d1ca',1,'cgltf_data']]],
+  ['accessors_5fcount_3',['accessors_count',['../structcgltf__data.html#acda0e54e6a641cdf711fd259225822d3',1,'cgltf_data']]],
+  ['active_5fclients_4',['active_clients',['../classia_1_1launcher_1_1TeamRuntime.html#a85ba486f31aa4b4b86856c99dd5f1d64',1,'ia::launcher::TeamRuntime']]],
+  ['advance_5',['advance',['../structZappy_1_1TextRenderer_1_1Glyph.html#a2071d26b97ed80ad1abdcdf3b2304951',1,'Zappy::TextRenderer::Glyph']]],
+  ['alloc_5ffunc_6',['alloc_func',['../structcgltf__memory__options.html#ad8133688f0cd2347a89fbbf423c0d5b3',1,'cgltf_memory_options']]],
+  ['alpha_5fcutoff_7',['alpha_cutoff',['../structcgltf__material.html#af5f291158bdb0792879aba48cc68fdb7',1,'cgltf_material']]],
+  ['alpha_5fmode_8',['alpha_mode',['../structcgltf__material.html#acb83856eb49e3676f7cdde2dda985ef1',1,'cgltf_material']]],
+  ['animations_9',['animations',['../structcgltf__data.html#a85a444c46267158bfccfd32c4a5221c1',1,'cgltf_data::animations'],['../structZappy_1_1Model.html#a6fa806b57877bfcabc0e0e665ea537ad',1,'Zappy::Model::animations']]],
+  ['animations_5fcount_10',['animations_count',['../structcgltf__data.html#ab28d1fa45e82760319da557185ad33f2',1,'cgltf_data']]],
+  ['anisotropy_11',['anisotropy',['../structcgltf__material.html#a82773afcc424bb9b9c938e19499e827d',1,'cgltf_material']]],
+  ['anisotropy_5frotation_12',['anisotropy_rotation',['../structcgltf__anisotropy.html#ad074449354ea2e6bdd89cd0e029a1144',1,'cgltf_anisotropy']]],
+  ['anisotropy_5fstrength_13',['anisotropy_strength',['../structcgltf__anisotropy.html#a810da2e7256cda7caf76299991b164ea',1,'cgltf_anisotropy']]],
+  ['anisotropy_5ftexture_14',['anisotropy_texture',['../structcgltf__anisotropy.html#a1303ffab5c56ae07b57767d1e9797f58',1,'cgltf_anisotropy']]],
+  ['args_15',['args',['../classia_1_1launcher_1_1ClientLauncher.html#af8c69a0ed108f784f0801d1311888cc5',1,'ia::launcher::ClientLauncher']]],
+  ['aspect_5fratio_16',['aspect_ratio',['../structcgltf__camera__perspective.html#a8439dc0da6647f8ff50d3fa8ded95804',1,'cgltf_camera_perspective']]],
+  ['asset_17',['asset',['../structcgltf__data.html#a330880dc68dd7eb3cbbb774bbf3a9bee',1,'cgltf_data']]],
+  ['attenuation_5fcolor_18',['attenuation_color',['../structcgltf__volume.html#ae718e7cae6d9ea1e90db45632feab61e',1,'cgltf_volume']]],
+  ['attenuation_5fdistance_19',['attenuation_distance',['../structcgltf__volume.html#a68c4d2443068a8229f630c1b8f4d79a4',1,'cgltf_volume']]],
+  ['attributes_20',['attributes',['../structcgltf__morph__target.html#a5b09b9800dde8800316328ffc0efb468',1,'cgltf_morph_target::attributes'],['../structcgltf__draco__mesh__compression.html#a1e901dea6090dc0e6c1f7fd74eb67eb7',1,'cgltf_draco_mesh_compression::attributes'],['../structcgltf__mesh__gpu__instancing.html#acead9cf3785de3b57b53a27e916d9bf9',1,'cgltf_mesh_gpu_instancing::attributes'],['../structcgltf__primitive.html#a9d4889e5abedfcd3755ef05315f581f7',1,'cgltf_primitive::attributes']]],
+  ['attributes_5fcount_21',['attributes_count',['../structcgltf__morph__target.html#a50489a739fe616c3f9ada857203513ef',1,'cgltf_morph_target::attributes_count'],['../structcgltf__draco__mesh__compression.html#abaebf9f792b299ae7b551fd8de778467',1,'cgltf_draco_mesh_compression::attributes_count'],['../structcgltf__mesh__gpu__instancing.html#a4cc234d5dcfc7a4ac6c4a0c6a0922c32',1,'cgltf_mesh_gpu_instancing::attributes_count'],['../structcgltf__primitive.html#a26d56ed54e9e69b3ea66ced6eb50ea94',1,'cgltf_primitive::attributes_count']]],
+  ['available_5fslots_22',['available_slots',['../classia_1_1client_1_1ZappyAIClient.html#a337fcac7dc2c98f71da6070a51af14fc',1,'ia.client.ZappyAIClient.available_slots'],['../classia_1_1test_1_1FakeClient.html#a226f3c37d11192c162f88bf79daf11af',1,'ia.test.FakeClient.available_slots']]]
 ];

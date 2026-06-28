@@ -1,0 +1,5 @@
+<map id="Zappy::AssetCache::loadTexture" name="Zappy::AssetCache::loadTexture">
+<area shape="rect" id="Node000001" title="Loads an image into a texture and caches it under an id." alt="" coords="5,5,160,45"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1Texture_1_1TextureException.html#aa7505692b6850f30d9d3003d142c6fae" title=" " alt="" coords="208,5,447,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="161,23,194,23,194,28,161,28"/>
+</map>

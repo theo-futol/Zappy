@@ -1,0 +1,5 @@
+<map id="Zappy::RenderModel" name="Zappy::RenderModel">
+<area shape="rect" id="Node000001" title="A decoded Model uploaded to the GPU and ready to draw." alt="" coords="5,153,220,899"/>
+<area shape="rect" id="Node000002" href="$structZappy_1_1ModelSkin.html" title="A skeleton: the joint nodes and their inverse bind matrices." alt="" coords="47,5,178,91"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="115,91,115,137,110,137,110,91"/>
+</map>

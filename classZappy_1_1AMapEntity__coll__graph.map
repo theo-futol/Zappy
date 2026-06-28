@@ -1,0 +1,7 @@
+<map id="Zappy::AMapEntity" name="Zappy::AMapEntity">
+<area shape="rect" id="Node000001" title="Common base for map entities: stores identity, position and orientation." alt="" coords="83,333,220,579"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1IEntity.html" title="Contract for any identified, positioned thing on the map." alt="" coords="5,5,137,271"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="111,283,123,332,118,334,105,285"/>
+<area shape="rect" id="Node000003" href="$structZappy_1_1GridPosition.html" title="Integer coordinates on the toroidal game grid." alt="" coords="162,95,303,181"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="224,182,189,318,184,317,219,181"/>
+</map>

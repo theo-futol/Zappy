@@ -1,0 +1,5 @@
+<map id="Zappy::INetwork" name="Zappy::INetwork">
+<area shape="rect" id="Node000001" title="Contract for a network transport, decoupling session logic from the socket." alt="" coords="8,5,129,131"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1TcpSocket.html" title="Encapsulates the POSIX socket primitive; the only place sockets are touched." alt="" coords="5,179,132,324"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="71,145,71,179,66,179,66,145"/>
+</map>

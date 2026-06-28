@@ -1,0 +1,14 @@
+<map id="Zappy::SceneHudRenderer::drawStatePanel" name="Zappy::SceneHudRenderer::drawStatePanel">
+<area shape="rect" id="Node000001" title="Draws the fixed state panel (below the time box) for the selected entity, if any." alt="" coords="5,92,200,132"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1SceneHudRenderer.html#a0f038ffde50094d9ec0539bed6ad2a33" title="Rectangle of the follow/detach button (bottom row of the state panel)." alt="" coords="248,5,443,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="159,89,275,48,277,53,161,94"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1SceneHudRenderer.html#aabbda8931d9f8cb5c4b1cd093e0aca88" title="Bottom edge (in pixels) of the state panel for a selected entity." alt="" coords="491,92,685,132"/>
+<area shape="poly" id="edge6_Node000001_Node000003" title=" " alt="" coords="200,106,248,105,443,105,477,106,477,111,443,111,248,111,200,112"/>
+<area shape="rect" id="Node000004" href="$classZappy_1_1SceneHudRenderer.html#a9cdc3947f174bc6ef25523c8fbaae8ec" title="Total height of the state panel for a selected entity (lines + buttons)." alt="" coords="733,149,928,189"/>
+<area shape="poly" id="edge7_Node000001_Node000004" title=" " alt="" coords="142,130,192,152,249,169,374,186,500,191,619,188,720,180,720,185,619,193,500,197,373,192,247,175,190,157,140,134"/>
+<area shape="rect" id="Node000005" href="$classZappy_1_1SceneHudRenderer.html#ac440bfa6c038572d80d543c4e663d85f" title="Rectangle of the view&#45;mode button (second row, shown only while following)." alt="" coords="248,120,443,160"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="201,121,235,125,234,130,200,126"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="403,43,519,85,517,90,401,48"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="674,129,733,144,731,149,673,135"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="443,126,477,122,477,127,443,131"/>
+</map>

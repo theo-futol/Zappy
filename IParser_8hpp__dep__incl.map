@@ -1,0 +1,17 @@
+<map id="src/gui/interface/IParser.hpp" name="src/gui/interface/IParser.hpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="267,5,469,31"/>
+<area shape="rect" id="Node000002" href="$MessageParser_8hpp.html" title=" " alt="" coords="285,79,451,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="371,44,371,79,365,79,365,44"/>
+<area shape="rect" id="Node000003" href="$NetworkService_8hpp.html" title=" " alt="" coords="183,167,358,207"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="338,130,294,168,290,164,335,126"/>
+<area shape="rect" id="Node000008" href="$MessageParser_8cpp.html" title=" " alt="" coords="382,167,549,207"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="401,126,446,164,442,168,398,130"/>
+<area shape="rect" id="Node000004" href="$gui_2Core_2Core_8cpp.html" title=" " alt="" coords="5,262,165,287"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="219,215,111,264,109,260,216,210"/>
+<area shape="rect" id="Node000005" href="$gui_2Core_2Core_8hpp.html" title=" " alt="" coords="190,262,351,287"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="273,221,273,262,268,262,268,221"/>
+<area shape="rect" id="Node000007" href="$NetworkService_8cpp.html" title=" " alt="" coords="375,255,550,295"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="326,210,422,252,420,257,324,215"/>
+<area shape="rect" id="Node000006" href="$gui_2main_8cpp.html" title=" " alt="" coords="206,343,335,368"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="273,301,273,342,268,342,268,301"/>
+</map>

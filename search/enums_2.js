@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['flagtype_0',['FlagType',['../namespacezappy.html#a8aada3090cc8ffbe7382c6e8aa04763b',1,'zappy']]]
+  ['degrees_0',['Degrees',['../namespacezappy.html#a3b9958fd86fc9701b130b8286aeed496',1,'zappy']]]
 ];

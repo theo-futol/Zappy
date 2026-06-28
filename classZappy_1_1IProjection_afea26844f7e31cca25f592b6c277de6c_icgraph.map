@@ -1,0 +1,9 @@
+<map id="Zappy::IProjection::toWorld" name="Zappy::IProjection::toWorld">
+<area shape="rect" id="Node000001" title="Maps a grid cell to its world&#45;space surface point." alt="" coords="221,69,360,109"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1SceneRenderer.html#a1dd7f5f414735def0760b5246806b7f4" title="The entity&#39;s interpolated surface point, sliding from its previous tile." alt="" coords="5,5,173,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="213,68,152,48,154,43,215,63"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1MapRenderer.html#a0b2fcc444f807a100f47ffc96c4153f6" title="Draws the terrain and ground resources." alt="" coords="11,69,168,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="208,92,168,92,168,87,208,87"/>
+<area shape="rect" id="Node000004" href="$classZappy_1_1SceneRenderer.html#a30d5d84cff8f8084328a40a42671d376" title="Draws the ground and the entities for the frame." alt="" coords="5,133,173,173"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="215,116,154,136,152,131,213,111"/>
+</map>

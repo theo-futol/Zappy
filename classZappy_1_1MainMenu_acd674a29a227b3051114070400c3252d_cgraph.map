@@ -1,0 +1,11 @@
+<map id="Zappy::MainMenu::hostField" name="Zappy::MainMenu::hostField">
+<area shape="rect" id="Node000001" title="Rectangle of the host text field." alt="" coords="5,31,211,56"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1MainMenu.html#a7475763b92bc62d3612ca61a4c5f1957" title="Y of the centered panel&#39;s bottom edge." alt="" coords="259,5,489,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="211,31,245,28,245,33,211,36"/>
+<area shape="rect" id="Node000004" href="$classZappy_1_1MainMenu.html#a692d60cf91e3382c24251674bfe21652" title="X of the centered panel&#39;s left edge." alt="" coords="271,55,477,80"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="211,50,257,54,257,59,211,55"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1Window.html#aea1ad498e106ef34dd2440e08457f386" title="Window height." alt="" coords="537,5,708,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="490,15,524,15,524,21,490,21"/>
+<area shape="rect" id="Node000005" href="$classZappy_1_1Window.html#af7def2e51c9498c9962c3346b6c6fb91" title="Window width." alt="" coords="540,55,705,80"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="478,65,526,65,526,70,478,70"/>
+</map>

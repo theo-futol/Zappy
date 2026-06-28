@@ -1,0 +1,5 @@
+<map id="Zappy::ResourceSet::describe" name="Zappy::ResourceSet::describe">
+<area shape="rect" id="Node000001" title="One &quot;Name: count&quot; line per resource, for display in a HUD bubble." alt="" coords="5,5,156,45"/>
+<area shape="rect" id="Node000002" href="$namespaceZappy.html#a9e9b53ef81b75d45e455039c80341139" title="Human&#45;readable name of a resource type." alt="" coords="204,13,369,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="157,23,190,23,190,28,157,28"/>
+</map>

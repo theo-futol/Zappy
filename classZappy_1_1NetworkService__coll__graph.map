@@ -1,0 +1,21 @@
+<map id="Zappy::NetworkService" name="Zappy::NetworkService">
+<area shape="rect" id="Node000001" title="Owns the connection and protocol pipeline; turns server bytes into model updates." alt="" coords="177,1044,342,1269"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1GameState.html" title="Single source of truth for the GUI: map, entities, teams, time and winner." alt="" coords="327,308,466,813"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="388,814,374,899,354,982,336,1030,331,1028,349,981,369,898,382,813"/>
+<area shape="rect" id="Node000008" href="$classZappy_1_1MessageParser.html" title="Splits the raw server stream into messages and dispatches them." alt="" coords="179,876,339,981"/>
+<area shape="poly" id="edge10_Node000008_Node000002" title=" " alt="" coords="330,784,318,814,296,862,291,860,313,812,325,782"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1Map.html" title="Toroidal grid of tiles." alt="" coords="133,5,223,231"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="226,212,237,229,277,267,317,306,321,313,317,316,313,310,274,271,233,232,221,215"/>
+<area shape="rect" id="Node000004" href="$classZappy_1_1ColorPalette.html" title="Hands out visually distinct colors, cycling through a fixed palette." alt="" coords="247,65,389,171"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="330,170,351,291,346,292,325,171"/>
+<area shape="rect" id="Node000005" href="$structZappy_1_1EntityKey.html" title="Identity of a map entity: an open string entity type plus its protocol number." alt="" coords="413,75,537,161"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="471,161,447,292,442,291,465,160"/>
+<area shape="rect" id="Node000006" href="$structZappy_1_1GridPosition.html" title="Integer coordinates on the toroidal game grid." alt="" coords="562,75,703,161"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="615,162,552,285,476,424,472,422,548,283,610,160"/>
+<area shape="rect" id="Node000007" href="$classZappy_1_1HandlerRegistry.html" title="Owns the command handlers and routes messages to them by key." alt="" coords="5,498,172,623"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="80,624,72,698,69,789,78,886,88,934,103,980,131,1030,167,1074,163,1078,126,1033,98,982,83,936,72,887,64,789,66,698,75,623"/>
+<area shape="poly" id="edge9_Node000008_Node000007" title=" " alt="" coords="103,623,135,733,158,793,188,851,196,862,191,865,184,853,154,796,130,735,98,624"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="262,982,262,1027,257,1027,257,982"/>
+<area shape="rect" id="Node000009" href="$classZappy_1_1IParser.html" title="Contract for consuming the raw server byte stream." alt="" coords="197,518,303,603"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="254,617,261,876,255,876,249,617"/>
+</map>

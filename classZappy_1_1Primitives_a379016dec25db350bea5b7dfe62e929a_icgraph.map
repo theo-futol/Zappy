@@ -1,0 +1,5 @@
+<map id="Zappy::Primitives::ring" name="Zappy::Primitives::ring">
+<area shape="rect" id="Node000001" title="Flat annulus (ring) on the XY plane, positions only (layout {3})." alt="" coords="211,13,380,38"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1MapRenderer.html#a6bb3cbaae4f3316f5ead775a68eb4272" title="Builds the map renderer." alt="" coords="5,5,163,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="197,28,163,28,163,23,197,23"/>
+</map>

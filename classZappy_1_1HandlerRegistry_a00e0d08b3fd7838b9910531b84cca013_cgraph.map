@@ -1,0 +1,5 @@
+<map id="Zappy::HandlerRegistry::dispatch" name="Zappy::HandlerRegistry::dispatch">
+<area shape="rect" id="Node000001" title="Routes a parsed message to its handler, ignoring unknown keys." alt="" coords="5,5,180,45"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1ICommandHandler.html#a8d55b25338e13dd446472f7ed08d6aff" title="Applies a parsed message to the game state." alt="" coords="228,5,420,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="180,23,214,23,214,28,180,28"/>
+</map>

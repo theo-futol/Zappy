@@ -112,7 +112,7 @@ $(document).ready(function(){initNavTree('classzappy_1_1Client.html',''); initRe
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:af37061bb835566ddeaec3bc9ae667650" id="r_af37061bb835566ddeaec3bc9ae667650"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1Client.html#af37061bb835566ddeaec3bc9ae667650">Client</a> (int fd, <a class="el" href="namespacezappy.html#a27351dc1d35dc62fde06de99d6e6dc21">ClientType</a> type=<a class="el" href="namespacezappy.html#a27351dc1d35dc62fde06de99d6e6dc21a696b031073e74bf2cb98e5ef201d4aa3">ClientType::UNKNOWN</a>)</td></tr>
+<tr class="memitem:af37061bb835566ddeaec3bc9ae667650" id="r_af37061bb835566ddeaec3bc9ae667650"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1Client.html#af37061bb835566ddeaec3bc9ae667650">Client</a> (int fd, <a class="el" href="namespacezappy.html#a27351dc1d35dc62fde06de99d6e6dc21">ClientType</a> <a class="el" href="glad_8h.html#a890efa53b3d7deeeced6f3a0d6653ed3">type</a>=<a class="el" href="namespacezappy.html#a27351dc1d35dc62fde06de99d6e6dc21a696b031073e74bf2cb98e5ef201d4aa3">ClientType::UNKNOWN</a>)</td></tr>
 <tr class="memdesc:af37061bb835566ddeaec3bc9ae667650"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wraps an already-accepted socket. A fresh client starts UNKNOWN until its first message reveals whether it is graphic or AI.  <br /></td></tr>
 <tr class="separator:af37061bb835566ddeaec3bc9ae667650"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab649f9d468b471e44d79f21f34cfe69f" id="r_ab649f9d468b471e44d79f21f34cfe69f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1Client.html#ab649f9d468b471e44d79f21f34cfe69f">~Client</a> ()</td></tr>
@@ -128,13 +128,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ade4edd70698f2497e09f736734d77ab0" id="r_ade4edd70698f2497e09f736734d77ab0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1Client.html#ade4edd70698f2497e09f736734d77ab0">getPlayerId</a> () const</td></tr>
 <tr class="memdesc:ade4edd70698f2497e09f736734d77ab0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the logical id of this client's player, or -1 if it has none.  <br /></td></tr>
 <tr class="separator:ade4edd70698f2497e09f736734d77ab0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a084ad3c2c2db76331617ce1d5f2bfddc" id="r_a084ad3c2c2db76331617ce1d5f2bfddc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1Client.html#a084ad3c2c2db76331617ce1d5f2bfddc">setPlayerId</a> (int playerId)</td></tr>
+<tr class="memitem:a084ad3c2c2db76331617ce1d5f2bfddc" id="r_a084ad3c2c2db76331617ce1d5f2bfddc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="glad_8h.html#a950fc91edb4504f62f1c577bf4727c29">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1Client.html#a084ad3c2c2db76331617ce1d5f2bfddc">setPlayerId</a> (int playerId)</td></tr>
 <tr class="memdesc:a084ad3c2c2db76331617ce1d5f2bfddc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Associates this client with the player of the given logical id (set at hatch time).  <br /></td></tr>
 <tr class="separator:a084ad3c2c2db76331617ce1d5f2bfddc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af3593a65bba2a2527669eb4a05a618b8" id="r_af3593a65bba2a2527669eb4a05a618b8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespacezappy.html#a27351dc1d35dc62fde06de99d6e6dc21">ClientType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1Client.html#af3593a65bba2a2527669eb4a05a618b8">getType</a> () const</td></tr>
 <tr class="memdesc:af3593a65bba2a2527669eb4a05a618b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the connection's current role.  <br /></td></tr>
 <tr class="separator:af3593a65bba2a2527669eb4a05a618b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aafc44ed301967697c2a93931f5e51744" id="r_aafc44ed301967697c2a93931f5e51744"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1Client.html#aafc44ed301967697c2a93931f5e51744">setType</a> (<a class="el" href="namespacezappy.html#a27351dc1d35dc62fde06de99d6e6dc21">ClientType</a> type)</td></tr>
+<tr class="memitem:aafc44ed301967697c2a93931f5e51744" id="r_aafc44ed301967697c2a93931f5e51744"><td class="memItemLeft" align="right" valign="top"><a class="el" href="glad_8h.html#a950fc91edb4504f62f1c577bf4727c29">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1Client.html#aafc44ed301967697c2a93931f5e51744">setType</a> (<a class="el" href="namespacezappy.html#a27351dc1d35dc62fde06de99d6e6dc21">ClientType</a> <a class="el" href="glad_8h.html#a890efa53b3d7deeeced6f3a0d6653ed3">type</a>)</td></tr>
 <tr class="memdesc:aafc44ed301967697c2a93931f5e51744"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the connection's role, e.g. once it has been identified or marked dead.  <br /></td></tr>
 <tr class="separator:aafc44ed301967697c2a93931f5e51744"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6598b3577e407adaffb03253ef06b626" id="r_a6598b3577e407adaffb03253ef06b626"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1Client.html#a6598b3577e407adaffb03253ef06b626">getBuffer</a> () const</td></tr>
@@ -143,10 +143,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4f92c61fc28933a5028c593325a394b7" id="r_a4f92c61fc28933a5028c593325a394b7"><td class="memItemLeft" align="right" valign="top">std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1Client.html#a4f92c61fc28933a5028c593325a394b7">getBuffer</a> ()</td></tr>
 <tr class="memdesc:a4f92c61fc28933a5028c593325a394b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mutable access to the pending receive buffer, so callers can append incoming bytes or erase a command once it is parsed.  <br /></td></tr>
 <tr class="separator:a4f92c61fc28933a5028c593325a394b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac82ce36df3beeb570fdb5e4027019708" id="r_ac82ce36df3beeb570fdb5e4027019708"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1Client.html#ac82ce36df3beeb570fdb5e4027019708">setBuffer</a> (const std::string &amp;buffer)</td></tr>
+<tr class="memitem:ac82ce36df3beeb570fdb5e4027019708" id="r_ac82ce36df3beeb570fdb5e4027019708"><td class="memItemLeft" align="right" valign="top"><a class="el" href="glad_8h.html#a950fc91edb4504f62f1c577bf4727c29">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1Client.html#ac82ce36df3beeb570fdb5e4027019708">setBuffer</a> (const std::string &amp;<a class="el" href="glad_8h.html#a7fc54503e1a1cf98d128b839ebc0b4d0">buffer</a>)</td></tr>
 <tr class="memdesc:ac82ce36df3beeb570fdb5e4027019708"><td class="mdescLeft">&#160;</td><td class="mdescRight">Replaces the entire pending buffer.  <br /></td></tr>
 <tr class="separator:ac82ce36df3beeb570fdb5e4027019708"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd9816d0a687764ad9ee4772739a326e" id="r_afd9816d0a687764ad9ee4772739a326e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1Client.html#afd9816d0a687764ad9ee4772739a326e">write</a> (const std::string &amp;message) const</td></tr>
+<tr class="memitem:afd9816d0a687764ad9ee4772739a326e" id="r_afd9816d0a687764ad9ee4772739a326e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="glad_8h.html#a950fc91edb4504f62f1c577bf4727c29">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1Client.html#afd9816d0a687764ad9ee4772739a326e">write</a> (const std::string &amp;message) const</td></tr>
 <tr class="memdesc:afd9816d0a687764ad9ee4772739a326e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes the given message to the client socket, if it is valid. Logs an error if the write fails.  <br /></td></tr>
 <tr class="separator:afd9816d0a687764ad9ee4772739a326e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -420,7 +420,7 @@ Private Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void zappy::Client::setBuffer </td>
+          <td class="memname"><a class="el" href="glad_8h.html#a950fc91edb4504f62f1c577bf4727c29">void</a> zappy::Client::setBuffer </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>buffer</em></td><td>)</td>
@@ -449,7 +449,7 @@ Private Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void zappy::Client::setPlayerId </td>
+          <td class="memname"><a class="el" href="glad_8h.html#a950fc91edb4504f62f1c577bf4727c29">void</a> zappy::Client::setPlayerId </td>
           <td>(</td>
           <td class="paramtype">int&#160;</td>
           <td class="paramname"><em>playerId</em></td><td>)</td>
@@ -478,7 +478,7 @@ Private Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void zappy::Client::setType </td>
+          <td class="memname"><a class="el" href="glad_8h.html#a950fc91edb4504f62f1c577bf4727c29">void</a> zappy::Client::setType </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="namespacezappy.html#a27351dc1d35dc62fde06de99d6e6dc21">ClientType</a>&#160;</td>
           <td class="paramname"><em>type</em></td><td>)</td>
@@ -495,7 +495,7 @@ Private Attributes</h2></td></tr>
 <div id="dynsection-7-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-7-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classzappy_1_1Client_aafc44ed301967697c2a93931f5e51744_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classzappy_1_1Client_aafc44ed301967697c2a93931f5e51744_icgraph.svg" width="100%" height="404"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -507,7 +507,7 @@ Private Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void zappy::Client::write </td>
+          <td class="memname"><a class="el" href="glad_8h.html#a950fc91edb4504f62f1c577bf4727c29">void</a> zappy::Client::write </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>message</em></td><td>)</td>

@@ -1,0 +1,7 @@
+<map id="Zappy::IncantationEventHandler" name="Zappy::IncantationEventHandler">
+<area shape="rect" id="Node000001" title="Handles incantation messages: start (pic) and end (pie)." alt="" coords="5,332,228,417"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1AEventHandler.html" title="Abstract base for protocol handlers; factors the shared parsing helpers." alt="" coords="37,159,196,284"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="119,298,119,332,114,332,114,298"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1ICommandHandler.html" title="Contract for translating one or more protocol messages into model mutations." alt="" coords="25,5,209,111"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="119,124,119,158,114,158,114,124"/>
+</map>

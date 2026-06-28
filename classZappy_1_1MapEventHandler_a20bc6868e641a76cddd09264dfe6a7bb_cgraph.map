@@ -1,0 +1,28 @@
+<map id="Zappy::MapEventHandler::handle" name="Zappy::MapEventHandler::handle">
+<area shape="rect" id="Node000001" title="Applies a map message to the state." alt="" coords="5,133,192,173"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1MapEventHandler.html#a9912472f65d4509bbf34bbe8f8df9397" title="Resizes the map from a msz message." alt="" coords="240,83,427,123"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="191,130,226,123,227,128,193,136"/>
+<area shape="rect" id="Node000007" href="$classZappy_1_1MapEventHandler.html#a56f0688289a92600f466106449b9a1cd" title="Fills one tile&#39;s ground resources from a bct message." alt="" coords="240,165,427,205"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="192,163,227,167,226,173,192,168"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1GameState.html#abd6471abf9d8148da897c524115909fc" title="Mutable access to the map." alt="" coords="475,107,655,132"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="427,107,461,109,461,115,427,112"/>
+<area shape="rect" id="Node000004" href="$classZappy_1_1Map.html#ad6f24aa6f9b725bdbeb7b099242ef196" title="Resizes the map and (re)allocates its tiles." alt="" coords="492,5,637,31"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="386,81,474,48,514,33,516,38,476,52,388,86"/>
+<area shape="rect" id="Node000006" href="$classZappy_1_1AEventHandler.html#a753a24b4a29ada4f0f7134a386e4cd99" title="Parses an integer token, tolerant of malformed input." alt="" coords="709,199,875,239"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="419,81,473,73,534,71,596,76,656,92,691,110,722,135,770,187,766,190,719,139,688,115,654,96,595,81,533,76,474,79,420,86"/>
+<area shape="rect" id="Node000005" href="$classZappy_1_1Tile.html#a6f035112a232eebf863b85fef76bbf23" title=" " alt="" coords="729,5,855,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="638,15,715,15,715,21,638,21"/>
+<area shape="poly" id="edge9_Node000007_Node000003" title=" " alt="" coords="401,162,474,141,501,133,503,138,475,146,402,167"/>
+<area shape="poly" id="edge11_Node000007_Node000006" title=" " alt="" coords="427,189,695,209,695,215,427,194"/>
+<area shape="rect" id="Node000008" href="$classZappy_1_1Map.html#adab8af111676b71092be4c141821fe43" title="Access to a tile, with toroidal wrapping of the coordinates." alt="" coords="505,321,624,347"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="354,203,405,255,439,283,476,306,493,314,491,319,473,311,436,287,402,259,350,207"/>
+<area shape="rect" id="Node000010" href="$classZappy_1_1Tile.html#a2c7ada0bdea030850e8b48651b570b18" title="Mutable access to the ground resources." alt="" coords="482,156,647,181"/>
+<area shape="poly" id="edge10_Node000007_Node000010" title=" " alt="" coords="427,176,468,173,468,178,427,181"/>
+<area shape="rect" id="Node000011" href="$classZappy_1_1AEventHandler.html#a70efb8e8a2b290eab529b85f46f72de5" title="Reads the seven resource counts (q0..q6) starting at an offset." alt="" coords="481,257,648,297"/>
+<area shape="poly" id="edge12_Node000007_Node000011" title=" " alt="" coords="386,202,502,249,500,254,384,207"/>
+<area shape="rect" id="Node000009" href="$classZappy_1_1Map.html#a0d20484476cb0e8da18f185e9ac7f8a1" title="Computes the row&#45;major storage index for wrapped coordinates." alt="" coords="721,321,863,347"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="624,331,707,331,707,337,624,337"/>
+<area shape="poly" id="edge14_Node000011_Node000006" title=" " alt="" coords="644,254,698,240,700,245,645,259"/>
+<area shape="rect" id="Node000012" href="$classZappy_1_1ResourceSet.html#ad988d909e6b3bd5ca5cdb03c5ee32453" title="Sets the count of a resource." alt="" coords="703,264,881,289"/>
+<area shape="poly" id="edge13_Node000011_Node000012" title=" " alt="" coords="648,274,689,274,689,279,648,279"/>
+</map>

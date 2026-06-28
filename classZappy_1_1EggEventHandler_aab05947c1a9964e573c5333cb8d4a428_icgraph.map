@@ -1,0 +1,7 @@
+<map id="Zappy::EggEventHandler::parentTeam" name="Zappy::EggEventHandler::parentTeam">
+<area shape="rect" id="Node000001" title="Resolves the team of an egg&#39;s parent player." alt="" coords="467,5,649,45"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1EggEventHandler.html#ae99537c5f3c48c2278c930ba2089120e" title="Creates an egg from an enw message (egg laid by a player)." alt="" coords="236,5,419,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="453,28,419,28,419,23,453,23"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1EggEventHandler.html#af10d8140274bf77c4609eb8cecdc72b7" title="Applies an egg message to the state." alt="" coords="5,5,188,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="223,28,188,28,188,23,223,23"/>
+</map>

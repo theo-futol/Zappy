@@ -1,0 +1,7 @@
+<map id="Zappy::GameState::GameState" name="Zappy::GameState::GameState">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,42,229,67"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1ColorPalette.html#ac9200f622eee9fe77f6f2e72158fb8b9" title=" " alt="" coords="277,5,427,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="219,39,263,34,264,39,219,45"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1Map.html#a0311de19bb65a6126496f0aeaf54b730" title=" " alt="" coords="285,70,419,95"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="224,65,271,70,270,76,223,70"/>
+</map>

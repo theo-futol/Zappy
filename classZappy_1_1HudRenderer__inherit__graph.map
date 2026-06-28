@@ -1,0 +1,5 @@
+<map id="Zappy::HudRenderer" name="Zappy::HudRenderer">
+<area shape="rect" id="Node000001" title="Draws the styled HUD overlay: a right&#45;side panel (background, accents, team color swatches,..." alt="" coords="5,139,152,804"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1IRenderer.html" title="Contract for one stage of the rendering pipeline." alt="" coords="16,5,141,91"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="81,104,81,138,76,138,76,104"/>
+</map>

@@ -1,0 +1,29 @@
+<map id="Zappy::EggEventHandler::handle" name="Zappy::EggEventHandler::handle">
+<area shape="rect" id="Node000001" title="Applies an egg message to the state." alt="" coords="5,123,188,163"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1EggEventHandler.html#a528586c18dceb79285e2bbd5fdfb2b75" title="Removes a hatched egg from an ebo message (a client connected to it)." alt="" coords="236,69,419,109"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="183,120,227,110,228,115,184,125"/>
+<area shape="rect" id="Node000006" href="$classZappy_1_1EggEventHandler.html#ae99537c5f3c48c2278c930ba2089120e" title="Creates an egg from an enw message (egg laid by a player)." alt="" coords="236,155,419,195"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="188,153,223,157,222,163,188,158"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1AEventHandler.html#a3ba38d2410b06460d0d23411b9dc7210" title="Parses an entity number token of the form &quot;#n&quot;." alt="" coords="493,69,659,109"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="419,87,479,87,479,92,419,92"/>
+<area shape="rect" id="Node000005" href="$classZappy_1_1GameState.html#aa5fc7b850e96ed3d99928471d5835bf5" title="Removes an entity by key." alt="" coords="475,5,677,45"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="405,67,484,46,486,51,406,72"/>
+<area shape="rect" id="Node000004" href="$classZappy_1_1AEventHandler.html#a753a24b4a29ada4f0f7134a386e4cd99" title="Parses an integer token, tolerant of malformed input." alt="" coords="755,71,922,111"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="660,87,742,88,742,93,660,92"/>
+<area shape="poly" id="edge9_Node000006_Node000003" title=" " alt="" coords="385,152,503,111,505,116,387,157"/>
+<area shape="poly" id="edge14_Node000006_Node000004" title=" " alt="" coords="419,160,685,119,741,108,742,113,686,124,419,165"/>
+<area shape="rect" id="Node000007" href="$classZappy_1_1GameState.html#a6e91382f136bccb7ff1396281247a119" title="Inserts or replaces an entity, keyed by its entity type and number." alt="" coords="469,185,683,210"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="419,180,456,184,455,189,419,186"/>
+<area shape="rect" id="Node000010" href="$classZappy_1_1EggEventHandler.html#aab05947c1a9964e573c5333cb8d4a428" title="Resolves the team of an egg&#39;s parent player." alt="" coords="485,235,667,275"/>
+<area shape="poly" id="edge10_Node000006_Node000010" title=" " alt="" coords="388,192,467,219,496,228,494,233,466,224,386,197"/>
+<area shape="rect" id="Node000013" href="$classZappy_1_1GameState.html#ad411343592328981362a696d67c7dc96" title="Distinct display color assigned to a team (when it was registered)." alt="" coords="467,299,685,325"/>
+<area shape="poly" id="edge13_Node000006_Node000013" title=" " alt="" coords="349,193,400,239,433,264,468,284,488,293,486,298,465,289,430,268,397,244,346,197"/>
+<area shape="rect" id="Node000008" href="$classZappy_1_1IEntity.html#aa483e3d82e7596ad06086ffa44665217" title="Open category of the entity." alt="" coords="735,138,943,163"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="648,182,753,163,754,168,649,187"/>
+<area shape="rect" id="Node000009" href="$classZappy_1_1IEntity.html#a8655b004f61d2e4d01b195513b65e9fd" title="Protocol number within the entity&#39;s category." alt="" coords="754,187,923,213"/>
+<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="683,196,740,196,740,202,683,201"/>
+<area shape="rect" id="Node000011" href="$classZappy_1_1GameState.html#a523df5ec4dd7ee8bfd3f930c89962bd4" title="Looks up an entity by key." alt="" coords="733,241,944,266"/>
+<area shape="poly" id="edge11_Node000010_Node000011" title=" " alt="" coords="668,252,719,251,719,257,668,257"/>
+<area shape="rect" id="Node000012" href="$classZappy_1_1Trantorian.html#a0bd060e7592defaaa5efb1578b262dba" title="Team name." alt="" coords="750,290,927,315"/>
+<area shape="poly" id="edge12_Node000010_Node000012" title=" " alt="" coords="668,269,756,285,755,290,667,274"/>
+</map>

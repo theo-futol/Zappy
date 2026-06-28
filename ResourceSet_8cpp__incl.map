@@ -1,0 +1,15 @@
+<map id="src/gui/Model/resourceset/ResourceSet.cpp" name="src/gui/Model/resourceset/ResourceSet.cpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="116,5,305,45"/>
+<area shape="rect" id="Node000002" href="$ResourceSet_8hpp.html" title=" " alt="" coords="107,93,314,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="213,46,213,79,208,79,208,46"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,181,61,207"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="169,136,73,178,71,173,167,131"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="86,181,157,207"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="191,136,147,174,143,170,187,132"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="181,181,240,207"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="213,134,213,167,208,167,208,134"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="265,181,327,207"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="233,132,275,170,271,174,230,136"/>
+<area shape="rect" id="Node000007" href="$ResourceType_8hpp.html" title=" " alt="" coords="351,181,531,207"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="267,131,395,174,394,179,265,136"/>
+</map>

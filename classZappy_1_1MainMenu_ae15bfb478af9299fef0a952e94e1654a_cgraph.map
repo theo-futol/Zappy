@@ -1,0 +1,15 @@
+<map id="Zappy::MainMenu::modeTwoButton" name="Zappy::MainMenu::modeTwoButton">
+<area shape="rect" id="Node000001" title="Rectangle of the &quot;2D&quot; mode button." alt="" coords="5,23,213,63"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1MainMenu.html#a9775fbd32327285b596a5c2cb91392c2" title="Rectangle of the port text field." alt="" coords="261,31,464,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="213,41,248,41,248,46,213,46"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1MainMenu.html#acd674a29a227b3051114070400c3252d" title="Rectangle of the host text field." alt="" coords="512,31,717,56"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="464,41,499,41,499,46,464,46"/>
+<area shape="rect" id="Node000004" href="$classZappy_1_1MainMenu.html#a7475763b92bc62d3612ca61a4c5f1957" title="Y of the centered panel&#39;s bottom edge." alt="" coords="765,5,996,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="717,31,752,28,752,33,718,36"/>
+<area shape="rect" id="Node000006" href="$classZappy_1_1MainMenu.html#a692d60cf91e3382c24251674bfe21652" title="X of the centered panel&#39;s left edge." alt="" coords="777,55,984,80"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="718,50,764,54,763,59,717,55"/>
+<area shape="rect" id="Node000005" href="$classZappy_1_1Window.html#aea1ad498e106ef34dd2440e08457f386" title="Window height." alt="" coords="1044,5,1215,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="996,15,1030,15,1030,21,996,21"/>
+<area shape="rect" id="Node000007" href="$classZappy_1_1Window.html#af7def2e51c9498c9962c3346b6c6fb91" title="Window width." alt="" coords="1047,55,1212,80"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="984,65,1033,65,1033,70,984,70"/>
+</map>

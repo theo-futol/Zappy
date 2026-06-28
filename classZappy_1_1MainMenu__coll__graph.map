@@ -1,0 +1,7 @@
+<map id="Zappy::MainMenu" name="Zappy::MainMenu">
+<area shape="rect" id="Node000001" title="Full&#45;screen configuration menu: host/port text fields and a 2D/3D toggle." alt="" coords="131,593,287,1499"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1Window.html" title="Encapsulates the GLFW window and OpenGL context; the only place GLFW is touched." alt="" coords="5,5,204,531"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="142,530,149,576,143,577,137,531"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1GraphicsContext.html" title="Configures global OpenGL pipeline state (depth test, blending, viewport)." alt="" coords="229,205,399,331"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="308,331,275,577,270,576,303,330"/>
+</map>

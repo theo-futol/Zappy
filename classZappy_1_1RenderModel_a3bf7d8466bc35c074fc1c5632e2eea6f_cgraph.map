@@ -1,0 +1,5 @@
+<map id="Zappy::RenderModel::uploadPrimitives" name="Zappy::RenderModel::uploadPrimitives">
+<area shape="rect" id="Node000001" title="Uploads every primitive as a mesh and records its local bounds." alt="" coords="5,5,161,45"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1RenderModel.html#a48b38a1747301544ee85ddde1d8b59e4" title="Interleaves a primitive&#39;s attributes into a {3, 3, 2} vertex buffer." alt="" coords="209,5,365,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="161,23,196,23,196,28,161,28"/>
+</map>

@@ -118,7 +118,7 @@
 <!-- Node4 -->
 <g id="Node000004" class="node">
 <title>Node4</title>
-<g id="a_Node000004"><a xlink:href="Core_8hpp.html" target="_top" xlink:title=" ">
+<g id="a_Node000004"><a xlink:href="server_2Core_2Core_8hpp.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="3132,-79.5 2995,-79.5 2995,-60.5 3132,-60.5 3132,-79.5"/>
 <text text-anchor="middle" x="3063.5" y="-67.5" font-family="Helvetica,sans-Serif" font-size="10.00">src/server/Core/Core.hpp</text>
 </a>
@@ -155,7 +155,7 @@
 <!-- Node5 -->
 <g id="Node000005" class="node">
 <title>Node5</title>
-<g id="a_Node000005"><a xlink:href="Core_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_Node000005"><a xlink:href="server_2Core_2Core_8cpp.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="3060.5,-19 2924.5,-19 2924.5,0 3060.5,0 3060.5,-19"/>
 <text text-anchor="middle" x="2992.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">src/server/Core/Core.cpp</text>
 </a>
@@ -173,7 +173,7 @@
 <!-- Node6 -->
 <g id="Node000006" class="node">
 <title>Node6</title>
-<g id="a_Node000006"><a xlink:href="main_8cpp.html" target="_top" xlink:title=" ">
+<g id="a_Node000006"><a xlink:href="server_2main_8cpp.html" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="3192,-19 3079,-19 3079,0 3192,0 3192,-19"/>
 <text text-anchor="middle" x="3135.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">src/server/main.cpp</text>
 </a>

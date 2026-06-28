@@ -1,0 +1,9 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" href="$classZappy_1_1IProjection.html" title="Contract mapping grid coordinates to a point on the rendered world surface." alt="" coords="5,55,144,80"/>
+<area shape="rect" id="Node000001" href="$classZappy_1_1GroundProjection.html" title="3D&#45;mode projection: maps grid cell (x, y) to world point (x, 0, y)." alt="" coords="192,5,375,31"/>
+<area shape="poly" id="edge36_Node000000_Node000001" title=" " alt="" coords="142,49,228,28,229,33,143,54"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1PlanarProjection.html" title="Flat top&#45;down projection: maps grid cell (x, y) to world point (x, y, 0)." alt="" coords="195,55,371,80"/>
+<area shape="poly" id="edge37_Node000000_Node000002" title=" " alt="" coords="158,65,195,65,195,70,158,70"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1TorusProjection.html" title="3D&#45;mode projection wrapping the (toroidal) Zappy grid onto a real 3D torus." alt="" coords="199,104,368,129"/>
+<area shape="poly" id="edge38_Node000000_Node000003" title=" " alt="" coords="143,81,229,101,228,107,142,86"/>
+</map>

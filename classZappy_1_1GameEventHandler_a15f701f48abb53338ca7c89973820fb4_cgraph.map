@@ -1,0 +1,15 @@
+<map id="Zappy::GameEventHandler::handleBroadcast" name="Zappy::GameEventHandler::handleBroadcast">
+<area shape="rect" id="Node000001" title="Logs a player broadcast (pbc) message." alt="" coords="5,105,203,145"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1GameState.html#a8bab81f3bdac8870b7b24a1485ebf0e0" title="Records a broadcast originating from a player (for the ripple animation)." alt="" coords="251,5,491,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="133,102,186,70,250,40,274,32,276,37,252,44,189,74,136,107"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1GameState.html#a17e71b501965af0430ea71cc193db44b" title="Appends a message to the bounded log (oldest dropped past the cap)." alt="" coords="254,55,487,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="195,102,250,90,296,80,297,85,251,95,197,107"/>
+<area shape="rect" id="Node000004" href="$classZappy_1_1AEventHandler.html#a3ba38d2410b06460d0d23411b9dc7210" title="Parses an entity number token of the form &quot;#n&quot;." alt="" coords="287,105,454,145"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="203,122,274,122,274,127,203,127"/>
+<area shape="rect" id="Node000006" href="$classZappy_1_1GameState.html#a523df5ec4dd7ee8bfd3f930c89962bd4" title="Looks up an entity by key." alt="" coords="265,169,476,195"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="197,142,251,154,297,164,296,169,250,159,195,147"/>
+<area shape="rect" id="Node000007" href="$classZappy_1_1IEntity.html#a9919f592dc7305c5e1c4a21d515b78ae" title="Current grid position." alt="" coords="285,219,456,244"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="137,143,189,174,252,204,281,213,279,218,250,208,187,179,134,147"/>
+<area shape="rect" id="Node000005" href="$classZappy_1_1AEventHandler.html#a753a24b4a29ada4f0f7134a386e4cd99" title="Parses an integer token, tolerant of malformed input." alt="" coords="539,105,705,145"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="454,122,525,122,525,127,454,127"/>
+</map>

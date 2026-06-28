@@ -1,0 +1,9 @@
+<map id="Zappy::Core::runSession" name="Zappy::Core::runSession">
+<area shape="rect" id="Node000001" title="Connects and runs one game session with the current host/port/mode." alt="" coords="5,77,184,102"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1INetwork_1_1INetworkException.html#a25476a236f2cd960beecf1adf667fb20" title=" " alt="" coords="253,5,449,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="146,74,256,46,258,51,147,79"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1NetworkService_1_1NetworkServiceException.html#a1922adfe28aefbf5f45b9cd544b47530" title=" " alt="" coords="232,69,469,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="184,87,218,87,218,92,184,92"/>
+<area shape="rect" id="Node000004" href="$classZappy_1_1RenderSystem_1_1RenderSystemException.html#a6e0967282c49cd0b05b88443b0442642" title=" " alt="" coords="236,133,465,173"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="147,100,258,127,256,133,146,105"/>
+</map>

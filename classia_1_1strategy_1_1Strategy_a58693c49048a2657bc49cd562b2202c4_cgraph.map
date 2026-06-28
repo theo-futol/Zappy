@@ -1,5 +1,20 @@
 <map id="ia.strategy.Strategy._send_ready_ping" name="ia.strategy.Strategy._send_ready_ping">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,156,45"/>
-<area shape="rect" id="Node000002" href="$classia_1_1strategy_1_1Strategy.html#ab7259dc958e7734bdbac77afafde24d3" title=" " alt="" coords="204,5,355,45"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="156,23,190,23,190,28,156,28"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,157,156,197"/>
+<area shape="rect" id="Node000002" href="$classia_1_1strategy_1_1Strategy.html#ab7259dc958e7734bdbac77afafde24d3" title=" " alt="" coords="217,99,368,139"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="155,154,204,140,206,146,156,159"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1IEntity.html#aa4bf5ab5fd6ae0bf0d5db8090abc7bd2" title="Player elevation level, or 0 for entities without a level (e.g." alt="" coords="430,5,581,31"/>
+<area shape="poly" id="edge5_Node000001_Node000003" title=" " alt="" coords="94,155,138,104,169,78,203,57,255,37,311,24,366,16,416,13,416,19,366,22,312,29,257,42,205,62,172,82,142,108,98,158"/>
+<area shape="rect" id="Node000004" href="$classZappy_1_1AMapEntity.html#a272f44b95b6aa772f5a80999b1546b09" title="Elevation level; 0 by default (entities without a level)." alt="" coords="429,61,581,101"/>
+<area shape="poly" id="edge6_Node000001_Node000004" title=" " alt="" coords="100,154,144,117,172,99,203,85,257,71,312,65,366,64,416,66,415,72,366,69,313,70,258,77,205,90,175,103,147,121,103,159"/>
+<area shape="rect" id="Node000005" href="$classZappy_1_1Trantorian.html#a3712c927c606be292d7338a81ff90868" title="Player level." alt="" coords="434,135,577,175"/>
+<area shape="poly" id="edge7_Node000001_Node000005" title=" " alt="" coords="156,170,420,157,420,162,157,176"/>
+<area shape="rect" id="Node000006" href="$classZappy_1_1IEntity.html#a1ee215fb80e9d2d867a5cd965013d57f" title="Team the entity belongs to." alt="" coords="216,215,369,240"/>
+<area shape="poly" id="edge8_Node000001_Node000006" title=" " alt="" coords="157,192,226,209,225,214,156,197"/>
+<area shape="rect" id="Node000007" href="$classZappy_1_1Egg.html#ae6f0804c1ddcb6b00aa9320554c11b0f" title="Team name." alt="" coords="225,264,361,289"/>
+<area shape="poly" id="edge9_Node000001_Node000007" title=" " alt="" coords="111,195,154,223,205,250,223,257,222,262,203,255,151,228,108,199"/>
+<area shape="rect" id="Node000008" href="$classZappy_1_1Trantorian.html#a0bd060e7592defaaa5efb1578b262dba" title="Team name." alt="" coords="204,313,381,339"/>
+<area shape="poly" id="edge10_Node000001_Node000008" title=" " alt="" coords="98,195,142,248,172,276,205,300,218,306,215,311,203,304,169,280,138,251,94,199"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="329,97,428,46,457,34,459,38,430,51,332,102"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="368,103,415,94,416,99,369,108"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="368,129,421,138,420,144,368,135"/>
 </map>

@@ -1,0 +1,12 @@
+<map id="Zappy::Primitives::quad" name="Zappy::Primitives::quad">
+<area shape="rect" id="Node000001" title="Unit quad centered on the origin, lying on the XY plane." alt="" coords="433,63,609,88"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1MainMenu.html#ac5f907a0686eb48b8439aec385fe33dd" title="Loads the menu assets (basic shader, quad mesh, font)." alt="" coords="219,5,385,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="458,62,351,33,352,28,459,57"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1RenderSystem.html#a182ab57f97e213de1f29ac31e2aab7d3" title="Loads the 3D pipeline: orbit camera (the scene stays empty until the 3D renderers land)." alt="" coords="219,55,385,95"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="420,78,385,78,385,73,420,73"/>
+<area shape="rect" id="Node000005" href="$classZappy_1_1RenderSystem.html#a3ed3055c99d4acbde0ac2748ae7acaae" title="Loads the 2D pipeline: top&#45;down camera, planar projection, assets, renderers, HUD." alt="" coords="219,119,385,159"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="465,95,372,122,371,117,463,89"/>
+<area shape="rect" id="Node000004" href="$classZappy_1_1RenderSystem.html#ad4906e38daaf30cc7bf7e1b5b02ddd36" title="Creates the window and context and loads the renderers and assets." alt="" coords="5,87,171,127"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="206,92,171,98,170,92,205,87"/>
+<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="205,128,170,122,171,117,206,122"/>
+</map>

@@ -1,0 +1,17 @@
+<map id="Zappy::MessageParser" name="Zappy::MessageParser">
+<area shape="rect" id="Node000001" title="Splits the raw server stream into messages and dispatches them." alt="" coords="140,876,300,981"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1IParser.html" title="Contract for consuming the raw server byte stream." alt="" coords="5,518,112,603"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="68,616,88,711,105,763,126,812,147,844,170,874,166,877,142,848,122,815,100,764,83,712,63,618"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1HandlerRegistry.html" title="Owns the command handlers and routes messages to them by key." alt="" coords="137,498,303,623"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="223,624,223,859,217,859,217,624"/>
+<area shape="rect" id="Node000004" href="$classZappy_1_1GameState.html" title="Single source of truth for the GUI: map, entities, teams, time and winner." alt="" coords="328,308,467,813"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="330,795,294,854,285,865,281,862,290,850,326,792"/>
+<area shape="rect" id="Node000005" href="$classZappy_1_1Map.html" title="Toroidal grid of tiles." alt="" coords="133,5,224,231"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="226,212,238,229,278,267,301,288,317,306,322,315,318,318,313,310,297,292,274,271,234,232,222,215"/>
+<area shape="rect" id="Node000006" href="$classZappy_1_1ColorPalette.html" title="Hands out visually distinct colors, cycling through a fixed palette." alt="" coords="248,65,389,171"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="330,170,352,291,347,292,325,171"/>
+<area shape="rect" id="Node000007" href="$structZappy_1_1EntityKey.html" title="Identity of a map entity: an open string entity type plus its protocol number." alt="" coords="414,75,538,161"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="471,161,448,292,443,291,466,160"/>
+<area shape="rect" id="Node000008" href="$structZappy_1_1GridPosition.html" title="Integer coordinates on the toroidal game grid." alt="" coords="563,75,704,161"/>
+<area shape="poly" id="edge7_Node000004_Node000008" title=" " alt="" coords="615,162,553,285,477,424,472,422,548,283,611,160"/>
+</map>

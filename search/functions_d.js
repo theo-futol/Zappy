@@ -1,16 +1,12 @@
 var searchData=
 [
-  ['parse_0',['parse',['../classzappy_1_1ArgParser.html#a9a88ebf6d2462864575da3a2d5d3ce35',1,'zappy::ArgParser']]],
-  ['parse_5fargs_1',['parse_args',['../namespaceia_1_1client.html#adfa363b3ccbf1ed1027863d1a140c54c',1,'ia.client.parse_args()'],['../namespaceia_1_1launcher.html#a529d949c85a1f6170671ec74f509df19',1,'ia.launcher.parse_args()']]],
-  ['parse_5finventory_5fpayload_2',['parse_inventory_payload',['../namespaceia_1_1parsing.html#a17c708f8dd686d14ac5408bb34f86e49',1,'ia::parsing']]],
-  ['parse_5flook_5fpayload_3',['parse_look_payload',['../namespaceia_1_1parsing.html#a6af02ca5ee3692fb6998721c598d8960',1,'ia::parsing']]],
-  ['parse_5frally_5fmessage_4',['parse_rally_message',['../namespaceia_1_1broadcast.html#a27f89aa05072c2bc25a52761e07add78',1,'ia::broadcast']]],
-  ['parse_5fserver_5fline_5',['parse_server_line',['../namespaceia_1_1parsing.html#a2cb7c0cd9c6b372ed1f4aab6133f718f',1,'ia::parsing']]],
-  ['pending_6',['pending',['../classia_1_1parsing_1_1LineBuffer.html#a05522e0d2fa2988a69d1fb5f959909ad',1,'ia::parsing::LineBuffer']]],
-  ['pick_5fcurrent_5ftile_5fresource_7',['pick_current_tile_resource',['../namespaceia_1_1utils_1_1model__utils.html#a17eb4d4b37f216fb13b4d8201fdbabe2',1,'ia::utils::model_utils']]],
-  ['pin_8',['Pin',['../classzappy_1_1Commands.html#aaabc46f14a816bcd9536dba35d36640d',1,'zappy::Commands']]],
-  ['player_9',['Player',['../classzappy_1_1Player.html#afeee219475364126927b27ef76f08f0d',1,'zappy::Player']]],
-  ['plv_10',['Plv',['../classzappy_1_1Commands.html#adde6fad572f1f56741cdb1db66dfdd09',1,'zappy::Commands']]],
-  ['pop_5fmessages_11',['pop_messages',['../classia_1_1client_1_1ZappyAIClient.html#a048558722d4023667aa2a4e64a415d3e',1,'ia.client.ZappyAIClient.pop_messages()'],['../classia_1_1test_1_1FakeClient.html#a53ad2b100f4c0c1106865bff0d5605e4',1,'ia.test.FakeClient.pop_messages()']]],
-  ['ppo_12',['Ppo',['../classzappy_1_1Commands.html#a95489f8af16021d203de0dd5c729dc00',1,'zappy::Commands']]]
+  ['needed_5fstones_5ffor_5flevel_0',['needed_stones_for_level',['../namespaceia_1_1utils_1_1model__utils.html#a1279452c9fb68f881ef3aef95a775f71',1,'ia::utils::model_utils']]],
+  ['networkservice_1',['networkservice',['../classZappy_1_1NetworkService.html#a1b5c7a2bdec0016459dda62c6745d427',1,'Zappy::NetworkService::NetworkService(GameState &amp;state, std::unique_ptr&lt; INetwork &gt; socket)'],['../classZappy_1_1NetworkService.html#a18aeee4b2bdc29adf78a1700c25be599',1,'Zappy::NetworkService::NetworkService(const NetworkService &amp;)=delete'],['../classZappy_1_1NetworkService.html#a8bff982f06cefd0f4c78be0e6b4d0636',1,'Zappy::NetworkService::NetworkService(NetworkService &amp;&amp;)=delete']]],
+  ['networkserviceexception_2',['NetworkServiceException',['../classZappy_1_1NetworkService_1_1NetworkServiceException.html#a2a8ca2de3e16fec5166b868101e21a50',1,'Zappy::NetworkService::NetworkServiceException']]],
+  ['next_3',['next',['../classZappy_1_1ColorPalette.html#a3f943ffeb5ca1ee99e652b70a88dc62b',1,'Zappy::ColorPalette']]],
+  ['nextposition_4',['nextPosition',['../classzappy_1_1Player.html#a8b9c6f16cad62adb3f85f645c300393f',1,'zappy::Player']]],
+  ['nextreadyat_5',['nextReadyAt',['../classzappy_1_1CommandParser.html#a51dc278ae516e7e973a02d3d36069918',1,'zappy::CommandParser']]],
+  ['normalize_5finventory_6',['normalize_inventory',['../namespaceia_1_1utils_1_1model__utils.html#aa04905b03ed901aa1f2673ef17e595d7',1,'ia::utils::model_utils']]],
+  ['normalize_5fvisible_5ftiles_7',['normalize_visible_tiles',['../namespaceia_1_1utils_1_1model__utils.html#a2d299647ed455635f742c9c6692295a5',1,'ia::utils::model_utils']]],
+  ['number_8',['number',['../classZappy_1_1AMapEntity.html#af0c361b6b2637daf8b69a2c28bb595ef',1,'Zappy::AMapEntity::number()'],['../classZappy_1_1IEntity.html#a8655b004f61d2e4d01b195513b65e9fd',1,'Zappy::IEntity::number()']]]
 ];

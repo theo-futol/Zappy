@@ -1,0 +1,5 @@
+<map id="Zappy::MainMenu::panelLeft" name="Zappy::MainMenu::panelLeft">
+<area shape="rect" id="Node000001" title="X of the centered panel&#39;s left edge." alt="" coords="5,5,212,31"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1Window.html#af7def2e51c9498c9962c3346b6c6fb91" title="Window width." alt="" coords="260,5,425,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="212,15,246,15,246,21,212,21"/>
+</map>

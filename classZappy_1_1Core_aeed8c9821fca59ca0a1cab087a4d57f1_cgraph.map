@@ -1,0 +1,7 @@
+<map id="Zappy::Core::init" name="Zappy::Core::init">
+<area shape="rect" id="Node000001" title="Connects to the server and builds the render system." alt="" coords="5,45,135,70"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1Window_1_1WindowException.html#a84a7e47211dda983f9b46bd8bd7ca147" title=" " alt="" coords="183,5,428,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="135,46,169,41,169,47,135,51"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1MainMenu_1_1MainMenuException.html#a036b87ea0faf03c31cfd2dfb391b2f82" title=" " alt="" coords="198,69,413,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="135,63,185,70,184,76,135,69"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="Zappy::RenderModel::DrawItem" name="Zappy::RenderModel::DrawItem">
+<area shape="rect" id="Node000001" title="One mesh to draw with its node world transform." alt="" coords="71,393,219,473"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1Mesh.html" title="Owns a vertex array and its buffers, and issues the draw call." alt="" coords="5,5,139,331"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="120,330,133,377,128,378,115,332"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1Texture.html" title="Loads an image into an OpenGL texture; the only place stb_image is used." alt="" coords="163,35,274,301"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="207,302,188,370,184,380,179,378,183,368,202,300"/>
+</map>

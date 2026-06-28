@@ -1,0 +1,7 @@
+<map id="Zappy::GameState::winner" name="Zappy::GameState::winner">
+<area shape="rect" id="Node000001" title="Winning team, empty while the game is running." alt="" coords="221,45,416,70"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1HudRenderer.html#a811888ec303fe1cfdfa3373f70decbc1" title="Draws the styled HUD overlay for the current frame." alt="" coords="12,5,167,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="213,45,166,39,167,33,214,40"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1SceneRenderer.html#a30d5d84cff8f8084328a40a42671d376" title="Draws the ground and the entities for the frame." alt="" coords="5,69,173,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="214,75,174,80,173,75,213,69"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="Zappy::TcpSocket::TcpSocket" name="Zappy::TcpSocket::TcpSocket">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,13,212,38"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1TcpSocket_1_1TcpSocketException.html#a334a1b5c3574dd033673fde9c5ae3263" title=" " alt="" coords="260,5,483,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="212,23,246,23,246,28,212,28"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1INetwork_1_1INetworkException.html#a88082d86a30da328709541cd6739e9fe" title=" " alt="" coords="531,5,748,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="483,23,517,23,517,28,483,28"/>
+</map>

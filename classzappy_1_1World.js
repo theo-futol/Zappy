@@ -10,6 +10,8 @@ var classzappy_1_1World =
     [ "foodCheck", "classzappy_1_1World.html#a779b35cdefa7a85d2f888890ad2ec84b", null ],
     [ "getAvailableSlotsForTeam", "classzappy_1_1World.html#a991347e5787aa696ad62de265c680a96", null ],
     [ "getElevationRequirement", "classzappy_1_1World.html#a34a1fc2900d878a2db5bfb0ee1cf659f", null ],
+    [ "getMap", "classzappy_1_1World.html#afe67d47d75f1d1d616e057b5eded8304", null ],
+    [ "getMap", "classzappy_1_1World.html#a89dcdff749116fae3421f9823899cab8", null ],
     [ "getMapSize", "classzappy_1_1World.html#ad35316e4e1203c45ad2f853319775432", null ],
     [ "getPlayerById", "classzappy_1_1World.html#a43fb08ea54d522c20d2c27ed281297f4", null ],
     [ "getPlayerById", "classzappy_1_1World.html#a7f5526d40e57cf68f11a5c577acc98d9", null ],

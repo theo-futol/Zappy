@@ -1,0 +1,13 @@
+<map id="Zappy::NetworkService::NetworkService" name="Zappy::NetworkService::NetworkService">
+<area shape="rect" id="Node000001" title="Builds the service." alt="" coords="5,69,179,109"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1HandlerRegistry.html#ab061ceb1ff312eb35f47f6aebcc0c554" title=" " alt="" coords="227,5,401,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="161,67,230,47,232,52,163,72"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1MessageParser.html#ad81c33911f7a971436f35924f8e7533f" title="Builds the parser." alt="" coords="230,69,398,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="179,87,216,87,216,92,179,92"/>
+<area shape="rect" id="Node000004" href="$classZappy_1_1NetworkService.html#ad2c08153bba828176456011d5732616c" title="Registers the protocol handlers into the registry." alt="" coords="227,133,401,173"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="163,107,232,127,230,132,161,112"/>
+<area shape="rect" id="Node000005" href="$classZappy_1_1HandlerRegistry.html#aaf4bc276310c0605d0bdb9218574860a" title="Registers a handler under each of its declared keys." alt="" coords="449,133,624,173"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="401,151,436,151,436,156,401,156"/>
+<area shape="rect" id="Node000006" href="$classZappy_1_1ICommandHandler.html#a1767165087dd96bde6e9f0a93ffd47e8" title="Protocol keys this handler is responsible for." alt="" coords="672,133,864,173"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="624,151,658,151,658,156,624,156"/>
+</map>

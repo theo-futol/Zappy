@@ -1,0 +1,3 @@
+<map id="Zappy::HandlerRegistry" name="Zappy::HandlerRegistry">
+<area shape="rect" id="Node000001" title="Owns the command handlers and routes messages to them by key." alt="" coords="5,5,172,131"/>
+</map>

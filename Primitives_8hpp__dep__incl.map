@@ -1,0 +1,15 @@
+<map id="src/gui/Graphics/primitives/Primitives.hpp" name="src/gui/Graphics/primitives/Primitives.hpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="523,5,719,45"/>
+<area shape="rect" id="Node000002" href="$Primitives_8cpp.html" title=" " alt="" coords="5,93,201,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="510,47,214,96,202,98,201,93,214,91,509,42"/>
+<area shape="rect" id="Node000003" href="$MainMenu_8cpp.html" title=" " alt="" coords="226,93,405,133"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="541,52,383,96,381,91,540,46"/>
+<area shape="rect" id="Node000004" href="$MapRenderer_8cpp.html" title=" " alt="" coords="429,93,604,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="589,56,541,95,538,91,585,52"/>
+<area shape="rect" id="Node000005" href="$SceneRenderer_8cpp.html" title=" " alt="" coords="629,93,821,133"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="656,52,703,91,700,95,653,56"/>
+<area shape="rect" id="Node000006" href="$SkyRenderer_8cpp.html" title=" " alt="" coords="845,93,1020,133"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="703,46,865,91,864,96,702,52"/>
+<area shape="rect" id="Node000007" href="$RenderSystem_8cpp.html" title=" " alt="" coords="1044,93,1253,133"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="732,42,1044,92,1043,98,732,47"/>
+</map>

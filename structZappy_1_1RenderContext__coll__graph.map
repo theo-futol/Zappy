@@ -1,0 +1,15 @@
+<map id="Zappy::RenderContext" name="Zappy::RenderContext">
+<area shape="rect" id="Node000001" title="Per&#45;frame data handed to every renderer." alt="" coords="270,876,429,981"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1GameState.html" title="Single source of truth for the GUI: map, entities, teams, time and winner." alt="" coords="200,308,339,813"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="302,813,313,851,316,860,311,861,308,853,297,814"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1Map.html" title="Toroidal grid of tiles." alt="" coords="5,5,96,231"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="99,210,195,404,190,406,94,212"/>
+<area shape="rect" id="Node000004" href="$classZappy_1_1ColorPalette.html" title="Hands out visually distinct colors, cycling through a fixed palette." alt="" coords="120,65,261,171"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="202,170,224,291,219,292,197,171"/>
+<area shape="rect" id="Node000005" href="$structZappy_1_1EntityKey.html" title="Identity of a map entity: an open string entity type plus its protocol number." alt="" coords="286,75,410,161"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="343,161,320,292,315,291,338,160"/>
+<area shape="rect" id="Node000006" href="$structZappy_1_1GridPosition.html" title="Integer coordinates on the toroidal game grid." alt="" coords="435,75,576,161"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="497,162,471,225,451,258,426,286,406,296,387,298,370,300,352,310,351,311,348,307,349,306,368,295,386,293,404,291,422,282,447,255,467,223,492,160"/>
+<area shape="rect" id="Node000007" href="$classZappy_1_1IProjection.html" title="Contract mapping grid coordinates to a point on the rendered world surface." alt="" coords="363,518,493,603"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="422,604,366,861,361,860,416,603"/>
+</map>

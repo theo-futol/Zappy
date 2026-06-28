@@ -1,0 +1,7 @@
+<map id="Zappy::INetwork::INetworkException" name="Zappy::INetwork::INetworkException">
+<area shape="rect" id="Node000001" title="Transport error contract; every INetwork implementation raises this (or a subclass),..." alt="" coords="11,119,199,219"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1TcpSocket_1_1TcpSocketException.html" title="Error raised by a socket operation; a kind of INetworkException so the session can catch it at the in..." alt="" coords="5,267,204,347"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="107,232,107,266,102,266,102,232"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="51,5,158,71"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="107,84,107,119,102,119,102,84"/>
+</map>

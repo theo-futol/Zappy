@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['max_5fclients_0',['MAX_CLIENTS',['../Core_8cpp.html#a0a8f91f93d75a07f0ae45077db45b3eb',1,'Core.cpp']]],
-  ['max_5ff_1',['MAX_F',['../Core_8cpp.html#a4cbdbe9b7f8e2757f49434127d9f1cb3',1,'Core.cpp']]],
-  ['max_5fmap_5fsize_2',['MAX_MAP_SIZE',['../Core_8cpp.html#a0dcaa63464405845211a092cd6d453d3',1,'Core.cpp']]],
-  ['max_5fteams_3',['MAX_TEAMS',['../Core_8cpp.html#a38bf96567b2c74c3549ed40ac53163ee',1,'Core.cpp']]]
+  ['broadcast_5fmessage_5ftime_5fper_5ftile_0',['BROADCAST_MESSAGE_TIME_PER_TILE',['../Player_8hpp.html#aca9ca18a60c91d329de4c3a3c84db059',1,'Player.hpp']]]
 ];

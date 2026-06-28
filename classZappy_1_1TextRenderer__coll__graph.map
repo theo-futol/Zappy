@@ -1,0 +1,3 @@
+<map id="Zappy::TextRenderer" name="Zappy::TextRenderer">
+<area shape="rect" id="Node000001" title="Renders text using FreeType; the only place FreeType is touched." alt="" coords="5,5,153,411"/>
+</map>

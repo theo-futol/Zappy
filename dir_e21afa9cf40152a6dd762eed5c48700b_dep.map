@@ -1,7 +1,7 @@
 <map id="src/server/Network/ClientHandler/Commands/AI" name="src/server/Network/ClientHandler/Commands/AI">
 <area shape="rect" id="node1" href="dir_e21afa9cf40152a6dd762eed5c48700b.html" title="AI" alt="" coords="45,52,83,77"/>
 <area shape="rect" id="node2" href="dir_8d263310e1a82a7c2dbdbf52fb5226f3.html" title="Simulation" alt="" coords="18,125,110,151"/>
-<area shape="poly" id="edge1" href="dir_000000_000015.html" alt="" coords="67,78,67,112,61,112,61,78"/>
-<area shape="rect" id="edge1-headlabel" href="dir_000000_000015.html" title="1" alt="" coords="68,100,77,114"/>
+<area shape="poly" id="edge1" href="dir_000001_000073.html" alt="" coords="67,78,67,112,61,112,61,78"/>
+<area shape="rect" id="edge1-headlabel" href="dir_000001_000073.html" title="1" alt="" coords="68,100,77,114"/>
 <area shape="rect" id="clust1" href="dir_3c60a0cde8bbb013f195215eabf283d4.html" title="Commands" alt="" coords="16,16,112,88"/>
 </map>

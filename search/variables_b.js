@@ -1,7 +1,10 @@
 var searchData=
 [
-  ['last_5ffood_0',['last_food',['../classia_1_1client_1_1ZappyAIClient.html#a2b2f64d67c427b01126170d676dcb0c5',1,'ia::client::ZappyAIClient']]],
-  ['level_1',['level',['../classia_1_1strategy_1_1Strategy.html#ad1fb11aaad31e9d322a12df4af648026',1,'ia::strategy::Strategy']]],
-  ['level_5frequirements_2',['LEVEL_REQUIREMENTS',['../namespaceia_1_1utils_1_1model__utils.html#a3b27c0445becc9a9a9953d1d7c65514e',1,'ia::utils::model_utils']]],
-  ['line_3',['line',['../structzappy_1_1PendingCommand.html#a1ecb7462f55f25636416dda7a984f9e7',1,'zappy::PendingCommand']]]
+  ['key_0',['key',['../structZappy_1_1Event.html#a4161530e49236d20170c91a847e7af68',1,'Zappy::Event']]],
+  ['keyback_1',['KeyBack',['../classZappy_1_1InputHandler.html#a3f65f9efbecb5cf7808dd492594568c0',1,'Zappy::InputHandler']]],
+  ['keydown_2',['KeyDown',['../classZappy_1_1InputHandler.html#afa62ce57809907288bd5f44460809377',1,'Zappy::InputHandler']]],
+  ['keyforward_3',['KeyForward',['../classZappy_1_1InputHandler.html#a94cb8662b9adf73999923c39748874c2',1,'Zappy::InputHandler']]],
+  ['keyleft_4',['KeyLeft',['../classZappy_1_1InputHandler.html#ae9f85864879bfd8c827fa20ecc73f6a7',1,'Zappy::InputHandler']]],
+  ['keyright_5',['KeyRight',['../classZappy_1_1InputHandler.html#a2da4538589d9f62879c52f1414c52431',1,'Zappy::InputHandler']]],
+  ['keyup_6',['KeyUp',['../classZappy_1_1InputHandler.html#a226879cdcfc526a879f39951faf2a2c4',1,'Zappy::InputHandler']]]
 ];

@@ -1,0 +1,5 @@
+<map id="Zappy::CubemapTexture::CubemapException::CubemapException" name="Zappy::CubemapTexture::CubemapException::CubemapException">
+<area shape="rect" id="Node000001" title=" " alt="" coords="233,5,460,60"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1CubemapTexture.html#acf62eb41e1bdc84399b622dd7452640e" title="Loads a 4x3 cross image and uploads its six faces to a cube map." alt="" coords="5,13,185,53"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="219,35,185,35,185,30,219,30"/>
+</map>

@@ -1,0 +1,35 @@
+<map id="Zappy::Trantorian::level" name="Zappy::Trantorian::level">
+<area shape="rect" id="Node000001" title="Player level." alt="" coords="1048,202,1191,242"/>
+<area shape="rect" id="Node000002" href="$classia_1_1strategy_1_1Strategy.html#ae73928a77981d633504d13b65602df2e" title=" " alt="" coords="631,250,781,290"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1035,238,1000,243,782,266,781,261,1000,238,1034,233"/>
+<area shape="rect" id="Node000004" href="$classia_1_1strategy_1_1Strategy.html#a9a38a8af29b18d2f8683ec0b65a0982c" title=" " alt="" coords="5,245,184,270"/>
+<area shape="poly" id="edge20_Node000001_Node000004" title=" " alt="" coords="1099,191,1059,130,1031,99,999,73,924,33,892,22,861,14,793,9,707,8,506,8,472,10,438,16,373,38,311,70,255,108,205,149,163,188,108,247,105,243,159,184,202,145,252,104,309,66,371,33,437,11,471,5,506,3,707,3,794,3,862,9,894,17,927,28,1001,69,1035,95,1063,127,1104,188"/>
+<area shape="rect" id="Node000005" href="$classia_1_1strategy_1_1Strategy.html#abfcac0e166ce9275850bb113ebc28a42" title=" " alt="" coords="432,192,583,232"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="1034,223,583,216,583,211,1034,218"/>
+<area shape="rect" id="Node000006" href="$classia_1_1strategy_1_1Strategy.html#a4d8561ad2e9f0762e5b9bd065648dfad" title=" " alt="" coords="631,55,781,95"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="1094,192,1053,148,1027,126,999,109,945,90,888,79,832,74,782,73,782,67,832,68,888,73,946,85,1001,105,1030,122,1057,144,1098,189"/>
+<area shape="rect" id="Node000008" href="$classia_1_1strategy_1_1Strategy.html#ab7259dc958e7734bdbac77afafde24d3" title=" " alt="" coords="839,144,990,184"/>
+<area shape="poly" id="edge9_Node000001_Node000008" title=" " alt="" coords="1034,201,986,187,987,182,1035,195"/>
+<area shape="rect" id="Node000009" href="$classia_1_1strategy_1_1Strategy.html#a58693c49048a2657bc49cd562b2202c4" title=" " alt="" coords="631,131,781,171"/>
+<area shape="poly" id="edge19_Node000001_Node000009" title=" " alt="" coords="1088,194,1048,161,1024,146,999,135,944,123,887,121,831,125,782,134,781,128,831,120,887,115,945,118,1001,130,1027,141,1051,156,1091,189"/>
+<area shape="rect" id="Node000010" href="$classia_1_1strategy_1_1Strategy.html#a7b7b297b6fbc6fe701318661b3cad9b5" title=" " alt="" coords="232,295,384,335"/>
+<area shape="poly" id="edge13_Node000001_Node000010" title=" " alt="" coords="1057,249,1001,267,917,286,830,300,659,317,504,322,384,321,384,316,504,317,658,312,830,295,916,281,999,262,1055,244"/>
+<area shape="rect" id="Node000011" href="$classia_1_1strategy_1_1Strategy.html#adb095813776b33560638b7d96a882d9f" title=" " alt="" coords="829,363,1000,403"/>
+<area shape="poly" id="edge15_Node000001_Node000011" title=" " alt="" coords="1096,254,1055,300,1002,347,969,365,967,361,998,342,1051,297,1092,250"/>
+<area shape="rect" id="Node000012" href="$classia_1_1strategy_1_1Strategy.html#a70feeaa9c9999c42c6514c1e37aaf10e" title=" " alt="" coords="839,427,990,467"/>
+<area shape="poly" id="edge16_Node000001_Node000012" title=" " alt="" coords="1108,256,1092,293,1068,336,1038,379,1002,417,983,429,980,425,998,413,1034,376,1064,333,1087,291,1103,254"/>
+<area shape="rect" id="Node000003" href="$classia_1_1strategy_1_1Strategy.html#a80efd785879b0eedb51c45e704cb1c4a" title=" " alt="" coords="233,211,383,251"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="617,265,432,247,384,242,384,237,432,242,617,259"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="219,245,184,249,184,244,219,239"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="419,223,384,227,384,221,418,218"/>
+<area shape="rect" id="Node000007" href="$classia_1_1strategy_1_1Strategy.html#ad52d3664f5831789d358a334496fab41" title=" " alt="" coords="432,128,583,168"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="639,102,563,131,561,126,638,97"/>
+<area shape="poly" id="edge8_Node000007_Node000003" title=" " alt="" coords="447,176,358,213,356,208,445,171"/>
+<area shape="poly" id="edge10_Node000008_Node000009" title=" " alt="" coords="825,161,781,158,782,153,826,156"/>
+<area shape="poly" id="edge12_Node000009_Node000005" title=" " alt="" coords="628,178,573,195,572,190,627,173"/>
+<area shape="poly" id="edge11_Node000009_Node000007" title=" " alt="" coords="617,153,583,152,583,147,617,147"/>
+<area shape="poly" id="edge14_Node000010_Node000004" title=" " alt="" coords="219,294,142,273,144,268,221,289"/>
+<area shape="rect" id="Node000013" href="$classia_1_1strategy_1_1Strategy.html#afc69edfb6b5741dcae17abb06b0aa312" title=" " alt="" coords="432,376,583,416"/>
+<area shape="poly" id="edge17_Node000012_Node000013" title=" " alt="" coords="825,439,582,408,583,403,826,433"/>
+<area shape="poly" id="edge18_Node000013_Node000004" title=" " alt="" coords="418,392,326,377,278,365,231,349,195,332,161,311,110,273,113,269,164,307,198,327,233,345,279,360,327,372,419,387"/>
+</map>

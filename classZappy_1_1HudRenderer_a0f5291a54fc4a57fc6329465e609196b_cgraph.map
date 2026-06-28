@@ -1,0 +1,5 @@
+<map id="Zappy::HudRenderer::minusButton" name="Zappy::HudRenderer::minusButton">
+<area shape="rect" id="Node000001" title="Rectangle of the &quot;decrease time unit&quot; button." alt="" coords="5,5,160,45"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1HudRenderer.html#aaf9d9dc1be0fe669156a63bb978c7a23" title="Y (bottom&#45;left origin) of the time&#45;unit line, derived from the window height." alt="" coords="208,5,363,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="160,23,194,23,194,28,160,28"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="Zappy::GameState::hoveredTile" name="Zappy::GameState::hoveredTile">
+<area shape="rect" id="Node000001" title="Currently hovered tile (valid only when hasHoveredTile())." alt="" coords="221,13,449,38"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1SceneRenderer.html#a30d5d84cff8f8084328a40a42671d376" title="Draws the ground and the entities for the frame." alt="" coords="5,5,173,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="208,28,174,28,174,23,208,23"/>
+</map>

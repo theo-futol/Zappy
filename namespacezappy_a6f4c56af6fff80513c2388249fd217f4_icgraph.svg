@@ -66,7 +66,7 @@ var sectionId = 'dynsection-1';
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="structzappy_1_1Team.html#a14fde19b9bd6171374642ee8d9b6039b" target="_top" xlink:title="Lays count eggs at the given tile, each adding a slot and a unique ID.">
+<g id="a_Node000002"><a xlink:href="structzappy_1_1Team.html#a323dee046a1a7102c765aa5a07eb52ea" target="_top" xlink:title="Lays count eggs at the given tile, each adding a slot and a unique ID.">
 <polygon fill="white" stroke="#666666" points="1068.5,-257.5 949.5,-257.5 949.5,-238.5 1068.5,-238.5 1068.5,-257.5"/>
 <text text-anchor="middle" x="1009" y="-245.5" font-family="Helvetica,sans-Serif" font-size="10.00">zappy::Team::addEgg</text>
 </a>
@@ -229,7 +229,7 @@ var sectionId = 'dynsection-1';
 <!-- Node5 -->
 <g id="Node000005" class="node">
 <title>Node5</title>
-<g id="a_Node000005"><a xlink:href="main_8cpp.html#a0c99d968a34e803d378692bde2e3f18f" target="_top" xlink:title=" ">
+<g id="a_Node000005"><a xlink:href="server_2main_8cpp.html#a0c99d968a34e803d378692bde2e3f18f" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="41,-159.5 0,-159.5 0,-140.5 41,-140.5 41,-159.5"/>
 <text text-anchor="middle" x="20.5" y="-147.5" font-family="Helvetica,sans-Serif" font-size="10.00">main</text>
 </a>

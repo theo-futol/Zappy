@@ -1,0 +1,7 @@
+<map id="Zappy::AMapEntity::AMapEntity" name="Zappy::AMapEntity::AMapEntity">
+<area shape="rect" id="Node000001" title="Builds the common entity state." alt="" coords="196,27,348,67"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1Egg.html#a03b64b643745ce7bbcb500fcb48e1d46" title="Builds an egg." alt="" coords="13,5,140,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="182,36,140,30,140,25,183,31"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1Trantorian.html#ab8ac704291c4d28f3973a896b924d1d0" title="Builds a Trantorian." alt="" coords="5,55,148,95"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="183,63,148,68,148,63,182,58"/>
+</map>

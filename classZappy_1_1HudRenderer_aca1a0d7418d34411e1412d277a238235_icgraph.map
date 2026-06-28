@@ -1,0 +1,11 @@
+<map id="Zappy::HudRenderer::panelWidth" name="Zappy::HudRenderer::panelWidth">
+<area shape="rect" id="Node000001" title="Width of the HUD panel in pixels for a given window width." alt="" coords="432,69,587,109"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1RenderSystem.html#a3ed3055c99d4acbde0ac2748ae7acaae" title="Loads the 2D pipeline: top&#45;down camera, planar projection, assets, renderers, HUD." alt="" coords="219,5,384,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="430,68,366,48,368,43,432,63"/>
+<area shape="rect" id="Node000004" href="$classZappy_1_1RenderSystem.html#a3fa8ea9f652b5de2ef12401086df2875" title="Draws one frame from the given state." alt="" coords="219,69,384,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="418,92,384,92,384,87,418,87"/>
+<area shape="rect" id="Node000005" href="$classZappy_1_1HudRenderer.html#a811888ec303fe1cfdfa3373f70decbc1" title="Draws the styled HUD overlay for the current frame." alt="" coords="224,133,379,173"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="432,116,368,136,366,131,430,111"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1RenderSystem.html#ad4906e38daaf30cc7bf7e1b5b02ddd36" title="Creates the window and context and loads the renderers and assets." alt="" coords="5,5,171,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="205,28,171,28,171,23,205,23"/>
+</map>

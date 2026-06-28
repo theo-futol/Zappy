@@ -1,0 +1,6 @@
+<map id="Zappy::RenderModel::buildSkin" name="Zappy::RenderModel::buildSkin">
+<area shape="rect" id="Node000001" title="Builds the rest&#45;pose joint matrices and re&#45;fits the bounds from raw vertices." alt="" coords="209,29,365,69"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1RenderModel.html#a584a8b2f53455adcd6e5beeccf4e3539" title="Uploads a model&#39;s geometry to the GPU and flattens its node tree." alt="" coords="5,29,161,69"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="196,52,161,52,161,47,196,47"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="117,18,105,11,83,8,64,10,52,15,48,21,50,28,45,30,43,20,49,11,63,5,83,3,107,6,120,13"/>
+</map>

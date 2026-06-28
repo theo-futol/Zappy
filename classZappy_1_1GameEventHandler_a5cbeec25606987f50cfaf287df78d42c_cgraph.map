@@ -1,0 +1,29 @@
+<map id="Zappy::GameEventHandler::handle" name="Zappy::GameEventHandler::handle">
+<area shape="rect" id="Node000001" title="Applies a global/server message to the state." alt="" coords="5,179,203,219"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1GameEventHandler.html#a15f701f48abb53338ca7c89973820fb4" title="Logs a player broadcast (pbc) message." alt="" coords="251,137,448,177"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="203,180,237,174,238,179,203,185"/>
+<area shape="rect" id="Node000009" href="$classZappy_1_1GameEventHandler.html#aa91268c584f0b9b70613b599d4c0d91c" title="Records the winning team from a seg message (end of game)." alt="" coords="251,211,448,251"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="203,210,238,214,237,219,203,215"/>
+<area shape="rect" id="Node000011" href="$classZappy_1_1GameEventHandler.html#aba02228b74a007d26023c7854da28cd8" title="Logs a server message (smg)." alt="" coords="251,23,448,63"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="135,177,303,69,306,73,138,182"/>
+<area shape="rect" id="Node000012" href="$classZappy_1_1GameEventHandler.html#a9f544eefc22150eebcdf2a9d1a8771bf" title="Updates the time unit from an sgt or sst message." alt="" coords="251,311,448,351"/>
+<area shape="poly" id="edge12_Node000001_Node000012" title=" " alt="" coords="143,217,301,303,298,307,141,222"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1GameState.html#a8bab81f3bdac8870b7b24a1485ebf0e0" title="Records a broadcast originating from a player (for the ripple animation)." alt="" coords="496,55,736,80"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="389,134,439,111,495,90,529,81,531,86,497,95,441,116,392,139"/>
+<area shape="rect" id="Node000004" href="$classZappy_1_1GameState.html#a17e71b501965af0430ea71cc193db44b" title="Appends a message to the bounded log (oldest dropped past the cap)." alt="" coords="499,5,733,31"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="373,134,443,78,495,40,513,32,515,37,497,44,446,82,377,139"/>
+<area shape="rect" id="Node000005" href="$classZappy_1_1AEventHandler.html#a3ba38d2410b06460d0d23411b9dc7210" title="Parses an entity number token of the form &quot;#n&quot;." alt="" coords="533,105,699,145"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="448,142,519,134,520,139,449,147"/>
+<area shape="rect" id="Node000007" href="$classZappy_1_1GameState.html#a523df5ec4dd7ee8bfd3f930c89962bd4" title="Looks up an entity by key." alt="" coords="511,169,721,195"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="448,163,497,168,497,173,448,169"/>
+<area shape="rect" id="Node000008" href="$classZappy_1_1IEntity.html#a9919f592dc7305c5e1c4a21d515b78ae" title="Current grid position." alt="" coords="531,219,701,244"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="406,174,497,203,536,213,535,218,495,209,404,179"/>
+<area shape="rect" id="Node000006" href="$classZappy_1_1AEventHandler.html#a753a24b4a29ada4f0f7134a386e4cd99" title="Parses an integer token, tolerant of malformed input." alt="" coords="784,209,951,249"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="701,142,737,154,783,176,824,199,822,204,780,180,735,159,699,147"/>
+<area shape="rect" id="Node000010" href="$classZappy_1_1GameState.html#ad8d09080a14779e91be9ad3514178c25" title="Sets the winning team." alt="" coords="507,268,725,293"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="449,247,534,263,533,268,448,252"/>
+<area shape="poly" id="edge11_Node000011_Node000004" title=" " alt="" coords="448,31,485,28,486,33,448,37"/>
+<area shape="poly" id="edge14_Node000012_Node000006" title=" " alt="" coords="448,334,513,334,586,330,662,320,735,302,784,281,827,254,830,259,787,286,737,307,663,325,587,335,513,339,448,339"/>
+<area shape="rect" id="Node000013" href="$classZappy_1_1GameState.html#a742ce3439ff1ba2652502f0dc01d5192" title="Sets the current time unit." alt="" coords="501,369,731,395"/>
+<area shape="poly" id="edge13_Node000012_Node000013" title=" " alt="" coords="449,347,536,364,535,369,448,353"/>
+</map>

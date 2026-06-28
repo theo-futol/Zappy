@@ -1,0 +1,16 @@
+<map id="Zappy::Tile::resources" name="Zappy::Tile::resources">
+<area shape="rect" id="Node000001" title="Mutable access to the ground resources." alt="" coords="849,45,1015,70"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1MapEventHandler.html#a56f0688289a92600f466106449b9a1cd" title="Fills one tile&#39;s ground resources from a bct message." alt="" coords="597,5,783,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="835,47,783,40,784,35,836,42"/>
+<area shape="rect" id="Node000004" href="$classZappy_1_1TrantorianEventHandler.html#a1c9310bcdc745bc3855a5cb2bd6874aa" title="Moves one resource unit between a player&#39;s inventory and its ground tile." alt="" coords="579,69,801,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="836,73,802,77,801,72,835,67"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1MapEventHandler.html#a20bc6868e641a76cddd09264dfe6a7bb" title="Applies a map message to the state." alt="" coords="310,5,497,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="583,28,497,28,497,23,583,23"/>
+<area shape="rect" id="Node000005" href="$classZappy_1_1TrantorianEventHandler.html#a86b125e49d7147bd2d6e86864ec89077" title="Handles a pdr message: the player drops one resource onto its tile." alt="" coords="276,69,531,109"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="565,92,531,92,531,87,565,87"/>
+<area shape="rect" id="Node000007" href="$classZappy_1_1TrantorianEventHandler.html#af321fc899d383100df04caf1fa462202" title="Handles a pgt message: the player picks one resource up from its tile." alt="" coords="285,133,521,173"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="587,115,494,136,493,131,586,110"/>
+<area shape="rect" id="Node000006" href="$classZappy_1_1TrantorianEventHandler.html#ac0f18428ea3bebd13edcd95914ba5663" title="Applies a Trantorian message to the state." alt="" coords="5,101,228,141"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="263,108,229,112,228,106,262,102"/>
+<area shape="poly" id="edge7_Node000007_Node000006" title=" " alt="" coords="272,141,228,136,229,131,272,136"/>
+</map>

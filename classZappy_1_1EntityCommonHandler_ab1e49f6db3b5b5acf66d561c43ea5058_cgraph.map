@@ -1,0 +1,29 @@
+<map id="Zappy::EntityCommonHandler::handle" name="Zappy::EntityCommonHandler::handle">
+<area shape="rect" id="Node000001" title="Applies a common entity message to the state." alt="" coords="5,283,224,323"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1EntityCommonHandler.html#af0f6fa45f4e559190921684821d73776" title="Updates a player&#39;s position and orientation from a ppo message." alt="" coords="272,198,491,238"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="177,281,304,240,306,245,179,286"/>
+<area shape="rect" id="Node000012" href="$classZappy_1_1EntityCommonHandler.html#a99b76a40a563f4bb7e3c9cd4f7f9d02a" title="Removes an entity from the state (pdi for players, edi for eggs)." alt="" coords="272,343,491,383"/>
+<area shape="poly" id="edge12_Node000001_Node000012" title=" " alt="" coords="205,321,279,338,278,343,204,326"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1GameState.html#a6e91382f136bccb7ff1396281247a119" title="Inserts or replaces an entity, keyed by its entity type and number." alt="" coords="539,29,752,55"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="397,196,455,135,494,101,537,72,571,57,573,61,540,76,498,105,459,139,401,200"/>
+<area shape="rect" id="Node000006" href="$classZappy_1_1AEventHandler.html#a3ba38d2410b06460d0d23411b9dc7210" title="Parses an entity number token of the form &quot;#n&quot;." alt="" coords="562,343,729,383"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="407,236,465,282,502,307,540,329,555,336,553,341,537,334,499,312,462,287,404,240"/>
+<area shape="rect" id="Node000007" href="$classZappy_1_1AEventHandler.html#a753a24b4a29ada4f0f7134a386e4cd99" title="Parses an integer token, tolerant of malformed input." alt="" coords="821,211,987,251"/>
+<area shape="poly" id="edge10_Node000002_Node000007" title=" " alt="" coords="403,196,461,152,498,131,538,115,597,100,646,94,694,99,753,115,789,132,823,153,877,200,873,204,820,158,787,136,751,121,693,104,646,99,598,105,539,121,501,136,464,157,406,200"/>
+<area shape="rect" id="Node000008" href="$classZappy_1_1GameState.html#a523df5ec4dd7ee8bfd3f930c89962bd4" title="Looks up an entity by key." alt="" coords="540,131,751,156"/>
+<area shape="poly" id="edge7_Node000002_Node000008" title=" " alt="" coords="439,195,538,165,570,157,571,162,539,170,441,201"/>
+<area shape="rect" id="Node000009" href="$classZappy_1_1IEntity.html#a06630f1da077bd9ca91ca7210e6298c0" title="Sets the entity&#39;s facing orientation." alt="" coords="539,180,751,205"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="491,205,525,201,526,207,491,210"/>
+<area shape="rect" id="Node000010" href="$classZappy_1_1IEntity.html#a9d87abad8ebd9b8538682714368e3e3b" title="Moves the entity to a new grid position." alt="" coords="550,229,741,255"/>
+<area shape="poly" id="edge9_Node000002_Node000010" title=" " alt="" coords="491,225,536,229,536,235,491,231"/>
+<area shape="rect" id="Node000011" href="$classZappy_1_1AEventHandler.html#a09b76af9c261a3214d0681ba17430152" title="Converts a protocol orientation value to the Orientation enum." alt="" coords="562,279,729,319"/>
+<area shape="poly" id="edge11_Node000002_Node000011" title=" " alt="" coords="448,235,567,273,566,278,446,241"/>
+<area shape="rect" id="Node000004" href="$classZappy_1_1IEntity.html#aa483e3d82e7596ad06086ffa44665217" title="Open category of the entity." alt="" coords="800,5,1008,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="752,29,786,26,787,32,753,35"/>
+<area shape="rect" id="Node000005" href="$classZappy_1_1IEntity.html#a8655b004f61d2e4d01b195513b65e9fd" title="Protocol number within the entity&#39;s category." alt="" coords="819,55,989,80"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="753,50,806,55,805,60,752,55"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="721,341,751,329,812,294,865,258,868,262,815,299,753,334,723,346"/>
+<area shape="poly" id="edge13_Node000012_Node000006" title=" " alt="" coords="491,361,548,361,548,366,491,366"/>
+<area shape="rect" id="Node000013" href="$classZappy_1_1GameState.html#aa5fc7b850e96ed3d99928471d5835bf5" title="Removes an entity by key." alt="" coords="545,407,746,447"/>
+<area shape="poly" id="edge14_Node000012_Node000013" title=" " alt="" coords="465,381,550,402,549,407,464,386"/>
+</map>

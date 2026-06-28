@@ -1,0 +1,5 @@
+<map id="Zappy::Window::Window" name="Zappy::Window::Window">
+<area shape="rect" id="Node000001" title="Creates the window and the OpenGL context." alt="" coords="5,5,187,31"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1Window.html#a0b5b0662d61f0665183357a593ee0497" title="Registers the GLFW callbacks that feed the event queue." alt="" coords="235,5,477,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="187,15,221,15,221,21,187,21"/>
+</map>

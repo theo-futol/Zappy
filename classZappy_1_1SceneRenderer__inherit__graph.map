@@ -1,0 +1,5 @@
+<map id="Zappy::SceneRenderer" name="Zappy::SceneRenderer">
+<area shape="rect" id="Node000001" title="Draws the 3D scene (ground tiles and one model per entity) with the Phong shader." alt="" coords="5,139,165,1064"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1IRenderer.html" title="Contract for one stage of the rendering pipeline." alt="" coords="23,5,148,91"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="88,104,88,138,83,138,83,104"/>
+</map>

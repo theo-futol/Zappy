@@ -115,10 +115,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:acf62a723327da418f5d98315a72773cd" id="r_acf62a723327da418f5d98315a72773cd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1ArgParser.html#acf62a723327da418f5d98315a72773cd">ArgParser</a> (int argc, char **argv)</td></tr>
 <tr class="memdesc:acf62a723327da418f5d98315a72773cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores argc/argv for later parsing. Does not parse immediately.  <br /></td></tr>
 <tr class="separator:acf62a723327da418f5d98315a72773cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4e02badd300672497924e72403ccb934" id="r_a4e02badd300672497924e72403ccb934"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1ArgParser.html#a4e02badd300672497924e72403ccb934">registerFlag</a> (const std::string &amp;flag, <a class="el" href="namespacezappy.html#a8aada3090cc8ffbe7382c6e8aa04763b">FlagType</a> type, bool required, const std::string &amp;description=&quot;&quot;)</td></tr>
+<tr class="memitem:a4e02badd300672497924e72403ccb934" id="r_a4e02badd300672497924e72403ccb934"><td class="memItemLeft" align="right" valign="top"><a class="el" href="glad_8h.html#a950fc91edb4504f62f1c577bf4727c29">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1ArgParser.html#a4e02badd300672497924e72403ccb934">registerFlag</a> (const std::string &amp;flag, <a class="el" href="namespacezappy.html#a8aada3090cc8ffbe7382c6e8aa04763b">FlagType</a> <a class="el" href="glad_8h.html#a890efa53b3d7deeeced6f3a0d6653ed3">type</a>, bool required, const std::string &amp;description=&quot;&quot;)</td></tr>
 <tr class="memdesc:a4e02badd300672497924e72403ccb934"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers a flag so that <a class="el" href="classzappy_1_1ArgParser.html#a9a88ebf6d2462864575da3a2d5d3ce35" title="Parses argv against all registered flags.">parse()</a> knows how to handle it.  <br /></td></tr>
 <tr class="separator:a4e02badd300672497924e72403ccb934"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9a88ebf6d2462864575da3a2d5d3ce35" id="r_a9a88ebf6d2462864575da3a2d5d3ce35"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1ArgParser.html#a9a88ebf6d2462864575da3a2d5d3ce35">parse</a> ()</td></tr>
+<tr class="memitem:a9a88ebf6d2462864575da3a2d5d3ce35" id="r_a9a88ebf6d2462864575da3a2d5d3ce35"><td class="memItemLeft" align="right" valign="top"><a class="el" href="glad_8h.html#a950fc91edb4504f62f1c577bf4727c29">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1ArgParser.html#a9a88ebf6d2462864575da3a2d5d3ce35">parse</a> ()</td></tr>
 <tr class="memdesc:a9a88ebf6d2462864575da3a2d5d3ce35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses argv against all registered flags.  <br /></td></tr>
 <tr class="separator:a9a88ebf6d2462864575da3a2d5d3ce35"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5db30377644b5ab92f4c37010dbd10a5" id="r_a5db30377644b5ab92f4c37010dbd10a5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1ArgParser.html#a5db30377644b5ab92f4c37010dbd10a5">hasFlag</a> (const std::string &amp;flag) const</td></tr>
@@ -144,7 +144,7 @@ Private Attributes</h2></td></tr>
 <tr class="memdesc:a5bc9c4cc2082306ced05f6573298b079"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps each registered flag token to its configuration.  <br /></td></tr>
 <tr class="separator:a5bc9c4cc2082306ced05f6573298b079"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab9feb95adfda48c4810f062caaf319e5" id="r_ab9feb95adfda48c4810f062caaf319e5"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; std::string, std::vector&lt; std::string &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1ArgParser.html#ab9feb95adfda48c4810f062caaf319e5">_parsedValues</a></td></tr>
-<tr class="memdesc:ab9feb95adfda48c4810f062caaf319e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps each parsed flag token to its collected value(s).  <br /></td></tr>
+<tr class="memdesc:ab9feb95adfda48c4810f062caaf319e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maps each parsed flag token to its collected <a class="el" href="glad_8h.html#a03aff08f73d7fde3d1a08e0abd8e84fa">value(s)</a>.  <br /></td></tr>
 <tr class="separator:ab9feb95adfda48c4810f062caaf319e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -192,8 +192,8 @@ Private Attributes</h2></td></tr>
 <p>Stores argc/argv for later parsing. Does not parse immediately. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">argc</td><td>Argument count from <a class="el" href="main_8cpp.html#a0c99d968a34e803d378692bde2e3f18f">main()</a>. </td></tr>
-    <tr><td class="paramname">argv</td><td>Argument vector from <a class="el" href="main_8cpp.html#a0c99d968a34e803d378692bde2e3f18f">main()</a>. </td></tr>
+    <tr><td class="paramname">argc</td><td>Argument count from <a class="el" href="gui_2main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main()</a>. </td></tr>
+    <tr><td class="paramname">argv</td><td>Argument vector from <a class="el" href="gui_2main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627">main()</a>. </td></tr>
   </table>
   </dd>
 </dl>
@@ -389,7 +389,7 @@ Private Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void zappy::ArgParser::parse </td>
+          <td class="memname"><a class="el" href="glad_8h.html#a950fc91edb4504f62f1c577bf4727c29">void</a> zappy::ArgParser::parse </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -398,7 +398,7 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Parses argv against all registered flags. </p>
-<p>Iterates argv, matches each <code>-flag</code> against registered configs, consumes its value(s), then verifies all required flags are present.</p>
+<p>Iterates argv, matches each <code>-flag</code> against registered configs, consumes its <a class="el" href="glad_8h.html#a03aff08f73d7fde3d1a08e0abd8e84fa">value(s)</a>, then verifies all required flags are present.</p>
 <dl class="exception"><dt>Exceptions</dt><dd>
   <table class="exception">
     <tr><td class="paramname">zappy::Exception</td><td>on unknown flag, missing value, or missing required flag. </td></tr>
@@ -431,7 +431,7 @@ Private Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void zappy::ArgParser::registerFlag </td>
+          <td class="memname"><a class="el" href="glad_8h.html#a950fc91edb4504f62f1c577bf4727c29">void</a> zappy::ArgParser::registerFlag </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>flag</em>, </td>
@@ -579,7 +579,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Maps each parsed flag token to its collected value(s). </p>
+<p>Maps each parsed flag token to its collected <a class="el" href="glad_8h.html#a03aff08f73d7fde3d1a08e0abd8e84fa">value(s)</a>. </p>
 
 <p class="definition">Definition at line <a class="el" href="ArgParser_8hpp_source.html#l00091">91</a> of file <a class="el" href="ArgParser_8hpp_source.html">ArgParser.hpp</a>.</p>
 

@@ -1,0 +1,5 @@
+<map id="Zappy::Tile::resources" name="Zappy::Tile::resources">
+<area shape="rect" id="Node000001" title="Read&#45;only access to the ground resources." alt="" coords="211,13,376,38"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1MapRenderer.html#a9bf0e155a59effce6703f42612cb4bea" title="Draws a small colored marker for each resource present on a tile." alt="" coords="5,5,163,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="197,28,163,28,163,23,197,23"/>
+</map>

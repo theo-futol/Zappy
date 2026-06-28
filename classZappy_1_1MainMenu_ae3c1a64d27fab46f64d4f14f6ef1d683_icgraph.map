@@ -1,0 +1,5 @@
+<map id="Zappy::MainMenu::tryValidate" name="Zappy::MainMenu::tryValidate">
+<area shape="rect" id="Node000001" title="Validates the fields and fills the config on success." alt="" coords="276,5,493,31"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1MainMenu.html#ab72f43a5ee13b6f181ed399e3531ad77" title="Routes a mouse click to the fields, mode buttons and action buttons." alt="" coords="5,5,228,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="262,21,228,21,228,15,262,15"/>
+</map>

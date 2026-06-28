@@ -1,0 +1,9 @@
+<map id="Zappy::Map::at" name="Zappy::Map::at">
+<area shape="rect" id="Node000001" title="Read&#45;only access to a tile, with toroidal wrapping." alt="" coords="221,77,340,102"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1HudRenderer.html#a811888ec303fe1cfdfa3373f70decbc1" title="Draws the styled HUD overlay for the current frame." alt="" coords="12,5,167,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="228,75,149,48,151,43,230,70"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1MapRenderer.html#a0b2fcc444f807a100f47ffc96c4153f6" title="Draws the terrain and ground resources." alt="" coords="11,69,168,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="207,92,168,92,168,87,207,87"/>
+<area shape="rect" id="Node000004" href="$classZappy_1_1SceneRenderer.html#a30d5d84cff8f8084328a40a42671d376" title="Draws the ground and the entities for the frame." alt="" coords="5,133,173,173"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="230,109,151,136,149,131,228,104"/>
+</map>

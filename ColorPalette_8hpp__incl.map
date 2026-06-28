@@ -1,0 +1,9 @@
+<map id="src/gui/Model/colorpalette/ColorPalette.hpp" name="src/gui/Model/colorpalette/ColorPalette.hpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="36,5,227,45"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,93,76,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="111,48,66,86,63,82,108,44"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="100,93,163,119"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="134,46,134,79,129,79,129,46"/>
+<area shape="rect" id="Node000004" href="$Color_8hpp.html" title=" " alt="" coords="187,93,310,119"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="161,43,222,84,219,88,158,48"/>
+</map>

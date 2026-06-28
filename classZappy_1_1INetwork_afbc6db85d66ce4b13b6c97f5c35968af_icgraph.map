@@ -1,0 +1,5 @@
+<map id="Zappy::INetwork::receive" name="Zappy::INetwork::receive">
+<area shape="rect" id="Node000001" title="Reads the data currently available from the server." alt="" coords="227,13,412,38"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1NetworkService.html#a583a443d69d8654318c1f96ae7563d3c" title="Drains all currently available server data and applies it to the state." alt="" coords="5,5,179,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="213,28,179,28,179,23,213,23"/>
+</map>

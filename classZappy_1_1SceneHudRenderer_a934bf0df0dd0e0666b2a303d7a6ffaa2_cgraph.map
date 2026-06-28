@@ -1,0 +1,7 @@
+<map id="Zappy::SceneHudRenderer::menuButtonHit" name="Zappy::SceneHudRenderer::menuButtonHit">
+<area shape="rect" id="Node000001" title="Whether a click hit the top&#45;left &quot;MENU&quot; button (return to the main menu)." alt="" coords="5,37,200,77"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1SceneHudRenderer.html#a21d716c8d8a1a4582aebba910520867e" title="Whether a screen point is inside a button." alt="" coords="248,5,443,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="200,42,234,37,235,43,201,47"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1SceneHudRenderer.html#ad6426b5d5b0c1d122e0ebf728ee36d75" title="Rectangle of the top&#45;left &quot;MENU&quot; button." alt="" coords="248,69,443,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="201,68,235,72,234,77,200,73"/>
+</map>

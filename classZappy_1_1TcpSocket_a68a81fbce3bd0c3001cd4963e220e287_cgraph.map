@@ -1,0 +1,7 @@
+<map id="Zappy::TcpSocket::send" name="Zappy::TcpSocket::send">
+<area shape="rect" id="Node000001" title="Sends raw data to the server." alt="" coords="5,13,179,38"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1TcpSocket_1_1TcpSocketException.html#a334a1b5c3574dd033673fde9c5ae3263" title=" " alt="" coords="227,5,449,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="179,23,213,23,213,28,179,28"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1INetwork_1_1INetworkException.html#a88082d86a30da328709541cd6739e9fe" title=" " alt="" coords="497,5,715,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="450,23,483,23,483,28,450,28"/>
+</map>

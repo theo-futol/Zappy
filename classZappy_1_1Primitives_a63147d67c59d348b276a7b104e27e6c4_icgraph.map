@@ -1,0 +1,6 @@
+<map id="Zappy::Primitives::groundRing" name="Zappy::Primitives::groundRing">
+<area shape="rect" id="Node000001" title="Flat annulus (ring) on the XZ plane, normal up, layout {3, 3, 2}." alt="" coords="221,29,365,69"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1SceneRenderer.html#a18501d085fe33e0d6e3c17e8fc099893" title="Builds the scene renderer: uploads the ground and every theme&#39;s models to the GPU." alt="" coords="5,29,173,69"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="207,52,173,52,173,47,207,47"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="123,18,111,11,89,8,70,10,58,15,54,21,56,28,51,30,49,20,55,11,69,5,89,3,113,6,126,13"/>
+</map>

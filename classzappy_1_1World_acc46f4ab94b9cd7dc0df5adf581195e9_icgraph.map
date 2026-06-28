@@ -1,9 +1,23 @@
 <map id="zappy::World::getTeams" name="zappy::World::getTeams">
-<area shape="rect" id="Node000001" title="All teams in the game." alt="" coords="681,13,857,38"/>
-<area shape="rect" id="Node000002" href="$classzappy_1_1Commands.html#ac94014987879502a909e6c69d69cb4fc" title="tna: reports the name of every team." alt="" coords="459,13,633,38"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="667,28,634,28,634,23,667,23"/>
-<area shape="rect" id="Node000003" href="$classzappy_1_1CommandParser.html#afc4da6302e4998b21a8b2339d7dc372a" title="Fills _graphicCommands with the graphic protocol commands." alt="" coords="228,5,411,45"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="444,28,411,28,411,23,444,23"/>
-<area shape="rect" id="Node000004" href="$classzappy_1_1CommandParser.html#a741addd675a90a09b183e9518b626962" title="Builds a parser for one client." alt="" coords="5,5,180,45"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="214,28,180,28,180,23,214,23"/>
+<area shape="rect" id="Node000001" title="All teams in the game." alt="" coords="1373,46,1549,71"/>
+<area shape="rect" id="Node000002" href="$classzappy_1_1CommandParser.html#afe779cb5e99b6dd9a1e923773eabd853" title="Handles the first line of a graphic client: sends the initial world state." alt="" coords="1151,8,1325,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1359,47,1325,43,1326,37,1360,42"/>
+<area shape="rect" id="Node000009" href="$classzappy_1_1Commands.html#ac94014987879502a909e6c69d69cb4fc" title="tna: reports the name of every team." alt="" coords="1151,74,1325,99"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="1360,74,1326,78,1325,73,1359,69"/>
+<area shape="rect" id="Node000003" href="$classzappy_1_1CommandParser.html#a2e37f370a7cf95399de6722ef528da83" title="Handles the first line of an AI client: the team&#45;name handshake." alt="" coords="924,5,1099,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="1136,29,1099,29,1099,24,1137,24"/>
+<area shape="rect" id="Node000004" href="$classzappy_1_1CommandParser.html#aa6b2d70e869ba31da160e28f0eddc23c" title="Dispatches the next queued command if its time has come." alt="" coords="697,5,872,45"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="910,28,872,28,872,23,910,23"/>
+<area shape="rect" id="Node000005" href="$classzappy_1_1ClientHandler.html#a1ed7cca92089d8c0c1743aa93167af4b" title=" " alt="" coords="488,5,649,45"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="684,28,650,28,650,23,684,23"/>
+<area shape="rect" id="Node000006" href="$classzappy_1_1ClientHandler.html#afdb8fe8ed8f6188e930880e315fb2c4a" title="Runs the blocking event loop: polls for I/O, accepts new clients, dispatches commands,..." alt="" coords="283,5,440,45"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="474,28,440,28,440,23,474,23"/>
+<area shape="rect" id="Node000007" href="$classzappy_1_1Core.html#a6cedeb79a573e46f2131b71d3ca17a31" title="Builds the world and network handler, then runs the blocking event loop." alt="" coords="108,13,235,38"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="269,28,235,28,235,23,269,23"/>
+<area shape="rect" id="Node000008" href="$server_2main_8cpp.html#a0c99d968a34e803d378692bde2e3f18f" title=" " alt="" coords="5,13,60,38"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="95,28,60,28,60,23,95,23"/>
+<area shape="rect" id="Node000010" href="$classzappy_1_1CommandParser.html#afc4da6302e4998b21a8b2339d7dc372a" title="Fills _graphicCommands with the graphic protocol commands." alt="" coords="920,69,1103,109"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="1137,91,1103,91,1103,86,1136,85"/>
+<area shape="rect" id="Node000011" href="$classzappy_1_1CommandParser.html#a741addd675a90a09b183e9518b626962" title="Builds a parser for one client." alt="" coords="697,69,872,109"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="906,92,872,92,872,87,906,87"/>
 </map>

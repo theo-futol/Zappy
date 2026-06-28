@@ -1,0 +1,44 @@
+<map id="Zappy::Window::height" name="Zappy::Window::height">
+<area shape="rect" id="Node000001" title="Window height." alt="" coords="2063,119,2233,145"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1RenderSystem.html#a51ef75bbd1d6271ce6508b804a1770a9" title="Builds the render system on top of an existing window and context." alt="" coords="1817,29,1982,69"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="2095,118,1960,72,1961,67,2097,112"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1MainMenu.html#a86ba1e26802f4d356f635d93128107fa" title="Draws one frame of the menu." alt="" coords="242,297,421,322"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="2049,127,1857,115,1635,109,865,109,757,110,672,117,591,137,492,178,445,206,404,240,345,298,342,295,400,236,442,202,489,174,589,132,671,112,756,105,865,104,1635,104,1857,110,2049,122"/>
+<area shape="rect" id="Node000005" href="$classZappy_1_1MainMenu.html#ab72f43a5ee13b6f181ed399e3531ad77" title="Routes a mouse click to the fields, mode buttons and action buttons." alt="" coords="220,639,443,665"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="2144,159,2128,224,2101,317,2061,427,2007,542,1975,599,1939,652,1899,701,1855,744,1807,780,1754,808,1697,826,1635,832,865,832,757,833,672,829,590,814,490,777,444,752,402,722,343,667,347,663,405,718,446,748,492,772,591,808,673,824,757,827,865,827,1635,827,1696,821,1752,803,1804,776,1852,740,1895,697,1935,649,1971,596,2003,540,2056,425,2096,315,2123,222,2139,157"/>
+<area shape="rect" id="Node000006" href="$classZappy_1_1MainMenu.html#a7475763b92bc62d3612ca61a4c5f1957" title="Y of the centered panel&#39;s bottom edge." alt="" coords="1784,145,2015,170"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="2049,145,2015,148,2015,143,2049,139"/>
+<area shape="poly" id="edge2_Node000002_Node000002" title=" " alt="" coords="1942,18,1927,11,1899,8,1875,10,1861,15,1856,21,1858,28,1853,30,1850,20,1858,10,1874,5,1899,3,1928,6,1944,13"/>
+<area shape="rect" id="Node000004" href="$classZappy_1_1MainMenu.html#a771be13e8b84eab86752103cedef485b" title="Runs the menu loop until the user validates or quits." alt="" coords="5,297,172,322"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="228,312,172,312,172,307,228,307"/>
+<area shape="poly" id="edge7_Node000006_Node000003" title=" " alt="" coords="1770,160,1383,160,865,160,758,162,675,172,593,191,492,225,451,242,413,262,353,299,350,294,410,257,449,237,490,220,592,186,674,166,757,157,865,155,1383,155,1770,155"/>
+<area shape="rect" id="Node000007" href="$classZappy_1_1MainMenu.html#acd674a29a227b3051114070400c3252d" title="Rectangle of the host text field." alt="" coords="1531,551,1736,577"/>
+<area shape="poly" id="edge8_Node000006_Node000007" title=" " alt="" coords="1884,183,1645,553,1641,550,1880,180"/>
+<area shape="poly" id="edge9_Node000007_Node000003" title=" " alt="" coords="1613,542,1546,456,1495,402,1436,346,1368,294,1293,251,1254,234,1213,222,1172,213,1129,211,865,211,794,213,721,221,582,245,461,274,373,299,371,294,459,269,581,239,721,215,793,208,865,205,1129,205,1172,208,1215,216,1256,229,1296,246,1371,290,1439,342,1499,398,1550,453,1618,538"/>
+<area shape="poly" id="edge10_Node000007_Node000005" title=" " alt="" coords="1606,587,1529,640,1475,672,1414,704,1348,734,1277,759,1203,775,1129,781,865,781,758,778,675,768,593,749,490,720,417,694,357,667,359,662,419,689,491,715,594,744,676,763,758,773,865,776,1129,776,1203,770,1275,753,1346,729,1412,700,1473,668,1526,636,1603,583"/>
+<area shape="rect" id="Node000008" href="$classZappy_1_1MainMenu.html#a9775fbd32327285b596a5c2cb91392c2" title="Rectangle of the port text field." alt="" coords="1280,551,1483,577"/>
+<area shape="poly" id="edge11_Node000007_Node000008" title=" " alt="" coords="1517,567,1483,567,1483,561,1517,561"/>
+<area shape="rect" id="Node000012" href="$classZappy_1_1MainMenu.html#a63cb9bee8c326ed603c31394e2cc88c5" title="Rectangle of the validate button." alt="" coords="767,651,965,691"/>
+<area shape="poly" id="edge29_Node000007_Node000012" title=" " alt="" coords="1542,581,1483,591,966,661,965,656,1482,585,1542,576"/>
+<area shape="poly" id="edge12_Node000008_Node000003" title=" " alt="" coords="1345,547,1242,492,1088,420,998,385,903,353,805,327,708,309,633,303,557,301,421,305,421,299,557,295,633,297,708,304,807,322,904,348,1000,380,1090,415,1244,487,1348,542"/>
+<area shape="poly" id="edge13_Node000008_Node000005" title=" " alt="" coords="1342,585,1274,614,1185,648,1082,681,976,705,893,715,807,718,722,716,640,709,493,689,385,667,386,662,494,684,641,704,723,710,807,713,893,710,976,700,1081,676,1183,643,1272,609,1340,580"/>
+<area shape="rect" id="Node000009" href="$classZappy_1_1MainMenu.html#ae15bfb478af9299fef0a952e94e1654a" title="Rectangle of the &quot;2D&quot; mode button." alt="" coords="1024,544,1232,584"/>
+<area shape="poly" id="edge14_Node000008_Node000009" title=" " alt="" coords="1267,567,1232,567,1232,561,1267,561"/>
+<area shape="poly" id="edge15_Node000009_Node000003" title=" " alt="" coords="1097,536,1043,486,1010,460,975,437,905,402,832,375,756,353,680,337,537,318,421,312,421,306,538,313,681,332,757,348,833,370,907,398,977,432,1013,455,1046,482,1100,532"/>
+<area shape="poly" id="edge16_Node000009_Node000005" title=" " alt="" coords="1010,580,443,642,443,637,1010,574"/>
+<area shape="rect" id="Node000010" href="$classZappy_1_1MainMenu.html#a50c362e6a155fe505ea4bbd9058d1d39" title="Rectangle of the &quot;3D flat&quot; mode button." alt="" coords="756,447,976,487"/>
+<area shape="poly" id="edge17_Node000009_Node000010" title=" " alt="" coords="1059,541,920,489,922,484,1061,536"/>
+<area shape="poly" id="edge23_Node000009_Node000012" title=" " alt="" coords="1073,592,977,634,928,653,926,648,975,630,1071,587"/>
+<area shape="poly" id="edge18_Node000010_Node000003" title=" " alt="" coords="819,442,767,413,707,388,633,365,557,347,421,323,421,317,558,342,635,360,709,383,769,409,822,437"/>
+<area shape="poly" id="edge19_Node000010_Node000005" title=" " alt="" coords="743,486,619,512,554,530,492,553,450,574,410,598,350,641,347,637,407,593,447,569,490,548,553,525,618,506,742,480"/>
+<area shape="rect" id="Node000011" href="$classZappy_1_1MainMenu.html#a98603c329b0a83b85ff35d8762725cec" title="Rectangle of the &quot;3D torus&quot; mode button." alt="" coords="491,397,708,437"/>
+<area shape="poly" id="edge20_Node000010_Node000011" title=" " alt="" coords="743,447,707,440,708,435,744,441"/>
+<area shape="poly" id="edge21_Node000011_Node000003" title=" " alt="" coords="526,395,490,381,359,325,361,320,492,376,528,390"/>
+<area shape="poly" id="edge22_Node000011_Node000005" title=" " alt="" coords="564,448,492,509,348,641,344,637,489,505,561,444"/>
+<area shape="poly" id="edge24_Node000012_Node000003" title=" " alt="" coords="829,643,773,599,707,553,647,522,598,504,548,484,489,452,444,419,403,383,343,324,347,320,406,379,448,414,492,447,551,480,600,499,649,517,709,548,776,594,833,639"/>
+<area shape="poly" id="edge25_Node000012_Node000005" title=" " alt="" coords="753,669,443,659,443,653,753,664"/>
+<area shape="rect" id="Node000013" href="$classZappy_1_1MainMenu.html#a240a375487263c5680795e6af71b3c0f" title="Rectangle of the quit button." alt="" coords="492,563,707,589"/>
+<area shape="poly" id="edge26_Node000012_Node000013" title=" " alt="" coords="795,649,635,591,637,586,797,644"/>
+<area shape="poly" id="edge27_Node000013_Node000003" title=" " alt="" coords="566,557,528,529,489,495,443,448,400,399,340,324,344,321,404,396,447,444,492,491,532,525,569,553"/>
+<area shape="poly" id="edge28_Node000013_Node000005" title=" " alt="" coords="541,595,378,642,376,637,540,590"/>
+</map>

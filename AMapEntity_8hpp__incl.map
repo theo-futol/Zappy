@@ -1,0 +1,22 @@
+<map id="src/gui/abstract/AMapEntity.hpp" name="src/gui/abstract/AMapEntity.hpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="131,5,358,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="94,225,152,251"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="195,33,148,49,96,74,48,108,28,129,12,153,8,165,10,175,25,195,51,210,82,222,80,227,49,215,21,199,5,177,3,164,7,151,24,126,45,104,93,69,146,44,194,28"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="22,152,85,177"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="228,33,158,81,79,145,75,141,155,77,225,29"/>
+<area shape="rect" id="Node000004" href="$IEntity_8hpp.html" title=" " alt="" coords="168,79,320,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="247,31,247,65,242,65,242,31"/>
+<area shape="rect" id="Node000007" href="$GridPosition_8hpp.html" title=" " alt="" coords="352,152,521,177"/>
+<area shape="poly" id="edge11_Node000001_Node000007" title=" " alt="" coords="264,28,334,77,414,141,411,145,331,81,261,33"/>
+<area shape="rect" id="Node000008" href="$Orientation_8hpp.html" title=" " alt="" coords="546,152,708,177"/>
+<area shape="poly" id="edge12_Node000001_Node000008" title=" " alt="" coords="276,28,585,145,583,150,274,33"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="216,106,181,126,150,154,136,182,128,212,123,211,131,181,146,150,178,121,213,102"/>
+<area shape="poly" id="edge5_Node000004_Node000003" title=" " alt="" coords="215,107,99,149,97,144,213,102"/>
+<area shape="rect" id="Node000005" href="$Appearance_8hpp.html" title=" " alt="" coords="161,152,328,177"/>
+<area shape="poly" id="edge6_Node000004_Node000005" title=" " alt="" coords="247,104,247,138,242,138,242,104"/>
+<area shape="poly" id="edge9_Node000004_Node000007" title=" " alt="" coords="276,102,393,144,391,149,274,107"/>
+<area shape="poly" id="edge10_Node000004_Node000008" title=" " alt="" coords="306,101,552,147,551,152,305,107"/>
+<area shape="poly" id="edge7_Node000005_Node000002" title=" " alt="" coords="226,180,156,221,153,216,223,175"/>
+<area shape="rect" id="Node000006" href="$Color_8hpp.html" title=" " alt="" coords="183,225,306,251"/>
+<area shape="poly" id="edge8_Node000005_Node000006" title=" " alt="" coords="247,178,247,212,242,212,242,178"/>
+</map>

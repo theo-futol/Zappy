@@ -1,0 +1,22 @@
+<map id="Zappy::EggEventHandler::handleEggLaid" name="Zappy::EggEventHandler::handleEggLaid">
+<area shape="rect" id="Node000001" title="Creates an egg from an enw message (egg laid by a player)." alt="" coords="5,137,188,177"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1GameState.html#a6e91382f136bccb7ff1396281247a119" title="Inserts or replaces an entity, keyed by its entity type and number." alt="" coords="239,29,452,55"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="122,134,172,99,235,65,260,56,261,61,237,70,175,103,125,139"/>
+<area shape="rect" id="Node000005" href="$classZappy_1_1AEventHandler.html#a3ba38d2410b06460d0d23411b9dc7210" title="Parses an entity number token of the form &quot;#n&quot;." alt="" coords="262,79,429,119"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="183,134,248,119,249,124,185,139"/>
+<area shape="rect" id="Node000006" href="$classZappy_1_1AEventHandler.html#a753a24b4a29ada4f0f7134a386e4cd99" title="Parses an integer token, tolerant of malformed input." alt="" coords="525,109,691,149"/>
+<area shape="poly" id="edge10_Node000001_Node000006" title=" " alt="" coords="188,149,510,131,511,137,188,154"/>
+<area shape="rect" id="Node000007" href="$classZappy_1_1EggEventHandler.html#aab05947c1a9964e573c5333cb8d4a428" title="Resolves the team of an egg&#39;s parent player." alt="" coords="254,194,437,234"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="185,174,246,188,244,194,183,179"/>
+<area shape="rect" id="Node000010" href="$classZappy_1_1GameState.html#ad411343592328981362a696d67c7dc96" title="Distinct display color assigned to a team (when it was registered)." alt="" coords="236,259,455,284"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="125,175,175,210,237,244,261,252,260,257,235,248,172,215,122,179"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1IEntity.html#aa483e3d82e7596ad06086ffa44665217" title="Open category of the entity." alt="" coords="504,5,712,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="452,30,490,26,490,31,452,35"/>
+<area shape="rect" id="Node000004" href="$classZappy_1_1IEntity.html#a8655b004f61d2e4d01b195513b65e9fd" title="Protocol number within the entity&#39;s category." alt="" coords="523,55,693,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="452,50,510,55,509,61,452,55"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="429,106,511,115,511,121,429,111"/>
+<area shape="rect" id="Node000008" href="$classZappy_1_1GameState.html#a523df5ec4dd7ee8bfd3f930c89962bd4" title="Looks up an entity by key." alt="" coords="503,200,713,225"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="437,211,489,211,489,216,437,216"/>
+<area shape="rect" id="Node000009" href="$classZappy_1_1Trantorian.html#a0bd060e7592defaaa5efb1578b262dba" title="Team name." alt="" coords="519,249,697,275"/>
+<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="437,228,525,244,524,249,436,233"/>
+</map>

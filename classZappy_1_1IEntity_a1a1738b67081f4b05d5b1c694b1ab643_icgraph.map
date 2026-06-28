@@ -1,0 +1,7 @@
+<map id="Zappy::IEntity::orientation" name="Zappy::IEntity::orientation">
+<area shape="rect" id="Node000001" title="Current facing orientation." alt="" coords="219,45,409,70"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1RenderSystem.html#a27989df681554438f03fcaab6338cac3" title="Polls input and updates the camera and selection." alt="" coords="5,5,171,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="210,45,170,40,171,34,211,40"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1RenderSystem.html#a3fa8ea9f652b5de2ef12401086df2875" title="Draws one frame from the given state." alt="" coords="5,69,171,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="211,75,171,80,170,75,210,69"/>
+</map>

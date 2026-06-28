@@ -1,0 +1,9 @@
+<map id="Zappy::Tile::incanting" name="Zappy::Tile::incanting">
+<area shape="rect" id="Node000001" title="Whether an incantation is currently happening on this tile." alt="" coords="221,77,384,102"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1HudRenderer.html#a811888ec303fe1cfdfa3373f70decbc1" title="Draws the styled HUD overlay for the current frame." alt="" coords="12,5,167,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="246,75,156,48,158,43,247,70"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1MapRenderer.html#a0b2fcc444f807a100f47ffc96c4153f6" title="Draws the terrain and ground resources." alt="" coords="11,69,168,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="208,92,168,92,168,87,208,87"/>
+<area shape="rect" id="Node000004" href="$classZappy_1_1SceneRenderer.html#a30d5d84cff8f8084328a40a42671d376" title="Draws the ground and the entities for the frame." alt="" coords="5,133,173,173"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="247,109,158,136,156,131,246,104"/>
+</map>

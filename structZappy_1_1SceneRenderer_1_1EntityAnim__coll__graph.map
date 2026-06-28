@@ -1,0 +1,5 @@
+<map id="Zappy::SceneRenderer::EntityAnim" name="Zappy::SceneRenderer::EntityAnim">
+<area shape="rect" id="Node000001" title="Per&#45;entity animation state: tile&#45;to&#45;tile slide plus Transformer move/idle morph." alt="" coords="5,168,165,368"/>
+<area shape="rect" id="Node000002" href="$structZappy_1_1GridPosition.html" title="Integer coordinates on the toroidal game grid." alt="" coords="15,5,156,91"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="88,91,88,151,83,151,83,91"/>
+</map>

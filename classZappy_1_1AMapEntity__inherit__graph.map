@@ -1,0 +1,9 @@
+<map id="Zappy::AMapEntity" name="Zappy::AMapEntity">
+<area shape="rect" id="Node000001" title="Common base for map entities: stores identity, position and orientation." alt="" coords="77,319,214,584"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1Egg.html" title="An egg laid on the map, identified and with its own lifecycle." alt="" coords="5,692,133,857"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="114,598,91,692,86,691,108,597"/>
+<area shape="rect" id="Node000004" href="$classZappy_1_1Trantorian.html" title="A Trantorian inhabitant, the protocol&#39;s &quot;player&quot;." alt="" coords="157,632,285,917"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="182,596,190,631,185,632,177,598"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1IEntity.html" title="Contract for any identified, positioned thing on the map." alt="" coords="79,5,211,271"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="148,285,148,319,143,319,143,285"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="Zappy::SceneRenderer::BroadcastPing" name="Zappy::SceneRenderer::BroadcastPing">
+<area shape="rect" id="Node000001" title="An in&#45;flight broadcast ripple: where it started and when." alt="" coords="5,153,165,233"/>
+<area shape="rect" id="Node000002" href="$structZappy_1_1GridPosition.html" title="Integer coordinates on the toroidal game grid." alt="" coords="15,5,156,91"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="88,91,88,137,83,137,83,91"/>
+</map>

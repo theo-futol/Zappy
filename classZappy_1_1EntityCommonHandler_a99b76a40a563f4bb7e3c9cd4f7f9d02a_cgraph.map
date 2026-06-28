@@ -1,0 +1,9 @@
+<map id="Zappy::EntityCommonHandler::handleRemoval" name="Zappy::EntityCommonHandler::handleRemoval">
+<area shape="rect" id="Node000001" title="Removes an entity from the state (pdi for players, edi for eggs)." alt="" coords="5,37,224,77"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1AEventHandler.html#a3ba38d2410b06460d0d23411b9dc7210" title="Parses an entity number token of the form &quot;#n&quot;." alt="" coords="289,5,456,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="224,41,276,35,276,40,225,46"/>
+<area shape="rect" id="Node000004" href="$classZappy_1_1GameState.html#aa5fc7b850e96ed3d99928471d5835bf5" title="Removes an entity by key." alt="" coords="272,69,473,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="225,68,259,73,258,78,224,74"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1AEventHandler.html#a753a24b4a29ada4f0f7134a386e4cd99" title="Parses an integer token, tolerant of malformed input." alt="" coords="521,5,688,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="456,23,507,23,507,28,456,28"/>
+</map>

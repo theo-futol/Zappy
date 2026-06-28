@@ -1,0 +1,3 @@
+<map id="Zappy::Window" name="Zappy::Window">
+<area shape="rect" id="Node000001" title="Encapsulates the GLFW window and OpenGL context; the only place GLFW is touched." alt="" coords="5,5,204,531"/>
+</map>

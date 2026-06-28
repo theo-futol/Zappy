@@ -1,0 +1,3 @@
+<map id="Zappy::HudRenderer::Button" name="Zappy::HudRenderer::Button">
+<area shape="rect" id="Node000001" title="A clickable HUD rectangle in screen space (origin bottom&#45;left)." alt="" coords="5,5,152,145"/>
+</map>

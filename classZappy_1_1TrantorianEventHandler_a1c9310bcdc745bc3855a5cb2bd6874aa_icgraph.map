@@ -1,0 +1,10 @@
+<map id="Zappy::TrantorianEventHandler::transferResource" name="Zappy::TrantorianEventHandler::transferResource">
+<area shape="rect" id="Node000001" title="Moves one resource unit between a player&#39;s inventory and its ground tile." alt="" coords="579,37,801,77"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1TrantorianEventHandler.html#a86b125e49d7147bd2d6e86864ec89077" title="Handles a pdr message: the player drops one resource onto its tile." alt="" coords="276,5,531,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="565,46,531,42,531,37,565,41"/>
+<area shape="rect" id="Node000004" href="$classZappy_1_1TrantorianEventHandler.html#af321fc899d383100df04caf1fa462202" title="Handles a pgt message: the player picks one resource up from its tile." alt="" coords="285,69,521,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="565,74,522,79,521,74,565,69"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1TrantorianEventHandler.html#ac0f18428ea3bebd13edcd95914ba5663" title="Applies a Trantorian message to the state." alt="" coords="5,37,228,77"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="263,44,229,48,228,42,262,38"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="272,77,228,72,229,67,272,72"/>
+</map>

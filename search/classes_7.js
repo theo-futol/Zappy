@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['managedclient_0',['ManagedClient',['../classia_1_1launcher_1_1ManagedClient.html',1,'ia::launcher']]]
+  ['handlerregistry_0',['HandlerRegistry',['../classZappy_1_1HandlerRegistry.html',1,'Zappy']]],
+  ['hudrenderer_1',['HudRenderer',['../classZappy_1_1HudRenderer.html',1,'Zappy']]]
 ];

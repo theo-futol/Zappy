@@ -1,0 +1,13 @@
+<map id="Zappy::MainMenu::validateButton" name="Zappy::MainMenu::validateButton">
+<area shape="rect" id="Node000001" title="Rectangle of the validate button." alt="" coords="753,22,952,62"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1MainMenu.html#a86ba1e26802f4d356f635d93128107fa" title="Draws one frame of the menu." alt="" coords="242,5,421,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="739,23,705,19,555,13,421,16,421,11,555,8,706,14,740,18"/>
+<area shape="rect" id="Node000004" href="$classZappy_1_1MainMenu.html#ab72f43a5ee13b6f181ed399e3531ad77" title="Routes a mouse click to the fields, mode buttons and action buttons." alt="" coords="220,55,443,80"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="740,66,706,70,569,76,443,75,443,70,569,71,705,65,739,61"/>
+<area shape="rect" id="Node000005" href="$classZappy_1_1MainMenu.html#a240a375487263c5680795e6af71b3c0f" title="Rectangle of the quit button." alt="" coords="491,29,705,55"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="740,45,706,45,706,39,740,39"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1MainMenu.html#a771be13e8b84eab86752103cedef485b" title="Runs the menu loop until the user validates or quits." alt="" coords="5,5,172,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="228,21,172,21,172,15,228,15"/>
+<area shape="poly" id="edge5_Node000005_Node000002" title=" " alt="" coords="477,34,421,29,421,23,477,28"/>
+<area shape="poly" id="edge6_Node000005_Node000004" title=" " alt="" coords="477,56,443,59,443,54,477,51"/>
+</map>

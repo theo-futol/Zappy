@@ -1,0 +1,17 @@
+<map id="Zappy::MainMenu::modeThreeButton" name="Zappy::MainMenu::modeThreeButton">
+<area shape="rect" id="Node000001" title="Rectangle of the &quot;3D flat&quot; mode button." alt="" coords="5,23,225,63"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1MainMenu.html#ae15bfb478af9299fef0a952e94e1654a" title="Rectangle of the &quot;2D&quot; mode button." alt="" coords="273,23,481,63"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="226,41,260,41,260,46,226,46"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1MainMenu.html#a9775fbd32327285b596a5c2cb91392c2" title="Rectangle of the port text field." alt="" coords="529,31,732,56"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="481,41,516,41,516,46,481,46"/>
+<area shape="rect" id="Node000004" href="$classZappy_1_1MainMenu.html#acd674a29a227b3051114070400c3252d" title="Rectangle of the host text field." alt="" coords="780,31,985,56"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="732,41,767,41,767,46,732,46"/>
+<area shape="rect" id="Node000005" href="$classZappy_1_1MainMenu.html#a7475763b92bc62d3612ca61a4c5f1957" title="Y of the centered panel&#39;s bottom edge." alt="" coords="1033,5,1264,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="985,31,1020,28,1020,33,986,36"/>
+<area shape="rect" id="Node000007" href="$classZappy_1_1MainMenu.html#a692d60cf91e3382c24251674bfe21652" title="X of the centered panel&#39;s left edge." alt="" coords="1045,55,1252,80"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="986,50,1032,54,1031,59,985,55"/>
+<area shape="rect" id="Node000006" href="$classZappy_1_1Window.html#aea1ad498e106ef34dd2440e08457f386" title="Window height." alt="" coords="1312,5,1483,31"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="1264,15,1298,15,1298,21,1264,21"/>
+<area shape="rect" id="Node000008" href="$classZappy_1_1Window.html#af7def2e51c9498c9962c3346b6c6fb91" title="Window width." alt="" coords="1315,55,1480,80"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="1252,65,1301,65,1301,70,1252,70"/>
+</map>

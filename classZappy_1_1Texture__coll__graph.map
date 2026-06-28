@@ -1,0 +1,3 @@
+<map id="Zappy::Texture" name="Zappy::Texture">
+<area shape="rect" id="Node000001" title="Loads an image into an OpenGL texture; the only place stb_image is used." alt="" coords="5,5,116,271"/>
+</map>

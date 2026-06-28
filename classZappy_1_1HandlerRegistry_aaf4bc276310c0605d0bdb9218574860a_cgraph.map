@@ -1,0 +1,5 @@
+<map id="Zappy::HandlerRegistry::registerHandler" name="Zappy::HandlerRegistry::registerHandler">
+<area shape="rect" id="Node000001" title="Registers a handler under each of its declared keys." alt="" coords="5,5,180,45"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1ICommandHandler.html#a1767165087dd96bde6e9f0a93ffd47e8" title="Protocol keys this handler is responsible for." alt="" coords="228,5,420,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="180,23,214,23,214,28,180,28"/>
+</map>

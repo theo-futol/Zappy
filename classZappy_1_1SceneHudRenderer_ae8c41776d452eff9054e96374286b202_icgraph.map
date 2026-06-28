@@ -1,0 +1,5 @@
+<map id="Zappy::SceneHudRenderer::drawBar" name="Zappy::SceneHudRenderer::drawBar">
+<area shape="rect" id="Node000001" title="Draws the bottom info bar (time unit, teams, winner, last log line)." alt="" coords="248,5,443,45"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1SceneHudRenderer.html#adcd42e4b83012ca45e4a31cc376277a9" title="Draws the HUD for the current frame." alt="" coords="5,5,200,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="234,28,200,28,200,23,234,23"/>
+</map>

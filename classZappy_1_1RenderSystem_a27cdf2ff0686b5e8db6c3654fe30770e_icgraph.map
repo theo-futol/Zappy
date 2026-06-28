@@ -1,0 +1,9 @@
+<map id="Zappy::RenderSystem::detachFollow" name="Zappy::RenderSystem::detachFollow">
+<area shape="rect" id="Node000001" title="Stops following and recenters the orbit camera on the map center." alt="" coords="432,37,597,77"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1RenderSystem.html#a27989df681554438f03fcaab6338cac3" title="Polls input and updates the camera and selection." alt="" coords="219,5,384,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="418,46,384,40,385,35,419,40"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1RenderSystem.html#a69ac1b3aa829d3329a879e22afdda150" title="Resolves the entity currently followed, auto&#45;detaching if it is gone or not a player." alt="" coords="219,69,384,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="419,74,385,80,384,74,418,69"/>
+<area shape="rect" id="Node000004" href="$classZappy_1_1RenderSystem.html#a3fa8ea9f652b5de2ef12401086df2875" title="Draws one frame from the given state." alt="" coords="5,69,171,109"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="205,92,171,92,171,87,205,87"/>
+</map>

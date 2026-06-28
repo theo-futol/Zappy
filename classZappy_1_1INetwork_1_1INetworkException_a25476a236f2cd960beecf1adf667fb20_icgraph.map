@@ -1,0 +1,17 @@
+<map id="Zappy::INetwork::INetworkException::what" name="Zappy::INetwork::INetworkException::what">
+<area shape="rect" id="Node000001" title=" " alt="" coords="577,92,773,132"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1NetworkService.html#a43f30968fc171d5383e2af939b4fa127" title="Connects to the server and authenticates as the GUI." alt="" coords="353,5,527,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="606,90,494,48,496,43,608,85"/>
+<area shape="rect" id="Node000004" href="$classZappy_1_1Core.html#aa86fe0f0253c1331cd03b6e0fdc97e7e" title="Connects and runs one game session with the current host/port/mode." alt="" coords="351,70,529,95"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="563,101,529,96,530,91,564,95"/>
+<area shape="rect" id="Node000007" href="$classZappy_1_1NetworkService.html#a13f2433fe1fcc17a0f40c34dcfcad5c4" title="Sends a ready&#45;built command line to the server (e.g." alt="" coords="353,120,527,160"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="564,128,527,132,526,127,563,123"/>
+<area shape="rect" id="Node000008" href="$classZappy_1_1NetworkService.html#a583a443d69d8654318c1f96ae7563d3c" title="Drains all currently available server data and applies it to the state." alt="" coords="353,184,527,224"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="615,140,530,174,499,186,497,181,528,170,613,135"/>
+<area shape="rect" id="Node000003" href="$classia_1_1client_1_1ZappyAIClient.html#acf191a81fbbbb81e60a298c2a10c1e6f" title=" " alt="" coords="108,13,303,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="339,28,303,28,303,23,339,23"/>
+<area shape="rect" id="Node000005" href="$classZappy_1_1Core.html#ad35ddcf048bd1f39e7f8b7ded934f90c" title="Runs the application: alternates the main menu and a game session until the user quits." alt="" coords="141,70,270,95"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="336,85,270,85,270,80,336,80"/>
+<area shape="rect" id="Node000006" href="$gui_2main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,70,60,95"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="126,85,60,85,60,80,126,80"/>
+</map>

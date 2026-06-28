@@ -1,0 +1,20 @@
+<map id="src/gui/Network" name="src/gui/Network">
+<area shape="rect" id="node1" href="dir_fb49707a9d83a9b06f83dbd1044d17a0.html" title="Command" alt="" coords="27,136,117,161"/>
+<area shape="rect" id="node2" href="dir_06b69199dc1a3a9c5762adc86d86d727.html" title="Protocol" alt="" coords="141,136,216,161"/>
+<area shape="rect" id="node3" href="dir_a4a39683d1ee854f2a037fa0d8c15509.html" title="Model" alt="" coords="241,136,303,161"/>
+<area shape="rect" id="node4" href="dir_15ae648eadc0f6ecf808f69f77cb7de0.html" title="interface" alt="" coords="328,136,408,161"/>
+<area shape="rect" id="node6" href="dir_2ddf4c47512a286fcde36ca2f288bd60.html" title="service" alt="" coords="139,63,208,88"/>
+<area shape="poly" id="edge4" href="dir_000071_000009.html" alt="" coords="159,90,101,130,98,126,156,86"/>
+<area shape="rect" id="edge4-headlabel" href="dir_000071_000009.html" title="1" alt="" coords="104,125,113,140"/>
+<area shape="poly" id="edge1" href="dir_000071_000059.html" alt="" coords="177,88,179,122,174,123,172,89"/>
+<area shape="rect" id="edge1-headlabel" href="dir_000071_000059.html" title="9" alt="" coords="180,110,190,125"/>
+<area shape="poly" id="edge3" href="dir_000071_000048.html" alt="" coords="191,86,246,126,243,130,188,90"/>
+<area shape="rect" id="edge3-headlabel" href="dir_000071_000048.html" title="1" alt="" coords="241,111,251,126"/>
+<area shape="poly" id="edge2" href="dir_000071_000037.html" alt="" coords="197,86,221,96,316,129,315,134,219,101,195,91"/>
+<area shape="rect" id="edge2-headlabel" href="dir_000071_000037.html" title="1" alt="" coords="309,115,318,130"/>
+<area shape="rect" id="node7" href="dir_7883a1195afe716257b18de1f27b761d.html" title="socket" alt="" coords="232,63,296,88"/>
+<area shape="poly" id="edge5" href="dir_000075_000037.html" alt="" coords="282,86,341,126,338,130,279,90"/>
+<area shape="rect" id="edge5-headlabel" href="dir_000075_000037.html" title="1" alt="" coords="336,111,345,126"/>
+<area shape="rect" id="clust2" href="dir_0a030813fa18c3664a10358812d78351.html" alt="" coords="128,52,408,99"/>
+<area shape="rect" id="clust1" href="dir_99d0482cf009f9d97a0877749b817f19.html" title="gui" alt="" coords="16,16,419,172"/>
+</map>

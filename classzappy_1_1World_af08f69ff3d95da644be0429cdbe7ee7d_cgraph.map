@@ -1,6 +1,6 @@
 <map id="zappy::World::addTeam" name="zappy::World::addTeam">
 <area shape="rect" id="Node000001" title="Registers a new team, laying initialSlots eggs at random tiles so the first clients have something to..." alt="" coords="5,5,177,31"/>
-<area shape="rect" id="Node000002" href="$structzappy_1_1Team.html#a14fde19b9bd6171374642ee8d9b6039b" title="Lays count eggs at the given tile, each adding a slot and a unique ID." alt="" coords="225,5,384,31"/>
+<area shape="rect" id="Node000002" href="$structzappy_1_1Team.html#a323dee046a1a7102c765aa5a07eb52ea" title="Lays count eggs at the given tile, each adding a slot and a unique ID." alt="" coords="225,5,384,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="178,15,212,15,212,21,178,21"/>
 <area shape="rect" id="Node000003" href="$namespacezappy.html#a6f4c56af6fff80513c2388249fd217f4" title=" " alt="" coords="432,5,577,31"/>
 <area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="385,15,418,15,418,21,385,21"/>

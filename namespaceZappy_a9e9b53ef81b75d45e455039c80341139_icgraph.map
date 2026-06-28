@@ -1,0 +1,7 @@
+<map id="Zappy::resourceName" name="Zappy::resourceName">
+<area shape="rect" id="Node000001" title="Human&#45;readable name of a resource type." alt="" coords="395,13,560,38"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1ResourceSet.html#a101d7a7d93349ce84d00058110f2161d" title="One &quot;Name: count&quot; line per resource, for display in a HUD bubble." alt="" coords="196,5,347,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="381,28,347,28,347,23,381,23"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1Trantorian.html#a90e88f0baf030f74940046c3933076e4" title="Info lines: identity, position, team, level and inventory." alt="" coords="5,5,148,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="182,28,148,28,148,23,182,23"/>
+</map>

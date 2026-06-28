@@ -1,0 +1,16 @@
+<map id="Zappy::HudRenderer::handleClick" name="Zappy::HudRenderer::handleClick">
+<area shape="rect" id="Node000001" title="Routes a click to a HUD button and returns the command to send, if any." alt="" coords="5,133,160,173"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1HudRenderer.html#abef7b0f626b6535854fa5752c159fd4b" title="Hit&#45;test of a button against a point (bottom&#45;left origin)." alt="" coords="235,5,389,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="103,131,149,93,207,55,222,48,224,53,209,60,152,97,107,135"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1HudRenderer.html#a0f5291a54fc4a57fc6329465e609196b" title="Rectangle of the &quot;decrease time unit&quot; button." alt="" coords="235,69,389,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="154,131,226,110,228,116,156,136"/>
+<area shape="rect" id="Node000005" href="$classZappy_1_1HudRenderer.html#aec4888d976355375c5549ac61cdf5885" title="Rectangle of the &quot;increase time unit&quot; button." alt="" coords="235,133,389,173"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="160,151,221,151,221,156,160,156"/>
+<area shape="rect" id="Node000006" href="$classZappy_1_1CommandBuilder.html#adfe09d61ba17fd10e593e13470b4cfc0" title="Time unit modification." alt="" coords="221,197,403,237"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="156,171,228,191,226,196,154,176"/>
+<area shape="rect" id="Node000007" href="$classZappy_1_1GameState.html#aefefd6e17cc3241e574d380b9a12ea56" title="Current time unit." alt="" coords="208,262,416,287"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="106,172,151,210,209,247,230,255,228,260,207,252,148,215,103,176"/>
+<area shape="rect" id="Node000004" href="$classZappy_1_1HudRenderer.html#aaf9d9dc1be0fe669156a63bb978c7a23" title="Y (bottom&#45;left origin) of the time&#45;unit line, derived from the window height." alt="" coords="464,101,619,141"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="390,97,450,106,450,111,389,103"/>
+<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="389,140,450,131,450,137,390,145"/>
+</map>

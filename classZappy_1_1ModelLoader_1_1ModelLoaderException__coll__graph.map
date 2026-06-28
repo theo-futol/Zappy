@@ -1,0 +1,5 @@
+<map id="Zappy::ModelLoader::ModelLoaderException" name="Zappy::ModelLoader::ModelLoaderException">
+<area shape="rect" id="Node000001" title="Error raised while parsing or decoding a glTF model." alt="" coords="5,119,192,219"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="45,5,152,71"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="101,84,101,119,96,119,96,84"/>
+</map>

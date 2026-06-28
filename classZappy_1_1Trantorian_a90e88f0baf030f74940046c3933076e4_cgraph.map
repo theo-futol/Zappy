@@ -1,0 +1,11 @@
+<map id="Zappy::Trantorian::infoLines" name="Zappy::Trantorian::infoLines">
+<area shape="rect" id="Node000001" title="Info lines: identity, position, team, level and inventory." alt="" coords="5,37,148,77"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1ResourceSet.html#a101d7a7d93349ce84d00058110f2161d" title="One &quot;Name: count&quot; line per resource, for display in a HUD bubble." alt="" coords="197,5,347,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="148,43,183,37,184,42,149,48"/>
+<area shape="rect" id="Node000004" href="$classZappy_1_1AMapEntity.html#ac37155be777f11113dce6039bb7f7244" title="Base info lines shared by every entity: identity and position." alt="" coords="196,69,348,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="149,66,183,72,182,77,148,72"/>
+<area shape="rect" id="Node000003" href="$namespaceZappy.html#a9e9b53ef81b75d45e455039c80341139" title="Human&#45;readable name of a resource type." alt="" coords="417,13,583,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="348,23,404,23,404,28,348,28"/>
+<area shape="rect" id="Node000005" href="$classZappy_1_1IEntity.html#aa483e3d82e7596ad06086ffa44665217" title="Open category of the entity." alt="" coords="396,77,604,102"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="348,87,382,87,382,92,348,92"/>
+</map>

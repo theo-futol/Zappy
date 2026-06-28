@@ -1,0 +1,13 @@
+<map id="Zappy::Trantorian" name="Zappy::Trantorian">
+<area shape="rect" id="Node000001" title="A Trantorian inhabitant, the protocol&#39;s &quot;player&quot;." alt="" coords="251,641,379,887"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1AMapEntity.html" title="Common base for map entities: stores identity, position and orientation." alt="" coords="83,333,220,579"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="225,590,253,642,249,644,221,592"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1IEntity.html" title="Contract for any identified, positioned thing on the map." alt="" coords="5,5,137,271"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="111,283,123,332,118,334,105,285"/>
+<area shape="rect" id="Node000004" href="$structZappy_1_1GridPosition.html" title="Integer coordinates on the toroidal game grid." alt="" coords="162,95,303,181"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="224,182,189,318,184,317,219,181"/>
+<area shape="rect" id="Node000005" href="$classZappy_1_1ResourceSet.html" title="A bag of the seven resource counts." alt="" coords="244,383,387,529"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="318,529,318,625,313,625,313,529"/>
+<area shape="rect" id="Node000006" href="$structZappy_1_1Color.html" title="RGBA color with normalized [0, 1] components." alt="" coords="411,393,507,519"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="441,520,402,618,390,643,385,640,397,616,437,518"/>
+</map>

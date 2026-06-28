@@ -1,0 +1,13 @@
+<map id="Zappy::HudRenderer::headerLineY" name="Zappy::HudRenderer::headerLineY">
+<area shape="rect" id="Node000001" title="Y (bottom&#45;left origin) of the time&#45;unit line, derived from the window height." alt="" coords="411,37,565,77"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1HudRenderer.html#a0f5291a54fc4a57fc6329465e609196b" title="Rectangle of the &quot;decrease time unit&quot; button." alt="" coords="208,5,363,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="397,46,363,40,364,35,398,40"/>
+<area shape="rect" id="Node000005" href="$classZappy_1_1HudRenderer.html#aec4888d976355375c5549ac61cdf5885" title="Rectangle of the &quot;increase time unit&quot; button." alt="" coords="208,69,363,109"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="398,74,364,80,363,74,397,69"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1HudRenderer.html#afd50e841a073d3436438b1c1cb526f27" title="Routes a click to a HUD button and returns the command to send, if any." alt="" coords="5,5,160,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="194,28,161,28,161,23,194,23"/>
+<area shape="rect" id="Node000004" href="$classZappy_1_1HudRenderer.html#a811888ec303fe1cfdfa3373f70decbc1" title="Draws the styled HUD overlay for the current frame." alt="" coords="5,69,160,109"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="209,52,147,72,146,67,207,47"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="207,68,146,48,147,43,209,63"/>
+<area shape="poly" id="edge6_Node000005_Node000004" title=" " alt="" coords="194,92,161,92,161,87,194,87"/>
+</map>

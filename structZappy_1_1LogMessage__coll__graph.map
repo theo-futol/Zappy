@@ -1,0 +1,5 @@
+<map id="Zappy::LogMessage" name="Zappy::LogMessage">
+<area shape="rect" id="Node000001" title="One line of the HUD message log: its text and display color." alt="" coords="5,193,148,259"/>
+<area shape="rect" id="Node000002" href="$structZappy_1_1Color.html" title="RGBA color with normalized [0, 1] components." alt="" coords="29,5,125,131"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="79,131,79,177,74,177,74,131"/>
+</map>

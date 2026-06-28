@@ -1,0 +1,65 @@
+<map id="Zappy::RenderSystem::processInput" name="Zappy::RenderSystem::processInput">
+<area shape="rect" id="Node000001" title="Polls input and updates the camera and selection." alt="" coords="5,252,171,292"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1InputHandler.html#a56dec4ab6d00b3d5973838de562265e8" title="Consumes the click recorded this frame, if any." alt="" coords="245,5,399,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="94,251,111,211,137,161,173,108,217,62,236,49,239,54,220,66,177,112,142,164,116,214,99,253"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1RenderSystem.html#a27cdf2ff0686b5e8db6c3654fe30770e" title="Stops following and recenters the orbit camera on the map center." alt="" coords="522,140,687,180"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="96,250,113,216,139,176,174,136,195,119,218,106,260,90,305,83,351,82,396,87,481,107,550,132,548,137,480,112,395,92,351,87,306,88,262,95,220,110,198,124,178,140,143,179,118,219,100,253"/>
+<area shape="rect" id="Node000007" href="$classZappy_1_1Window.html#a0f0475130c5d82c6b2debced1cd62760" title="Whether the window is still open." alt="" coords="235,121,409,146"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="104,250,152,202,183,176,217,155,233,148,235,153,220,160,186,181,155,206,108,254"/>
+<area shape="rect" id="Node000008" href="$classZappy_1_1IEntity.html#a1a1738b67081f4b05d5b1c694b1ab643" title="Current facing orientation." alt="" coords="227,170,417,195"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="123,250,168,227,218,206,246,196,248,201,220,210,170,232,126,254"/>
+<area shape="rect" id="Node000009" href="$classZappy_1_1RenderSystem.html#a7eb8f4594ab9a74d597aee1a99cad6d9" title="Orbit yaw (degrees) whose horizontal forward matches a cardinal orientation." alt="" coords="239,220,405,260"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="171,258,225,251,226,256,171,263"/>
+<area shape="rect" id="Node000010" href="$classZappy_1_1RenderSystem.html#ac94c2b0bb1b34c74fbc18359405968fa" title="Picks the entity under a 2D (top&#45;down) click and updates the selection." alt="" coords="239,284,405,324"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="171,281,226,288,225,293,171,286"/>
+<area shape="rect" id="Node000021" href="$classZappy_1_1RenderSystem.html#a1c7eed6821b73667148ba9b9f2e3b547" title="Picks the entity under a 3D click by casting a ray onto the ground." alt="" coords="239,348,405,388"/>
+<area shape="poly" id="edge22_Node000001_Node000021" title=" " alt="" coords="127,290,220,334,239,341,238,346,218,338,125,294"/>
+<area shape="rect" id="Node000023" href="$classZappy_1_1GameState.html#a183322669da6d2f09e3ec2590039330e" title="Currently selected entity, resolved live (null if none or it is gone)." alt="" coords="219,412,425,452"/>
+<area shape="poly" id="edge28_Node000001_Node000023" title=" " alt="" coords="107,291,154,344,185,373,220,398,232,404,229,409,217,402,182,377,150,348,103,294"/>
+<area shape="rect" id="Node000024" href="$classZappy_1_1OrbitCamera.html#a3ceef2355c2c04f1ad89ff072d44b5a0" title="Sets the orbit angles directly (used to aim the view, e.g." alt="" coords="245,476,399,516"/>
+<area shape="poly" id="edge29_Node000001_Node000024" title=" " alt="" coords="100,291,117,328,143,374,178,421,220,462,234,470,231,475,217,466,174,425,139,377,112,330,95,293"/>
+<area shape="rect" id="Node000025" href="$classZappy_1_1RenderSystem.html#adfbf14cc26cf7f6db0d8f363d457fd04" title="Updates the hovered tile in the state from the current cursor position (3D mode)." alt="" coords="239,540,405,580"/>
+<area shape="poly" id="edge30_Node000001_Node000025" title=" " alt="" coords="96,292,110,339,134,403,171,469,194,499,220,526,229,532,225,536,217,530,190,503,166,472,129,405,105,341,91,293"/>
+<area shape="rect" id="Node000004" href="$classZappy_1_1Map.html#a7085133e48e18b0e3b653dfa09d9bb1d" title="Map height." alt="" coords="842,298,989,323"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="689,171,737,190,753,201,763,212,786,237,831,266,875,289,872,294,828,270,782,241,759,216,749,205,735,194,687,176"/>
+<area shape="rect" id="Node000005" href="$classZappy_1_1GameState.html#aa9d3554ce327fc5a69b5a358d48fbe0b" title="Read&#45;only access to the map." alt="" coords="825,202,1005,227"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="688,172,829,197,829,202,687,177"/>
+<area shape="rect" id="Node000006" href="$classZappy_1_1Map.html#ae3b126c54208662331ad1d17686e6d21" title="Map width." alt="" coords="844,347,987,373"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="688,164,715,174,738,190,753,208,760,227,762,264,765,301,772,318,786,334,807,347,831,355,830,360,805,352,782,338,767,320,759,302,757,265,755,228,748,211,734,194,712,179,687,169"/>
+<area shape="rect" id="Node000011" href="$classZappy_1_1RenderSystem.html#a41599751520d5cc014f9843c47e1b0a2" title="Selects the entity standing on a tile (preferring players), or clears the selection." alt="" coords="522,497,687,537"/>
+<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="403,322,427,334,576,485,572,489,424,338,400,326"/>
+<area shape="rect" id="Node000019" href="$classZappy_1_1TopDownCamera.html#a47875c1b5a0ff2e4c07af9dfd4ba9ad7" title="World viewport width in pixels." alt="" coords="515,204,695,244"/>
+<area shape="poly" id="edge20_Node000010_Node000019" title=" " alt="" coords="387,281,425,269,473,253,504,245,506,250,474,259,426,275,389,286"/>
+<area shape="rect" id="Node000020" href="$classZappy_1_1TopDownCamera.html#a4e30d1a3914cd379e3c70abcf6a369ed" title="Unprojects a viewport pixel to a world&#45;space point (for picking)." alt="" coords="515,268,695,308"/>
+<area shape="poly" id="edge21_Node000010_Node000020" title=" " alt="" coords="405,297,501,291,501,297,405,302"/>
+<area shape="poly" id="edge14_Node000011_Node000004" title=" " alt="" coords="644,495,690,465,734,426,749,402,755,379,763,356,782,334,804,321,828,314,829,319,806,326,786,338,768,359,760,380,754,404,738,430,693,470,646,500"/>
+<area shape="poly" id="edge19_Node000011_Node000006" title=" " alt="" coords="687,501,712,491,734,477,745,466,751,454,757,431,763,407,771,394,782,383,805,370,830,362,831,367,807,375,786,387,775,398,768,409,762,432,756,456,749,469,738,481,714,496,689,506"/>
+<area shape="rect" id="Node000012" href="$classZappy_1_1GameState.html#a6f7e464a5fa5014b6db463eff2b1357d" title="Clears the tile selection." alt="" coords="784,397,1047,422"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="686,497,735,476,749,466,758,455,767,443,783,432,803,424,805,429,785,437,771,447,762,458,752,470,737,481,688,502"/>
+<area shape="rect" id="Node000013" href="$classZappy_1_1GameState.html#a5e99f8cd5266d37d6d1e8d9de23925cc" title="Clears the current selection." alt="" coords="794,446,1037,471"/>
+<area shape="poly" id="edge12_Node000011_Node000013" title=" " alt="" coords="687,499,833,471,834,477,688,504"/>
+<area shape="rect" id="Node000014" href="$classZappy_1_1IEntity.html#aa483e3d82e7596ad06086ffa44665217" title="Open category of the entity." alt="" coords="811,495,1019,521"/>
+<area shape="poly" id="edge13_Node000011_Node000014" title=" " alt="" coords="688,512,797,509,798,514,688,518"/>
+<area shape="rect" id="Node000015" href="$classZappy_1_1GameState.html#abd6471abf9d8148da897c524115909fc" title="Mutable access to the map." alt="" coords="825,709,1005,734"/>
+<area shape="poly" id="edge15_Node000011_Node000015" title=" " alt="" coords="689,526,715,537,738,554,752,572,759,591,762,627,765,663,772,679,786,695,814,711,811,716,782,699,767,682,759,664,756,628,754,592,747,575,734,558,712,542,687,531"/>
+<area shape="rect" id="Node000016" href="$classZappy_1_1IEntity.html#a8655b004f61d2e4d01b195513b65e9fd" title="Protocol number within the entity&#39;s category." alt="" coords="831,545,1000,570"/>
+<area shape="poly" id="edge16_Node000011_Node000016" title=" " alt="" coords="688,525,817,542,817,547,687,531"/>
+<area shape="rect" id="Node000017" href="$classZappy_1_1GameState.html#affca4b479f2b8bfa7097d4d9b409fb2b" title="Marks an entity as the selected one (its info is shown in the HUD)." alt="" coords="820,595,1011,635"/>
+<area shape="poly" id="edge17_Node000011_Node000017" title=" " alt="" coords="685,535,737,554,761,567,785,580,807,588,806,593,783,585,759,572,735,558,683,540"/>
+<area shape="rect" id="Node000018" href="$classZappy_1_1GameState.html#ac4610c386668f160fe6aabe72392196b" title="Marks a tile as selected (its resources are shown in the HUD)." alt="" coords="808,659,1023,685"/>
+<area shape="poly" id="edge18_Node000011_Node000018" title=" " alt="" coords="689,528,714,539,738,554,756,577,762,601,768,624,775,634,786,645,797,652,794,656,782,649,771,638,764,626,757,603,751,580,734,558,712,544,687,533"/>
+<area shape="poly" id="edge27_Node000021_Node000011" title=" " alt="" coords="397,386,426,398,504,442,568,486,565,491,501,446,424,402,395,391"/>
+<area shape="rect" id="Node000022" href="$classZappy_1_1RenderSystem.html#ad7e374d22bd0b05889f04633014d355d" title="Finds the tile under a screen point by projecting every tile and taking the nearest one." alt="" coords="522,332,687,372"/>
+<area shape="poly" id="edge23_Node000021_Node000022" title=" " alt="" coords="405,361,508,355,508,360,405,366"/>
+<area shape="poly" id="edge24_Node000022_Node000004" title=" " alt="" coords="687,338,828,319,829,325,688,344"/>
+<area shape="poly" id="edge25_Node000022_Node000005" title=" " alt="" coords="687,335,735,318,759,302,783,283,875,231,877,236,785,288,762,306,737,322,688,340"/>
+<area shape="poly" id="edge26_Node000022_Node000006" title=" " alt="" coords="688,351,831,355,830,360,688,357"/>
+<area shape="poly" id="edge33_Node000025_Node000004" title=" " alt="" coords="403,539,424,526,440,504,446,481,453,458,472,435,507,414,539,404,571,401,601,402,664,403,698,397,735,382,749,371,758,358,767,346,783,334,828,317,829,322,785,338,771,349,762,362,753,374,737,386,699,402,664,409,601,408,571,407,540,409,509,419,475,439,458,460,451,483,445,507,427,530,406,543"/>
+<area shape="poly" id="edge36_Node000025_Node000006" title=" " alt="" coords="399,537,424,526,438,515,447,504,457,493,472,483,510,467,544,458,604,454,665,450,698,441,735,426,749,416,758,405,767,394,783,383,830,367,831,372,785,388,771,397,762,408,752,420,737,430,699,446,665,455,605,459,545,464,512,472,475,488,460,497,451,508,442,519,427,530,401,542"/>
+<area shape="poly" id="edge34_Node000025_Node000015" title=" " alt="" coords="405,556,494,558,591,564,678,577,712,587,737,599,750,610,757,623,763,648,768,673,775,684,786,695,813,710,811,715,782,699,770,688,763,675,758,649,752,625,746,614,735,604,710,592,677,582,590,570,494,563,405,562"/>
+<area shape="poly" id="edge32_Node000025_Node000022" title=" " alt="" coords="403,540,424,526,437,510,443,493,447,459,450,424,457,406,471,389,489,376,508,366,510,371,491,380,475,393,462,409,455,425,452,459,448,494,441,512,427,530,406,545"/>
+<area shape="rect" id="Node000026" href="$classZappy_1_1GameState.html#ade1e8907ab0a808d60c1eb6d60c67471" title="Clears the hovered tile (cursor off the map)." alt="" coords="473,613,736,638"/>
+<area shape="poly" id="edge31_Node000025_Node000026" title=" " alt="" coords="405,576,536,607,535,612,404,582"/>
+<area shape="rect" id="Node000027" href="$classZappy_1_1GameState.html#a6ceefa790e410d2cc40d23182ef8601f" title="Sets the tile the cursor currently hovers (for highlighting)." alt="" coords="479,662,730,687"/>
+<area shape="poly" id="edge35_Node000025_Node000027" title=" " alt="" coords="351,578,406,614,474,648,499,656,497,661,472,653,404,619,349,582"/>
+</map>

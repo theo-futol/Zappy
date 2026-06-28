@@ -1,0 +1,5 @@
+<map id="Zappy::GroundProjection" name="Zappy::GroundProjection">
+<area shape="rect" id="Node000001" title="3D&#45;mode projection: maps grid cell (x, y) to world point (x, 0, y)." alt="" coords="5,139,180,204"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1IProjection.html" title="Contract mapping grid coordinates to a point on the rendered world surface." alt="" coords="27,5,158,91"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="95,104,95,138,90,138,90,104"/>
+</map>

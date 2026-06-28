@@ -1,0 +1,11 @@
+<map id="Zappy::SceneRenderer" name="Zappy::SceneRenderer">
+<area shape="rect" id="Node000001" title="Draws the 3D scene (ground tiles and one model per entity) with the Phong shader." alt="" coords="231,408,391,1253"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1IRenderer.html" title="Contract for one stage of the rendering pipeline." alt="" coords="5,125,131,211"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="91,223,233,611,228,613,86,225"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1AssetCache.html" title="Owns the shared GPU resources, keyed by symbolic id, loaded once." alt="" coords="155,55,293,281"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="241,281,256,391,251,392,236,281"/>
+<area shape="rect" id="Node000004" href="$classZappy_1_1ThemeRegistry.html" title="Assigns each team a paired golem+egg model, by arrival order, cycling past the last theme." alt="" coords="318,115,479,221"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="394,221,372,392,366,391,389,221"/>
+<area shape="rect" id="Node000005" href="$classZappy_1_1Mesh.html" title="Owns a vertex array and its buffers, and issues the draw call." alt="" coords="504,5,637,331"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="510,332,399,612,394,610,505,330"/>
+</map>

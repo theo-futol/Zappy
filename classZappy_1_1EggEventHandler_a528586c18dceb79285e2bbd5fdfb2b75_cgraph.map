@@ -1,0 +1,9 @@
+<map id="Zappy::EggEventHandler::handleEggHatch" name="Zappy::EggEventHandler::handleEggHatch">
+<area shape="rect" id="Node000001" title="Removes a hatched egg from an ebo message (a client connected to it)." alt="" coords="5,37,188,77"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1AEventHandler.html#a3ba38d2410b06460d0d23411b9dc7210" title="Parses an entity number token of the form &quot;#n&quot;." alt="" coords="253,5,420,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="188,43,239,36,240,41,188,48"/>
+<area shape="rect" id="Node000004" href="$classZappy_1_1GameState.html#aa5fc7b850e96ed3d99928471d5835bf5" title="Removes an entity by key." alt="" coords="236,69,437,109"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="188,67,223,71,222,77,188,72"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1AEventHandler.html#a753a24b4a29ada4f0f7134a386e4cd99" title="Parses an integer token, tolerant of malformed input." alt="" coords="485,5,652,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="420,23,471,23,471,28,420,28"/>
+</map>

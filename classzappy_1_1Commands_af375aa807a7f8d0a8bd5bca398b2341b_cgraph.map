@@ -1,6 +1,6 @@
 <map id="zappy::Commands::Fork" name="zappy::Commands::Fork">
 <area shape="rect" id="Node000001" title="Lays an egg on the current tile, opening a new team slot." alt="" coords="5,181,184,207"/>
-<area shape="rect" id="Node000002" href="$structzappy_1_1Team.html#a14fde19b9bd6171374642ee8d9b6039b" title="Lays count eggs at the given tile, each adding a slot and a unique ID." alt="" coords="255,5,413,31"/>
+<area shape="rect" id="Node000002" href="$structzappy_1_1Team.html#a323dee046a1a7102c765aa5a07eb52ea" title="Lays count eggs at the given tile, each adding a slot and a unique ID." alt="" coords="255,5,413,31"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="103,180,152,117,189,80,231,48,261,33,263,38,233,52,192,84,156,121,107,183"/>
 <area shape="rect" id="Node000004" href="$classzappy_1_1Player.html#a33f33f30fdbf95af468119bc63bd7caa" title="This player&#39;s stable logical id (its GUI player number)." alt="" coords="499,81,649,107"/>
 <area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="106,179,156,134,192,109,231,91,297,76,364,71,430,72,487,77,487,82,429,77,365,76,298,82,233,97,194,114,160,138,109,183"/>

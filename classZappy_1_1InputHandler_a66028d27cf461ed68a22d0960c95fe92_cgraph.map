@@ -1,0 +1,5 @@
+<map id="Zappy::InputHandler::handleFree" name="Zappy::InputHandler::handleFree">
+<area shape="rect" id="Node000001" title="Applies a frame&#39;s input events to the free&#45;fly camera (3D mode)." alt="" coords="5,5,160,45"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1FreeCamera.html#ad2903145e67a7551d8c01329e7e63627" title="Moves the camera along its own axes and the world up." alt="" coords="208,13,403,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="160,23,194,23,194,28,160,28"/>
+</map>

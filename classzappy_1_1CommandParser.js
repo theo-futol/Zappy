@@ -3,6 +3,7 @@ var classzappy_1_1CommandParser =
     [ "Handler", "classzappy_1_1CommandParser.html#abfa06da21fadfb6ce89f7c53b4072d05", null ],
     [ "CommandParser", "classzappy_1_1CommandParser.html#a741addd675a90a09b183e9518b626962", null ],
     [ "_dispatch", "classzappy_1_1CommandParser.html#af55cf3a6d1c187f570405017ebd8cb6f", null ],
+    [ "_handleGuiClient", "classzappy_1_1CommandParser.html#afe779cb5e99b6dd9a1e923773eabd853", null ],
     [ "_handleHandshake", "classzappy_1_1CommandParser.html#a2e37f370a7cf95399de6722ef528da83", null ],
     [ "_initAICommands", "classzappy_1_1CommandParser.html#a629df3248cf7038782f23805ea6c806e", null ],
     [ "_initGraphicCommands", "classzappy_1_1CommandParser.html#afc4da6302e4998b21a8b2339d7dc372a", null ],

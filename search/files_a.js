@@ -1,10 +1,8 @@
 var searchData=
 [
-  ['serverexception_2ecpp_0',['ServerException.cpp',['../ServerException_8cpp.html',1,'']]],
-  ['serverexception_2ehpp_1',['ServerException.hpp',['../ServerException_8hpp.html',1,'']]],
-  ['sgt_2ecpp_2',['Sgt.cpp',['../Sgt_8cpp.html',1,'']]],
-  ['socket_2ecpp_3',['Socket.cpp',['../Socket_8cpp.html',1,'']]],
-  ['socket_2ehpp_4',['Socket.hpp',['../Socket_8hpp.html',1,'']]],
-  ['sst_2ecpp_5',['Sst.cpp',['../Sst_8cpp.html',1,'']]],
-  ['strategy_2epy_6',['strategy.py',['../strategy_8py.html',1,'']]]
+  ['launcher_2epy_0',['launcher.py',['../launcher_8py.html',1,'']]],
+  ['logger_2ecpp_1',['Logger.cpp',['../Logger_8cpp.html',1,'']]],
+  ['logger_2ehpp_2',['Logger.hpp',['../Logger_8hpp.html',1,'']]],
+  ['logmessage_2ehpp_3',['LogMessage.hpp',['../LogMessage_8hpp.html',1,'']]],
+  ['look_2ecpp_4',['Look.cpp',['../Look_8cpp.html',1,'']]]
 ];

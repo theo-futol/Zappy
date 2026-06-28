@@ -1,0 +1,7 @@
+<map id="Zappy::SceneHudRenderer::modeButton" name="Zappy::SceneHudRenderer::modeButton">
+<area shape="rect" id="Node000001" title="Rectangle of the view&#45;mode button (second row, shown only while following)." alt="" coords="5,5,200,45"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1SceneHudRenderer.html#aabbda8931d9f8cb5c4b1cd093e0aca88" title="Bottom edge (in pixels) of the state panel for a selected entity." alt="" coords="248,5,443,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="200,23,234,23,234,28,200,28"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1SceneHudRenderer.html#a9cdc3947f174bc6ef25523c8fbaae8ec" title="Total height of the state panel for a selected entity (lines + buttons)." alt="" coords="491,5,685,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="443,23,477,23,477,28,443,28"/>
+</map>

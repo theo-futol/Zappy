@@ -1,0 +1,5 @@
+<map id="Zappy::TopDownCamera::zoomBy" name="Zappy::TopDownCamera::zoomBy">
+<area shape="rect" id="Node000001" title="Multiplies the zoom by a factor (clamped); used for mouse&#45;wheel zoom." alt="" coords="5,5,185,45"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1TopDownCamera.html#a776ae4406ad253cf9f91a361dca462d7" title="Sets the zoom level (clamped to [MinZoom, MaxZoom])." alt="" coords="233,5,413,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="186,23,220,23,220,28,186,28"/>
+</map>

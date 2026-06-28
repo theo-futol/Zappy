@@ -1,0 +1,18 @@
+<map id="Zappy::Map::at" name="Zappy::Map::at">
+<area shape="rect" id="Node000001" title="Access to a tile, with toroidal wrapping of the coordinates." alt="" coords="857,77,976,102"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1IncantationEventHandler.html#a11e59fea2c17b93ec039f3444353de44" title="Applies an incantation message to the state." alt="" coords="579,5,809,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="860,75,809,60,767,48,768,43,810,55,862,70"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1MapEventHandler.html#a56f0688289a92600f466106449b9a1cd" title="Fills one tile&#39;s ground resources from a bct message." alt="" coords="601,69,787,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="843,92,788,92,788,87,843,87"/>
+<area shape="rect" id="Node000005" href="$classZappy_1_1TrantorianEventHandler.html#a1c9310bcdc745bc3855a5cb2bd6874aa" title="Moves one resource unit between a player&#39;s inventory and its ground tile." alt="" coords="583,133,805,173"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="862,109,810,124,768,136,767,131,809,119,860,103"/>
+<area shape="rect" id="Node000004" href="$classZappy_1_1MapEventHandler.html#a20bc6868e641a76cddd09264dfe6a7bb" title="Applies a map message to the state." alt="" coords="310,69,497,109"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="587,92,497,92,497,87,587,87"/>
+<area shape="rect" id="Node000006" href="$classZappy_1_1TrantorianEventHandler.html#a86b125e49d7147bd2d6e86864ec89077" title="Handles a pdr message: the player drops one resource onto its tile." alt="" coords="276,133,531,173"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="569,156,531,156,531,151,569,151"/>
+<area shape="rect" id="Node000008" href="$classZappy_1_1TrantorianEventHandler.html#af321fc899d383100df04caf1fa462202" title="Handles a pgt message: the player picks one resource up from its tile." alt="" coords="285,197,521,237"/>
+<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="590,179,495,200,494,195,589,174"/>
+<area shape="rect" id="Node000007" href="$classZappy_1_1TrantorianEventHandler.html#ac0f18428ea3bebd13edcd95914ba5663" title="Applies a Trantorian message to the state." alt="" coords="5,165,228,205"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="263,172,229,176,228,170,262,166"/>
+<area shape="poly" id="edge8_Node000008_Node000007" title=" " alt="" coords="272,205,228,200,229,195,272,200"/>
+</map>

@@ -1,6 +1,29 @@
 var searchData=
 [
-  ['client_0',['client',['../classia_1_1strategy_1_1Strategy.html#a7760caef249d22d5de98f41cc9983cbc',1,'ia::strategy::Strategy']]],
-  ['client_5fdeath_5fre_1',['CLIENT_DEATH_RE',['../namespaceia_1_1launcher.html#a98f74fc4d0b24d265b96eaaec8402a6a',1,'ia::launcher']]],
-  ['current_5fcounts_2',['current_counts',['../classia_1_1observation_1_1Observation.html#a57e7745c0a2336aa4d4087630838a7d4',1,'ia::observation::Observation']]]
+  ['camera_0',['camera',['../structcgltf__node.html#adf91e4927561e716a5c68878e8f1aa7b',1,'cgltf_node']]],
+  ['cameras_1',['cameras',['../structcgltf__data.html#a9bf88c5f73b123346d45b0f1c8dc61e0',1,'cgltf_data']]],
+  ['cameras_5fcount_2',['cameras_count',['../structcgltf__data.html#a5bbef50650bdfc1bc7660903294f334e',1,'cgltf_data']]],
+  ['cardcolor_3',['CardColor',['../classZappy_1_1SceneHudRenderer.html#a001ef936b3bae417063e9ff3951afac8',1,'Zappy::SceneHudRenderer']]],
+  ['cardpadding_4',['CardPadding',['../classZappy_1_1SceneHudRenderer.html#a7115c4e1a94ceb929319c72283d51019',1,'Zappy::SceneHudRenderer']]],
+  ['channels_5',['channels',['../structcgltf__animation.html#a12698ca31adb6f56b761311beb1aacd5',1,'cgltf_animation::channels'],['../structZappy_1_1ModelAnimation.html#a035273f238735ad6c7d6fad4683f3926',1,'Zappy::ModelAnimation::channels']]],
+  ['channels_5fcount_6',['channels_count',['../structcgltf__animation.html#ab05f2820139f73793dc59e43290ad94a',1,'cgltf_animation']]],
+  ['children_7',['children',['../structcgltf__node.html#a8da4fa7d1b7e14714ebf10aea50225bb',1,'cgltf_node::children'],['../structZappy_1_1ModelNode.html#a55b94ce0143e23042c4f1ebc728ac2e3',1,'Zappy::ModelNode::children']]],
+  ['children_5fcount_8',['children_count',['../structcgltf__node.html#a2fe81d1306b66656eec5a16d101cfd01',1,'cgltf_node']]],
+  ['clearcoat_9',['clearcoat',['../structcgltf__material.html#adcf5d634614cc459e2abdd3d7caa4518',1,'cgltf_material']]],
+  ['clearcoat_5ffactor_10',['clearcoat_factor',['../structcgltf__clearcoat.html#ae154285148cd4a38584e3346cfe70f13',1,'cgltf_clearcoat']]],
+  ['clearcoat_5fnormal_5ftexture_11',['clearcoat_normal_texture',['../structcgltf__clearcoat.html#a9fddba83d6219ea903690e5cf582055e',1,'cgltf_clearcoat']]],
+  ['clearcoat_5froughness_5ffactor_12',['clearcoat_roughness_factor',['../structcgltf__clearcoat.html#a434751548cfc74644e783d2438616587',1,'cgltf_clearcoat']]],
+  ['clearcoat_5froughness_5ftexture_13',['clearcoat_roughness_texture',['../structcgltf__clearcoat.html#a87a1eb00b470dae54386a622f1ff2eac',1,'cgltf_clearcoat']]],
+  ['clearcoat_5ftexture_14',['clearcoat_texture',['../structcgltf__clearcoat.html#ae565abab5159e97c9abe61c48034f627',1,'cgltf_clearcoat']]],
+  ['client_15',['client',['../classia_1_1strategy_1_1Strategy.html#a7760caef249d22d5de98f41cc9983cbc',1,'ia::strategy::Strategy']]],
+  ['client_5fdeath_5fre_16',['CLIENT_DEATH_RE',['../namespaceia_1_1launcher.html#a98f74fc4d0b24d265b96eaaec8402a6a',1,'ia::launcher']]],
+  ['clip_17',['clip',['../structZappy_1_1SceneRenderer_1_1EntityAnim.html#a53f7df1b78f554a7e3f513d7f7dc8467',1,'Zappy::SceneRenderer::EntityAnim']]],
+  ['clipstart_18',['clipStart',['../structZappy_1_1SceneRenderer_1_1EntityAnim.html#ae3706aacf3380c0908bfeaae1e175f5a',1,'Zappy::SceneRenderer::EntityAnim']]],
+  ['color_19',['color',['../structcgltf__light.html#a6d7bb3dea1af20b7126b9e6000d95fd7',1,'cgltf_light::color'],['../structZappy_1_1LogMessage.html#a343fd97d61631c4e574049d8138b8fc6',1,'Zappy::LogMessage::color'],['../structZappy_1_1Appearance.html#a3036744af7830f246553375f69972d0f',1,'Zappy::Appearance::color']]],
+  ['component_5ftype_20',['component_type',['../structcgltf__accessor.html#aaf9bf21ffdb9d7fe43cdaf62cf323c9f',1,'cgltf_accessor']]],
+  ['components_21',['components',['../structZappy_1_1ModelAnimationChannel.html#a195d007c31a0a9da3b8f8fad50d810f6',1,'Zappy::ModelAnimationChannel']]],
+  ['copyright_22',['copyright',['../structcgltf__asset.html#a87c5d1e99c64d1fc85bf2a15c706c64a',1,'cgltf_asset']]],
+  ['count_23',['count',['../structcgltf__meshopt__compression.html#a28e882913576f04e767dca1cd44ea888',1,'cgltf_meshopt_compression::count'],['../structcgltf__accessor__sparse.html#af97e44fed170aa7a1b4e5b99eca31095',1,'cgltf_accessor_sparse::count'],['../structcgltf__accessor.html#a536676ddb557a34d7c34d50b38ba7878',1,'cgltf_accessor::count'],['../classZappy_1_1ResourceSet.html#a08e7e512e7cd7664163bacb143bb86a2',1,'Zappy::ResourceSet::Count']]],
+  ['current_5fcounts_24',['current_counts',['../classia_1_1observation_1_1Observation.html#a57e7745c0a2336aa4d4087630838a7d4',1,'ia::observation::Observation']]],
+  ['cyan_25',['Cyan',['../structZappy_1_1NamedColors.html#aa15c234532f0f686320715ff2812d7e5',1,'Zappy::NamedColors']]]
 ];

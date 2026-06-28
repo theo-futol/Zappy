@@ -1,0 +1,11 @@
+<map id="Zappy::GameState" name="Zappy::GameState">
+<area shape="rect" id="Node000001" title="Single source of truth for the GUI: map, entities, teams, time and winner." alt="" coords="200,308,339,813"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1Map.html" title="Toroidal grid of tiles." alt="" coords="5,5,96,231"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="99,210,195,404,190,406,94,212"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1ColorPalette.html" title="Hands out visually distinct colors, cycling through a fixed palette." alt="" coords="120,65,261,171"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="202,170,224,291,219,292,197,171"/>
+<area shape="rect" id="Node000004" href="$structZappy_1_1EntityKey.html" title="Identity of a map entity: an open string entity type plus its protocol number." alt="" coords="286,75,410,161"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="343,161,320,292,315,291,338,160"/>
+<area shape="rect" id="Node000005" href="$structZappy_1_1GridPosition.html" title="Integer coordinates on the toroidal game grid." alt="" coords="435,75,576,161"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="487,162,425,285,349,424,344,422,420,283,483,160"/>
+</map>

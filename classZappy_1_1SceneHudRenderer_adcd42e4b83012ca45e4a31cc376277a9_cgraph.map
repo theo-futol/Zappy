@@ -1,0 +1,34 @@
+<map id="Zappy::SceneHudRenderer::render" name="Zappy::SceneHudRenderer::render">
+<area shape="rect" id="Node000001" title="Draws the HUD for the current frame." alt="" coords="5,209,200,249"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1SceneHudRenderer.html#ae8c41776d452eff9054e96374286b202" title="Draws the bottom info bar (time unit, teams, winner, last log line)." alt="" coords="248,49,443,89"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="120,207,173,154,208,125,247,99,259,92,262,97,249,104,212,129,177,158,123,211"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1SceneHudRenderer.html#a19226650147fc93cf587786ea172b297" title="Draws the top&#45;left &quot;MENU&quot; button." alt="" coords="248,113,443,153"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="145,207,247,163,267,155,269,160,249,168,147,212"/>
+<area shape="rect" id="Node000005" href="$classZappy_1_1SceneHudRenderer.html#a5734e5ee95fdeb205c598b23cf1f555d" title="Draws the fixed state panel (below the time box) for the selected entity, if any." alt="" coords="248,177,443,217"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="200,214,234,209,235,215,201,219"/>
+<area shape="rect" id="Node000010" href="$classZappy_1_1SceneHudRenderer.html#a9e765d2501f4a7b277d41536f8613944" title="Draws the bottom&#45;left tile panel (resources of the selected tile), if any." alt="" coords="248,241,443,281"/>
+<area shape="poly" id="edge12_Node000001_Node000010" title=" " alt="" coords="201,240,235,244,234,249,200,245"/>
+<area shape="rect" id="Node000011" href="$classZappy_1_1SceneHudRenderer.html#a615af7b4fbc887a6efafcbab2de91ca9" title="Draws the top&#45;right time&#45;unit box (value and &#45;/+ buttons)." alt="" coords="248,305,443,345"/>
+<area shape="poly" id="edge13_Node000001_Node000011" title=" " alt="" coords="147,247,249,291,269,298,267,303,247,296,145,252"/>
+<area shape="rect" id="Node000015" href="$classZappy_1_1SceneHudRenderer.html#a4baeda35e6668c966b7a93c7b2bae003" title="Draws the centered end&#45;of&#45;game banner (big &quot;VICTOIRE&quot; + winning team), if any." alt="" coords="248,369,443,409"/>
+<area shape="poly" id="edge17_Node000001_Node000015" title=" " alt="" coords="123,248,177,301,212,330,249,355,262,361,259,366,247,360,208,334,173,305,120,251"/>
+<area shape="rect" id="Node000004" href="$classZappy_1_1SceneHudRenderer.html#ad6426b5d5b0c1d122e0ebf728ee36d75" title="Rectangle of the top&#45;left &quot;MENU&quot; button." alt="" coords="491,5,685,45"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="417,111,441,99,455,88,465,78,474,66,489,55,501,49,504,53,492,60,478,70,469,81,459,92,444,104,420,116"/>
+<area shape="rect" id="Node000006" href="$classZappy_1_1SceneHudRenderer.html#a0f038ffde50094d9ec0539bed6ad2a33" title="Rectangle of the follow/detach button (bottom row of the state panel)." alt="" coords="491,69,685,109"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="415,175,441,163,465,145,489,126,515,113,517,117,492,130,468,149,444,168,418,180"/>
+<area shape="rect" id="Node000007" href="$classZappy_1_1SceneHudRenderer.html#aabbda8931d9f8cb5c4b1cd093e0aca88" title="Bottom edge (in pixels) of the state panel for a selected entity." alt="" coords="733,156,928,196"/>
+<area shape="poly" id="edge10_Node000005_Node000007" title=" " alt="" coords="442,175,490,169,609,164,720,167,720,172,609,170,491,175,443,181"/>
+<area shape="rect" id="Node000008" href="$classZappy_1_1SceneHudRenderer.html#a9cdc3947f174bc6ef25523c8fbaae8ec" title="Total height of the state panel for a selected entity (lines + buttons)." alt="" coords="976,199,1171,239"/>
+<area shape="poly" id="edge11_Node000005_Node000008" title=" " alt="" coords="408,215,491,233,617,244,744,244,862,238,962,230,963,235,862,244,744,250,617,249,490,239,407,220"/>
+<area shape="rect" id="Node000009" href="$classZappy_1_1SceneHudRenderer.html#ac440bfa6c038572d80d543c4e663d85f" title="Rectangle of the view&#45;mode button (second row, shown only while following)." alt="" coords="491,184,685,224"/>
+<area shape="poly" id="edge8_Node000005_Node000009" title=" " alt="" coords="443,197,477,198,477,204,443,203"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="646,107,762,149,760,154,644,112"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="929,190,963,197,962,202,928,196"/>
+<area shape="poly" id="edge9_Node000009_Node000007" title=" " alt="" coords="685,190,719,186,720,191,686,195"/>
+<area shape="rect" id="Node000012" href="$classZappy_1_1SceneHudRenderer.html#a1f2d090699374940949fca349970466d" title="Rectangle of the camera&#45;mode (orbit/free&#45;fly) button, just below the time box." alt="" coords="491,299,685,339"/>
+<area shape="poly" id="edge14_Node000011_Node000012" title=" " alt="" coords="443,320,477,319,477,324,443,325"/>
+<area shape="rect" id="Node000013" href="$classZappy_1_1SceneHudRenderer.html#a43a1e51b3557e376bc25235fa7598c52" title="Rectangle of the &quot;decrease time unit&quot; button." alt="" coords="491,363,685,403"/>
+<area shape="poly" id="edge15_Node000011_Node000013" title=" " alt="" coords="431,343,490,357,489,362,430,348"/>
+<area shape="rect" id="Node000014" href="$classZappy_1_1SceneHudRenderer.html#acdd667e4bcb6a3c8ce624d378989f053" title="Rectangle of the &quot;increase time unit&quot; button." alt="" coords="491,427,685,467"/>
+<area shape="poly" id="edge16_Node000011_Node000014" title=" " alt="" coords="422,343,444,355,460,370,469,385,478,399,492,413,502,418,499,423,489,417,473,402,464,387,456,373,441,359,420,348"/>
+</map>

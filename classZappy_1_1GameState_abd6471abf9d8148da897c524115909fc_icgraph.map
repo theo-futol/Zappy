@@ -1,0 +1,33 @@
+<map id="Zappy::GameState::map" name="Zappy::GameState::map">
+<area shape="rect" id="Node000001" title="Mutable access to the map." alt="" coords="857,173,1037,198"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1IncantationEventHandler.html#a11e59fea2c17b93ec039f3444353de44" title="Applies an incantation message to the state." alt="" coords="579,5,809,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="925,164,876,111,843,83,808,60,782,48,785,43,811,55,847,79,879,107,929,160"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1MapEventHandler.html#a9912472f65d4509bbf34bbe8f8df9397" title="Resizes the map from a msz message." alt="" coords="601,69,787,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="909,169,808,124,773,112,775,107,810,119,911,164"/>
+<area shape="rect" id="Node000005" href="$classZappy_1_1MapEventHandler.html#a56f0688289a92600f466106449b9a1cd" title="Fills one tile&#39;s ground resources from a bct message." alt="" coords="601,133,787,173"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="843,175,787,168,788,162,844,170"/>
+<area shape="rect" id="Node000006" href="$classZappy_1_1RenderSystem.html#a41599751520d5cc014f9843c47e1b0a2" title="Selects the entity standing on a tile (preferring players), or clears the selection." alt="" coords="611,197,777,237"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="844,201,777,210,776,204,843,196"/>
+<area shape="rect" id="Node000010" href="$classZappy_1_1TrantorianEventHandler.html#a1c9310bcdc745bc3855a5cb2bd6874aa" title="Moves one resource unit between a player&#39;s inventory and its ground tile." alt="" coords="583,325,805,365"/>
+<area shape="poly" id="edge11_Node000001_Node000010" title=" " alt="" coords="924,210,874,253,811,298,751,328,749,323,808,294,871,249,921,206"/>
+<area shape="rect" id="Node000014" href="$classZappy_1_1RenderSystem.html#adfbf14cc26cf7f6db0d8f363d457fd04" title="Updates the hovered tile in the state from the current cursor position (3D mode)." alt="" coords="321,261,486,301"/>
+<area shape="poly" id="edge16_Node000001_Node000014" title=" " alt="" coords="915,207,866,231,810,252,725,269,638,280,486,286,486,281,638,275,724,264,809,247,864,226,912,202"/>
+<area shape="rect" id="Node000004" href="$classZappy_1_1MapEventHandler.html#a20bc6868e641a76cddd09264dfe6a7bb" title="Applies a map message to the state." alt="" coords="310,69,497,109"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="587,92,497,92,497,87,587,87"/>
+<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="589,133,494,112,495,107,590,128"/>
+<area shape="rect" id="Node000007" href="$classZappy_1_1RenderSystem.html#ac94c2b0bb1b34c74fbc18359405968fa" title="Picks the entity under a 2D (top&#45;down) click and updates the selection." alt="" coords="321,133,486,173"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="598,199,486,174,487,169,599,194"/>
+<area shape="rect" id="Node000009" href="$classZappy_1_1RenderSystem.html#a1c7eed6821b73667148ba9b9f2e3b547" title="Picks the entity under a 3D click by casting a ray onto the ground." alt="" coords="321,197,486,237"/>
+<area shape="poly" id="edge9_Node000006_Node000009" title=" " alt="" coords="598,220,486,220,486,215,598,215"/>
+<area shape="rect" id="Node000008" href="$classZappy_1_1RenderSystem.html#a27989df681554438f03fcaab6338cac3" title="Polls input and updates the camera and selection." alt="" coords="34,197,199,237"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="308,177,200,202,199,196,307,172"/>
+<area shape="poly" id="edge10_Node000009_Node000008" title=" " alt="" coords="307,220,199,220,199,215,307,215"/>
+<area shape="rect" id="Node000011" href="$classZappy_1_1TrantorianEventHandler.html#a86b125e49d7147bd2d6e86864ec89077" title="Handles a pdr message: the player drops one resource onto its tile." alt="" coords="276,389,531,429"/>
+<area shape="poly" id="edge12_Node000010_Node000011" title=" " alt="" coords="590,371,495,392,494,387,589,366"/>
+<area shape="rect" id="Node000013" href="$classZappy_1_1TrantorianEventHandler.html#af321fc899d383100df04caf1fa462202" title="Handles a pgt message: the player picks one resource up from its tile." alt="" coords="285,325,521,365"/>
+<area shape="poly" id="edge14_Node000010_Node000013" title=" " alt="" coords="569,348,521,348,521,343,569,343"/>
+<area shape="rect" id="Node000012" href="$classZappy_1_1TrantorianEventHandler.html#ac0f18428ea3bebd13edcd95914ba5663" title="Applies a Trantorian message to the state." alt="" coords="5,357,228,397"/>
+<area shape="poly" id="edge13_Node000011_Node000012" title=" " alt="" coords="262,396,228,392,229,387,263,391"/>
+<area shape="poly" id="edge15_Node000013_Node000012" title=" " alt="" coords="272,363,229,368,228,362,272,357"/>
+<area shape="poly" id="edge17_Node000014_Node000008" title=" " alt="" coords="307,263,199,238,200,233,308,257"/>
+</map>

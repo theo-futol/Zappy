@@ -1,0 +1,5 @@
+<map id="Zappy::MainMenu::draw" name="Zappy::MainMenu::draw">
+<area shape="rect" id="Node000001" title="Draws one frame of the menu." alt="" coords="220,5,399,31"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1MainMenu.html#a771be13e8b84eab86752103cedef485b" title="Runs the menu loop until the user validates or quits." alt="" coords="5,5,172,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="206,21,172,21,172,15,206,15"/>
+</map>

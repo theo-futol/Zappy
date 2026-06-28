@@ -1,0 +1,11 @@
+<map id="Zappy::SceneHudRenderer::modeButtonHit" name="Zappy::SceneHudRenderer::modeButtonHit">
+<area shape="rect" id="Node000001" title="Whether a click hit the view&#45;mode (3rd&#45;person/POV) button of the state panel." alt="" coords="5,37,200,77"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1SceneHudRenderer.html#a21d716c8d8a1a4582aebba910520867e" title="Whether a screen point is inside a button." alt="" coords="248,5,443,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="200,42,234,37,235,43,201,47"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1SceneHudRenderer.html#ac440bfa6c038572d80d543c4e663d85f" title="Rectangle of the view&#45;mode button (second row, shown only while following)." alt="" coords="248,69,443,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="201,68,235,72,234,77,200,73"/>
+<area shape="rect" id="Node000004" href="$classZappy_1_1SceneHudRenderer.html#aabbda8931d9f8cb5c4b1cd093e0aca88" title="Bottom edge (in pixels) of the state panel for a selected entity." alt="" coords="491,69,685,109"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="443,87,477,87,477,92,443,92"/>
+<area shape="rect" id="Node000005" href="$classZappy_1_1SceneHudRenderer.html#a9cdc3947f174bc6ef25523c8fbaae8ec" title="Total height of the state panel for a selected entity (lines + buttons)." alt="" coords="733,69,928,109"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="686,87,719,87,719,92,686,92"/>
+</map>

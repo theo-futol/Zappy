@@ -1,0 +1,14 @@
+<map id="Zappy::TrantorianEventHandler::handleTrantorianLevelUpdated" name="Zappy::TrantorianEventHandler::handleTrantorianLevelUpdated">
+<area shape="rect" id="Node000001" title="Updates a player&#39;s level from a plv message." alt="" coords="5,92,235,132"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1AEventHandler.html#a3ba38d2410b06460d0d23411b9dc7210" title="Parses an entity number token of the form &quot;#n&quot;." alt="" coords="311,5,477,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="183,89,316,47,317,52,185,94"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1AEventHandler.html#a753a24b4a29ada4f0f7134a386e4cd99" title="Parses an integer token, tolerant of malformed input." alt="" coords="575,35,742,75"/>
+<area shape="poly" id="edge6_Node000001_Node000003" title=" " alt="" coords="235,97,561,62,562,68,235,102"/>
+<area shape="rect" id="Node000004" href="$classZappy_1_1TrantorianEventHandler.html#a84f43a738e2f4c06375b5e49b8e549c6" title="Looks up a player and narrows it to its concrete Trantorian type." alt="" coords="283,120,505,160"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="235,121,270,125,269,130,235,126"/>
+<area shape="rect" id="Node000006" href="$classZappy_1_1Trantorian.html#af6fd463945d4c1c46d788388217a7669" title="Sets the player level." alt="" coords="323,184,465,224"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="173,130,284,169,310,178,309,183,282,175,171,135"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="478,32,562,41,561,47,477,37"/>
+<area shape="rect" id="Node000005" href="$classZappy_1_1GameState.html#a523df5ec4dd7ee8bfd3f930c89962bd4" title="Looks up an entity by key." alt="" coords="553,127,764,153"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="506,137,539,137,539,143,506,143"/>
+</map>

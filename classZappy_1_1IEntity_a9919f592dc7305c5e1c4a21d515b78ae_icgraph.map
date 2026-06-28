@@ -1,0 +1,7 @@
+<map id="Zappy::IEntity::position" name="Zappy::IEntity::position">
+<area shape="rect" id="Node000001" title="Current grid position." alt="" coords="496,13,667,38"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1GameEventHandler.html#a15f701f48abb53338ca7c89973820fb4" title="Logs a player broadcast (pbc) message." alt="" coords="251,5,448,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="482,28,448,28,448,23,482,23"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1GameEventHandler.html#a5cbeec25606987f50cfaf287df78d42c" title="Applies a global/server message to the state." alt="" coords="5,5,203,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="237,28,203,28,203,23,237,23"/>
+</map>

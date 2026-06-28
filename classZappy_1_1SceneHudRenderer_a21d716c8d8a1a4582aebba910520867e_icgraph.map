@@ -1,0 +1,13 @@
+<map id="Zappy::SceneHudRenderer::contains" name="Zappy::SceneHudRenderer::contains">
+<area shape="rect" id="Node000001" title="Whether a screen point is inside a button." alt="" coords="248,133,443,173"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1SceneHudRenderer.html#aa0056201ffb32224583b132230282cc9" title="Whether a click hit the camera&#45;mode (orbit/free&#45;fly) button." alt="" coords="5,5,200,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="306,127,256,93,199,60,171,48,173,43,201,55,259,88,309,123"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1SceneHudRenderer.html#aff991d17a91b1b2e0e6fc9045fdbf533" title="Whether a click hit the follow/detach button of the state panel." alt="" coords="5,69,200,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="255,132,178,112,180,107,256,127"/>
+<area shape="rect" id="Node000004" href="$classZappy_1_1SceneHudRenderer.html#a0ee47964ac5dc4a7bd56e0cb548087c6" title="Routes a click to the time&#45;unit buttons and returns the command to send, if any." alt="" coords="5,133,200,173"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="234,156,200,156,200,151,234,151"/>
+<area shape="rect" id="Node000005" href="$classZappy_1_1SceneHudRenderer.html#a934bf0df0dd0e0666b2a303d7a6ffaa2" title="Whether a click hit the top&#45;left &quot;MENU&quot; button (return to the main menu)." alt="" coords="5,197,200,237"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="256,179,180,200,178,195,255,174"/>
+<area shape="rect" id="Node000006" href="$classZappy_1_1SceneHudRenderer.html#a567cb802c4617d51e3a48e06329e9069" title="Whether a click hit the view&#45;mode (3rd&#45;person/POV) button of the state panel." alt="" coords="5,261,200,301"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="309,184,259,219,201,252,173,264,171,259,199,247,256,214,306,180"/>
+</map>

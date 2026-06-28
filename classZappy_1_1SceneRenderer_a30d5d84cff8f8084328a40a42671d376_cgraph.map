@@ -1,0 +1,35 @@
+<map id="Zappy::SceneRenderer::render" name="Zappy::SceneRenderer::render">
+<area shape="rect" id="Node000001" title="Draws the ground and the entities for the frame." alt="" coords="5,353,173,393"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1Map.html#a0732e44be15802cad0110db2b08ddc03" title="Read&#45;only access to a tile, with toroidal wrapping." alt="" coords="289,5,407,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="90,352,98,291,119,207,136,161,158,117,185,76,220,41,246,26,275,18,276,23,248,31,223,45,190,80,162,120,141,163,124,208,103,292,95,353"/>
+<area shape="rect" id="Node000004" href="$classZappy_1_1SceneRenderer.html#a86974f3f09ee60f4592e9d0ae6ce12ea" title="Spawns rings for new broadcasts and draws the active expanding ripples." alt="" coords="264,55,432,95"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="93,352,106,303,131,239,168,171,192,139,220,112,250,94,252,98,223,116,196,143,173,174,136,241,111,305,98,353"/>
+<area shape="rect" id="Node000005" href="$classZappy_1_1SceneRenderer.html#ac4e378d37572c932d919e5baaf83c0e7" title="Draws the end&#45;of&#45;game view: the winning team&#39;s model, large and slowly spinning." alt="" coords="264,170,432,210"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="102,351,149,289,182,256,220,226,250,211,252,216,223,231,186,260,153,293,106,354"/>
+<area shape="rect" id="Node000006" href="$classZappy_1_1AssetCache.html#aa9d99cefc890898a5382d1dc02ece187" title="Looks up a shader by id." alt="" coords="523,141,677,181"/>
+<area shape="poly" id="edge13_Node000001_Node000006" title=" " alt="" coords="93,352,107,308,132,253,169,198,193,175,220,156,256,139,294,128,333,122,372,120,449,124,516,135,515,140,448,129,372,125,333,127,295,133,258,144,223,160,196,179,173,202,137,256,112,310,98,353"/>
+<area shape="rect" id="Node000007" href="$classZappy_1_1Shader.html#a0791be8cb08b6dedfee90e4d3566cd86" title="Binds the program for subsequent draw calls." alt="" coords="527,220,673,245"/>
+<area shape="poly" id="edge15_Node000001_Node000007" title=" " alt="" coords="108,350,156,309,187,288,220,272,295,249,373,235,447,228,513,227,513,232,448,234,373,240,296,254,222,276,190,293,160,313,112,354"/>
+<area shape="rect" id="Node000008" href="$classZappy_1_1GameState.html#a6a5f7397d7977547b6dfbea9e6d4898f" title="Whether a tile is currently hovered." alt="" coords="221,285,475,311"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="138,350,221,321,259,311,261,316,222,326,139,355"/>
+<area shape="rect" id="Node000009" href="$classZappy_1_1Map.html#a7085133e48e18b0e3b653dfa09d9bb1d" title="Map height." alt="" coords="275,335,421,360"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="173,362,261,353,261,358,174,367"/>
+<area shape="rect" id="Node000010" href="$classZappy_1_1GameState.html#a194abf7e7013efe5ee88239a7bb1cf16" title="Currently hovered tile (valid only when hasHoveredTile())." alt="" coords="234,384,462,409"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="174,378,221,382,220,387,173,383"/>
+<area shape="rect" id="Node000011" href="$classZappy_1_1Tile.html#aeff4875dd8f9f133f515515681651177" title="Whether an incantation is currently happening on this tile." alt="" coords="267,433,429,459"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="139,390,222,419,256,428,255,433,221,425,137,395"/>
+<area shape="rect" id="Node000012" href="$classZappy_1_1GameState.html#aa9d3554ce327fc5a69b5a358d48fbe0b" title="Read&#45;only access to the map." alt="" coords="258,483,438,508"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="113,391,160,431,190,452,222,469,245,477,243,482,220,474,188,456,157,435,109,395"/>
+<area shape="rect" id="Node000013" href="$classZappy_1_1GameState.html#a183322669da6d2f09e3ec2590039330e" title="Currently selected entity, resolved live (null if none or it is gone)." alt="" coords="245,533,451,573"/>
+<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="105,391,151,455,185,489,223,518,234,525,232,529,220,523,181,493,147,458,101,394"/>
+<area shape="rect" id="Node000014" href="$classZappy_1_1IProjection.html#afea26844f7e31cca25f592b6c277de6c" title="Maps a grid cell to its world&#45;space surface point." alt="" coords="279,597,417,637"/>
+<area shape="poly" id="edge14_Node000001_Node000014" title=" " alt="" coords="100,392,116,433,142,485,177,538,199,562,223,582,243,594,266,603,264,608,241,599,220,587,195,566,173,541,137,487,111,435,95,394"/>
+<area shape="rect" id="Node000015" href="$classZappy_1_1Map.html#ae3b126c54208662331ad1d17686e6d21" title="Map width." alt="" coords="277,661,419,687"/>
+<area shape="poly" id="edge16_Node000001_Node000015" title=" " alt="" coords="96,392,108,444,131,514,148,551,169,586,194,619,223,647,242,658,264,666,262,671,240,663,220,651,190,622,164,589,143,553,126,516,103,446,91,393"/>
+<area shape="rect" id="Node000016" href="$classZappy_1_1GameState.html#ae4c2902ede9903e0add536d3fcd9dfb1" title="Winning team, empty while the game is running." alt="" coords="251,711,445,736"/>
+<area shape="poly" id="edge17_Node000001_Node000016" title=" " alt="" coords="95,393,104,453,124,537,141,581,163,624,190,663,223,697,239,708,236,712,220,701,186,667,158,627,136,583,119,538,98,454,90,393"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1Map.html#a0d20484476cb0e8da18f185e9ac7f8a1" title="Computes the row&#45;major storage index for wrapped coordinates." alt="" coords="529,5,671,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="408,15,515,15,515,21,408,21"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="432,178,509,169,509,174,432,183"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="432,202,513,215,512,221,432,207"/>
+</map>

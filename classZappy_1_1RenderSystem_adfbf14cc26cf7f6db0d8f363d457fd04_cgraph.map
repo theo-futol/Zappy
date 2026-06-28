@@ -1,0 +1,19 @@
+<map id="Zappy::RenderSystem::updateHover" name="Zappy::RenderSystem::updateHover">
+<area shape="rect" id="Node000001" title="Updates the hovered tile in the state from the current cursor position (3D mode)." alt="" coords="5,135,171,175"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1GameState.html#ade1e8907ab0a808d60c1eb6d60c67471" title="Clears the hovered tile (cursor off the map)." alt="" coords="219,5,481,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="107,133,154,90,185,67,218,48,259,32,261,37,220,52,188,71,158,94,110,137"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1RenderSystem.html#ad7e374d22bd0b05889f04633014d355d" title="Finds the tile under a screen point by projecting every tile and taking the nearest one." alt="" coords="267,106,433,146"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="170,143,253,134,254,139,171,149"/>
+<area shape="rect" id="Node000004" href="$classZappy_1_1Map.html#a7085133e48e18b0e3b653dfa09d9bb1d" title="Map height." alt="" coords="546,60,693,85"/>
+<area shape="poly" id="edge6_Node000001_Node000004" title=" " alt="" coords="121,133,166,110,218,91,300,76,384,67,463,64,532,65,532,70,463,70,384,73,301,81,219,97,168,115,124,138"/>
+<area shape="rect" id="Node000006" href="$classZappy_1_1Map.html#ae3b126c54208662331ad1d17686e6d21" title="Map width." alt="" coords="548,167,691,192"/>
+<area shape="poly" id="edge9_Node000001_Node000006" title=" " alt="" coords="171,156,534,173,534,178,171,162"/>
+<area shape="rect" id="Node000007" href="$classZappy_1_1GameState.html#abd6471abf9d8148da897c524115909fc" title="Mutable access to the map." alt="" coords="260,221,440,247"/>
+<area shape="poly" id="edge7_Node000001_Node000007" title=" " alt="" coords="142,173,219,199,279,216,278,221,218,205,140,178"/>
+<area shape="rect" id="Node000008" href="$classZappy_1_1GameState.html#a6ceefa790e410d2cc40d23182ef8601f" title="Sets the tile the cursor currently hovers (for highlighting)." alt="" coords="225,271,475,296"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="110,174,157,217,187,239,220,257,238,264,236,269,218,262,184,243,154,221,106,178"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="432,107,541,85,542,91,433,112"/>
+<area shape="rect" id="Node000005" href="$classZappy_1_1GameState.html#aa9d3554ce327fc5a69b5a358d48fbe0b" title="Read&#45;only access to the map." alt="" coords="529,113,709,139"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="433,123,515,123,515,129,433,129"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="433,140,542,161,541,167,432,145"/>
+</map>

@@ -1,0 +1,32 @@
+<map id="cgltf_diffuse_transmission" name="cgltf_diffuse_transmission">
+<area shape="rect" id="Node000001" title=" " alt="" coords="751,1555,937,1669"/>
+<area shape="rect" id="Node000002" href="$structcgltf__texture__view.html" title=" " alt="" coords="777,1343,911,1448"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="847,1448,847,1538,841,1538,841,1448"/>
+<area shape="rect" id="Node000003" href="$structcgltf__texture.html" title=" " alt="" coords="641,1145,783,1270"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="758,1269,800,1327,795,1330,754,1272"/>
+<area shape="rect" id="Node000004" href="$structcgltf__image.html" title=" " alt="" coords="411,917,554,1043"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="545,1041,614,1109,637,1131,633,1135,610,1113,542,1045"/>
+<area shape="rect" id="Node000005" href="$structcgltf__buffer__view.html" title=" " alt="" coords="265,649,471,855"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="422,854,446,902,442,904,417,856"/>
+<area shape="rect" id="Node000006" href="$structcgltf__buffer.html" title=" " alt="" coords="258,173,406,339"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="279,340,264,370,253,402,241,453,236,494,240,535,253,586,275,634,270,636,248,588,234,536,231,494,236,452,248,401,259,368,274,338"/>
+<area shape="rect" id="Node000009" href="$structcgltf__meshopt__compression.html" title=" " alt="" coords="316,401,513,587"/>
+<area shape="poly" id="edge9_Node000009_Node000006" title=" " alt="" coords="363,338,380,385,375,386,358,340"/>
+<area shape="rect" id="Node000007" href="$structcgltf__extras.html" title=" " alt="" coords="126,5,229,111"/>
+<area shape="poly" id="edge17_Node000003_Node000007" title=" " alt="" coords="127,91,87,120,49,158,32,180,19,203,11,228,8,255,8,981,13,1004,26,1025,48,1045,77,1064,152,1098,245,1126,346,1150,448,1169,625,1194,624,1199,447,1174,345,1155,243,1132,150,1103,74,1068,45,1049,22,1028,8,1006,3,982,3,255,6,227,15,201,28,177,45,155,84,116,124,87"/>
+<area shape="poly" id="edge12_Node000004_Node000007" title=" " alt="" coords="139,112,120,143,102,178,90,216,85,255,85,753,88,779,94,802,117,843,152,877,196,905,245,927,297,944,396,966,395,971,296,949,244,932,193,909,149,881,113,846,89,804,82,779,80,753,80,255,85,215,98,176,115,140,134,109"/>
+<area shape="poly" id="edge10_Node000005_Node000007" title=" " alt="" coords="176,111,173,203,177,323,184,389,195,456,211,522,232,586,258,635,254,637,227,588,205,524,190,457,179,390,172,324,168,203,171,111"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="220,110,259,159,255,162,216,113"/>
+<area shape="rect" id="Node000010" href="$structcgltf__sampler.html" title=" " alt="" coords="657,173,799,339"/>
+<area shape="poly" id="edge15_Node000010_Node000007" title=" " alt="" coords="230,65,354,90,428,109,500,132,574,164,643,201,641,205,572,169,498,137,426,114,353,95,229,70"/>
+<area shape="rect" id="Node000008" href="$structcgltf__extension.html" title=" " alt="" coords="576,15,691,101"/>
+<area shape="poly" id="edge18_Node000003_Node000008" title=" " alt="" coords="692,81,742,109,792,147,813,170,830,196,841,224,845,254,845,982,840,1023,826,1063,806,1100,784,1133,779,1130,802,1097,821,1061,835,1022,840,981,840,255,836,225,825,198,809,173,788,151,739,113,690,86"/>
+<area shape="poly" id="edge13_Node000004_Node000008" title=" " alt="" coords="638,101,639,236,629,435,618,548,600,665,574,782,540,894,536,903,531,901,535,892,569,781,594,664,612,548,624,435,634,236,632,101"/>
+<area shape="poly" id="edge11_Node000005_Node000008" title=" " alt="" coords="577,91,552,111,533,136,518,167,510,194,507,219,508,244,513,296,516,363,516,377,522,388,528,400,545,464,557,516,558,541,556,567,548,595,534,627,513,659,486,686,482,682,509,655,530,624,543,593,550,566,553,541,552,516,540,465,523,402,517,391,511,378,511,363,508,297,502,244,502,219,505,193,513,165,528,133,549,107,574,87"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="576,70,536,79,492,92,448,111,408,137,384,162,380,158,405,133,446,107,490,87,535,74,575,65"/>
+<area shape="poly" id="edge16_Node000010_Node000008" title=" " alt="" coords="656,100,684,157,679,160,651,102"/>
+<area shape="poly" id="edge8_Node000005_Node000009" title=" " alt="" coords="378,588,372,611,369,633,363,632,367,610,373,586"/>
+<area shape="poly" id="edge14_Node000003_Node000010" title=" " alt="" coords="735,339,739,493,739,981,735,1057,727,1129,722,1128,730,1057,733,981,733,493,729,339"/>
+<area shape="rect" id="Node000011" href="$structcgltf__texture__transform.html" title=" " alt="" coords="808,1135,976,1280"/>
+<area shape="poly" id="edge19_Node000002_Node000011" title=" " alt="" coords="876,1281,864,1327,859,1326,871,1280"/>
+</map>

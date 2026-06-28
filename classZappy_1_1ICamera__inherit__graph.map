@@ -1,0 +1,9 @@
+<map id="Zappy::ICamera" name="Zappy::ICamera">
+<area shape="rect" id="Node000001" title="Contract for a camera providing view and projection matrices." alt="" coords="185,5,303,151"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1FreeCamera.html" title="Free&#45;fly perspective camera: move with the keyboard, look with the mouse." alt="" coords="5,279,147,724"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="181,164,161,200,129,280,125,278,156,198,177,161"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1OrbitCamera.html" title="Perspective camera that orbits a target point (the 3D&#45;mode camera)." alt="" coords="171,199,317,804"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="247,164,247,198,241,198,241,164"/>
+<area shape="rect" id="Node000004" href="$classZappy_1_1TopDownCamera.html" title="Orthographic top&#45;down camera (the v1 camera)." alt="" coords="341,279,513,724"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="310,161,332,197,366,277,361,279,327,200,306,164"/>
+</map>

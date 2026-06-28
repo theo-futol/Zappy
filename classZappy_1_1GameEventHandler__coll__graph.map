@@ -1,0 +1,9 @@
+<map id="Zappy::GameEventHandler" name="Zappy::GameEventHandler">
+<area shape="rect" id="Node000001" title="Handles global/server messages: sgt, sst, seg, smg, suc, sbp and broadcast (pbc)." alt="" coords="79,363,268,528"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1AEventHandler.html" title="Abstract base for protocol handlers; factors the shared parsing helpers." alt="" coords="18,160,177,285"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="126,298,148,362,143,363,121,300"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1ICommandHandler.html" title="Contract for translating one or more protocol messages into model mutations." alt="" coords="5,5,189,111"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="100,124,100,160,95,160,95,124"/>
+<area shape="rect" id="Node000004" href="$structZappy_1_1Color.html" title="RGBA color with normalized [0, 1] components." alt="" coords="201,160,297,285"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="230,287,209,348,204,346,225,285"/>
+</map>

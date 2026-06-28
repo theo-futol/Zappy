@@ -1,0 +1,9 @@
+<map id="ia.strategy.Strategy._ready_for_incantation" name="ia.strategy.Strategy._ready_for_incantation">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,55,176,95"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1IEntity.html#aa4bf5ab5fd6ae0bf0d5db8090abc7bd2" title="Player elevation level, or 0 for entities without a level (e.g." alt="" coords="225,5,375,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="164,53,239,32,240,37,165,58"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1AMapEntity.html#a272f44b95b6aa772f5a80999b1546b09" title="Elevation level; 0 by default (entities without a level)." alt="" coords="224,55,376,95"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="176,73,210,73,210,78,176,78"/>
+<area shape="rect" id="Node000004" href="$classZappy_1_1Trantorian.html#a3712c927c606be292d7338a81ff90868" title="Player level." alt="" coords="229,119,371,159"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="158,93,222,113,220,118,156,98"/>
+</map>

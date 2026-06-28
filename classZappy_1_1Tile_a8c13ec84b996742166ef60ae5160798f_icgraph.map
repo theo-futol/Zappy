@@ -1,0 +1,5 @@
+<map id="Zappy::Tile::setIncanting" name="Zappy::Tile::setIncanting">
+<area shape="rect" id="Node000001" title="Sets the incantation state of the tile." alt="" coords="284,13,467,38"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1IncantationEventHandler.html#a11e59fea2c17b93ec039f3444353de44" title="Applies an incantation message to the state." alt="" coords="5,5,236,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="270,28,236,28,236,23,270,23"/>
+</map>

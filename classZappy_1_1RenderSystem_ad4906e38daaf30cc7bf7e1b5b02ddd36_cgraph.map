@@ -1,0 +1,32 @@
+<map id="Zappy::RenderSystem::init" name="Zappy::RenderSystem::init">
+<area shape="rect" id="Node000001" title="Creates the window and context and loads the renderers and assets." alt="" coords="5,216,171,256"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1GraphicsContext.html#ae2063aaa1f125292a437dd0528dd71bf" title="Enables the default render state (depth test, blending)." alt="" coords="219,120,397,160"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="126,213,218,170,235,163,237,167,220,174,128,218"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1RenderSystem.html#a182ab57f97e213de1f29ac31e2aab7d3" title="Loads the 3D pipeline: orbit camera (the scene stays empty until the 3D renderers land)." alt="" coords="225,248,391,288"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="171,245,212,251,211,257,170,251"/>
+<area shape="rect" id="Node000011" href="$classZappy_1_1RenderSystem.html#a3ed3055c99d4acbde0ac2748ae7acaae" title="Loads the 2D pipeline: top&#45;down camera, planar projection, assets, renderers, HUD." alt="" coords="225,184,391,224"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="170,221,211,215,212,221,171,227"/>
+<area shape="rect" id="Node000014" href="$classZappy_1_1GraphicsContext.html#a7c912501255e076dd44e71d39bf790da" title="Sets the OpenGL viewport." alt="" coords="219,312,397,352"/>
+<area shape="poly" id="edge16_Node000001_Node000014" title=" " alt="" coords="128,254,220,298,237,305,235,309,218,302,126,259"/>
+<area shape="rect" id="Node000004" href="$classZappy_1_1ModelLoader.html#a0d00ccfa49840252eda28e5f5bc9edfc" title="Parses a glTF/glb file and decodes it into a Model." alt="" coords="478,504,633,544"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="385,286,399,298,416,323,424,348,425,373,423,397,422,421,423,444,431,467,447,490,467,505,463,509,443,494,426,469,418,445,416,421,418,397,420,373,418,349,411,326,395,302,381,290"/>
+<area shape="rect" id="Node000005" href="$classZappy_1_1Primitives.html#a607be44f04c3b44adaf13b9dc767125d" title="Unit quad centered on the origin, lying on the XY plane." alt="" coords="467,134,643,159"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="376,246,396,234,411,218,419,202,427,186,444,170,457,162,460,167,447,174,431,189,423,205,415,221,399,238,379,250"/>
+<area shape="rect" id="Node000006" href="$classZappy_1_1TorusProjection.html#ae5daa936d1e1b3c253c75408ec2968e0" title="Sets the torus radii (must match the rendered torus asset)." alt="" coords="471,312,640,352"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="387,285,465,306,464,311,385,291"/>
+<area shape="rect" id="Node000007" href="$classZappy_1_1CubemapTexture_1_1CubemapException.html#af996951b79ff8488bcdeffa095d97320" title=" " alt="" coords="457,376,653,416"/>
+<area shape="poly" id="edge6_Node000003_Node000007" title=" " alt="" coords="379,286,399,298,415,315,423,331,432,347,447,362,456,368,453,372,444,366,427,350,419,334,411,318,396,302,376,290"/>
+<area shape="rect" id="Node000008" href="$classZappy_1_1ModelLoader_1_1ModelLoaderException.html#aa553e056a1b4cb68dc535297650a584e" title=" " alt="" coords="446,440,665,480"/>
+<area shape="poly" id="edge7_Node000003_Node000008" title=" " alt="" coords="383,286,399,298,412,315,419,332,423,364,428,396,435,411,447,426,452,430,448,434,443,430,430,414,423,397,418,365,414,333,408,317,395,302,380,290"/>
+<area shape="rect" id="Node000009" href="$classZappy_1_1TextRenderer_1_1TextRendererException.html#acb9aa7a61d21681157d606f528f4b616" title=" " alt="" coords="445,184,665,224"/>
+<area shape="poly" id="edge8_Node000003_Node000009" title=" " alt="" coords="385,245,464,225,465,230,387,251"/>
+<area shape="rect" id="Node000010" href="$classZappy_1_1AssetCache_1_1AssetCacheException.html#aca83e33b37d264371dacbb9030372878" title=" " alt="" coords="454,248,657,288"/>
+<area shape="poly" id="edge9_Node000003_Node000010" title=" " alt="" coords="391,265,440,265,440,271,391,271"/>
+<area shape="poly" id="edge12_Node000011_Node000005" title=" " alt="" coords="390,182,445,169,485,160,487,165,446,175,392,187"/>
+<area shape="poly" id="edge14_Node000011_Node000009" title=" " alt="" coords="391,201,431,201,431,207,391,207"/>
+<area shape="poly" id="edge15_Node000011_Node000010" title=" " alt="" coords="387,221,465,242,464,247,385,227"/>
+<area shape="rect" id="Node000012" href="$classZappy_1_1HudRenderer.html#aca1a0d7418d34411e1412d277a238235" title="Width of the HUD panel in pixels for a given window width." alt="" coords="478,69,633,109"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="374,181,396,170,410,157,419,145,428,132,444,119,464,109,466,114,447,124,432,136,423,148,414,161,399,174,377,186"/>
+<area shape="rect" id="Node000013" href="$classZappy_1_1Primitives.html#ae6a2802d899912b1ac5dd7a893aad368" title="Triangle pointing toward +Y, centered on the origin." alt="" coords="483,5,627,45"/>
+<area shape="poly" id="edge13_Node000011_Node000013" title=" " alt="" coords="379,182,396,170,407,156,413,142,418,114,424,85,431,70,444,55,469,39,472,44,447,59,435,73,429,86,424,115,418,144,411,159,399,174,383,186"/>
+</map>

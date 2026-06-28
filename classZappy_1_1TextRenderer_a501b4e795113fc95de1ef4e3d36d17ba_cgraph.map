@@ -1,0 +1,7 @@
+<map id="Zappy::TextRenderer::loadFont" name="Zappy::TextRenderer::loadFont">
+<area shape="rect" id="Node000001" title="Loads a font face, rasterizes its glyph atlas and builds the text shader." alt="" coords="5,37,161,77"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1TextRenderer.html#a37fc2c6668ba0e5d5ba12aa0d38f2e22" title="Rasterizes one character and caches its texture + metrics." alt="" coords="247,5,403,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="161,44,233,35,234,40,162,50"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1Shader_1_1ShaderException.html#a3049a280d7ea0ac2fdc39f873e91d84d" title=" " alt="" coords="209,69,441,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="162,65,196,70,195,75,161,70"/>
+</map>

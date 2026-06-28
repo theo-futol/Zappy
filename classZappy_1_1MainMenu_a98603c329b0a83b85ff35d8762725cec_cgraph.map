@@ -1,0 +1,19 @@
+<map id="Zappy::MainMenu::modeTorusButton" name="Zappy::MainMenu::modeTorusButton">
+<area shape="rect" id="Node000001" title="Rectangle of the &quot;3D torus&quot; mode button." alt="" coords="5,23,223,63"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1MainMenu.html#a50c362e6a155fe505ea4bbd9058d1d39" title="Rectangle of the &quot;3D flat&quot; mode button." alt="" coords="271,23,491,63"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="223,41,257,41,257,46,223,46"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1MainMenu.html#ae15bfb478af9299fef0a952e94e1654a" title="Rectangle of the &quot;2D&quot; mode button." alt="" coords="539,23,747,63"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="491,41,525,41,525,46,491,46"/>
+<area shape="rect" id="Node000004" href="$classZappy_1_1MainMenu.html#a9775fbd32327285b596a5c2cb91392c2" title="Rectangle of the port text field." alt="" coords="795,31,997,56"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="747,41,781,41,781,46,747,46"/>
+<area shape="rect" id="Node000005" href="$classZappy_1_1MainMenu.html#acd674a29a227b3051114070400c3252d" title="Rectangle of the host text field." alt="" coords="1045,31,1251,56"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="998,41,1032,41,1032,46,998,46"/>
+<area shape="rect" id="Node000006" href="$classZappy_1_1MainMenu.html#a7475763b92bc62d3612ca61a4c5f1957" title="Y of the centered panel&#39;s bottom edge." alt="" coords="1299,5,1529,31"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="1251,31,1285,28,1285,33,1251,36"/>
+<area shape="rect" id="Node000008" href="$classZappy_1_1MainMenu.html#a692d60cf91e3382c24251674bfe21652" title="X of the centered panel&#39;s left edge." alt="" coords="1311,55,1517,80"/>
+<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="1251,50,1297,54,1297,59,1251,55"/>
+<area shape="rect" id="Node000007" href="$classZappy_1_1Window.html#aea1ad498e106ef34dd2440e08457f386" title="Window height." alt="" coords="1577,5,1748,31"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="1530,15,1564,15,1564,21,1530,21"/>
+<area shape="rect" id="Node000009" href="$classZappy_1_1Window.html#af7def2e51c9498c9962c3346b6c6fb91" title="Window width." alt="" coords="1580,55,1745,80"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="1518,65,1566,65,1566,70,1518,70"/>
+</map>

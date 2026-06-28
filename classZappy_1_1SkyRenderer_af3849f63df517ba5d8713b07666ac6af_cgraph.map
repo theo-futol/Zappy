@@ -1,0 +1,9 @@
+<map id="Zappy::SkyRenderer::SkyRenderer" name="Zappy::SkyRenderer::SkyRenderer">
+<area shape="rect" id="Node000001" title="Builds the sky renderer: loads the cube map, the cube mesh and the skybox shader." alt="" coords="5,27,157,67"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1Primitives.html#a04af8a2ffec88aa8afc456ac31ffb1f0" title="Unit cube centered on the origin (side 1), with per&#45;face normals and UVs." alt="" coords="205,5,380,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="157,34,191,29,192,35,158,39"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1AssetCache.html#a08042fcbee5600c567294b591ac4a040" title="Compiles a shader program from source files and caches it under an id." alt="" coords="215,55,370,95"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="158,55,202,61,201,66,157,60"/>
+<area shape="rect" id="Node000004" href="$classZappy_1_1Shader_1_1ShaderException.html#a3049a280d7ea0ac2fdc39f873e91d84d" title=" " alt="" coords="428,55,660,95"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="370,73,414,73,414,78,370,78"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="Zappy::Trantorian::Trantorian" name="Zappy::Trantorian::Trantorian">
+<area shape="rect" id="Node000001" title="Builds a Trantorian." alt="" coords="5,37,148,77"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1AMapEntity.html#a5901485a58efcbf0ad182fa8bb94e8de" title="Builds the common entity state." alt="" coords="196,5,348,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="148,43,182,37,183,43,149,48"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1ResourceSet.html#a55f53843fafca3324a3e03f2bd2eabe6" title=" " alt="" coords="197,69,347,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="149,66,184,72,183,77,148,72"/>
+</map>

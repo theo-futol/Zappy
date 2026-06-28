@@ -1,0 +1,34 @@
+<map id="src/gui/interface/ICamera.hpp" name="src/gui/interface/ICamera.hpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="231,5,445,31"/>
+<area shape="rect" id="Node000002" href="$FreeCamera_8hpp.html" title=" " alt="" coords="145,79,313,119"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="313,41,257,81,254,76,310,36"/>
+<area shape="rect" id="Node000005" href="$RenderSystem_8hpp.html" title=" " alt="" coords="263,255,472,295"/>
+<area shape="poly" id="edge19_Node000001_Node000005" title=" " alt="" coords="262,36,166,61,116,78,72,98,36,120,14,146,9,159,9,174,14,189,24,205,39,217,61,228,120,245,192,257,263,265,262,270,191,263,119,251,59,233,36,222,20,208,9,191,3,174,4,159,9,143,33,116,69,93,114,73,164,56,261,31"/>
+<area shape="rect" id="Node000010" href="$OrbitCamera_8hpp.html" title=" " alt="" coords="714,79,885,119"/>
+<area shape="poly" id="edge10_Node000001_Node000010" title=" " alt="" coords="419,30,714,80,713,85,418,36"/>
+<area shape="rect" id="Node000012" href="$TopDownCamera_8hpp.html" title=" " alt="" coords="337,79,561,119"/>
+<area shape="poly" id="edge15_Node000001_Node000012" title=" " alt="" coords="367,36,424,76,421,81,364,41"/>
+<area shape="rect" id="Node000003" href="$InputHandler_8hpp.html" title=" " alt="" coords="573,167,761,207"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="327,116,574,164,573,170,326,122"/>
+<area shape="poly" id="edge9_Node000002_Node000005" title=" " alt="" coords="251,128,307,205,350,252,346,256,303,208,246,131"/>
+<area shape="rect" id="Node000009" href="$FreeCamera_8cpp.html" title=" " alt="" coords="34,167,202,207"/>
+<area shape="poly" id="edge8_Node000002_Node000009" title=" " alt="" coords="195,129,144,169,141,164,192,125"/>
+<area shape="rect" id="Node000004" href="$InputHandler_8cpp.html" title=" " alt="" coords="573,255,761,295"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="670,221,670,254,665,254,665,221"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="589,213,434,257,432,252,588,208"/>
+<area shape="rect" id="Node000006" href="$gui_2Core_2Core_8hpp.html" title=" " alt="" coords="287,350,448,375"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="370,309,370,350,365,350,365,309"/>
+<area shape="rect" id="Node000008" href="$RenderSystem_8cpp.html" title=" " alt="" coords="667,343,876,383"/>
+<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="470,295,684,340,682,345,469,300"/>
+<area shape="rect" id="Node000007" href="$gui_2main_8cpp.html" title=" " alt="" coords="303,431,432,456"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="370,389,370,430,365,430,365,389"/>
+<area shape="poly" id="edge11_Node000010_Node000003" title=" " alt="" coords="760,129,698,169,695,164,757,124"/>
+<area shape="poly" id="edge14_Node000010_Node000005" title=" " alt="" coords="803,133,797,172,789,192,776,209,761,217,734,225,658,240,473,265,472,260,657,235,733,220,759,212,772,205,784,189,792,171,798,132"/>
+<area shape="poly" id="edge13_Node000010_Node000008" title=" " alt="" coords="899,109,953,121,999,141,1016,154,1026,169,1029,187,1022,208,1005,234,984,257,935,295,883,324,834,345,832,340,880,320,932,291,980,253,1000,230,1017,205,1023,187,1021,171,1012,157,996,145,951,126,898,114"/>
+<area shape="rect" id="Node000011" href="$OrbitCamera_8cpp.html" title=" " alt="" coords="837,167,1007,207"/>
+<area shape="poly" id="edge12_Node000010_Node000011" title=" " alt="" coords="839,124,897,164,893,169,836,129"/>
+<area shape="poly" id="edge16_Node000012_Node000003" title=" " alt="" coords="511,121,621,164,619,169,509,126"/>
+<area shape="poly" id="edge18_Node000012_Node000005" title=" " alt="" coords="367,127,339,144,318,168,312,190,319,212,332,234,349,253,345,256,328,237,314,215,307,190,313,165,336,140,364,122"/>
+<area shape="rect" id="Node000013" href="$TopDownCamera_8cpp.html" title=" " alt="" coords="327,167,549,207"/>
+<area shape="poly" id="edge17_Node000012_Node000013" title=" " alt="" coords="447,133,443,167,438,166,442,132"/>
+</map>

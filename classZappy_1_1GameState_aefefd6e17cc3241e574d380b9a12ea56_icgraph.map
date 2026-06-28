@@ -1,0 +1,7 @@
+<map id="Zappy::GameState::timeUnit" name="Zappy::GameState::timeUnit">
+<area shape="rect" id="Node000001" title="Current time unit." alt="" coords="208,45,416,70"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1HudRenderer.html#afd50e841a073d3436438b1c1cb526f27" title="Routes a click to a HUD button and returns the command to send, if any." alt="" coords="5,5,160,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="207,45,160,39,160,33,208,40"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1HudRenderer.html#a811888ec303fe1cfdfa3373f70decbc1" title="Draws the styled HUD overlay for the current frame." alt="" coords="5,69,160,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="208,75,160,81,160,76,207,69"/>
+</map>

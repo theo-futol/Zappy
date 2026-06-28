@@ -1,0 +1,9 @@
+<map id="Zappy::HudRenderer" name="Zappy::HudRenderer">
+<area shape="rect" id="Node000001" title="Draws the styled HUD overlay: a right&#45;side panel (background, accents, team color swatches,..." alt="" coords="151,473,297,1099"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1IRenderer.html" title="Contract for one stage of the rendering pipeline." alt="" coords="5,165,131,251"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="85,263,153,513,148,515,80,264"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1AssetCache.html" title="Owns the shared GPU resources, keyed by symbolic id, loaded once." alt="" coords="155,95,293,321"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="227,321,227,456,221,456,221,321"/>
+<area shape="rect" id="Node000004" href="$classZappy_1_1TextRenderer.html" title="Renders text using FreeType; the only place FreeType is touched." alt="" coords="318,5,466,411"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="336,412,304,519,299,517,331,410"/>
+</map>

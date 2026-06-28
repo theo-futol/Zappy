@@ -1,0 +1,7 @@
+<map id="Zappy::CommandBuilder::requestMapContent" name="Zappy::CommandBuilder::requestMapContent">
+<area shape="rect" id="Node000001" title="Full map content request." alt="" coords="469,5,652,45"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1NetworkService.html#a43f30968fc171d5383e2af939b4fa127" title="Connects to the server and authenticates as the GUI." alt="" coords="248,5,421,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="456,28,421,28,421,23,456,23"/>
+<area shape="rect" id="Node000003" href="$classia_1_1client_1_1ZappyAIClient.html#acf191a81fbbbb81e60a298c2a10c1e6f" title=" " alt="" coords="5,13,200,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="234,28,200,28,200,23,234,23"/>
+</map>

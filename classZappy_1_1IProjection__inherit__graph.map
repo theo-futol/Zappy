@@ -1,0 +1,9 @@
+<map id="Zappy::IProjection" name="Zappy::IProjection">
+<area shape="rect" id="Node000001" title="Contract mapping grid coordinates to a point on the rendered world surface." alt="" coords="223,5,354,91"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1GroundProjection.html" title="3D&#45;mode projection: maps grid cell (x, y) to world point (x, 0, y)." alt="" coords="5,249,180,314"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="232,102,195,140,150,197,115,250,110,247,146,194,191,137,229,98"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1PlanarProjection.html" title="Flat top&#45;down projection: maps grid cell (x, y) to world point (x, y, 0)." alt="" coords="205,249,373,314"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="291,104,291,249,286,249,286,104"/>
+<area shape="rect" id="Node000004" href="$classZappy_1_1TorusProjection.html" title="3D&#45;mode projection wrapping the (toroidal) Zappy grid onto a real 3D torus." alt="" coords="397,139,559,424"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="350,98,387,137,399,152,395,156,383,140,346,102"/>
+</map>

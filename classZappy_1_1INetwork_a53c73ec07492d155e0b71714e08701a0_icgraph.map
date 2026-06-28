@@ -1,0 +1,8 @@
+<map id="Zappy::INetwork::connect" name="Zappy::INetwork::connect">
+<area shape="rect" id="Node000001" title="Opens the connection to the server." alt="" coords="469,42,657,67"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1NetworkService.html#a43f30968fc171d5383e2af939b4fa127" title="Connects to the server and authenticates as the GUI." alt="" coords="248,5,421,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="455,43,421,39,422,34,456,38"/>
+<area shape="rect" id="Node000003" href="$classia_1_1client_1_1ZappyAIClient.html#acf191a81fbbbb81e60a298c2a10c1e6f" title=" " alt="" coords="5,42,200,67"/>
+<area shape="poly" id="edge3_Node000001_Node000003" title=" " alt="" coords="456,60,421,60,248,60,200,59,200,54,248,55,421,55,456,54"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="235,41,201,45,200,40,234,35"/>
+</map>

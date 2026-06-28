@@ -1,0 +1,5 @@
+<map id="Zappy::TrantorianEventHandler::getTrantorian" name="Zappy::TrantorianEventHandler::getTrantorian">
+<area shape="rect" id="Node000001" title="Looks up a player and narrows it to its concrete Trantorian type." alt="" coords="5,5,228,45"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1GameState.html#a523df5ec4dd7ee8bfd3f930c89962bd4" title="Looks up an entity by key." alt="" coords="276,13,487,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="228,23,262,23,262,28,228,28"/>
+</map>

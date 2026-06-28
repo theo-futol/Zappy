@@ -1,0 +1,5 @@
+<map id="Zappy::HudRenderer::drawRect" name="Zappy::HudRenderer::drawRect">
+<area shape="rect" id="Node000001" title="Draws a filled screen&#45;space rectangle with the bound basic shader." alt="" coords="5,5,160,45"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1Mesh.html#af9b8b22039e2eea39b7d9173c576bf2a" title="Draws the mesh once with the currently bound shader." alt="" coords="208,13,353,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="160,23,194,23,194,28,160,28"/>
+</map>

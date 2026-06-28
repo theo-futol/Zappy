@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['itemtype_0',['ItemType',['../namespacezappy.html#a7def2f3f37d8dd0bd14d9e3c5ac180c5',1,'zappy']]]
+  ['eventtype_0',['EventType',['../namespaceZappy.html#a125244d8d117ffe0b2c67230e793c231',1,'Zappy']]]
 ];

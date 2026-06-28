@@ -1,0 +1,9 @@
+<map id="Zappy::MainMenu::modeTorusButton" name="Zappy::MainMenu::modeTorusButton">
+<area shape="rect" id="Node000001" title="Rectangle of the &quot;3D torus&quot; mode button." alt="" coords="491,23,708,63"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1MainMenu.html#a86ba1e26802f4d356f635d93128107fa" title="Draws one frame of the menu." alt="" coords="242,5,421,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="477,34,421,29,421,24,477,29"/>
+<area shape="rect" id="Node000004" href="$classZappy_1_1MainMenu.html#ab72f43a5ee13b6f181ed399e3531ad77" title="Routes a mouse click to the fields, mode buttons and action buttons." alt="" coords="220,55,443,80"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="477,57,443,60,443,55,477,52"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1MainMenu.html#a771be13e8b84eab86752103cedef485b" title="Runs the menu loop until the user validates or quits." alt="" coords="5,5,172,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="228,21,172,21,172,15,228,15"/>
+</map>

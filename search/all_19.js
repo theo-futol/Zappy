@@ -1,9 +1,7 @@
 var searchData=
 [
-  ['_7eclient_0',['~Client',['../classzappy_1_1Client.html#ab649f9d468b471e44d79f21f34cfe69f',1,'zappy::Client']]],
-  ['_7eclienthandler_1',['~ClientHandler',['../classzappy_1_1ClientHandler.html#a8e5e1cb6fb96c579fb9a535c8519660d',1,'zappy::ClientHandler']]],
-  ['_7ecommands_2',['~Commands',['../classzappy_1_1Commands.html#a09ecb20282e29129506c6f87be136b14',1,'zappy::Commands']]],
-  ['_7ecore_3',['~Core',['../classzappy_1_1Core.html#a564df76f313984c8e6ff7db0cf26e4fa',1,'zappy::Core']]],
-  ['_7esocket_4',['~Socket',['../classzappy_1_1Socket.html#a7c5ce94a23371f7be838ef38517f43f7',1,'zappy::Socket']]],
-  ['_7eworld_5',['~World',['../classzappy_1_1World.html#a11a48f8825955c732106a44c3ebdf5da',1,'zappy::World']]]
+  ['y_0',['y',['../structZappy_1_1MainMenu_1_1Rect.html#a0547ef33a126fc2483094d963da6ff93',1,'Zappy::MainMenu::Rect::y'],['../structZappy_1_1GridPosition.html#aeafa7911f27182c865e25cf942a54cf4',1,'Zappy::GridPosition::y'],['../structZappy_1_1HudRenderer_1_1Button.html#af6bea66493c53a57e2ac6b7a402ef8b6',1,'Zappy::HudRenderer::Button::y'],['../structZappy_1_1SceneHudRenderer_1_1Button.html#acc30df118c3cca21398ec6eaa4952ea1',1,'Zappy::SceneHudRenderer::Button::y'],['../structzappy_1_1position.html#a82f87c413db0e15d5b6ad5f843dcb47c',1,'zappy::position::y'],['../glad_8h.html#a66ddd433d2cacfe27f5906b7e86faeed',1,'y:&#160;glad.h']]],
+  ['yfov_1',['yfov',['../structcgltf__camera__perspective.html#a06f75d5f6669183ac623c7ee41b5d4c5',1,'cgltf_camera_perspective']]],
+  ['ymag_2',['ymag',['../structcgltf__camera__orthographic.html#a2bfe93e1ab24224bf941cd2c2bf79ae8',1,'cgltf_camera_orthographic']]],
+  ['yoffset_3',['yoffset',['../glad_8h.html#a76dfb6803dcff61037ba688b7f4242b8',1,'glad.h']]]
 ];

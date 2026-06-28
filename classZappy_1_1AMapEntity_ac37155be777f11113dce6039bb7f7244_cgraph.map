@@ -1,0 +1,5 @@
+<map id="Zappy::AMapEntity::infoLines" name="Zappy::AMapEntity::infoLines">
+<area shape="rect" id="Node000001" title="Base info lines shared by every entity: identity and position." alt="" coords="5,5,157,45"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1IEntity.html#aa483e3d82e7596ad06086ffa44665217" title="Open category of the entity." alt="" coords="205,13,413,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="158,23,192,23,192,28,158,28"/>
+</map>

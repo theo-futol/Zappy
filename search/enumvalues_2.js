@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['east_0',['EAST',['../namespacezappy.html#a3b9958fd86fc9701b130b8286aeed496a097404737794dfc145a06a357f235ba0',1,'zappy']]],
-  ['east_5fsouth_1',['EAST_SOUTH',['../namespacezappy.html#a3b9958fd86fc9701b130b8286aeed496a210adfd4c327c3ee6af90f7a072dc983',1,'zappy']]],
-  ['egg_2',['EGG',['../namespacezappy.html#a7def2f3f37d8dd0bd14d9e3c5ac180c5a54433ea8a1f7d793404e093f92058989',1,'zappy']]]
+  ['dead_0',['dead',['../namespacezappy.html#a27351dc1d35dc62fde06de99d6e6dc21abb4784231ff45108ee20bad16e4a2e8c',1,'zappy::DEAD'],['../namespacezappy.html#a739d472bdf98c0f9136679f6ffb58113abb4784231ff45108ee20bad16e4a2e8c',1,'zappy::DEAD']]],
+  ['deraumere_1',['deraumere',['../namespacezappy.html#a7def2f3f37d8dd0bd14d9e3c5ac180c5a77ce51f915f4f169cfa127081729ac47',1,'zappy::DERAUMERE'],['../namespaceZappy.html#a57cea95b79a6c3de492039e0e58e84f6a3a86a48d83b6e8de81acfe993b86a2ed',1,'Zappy::Deraumere']]]
 ];

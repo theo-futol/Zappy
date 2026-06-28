@@ -1,0 +1,5 @@
+<map id="Zappy::FreeCamera" name="Zappy::FreeCamera">
+<area shape="rect" id="Node000001" title="Free&#45;fly perspective camera: move with the keyboard, look with the mouse." alt="" coords="5,199,147,644"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1ICamera.html" title="Contract for a camera providing view and projection matrices." alt="" coords="17,5,135,151"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="79,164,79,198,73,198,73,164"/>
+</map>

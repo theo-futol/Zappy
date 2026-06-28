@@ -1,0 +1,29 @@
+<map id="Zappy::RenderSystem::selectAt3D" name="Zappy::RenderSystem::selectAt3D">
+<area shape="rect" id="Node000001" title="Picks the entity under a 3D click by casting a ray onto the ground." alt="" coords="5,178,171,218"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1RenderSystem.html#ad7e374d22bd0b05889f04633014d355d" title="Finds the tile under a screen point by projecting every tile and taking the nearest one." alt="" coords="219,73,384,113"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="128,176,246,117,248,121,131,180"/>
+<area shape="rect" id="Node000006" href="$classZappy_1_1RenderSystem.html#a41599751520d5cc014f9843c47e1b0a2" title="Selects the entity standing on a tile (preferring players), or clears the selection." alt="" coords="219,235,384,275"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="164,215,214,229,212,234,162,221"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1Map.html#a7085133e48e18b0e3b653dfa09d9bb1d" title="Map height." alt="" coords="490,55,637,80"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="384,82,476,73,477,78,384,87"/>
+<area shape="rect" id="Node000004" href="$classZappy_1_1GameState.html#aa9d3554ce327fc5a69b5a358d48fbe0b" title="Read&#45;only access to the map." alt="" coords="473,5,653,31"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="347,70,431,39,466,31,467,36,433,45,349,75"/>
+<area shape="rect" id="Node000005" href="$classZappy_1_1Map.html#ae3b126c54208662331ad1d17686e6d21" title="Map width." alt="" coords="492,104,635,129"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="384,98,479,106,478,112,384,103"/>
+<area shape="poly" id="edge9_Node000006_Node000003" title=" " alt="" coords="310,233,328,201,355,161,389,122,431,89,453,79,476,71,478,77,455,83,433,94,393,126,359,165,333,204,315,236"/>
+<area shape="poly" id="edge14_Node000006_Node000005" title=" " alt="" coords="318,233,365,185,396,160,431,140,478,124,479,129,433,144,399,165,369,189,322,237"/>
+<area shape="rect" id="Node000007" href="$classZappy_1_1GameState.html#a6f7e464a5fa5014b6db463eff2b1357d" title="Clears the tile selection." alt="" coords="432,268,695,293"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="384,261,419,264,418,269,384,266"/>
+<area shape="rect" id="Node000008" href="$classZappy_1_1GameState.html#a5e99f8cd5266d37d6d1e8d9de23925cc" title="Clears the current selection." alt="" coords="442,317,685,343"/>
+<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="349,273,433,303,467,312,466,317,431,309,347,278"/>
+<area shape="rect" id="Node000009" href="$classZappy_1_1IEntity.html#aa483e3d82e7596ad06086ffa44665217" title="Open category of the entity." alt="" coords="459,367,667,392"/>
+<area shape="poly" id="edge8_Node000006_Node000009" title=" " alt="" coords="324,273,371,315,401,336,433,353,452,360,451,365,431,358,398,340,368,319,320,277"/>
+<area shape="rect" id="Node000010" href="$classZappy_1_1GameState.html#abd6471abf9d8148da897c524115909fc" title="Mutable access to the map." alt="" coords="473,416,653,441"/>
+<area shape="poly" id="edge10_Node000006_Node000010" title=" " alt="" coords="316,274,362,339,395,374,433,402,461,414,459,419,431,407,391,378,357,342,312,277"/>
+<area shape="rect" id="Node000011" href="$classZappy_1_1IEntity.html#a8655b004f61d2e4d01b195513b65e9fd" title="Protocol number within the entity&#39;s category." alt="" coords="479,465,648,491"/>
+<area shape="poly" id="edge11_Node000006_Node000011" title=" " alt="" coords="312,275,328,313,354,362,389,411,410,433,433,452,467,467,464,472,431,456,406,437,385,415,349,365,323,316,307,277"/>
+<area shape="rect" id="Node000012" href="$classZappy_1_1GameState.html#affca4b479f2b8bfa7097d4d9b409fb2b" title="Marks an entity as the selected one (its info is shown in the HUD)." alt="" coords="468,154,659,194"/>
+<area shape="poly" id="edge12_Node000006_Node000012" title=" " alt="" coords="352,233,431,205,464,195,466,200,433,210,354,238"/>
+<area shape="rect" id="Node000013" href="$classZappy_1_1GameState.html#ac4610c386668f160fe6aabe72392196b" title="Marks a tile as selected (its resources are shown in the HUD)." alt="" coords="456,219,671,244"/>
+<area shape="poly" id="edge13_Node000006_Node000013" title=" " alt="" coords="384,245,442,240,442,245,384,250"/>
+</map>

@@ -1,8 +1,10 @@
 var searchData=
 [
-  ['feed_0',['feed',['../classzappy_1_1CommandParser.html#a2eaa3e9cec905216d43b7286e6c018a7',1,'zappy::CommandParser::feed()'],['../classia_1_1parsing_1_1LineBuffer.html#a78f3fa7e0ad6b62b2fe8285ff6e8c965',1,'ia.parsing.LineBuffer.feed()']]],
-  ['find_5fcurrent_5ftile_1',['find_current_tile',['../namespaceia_1_1utils_1_1model__utils.html#a3521348f27e732a6b21ba2e888ab1f3b',1,'ia::utils::model_utils']]],
-  ['foodcheck_2',['foodCheck',['../classzappy_1_1World.html#a779b35cdefa7a85d2f888890ad2ec84b',1,'zappy::World']]],
-  ['fork_3',['fork',['../classia_1_1client_1_1ZappyAIClient.html#ac7cd35840e26b37d189e8c6138a18a4b',1,'ia.client.ZappyAIClient.fork()'],['../classia_1_1test_1_1FakeClient.html#a6e3463b8b791d9062cbbc3fc6eb5297d',1,'ia.test.FakeClient.fork()'],['../classzappy_1_1Commands.html#af375aa807a7f8d0a8bd5bca398b2341b',1,'zappy::Commands::Fork(std::vector&lt; std::string &gt; args, Client &amp;client, std::vector&lt; std::unique_ptr&lt; Client &gt; &gt; &amp;clients)']]],
-  ['forward_4',['forward',['../classzappy_1_1Commands.html#ab165260a26fd85addbd2fa742cfffbc4',1,'zappy::Commands::Forward()'],['../classia_1_1client_1_1ZappyAIClient.html#a229bbd506db812c6983043c3f0907ed9',1,'ia.client.ZappyAIClient.forward()'],['../classia_1_1test_1_1FakeClient.html#a10e851ccd385b81a3fc0825a33740fe0',1,'ia.test.FakeClient.forward()']]]
+  ['egg_0',['Egg',['../classZappy_1_1Egg.html#a03b64b643745ce7bbcb500fcb48e1d46',1,'Zappy::Egg']]],
+  ['eject_1',['eject',['../classzappy_1_1Commands.html#a2aa5f645033eadf18b4df8461c95ab9c',1,'zappy::Commands::Eject()'],['../classia_1_1client_1_1ZappyAIClient.html#ab6978e5e81d147af05efdef081b33e7f',1,'ia.client.ZappyAIClient.eject()'],['../classia_1_1test_1_1FakeClient.html#a876e3635814afed2414a74aa97cef261',1,'ia.test.FakeClient.eject()']]],
+  ['entities_2',['entities',['../classZappy_1_1GameState.html#a690b690e68b8dec418d39f27a7da18a2',1,'Zappy::GameState']]],
+  ['entitynumber_3',['entityNumber',['../classZappy_1_1AEventHandler.html#a3ba38d2410b06460d0d23411b9dc7210',1,'Zappy::AEventHandler']]],
+  ['entityrenderer_4',['EntityRenderer',['../classZappy_1_1EntityRenderer.html#adb97b123381cc9e5691700bae155e3c0',1,'Zappy::EntityRenderer']]],
+  ['entityworld_5',['entityWorld',['../classZappy_1_1SceneRenderer.html#a1dd7f5f414735def0760b5246806b7f4',1,'Zappy::SceneRenderer']]],
+  ['executenext_6',['executeNext',['../classzappy_1_1CommandParser.html#aa6b2d70e869ba31da160e28f0eddc23c',1,'zappy::CommandParser']]]
 ];

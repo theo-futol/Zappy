@@ -1,0 +1,5 @@
+<map id="Zappy::CubemapTexture::uploadFace" name="Zappy::CubemapTexture::uploadFace">
+<area shape="rect" id="Node000001" title="Cuts one square tile out of the cross and uploads it to a cube&#45;map face." alt="" coords="233,5,413,45"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1CubemapTexture.html#acf62eb41e1bdc84399b622dd7452640e" title="Loads a 4x3 cross image and uploads its six faces to a cube map." alt="" coords="5,5,185,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="219,28,185,28,185,23,219,23"/>
+</map>

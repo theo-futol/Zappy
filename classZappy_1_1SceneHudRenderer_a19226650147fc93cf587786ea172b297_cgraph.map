@@ -1,0 +1,5 @@
+<map id="Zappy::SceneHudRenderer::drawMenuButton" name="Zappy::SceneHudRenderer::drawMenuButton">
+<area shape="rect" id="Node000001" title="Draws the top&#45;left &quot;MENU&quot; button." alt="" coords="5,5,200,45"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1SceneHudRenderer.html#ad6426b5d5b0c1d122e0ebf728ee36d75" title="Rectangle of the top&#45;left &quot;MENU&quot; button." alt="" coords="248,5,443,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="200,23,234,23,234,28,200,28"/>
+</map>

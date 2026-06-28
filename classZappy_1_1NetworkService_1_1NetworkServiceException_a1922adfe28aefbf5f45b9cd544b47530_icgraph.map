@@ -1,0 +1,9 @@
+<map id="Zappy::NetworkService::NetworkServiceException::what" name="Zappy::NetworkService::NetworkServiceException::what">
+<area shape="rect" id="Node000001" title=" " alt="" coords="512,5,749,45"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1Core.html#aa86fe0f0253c1331cd03b6e0fdc97e7e" title="Connects and runs one game session with the current host/port/mode." alt="" coords="285,13,464,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="498,28,464,28,464,23,498,23"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1Core.html#ad35ddcf048bd1f39e7f8b7ded934f90c" title="Runs the application: alternates the main menu and a game session until the user quits." alt="" coords="108,13,237,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="272,28,238,28,238,23,272,23"/>
+<area shape="rect" id="Node000004" href="$gui_2main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title=" " alt="" coords="5,13,60,38"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="94,28,60,28,60,23,94,23"/>
+</map>

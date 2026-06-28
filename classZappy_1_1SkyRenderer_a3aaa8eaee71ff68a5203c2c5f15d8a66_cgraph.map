@@ -1,0 +1,9 @@
+<map id="Zappy::SkyRenderer::render" name="Zappy::SkyRenderer::render">
+<area shape="rect" id="Node000001" title="Draws the sky for the frame." alt="" coords="5,55,157,95"/>
+<area shape="rect" id="Node000002" href="$classZappy_1_1Mesh.html#af9b8b22039e2eea39b7d9173c576bf2a" title="Draws the mesh once with the currently bound shader." alt="" coords="210,5,355,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="151,53,223,32,224,37,153,58"/>
+<area shape="rect" id="Node000003" href="$classZappy_1_1AssetCache.html#aa9d99cefc890898a5382d1dc02ece187" title="Looks up a shader by id." alt="" coords="205,55,360,95"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="158,73,191,73,191,78,158,78"/>
+<area shape="rect" id="Node000004" href="$classZappy_1_1Shader.html#a0791be8cb08b6dedfee90e4d3566cd86" title="Binds the program for subsequent draw calls." alt="" coords="209,120,356,145"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="153,93,224,113,223,119,151,98"/>
+</map>

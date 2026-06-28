@@ -1,0 +1,5 @@
+<map id="Zappy::Appearance" name="Zappy::Appearance">
+<area shape="rect" id="Node000001" title="View&#45;independent visual description an entity declares about itself." alt="" coords="5,193,144,279"/>
+<area shape="rect" id="Node000002" href="$structZappy_1_1Color.html" title="RGBA color with normalized [0, 1] components." alt="" coords="27,5,123,131"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="77,131,77,177,72,177,72,131"/>
+</map>
