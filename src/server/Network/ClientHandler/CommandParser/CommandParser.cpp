@@ -176,11 +176,36 @@ std::chrono::steady_clock::time_point CommandParser::nextReadyAt() const
     return _commandQueue.front().readyAt;
 }
 
+void CommandParser::_handleGuiClient()
+{
+    _client->setType(ClientType::GRAPHIC);
+    const std::vector<std::shared_ptr<Team>> &teams = _world->getTeams();
+    const std::vector<std::unique_ptr<Player>> &players = _world->getPlayers();
+
+    for (const auto &player : players)
+    {
+        std::string teamName = player->getTeam()._name;
+        std::string playerPnwMsg = "pnw " + std::to_string(player->getId()) + " " + std::to_string(player->getPosition().x) + " " + std::to_string(player->getPosition().y) + " " +
+                                   std::to_string(player->getOrientation()) + " " + std::to_string(player->getLevel()) + " " + teamName + "\n";
+        send(_client->getFd(), playerPnwMsg.c_str(), playerPnwMsg.size(), MSG_NOSIGNAL);
+    }
+    for (const auto &team : teams)
+    {
+        for (const auto &[position, eggs] : team->_eggs)
+            for (const Egg &egg : eggs)
+            {
+                std::string eggEnwMsg =
+                    "enw " + std::to_string(egg.id) + " " + std::to_string(egg.layingPlayerId) + " " + std::to_string(position.x) + " " + std::to_string(position.y) + "\n";
+                send(_client->getFd(), eggEnwMsg.c_str(), eggEnwMsg.size(), MSG_NOSIGNAL);
+            }
+    }
+}
+
 void CommandParser::_handleHandshake(const std::string &teamName)
 {
     if (teamName == "GRAPHIC")
     {
-        _client->setType(ClientType::GRAPHIC);
+        _handleGuiClient();
     }
     else
     {
