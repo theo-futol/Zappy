@@ -9,9 +9,10 @@ CC = clang++
 PROJECT_NAME = zappy
 SERVER_BIN   = $(PROJECT_NAME)_server
 AI_BIN       = $(PROJECT_NAME)_ai
+GUI_BIN 	 = $(PROJECT_NAME)_gui
 AI_SOURCES   = $(shell find src/ia -type f -name "*.py")
 
-all: $(SERVER_BIN) $(AI_BIN)
+all: $(SERVER_BIN) $(AI_BIN) $(GUI_BIN)
 
 $(SERVER_BIN):
 	$(MAKE) -C src/server BINARY_LOCATION=$(abspath $@)
@@ -26,12 +27,15 @@ $(AI_BIN): $(AI_SOURCES) Makefile
 		'exec "$${PYTHON:-python3}" -m ia.client "$$@"' \
 		> $@
 	@chmod +x $@
+$(GUI_BIN):
+	$(MAKE) -C src/gui BINARY_LOCATION=$(abspath $@)
 
 clean:
 	$(MAKE) -C src/server clean
+	$(MAKE) -C src/gui clean
 
 fclean: clean 
-	-rm -f $(SERVER_BIN) $(AI_BIN)
+	-rm -f $(SERVER_BIN) $(AI_BIN) $(GUI_BIN)
 
 re: fclean all
 

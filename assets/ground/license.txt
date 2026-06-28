@@ -1,0 +1,11 @@
+Model Information:
+* title:	Stone Ground 04
+* source:	https://sketchfab.com/3d-models/stone-ground-04-8f72b30aef7343218872f85c45314350
+* author:	Game industry veteran (https://sketchfab.com/zhengzhangxun)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Stone Ground 04" (https://sketchfab.com/3d-models/stone-ground-04-8f72b30aef7343218872f85c45314350) by Game industry veteran (https://sketchfab.com/zhengzhangxun) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

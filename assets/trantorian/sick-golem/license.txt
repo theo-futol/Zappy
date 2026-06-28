@@ -1,0 +1,11 @@
+Model Information:
+* title:	Personaje Elemental Roca
+* source:	https://sketchfab.com/3d-models/personaje-elemental-roca-b1a7b643183540a0a7cdab2a22b8b7a6
+* author:	morion tutoriales (https://sketchfab.com/morion2013)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Personaje Elemental Roca" (https://sketchfab.com/3d-models/personaje-elemental-roca-b1a7b643183540a0a7cdab2a22b8b7a6) by morion tutoriales (https://sketchfab.com/morion2013) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

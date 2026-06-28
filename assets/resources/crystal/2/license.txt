@@ -1,0 +1,11 @@
+Model Information:
+* title:	Crystal Cave Meditation
+* source:	https://sketchfab.com/3d-models/crystal-cave-meditation-a901e8c693f742a782f9a379481dcf95
+* author:	myblockcities (https://sketchfab.com/myblockcities)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Crystal Cave Meditation" (https://sketchfab.com/3d-models/crystal-cave-meditation-a901e8c693f742a782f9a379481dcf95) by myblockcities (https://sketchfab.com/myblockcities) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

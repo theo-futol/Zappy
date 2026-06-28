@@ -1,0 +1,11 @@
+Model Information:
+* title:	Transformers Earth Wars Scrapper
+* source:	https://sketchfab.com/3d-models/transformers-earth-wars-scrapper-92a70e4cb049433c98fdcf8e8f87da3b
+* author:	diegoapc0709 (https://sketchfab.com/diegoapc0709)
+
+Model License:
+* license type:	CC-BY-SA-4.0 (http://creativecommons.org/licenses/by-sa/4.0/)
+* requirements:	Author must be credited. Modified versions must have the same license. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Transformers Earth Wars Scrapper" (https://sketchfab.com/3d-models/transformers-earth-wars-scrapper-92a70e4cb049433c98fdcf8e8f87da3b) by diegoapc0709 (https://sketchfab.com/diegoapc0709) licensed under CC-BY-SA-4.0 (http://creativecommons.org/licenses/by-sa/4.0/)

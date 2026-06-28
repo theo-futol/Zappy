@@ -1,0 +1,11 @@
+Model Information:
+* title:	Roast chicken
+* source:	https://sketchfab.com/3d-models/roast-chicken-004fb4d72f6c4e55a15b9025a868d1a3
+* author:	daidaiaoko (https://sketchfab.com/daidaiaoko)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Roast chicken" (https://sketchfab.com/3d-models/roast-chicken-004fb4d72f6c4e55a15b9025a868d1a3) by daidaiaoko (https://sketchfab.com/daidaiaoko) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
