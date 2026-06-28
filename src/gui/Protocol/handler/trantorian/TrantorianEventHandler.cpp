@@ -7,7 +7,7 @@ namespace Zappy
 
 std::vector<std::string> TrantorianEventHandler::keys() const
 {
-    return {"pnw", "plv", "pin", "pex", "pfk", "pdr", "pgt"};
+    return {"pnw", "plv", "pin", "pex", "pfk", "pdr", "pgt", "pipi"};
 }
 
 Trantorian *TrantorianEventHandler::getTrantorian(GameState &state, int number)
@@ -52,6 +52,23 @@ void TrantorianEventHandler::handle(const std::string &key, const std::vector<st
         handleTrantorianResourceDropped(args, state);
     else if (key == "pgt")
         handleTrantorianResourceTaken(args, state);
+    else if (key == "pipi")
+        handleTrantorianSnapshot(args, state);
+}
+
+void TrantorianEventHandler::handleTrantorianSnapshot(const std::vector<std::string> &args, GameState &state)
+{
+    if (args.size() < 12)
+        return;
+
+    Trantorian *player = getTrantorian(state, entityNumber(args[0]));
+
+    if (player == nullptr)
+        return;
+    player->setPosition({toInt(args[1]), toInt(args[2])});
+    player->setOrientation(toOrientation(toInt(args[3])));
+    player->setLevel(toInt(args[4]));
+    player->inventory() = toResources(args, 5);
 }
 
 void TrantorianEventHandler::handleTrantorianSpawned(const std::vector<std::string> &args, GameState &state)

@@ -11,12 +11,12 @@ namespace Zappy
 
 /**
  * @class TrantorianEventHandler
- * @brief Handles Trantorian-specific messages: pnw, plv, pin, pex, pfk, pdr, pgt.
+ * @brief Handles Trantorian-specific messages: pnw, plv, pin, pex, pfk, pdr, pgt, pipi.
  */
 class TrantorianEventHandler : public AEventHandler
 {
   public:
-    /** @brief Keys handled. @return {"pnw", "plv", "pin", "pex", "pfk", "pdr", "pgt"}. */
+    /** @brief Keys handled. @return {"pnw", "plv", "pin", "pex", "pfk", "pdr", "pgt", "pipi"}. */
     std::vector<std::string> keys() const override;
 
     /**
@@ -41,6 +41,13 @@ class TrantorianEventHandler : public AEventHandler
      * @param state State holding the player.
      */
     void handleTrantorianLevelUpdated(const std::vector<std::string> &args, GameState &state);
+
+    /**
+     * @brief Applies the server's "pipi" full snapshot (position, orientation, level, inventory).
+     * @param args Message arguments: #n X Y O L q0..q6.
+     * @param state State holding the player (updated only, never created).
+     */
+    void handleTrantorianSnapshot(const std::vector<std::string> &args, GameState &state);
 
     /**
      * @brief Replaces a player's carried inventory from a pin message.

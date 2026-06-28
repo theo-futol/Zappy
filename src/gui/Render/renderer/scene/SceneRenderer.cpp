@@ -2,6 +2,7 @@
 
 #include <algorithm>
 #include <array>
+#include <cmath>
 #include <cstddef>
 #include <memory>
 #include <string>
@@ -150,6 +151,53 @@ std::string SceneRenderer::directoryOf(const std::string &path)
     return (slash == std::string::npos) ? std::string(".") : path.substr(0, slash);
 }
 
+bool SceneRenderer::transformerPose(const EntityKey &key, GridPosition position, const RenderModel &model, float time, int &clip, float &poseTime)
+{
+    int vehicleClip = model.animationIndex(VehicleClipName);
+    int robotClip = model.animationIndex(RobotClipName);
+
+    if (vehicleClip < 0 || robotClip < 0)
+        return false;
+
+    EntityAnim &state = _entityAnim[key];
+
+    if (!state.initialized)
+    {
+        state.initialized = true;
+        state.lastPos = position;
+    }
+    if (position.x != state.lastPos.x || position.y != state.lastPos.y)
+    {
+        state.lastPos = position;
+        state.lastMoveTime = time;
+    }
+
+    bool wantVehicle = (time - state.lastMoveTime) < IdleBeforeRobot;
+
+    if (state.clip < 0 && wantVehicle != state.vehicle)
+    {
+        state.vehicle = wantVehicle;
+        state.clip = wantVehicle ? vehicleClip : robotClip;
+        state.clipStart = time;
+    }
+    if (state.clip >= 0 && time - state.clipStart >= model.animationDuration(static_cast<std::size_t>(state.clip)))
+        state.clip = -1;
+
+    int settledClip = state.vehicle ? vehicleClip : robotClip;
+
+    if (state.clip >= 0)
+    {
+        clip = state.clip;
+        poseTime = time - state.clipStart;
+    }
+    else
+    {
+        clip = settledClip;
+        poseTime = model.animationDuration(static_cast<std::size_t>(settledClip));
+    }
+    return true;
+}
+
 void SceneRenderer::render(const RenderContext &context)
 {
     Shader *shader = _assets.shader("phong");
@@ -190,9 +238,8 @@ void SceneRenderer::render(const RenderContext &context)
     }
     std::vector<Mat4> groundBases{groundBase};
     std::size_t themeCount = _golems.size();
-    std::vector<std::vector<Mat4>> golemBases(themeCount);
-    std::vector<std::vector<Mat4>> eggBases(themeCount);
 
+    _ground->drawInstanced(*shader, groundBases);
     for (const std::pair<const EntityKey, std::unique_ptr<IEntity>> &entry : context.state.entities())
     {
         const IEntity &entity = *entry.second;
@@ -203,7 +250,22 @@ void SceneRenderer::render(const RenderContext &context)
         Mat4 facing = glm::rotate(Mat4(1.0f), glm::radians(orientationYaw(entity.orientation())), Vec3(0.0f, 1.0f, 0.0f));
         Mat4 base = glm::translate(Mat4(1.0f), point.position) * tileFrame(point) * facing * model.unitTransform();
 
-        (isEgg ? eggBases : golemBases)[theme].push_back(base);
+        if (model.skinned())
+        {
+            int clip = 0;
+            float poseTime = 0.0f;
+
+            if (isEgg || !transformerPose(entry.first, entity.position(), model, context.time, clip, poseTime))
+            {
+                float duration = model.animationDuration(0);
+
+                clip = 0;
+                poseTime = (duration > 0.0f) ? std::fmod(context.time, duration) : 0.0f;
+            }
+            model.drawSkinned(*shader, base, model.poseJoints(static_cast<std::size_t>(clip), poseTime));
+        }
+        else
+            model.drawInstanced(*shader, std::vector<Mat4>{base});
     }
 
     std::vector<std::vector<Mat4>> resourceBases(ResourceSet::Count);
@@ -225,12 +287,6 @@ void SceneRenderer::render(const RenderContext &context)
                 resourceBases[type].push_back(base);
             }
         }
-    _ground->drawInstanced(*shader, groundBases);
-    for (std::size_t i = 0; i < themeCount; ++i)
-    {
-        _golems[i]->drawInstanced(*shader, golemBases[i]);
-        _eggs[i]->drawInstanced(*shader, eggBases[i]);
-    }
     for (std::size_t type = 0; type < ResourceSet::Count; ++type)
         if (_resources[type] != nullptr)
             _resources[type]->drawInstanced(*shader, resourceBases[type]);

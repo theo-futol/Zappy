@@ -90,7 +90,7 @@ class HudRenderer : public IRenderer
     static constexpr float MenuButtonWidth = 84.0f; ///< Width of the MENU button.
     static constexpr float ButtonGap = 8.0f;      ///< Gap between the two time-unit buttons.
     static constexpr int MinTimeUnit = 1;         ///< Lowest time unit a button can request.
-    static constexpr int MaxTimeUnit = 10000;     ///< Highest time unit a button can request.
+    static constexpr int MaxTimeUnit = 1000;      ///< Highest time unit a button can request (server caps at 1000).
 
     static constexpr Vec3 ButtonColor = Vec3(0.20f, 0.22f, 0.28f); ///< Time-unit button fill.
 

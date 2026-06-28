@@ -222,7 +222,7 @@ class SceneHudRenderer : public IRenderer
     static constexpr float ButtonSize = 26.0f;   ///< Side of a time-unit button.
     static constexpr float MenuButtonWidth = 90.0f; ///< Width of the top-left MENU button.
     static constexpr int MinTimeUnit = 1;        ///< Lowest time unit a button can request.
-    static constexpr int MaxTimeUnit = 10000;    ///< Highest time unit a button can request.
+    static constexpr int MaxTimeUnit = 1000;     ///< Highest time unit a button can request (server caps at 1000).
 
     static const Vec3 BarColor;    ///< Bottom bar background color.
     static const Vec3 AccentColor; ///< Accent line/title color.

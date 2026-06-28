@@ -96,8 +96,24 @@ class ModelLoader
      */
     void readNodes(const cgltf_data &data, const std::vector<std::pair<std::size_t, std::size_t>> &meshRanges, Model &model) const;
 
+    /**
+     * @brief Reads every skin (skeleton): its joint node indices and inverse bind matrices.
+     * @param data Parsed cgltf document.
+     * @param model Model whose `skins` are filled.
+     */
+    void readSkins(const cgltf_data &data, Model &model) const;
+
+    /**
+     * @brief Reads every animation clip (channels: target node + property + keyframes).
+     * @param data Parsed cgltf document.
+     * @param model Model whose `animations` are filled.
+     */
+    void readAnimations(const cgltf_data &data, Model &model) const;
+
     static constexpr std::size_t Vec3Size = 3; ///< Components of a position/normal element.
     static constexpr std::size_t Vec2Size = 2; ///< Components of a texcoord element.
+    static constexpr std::size_t Vec4Size = 4; ///< Components of a joints/weights element.
+    static constexpr std::size_t Mat4Size = 16; ///< Floats per 4x4 matrix.
 };
 
 } // namespace Zappy

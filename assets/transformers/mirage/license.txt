@@ -1,0 +1,11 @@
+Model Information:
+* title:	Transformers Earth Wars Mirage
+* source:	https://sketchfab.com/3d-models/transformers-earth-wars-mirage-9aea665c139e4b67b23248d13197476c
+* author:	diegoapc0709 (https://sketchfab.com/diegoapc0709)
+
+Model License:
+* license type:	CC-BY-SA-4.0 (http://creativecommons.org/licenses/by-sa/4.0/)
+* requirements:	Author must be credited. Modified versions must have the same license. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Transformers Earth Wars Mirage" (https://sketchfab.com/3d-models/transformers-earth-wars-mirage-9aea665c139e4b67b23248d13197476c) by diegoapc0709 (https://sketchfab.com/diegoapc0709) licensed under CC-BY-SA-4.0 (http://creativecommons.org/licenses/by-sa/4.0/)

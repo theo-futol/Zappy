@@ -1,5 +1,6 @@
 #pragma once
 
+#include <map>
 #include <memory>
 #include <string>
 #include <vector>
@@ -8,6 +9,8 @@
 #include "Render/rendermodel/RenderModel.hpp"
 #include "Render/theme/ThemeRegistry.hpp"
 #include "interface/IRenderer.hpp"
+#include "types/EntityKey.hpp"
+#include "types/GridPosition.hpp"
 #include "types/Mat.hpp"
 #include "types/Model.hpp"
 #include "types/Orientation.hpp"
@@ -108,6 +111,35 @@ class SceneRenderer : public IRenderer
      */
     static float orientationYaw(Orientation orientation);
 
+    /**
+     * @struct EntityAnim
+     * @brief Per-entity animation state for the Transformer move/idle morph.
+     */
+    struct EntityAnim
+    {
+        GridPosition lastPos{0, 0}; ///< Last seen grid position (to detect movement).
+        float lastMoveTime = -1000.0f; ///< Time of the last position change (seconds).
+        bool vehicle = false;       ///< Current settled form: true = vehicle, false = robot.
+        int clip = -1;              ///< Currently playing transform clip, or -1 when settled.
+        float clipStart = 0.0f;     ///< Time the current transform clip started (seconds).
+        bool initialized = false;   ///< Whether lastPos has been seeded for this entity.
+    };
+
+    /**
+     * @brief Advances the Transformer state machine for one entity and returns what to draw.
+     *
+     * Detects movement (position change), morphs to the vehicle form while moving and back
+     * to the robot form after an idle delay, holding the end pose of the relevant clip.
+     * @param key Entity identity (state is kept per key across frames).
+     * @param position Current grid position of the entity.
+     * @param model The entity's render model (queried for clip indices and durations).
+     * @param time Current time in seconds.
+     * @param clip Output: clip index to pose.
+     * @param poseTime Output: time within that clip to pose.
+     * @return True if a valid Transformer pose was produced; false to fall back to a default.
+     */
+    bool transformerPose(const EntityKey &key, GridPosition position, const RenderModel &model, float time, int &clip, float &poseTime);
+
     AssetCache &_assets;                  ///< Shared GPU resource cache.
     std::unique_ptr<RenderModel> _ground; ///< Ground model, tiled per map cell.
     ThemeRegistry _registry;              ///< Team-to-model assignment (golem + egg per theme).
@@ -118,6 +150,7 @@ class SceneRenderer : public IRenderer
     float _torusMajor;                                   ///< Torus major radius R (world units), set by the render system.
     float _torusMinor;                                   ///< Torus minor radius r (world units), set by the render system.
     bool _torusWorld;                                    ///< True to draw the torus shell, false for the flat tiled ground.
+    std::map<EntityKey, EntityAnim> _entityAnim;         ///< Per-entity Transformer animation state, across frames.
 
     static constexpr const char *CrystalModelPath = "assets/resources/crystal/scene.gltf"; ///< Crystal pack (sliced per stone).
     static constexpr const char *FoodModelPath = "assets/resources/food/scene.gltf";       ///< Food model (used whole).
@@ -125,6 +158,9 @@ class SceneRenderer : public IRenderer
     static constexpr float ResourceSpacing = 0.28f;                                        ///< In-tile spacing between resource spots.
     static constexpr float HighlightLift = 0.02f;                                          ///< Height of a tile marker above the ground.
     static constexpr float HighlightSize = 0.95f;                                          ///< Side of a tile marker, in tiles.
+    static constexpr float IdleBeforeRobot = 1.5f;                                         ///< Seconds of stillness before morphing back to robot.
+    static constexpr const char *VehicleClipName = "transform_to_vehicle";                 ///< Clip morphing robot -> vehicle.
+    static constexpr const char *RobotClipName = "transform_to_robot";                     ///< Clip morphing vehicle -> robot.
 
     static const Vec3 LightColor;   ///< Color/intensity of the light.
     static const Vec3 ModelColor;   ///< Base color used for untextured primitives.

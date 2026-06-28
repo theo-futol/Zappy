@@ -17,6 +17,7 @@ struct RenderContext
     Mat4 view;                  ///< Camera view matrix.
     Mat4 projection;            ///< Camera projection matrix.
     const IProjection &mapping; ///< Grid-to-world mapping.
+    float time;                 ///< Elapsed time in seconds (drives animations).
 };
 
 } // namespace Zappy

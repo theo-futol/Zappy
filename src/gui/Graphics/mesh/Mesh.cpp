@@ -7,6 +7,14 @@
 namespace Zappy
 {
 
+namespace
+{
+// Per-instance model matrix is bound at fixed locations 8..11, leaving 0..7 for vertex
+// attributes (pos, normal, uv, joints, weights, ...). Decoupling it from the vertex
+// attribute count lets skinned (5 attrs) and static (3 attrs) meshes share one shader.
+constexpr GLuint InstanceBaseLocation = 8;
+} // namespace
+
 Mesh::Mesh() : _vao(0), _vbo(0), _ebo(0), _instanceVbo(0), _indexCount(0), _attributeCount(0)
 {
     glGenVertexArrays(1, &_vao);
@@ -76,7 +84,7 @@ void Mesh::drawInstanced(const std::vector<Mat4> &instances) const
     glBufferData(GL_ARRAY_BUFFER, static_cast<GLsizeiptr>(instances.size() * sizeof(Mat4)), instances.data(), GL_DYNAMIC_DRAW);
     for (GLuint column = 0; column < 4; ++column)
     {
-        GLuint location = _attributeCount + column;
+        GLuint location = InstanceBaseLocation + column;
         std::size_t offset = column * sizeof(Vec4);
 
         glEnableVertexAttribArray(location);

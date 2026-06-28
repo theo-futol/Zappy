@@ -5,10 +5,10 @@ namespace Zappy
 
 ThemeRegistry::ThemeRegistry() : _themes()
 {
-    _themes.push_back(Theme{"assets/trantorian/ice-golem/scene.gltf", "assets/eggs/ice-golem/scene.gltf"});
-    _themes.push_back(Theme{"assets/trantorian/sand-golem/scene.gltf", "assets/eggs/sand-golem/scene.gltf"});
-    _themes.push_back(Theme{"assets/trantorian/drugdor/scene.gltf", "assets/eggs/drugdor/scene.gltf"});
-    _themes.push_back(Theme{"assets/trantorian/sick-golem/scene.gltf", "assets/eggs/sick-golem/scene.gltf"});
+    _themes.push_back(Theme{"assets/transformers/optimus/scene.gltf", "assets/eggs/drugdor/scene.gltf"});
+    _themes.push_back(Theme{"assets/transformers/mirage/scene.gltf", "assets/eggs/drugdor/scene.gltf"});
+    _themes.push_back(Theme{"assets/transformers/megatron/scene.gltf", "assets/eggs/drugdor/scene.gltf"});
+    _themes.push_back(Theme{"assets/transformers/scrapper/scene.gltf", "assets/eggs/drugdor/scene.gltf"});
 }
 
 const Theme &ThemeRegistry::forTeam(std::size_t teamIndex) const

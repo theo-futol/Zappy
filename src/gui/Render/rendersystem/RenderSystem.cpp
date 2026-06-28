@@ -6,6 +6,7 @@
 #include <memory>
 #include <utility>
 
+#include <GLFW/glfw3.h>
 #include <glm/ext/matrix_transform.hpp>
 #include <glm/matrix.hpp>
 
@@ -242,7 +243,7 @@ void RenderSystem::render(const GameState &state)
         _window.clear(Color(0.1f, 0.1f, 0.12f, 1.0f));
         _context.setViewport(_width, _height);
         _context.setDepthTest(true);
-        RenderContext context{state, view, projection, *_projection};
+        RenderContext context{state, view, projection, *_projection, static_cast<float>(glfwGetTime())};
         for (const std::unique_ptr<IRenderer> &renderer : _renderers)
             renderer->render(context);
         _context.setDepthTest(false);
@@ -256,7 +257,7 @@ void RenderSystem::render(const GameState &state)
         _topDown->fitToMap(state.map().width(), state.map().height());
         _framed = true;
     }
-    RenderContext context{state, _camera->view(), _camera->projection(), *_projection};
+    RenderContext context{state, _camera->view(), _camera->projection(), *_projection, static_cast<float>(glfwGetTime())};
     _window.clear(Color(0.1f, 0.1f, 0.12f, 1.0f));
     _context.setViewport(_width - HudRenderer::panelWidth(_width), _height);
     _context.setDepthTest(true);
