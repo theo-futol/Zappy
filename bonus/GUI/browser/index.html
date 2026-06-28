@@ -90,6 +90,7 @@
             <span onclick="document.getElementById('tile-info').style.display='none'" style="cursor: pointer; font-size: 20px; margin-left: 20px;">&times;</span>
         </div>
         <div id="tile-info-content" style="display: flex; flex-wrap: wrap; gap: 10px; max-width: 250px;"></div>
+        <div id="tile-info-players" style="display:none; margin-top: 10px; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 8px; font-size: 13px;"></div>
     </div>
 
     <div id="player-info" style="display: none; position: absolute; bottom: 20px; left: 20px; background: rgba(0, 0, 0, 0.85); padding: 15px; border-radius: 10px; border: 2px solid #ffd700; color: white; z-index: 9999; font-family: sans-serif; pointer-events: auto;">
@@ -224,6 +225,7 @@
             untrackPlayer();
             document.getElementById('tile-info-x').innerText = x;
             document.getElementById('tile-info-y').innerText = y;
+
             const resources = tileGroup.userData.resources || {};
             const content = document.getElementById('tile-info-content');
             content.innerHTML = '';
@@ -237,6 +239,25 @@
                     </div>
                 `;
             }
+
+            const playersHere = Object.entries(playerMeshes).filter(
+                ([, mesh]) => mesh.userData.tileX === x && mesh.userData.tileY === y
+            );
+            const playersEl = document.getElementById('tile-info-players');
+            if (playersHere.length > 0) {
+                let html = `<strong>Players (${playersHere.length}):</strong><br>`;
+                for (const [pid, mesh] of playersHere) {
+                    const team = playerTeams[pid] || '?';
+                    const color = getTeamColor(team);
+                    const level = mesh.userData.levelText ? mesh.userData.levelText.text.replace('Lv.', '') : '?';
+                    html += `<span style="color:${color}">■</span> P${pid} &nbsp;<span style="color:#aaa">${team}</span> &nbsp;Lv.${level}<br>`;
+                }
+                playersEl.innerHTML = html;
+                playersEl.style.display = 'block';
+            } else {
+                playersEl.style.display = 'none';
+            }
+
             document.getElementById('tile-info').style.display = 'block';
         }
 
@@ -782,6 +803,9 @@
         function movePlayer(id, x, y, orientation) {
             const player = playerMeshes[id];
             if (!player) return;
+
+            player.userData.tileX = x;
+            player.userData.tileY = y;
 
             const pos = toIso(x, y);
             player.x = pos.x;
