@@ -13,12 +13,13 @@
 
    | Flag | Type   | Required | Meaning |
    |------|--------|----------|---------|
-   | `-p` | INT    | yes | TCP port to listen on |
-   | `-x` | INT    | yes | width of the world |
-   | `-y` | INT    | yes | height of the world |
-   | `-n` | LIST   | yes | team names |
-   | `-c` | INT    | yes | number of initial client slots per team |
+   | `-p` | INT    | no  | TCP port to listen on |
+   | `-x` | INT    | no | width of the world |
+   | `-y` | INT    | no | height of the world |
+   | `-n` | LIST   | no | team names |
+   | `-c` | INT    | no | number of initial client slots per team |
    | `-f` | INT    | no  | reciprocal of the time unit (ticks per second), defaults to `100` |
+   | `-oldgen` | STRING | no  | if present, the server will use the old generation algorithm for resource spawning |
 
 3. Calls `_argParser.parse()`.
 4. Performs range validation that goes beyond what `ArgParser` itself can express (since `ArgParser` only knows about flag *shape*, not domain constraints):
