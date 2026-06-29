@@ -2,12 +2,7 @@
 
 ## Behaviour & Purpose
 
-<<<<<<< HEAD
-Zappy is **Epitech's PGE project** (Practical/Generic Engineering project), the
-end-of-year project of the second year of the Epitech curriculum.
-=======
 Zappy is **Epitech's project**, the end-of-year project of the second year of the Epitech curriculum.
->>>>>>> server/main
 
 The goal of the project is to build a network survival game, *Trantor*, in
 which several teams of autonomous AI clients compete on a shared, wrap-around
