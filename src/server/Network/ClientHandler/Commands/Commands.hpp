@@ -63,6 +63,10 @@ namespace zappy
             std::string Sgt(std::vector<std::string> args, Client &client);
             /// @brief sst: sets the time unit (ticks per second).
             std::string Sst(std::vector<std::string> args, Client &client);
+            /// @brief play: resumes the simulation if it was stopped.
+            std::string Play(std::vector<std::string> args, Client &client);
+            /// @brief stop: pauses the simulation.
+            std::string Stop(std::vector<std::string> args, Client &client);
             /// @brief msz: reports the map dimensions.
             std::string Msz(std::vector<std::string> args, Client &client);
             /// @brief bct: reports the content of a single tile.
