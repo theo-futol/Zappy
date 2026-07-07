@@ -82,6 +82,7 @@ class HudRenderer : public IRenderer
 
     static constexpr float Margin = 22.0f;        ///< Inner padding of the panel.
     static constexpr float LineHeight = 30.0f;    ///< Vertical step between text lines.
+    static constexpr float SectionGap = 16.0f;    ///< Extra vertical gap inserted between HUD sections.
     static constexpr float TitleHeight = 64.0f;   ///< Height of the top title bar.
     static constexpr float SwatchSize = 16.0f;    ///< Side of a team color swatch.
     static constexpr float SeparatorWidth = 3.0f; ///< Width of the left accent line.

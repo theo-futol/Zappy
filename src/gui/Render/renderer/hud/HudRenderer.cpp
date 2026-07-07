@@ -124,6 +124,7 @@ void HudRenderer::render(const RenderContext &context)
     Color label{0.80f, 0.83f, 0.90f, 1.0f};
     _text.drawText("ZAPPY", contentX + LogoSize + 14.0f, static_cast<float>(_height) - TitleHeight / 2.0f - 8.0f, Color{0.07f, 0.07f, 0.09f, 1.0f});
     _text.drawText("TIME UNIT  " + std::to_string(state.timeUnit()), contentX, headerY, label);
+    _text.drawText("MAP  " + std::to_string(state.map().width()) + " x " + std::to_string(state.map().height()), contentX, headerY - LineHeight, label);
     _text.drawText("-", minus.x + 9.0f, headerY, label);
     _text.drawText("+", plus.x + 6.0f, headerY, label);
     _text.drawText("MENU", menu.x + 10.0f, menu.y + 5.0f, Color{0.95f, 0.55f, 0.15f, 1.0f});
@@ -134,46 +135,51 @@ void HudRenderer::render(const RenderContext &context)
         _text.drawText(team, contentX + SwatchSize + 10.0f, teamsTop - static_cast<float>(row) * LineHeight, state.teamColor(team));
         ++row;
     }
+    // Single downward cursor: every following section stacks below the previous one, so
+    // two labels can never share a line whatever the team/resource count or window size.
+    float y = teamsTop - static_cast<float>(state.teams().size()) * LineHeight;
     if (!state.winner().empty())
     {
-        float winnerY = teamsTop - static_cast<float>(state.teams().size()) * LineHeight - LineHeight;
-
-        _text.drawText("WINNER  " + state.winner(), contentX, winnerY, Color{0.35f, 1.0f, 0.45f, 1.0f});
+        y -= SectionGap;
+        _text.drawText("WINNER  " + state.winner(), contentX, y, Color{0.35f, 1.0f, 0.45f, 1.0f});
+        y -= LineHeight;
     }
     if (state.hasSelectedTile())
     {
         GridPosition tilePos = state.selectedTile();
         const Tile &tile = state.map().at(tilePos.x, tilePos.y);
         std::vector<std::string> resources = tile.resources().describe(true);
-        float tileY = static_cast<float>(_height) * 0.80f;
-        int line = 1;
 
-        _text.drawText("TILE  " + std::to_string(tilePos.x) + ", " + std::to_string(tilePos.y), contentX, tileY, Color{0.95f, 0.55f, 0.15f, 1.0f});
+        y -= SectionGap;
+        _text.drawText("TILE  " + std::to_string(tilePos.x) + ", " + std::to_string(tilePos.y), contentX, y, Color{0.95f, 0.55f, 0.15f, 1.0f});
+        y -= LineHeight;
         if (tile.incanting())
         {
-            _text.drawText("INCANTATION", contentX, tileY - static_cast<float>(line) * LineHeight, Color{0.70f, 0.45f, 1.0f, 1.0f});
-            ++line;
+            _text.drawText("INCANTATION", contentX, y, Color{0.70f, 0.45f, 1.0f, 1.0f});
+            y -= LineHeight;
         }
         if (resources.empty())
-            _text.drawText("(vide)", contentX, tileY - static_cast<float>(line) * LineHeight, label);
+        {
+            _text.drawText("(vide)", contentX, y, label);
+            y -= LineHeight;
+        }
         else
             for (const std::string &resource : resources)
             {
-                _text.drawText(resource, contentX, tileY - static_cast<float>(line) * LineHeight, label);
-                ++line;
+                _text.drawText(resource, contentX, y, label);
+                y -= LineHeight;
             }
     }
     const IEntity *selected = state.selectedEntity();
     if (selected != nullptr)
     {
-        float selY = static_cast<float>(_height) * 0.55f;
-        int line = 1;
-
-        _text.drawText("SELECTED", contentX, selY, Color{0.95f, 0.55f, 0.15f, 1.0f});
+        y -= SectionGap;
+        _text.drawText("SELECTED", contentX, y, Color{0.95f, 0.55f, 0.15f, 1.0f});
+        y -= LineHeight;
         for (const std::string &info : selected->infoLines())
         {
-            _text.drawText(info, contentX, selY - static_cast<float>(line) * LineHeight, label);
-            ++line;
+            _text.drawText(info, contentX, y, label);
+            y -= LineHeight;
         }
     }
     if (!state.winner().empty() && shader != nullptr && mesh != nullptr)

@@ -112,6 +112,8 @@ void SceneHudRenderer::drawBar(const RenderContext &context) const
         _text.drawText(state.teams()[i], teamsX + static_cast<float>(i) * TeamStep + SwatchSize + 8.0f, textY, state.teamColor(state.teams()[i]));
     if (!state.winner().empty())
         _text.drawText("WINNER  " + state.winner(), static_cast<float>(_width) * 0.5f, textY, Color{0.35f, 1.0f, 0.45f, 1.0f});
+    std::string mapText = "MAP  " + std::to_string(state.map().width()) + " x " + std::to_string(state.map().height());
+    _text.drawText(mapText, static_cast<float>(_width) - _text.measure(mapText, 1.0f) - Margin, textY, toColor(LabelColor));
 }
 
 float SceneHudRenderer::panelHeightFor(const IEntity &selected) const
@@ -220,7 +222,7 @@ void SceneHudRenderer::drawTilePanel(const RenderContext &context) const
 
     float panelHeight = CardPadding * 2.0f + static_cast<float>(lines.size() + 1) * LineHeight;
     float panelX = Margin;
-    float panelY = Margin;
+    float panelY = BarHeight + Margin; // sit above the bottom bar so its team labels stay visible
     Shader *shader = _assets.shader("basic");
     Mesh *mesh = _assets.mesh("quad");
 

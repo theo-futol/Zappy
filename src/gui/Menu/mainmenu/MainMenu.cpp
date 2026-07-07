@@ -247,6 +247,7 @@ void MainMenu::draw()
     float titleY = panelBottom() + PanelHeight - Pad - 28.0f;
 
     _context.setViewport(_window.width(), _window.height());
+    _text->setScreenSize(_window.width(), _window.height());
     _context.setDepthTest(false);
     _window.clear(Color(Background.r, Background.g, Background.b, 1.0f));
     drawRect(panel, PanelColor);
