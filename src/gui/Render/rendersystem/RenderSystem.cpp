@@ -32,16 +32,27 @@
 namespace Zappy
 {
 
-RenderSystem::RenderSystem(Window &window, GraphicsContext &context, RenderMode mode)
+RenderSystem::RenderSystem(Window &window, GraphicsContext &context, RenderMode mode, bool vrRequested)
     : _width(window.width()), _height(window.height()), _window(window), _context(context), _assets(nullptr), _text(nullptr), _camera(nullptr), _projection(nullptr),
       _topDown(nullptr), _orbit(nullptr), _torus(nullptr), _input(), _renderers(), _hud(nullptr), _sceneHud(nullptr), _framed(false), _outgoing(), _mode(mode), _mouseX(0.0),
-      _mouseY(0.0), _following(false), _pov(false), _free(), _freeFly(false), _returnToMenu(false)
+      _mouseY(0.0), _following(false), _pov(false), _free(), _freeFly(false), _returnToMenu(false), _vrRequested(vrRequested), _vrEnabled(false), _vrWarning(), _vrSession(nullptr),
+      _vrInput(nullptr), _vrHands(nullptr), _vrRig(), _vrHud(nullptr), _vrTabletop(nullptr), _vrFramed(false), _vrDisplayTime(0.0), _vrShouldRender(false), _vrEyeViews()
 {
 }
 
 bool RenderSystem::wantsMenu() const
 {
     return _returnToMenu;
+}
+
+bool RenderSystem::vrEnabled() const
+{
+    return _vrEnabled;
+}
+
+const std::string &RenderSystem::vrWarning() const
+{
+    return _vrWarning;
 }
 
 float RenderSystem::orientationYaw(Orientation orientation)
@@ -91,6 +102,7 @@ void RenderSystem::init()
         initTwoD();
     else
         initThreeD();
+    initVR(_vrRequested);
 }
 
 void RenderSystem::initThreeD()
@@ -199,6 +211,11 @@ void RenderSystem::initTwoD()
 
 void RenderSystem::render(const GameState &state)
 {
+    if (_vrEnabled)
+    {
+        renderVR(state);
+        return;
+    }
     if (_mode != RenderMode::TwoD)
     {
         if (!_framed && state.map().width() > 0 && state.map().height() > 0)
@@ -272,6 +289,9 @@ void RenderSystem::render(const GameState &state)
 
 bool RenderSystem::processInput(GameState &state)
 {
+    if (_vrEnabled)
+        return processInputVR(state);
+
     if (!_window.isOpen())
         return false;
 
@@ -312,51 +332,12 @@ bool RenderSystem::processInput(GameState &state)
         updateHover(state);
         if (_input.consumeClick(clickX, clickY))
         {
-            if (_sceneHud->menuButtonHit(clickX, clickY))
-            {
-                _returnToMenu = true;
+            bool pickMap = false;
+
+            if (!handleSceneHudClick(clickX, clickY, state, pickMap))
                 return false;
-            }
-            if (_sceneHud->cameraButtonHit(clickX, clickY))
-            {
-                _freeFly = !_freeFly;
-                if (_freeFly)
-                    _free.setPose(Vec3(glm::inverse(_orbit->view())[3]), _orbit->forward());
-            }
-            else if (_following && _sceneHud->modeButtonHit(clickX, clickY, state))
-            {
-                _pov = !_pov;
-                const IEntity *target = state.selectedEntity();
-
-                if (_pov && target != nullptr)
-                    _orbit->setAngles(orientationYaw(target->orientation()), 0.0f);
-            }
-            else if (_sceneHud->followButtonHit(clickX, clickY, state))
-            {
-                if (_following)
-                    detachFollow(state);
-                else
-                {
-                    const IEntity *target = state.selectedEntity();
-
-                    if (target != nullptr)
-                    {
-                        WorldPoint anchor = _projection->toWorld(target->position().x, target->position().y);
-
-                        _following = true;
-                        _orbit->frame(anchor.position + Vec3(0.0f, FollowEye, 0.0f), FollowRadius);
-                    }
-                }
-            }
-            else
-            {
-                std::string command = _sceneHud->handleClick(clickX, clickY, state);
-
-                if (!command.empty())
-                    _outgoing.push_back(command);
-                else if (!_following)
-                    selectAt3D(clickX, clickY, state);
-            }
+            if (pickMap)
+                selectAt3D(clickX, clickY, state);
         }
         return running3D;
     }
@@ -367,17 +348,11 @@ bool RenderSystem::processInput(GameState &state)
 
     if (_input.consumeClick(clickX, clickY))
     {
-        if (_hud->menuButtonHit(clickX, clickY))
-        {
-            _returnToMenu = true;
+        bool pickMap = false;
+
+        if (!handleHudClick(clickX, clickY, state, pickMap))
             return false;
-        }
-
-        std::string command = _hud->handleClick(clickX, clickY, state);
-
-        if (!command.empty())
-            _outgoing.push_back(command);
-        else
+        if (pickMap)
             selectAt(clickX, clickY, state);
     }
     return running;
@@ -490,6 +465,268 @@ std::vector<std::string> RenderSystem::takeOutgoing()
 
     _outgoing.clear();
     return out;
+}
+
+bool RenderSystem::handleHudClick(double clickX, double clickY, GameState &state, bool &pickMapFallback)
+{
+    pickMapFallback = false;
+    if (_hud->menuButtonHit(clickX, clickY))
+    {
+        _returnToMenu = true;
+        return false;
+    }
+
+    std::string command = _hud->handleClick(clickX, clickY, state);
+
+    if (!command.empty())
+        _outgoing.push_back(command);
+    else
+        pickMapFallback = true;
+    return true;
+}
+
+bool RenderSystem::handleSceneHudClick(double clickX, double clickY, GameState &state, bool &pickMapFallback)
+{
+    pickMapFallback = false;
+    if (_sceneHud->menuButtonHit(clickX, clickY))
+    {
+        _returnToMenu = true;
+        return false;
+    }
+    if (_sceneHud->cameraButtonHit(clickX, clickY))
+    {
+        _freeFly = !_freeFly;
+        if (_freeFly)
+            _free.setPose(Vec3(glm::inverse(_orbit->view())[3]), _orbit->forward());
+        return true;
+    }
+    if (_following && _sceneHud->modeButtonHit(clickX, clickY, state))
+    {
+        _pov = !_pov;
+
+        const IEntity *target = state.selectedEntity();
+
+        if (_pov && target != nullptr)
+            _orbit->setAngles(orientationYaw(target->orientation()), 0.0f);
+        return true;
+    }
+    if (_sceneHud->followButtonHit(clickX, clickY, state))
+    {
+        if (_following)
+            detachFollow(state);
+        else
+        {
+            const IEntity *target = state.selectedEntity();
+
+            if (target != nullptr)
+            {
+                WorldPoint anchor = _projection->toWorld(target->position().x, target->position().y);
+
+                _following = true;
+                _orbit->frame(anchor.position + Vec3(0.0f, FollowEye, 0.0f), FollowRadius);
+            }
+        }
+        return true;
+    }
+
+    std::string command = _sceneHud->handleClick(clickX, clickY, state);
+
+    if (!command.empty())
+        _outgoing.push_back(command);
+    else
+        pickMapFallback = !_following;
+    return true;
+}
+
+void RenderSystem::initVR(bool vrRequested)
+{
+    if (!vrRequested)
+        return;
+
+    try
+    {
+        _vrSession = std::make_unique<VRSession>(_window);
+        _vrSession->init();
+
+        _vrInput = std::make_unique<VRInput>(*_vrSession);
+        _vrInput->init();
+
+        _vrHud = std::make_unique<VRHudSurface>(*_assets, _context, _width, _height);
+        if (_mode == RenderMode::TwoD)
+            _vrTabletop = std::make_unique<VRTabletop>();
+
+        try
+        {
+            _vrHands = std::make_unique<VRHandTracking>(*_vrSession);
+            _vrHands->init();
+        }
+        catch (const VRHandTracking::VRHandTrackingException &)
+        {
+            _vrHands.reset(); // No XR_EXT_hand_tracking support: the controller trigger remains the input path.
+        }
+        _vrEnabled = true;
+    }
+    catch (const std::exception &e)
+    {
+        _vrWarning = std::string("VR unavailable: ") + e.what() + " (falling back to desktop rendering)";
+        _vrEnabled = false;
+        _vrSession.reset();
+        _vrInput.reset();
+        _vrHands.reset();
+        _vrHud.reset();
+        _vrTabletop.reset();
+    }
+}
+
+std::pair<Mat4, Mat4> RenderSystem::vrEyeMatrices(const VRSession::EyeView &eye) const
+{
+    Mat4 view = _vrRig.eyeView(eye);
+    Mat4 projection = VRRig::eyeProjection(eye, VRNearPlane, VRFarPlane);
+
+    if (_vrTabletop != nullptr)
+        view = view * _vrTabletop->tableModel();
+    return {view, projection};
+}
+
+void RenderSystem::handleVRSelect(int hand, GameState &state)
+{
+    VRInput::Pose aim = _vrInput->aimPose(hand);
+
+    if (!aim.valid)
+        return;
+
+    Ray ray{aim.position, glm::normalize(aim.orientation * Vec3(0.0f, 0.0f, -1.0f))};
+    double panelX = 0.0;
+    double panelY = 0.0;
+    bool onPanel = _vrHud->hitTest(ray, panelX, panelY);
+    bool pickMap = !onPanel;
+
+    if (onPanel)
+    {
+        bool keepRunning = (_mode == RenderMode::TwoD) ? handleHudClick(panelX, panelY, state, pickMap) : handleSceneHudClick(panelX, panelY, state, pickMap);
+
+        if (!keepRunning)
+            return;
+    }
+    if (!pickMap)
+        return;
+    if (_mode == RenderMode::TwoD)
+    {
+        VRTabletop::Hit hit = _vrTabletop->pickTile(ray);
+
+        if (hit.found)
+            selectEntityAt(hit.tileX, hit.tileY, state);
+        return;
+    }
+    if (_following)
+        return;
+
+    VRPointer::Hit hit = VRPointer::pickTile(ray, *_projection, state.map().width(), state.map().height(), VRPickRadius);
+
+    if (hit.found)
+        selectEntityAt(hit.tileX, hit.tileY, state);
+}
+
+bool RenderSystem::processInputVR(GameState &state)
+{
+    std::vector<Event> events = _window.pollEvents();
+
+    for (const Event &event : events)
+        if (event.type == EventType::Close)
+            return false;
+    if (!_window.isOpen())
+        return false;
+
+    _vrShouldRender = _vrSession->beginFrame(_vrDisplayTime);
+    if (_vrSession->wantsExit())
+        return false;
+
+    _vrInput->sync(_vrDisplayTime);
+    if (_vrHands)
+        _vrHands->locate(_vrDisplayTime);
+    if (_vrInput->menuJustPressed())
+        _returnToMenu = true;
+    if (_returnToMenu)
+    {
+        // beginFrame() above may have already started a frame (xrBeginFrame); close it out before
+        // bailing so the session's begin/end pairing stays balanced even though render() won't run.
+        _vrSession->endFrame(_vrDisplayTime, _vrEyeViews);
+        return false;
+    }
+    if (!_vrShouldRender)
+        return true;
+
+    _vrEyeViews = _vrSession->locateViews(_vrDisplayTime);
+    if (!_vrFramed && state.map().width() > 0 && state.map().height() > 0)
+    {
+        if (_mode == RenderMode::TwoD)
+            _vrTabletop->autoFrame(state.map().width(), state.map().height());
+        else if (_torus != nullptr)
+            _vrRig.setPose(Vec3(0.0f, 0.0f, (TorusMajor + TorusMinor) * TorusFramePad), 180.0f);
+        else
+            _vrRig.setPose(Vec3(static_cast<float>(state.map().width()) * 0.5f, 0.0f, static_cast<float>(state.map().height()) * 0.5f + 5.0f), 180.0f);
+        _vrFramed = true;
+    }
+
+    static constexpr float FrameSeconds = 1.0f / 90.0f; ///< Approximate VR frame delta (typical HMD refresh rate).
+    float headsetYaw = VRRig::yawFromOrientation(_vrEyeViews[0].orientation);
+    Vec2 moveStick = _vrInput->thumbstick(VRInput::LeftHand);
+    Vec2 turnStick = _vrInput->thumbstick(VRInput::RightHand);
+
+    if (_mode != RenderMode::TwoD)
+        _vrRig.updateLocomotion(moveStick, headsetYaw, VRMoveMetersPerSecond, FrameSeconds);
+    if (std::fabs(turnStick.x) > 0.5f)
+        _vrRig.turn((turnStick.x > 0.0f ? VRTurnDegreesPerSecond : -VRTurnDegreesPerSecond) * FrameSeconds);
+    if (_mode == RenderMode::TwoD && std::fabs(turnStick.y) > 0.5f)
+        _vrTabletop->zoomBy(turnStick.y > 0.0f ? 1.02f : 1.0f / 1.02f);
+
+    for (int hand = 0; hand < VRInput::HandCount; ++hand)
+    {
+        bool pinching = _vrHands != nullptr && _vrHands->pinchJustStarted(hand);
+
+        if (_vrInput->selectJustPressed(hand) || pinching)
+            handleVRSelect(hand, state);
+    }
+    return true;
+}
+
+void RenderSystem::renderVR(const GameState &state)
+{
+    if (!_vrShouldRender)
+    {
+        _vrSession->endFrame(_vrDisplayTime, _vrEyeViews);
+        return;
+    }
+
+    float time = static_cast<float>(glfwGetTime());
+    std::pair<Mat4, Mat4> leftEye = vrEyeMatrices(_vrEyeViews[0]);
+    RenderContext hudContext{state, leftEye.first, leftEye.second, *_projection, time};
+
+    if (_mode == RenderMode::TwoD)
+        _vrHud->renderHud(*_hud, hudContext);
+    else
+        _vrHud->renderHud(*_sceneHud, hudContext);
+
+    for (int eye = 0; eye < VRSession::EyeCount; ++eye)
+    {
+        VRSession::EyeTarget target = _vrSession->acquireEye(eye);
+        std::pair<Mat4, Mat4> matrices = vrEyeMatrices(_vrEyeViews[static_cast<std::size_t>(eye)]);
+
+        glBindFramebuffer(GL_FRAMEBUFFER, target.framebuffer);
+        _context.setViewport(target.width, target.height);
+        _window.clear(Color(0.1f, 0.1f, 0.12f, 1.0f));
+        _context.setDepthTest(true);
+
+        RenderContext context{state, matrices.first, matrices.second, *_projection, time};
+
+        for (const std::unique_ptr<IRenderer> &renderer : _renderers)
+            renderer->render(context);
+        _vrHud->renderQuad(matrices.first, matrices.second);
+        glBindFramebuffer(GL_FRAMEBUFFER, 0);
+        _vrSession->releaseEye(eye);
+    }
+    _vrSession->endFrame(_vrDisplayTime, _vrEyeViews);
+    _window.swapBuffers();
 }
 
 } // namespace Zappy

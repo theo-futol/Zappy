@@ -29,7 +29,7 @@ const Vec3 ErrorColor(0.95f, 0.35f, 0.35f);
 } // namespace
 
 MainMenu::MainMenu(Window &window, GraphicsContext &context)
-    : _window(window), _context(context), _assets(nullptr), _text(nullptr), _host(), _port(), _mode(RenderMode::TwoD), _focus(Field::Host), _error()
+    : _window(window), _context(context), _assets(nullptr), _text(nullptr), _host(), _port(), _mode(RenderMode::TwoD), _vr(false), _focus(Field::Host), _error()
 {
 }
 
@@ -56,11 +56,12 @@ void MainMenu::init()
     }
 }
 
-void MainMenu::setDefaults(const std::string &host, int port, RenderMode mode)
+void MainMenu::setDefaults(const std::string &host, int port, RenderMode mode, bool vr)
 {
     _host = host;
     _port = (port > 0) ? std::to_string(port) : "";
     _mode = mode;
+    _vr = vr;
     _focus = _host.empty() ? Field::Host : Field::Port;
     _error.clear();
 }
@@ -127,11 +128,18 @@ MainMenu::Rect MainMenu::modeTorusButton() const
     return Rect{three.x + three.width + 10.0f, three.y, three.width, FieldHeight};
 }
 
-MainMenu::Rect MainMenu::validateButton() const
+MainMenu::Rect MainMenu::vrToggleButton() const
 {
     Rect mode = modeTwoButton();
 
     return Rect{hostField().x, mode.y - RowGap, FieldWidth, ButtonHeight};
+}
+
+MainMenu::Rect MainMenu::validateButton() const
+{
+    Rect vr = vrToggleButton();
+
+    return Rect{hostField().x, vr.y - RowGap, FieldWidth, ButtonHeight};
 }
 
 MainMenu::Rect MainMenu::quitButton() const
@@ -178,7 +186,7 @@ bool MainMenu::tryValidate(MenuConfig &config)
         _error = "Port hors plage (1-65535)";
         return false;
     }
-    config = MenuConfig{MenuResult::Connect, _host, port, _mode};
+    config = MenuConfig{MenuResult::Connect, _host, port, _mode, _vr};
     return true;
 }
 
@@ -197,11 +205,13 @@ bool MainMenu::handleClick(double px, double py, MenuConfig &config)
         _mode = RenderMode::ThreeD;
     else if (contains(modeTorusButton(), fx, fy))
         _mode = RenderMode::ThreeDTorus;
+    else if (contains(vrToggleButton(), fx, fy))
+        _vr = !_vr;
     else if (contains(validateButton(), fx, fy))
         return tryValidate(config);
     else if (contains(quitButton(), fx, fy))
     {
-        config = MenuConfig{MenuResult::Quit, _host, 0, _mode};
+        config = MenuConfig{MenuResult::Quit, _host, 0, _mode, _vr};
         return true;
     }
     else
@@ -241,6 +251,7 @@ void MainMenu::draw()
     Rect modeTwo = modeTwoButton();
     Rect modeThree = modeThreeButton();
     Rect modeTorus = modeTorusButton();
+    Rect vrToggle = vrToggleButton();
     Rect validate = validateButton();
     Rect quit = quitButton();
     float titleX = panelLeft() + Pad;
@@ -260,6 +271,8 @@ void MainMenu::draw()
     _text->drawText("2D", modeTwo.x + modeTwo.width / 2.0f - 14.0f, modeTwo.y + modeTwo.height / 2.0f - 8.0f, toColor(Label));
     _text->drawText("3D", modeThree.x + modeThree.width / 2.0f - 14.0f, modeThree.y + modeThree.height / 2.0f - 8.0f, toColor(Label));
     _text->drawText("TORE", modeTorus.x + modeTorus.width / 2.0f - 28.0f, modeTorus.y + modeTorus.height / 2.0f - 8.0f, toColor(Label));
+    drawRect(vrToggle, _vr ? SelectedColor : ButtonColor);
+    _text->drawText(_vr ? "VR: ON" : "VR: OFF", vrToggle.x + vrToggle.width / 2.0f - 44.0f, vrToggle.y + vrToggle.height / 2.0f - 8.0f, toColor(Label));
     drawRect(validate, ButtonColor);
     drawRect(quit, ButtonColor);
     _text->drawText("VALIDER", validate.x + validate.width / 2.0f - 44.0f, validate.y + validate.height / 2.0f - 8.0f, toColor(Accent));
@@ -272,7 +285,7 @@ void MainMenu::draw()
 
 MenuConfig MainMenu::run()
 {
-    MenuConfig config{MenuResult::Quit, _host, 0, _mode};
+    MenuConfig config{MenuResult::Quit, _host, 0, _mode, _vr};
 
     while (_window.isOpen())
     {
@@ -281,7 +294,7 @@ MenuConfig MainMenu::run()
         for (const Event &event : events)
         {
             if (event.type == EventType::Close)
-                return MenuConfig{MenuResult::Quit, _host, 0, _mode};
+                return MenuConfig{MenuResult::Quit, _host, 0, _mode, _vr};
             if (event.type == EventType::Resize)
                 _text->setScreenSize(event.width, event.height);
             else if (event.type == EventType::Char)
@@ -308,7 +321,7 @@ MenuConfig MainMenu::run()
         }
         draw();
     }
-    return MenuConfig{MenuResult::Quit, _host, 0, _mode};
+    return MenuConfig{MenuResult::Quit, _host, 0, _mode, _vr};
 }
 
 } // namespace Zappy

@@ -94,7 +94,7 @@ class Core
      */
     static RenderMode parseMode(const std::string &value);
 
-    static constexpr const char *USAGE = "USAGE: ./zappy_gui -p port -h machine [-m 2d|3d|torus]"; ///< Command-line usage.
+    static constexpr const char *USAGE = "USAGE: ./zappy_gui -p port -h machine [-m 2d|3d|torus] [--vr]"; ///< Command-line usage.
     static constexpr int WindowWidth = 1280;                                                 ///< Initial window width.
     static constexpr int WindowHeight = 720;                                                 ///< Initial window height.
     static constexpr const char *WindowTitle = "Zappy";                                      ///< Window title.
@@ -108,6 +108,7 @@ class Core
     std::string _host;                        ///< Server hostname.
     int _port;                                ///< Server port.
     RenderMode _mode;                         ///< Display mode (-m), defaults to 2D.
+    bool _vrRequested;                        ///< Whether to attempt a VR session (--vr), regardless of whether it's available.
 };
 
 } // namespace Zappy

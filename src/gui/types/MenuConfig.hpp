@@ -27,6 +27,7 @@ struct MenuConfig
     std::string host;   ///< Server hostname or IP entered by the user.
     int port;           ///< Server TCP port entered by the user.
     RenderMode mode;    ///< Chosen display mode (2D or 3D).
+    bool vr;            ///< Whether to attempt a VR session on top of that mode.
 };
 
 } // namespace Zappy

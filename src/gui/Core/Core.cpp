@@ -8,7 +8,8 @@
 namespace Zappy
 {
 
-Core::Core(int argc, char **argv) : _state(), _window(nullptr), _context(nullptr), _menu(nullptr), _network(nullptr), _render(nullptr), _host(), _port(0), _mode(RenderMode::TwoD)
+Core::Core(int argc, char **argv)
+    : _state(), _window(nullptr), _context(nullptr), _menu(nullptr), _network(nullptr), _render(nullptr), _host(), _port(0), _mode(RenderMode::TwoD), _vrRequested(false)
 {
     parseArguments(argc, argv);
 }
@@ -25,6 +26,8 @@ void Core::parseArguments(int argc, char **argv)
             _host = argv[++i];
         else if (arg == "-m" && i + 1 < argc)
             _mode = parseMode(argv[++i]);
+        else if (arg == "--vr")
+            _vrRequested = true;
         else
             throw CoreException(USAGE);
     }
@@ -91,8 +94,10 @@ bool Core::runSession(std::string &error)
     {
         _network = std::make_unique<NetworkService>(_state, std::make_unique<TcpSocket>());
         _network->connect(_host, _port);
-        _render = std::make_unique<RenderSystem>(*_window, *_context, _mode);
+        _render = std::make_unique<RenderSystem>(*_window, *_context, _mode, _vrRequested);
         _render->init();
+        if (_vrRequested && !_render->vrEnabled())
+            error = _render->vrWarning();
     }
     catch (const NetworkService::NetworkServiceException &e)
     {
@@ -141,7 +146,7 @@ void Core::run()
 
     while (true)
     {
-        _menu->setDefaults(_host, _port, _mode);
+        _menu->setDefaults(_host, _port, _mode, _vrRequested);
         _menu->setError(error);
         error.clear();
 
@@ -152,6 +157,7 @@ void Core::run()
         _host = config.host;
         _port = config.port;
         _mode = config.mode;
+        _vrRequested = config.vr;
         if (!runSession(error))
             break;
     }

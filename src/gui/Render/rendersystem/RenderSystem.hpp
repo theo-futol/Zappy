@@ -1,8 +1,10 @@
 #pragma once
 
+#include <array>
 #include <exception>
 #include <memory>
 #include <string>
+#include <utility>
 #include <vector>
 #include "Graphics/context/GraphicsContext.hpp"
 #include "Graphics/text/TextRenderer.hpp"
@@ -16,6 +18,13 @@
 #include "Render/projection/torus/TorusProjection.hpp"
 #include "Render/renderer/hud/HudRenderer.hpp"
 #include "Render/renderer/scenehud/SceneHudRenderer.hpp"
+#include "VR/handtracking/VRHandTracking.hpp"
+#include "VR/hudsurface/VRHudSurface.hpp"
+#include "VR/input/VRInput.hpp"
+#include "VR/interaction/VRPointer.hpp"
+#include "VR/rig/VRRig.hpp"
+#include "VR/session/VRSession.hpp"
+#include "VR/tabletop/VRTabletop.hpp"
 #include "interface/ICamera.hpp"
 #include "interface/IProjection.hpp"
 #include "interface/IRenderer.hpp"
@@ -57,8 +66,10 @@ class RenderSystem
      * @param window Window owned by the caller (borrowed, must outlive this system).
      * @param context Graphics context owned by the caller (borrowed, must outlive this system).
      * @param mode Display mode selecting the view pipeline (2D or 3D).
+     * @param vrRequested Whether to attempt a VR session on top of that pipeline (best-effort:
+     *        falls back to desktop rendering with a warning if no OpenXR runtime/headset answers).
      */
-    RenderSystem(Window &window, GraphicsContext &context, RenderMode mode);
+    RenderSystem(Window &window, GraphicsContext &context, RenderMode mode, bool vrRequested = false);
 
     RenderSystem(const RenderSystem &) = delete;
     RenderSystem &operator=(const RenderSystem &) = delete;
@@ -96,6 +107,19 @@ class RenderSystem
      */
     bool wantsMenu() const;
 
+    /**
+     * @brief Whether a VR session was successfully established (vrRequested was true and it worked).
+     * @return True if render()/processInput() are driving the headset instead of the desktop path.
+     */
+    bool vrEnabled() const;
+
+    /**
+     * @brief Non-fatal message explaining why VR isn't active, set when vrRequested was true but
+     * session setup failed (no runtime, no headset, Wayland instead of X11, ...).
+     * @return The warning, or an empty string if VR wasn't requested or started successfully.
+     */
+    const std::string &vrWarning() const;
+
   private:
     /**
      * @brief Loads the 2D pipeline: top-down camera, planar projection, assets, renderers, HUD.
@@ -131,6 +155,28 @@ class RenderSystem
      * @param state State whose selection is set or cleared.
      */
     void selectEntityAt(int tileX, int tileY, GameState &state);
+
+    /**
+     * @brief Routes a 2D-mode click to the HUD's buttons, shared by the desktop and VR input paths.
+     * @param clickX Click X in pixels (desktop cursor, or a VR ray/panel hit converted to HUD pixels).
+     * @param clickY Click Y in pixels.
+     * @param state State updated by the HUD.
+     * @param pickMapFallback Receives true if nothing in the HUD consumed the click (caller should
+     *        fall back to its own map picking: selectAt() for the mouse, VRTabletop::pickTile() for VR).
+     * @return False if the MENU button was hit (caller should stop and return to the menu).
+     */
+    bool handleHudClick(double clickX, double clickY, GameState &state, bool &pickMapFallback);
+
+    /**
+     * @brief Routes a 3D-mode click to the scene HUD's buttons, shared by the desktop and VR input paths.
+     * @param clickX Click X in pixels (desktop cursor, or a VR ray/panel hit converted to HUD pixels).
+     * @param clickY Click Y in pixels.
+     * @param state State updated by the HUD (camera/follow/mode toggles) or a queued command.
+     * @param pickMapFallback Receives true if nothing in the HUD consumed the click (caller should
+     *        fall back to its own map picking: selectAt3D() for the mouse, VRPointer for VR).
+     * @return False if the MENU button was hit (caller should stop and return to the menu).
+     */
+    bool handleSceneHudClick(double clickX, double clickY, GameState &state, bool &pickMapFallback);
 
     /**
      * @brief Finds the tile under a screen point by projecting every tile and taking the nearest one.
@@ -173,6 +219,42 @@ class RenderSystem
      */
     static float orientationYaw(Orientation orientation);
 
+    /**
+     * @brief Attempts to establish a VR session on top of whichever pipeline init() already built.
+     *
+     * Best-effort and never fatal: catches VRSession::VRSessionException (and friends) and leaves
+     * _vrEnabled false with _vrWarning set, so the caller keeps rendering the desktop path.
+     * @param vrRequested Whether the caller asked for VR (--vr); does nothing if false.
+     */
+    void initVR(bool vrRequested);
+
+    /**
+     * @brief VR counterpart of processInput(): syncs actions/poses and handles VR-specific input.
+     * @param state State updated on selection.
+     * @return False when the user asked to quit or the runtime asked to exit, true otherwise.
+     */
+    bool processInputVR(GameState &state);
+
+    /**
+     * @brief VR counterpart of render(): submits one stereo frame via the OpenXR session.
+     * @param state Game state to render.
+     */
+    void renderVR(const GameState &state);
+
+    /**
+     * @brief Builds the view/projection pair for one eye, folding in the VR rig and (2D mode) the tabletop.
+     * @param eye Eye pose/fov from VRSession::locateViews().
+     * @return The eye's view and projection matrices.
+     */
+    std::pair<Mat4, Mat4> vrEyeMatrices(const VRSession::EyeView &eye) const;
+
+    /**
+     * @brief Routes a VR "select" press (trigger or pinch) on one hand to HUD hit-testing or map picking.
+     * @param hand VRInput::LeftHand or VRInput::RightHand.
+     * @param state State updated on selection or by a HUD button.
+     */
+    void handleVRSelect(int hand, GameState &state);
+
     static constexpr const char *FlatGroundModelPath = "assets/ground/scene.gltf";                    ///< Flat ground model (3D flat mode).
     static constexpr const char *TorusModelPath = "assets/torus/scene.gltf";                          ///< Torus world model (3D torus mode, the planet shell).
     static constexpr const char *SkyCrossPath = "assets/sky/Cubemap/Cubemap_Sky_15-512x512.png";     ///< 4x3 cross sky image in 3D mode.
@@ -212,6 +294,25 @@ class RenderSystem
     FreeCamera _free;                                   ///< Free-fly camera (3D, alternative to orbit).
     bool _freeFly;                                      ///< Whether the 3D camera is in free-fly mode (when not following).
     bool _returnToMenu;                                 ///< Set when the HUD "MENU" button is clicked (back to the main menu).
+
+    bool _vrRequested;                                  ///< Whether the caller asked for VR (--vr), regardless of whether it worked.
+    bool _vrEnabled;                                    ///< True once a VR session was successfully established.
+    std::string _vrWarning;                             ///< Non-fatal reason VR isn't active (empty if not requested or running).
+    std::unique_ptr<VRSession> _vrSession;              ///< OpenXR instance/session/swapchain owner (null unless VR is enabled).
+    std::unique_ptr<VRInput> _vrInput;                  ///< Controller/hand action set (null unless VR is enabled).
+    std::unique_ptr<VRHandTracking> _vrHands;           ///< Optional XR_EXT_hand_tracking wrapper (null if unsupported).
+    VRRig _vrRig;                                       ///< Headset pose + locomotion, folded into per-eye matrices.
+    std::unique_ptr<VRHudSurface> _vrHud;               ///< World-space quad presenting the active HUD renderer.
+    std::unique_ptr<VRTabletop> _vrTabletop;            ///< 2D-mode table placement (null outside RenderMode::TwoD).
+    bool _vrFramed;                                     ///< Whether the VR rig/tabletop was auto-framed once.
+    double _vrDisplayTime;                              ///< Predicted display time for the current frame (from beginFrame()).
+    bool _vrShouldRender;                               ///< Whether this frame should actually be rendered (from beginFrame()).
+    std::array<VRSession::EyeView, VRSession::EyeCount> _vrEyeViews; ///< Eye poses/fovs located this frame.
+    static constexpr float VRNearPlane = 0.05f;         ///< Near clip distance for VR eye projections.
+    static constexpr float VRFarPlane = 5000.0f;        ///< Far clip distance for VR eye projections.
+    static constexpr float VRMoveMetersPerSecond = 1.4f; ///< Thumbstick locomotion speed.
+    static constexpr float VRTurnDegreesPerSecond = 90.0f; ///< Smooth-turn speed for the turn thumbstick.
+    static constexpr float VRPickRadius = 0.4f;         ///< World-space pick radius for VRPointer (3D modes).
 };
 
 } // namespace Zappy

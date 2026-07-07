@@ -17,7 +17,8 @@ namespace Zappy
 
 /**
  * @class Window
- * @brief Encapsulates the GLFW window and OpenGL context; the only place GLFW is touched.
+ * @brief Encapsulates the GLFW window and OpenGL context; the only place GLFW is touched
+ * (aside from the native-handle escape hatch used by OpenXR/GLX interop, see nativeDisplay()).
  */
 class Window
 {
@@ -75,6 +76,28 @@ class Window
 
     /** @brief Window height. @return The height in pixels. */
     int height() const;
+
+    /**
+     * @brief Native X11 display connection backing this window.
+     *
+     * Escape hatch for OpenXR's OpenGL/GLX graphics binding (XR_KHR_opengl_enable on Linux);
+     * the only reason Window exposes a native handle beyond GLFWwindow*. Returned as an opaque
+     * pointer (actually an X11 `Display*`) so this header never has to include X11/GLX headers.
+     * @return The native X11 display handle.
+     */
+    void *nativeDisplay() const;
+
+    /**
+     * @brief Native GLX rendering context bound to this window's OpenGL context.
+     * @return The native GLX context handle (actually a `GLXContext`), opaque here.
+     */
+    void *nativeGLXContext() const;
+
+    /**
+     * @brief Native GLX drawable backing this window.
+     * @return The native GLX window handle (actually a `GLXWindow`, an X11 XID).
+     */
+    unsigned long nativeGLXWindow() const;
 
   private:
     /** @brief Registers the GLFW callbacks that feed the event queue. */

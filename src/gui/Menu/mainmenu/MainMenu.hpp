@@ -71,8 +71,9 @@ class MainMenu
      * @param host Initial host string (empty to leave blank).
      * @param port Initial port (<= 0 to leave blank).
      * @param mode Initial display mode.
+     * @param vr Initial VR toggle state.
      */
-    void setDefaults(const std::string &host, int port, RenderMode mode);
+    void setDefaults(const std::string &host, int port, RenderMode mode, bool vr);
 
     /**
      * @brief Sets the error message shown under the buttons (e.g. a failed connection).
@@ -124,6 +125,9 @@ class MainMenu
 
     /** @brief Rectangle of the "3D torus" mode button. @return The button rectangle. */
     Rect modeTorusButton() const;
+
+    /** @brief Rectangle of the VR on/off toggle button. @return The button rectangle. */
+    Rect vrToggleButton() const;
 
     /** @brief Rectangle of the validate button. @return The button rectangle. */
     Rect validateButton() const;
@@ -195,7 +199,7 @@ class MainMenu
     static Color toColor(const Vec3 &color);
 
     static constexpr float PanelWidth = 460.0f;   ///< Width of the centered menu panel.
-    static constexpr float PanelHeight = 440.0f;  ///< Height of the centered menu panel.
+    static constexpr float PanelHeight = 518.0f;  ///< Height of the centered menu panel (mode row + VR toggle row).
     static constexpr float FieldWidth = 380.0f;   ///< Width of a text field / wide button.
     static constexpr float FieldHeight = 44.0f;   ///< Height of a text field.
     static constexpr float ButtonHeight = 48.0f;  ///< Height of an action button.
@@ -213,6 +217,7 @@ class MainMenu
     std::string _host;                   ///< Current host field value.
     std::string _port;                   ///< Current port field value (digits).
     RenderMode _mode;                    ///< Currently selected display mode.
+    bool _vr;                            ///< Whether the VR toggle is currently on.
     Field _focus;                        ///< Field with keyboard focus.
     std::string _error;                  ///< Last validation error (shown under the buttons).
 };
