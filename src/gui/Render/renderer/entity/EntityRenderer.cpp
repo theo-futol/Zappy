@@ -52,12 +52,15 @@ float EntityRenderer::angleForOrientation(Orientation orientation) const
 {
     switch (orientation)
     {
+    // Server convention: North = y-1 (up), South = y+1 (down). The triangle's nose points
+    // toward +Y at rest, so North must rotate to -Y (180) and South to +Y (0); E/W are on
+    // the rotation axis and stay correct.
     case Orientation::North:
-        return 0.0f;
+        return glm::radians(180.0f);
     case Orientation::East:
         return glm::radians(-90.0f);
     case Orientation::South:
-        return glm::radians(180.0f);
+        return 0.0f;
     case Orientation::West:
         return glm::radians(90.0f);
     }

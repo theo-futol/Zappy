@@ -61,15 +61,19 @@ void SceneRenderer::setTorusWorld(bool torusWorld)
 
 float SceneRenderer::orientationYaw(Orientation orientation)
 {
+    // Server convention: North = y-1 (world -Z), South = y+1 (+Z). The model's forward at
+    // yaw 0 was authored as if North were +Z, so North/South were reversed relative to the
+    // slide direction; swap them so the golem faces where it walks. E/W lie on the axis.
     switch (orientation)
     {
     case Orientation::East:
         return -90.0f;
     case Orientation::South:
-        return 180.0f;
+        return 0.0f;
     case Orientation::West:
         return 90.0f;
     case Orientation::North:
+        return 180.0f;
     default:
         return 0.0f;
     }
