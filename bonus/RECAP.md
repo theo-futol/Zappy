@@ -269,6 +269,24 @@ filesystem-is-the-database convention), with steps doubling as assertions:
   failed expectation marks the scene failed but **continues** (you want the
   full picture), while hard errors (unknown tool/agent) abort and mark the
   remaining steps `skipped`.
+- Steps accept `wait_ms` (capped at 5 s): a pause before the step, needed by
+  conversation scenes to let distance-delayed broadcasts arrive before a
+  listener asserts on them. Broadcasts arriving during a step are appended
+  to its result (`message K, ...`), same as `/action` — a runner bug found
+  by the village scene: it originally dropped them.
+- Reference heavy scene: **`village-gathering`** — six named villagers
+  (aldric/berta/cedric/dora/edmund/farah) wake, converge on the square, and
+  hold a signed broadcast conversation (greetings, a confirm-and-answer
+  exchange about a linemate find, a village plan echoing the
+  verify-understanding culture), 63 steps with 6 `expect: "message"`
+  assertions proving the words were actually heard. Passes in ~5 s against
+  the real server in classic mode.
+- **Wait mode vs scenes**: with the serial-turn server (`--wait-timeout`),
+  every step pays the timeout for each idle client's skipped turn — the
+  6-villager scene took 13+ minutes. The server image now takes
+  `WAIT_TIMEOUT` from the environment (`ZAPPY_WAIT_TIMEOUT` via compose;
+  empty = classic mode), so playbook testing runs the fast path:
+  `ZAPPY_WAIT_TIMEOUT= ZAPPY_CLIENTS=20 docker compose up -d server`.
 - Every step is logged into the agent's history, so a scene is replayable
   and inspectable from the `/leader` view afterwards.
 - UI: playbook list, JSON editor with save/new-from-template, run button,

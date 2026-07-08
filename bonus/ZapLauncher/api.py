@@ -146,6 +146,9 @@ class PlaybookStep(BaseModel):
     tool: str
     args: str = ""
     expect: Optional[str] = None
+    # Pause before the step (capped at 5000): lets scenes wait out
+    # travel-time effects like distance-delayed broadcast delivery.
+    wait_ms: int = 0
 
 
 class Playbook(BaseModel):
@@ -732,6 +735,9 @@ def run_playbook(name: str):
                 aborted = True
                 continue
 
+            if step.wait_ms > 0:
+                time.sleep(min(step.wait_ms, 5000) / 1000)
+
             try:
                 result = tools.use_tool(step.tool, step.args, agent)
             except ValueError as exc:
@@ -742,6 +748,13 @@ def run_playbook(name: str):
                 ok = False
                 aborted = True
                 continue
+
+            # Deliver broadcasts that arrived during the command (same as /action):
+            # conversation scenes assert on these "message K, ..." lines.
+            if agent.connection is not None:
+                received = agent.connection.drain_messages()
+                if received:
+                    result += "\n" + "\n".join(received)
 
             now = time.time()
             agent.history.extend([

@@ -236,7 +236,8 @@
       "agent": "aldric",
       "tool": "look",
       "args": "",
-      "expect": "message"
+      "expect": "message",
+      "wait_ms": 300
     },
     {
       "agent": "cedric",
@@ -254,7 +255,8 @@
       "agent": "edmund",
       "tool": "look",
       "args": "",
-      "expect": "message"
+      "expect": "message",
+      "wait_ms": 300
     },
     {
       "agent": "edmund",
@@ -266,7 +268,8 @@
       "agent": "farah",
       "tool": "inventory",
       "args": "",
-      "expect": "message"
+      "expect": "message",
+      "wait_ms": 300
     },
     {
       "agent": "farah",
@@ -290,7 +293,8 @@
       "agent": "aldric",
       "tool": "inventory",
       "args": "",
-      "expect": "message"
+      "expect": "message",
+      "wait_ms": 300
     },
     {
       "agent": "berta",
@@ -314,7 +318,8 @@
       "agent": "cedric",
       "tool": "look",
       "args": "",
-      "expect": "message"
+      "expect": "message",
+      "wait_ms": 300
     },
     {
       "agent": "cedric",
@@ -332,7 +337,8 @@
       "agent": "edmund",
       "tool": "inventory",
       "args": "",
-      "expect": "message"
+      "expect": "message",
+      "wait_ms": 300
     },
     {
       "agent": "edmund",

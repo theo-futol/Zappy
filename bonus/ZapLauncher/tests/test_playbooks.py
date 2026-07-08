@@ -100,6 +100,44 @@ def test_run_busy_agent_409(clean_runtime, server_env):
     assert client.post("/playbooks/scene1/run").status_code == 409
 
 
+def test_run_delivers_broadcasts_into_step_results(clean_runtime, server_env, fake_server):
+    """Conversation scenes assert on heard broadcasts: 'message K, ...' lines
+    arriving during a step must land in that step's result."""
+    fake_server.responses["Inventory"] = [
+        "message 3, Berta_the_merchant_here",
+        "[food 10, linemate 0, deraumere 0, sibur 0, mendiane 0, phiras 0, thystame 0]",
+    ]
+    playbook = {
+        "name": "hear",
+        "team": "REDS",
+        "agents": [{"id": "listener", "personality": "guard"}],
+        "steps": [
+            {"agent": "listener", "tool": "inventory", "args": "", "expect": "message"},
+        ],
+    }
+    client.put("/playbooks/hear", json=playbook)
+    run = client.post("/playbooks/hear/run").json()
+    assert run["ok"] is True, run
+    assert "message 3, Berta the merchant here" in run["steps"][0]["result"]
+
+
+def test_step_wait_ms_delays_execution(clean_runtime, server_env):
+    playbook = {
+        "name": "paced",
+        "team": "REDS",
+        "agents": [{"id": "slowpoke", "personality": "guard"}],
+        "steps": [
+            {"agent": "slowpoke", "tool": "forward", "args": "", "expect": "ok", "wait_ms": 400},
+        ],
+    }
+    client.put("/playbooks/paced", json=playbook)
+    import time as _time
+    start = _time.monotonic()
+    run = client.post("/playbooks/paced/run").json()
+    assert run["ok"] is True
+    assert _time.monotonic() - start >= 0.4
+
+
 def test_e2e_scene_drives_fake_server(clean_runtime, server_env, fake_server):
     """End-to-end: playbook -> agent creation -> TCP protocol -> assertions."""
     scene = {
