@@ -53,19 +53,30 @@ struct Team
         }
     }
     /// @brief Lays count eggs at the given tile, each adding a slot and a unique ID.
-    void addEgg(const position &position, int count = 1)
+    ///        Returns the ID of the last egg created.
+    int addEgg(const position &position, int count = 1)
     {
         _slotsAvailable += count;
         for (auto &egg : _eggs)
             if (egg.first == position)
             {
-                egg.second.emplace_back(eggID++);
-                return;
+                for (int i = 0; i < count; ++i)
+                    egg.second.emplace_back(eggID++);
+                return egg.second.back();
             }
         std::vector<int> newEggs;
         for (int i = 0; i < count; ++i)
             newEggs.emplace_back(eggID++);
         _eggs.emplace_back(position, newEggs);
+        return _eggs.back().second.back();
+    }
+    /// @brief IDs of all eggs currently sitting on the given tile.
+    std::vector<int> getEggIdsAtPosition(const position &pos) const
+    {
+        for (const auto &egg : _eggs)
+            if (egg.first == pos)
+                return egg.second;
+        return {};
     }
     /// @brief Removes eggs at a tile (and their slots). With eggID set, removes just
     ///        that one egg; with count == -1, clears every egg on the tile.

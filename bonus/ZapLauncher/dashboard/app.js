@@ -1,7 +1,13 @@
 "use strict";
 
+// When served by the API itself (e.g. at /leader), default to the same origin;
+// when opened as a local file, fall back to the usual localhost API.
+const defaultApiBase = window.location.protocol.startsWith("http")
+  ? window.location.origin
+  : "http://localhost:8000";
+
 const state = {
-  apiBase: localStorage.getItem("zap.apiBase") || "http://localhost:8000",
+  apiBase: localStorage.getItem("zap.apiBase") || defaultApiBase,
   teams: [],
   selectedTeamId: null,
   selectedAgentId: null,
@@ -297,9 +303,37 @@ function renderAgentView() {
   personalityBox.value = description.personality_prompt;
   cachedBox.value = description.cached_prompt;
 
+  renderMemory(description);
   setEditMode(false);
   renderConversation(conversation);
 }
+
+function renderMemory(description) {
+  const list = document.getElementById("agent-memory");
+  list.innerHTML = "";
+  const facts = description.facts_memory || [];
+  if (!facts.length) {
+    const li = document.createElement("li");
+    li.style.listStyle = "none";
+    li.className = "muted";
+    li.textContent = "(nothing remembered yet)";
+    list.appendChild(li);
+    return;
+  }
+  for (const fact of facts) {
+    const li = document.createElement("li");
+    li.textContent = fact;
+    list.appendChild(li);
+  }
+}
+
+document.getElementById("toggle-memory").onclick = () => {
+  const box = document.getElementById("agent-memory");
+  const btn = document.getElementById("toggle-memory");
+  const willShow = box.classList.contains("hidden");
+  box.classList.toggle("hidden");
+  btn.textContent = (willShow ? "▾" : "▸") + " Memory (facts the agent chose to remember)";
+};
 
 function setEditMode(on) {
   state.editing = on;
@@ -464,6 +498,14 @@ function appendConversationEntries(agentId, newEntries) {
   const startIndex = cache.conversation.length;
   cache.conversation.push(...newEntries);
   cache.historyLength = cache.conversation.length;
+
+  // Memory changed? Refetch the description so the memory panel stays current.
+  if (newEntries.some((e) => e.kind === "tool_use" && (e.tool_name === "remember" || e.tool_name === "forget"))) {
+    api(`/agents/${encodeURIComponent(agentId)}`).then((description) => {
+      cache.description = description;
+      if (state.selectedAgentId === agentId) renderMemory(description);
+    }).catch(() => {});
+  }
 
   if (state.selectedAgentId !== agentId) return;
   const box = document.getElementById("conversation");

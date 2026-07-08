@@ -10,6 +10,8 @@ services:
       TEAMS: ${ZAPPY_TEAMS:-REDS BLUES}
       CLIENTS: ${ZAPPY_CLIENTS:-3}
       FREQ: ${ZAPPY_FREQ:-100}
+      # empty value = classic mode (no serial turns) — best for playbook scenes
+      WAIT_TIMEOUT: ${ZAPPY_WAIT_TIMEOUT-2000}
     expose:
       - "${ZAPPY_PORT:-4242}"
     networks:

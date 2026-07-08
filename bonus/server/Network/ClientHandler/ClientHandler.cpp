@@ -91,7 +91,7 @@ void ClientHandler::handleClients(void)
 
 void ClientHandler::broadcastMessageToClients()
 {
-    std::clock_t currentTime = std::clock();
+    auto currentTime = std::chrono::steady_clock::now();
 
     for (const auto &client : _clients)
         if (client->getType() == ClientType::AI)

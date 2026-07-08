@@ -82,6 +82,7 @@
         <div id="player-count">Players: 0</div>
         <div id="team-stats" style="margin-top: 10px; font-size: 14px; background: rgba(0,0,0,0.5); padding: 5px; border-radius: 5px;"></div>
         <button onclick="document.getElementById('legend').style.display='block'" style="pointer-events: auto; margin-top: 10px; cursor: pointer; background: #333; color: white; border: 1px solid white; padding: 5px; border-radius: 3px;">Help / Legend</button>
+        <button id="bubbles-toggle" style="pointer-events: auto; margin-top: 6px; cursor: pointer; background: #333; color: white; border: 1px solid white; padding: 5px; border-radius: 3px;">💬 Bubbles: ON</button>
     </div>
     
     <div id="tile-info" style="display: none; position: absolute; bottom: 20px; left: 20px; background: rgba(0, 0, 0, 0.85); padding: 15px; border-radius: 10px; border: 2px solid white; color: white; z-index: 9999; font-family: sans-serif; pointer-events: auto;">
@@ -101,6 +102,12 @@
         <div>Team: <strong id="player-info-team"></strong></div>
         <div>Level: <strong id="player-info-level"></strong></div>
         <div>Last Action: <strong id="player-info-action">None</strong></div>
+        <div id="player-info-food" style="margin-top: 8px; font-size: 15px;"></div>
+        <div id="player-info-inventory" style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; max-width: 280px;"></div>
+        <div style="margin-top: 10px; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 6px;">
+            <div style="font-size: 12px; color: #aaa; margin-bottom: 4px;">Conversation (said &amp; heard)</div>
+            <div id="player-info-conversation" style="max-height: 180px; overflow-y: auto; width: 280px; font-size: 12px; line-height: 1.45; pointer-events: auto;"></div>
+        </div>
     </div>
     
     <div id="legend" style="display: none; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(0,0,0,0.95); padding: 20px; border: 2px solid white; z-index: 999999; color: white; border-radius: 10px; font-family: sans-serif;">
@@ -139,6 +146,7 @@
         const joystickVector = { x: 0, y: 0 };
         const playerTeams = {}; // Track player teams for stats
         const playerMeshes = {}; // Will hold Pixi containers/graphics
+        const eggMeshes = {};
         const tileMeshes = {};
         const TILE_SIZE = 50;
         let mapWidth = 10;
@@ -148,6 +156,9 @@
         
         let trackedPlayerId = null;
         let isCameraLocked = false;
+        let bubblesEnabled = true;
+        const broadcastHistory = []; // { id, message, timestamp } — everyone hears every broadcast
+        const MAX_BROADCAST_HISTORY = 300;
         
         function toIso(x, y) {
             return {
@@ -190,14 +201,84 @@
             if (!player) return;
             document.getElementById('tile-info').style.display = 'none';
             document.getElementById('player-info').style.display = 'block';
-            document.getElementById('player-info-id').innerText = id;
-            document.getElementById('player-info-team').innerText = playerTeams[id];
-            document.getElementById('player-info-team').style.color = getTeamColor(playerTeams[id]);
-            document.getElementById('player-info-level').innerText = player.userData.levelText ? player.userData.levelText.text.replace('Lv.', '') : '1';
-            document.getElementById('player-info-action').innerText = player.userData.lastAction || 'None';
             trackedPlayerId = id;
             isCameraLocked = true;
+            renderPlayerPanel(id);
             _applyFocus(id);
+        }
+
+        const ALL_RESOURCES = ['food', 'linemate', 'deraumere', 'sibur', 'mendiane', 'phiras', 'thystame'];
+
+        function renderPlayerPanel(id) {
+            const player = playerMeshes[id];
+            if (!player) return;
+            document.getElementById('player-info-id').innerText = id;
+            document.getElementById('player-info-team').innerText = playerTeams[id] || '?';
+            document.getElementById('player-info-team').style.color = getTeamColor(playerTeams[id]);
+            document.getElementById('player-info-level').innerText = player.userData.level || 1;
+            document.getElementById('player-info-action').innerText = player.userData.lastAction || 'None';
+
+            const inv = player.userData.inventory;
+            const foodEl = document.getElementById('player-info-food');
+            const invEl = document.getElementById('player-info-inventory');
+            if (!inv) {
+                foodEl.innerHTML = '<span style="color:#888">Inventory: unknown</span>';
+                invEl.innerHTML = '';
+            } else {
+                const food = inv.food || 0;
+                const foodColor = food <= 2 ? '#ff4444' : (food <= 5 ? '#ffaa33' : '#88cc44');
+                foodEl.innerHTML = `Food: <strong style="color:${foodColor}">${food}</strong>`
+                    + (food <= 2 ? ' <span style="color:#ff4444">(starving!)</span>' : '');
+                // Same convention as the tile panel: resources shown by image, name on hover.
+                invEl.innerHTML = ALL_RESOURCES.map((res) => {
+                    const count = inv[res] || 0;
+                    const src = RESOURCE_ASSETS[res] + '4.png';
+                    return `
+                        <div title="${res}" style="display: flex; align-items: center; background: rgba(255,255,255,${count > 0 ? 0.15 : 0.05}); padding: 3px 6px; border-radius: 4px; ${count > 0 ? '' : 'opacity: 0.45;'}">
+                            <img src="${src}" alt="${res}" title="${res}" style="width: 20px; height: 20px; image-rendering: pixelated; margin-right: 4px;" />
+                            <span>${count}</span>
+                        </div>
+                    `;
+                }).join('');
+            }
+            renderPlayerConversation(id);
+        }
+
+        function renderPlayerConversation(id) {
+            const box = document.getElementById('player-info-conversation');
+            box.innerHTML = '';
+            const relevant = broadcastHistory.slice(-100);
+            if (!relevant.length) {
+                box.innerHTML = '<span style="color:#777">No broadcasts yet.</span>';
+                return;
+            }
+            for (const entry of relevant) {
+                const said = String(entry.id) === String(id);
+                const div = document.createElement('div');
+                div.style.cssText = `margin-bottom: 4px; padding: 3px 6px; border-radius: 4px; background: ${said ? 'rgba(255,215,0,0.12)' : 'rgba(255,255,255,0.06)'}; border-left: 3px solid ${said ? '#ffd700' : getTeamColor(playerTeams[entry.id] || '')};`;
+                const who = document.createElement('span');
+                who.style.cssText = `font-weight: bold; color: ${said ? '#ffd700' : getTeamColor(playerTeams[entry.id] || '')};`;
+                who.textContent = said ? 'SAID' : `HEARD P${entry.id}${playerTeams[entry.id] ? ' (' + playerTeams[entry.id] + ')' : ''}`;
+                div.appendChild(who);
+                div.appendChild(document.createTextNode(': ' + entry.message.replace(/_/g, ' ')));
+                box.appendChild(div);
+            }
+            box.scrollTop = box.scrollHeight;
+        }
+
+        function setPlayerLevel(id, level) {
+            const player = playerMeshes[id];
+            if (!player || level === undefined || level === null) return;
+            player.userData.level = level;
+            if (player.userData.levelText) player.userData.levelText.text = 'Lv.' + level;
+            if (String(trackedPlayerId) === String(id)) renderPlayerPanel(id);
+        }
+
+        function setPlayerInventory(id, inventory) {
+            const player = playerMeshes[id];
+            if (!player || !inventory) return;
+            player.userData.inventory = inventory;
+            if (String(trackedPlayerId) === String(id)) renderPlayerPanel(id);
         }
 
         function _applyFocus(focusId) {
@@ -233,8 +314,8 @@
                 const count = resources[res] || 0;
                 const src = RESOURCE_ASSETS[res] + '4.png';
                 content.innerHTML += `
-                    <div style="display: flex; align-items: center; background: rgba(255,255,255,0.1); padding: 5px; border-radius: 5px; width: 60px;">
-                        <img src="${src}" style="width: 24px; height: 24px; image-rendering: pixelated; margin-right: 5px;" />
+                    <div title="${res}" style="display: flex; align-items: center; background: rgba(255,255,255,0.1); padding: 5px; border-radius: 5px; width: 60px;">
+                        <img src="${src}" alt="${res}" title="${res}" style="width: 24px; height: 24px; image-rendering: pixelated; margin-right: 5px;" />
                         <span>${count}</span>
                     </div>
                 `;
@@ -249,8 +330,9 @@
                 for (const [pid, mesh] of playersHere) {
                     const team = playerTeams[pid] || '?';
                     const color = getTeamColor(team);
-                    const level = mesh.userData.levelText ? mesh.userData.levelText.text.replace('Lv.', '') : '?';
-                    html += `<span style="color:${color}">■</span> P${pid} &nbsp;<span style="color:#aaa">${team}</span> &nbsp;Lv.${level}<br>`;
+                    const level = mesh.userData.level || '?';
+                    const food = mesh.userData.inventory ? (mesh.userData.inventory.food || 0) : '?';
+                    html += `<span style="color:${color}">■</span> P${pid} &nbsp;<span style="color:#aaa">${team}</span> &nbsp;Lv.${level} &nbsp;<span style="color:#88cc44">food:${food}</span><br>`;
                 }
                 playersEl.innerHTML = html;
                 playersEl.style.display = 'block';
@@ -260,6 +342,11 @@
 
             document.getElementById('tile-info').style.display = 'block';
         }
+
+        document.getElementById('bubbles-toggle').addEventListener('click', () => {
+            bubblesEnabled = !bubblesEnabled;
+            document.getElementById('bubbles-toggle').textContent = `💬 Bubbles: ${bubblesEnabled ? 'ON' : 'OFF'}`;
+        });
 
         init2D();
         connectToBridge();
@@ -438,7 +525,17 @@
                 for (const id in state.players) {
                     spawnPlayer(id, state.players[id]);
                 }
-                
+
+                for (const eggId in state.eggs) {
+                    const egg = state.eggs[eggId];
+                    spawnEgg(eggId, egg.x, egg.y);
+                }
+
+                for (const b of state.broadcasts || []) {
+                    broadcastHistory.push(b);
+                }
+                while (broadcastHistory.length > MAX_BROADCAST_HISTORY) broadcastHistory.shift();
+
                 initWebSocket();
             } catch (err) {
                 console.error("Failed to fetch initial state:", err);
@@ -487,9 +584,7 @@
                     updatePlayerAction(payload.data.id, 'Spawned');
                     break;
                 case 'plv':
-                    if (playerMeshes[payload.data.id] && playerMeshes[payload.data.id].userData.levelText) {
-                        playerMeshes[payload.data.id].userData.levelText.text = 'Lv.' + payload.data.level;
-                    }
+                    setPlayerLevel(payload.data.id, payload.data.level);
                     updatePlayerAction(payload.data.id, 'Level Up');
                     break;
                 case 'ppo':
@@ -498,6 +593,11 @@
                     break;
                 case 'pipi':
                     movePlayer(payload.data.id, payload.data.x, payload.data.y, payload.data.orientation);
+                    setPlayerLevel(payload.data.id, payload.data.level);
+                    setPlayerInventory(payload.data.id, payload.data.resources);
+                    break;
+                case 'pin':
+                    setPlayerInventory(payload.data.id, payload.data.resources);
                     break;
                 case 'pdr':
                     updatePlayerAction(payload.data.id, 'Dropped resource');
@@ -518,8 +618,18 @@
                             spawnPlayer(id, p);
                         } else {
                             movePlayer(id, p.x, p.y, p.orientation);
+                            setPlayerLevel(id, p.level);
+                            setPlayerInventory(id, p.inventory);
                         }
                     }
+                    break;
+                case 'enw':
+                    spawnEgg(payload.data.eggId, payload.data.x, payload.data.y);
+                    updatePlayerAction(payload.data.playerId, 'Laid an egg');
+                    break;
+                case 'ebo':
+                case 'edi':
+                    removeEgg(payload.data.eggId);
                     break;
                 case 'pbc':
                     showBroadcast(payload.data.id, payload.data.message);
@@ -532,6 +642,11 @@
             const decoded = rawMessage.replace(/_/g, ' ');
             const team = playerTeams[id] || '';
             const color = getTeamColor(team);
+
+            // --- Record for per-player conversation history ---
+            broadcastHistory.push({ id, message: rawMessage, timestamp: Date.now() });
+            while (broadcastHistory.length > MAX_BROADCAST_HISTORY) broadcastHistory.shift();
+            if (trackedPlayerId !== null) renderPlayerConversation(trackedPlayerId);
 
             // --- Log panel entry ---
             const log = document.getElementById('broadcast-log');
@@ -549,6 +664,7 @@
             }, 12000);
 
             // --- PixiJS speech bubble above the player ---
+            if (!bubblesEnabled) return;
             const player = playerMeshes[id];
             if (!player) return;
             const colorInt = parseInt(color.replace('#', ''), 16);
@@ -605,7 +721,7 @@
         function updatePlayerAction(id, actionStr) {
             if (playerMeshes[id]) {
                 playerMeshes[id].userData.lastAction = actionStr;
-                if (trackedPlayerId === id) {
+                if (String(trackedPlayerId) === String(id)) {
                     document.getElementById('player-info-action').innerText = actionStr;
                 }
             }
@@ -730,6 +846,9 @@
             for(let id in playerMeshes) {
                 mapContainer.addChild(playerMeshes[id]);
             }
+            for (const eggId in eggMeshes) {
+                mapContainer.addChild(eggMeshes[eggId]);
+            }
 
             const centerPos = toIso((width - 1) / 2, (height - 1) / 2);
             mapContainer.pivot.set(centerPos.x, centerPos.y);
@@ -741,7 +860,6 @@
             playerTeams[id] = data.team;
 
             const playerGroup = new PIXI.Container();
-            playerGroup.userData = { nose: null };
             const teamColorHex = parseInt(getTeamColor(data.team).replace('#', '0x'), 16);
             
             // Draw a colored ellipse shadow/base to show the team color
@@ -761,7 +879,6 @@
             nose.lineStyle(1, 0x000000);
             nose.drawCircle(0, 0, TILE_SIZE * 0.1);
             nose.endFill();
-            playerGroup.userData.nose = nose;
 
             // Player Level Text
             const levelText = new PIXI.Text('Lv.' + (data.level || 1), {
@@ -774,20 +891,25 @@
             });
             levelText.anchor.set(0.5, 1);
             levelText.y = -TILE_SIZE * 1.5; // Position above head
-            playerGroup.userData.levelText = levelText;
 
             playerGroup.addChild(base);
             playerGroup.addChild(sprite);
             playerGroup.addChild(nose);
             playerGroup.addChild(levelText);
-            
+
             playerGroup.eventMode = 'static';
             playerGroup.cursor = 'pointer';
             playerGroup.on('pointertap', (e) => {
                 e.stopPropagation();
                 onPlayerClick(id);
             });
-            playerGroup.userData = { nose: nose, levelText: levelText, lastAction: 'Spawned' };
+            playerGroup.userData = {
+                nose: nose,
+                levelText: levelText,
+                lastAction: 'Spawned',
+                level: data.level || 1,
+                inventory: data.inventory || null,
+            };
 
             mapContainer.addChild(playerGroup);
             playerMeshes[id] = playerGroup;
@@ -832,6 +954,32 @@
                 delete playerTeams[id];
             }
             updateUI();
+        }
+
+        function spawnEgg(eggId, x, y) {
+            if (eggMeshes[eggId]) return;
+            const egg = new PIXI.Graphics();
+            egg.beginFill(0xfff8e0);
+            egg.lineStyle(1, 0x998855);
+            egg.drawEllipse(0, 0, TILE_SIZE * 0.12, TILE_SIZE * 0.16);
+            egg.endFill();
+
+            const pos = toIso(x, y);
+            egg.x = pos.x + TILE_SIZE * 0.25;
+            egg.y = pos.y - TILE_SIZE * 0.1;
+            egg.zIndex = x + y + 0.05;
+
+            mapContainer.addChild(egg);
+            eggMeshes[eggId] = egg;
+        }
+
+        function removeEgg(eggId) {
+            const egg = eggMeshes[eggId];
+            if (egg) {
+                mapContainer.removeChild(egg);
+                egg.destroy();
+                delete eggMeshes[eggId];
+            }
         }
 
         // --- Utilities ---

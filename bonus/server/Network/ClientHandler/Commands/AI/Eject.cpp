@@ -31,6 +31,8 @@ std::string Commands::Eject(std::vector<std::string>, Client &client, std::vecto
     // destroy all eggs on the tile
     Logger::log("8443", "Player : egg destroyed by ejection",
                 {{"player_id", std::to_string(player->getId())}, {"x", std::to_string(playerPos.x)}, {"y", std::to_string(playerPos.y)}});
+    for (int eggId : player->getTeam().getEggIdsAtPosition(playerPos))
+        _broadcastQueue->push("edi " + std::to_string(eggId) + "\n");
     _world->setTileAt(playerPos, ItemType::EGG, 0);
     player->getTeam().removeEgg(playerPos, -1, -1);
     _broadcastQueue->push("pex " + std::to_string(player->getId()) + "\n");

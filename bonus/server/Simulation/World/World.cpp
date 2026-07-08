@@ -219,6 +219,8 @@ int World::addPlayer(int fd, const std::string &teamName)
 
     const auto &[spawn, eggId] = hatchable[rand() % hatchable.size()];
     team->removeEgg(spawn, 1, eggId);
+    if (_broadcastQueue)
+        _broadcastQueue->push("ebo " + std::to_string(eggId) + "\n");
     ++team->_slotsOccupied;
 
     int id = _nextPlayerId;

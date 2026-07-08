@@ -16,7 +16,12 @@ client = OpenAI(
 )
 
 # How many recent history entries to include as conversation context
-_HISTORY_WINDOW = 60
+_HISTORY_WINDOW = 30
+
+# Entries beyond this tail keep only a truncated version of tool results:
+# old look/inventory dumps rarely matter but cost tokens on every call.
+_FULL_DETAIL_TAIL = 10
+_TRUNCATED_RESULT_LEN = 160
 
 
 def _find_commands(answer: str) -> list[tuple[str, str]]:
@@ -30,9 +35,16 @@ def _find_commands(answer: str) -> list[tuple[str, str]]:
 
 
 def _history_to_messages(history: list[HistoryEntry]) -> list[Message]:
-    """Convert stored history entries to LLM conversation messages."""
+    """Convert stored history entries to LLM conversation messages.
+
+    Recent entries (the last _FULL_DETAIL_TAIL) keep their full content;
+    older tool results are truncated to _TRUNCATED_RESULT_LEN characters
+    to keep the prompt small — stale look/inventory dumps carry little
+    signal but dominate token count.
+    """
     messages: list[Message] = []
-    for entry in history:
+    detail_cutoff = max(0, len(history) - _FULL_DETAIL_TAIL)
+    for i, entry in enumerate(history):
         kind = entry.get("kind")
         content = entry.get("content") or ""
         if kind == "user":
@@ -41,6 +53,8 @@ def _history_to_messages(history: list[HistoryEntry]) -> list[Message]:
             tool_input = entry.get("tool_input") or entry.get("tool_name") or ""
             messages.append({"role": "assistant", "content": f"USE {tool_input}"})
         elif kind == "tool_result":
+            if i < detail_cutoff and len(content) > _TRUNCATED_RESULT_LEN:
+                content = content[:_TRUNCATED_RESULT_LEN] + " …[truncated]"
             messages.append({"role": "user", "content": f"[Environment]: {content}"})
         elif kind == "report" and not entry.get("truncated"):
             prefix = "" if entry.get("malformed") else "REPORT "
@@ -95,6 +109,15 @@ def run_turn(
             ),
         },
     ]
+    if agent.facts_memory:
+        facts = "\n".join(f"{i + 1}. {fact}" for i, fact in enumerate(agent.facts_memory))
+        system_messages.append({
+            "role": "system",
+            "content": (
+                "Your memory — facts you chose to remember with USE remember "
+                "(drop an outdated one with USE forget <number>):\n" + facts
+            ),
+        })
     prior = agent.history[:-1]
     if len(prior) > _HISTORY_WINDOW:
         prior = prior[-_HISTORY_WINDOW:]

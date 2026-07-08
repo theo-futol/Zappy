@@ -23,13 +23,15 @@ const MIME = {
 let mapUpdateInterval = null;
 
 let GameState = {
-    mapSize: { x: 0, y: 0}, 
+    mapSize: { x: 0, y: 0},
     teams: [],
     players: {},
     tiles: {},
     eggs: {},
+    broadcasts: [], // ring buffer of { id, message, timestamp } — feeds per-player conversation history
     timeUnit: 100
 };
+const MAX_BROADCASTS = 300;
 
 const server = http.createServer((req, res) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
@@ -287,7 +289,9 @@ function handleBroadcast(tokens) {
     const id = parseId(tokens[0]);
     const msg = escapeHtml(tokens.slice(1).join(' '));
     if (isNaN(id)) return;
-    broadcast({ type: 'pbc', data: { id, message: msg } });
+    GameState.broadcasts.push({ id, message: msg, timestamp: Date.now() });
+    while (GameState.broadcasts.length > MAX_BROADCASTS) GameState.broadcasts.shift();
+    broadcast({ type: 'pbc', data: { id, message: msg, timestamp: Date.now() } });
 }
 
 function handleIncantationStart(tokens) {

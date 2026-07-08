@@ -1,0 +1,54 @@
+{
+  "name": "smoke-basics",
+  "team": "REDS",
+  "agents": [
+    {
+      "id": "scout",
+      "personality": "explorator"
+    }
+  ],
+  "steps": [
+    {
+      "agent": "scout",
+      "tool": "look",
+      "args": "",
+      "expect": "tile0"
+    },
+    {
+      "agent": "scout",
+      "tool": "inventory",
+      "args": "",
+      "expect": "food"
+    },
+    {
+      "agent": "scout",
+      "tool": "forward",
+      "args": "",
+      "expect": "ok"
+    },
+    {
+      "agent": "scout",
+      "tool": "left",
+      "args": "",
+      "expect": "ok"
+    },
+    {
+      "agent": "scout",
+      "tool": "right",
+      "args": "",
+      "expect": "ok"
+    },
+    {
+      "agent": "scout",
+      "tool": "connect_nbr",
+      "args": "",
+      "expect": null
+    },
+    {
+      "agent": "scout",
+      "tool": "broadcast",
+      "args": "Scout here, scene test running",
+      "expect": "ok"
+    }
+  ]
+}

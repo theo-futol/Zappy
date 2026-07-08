@@ -200,32 +200,33 @@ Degrees Player::getDirectionTo(const Player &target, std::pair<int, int> mapSize
 
 void Player::addMessageToQueue(const std::string &message, int timeNeeded, int receiverFd)
 {
+    auto now = std::chrono::steady_clock::now();
     if (_messagesToSend.size() == 0)
-        _messagesToSend.push_back(std::make_pair(message, std::vector<std::pair<std::pair<std::clock_t, int>, int>>{{std::make_pair(std::clock(), timeNeeded), receiverFd}}));
+        _messagesToSend.push_back(std::make_pair(message, std::vector<std::pair<std::pair<std::chrono::steady_clock::time_point, int>, int>>{{std::make_pair(now, timeNeeded), receiverFd}}));
     else
     {
         for (auto &msg : _messagesToSend)
             if (msg.first == message)
             {
-                msg.second.emplace_back(std::make_pair(std::clock(), timeNeeded), receiverFd);
+                msg.second.emplace_back(std::make_pair(now, timeNeeded), receiverFd);
                 return;
             }
-        _messagesToSend.push_back(std::make_pair(message, std::vector<std::pair<std::pair<std::clock_t, int>, int>>{{std::make_pair(std::clock(), timeNeeded), receiverFd}}));
+        _messagesToSend.push_back(std::make_pair(message, std::vector<std::pair<std::pair<std::chrono::steady_clock::time_point, int>, int>>{{std::make_pair(now, timeNeeded), receiverFd}}));
     }
 }
 
-void Player::sendMessageToClient(std::clock_t currentTime, std::vector<std::unique_ptr<Client>> &clients)
+void Player::sendMessageToClient(std::chrono::steady_clock::time_point currentTime, std::vector<std::unique_ptr<Client>> &clients)
 {
     if (_messagesToSend.size() == 0)
         return;
     for (auto msgIt = _messagesToSend.begin(); msgIt != _messagesToSend.end();)
     {
-        std::vector<std::pair<std::pair<std::clock_t, int>, int>> &times = msgIt->second;
+        std::vector<std::pair<std::pair<std::chrono::steady_clock::time_point, int>, int>> &times = msgIt->second;
         // times is sorted by timeNeeded, so stop at the first entry that is not ready yet.
         auto it = times.begin();
         for (; it != times.end(); it = times.erase(it))
         {
-            if (currentTime - it->first.first < it->first.second * CLOCKS_PER_SEC / 1000)
+            if (currentTime - it->first.first < std::chrono::milliseconds(it->first.second))
                 break;
             if (it->second >= 0)
                 // Find the client with the matching fd and send the message
@@ -247,7 +248,7 @@ void Player::sortQueueByTimeNeeded()
 {
     for (auto &msg : _messagesToSend)
         std::sort(msg.second.begin(), msg.second.end(),
-                  [](const std::pair<std::pair<std::clock_t, int>, int> &a, const std::pair<std::pair<std::clock_t, int>, int> &b) { return a.first.second < b.first.second; });
+                  [](const auto &a, const auto &b) { return a.first.second < b.first.second; });
 }
 
 } // namespace zappy

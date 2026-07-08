@@ -18,6 +18,24 @@ namespace zappy
         private:
             World *_world;                            ///< Shared world the commands act on (not owned).
             std::queue<std::string> *_broadcastQueue; ///< Queue of updates destined for graphic clients (not owned).
+
+            /// @brief Parses the "#n" (or bare "n") player-id token of a graphic command; -1 on failure.
+            static int parsePlayerIdArg(const std::vector<std::string> &args)
+            {
+                if (args.empty())
+                    return -1;
+                std::string token = args[0];
+                if (!token.empty() && token[0] == '#')
+                    token = token.substr(1);
+                try
+                {
+                    return std::stoi(token);
+                }
+                catch (...)
+                {
+                    return -1;
+                }
+            }
         public:
             Commands(World *world, std::queue<std::string> *broadcastQueue) : _world(world), _broadcastQueue(broadcastQueue) {}
             ~Commands() = default;

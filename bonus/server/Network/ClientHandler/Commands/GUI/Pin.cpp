@@ -4,9 +4,7 @@ namespace zappy
 {
 std::string Commands::Pin(std::vector<std::string> args, Client &)
 {
-    if (args.size() < 2)
-        return "ko\n";
-    Player *player = _world->getPlayerById(std::stoi(args[1]));
+    Player *player = _world->getPlayerById(parsePlayerIdArg(args));
     if (!player)
         return "ko\n";
     std::string response = "pin " + std::to_string(player->getId()) + " " + std::to_string(player->getPosition().x) + " " + std::to_string(player->getPosition().y) + " ";

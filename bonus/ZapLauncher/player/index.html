@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zappy — Player POV</title>
+<style>
+  /* Same visual language as the map GUI: dark #111/#1a1a2e, monospace,
+     translucent black panels with white/gold borders, #333 buttons,
+     gold accents, green/red status colors, pixel-art sprites. */
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #111; color: #fff; font-family: monospace; height: 100vh; display: flex; flex-direction: column; }
+  header { display: flex; align-items: center; gap: 14px; padding: 10px 16px; background: rgba(0,0,0,0.7); border-bottom: 1px solid #444; }
+  header h1 { font-size: 16px; margin: 0; color: #ffd700; }
+  header .links { margin-left: auto; display: flex; gap: 12px; font-size: 13px; }
+  header a { color: #fff; text-decoration: underline; }
+  header a:hover { color: #ffd700; }
+  main { flex: 1; display: flex; min-height: 0; }
+  aside { width: 250px; background: rgba(0,0,0,0.7); border-right: 1px solid #444; padding: 12px; display: flex; flex-direction: column; gap: 14px; overflow-y: auto; flex-shrink: 0; }
+  .content { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+  label { font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: #aaa; display: block; margin-bottom: 4px; }
+  select, input[type=text] { width: 100%; background: #222; color: #fff; border: 1px solid #666; border-radius: 3px; padding: 7px 9px; font-size: 13px; font-family: monospace; }
+  button { background: #333; color: white; border: 1px solid white; border-radius: 3px; padding: 6px 10px; font-size: 13px; cursor: pointer; font-family: monospace; }
+  button:hover:not(:disabled) { background: #555; }
+  button:disabled { opacity: .4; cursor: default; }
+  button.primary { border-color: #ffd700; color: #ffd700; }
+  button.primary:hover:not(:disabled) { background: rgba(255,215,0,0.15); }
+  button.danger { border-color: #ff4444; color: #ff4444; }
+  button.danger:hover:not(:disabled) { background: rgba(255,68,68,0.15); }
+
+  .agent-item { padding: 7px 9px; border-radius: 5px; cursor: pointer; font-size: 13px; display: flex; align-items: center; gap: 7px; border: 1px solid transparent; }
+  .agent-item:hover { background: rgba(255,255,255,0.08); }
+  .agent-item.active { border-color: #ffd700; background: rgba(255,215,0,0.08); }
+  .dot { width: 9px; height: 9px; border-radius: 50%; background: #888; flex-shrink: 0; }
+  .dot.connected { background: #44ff44; }
+  .dot.disconnected { background: #ff4444; }
+  .dot.manual { background: #ffd700; }
+
+  .statusbar { display: flex; gap: 16px; align-items: center; padding: 8px 16px; background: rgba(0,0,0,0.7); border-bottom: 1px solid #444; font-size: 13px; flex-wrap: wrap; }
+  .statusbar .stat strong { font-size: 15px; color: #ffd700; }
+  .stat.food-low strong { color: #ff4444; }
+  .compass { display: inline-flex; align-items: center; gap: 6px; background: rgba(0,0,0,0.82); border: 1px solid white; border-radius: 5px; padding: 4px 10px; font-weight: 700; letter-spacing: .05em; }
+  .compass .arrow { display: inline-block; transition: transform .3s; font-size: 16px; color: #ffd700; }
+
+  .cols { flex: 1; display: flex; min-height: 0; }
+  .world { flex: 1; display: flex; flex-direction: column; min-width: 0; overflow: hidden; background: #1a1a2e; }
+  .iso-wrap { flex: 1; position: relative; overflow: auto; display: flex; }
+  .iso-hint { position: absolute; top: 10px; left: 12px; font-size: 12px; color: #ddd; z-index: 5; background: rgba(0,0,0,0.7); padding: 4px 8px; border-radius: 5px; }
+  #iso-view { position: relative; margin: auto; }
+  .iso-tile { position: absolute; cursor: pointer; }
+  .iso-tile .ground { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%) scaleY(0.5) rotate(45deg); image-rendering: pixelated; transition: filter .12s; }
+  .iso-tile .ground img { width: 100%; height: 100%; display: block; image-rendering: pixelated; }
+  .iso-tile:hover .ground { filter: brightness(1.4); }
+  .iso-tile.me .ground { filter: drop-shadow(0 0 6px #ffd700); }
+  .iso-tile.me:hover .ground { filter: drop-shadow(0 0 6px #ffd700) brightness(1.25); }
+  .iso-tile .content { position: absolute; inset: 0; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 2px; pointer-events: none; padding: 6px 20px; }
+  .iso-tile .content .res { pointer-events: auto; display: inline-flex; align-items: center; font-size: 11px; line-height: 1; padding: 1px 3px; border-radius: 4px; background: rgba(0,0,0,0.55); white-space: nowrap; color: #fff; }
+  .iso-tile .content .res img { width: 20px; height: 20px; image-rendering: pixelated; display: block; }
+  .iso-tile .content .res img.golem { width: 22px; height: 26px; object-fit: contain; }
+  .iso-tile.me .content .res.takeable { cursor: pointer; box-shadow: 0 0 0 1px #ffd700; }
+  .iso-tile.me .content .res.takeable:hover { background: rgba(255,215,0,0.4); }
+  .iso-tile .tile-label { position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); font-size: 9px; color: rgba(255,255,255,0.6); pointer-events: none; text-shadow: 0 0 3px #000; }
+
+  .strip { padding: 8px 16px; border-top: 1px solid #444; background: rgba(0,0,0,0.7); font-size: 13px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; min-height: 44px; }
+  .chip { display: inline-flex; align-items: center; gap: 5px; background: rgba(255,255,255,0.1); border: 1px solid #666; border-radius: 5px; padding: 3px 8px; }
+  .chip img { width: 22px; height: 22px; image-rendering: pixelated; }
+  .chip.takeable { cursor: pointer; border-color: #ffd700; }
+  .chip.takeable:hover { background: rgba(255,215,0,0.2); }
+  .chip.settable { cursor: pointer; border-color: white; }
+  .chip.settable:hover { background: rgba(255,255,255,0.22); }
+  .chip.inactive { opacity: .4; }
+
+  .actions { padding: 10px 16px; background: rgba(0,0,0,0.7); border-top: 1px solid #444; display: flex; flex-direction: column; gap: 8px; }
+  .action-row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+  .queue-row { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; min-height: 26px; font-size: 12px; }
+  .queue-chip { display: inline-flex; align-items: center; gap: 5px; background: rgba(255,255,255,0.1); border: 1px solid #888; border-radius: 12px; padding: 2px 9px; }
+  .queue-chip.processing { border-color: #ffd700; color: #ffd700; }
+  .queue-chip .x { cursor: pointer; color: #aaa; }
+  .queue-chip .x:hover { color: #ff4444; }
+  .spinner { display: inline-block; width: 11px; height: 11px; border: 2px solid #ffd700; border-top-color: transparent; border-radius: 50%; animation: spin .8s linear infinite; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .log { width: 320px; border-left: 1px solid #444; background: rgba(0,0,0,0.7); display: flex; flex-direction: column; min-height: 0; flex-shrink: 0; }
+  .log h2 { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: #ffd700; margin: 0; padding: 10px 12px 6px; }
+  .log-entries { flex: 1; overflow-y: auto; padding: 0 12px 12px; display: flex; flex-direction: column; gap: 6px; font-size: 12px; }
+  .log-entry { background: rgba(0,0,0,0.82); border: 1px solid #333; border-radius: 5px; padding: 6px 8px; white-space: pre-wrap; word-break: break-word; color: #ddd; line-height: 1.4; }
+  .log-entry .who { color: #aaa; font-size: 10px; text-transform: uppercase; }
+  .log-entry.use .who { color: #ffd700; }
+  .log-entry.broadcast { border-left: 3px solid #ffd700; }
+  .hint { color: #aaa; font-size: 11px; }
+  .hidden { display: none !important; }
+  .empty { margin: auto; color: #aaa; text-align: center; padding: 20px; background: rgba(0,0,0,0.7); border: 1px solid #444; border-radius: 10px; }
+  .toast { position: fixed; bottom: 18px; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.9); border: 1px solid white; padding: 9px 16px; border-radius: 5px; font-size: 13px; opacity: 0; transition: opacity .25s; pointer-events: none; z-index: 50; }
+  .toast.show { opacity: 1; }
+  .toast.error { border-color: #ff4444; color: #ff4444; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Zappy — Player POV</h1>
+  <span id="conn" class="dot"></span>
+  <div class="links">
+    <a href="/leader/">Team leader</a>
+    <a href="/playbook/">Playbooks</a>
+    <a href="/docs" target="_blank">API</a>
+  </div>
+</header>
+<main>
+  <aside>
+    <div>
+      <label>Team</label>
+      <select id="team-select"></select>
+    </div>
+    <div>
+      <label>Agents</label>
+      <div id="agent-list"></div>
+    </div>
+    <div>
+      <label>New agent</label>
+      <input type="text" id="new-agent-id" placeholder="agent id (optional)">
+      <div style="height:6px"></div>
+      <select id="new-agent-personality"></select>
+      <div style="height:6px"></div>
+      <button id="btn-create" style="width:100%">Create &amp; connect</button>
+    </div>
+    <div id="control-box" class="hidden">
+      <button id="btn-control" class="primary" style="width:100%">Take control</button>
+      <p class="hint" id="control-hint">The agent's LLM keeps playing until you take control.</p>
+    </div>
+    <p class="hint">Selecting an agent shows its vision and inventory even without control (spectator mode). Once in control: click a tile to walk to it, click a glowing resource on <em>your</em> tile to take it, click a carried resource to set it down. Only actions that can succeed are offered.</p>
+  </aside>
+
+  <div class="content">
+    <div class="statusbar">
+      <div class="stat">Playing as <strong id="s-agent">—</strong></div>
+      <div class="stat">Team <strong id="s-team">—</strong></div>
+      <div class="stat">Lv.<strong id="s-level">?</strong></div>
+      <div class="stat" id="s-food-box">Food <strong id="s-food">?</strong></div>
+      <div class="compass" title="Absolute facing (from the server)">
+        <span class="arrow" id="compass-arrow">➤</span>
+        <span id="s-facing">?</span>
+      </div>
+      <div class="stat hint" id="s-pos"></div>
+    </div>
+
+    <div class="cols">
+      <div class="world">
+        <div class="iso-wrap">
+          <div class="iso-hint" id="iso-hint"></div>
+          <div id="empty" class="empty">
+            <p>Select an agent to see the world through its eyes — no control needed.</p>
+            <p class="hint">Its vision appears here as isometric tiles once the agent has looked around
+              (the LLM looks constantly; take control to look yourself). <strong>Take control</strong> to play.</p>
+          </div>
+          <div id="iso-view"></div>
+        </div>
+
+        <div class="strip hidden" id="your-tile">
+          <span class="hint">On your tile:</span>
+          <span id="your-tile-chips"></span>
+        </div>
+
+        <div class="strip hidden" id="inv-bar">
+          <span class="hint" id="inv-label">You carry (click to set down):</span>
+          <span id="inv-chips"></span>
+        </div>
+
+        <div class="actions">
+          <div class="action-row" id="context-actions">
+            <button id="btn-left" title="Turn 90° left">⟲ Turn left</button>
+            <button id="btn-forward" title="Move one tile ahead">↑ Forward</button>
+            <button id="btn-right" title="Turn 90° right">⟳ Turn right</button>
+            <button id="btn-eject" class="hidden danger" title="Push the other players off your tile">💨 Eject</button>
+            <button id="btn-incant" class="hidden primary" title="All requirements on your tile are met">✨ Incantation</button>
+            <button id="btn-fork" title="Lay an egg (new team slot)">🥚 Fork</button>
+            <input type="text" id="bc-input" placeholder="broadcast a message…" style="flex:1; min-width: 140px;">
+            <button id="btn-broadcast">📢 Send</button>
+          </div>
+          <div class="queue-row" id="queue-row"></div>
+        </div>
+      </div>
+
+      <div class="log">
+        <h2>Action log &amp; broadcasts</h2>
+        <div id="log-entries" class="log-entries"></div>
+      </div>
+    </div>
+  </div>
+</main>
+<div class="toast" id="toast"></div>
+
+<script>
+"use strict";
+const API = window.location.protocol.startsWith("http") ? window.location.origin : "http://localhost:8000";
+
+// Same sprites as the map GUI (copied into assets/) — name shown on hover.
+const RESOURCE_IMG = {
+  food: "assets/food.png",
+  linemate: "assets/linemate.png",
+  deraumere: "assets/deraumere.png",
+  sibur: "assets/sibur.png",
+  mendiane: "assets/mendiane.png",
+  phiras: "assets/phiras.png",
+  thystame: "assets/thystame.png",
+};
+const GOLEM_IMG = "assets/golem.png";
+const STONES = ["linemate", "deraumere", "sibur", "mendiane", "phiras", "thystame"];
+// players required + stones required ON THE TILE, per current level
+const ELEVATION = {
+  1: { players: 1, stones: { linemate: 1 } },
+  2: { players: 2, stones: { linemate: 1, deraumere: 1, sibur: 1 } },
+  3: { players: 2, stones: { linemate: 2, sibur: 1, phiras: 2 } },
+  4: { players: 4, stones: { linemate: 1, deraumere: 1, sibur: 2, phiras: 1 } },
+  5: { players: 4, stones: { linemate: 1, deraumere: 2, sibur: 1, mendiane: 3 } },
+  6: { players: 6, stones: { linemate: 1, deraumere: 2, sibur: 3, phiras: 1 } },
+  7: { players: 6, stones: { linemate: 2, deraumere: 2, sibur: 2, mendiane: 2, phiras: 2, thystame: 1 } },
+};
+const FACING_ANGLE = { north: -90, east: 0, south: 90, west: 180 };
+
+const state = {
+  teams: [],
+  status: { agents: {}, manual_agents: [], busy_agents: [] },
+  agentId: null,
+  manual: false,
+  histLen: 0,
+  lookTiles: null,   // [{items:{res:count}, players:n}, ...] — index 0 = your tile
+  inventory: null,   // {res: count}
+  facing: null, level: 1, pos: null,
+  queue: [],         // [{tool, args, label}]
+  pumping: false,
+};
+
+let toastTimer = null;
+function toast(msg, isErr = false) {
+  const el = document.getElementById("toast");
+  el.textContent = msg;
+  el.classList.toggle("error", isErr);
+  el.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => el.classList.remove("show"), 3000);
+}
+
+async function api(path, options = {}) {
+  const res = await fetch(API + path, { headers: { "Content-Type": "application/json" }, ...options });
+  if (!res.ok) {
+    let detail = res.statusText;
+    try { detail = (await res.json()).detail || detail; } catch (_) {}
+    throw new Error(detail);
+  }
+  return res.json();
+}
+
+// --- sidebar (teams / agents / create / control) -------------------------
+
+async function loadTeams() {
+  try { state.teams = await api("/teams"); } catch (e) { return; }
+  const sel = document.getElementById("team-select");
+  const current = sel.value;
+  sel.innerHTML = state.teams.map(t => `<option value="${t.id}">${t.id}</option>`).join("");
+  if (state.teams.find(t => t.id === current)) sel.value = current;
+  renderAgents();
+}
+
+async function loadPersonalities() {
+  try {
+    const list = await api("/prompts/personalities");
+    document.getElementById("new-agent-personality").innerHTML =
+      list.map(p => `<option value="${p.name}">${p.name}</option>`).join("");
+  } catch (_) {}
+}
+
+async function loadStatus() {
+  try {
+    state.status = await api("/status");
+    document.getElementById("conn").className = "dot " + (state.status.server_connected ? "connected" : "disconnected");
+  } catch (_) {
+    document.getElementById("conn").className = "dot disconnected";
+  }
+  renderAgents();
+  renderControl();
+}
+
+function renderAgents() {
+  const team = state.teams.find(t => t.id === document.getElementById("team-select").value);
+  const box = document.getElementById("agent-list");
+  box.innerHTML = "";
+  if (!team) return;
+  for (const id of team.agent_ids) {
+    const div = document.createElement("div");
+    div.className = "agent-item" + (id === state.agentId ? " active" : "");
+    const isManual = (state.status.manual_agents || []).includes(id);
+    const st = isManual ? "manual" : (state.status.agents[id] || "");
+    div.innerHTML = `<span class="dot ${st}"></span>${id}${isManual ? " 🎮" : ""}`;
+    div.onclick = () => selectAgent(id);
+    box.appendChild(div);
+  }
+}
+
+async function selectAgent(id) {
+  state.agentId = id;
+  state.histLen = 0;
+  state.queue = [];
+  state.lookTiles = null;
+  state.inventory = null;
+  state.manual = (state.status.manual_agents || []).includes(id);
+  document.getElementById("log-entries").innerHTML = "";
+  document.getElementById("s-agent").textContent = id;
+  const team = state.teams.find(t => t.agent_ids.includes(id));
+  document.getElementById("s-team").textContent = team ? team.id : "?";
+  document.getElementById("control-box").classList.remove("hidden");
+  renderAgents();
+  renderControl();
+  renderAll();
+  // Spectator mode works before taking control: the vision comes from the
+  // agent's own latest look/inventory results, the rest from /state.
+  await pollConversation(true);
+  await refreshState();
+  if (state.manual) pump(); // triggers a fresh look+inventory of our own
+}
+
+document.getElementById("team-select").onchange = renderAgents;
+
+document.getElementById("btn-create").onclick = async () => {
+  const teamId = document.getElementById("team-select").value;
+  const personality = document.getElementById("new-agent-personality").value;
+  const id = document.getElementById("new-agent-id").value.trim();
+  if (!teamId || !personality) return;
+  try {
+    const payload = { team_id: teamId, personality };
+    if (id) payload.id = id;
+    const agent = await api("/agents", { method: "POST", body: JSON.stringify(payload) });
+    toast(`Agent "${agent.id}" connected.`);
+    await loadTeams();
+    await loadStatus();
+    selectAgent(agent.id);
+  } catch (e) { toast("Create failed: " + e.message, true); }
+};
+
+function renderControl() {
+  if (!state.agentId) return;
+  state.manual = (state.status.manual_agents || []).includes(state.agentId);
+  const btn = document.getElementById("btn-control");
+  btn.textContent = state.manual ? "Release control" : "Take control";
+  btn.className = state.manual ? "danger" : "primary";
+  btn.style.width = "100%";
+  document.getElementById("control-hint").textContent = state.manual
+    ? "You are driving. The LLM is paused for this agent."
+    : "The agent's LLM keeps playing until you take control.";
+  renderContextActions();
+}
+
+document.getElementById("btn-control").onclick = async () => {
+  if (!state.agentId) return;
+  try {
+    const res = await api(`/agents/${encodeURIComponent(state.agentId)}/control`, {
+      method: "POST", body: JSON.stringify({ manual: !state.manual }),
+    });
+    state.manual = res.manual;
+    if (!state.status.manual_agents) state.status.manual_agents = [];
+    if (res.manual) state.status.manual_agents.push(state.agentId);
+    else state.status.manual_agents = state.status.manual_agents.filter(a => a !== state.agentId);
+    renderControl();
+    renderAgents();
+    renderAll(); // clickability of tiles/chips depends on control
+    if (res.manual) { toast("You have control."); pump(); }
+    else { toast("Control released — LLM resumes."); state.queue = []; renderQueue(); }
+  } catch (e) { toast("Control toggle failed: " + e.message, true); }
+};
+
+// --- action queue ---------------------------------------------------------
+
+function enqueue(tool, args = "", label = null) {
+  if (!state.manual || !state.agentId) return;
+  state.queue.push({ tool, args, label: label || (tool + (args ? " " + args : "")) });
+  renderQueue();
+  pump();
+}
+
+function renderQueue() {
+  const row = document.getElementById("queue-row");
+  row.innerHTML = "";
+  if (state.pumping) {
+    const s = document.createElement("span");
+    s.innerHTML = `<span class="spinner"></span> <span class="hint">your turn is processing…</span>`;
+    row.appendChild(s);
+  }
+  state.queue.forEach((a, i) => {
+    const chip = document.createElement("span");
+    chip.className = "queue-chip" + (i === 0 && state.pumping ? " processing" : "");
+    chip.textContent = a.label;
+    if (!(i === 0 && state.pumping)) {
+      const x = document.createElement("span");
+      x.className = "x";
+      x.textContent = " ✕";
+      x.onclick = () => { state.queue.splice(i, 1); renderQueue(); };
+      chip.appendChild(x);
+    }
+    row.appendChild(chip);
+  });
+  if (!state.pumping && !state.queue.length && state.manual) {
+    row.innerHTML = `<span class="hint">Pick your next action anytime — it is kept and sent when the server is ready.</span>`;
+  }
+}
+
+async function pump() {
+  if (state.pumping || !state.manual || !state.agentId) return;
+  state.pumping = true;
+  renderQueue();
+  try {
+    while (state.queue.length) {
+      const a = state.queue[0];
+      await act(a.tool, a.args);
+      state.queue.shift();
+      renderQueue();
+    }
+    // Playing as an agent keeps the page up to date: always look + inventory.
+    await refreshVision();
+  } catch (e) {
+    toast("Action failed: " + e.message, true);
+  } finally {
+    state.pumping = false;
+    renderQueue();
+  }
+  if (state.queue.length) pump(); // actions queued while refreshing
+}
+
+async function act(tool, args = "") {
+  const entries = await api(`/agents/${encodeURIComponent(state.agentId)}/action`, {
+    method: "POST", body: JSON.stringify({ tool, args }),
+  });
+  state.histLen += entries.length; // the poll must not re-add these
+  for (const e of entries) addLogEntry(e);
+  for (const e of entries) reactToResult(e, tool);
+}
+
+async function refreshVision() {
+  if (!state.manual || !state.agentId) return;
+  await act("look");
+  await act("inventory");
+  await refreshState();
+}
+
+// Zero game-cost refresh: authoritative facing/level/position/inventory
+// mirrored from the server's GUI stream. Works with or without control.
+async function refreshState() {
+  if (!state.agentId) return;
+  try {
+    const s = await api(`/agents/${encodeURIComponent(state.agentId)}/state`);
+    state.facing = s.facing;
+    if (s.level) state.level = s.level;
+    state.pos = (s.x !== null && s.x !== undefined) ? { x: s.x, y: s.y } : null;
+    if (s.inventory) state.inventory = s.inventory;
+  } catch (_) {}
+  renderAll();
+}
+
+// --- parsing ---------------------------------------------------------------
+
+function parseLook(content) {
+  // "[tile0: linemate:1 player | tile1: food:3 | tile2: (empty)]"
+  const inner = content.split("\n")[0].replace(/^\[/, "").replace(/\]$/, "");
+  return inner.split(" | ").map(part => {
+    const m = part.match(/^tile(\d+):\s*(.*)$/);
+    const body = (m ? m[2] : part).trim();
+    const tile = { items: {}, players: 0 };
+    if (body === "(empty)" || !body) return tile;
+    for (const tok of body.split(/\s+/)) {
+      if (tok === "player") tile.players++;
+      else {
+        const mm = tok.match(/^(\w+):(\d+)$/);
+        if (mm) tile.items[mm[1]] = parseInt(mm[2], 10);
+      }
+    }
+    return tile;
+  });
+}
+
+function parseInventory(raw) {
+  const inner = raw.split("\n")[0].replace(/^\[/, "").replace(/\]$/, "");
+  const inv = {};
+  for (const pair of inner.split(",")) {
+    const [name, count] = pair.trim().split(/\s+/);
+    if (name) inv[name] = parseInt(count, 10) || 0;
+  }
+  return inv;
+}
+
+function reactToResult(entry, tool) {
+  if (entry.kind !== "tool_result" || !entry.content) return;
+  const first = entry.content.split("\n")[0];
+  if (tool === "look" && first.startsWith("[tile0")) { state.lookTiles = parseLook(entry.content); renderAll(); }
+  if (tool === "inventory" && first.startsWith("[")) { state.inventory = parseInventory(entry.content); renderAll(); }
+}
+
+// --- rendering ---------------------------------------------------------------
+
+function renderAll() {
+  renderStatus();
+  renderIso();
+  renderYourTile();
+  renderInventoryBar();
+  renderContextActions();
+}
+
+function renderStatus() {
+  document.getElementById("s-level").textContent = state.level || "?";
+  const food = state.inventory ? (state.inventory.food ?? "?") : "?";
+  document.getElementById("s-food").textContent = food;
+  document.getElementById("s-food-box").classList.toggle("food-low", typeof food === "number" && food <= 5);
+  document.getElementById("s-facing").textContent = (state.facing || "?").toUpperCase();
+  const angle = FACING_ANGLE[state.facing];
+  document.getElementById("compass-arrow").style.transform =
+    angle === undefined ? "none" : `rotate(${angle}deg)`;
+  document.getElementById("s-pos").textContent = state.pos ? `(${state.pos.x}, ${state.pos.y})` : "";
+  const ahead = state.facing ? `ahead = ${state.facing.toUpperCase()}` : "";
+  document.getElementById("iso-hint").textContent = state.manual
+    ? ahead
+    : (state.lookTiles ? (ahead ? ahead + " — " : "") + "spectating: the agent's last look" : "");
+  document.getElementById("inv-label").textContent = state.manual
+    ? "You carry (click to set down):"
+    : "The agent carries:";
+}
+
+// tile index i sits in row d (d² ≤ i ≤ d²+2d) at lateral offset l = i - d² - d
+function tileCoords(i) {
+  const d = Math.floor(Math.sqrt(i));
+  return { d, l: i - d * d - d };
+}
+
+// movement sequence to reach row d, lateral l (protocol navigation table)
+function pathTo(d, l) {
+  const seq = [];
+  if (l < 0) { seq.push("left"); for (let k = 0; k < -l; k++) seq.push("forward"); seq.push("right"); }
+  if (l > 0) { seq.push("right"); for (let k = 0; k < l; k++) seq.push("forward"); seq.push("left"); }
+  for (let k = 0; k < d; k++) seq.push("forward");
+  return seq;
+}
+
+function resIcon(res, extraClass = "") {
+  if (res === "egg") return `<span>🥚</span>`;
+  return `<img src="${RESOURCE_IMG[res]}" alt="${res}" title="${res}" class="${extraClass}">`;
+}
+
+// GUI tile geometry: a square texture rotated 45° then squished to half height.
+const GROUND_SIDE = 96;
+const TILE_W = Math.round(GROUND_SIDE * Math.SQRT2);      // ~136
+const TILE_H = Math.round(GROUND_SIDE * Math.SQRT2 / 2);  // ~68
+const STEP_X = TILE_W * 0.54, STEP_Y = TILE_H * 0.78;
+
+function renderIso() {
+  const view = document.getElementById("iso-view");
+  const emptyEl = document.getElementById("empty");
+  view.innerHTML = "";
+  if (!state.lookTiles) {
+    emptyEl.classList.remove("hidden");
+    return;
+  }
+  emptyEl.classList.add("hidden");
+
+  const tiles = state.lookTiles;
+  const rows = Math.round(Math.sqrt(tiles.length)); // (level+1)² tiles
+  const maxLat = rows - 1;
+  const width = (2 * maxLat + 1) * STEP_X + TILE_W;
+  const height = rows * STEP_Y + TILE_H;
+  view.style.width = width + "px";
+  view.style.height = height + "px";
+  const cx = width / 2;
+
+  tiles.forEach((tile, i) => {
+    const { d, l } = tileCoords(i);
+    const el = document.createElement("div");
+    el.className = "iso-tile" + (i === 0 ? " me" : "");
+    el.style.width = TILE_W + "px";
+    el.style.height = TILE_H + "px";
+    el.style.left = (cx + l * STEP_X - TILE_W / 2) + "px";
+    el.style.top = (height - TILE_H - d * STEP_Y - 4) + "px";
+    el.style.zIndex = String(rows - d);
+    el.title = i === 0 ? "your tile" : `tile ${i} — click to walk here`;
+
+    const ground = document.createElement("div");
+    ground.className = "ground";
+    ground.style.width = GROUND_SIDE + "px";
+    ground.style.height = GROUND_SIDE + "px";
+    ground.innerHTML = `<img src="assets/grass.png" alt="">`;
+    el.appendChild(ground);
+
+    const content = document.createElement("div");
+    content.className = "content";
+    // players (golem sprite, same as the map GUI)
+    const others = i === 0 ? tile.players - 1 : tile.players;
+    if (others > 0) {
+      const p = document.createElement("span");
+      p.className = "res";
+      p.title = `${others} Trantorian${others > 1 ? "s" : ""}`;
+      p.innerHTML = `<img class="golem" src="${GOLEM_IMG}" alt="trantorian" title="Trantorian">` + (others > 1 ? "×" + others : "");
+      content.appendChild(p);
+    }
+    if (i === 0) {
+      const you = document.createElement("span");
+      you.className = "res";
+      you.title = "you";
+      you.style.boxShadow = "0 0 0 1px #ffd700";
+      you.innerHTML = `<img class="golem" src="${GOLEM_IMG}" alt="you" title="you" style="filter: drop-shadow(0 0 3px #ffd700);">`;
+      content.appendChild(you);
+    }
+    for (const [res, count] of Object.entries(tile.items)) {
+      if (count <= 0) continue;
+      const span = document.createElement("span");
+      const takeable = state.manual && i === 0 && res !== "egg";
+      span.className = "res" + (takeable ? " takeable" : "");
+      span.title = takeable ? `${res} ×${count} — click to take` : `${res} ×${count}`;
+      span.innerHTML = resIcon(res) + (count > 1 ? "×" + count : "");
+      if (takeable) {
+        span.onclick = (e) => { e.stopPropagation(); enqueue("take", res, `take ${res}`); };
+      }
+      content.appendChild(span);
+    }
+    el.appendChild(content);
+
+    const label = document.createElement("span");
+    label.className = "tile-label";
+    label.textContent = i === 0 ? "you" : i;
+    el.appendChild(label);
+
+    if (i !== 0 && state.manual) {
+      el.onclick = () => {
+        const labels = { forward: "↑ forward", left: "⟲ left", right: "⟳ right" };
+        for (const step of pathTo(d, l)) enqueue(step, "", labels[step]);
+      };
+    } else if (i !== 0) {
+      el.style.cursor = "default";
+      el.title = `tile ${i}`;
+    }
+    view.appendChild(el);
+  });
+}
+
+function renderYourTile() {
+  const bar = document.getElementById("your-tile");
+  const chips = document.getElementById("your-tile-chips");
+  if (!state.lookTiles) { bar.classList.add("hidden"); return; }
+  bar.classList.remove("hidden");
+  chips.innerHTML = "";
+  const tile = state.lookTiles[0];
+  const others = tile.players - 1;
+  if (others > 0) {
+    const c = document.createElement("span");
+    c.className = "chip";
+    c.title = "other Trantorians standing with you";
+    c.innerHTML = `<img src="${GOLEM_IMG}" alt="trantorian" title="Trantorian"> ×${others}`;
+    chips.appendChild(c);
+  }
+  let any = others > 0;
+  for (const [res, count] of Object.entries(tile.items)) {
+    if (count <= 0) continue;
+    any = true;
+    const c = document.createElement("span");
+    const takeable = state.manual && res !== "egg";
+    c.className = "chip" + (takeable ? " takeable" : "");
+    c.title = takeable ? `take ${res}` : res;
+    c.innerHTML = `${resIcon(res)} ${res} ×${count}`;
+    if (takeable) c.onclick = () => enqueue("take", res, `take ${res}`);
+    chips.appendChild(c);
+  }
+  if (!any) chips.innerHTML = `<span class="hint">nothing here</span>`;
+}
+
+function renderInventoryBar() {
+  const bar = document.getElementById("inv-bar");
+  const chips = document.getElementById("inv-chips");
+  if (!state.inventory) { bar.classList.add("hidden"); return; }
+  bar.classList.remove("hidden");
+  chips.innerHTML = "";
+  for (const res of ["food", ...STONES]) {
+    const count = state.inventory[res] || 0;
+    const c = document.createElement("span");
+    const settable = state.manual && count > 0;
+    c.className = "chip " + (settable ? "settable" : (count > 0 ? "" : "inactive"));
+    c.title = settable ? `set one ${res} on the ground` : `${res}: ${count}`;
+    c.innerHTML = `${resIcon(res)} ${res} ×${count}`;
+    if (settable) c.onclick = () => enqueue("set", res, `set ${res}`);
+    chips.appendChild(c);
+  }
+}
+
+function renderContextActions() {
+  const manual = state.manual;
+  for (const id of ["btn-left", "btn-forward", "btn-right", "btn-fork", "btn-broadcast", "bc-input"]) {
+    document.getElementById(id).disabled = !manual;
+  }
+  const tile0 = state.lookTiles ? state.lookTiles[0] : null;
+
+  // Eject only succeeds with someone else on your tile.
+  const ejectBtn = document.getElementById("btn-eject");
+  const canEject = manual && tile0 && tile0.players >= 2;
+  ejectBtn.classList.toggle("hidden", !canEject);
+  ejectBtn.disabled = !canEject;
+
+  // Incantation only offered when the tile satisfies the elevation table.
+  const incBtn = document.getElementById("btn-incant");
+  let canIncant = false;
+  const req = ELEVATION[state.level];
+  if (manual && tile0 && req) {
+    canIncant = tile0.players >= req.players &&
+      Object.entries(req.stones).every(([stone, n]) => (tile0.items[stone] || 0) >= n);
+  }
+  incBtn.classList.toggle("hidden", !canIncant);
+  incBtn.disabled = !canIncant;
+  if (canIncant) incBtn.title = `Level ${state.level} → ${state.level + 1}: requirements on this tile are met`;
+}
+
+document.getElementById("btn-left").onclick = () => enqueue("left", "", "⟲ left");
+document.getElementById("btn-right").onclick = () => enqueue("right", "", "⟳ right");
+document.getElementById("btn-forward").onclick = () => enqueue("forward", "", "↑ forward");
+document.getElementById("btn-eject").onclick = () => enqueue("eject", "", "💨 eject");
+document.getElementById("btn-incant").onclick = () => enqueue("incantation", "", "✨ incantation");
+document.getElementById("btn-fork").onclick = () => enqueue("fork", "", "🥚 fork");
+document.getElementById("btn-broadcast").onclick = () => {
+  const input = document.getElementById("bc-input");
+  const text = input.value.trim();
+  if (!text) return;
+  input.value = "";
+  enqueue("broadcast", text, "📢 " + (text.length > 18 ? text.slice(0, 18) + "…" : text));
+};
+document.getElementById("bc-input").addEventListener("keydown", (e) => {
+  if (e.key === "Enter") document.getElementById("btn-broadcast").click();
+});
+
+window.addEventListener("keydown", (e) => {
+  if (document.activeElement && ["INPUT", "TEXTAREA", "SELECT"].includes(document.activeElement.tagName)) return;
+  if (!state.manual) return;
+  const map = { ArrowUp: ["forward", "↑ forward"], ArrowLeft: ["left", "⟲ left"], ArrowRight: ["right", "⟳ right"] };
+  const m = map[e.key];
+  if (m) { e.preventDefault(); enqueue(m[0], "", m[1]); }
+});
+
+// --- log --------------------------------------------------------------------
+
+function addLogEntry(entry) {
+  const box = document.getElementById("log-entries");
+  const div = document.createElement("div");
+  const isBroadcastIn = entry.kind === "tool_result" && (entry.content || "").includes("message ");
+  div.className = "log-entry " + (entry.kind === "tool_use" ? "use" : "") + (isBroadcastIn ? " broadcast" : "");
+  const who = entry.kind === "tool_use" ? `YOU — ${entry.tool_input || entry.tool_name || ""}` :
+              entry.kind === "tool_result" ? `WORLD (${entry.tool_name || ""})` : entry.kind;
+  const body = entry.kind === "tool_use" ? "" : (entry.content || "");
+  div.innerHTML = `<div class="who">${who}</div>${body.replace(/</g, "&lt;")}`;
+  box.appendChild(div);
+  while (box.children.length > 200) box.removeChild(box.firstChild);
+  box.scrollTop = box.scrollHeight;
+}
+
+// Harvest look/inventory results from any source — including the agent's own
+// LLM turns — so spectators see the world through the agent's latest eyes.
+function harvestVision(entries) {
+  for (const e of entries) {
+    if (e.kind === "tool_result" && (e.tool_name === "look" || e.tool_name === "inventory")) {
+      reactToResult(e, e.tool_name);
+    }
+  }
+}
+
+async function pollConversation(reset = false) {
+  if (!state.agentId) return;
+  try {
+    if (reset) {
+      const all = await api(`/agents/${encodeURIComponent(state.agentId)}/conversation`);
+      state.histLen = all.length;
+      harvestVision(all); // whole history: pick up the most recent look/inventory
+      for (const e of all.slice(-30)) addLogEntry(e);
+      return;
+    }
+    const entries = await api(`/agents/${encodeURIComponent(state.agentId)}/conversation?since=${state.histLen}`);
+    if (!entries.length) return;
+    state.histLen += entries.length;
+    harvestVision(entries);
+    for (const e of entries) addLogEntry(e);
+  } catch (_) {}
+}
+
+// --- init --------------------------------------------------------------------
+
+renderQueue();
+loadTeams();
+loadPersonalities();
+loadStatus();
+setInterval(loadStatus, 4000);
+setInterval(loadTeams, 15000);
+setInterval(() => pollConversation(false), 2500);
+// Keep spectator data fresh (facing/level/position/inventory, zero game cost).
+setInterval(() => { if (state.agentId && !state.pumping) refreshState(); }, 5000);
+</script>
+</body>
+</html>

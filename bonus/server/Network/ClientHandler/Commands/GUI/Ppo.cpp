@@ -4,10 +4,7 @@ namespace zappy
 {
 std::string Commands::Ppo(std::vector<std::string> args, Client &)
 {
-
-    if (args.size() < 2)
-        return "ko\n";
-    Player *player = _world->getPlayerById(std::stoi(args[1]));
+    Player *player = _world->getPlayerById(parsePlayerIdArg(args));
     if (!player)
         return "ko\n";
     position pos = player->getPosition();

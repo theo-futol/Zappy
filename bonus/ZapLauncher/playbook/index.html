@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zappy — Playbooks</title>
+<style>
+  :root {
+    --bg: #12141c; --panel: #1a1d29; --panel2: #222636; --border: #2e3348;
+    --text: #e2e6f0; --muted: #8a90a8; --accent: #6ea8fe; --ok: #57d98a;
+    --warn: #ffb454; --bad: #ff6b6b;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font-family: "Segoe UI", system-ui, sans-serif; height: 100vh; display: flex; flex-direction: column; }
+  header { display: flex; align-items: center; gap: 14px; padding: 10px 16px; background: var(--panel); border-bottom: 1px solid var(--border); }
+  header h1 { font-size: 16px; margin: 0; }
+  header .links { margin-left: auto; display: flex; gap: 10px; font-size: 13px; }
+  header a { color: var(--accent); text-decoration: none; }
+  main { flex: 1; display: flex; min-height: 0; }
+  aside { width: 230px; background: var(--panel); border-right: 1px solid var(--border); padding: 12px; overflow-y: auto; }
+  aside .pb-item { padding: 8px 10px; border-radius: 6px; cursor: pointer; font-size: 13px; }
+  aside .pb-item:hover { background: var(--panel2); }
+  aside .pb-item.active { background: var(--panel2); outline: 1px solid var(--accent); }
+  .content { flex: 1; display: flex; min-width: 0; }
+  .editor, .results { flex: 1; display: flex; flex-direction: column; padding: 14px; gap: 10px; min-width: 0; }
+  .results { border-left: 1px solid var(--border); overflow-y: auto; }
+  label { font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+  textarea { flex: 1; background: var(--panel2); color: var(--text); border: 1px solid var(--border); border-radius: 8px; padding: 10px; font-family: "Cascadia Code", monospace; font-size: 12.5px; resize: none; }
+  textarea.invalid { border-color: var(--bad); }
+  input[type=text] { background: var(--panel2); color: var(--text); border: 1px solid var(--border); border-radius: 6px; padding: 7px 9px; font-size: 13px; }
+  button { background: var(--panel2); color: var(--text); border: 1px solid var(--border); border-radius: 6px; padding: 7px 12px; font-size: 13px; cursor: pointer; }
+  button:hover:not(:disabled) { border-color: var(--accent); }
+  button:disabled { opacity: .45; cursor: default; }
+  button.primary { background: var(--accent); border-color: var(--accent); color: #0c1020; font-weight: 600; }
+  .row { display: flex; gap: 8px; align-items: center; }
+  table { border-collapse: collapse; width: 100%; font-size: 12.5px; }
+  th, td { border-bottom: 1px solid var(--border); padding: 6px 8px; text-align: left; vertical-align: top; }
+  th { color: var(--muted); font-size: 11px; text-transform: uppercase; }
+  td.pass { color: var(--ok); font-weight: 600; }
+  td.fail { color: var(--bad); font-weight: 600; }
+  td.skip { color: var(--muted); }
+  .summary { padding: 8px 12px; border-radius: 8px; font-size: 13px; font-weight: 600; }
+  .summary.ok { background: rgba(87,217,138,.12); color: var(--ok); }
+  .summary.ko { background: rgba(255,107,107,.12); color: var(--bad); }
+  .muted { color: var(--muted); font-size: 12px; }
+  .toast { position: fixed; bottom: 18px; left: 50%; transform: translateX(-50%); background: var(--panel2); border: 1px solid var(--border); padding: 9px 16px; border-radius: 8px; font-size: 13px; opacity: 0; transition: opacity .25s; pointer-events: none; }
+  .toast.show { opacity: 1; }
+  .toast.error { border-color: var(--bad); color: var(--bad); }
+  pre { margin: 0; white-space: pre-wrap; word-break: break-word; }
+</style>
+</head>
+<body>
+<header>
+  <h1>📜 Zappy — Playbook scenes</h1>
+  <div class="links">
+    <a href="/leader/">Team leader</a>
+    <a href="/player/">Player POV</a>
+    <a href="/docs" target="_blank">API</a>
+  </div>
+</header>
+<main>
+  <aside>
+    <div class="row" style="margin-bottom:10px">
+      <input type="text" id="new-name" placeholder="new-playbook-name" style="flex:1">
+      <button id="btn-new">+</button>
+    </div>
+    <div id="pb-list"></div>
+  </aside>
+  <div class="content">
+    <div class="editor">
+      <label>Playbook JSON — <span class="muted">agents are created on run; steps run in order; a step passes when its result contains <code>expect</code></span></label>
+      <textarea id="pb-json" spellcheck="false"></textarea>
+      <div class="row">
+        <button id="btn-save">Save</button>
+        <button id="btn-run" class="primary">▶ Run scene</button>
+        <span class="muted" id="pb-name-label"></span>
+      </div>
+    </div>
+    <div class="results">
+      <label>Run results</label>
+      <div id="run-summary"></div>
+      <table id="run-table" style="display:none">
+        <thead><tr><th>#</th><th>Agent</th><th>Action</th><th>Result</th><th>Expect</th><th>Status</th></tr></thead>
+        <tbody id="run-body"></tbody>
+      </table>
+      <p class="muted" id="run-empty">Run a playbook to see step-by-step results here.</p>
+    </div>
+  </div>
+</main>
+<div class="toast" id="toast"></div>
+
+<script>
+"use strict";
+const API = window.location.protocol.startsWith("http") ? window.location.origin : "http://localhost:8000";
+
+let selected = null;
+
+let toastTimer = null;
+function toast(msg, isErr = false) {
+  const el = document.getElementById("toast");
+  el.textContent = msg;
+  el.classList.toggle("error", isErr);
+  el.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => el.classList.remove("show"), 3000);
+}
+
+async function api(path, options = {}) {
+  const res = await fetch(API + path, { headers: { "Content-Type": "application/json" }, ...options });
+  if (!res.ok) {
+    let detail = res.statusText;
+    try { detail = (await res.json()).detail || detail; } catch (_) {}
+    throw new Error(detail);
+  }
+  return res.json();
+}
+
+const TEMPLATE = (name) => ({
+  name,
+  team: "REDS",
+  agents: [
+    { id: "alpha", personality: "guard" },
+  ],
+  steps: [
+    { agent: "alpha", tool: "look", args: "" },
+    { agent: "alpha", tool: "take", args: "food", expect: "ok" },
+  ],
+});
+
+async function loadList(selectName = null) {
+  let books = [];
+  try { books = await api("/playbooks"); } catch (e) { toast("Failed to list playbooks: " + e.message, true); }
+  const list = document.getElementById("pb-list");
+  list.innerHTML = "";
+  for (const pb of books) {
+    const div = document.createElement("div");
+    div.className = "pb-item" + (pb.name === (selectName || selected) ? " active" : "");
+    div.textContent = pb.name;
+    div.onclick = () => select(pb.name);
+    list.appendChild(div);
+  }
+  if (selectName) select(selectName);
+  else if (!selected && books.length) select(books[0].name);
+}
+
+async function select(name) {
+  try {
+    const pb = await api(`/playbooks/${encodeURIComponent(name)}`);
+    selected = name;
+    document.getElementById("pb-json").value = JSON.stringify(pb, null, 2);
+    document.getElementById("pb-name-label").textContent = name + ".json";
+    document.querySelectorAll(".pb-item").forEach(el => el.classList.toggle("active", el.textContent === name));
+  } catch (e) { toast("Load failed: " + e.message, true); }
+}
+
+document.getElementById("btn-new").onclick = () => {
+  const name = document.getElementById("new-name").value.trim();
+  if (!/^[A-Za-z0-9_-]+$/.test(name)) { toast("Name must be letters/digits/-/_", true); return; }
+  selected = name;
+  document.getElementById("pb-json").value = JSON.stringify(TEMPLATE(name), null, 2);
+  document.getElementById("pb-name-label").textContent = name + ".json (unsaved)";
+  document.getElementById("new-name").value = "";
+};
+
+function parseEditor() {
+  const ta = document.getElementById("pb-json");
+  try {
+    const pb = JSON.parse(ta.value);
+    ta.classList.remove("invalid");
+    return pb;
+  } catch (e) {
+    ta.classList.add("invalid");
+    toast("Invalid JSON: " + e.message, true);
+    return null;
+  }
+}
+
+document.getElementById("btn-save").onclick = async () => {
+  const pb = parseEditor();
+  if (!pb || !selected) return;
+  try {
+    await api(`/playbooks/${encodeURIComponent(selected)}`, { method: "PUT", body: JSON.stringify(pb) });
+    toast(`Saved "${selected}".`);
+    loadList(selected);
+  } catch (e) { toast("Save failed: " + e.message, true); }
+};
+
+document.getElementById("btn-run").onclick = async () => {
+  if (!selected) return;
+  const pb = parseEditor();
+  if (!pb) return;
+  const btn = document.getElementById("btn-run");
+  btn.disabled = true;
+  btn.textContent = "Running…";
+  try {
+    // save first so the run uses what's on screen
+    await api(`/playbooks/${encodeURIComponent(selected)}`, { method: "PUT", body: JSON.stringify(pb) });
+    const run = await api(`/playbooks/${encodeURIComponent(selected)}/run`, { method: "POST" });
+    renderRun(run);
+  } catch (e) { toast("Run failed: " + e.message, true); }
+  finally { btn.disabled = false; btn.textContent = "▶ Run scene"; }
+};
+
+function renderRun(run) {
+  document.getElementById("run-empty").style.display = "none";
+  const summary = document.getElementById("run-summary");
+  const passCount = run.steps.filter(s => s.passed === true).length;
+  const checked = run.steps.filter(s => s.passed !== null && s.passed !== undefined).length;
+  summary.innerHTML = `<div class="summary ${run.ok ? "ok" : "ko"}">${run.ok ? "✔ Scene passed" : "✘ Scene failed"} — ${passCount}/${checked} assertions ok, ${run.steps.length} steps</div>`;
+  const table = document.getElementById("run-table");
+  const body = document.getElementById("run-body");
+  table.style.display = "";
+  body.innerHTML = "";
+  for (const s of run.steps) {
+    const tr = document.createElement("tr");
+    const status = s.skipped ? ["skip", "skipped"]
+      : s.error ? ["fail", "error"]
+      : s.passed === true ? ["pass", "pass"]
+      : s.passed === false ? ["fail", "fail"]
+      : ["", "—"];
+    tr.innerHTML = `
+      <td>${s.index}</td>
+      <td>${esc(s.agent)}</td>
+      <td><pre>${esc((s.tool + " " + (s.args || "")).trim())}</pre></td>
+      <td><pre>${esc(s.error || s.result || "")}</pre></td>
+      <td><pre>${esc(s.expect || "")}</pre></td>
+      <td class="${status[0]}">${status[1]}</td>`;
+    body.appendChild(tr);
+  }
+}
+
+function esc(str) { return String(str).replace(/&/g, "&amp;").replace(/</g, "&lt;"); }
+
+loadList();
+</script>
+</body>
+</html>

@@ -1,0 +1,410 @@
+{
+  "name": "village-gathering",
+  "team": "REDS",
+  "agents": [
+    {
+      "id": "aldric",
+      "personality": "guard"
+    },
+    {
+      "id": "berta",
+      "personality": "merchant"
+    },
+    {
+      "id": "cedric",
+      "personality": "rebel"
+    },
+    {
+      "id": "dora",
+      "personality": "loyalist"
+    },
+    {
+      "id": "edmund",
+      "personality": "explorator"
+    },
+    {
+      "id": "farah",
+      "personality": "merchant"
+    }
+  ],
+  "steps": [
+    {
+      "agent": "aldric",
+      "tool": "look",
+      "args": "",
+      "expect": "tile0"
+    },
+    {
+      "agent": "berta",
+      "tool": "look",
+      "args": "",
+      "expect": "tile0"
+    },
+    {
+      "agent": "cedric",
+      "tool": "look",
+      "args": "",
+      "expect": "tile0"
+    },
+    {
+      "agent": "dora",
+      "tool": "look",
+      "args": "",
+      "expect": "tile0"
+    },
+    {
+      "agent": "edmund",
+      "tool": "look",
+      "args": "",
+      "expect": "tile0"
+    },
+    {
+      "agent": "farah",
+      "tool": "look",
+      "args": "",
+      "expect": "tile0"
+    },
+    {
+      "agent": "aldric",
+      "tool": "inventory",
+      "args": "",
+      "expect": "food"
+    },
+    {
+      "agent": "berta",
+      "tool": "inventory",
+      "args": "",
+      "expect": "food"
+    },
+    {
+      "agent": "cedric",
+      "tool": "inventory",
+      "args": "",
+      "expect": "food"
+    },
+    {
+      "agent": "dora",
+      "tool": "inventory",
+      "args": "",
+      "expect": "food"
+    },
+    {
+      "agent": "edmund",
+      "tool": "inventory",
+      "args": "",
+      "expect": "food"
+    },
+    {
+      "agent": "farah",
+      "tool": "inventory",
+      "args": "",
+      "expect": "food"
+    },
+    {
+      "agent": "aldric",
+      "tool": "forward",
+      "args": "",
+      "expect": "ok"
+    },
+    {
+      "agent": "berta",
+      "tool": "forward",
+      "args": "",
+      "expect": "ok"
+    },
+    {
+      "agent": "cedric",
+      "tool": "forward",
+      "args": "",
+      "expect": "ok"
+    },
+    {
+      "agent": "dora",
+      "tool": "forward",
+      "args": "",
+      "expect": "ok"
+    },
+    {
+      "agent": "edmund",
+      "tool": "forward",
+      "args": "",
+      "expect": "ok"
+    },
+    {
+      "agent": "farah",
+      "tool": "forward",
+      "args": "",
+      "expect": "ok"
+    },
+    {
+      "agent": "aldric",
+      "tool": "right",
+      "args": "",
+      "expect": "ok"
+    },
+    {
+      "agent": "aldric",
+      "tool": "forward",
+      "args": "",
+      "expect": "ok"
+    },
+    {
+      "agent": "berta",
+      "tool": "left",
+      "args": "",
+      "expect": "ok"
+    },
+    {
+      "agent": "berta",
+      "tool": "forward",
+      "args": "",
+      "expect": "ok"
+    },
+    {
+      "agent": "cedric",
+      "tool": "forward",
+      "args": "",
+      "expect": "ok"
+    },
+    {
+      "agent": "dora",
+      "tool": "left",
+      "args": "",
+      "expect": "ok"
+    },
+    {
+      "agent": "dora",
+      "tool": "forward",
+      "args": "",
+      "expect": "ok"
+    },
+    {
+      "agent": "edmund",
+      "tool": "forward",
+      "args": "",
+      "expect": "ok"
+    },
+    {
+      "agent": "farah",
+      "tool": "right",
+      "args": "",
+      "expect": "ok"
+    },
+    {
+      "agent": "farah",
+      "tool": "forward",
+      "args": "",
+      "expect": "ok"
+    },
+    {
+      "agent": "aldric",
+      "tool": "broadcast",
+      "args": "Aldric of REDS, guard of the village. I have reached the square, who is around?",
+      "expect": "ok"
+    },
+    {
+      "agent": "berta",
+      "tool": "inventory",
+      "args": "",
+      "expect": null
+    },
+    {
+      "agent": "cedric",
+      "tool": "inventory",
+      "args": "",
+      "expect": null
+    },
+    {
+      "agent": "berta",
+      "tool": "broadcast",
+      "args": "Berta the merchant here, Aldric. I hear you loud, pushing my cart your way.",
+      "expect": "ok"
+    },
+    {
+      "agent": "dora",
+      "tool": "inventory",
+      "args": "",
+      "expect": null
+    },
+    {
+      "agent": "edmund",
+      "tool": "inventory",
+      "args": "",
+      "expect": null
+    },
+    {
+      "agent": "aldric",
+      "tool": "look",
+      "args": "",
+      "expect": "message"
+    },
+    {
+      "agent": "cedric",
+      "tool": "broadcast",
+      "args": "Cedric here. I heard you both, save me a spot by the well.",
+      "expect": "ok"
+    },
+    {
+      "agent": "dora",
+      "tool": "broadcast",
+      "args": "Dora of REDS, the village gathers! I carry my loyalty and little else.",
+      "expect": "ok"
+    },
+    {
+      "agent": "edmund",
+      "tool": "look",
+      "args": "",
+      "expect": "message"
+    },
+    {
+      "agent": "edmund",
+      "tool": "broadcast",
+      "args": "Edmund back from the wilds. Villagers, I spotted linemate two fields north of the square.",
+      "expect": "ok"
+    },
+    {
+      "agent": "farah",
+      "tool": "inventory",
+      "args": "",
+      "expect": "message"
+    },
+    {
+      "agent": "farah",
+      "tool": "broadcast",
+      "args": "Farah trading today. Edmund, confirm for me: linemate, two fields north? I will fetch it.",
+      "expect": "ok"
+    },
+    {
+      "agent": "aldric",
+      "tool": "inventory",
+      "args": "",
+      "expect": null
+    },
+    {
+      "agent": "edmund",
+      "tool": "broadcast",
+      "args": "Confirmed Farah: two fields north, by the old stones. Aldric guards the well meanwhile.",
+      "expect": "ok"
+    },
+    {
+      "agent": "aldric",
+      "tool": "inventory",
+      "args": "",
+      "expect": "message"
+    },
+    {
+      "agent": "berta",
+      "tool": "forward",
+      "args": "",
+      "expect": "ok"
+    },
+    {
+      "agent": "berta",
+      "tool": "broadcast",
+      "args": "Aldric, I am close now, I can see the well from here.",
+      "expect": "ok"
+    },
+    {
+      "agent": "aldric",
+      "tool": "broadcast",
+      "args": "I see you Berta. Stand with me, two villagers make a market.",
+      "expect": "ok"
+    },
+    {
+      "agent": "cedric",
+      "tool": "look",
+      "args": "",
+      "expect": "message"
+    },
+    {
+      "agent": "cedric",
+      "tool": "broadcast",
+      "args": "Careful you two, the well side floods at dusk. Cedric said it first.",
+      "expect": "ok"
+    },
+    {
+      "agent": "dora",
+      "tool": "broadcast",
+      "args": "Village plan confirmed then: Edmund and Farah fetch stones, Aldric guards, Berta trades, Dora keeps watch. Anyone against, speak now.",
+      "expect": "ok"
+    },
+    {
+      "agent": "edmund",
+      "tool": "inventory",
+      "args": "",
+      "expect": "message"
+    },
+    {
+      "agent": "edmund",
+      "tool": "broadcast",
+      "args": "Nothing against, Dora. Edmund moving north now.",
+      "expect": "ok"
+    },
+    {
+      "agent": "edmund",
+      "tool": "forward",
+      "args": "",
+      "expect": "ok"
+    },
+    {
+      "agent": "edmund",
+      "tool": "forward",
+      "args": "",
+      "expect": "ok"
+    },
+    {
+      "agent": "farah",
+      "tool": "broadcast",
+      "args": "Right behind you Edmund. Till sundown, villagers, Farah out.",
+      "expect": "ok"
+    },
+    {
+      "agent": "farah",
+      "tool": "forward",
+      "args": "",
+      "expect": "ok"
+    },
+    {
+      "agent": "farah",
+      "tool": "forward",
+      "args": "",
+      "expect": "ok"
+    },
+    {
+      "agent": "aldric",
+      "tool": "look",
+      "args": "",
+      "expect": "tile0"
+    },
+    {
+      "agent": "berta",
+      "tool": "look",
+      "args": "",
+      "expect": "tile0"
+    },
+    {
+      "agent": "cedric",
+      "tool": "look",
+      "args": "",
+      "expect": "tile0"
+    },
+    {
+      "agent": "dora",
+      "tool": "look",
+      "args": "",
+      "expect": "tile0"
+    },
+    {
+      "agent": "edmund",
+      "tool": "look",
+      "args": "",
+      "expect": "tile0"
+    },
+    {
+      "agent": "farah",
+      "tool": "look",
+      "args": "",
+      "expect": "tile0"
+    }
+  ]
+}

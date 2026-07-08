@@ -13,7 +13,9 @@ std::string Commands::Fork(std::vector<std::string>, Client &client, std::vector
     position playerPos = player->getPosition();
 
     _world->setTileAt(playerPos, ItemType::EGG, 1);
-    player->getTeam().addEgg(playerPos);
+    int eggId = player->getTeam().addEgg(playerPos);
+    _broadcastQueue->push("pfk " + std::to_string(player->getId()) + "\n");
+    _broadcastQueue->push("enw " + std::to_string(eggId) + " " + std::to_string(player->getId()) + " " + std::to_string(playerPos.x) + " " + std::to_string(playerPos.y) + "\n");
     Logger::log("010", "Fork : new egg laid",
                 {{"player_id", std::to_string(player->getId())}, {"team", player->getTeam()._name}, {"x", std::to_string(playerPos.x)}, {"y", std::to_string(playerPos.y)}});
     return "ok\n";

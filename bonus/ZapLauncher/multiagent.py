@@ -2,10 +2,9 @@ import os
 import random
 import select as _select
 import socket as _socket
+import threading
 import time
-import urllib.request
-import urllib.error
-from typing import Literal, NotRequired, TypedDict, TypeAlias
+from typing import Literal, NotRequired, TypedDict
 from dataclasses import dataclass, field
 
 PROMPT_DATABASE_DIR = os.path.join(os.path.dirname(__file__), "prompt_database")
@@ -198,18 +197,104 @@ class GraphicConnection(_BaseConnection):
         return names
 
 
-def fetch_protocol_from_server(host: str, port: int, retries: int = 5, delay: float = 2.0) -> str:
-    url = f"http://{host}:{port}/protocol"
-    last_exc: Exception = RuntimeError("no attempts made")
-    for attempt in range(retries):
+RESOURCE_NAMES = ["food", "linemate", "deraumere", "sibur", "mendiane", "phiras", "thystame"]
+
+FACING_NAMES = {1: "north", 2: "east", 3: "south", 4: "west"}
+
+
+class GuiMonitor(threading.Thread):
+    """Background GRAPHIC client mirroring authoritative per-player state.
+
+    The AI protocol never tells a client its own player id, absolute position
+    or facing. This monitor watches the server's GUI event stream (pnw, pipi,
+    ppo, plv, pin, pdi) and keeps a registry so the launcher can map each
+    agent to its player id right after connection (claim_player) and expose
+    absolute state — facing, level, inventory — e.g. to the player POV page.
+    """
+
+    def __init__(self, host: str, port: int):
+        super().__init__(daemon=True)
+        self._conn = GraphicConnection(host, port)
+        self._lock = threading.Lock()
+        self.players: dict[int, dict] = {}
+        self._unclaimed: list[tuple[int, str]] = []
+        self.alive = True
+
+    @staticmethod
+    def _pid(token: str) -> int:
+        return int(token.lstrip("#"))
+
+    def run(self):
         try:
-            with urllib.request.urlopen(url, timeout=3) as resp:
-                return resp.read().decode("utf-8")
-        except Exception as exc:
-            last_exc = exc
-            if attempt < retries - 1:
-                time.sleep(delay)
-    raise RuntimeError(f"Could not fetch protocol from {url} after {retries} attempts: {last_exc}")
+            while True:
+                self._handle(self._conn._recv_line())
+        except Exception:
+            self.alive = False
+
+    def _handle(self, line: str) -> None:
+        parts = line.split()
+        if not parts:
+            return
+        cmd = parts[0]
+        try:
+            with self._lock:
+                if cmd == "pnw" and len(parts) >= 7:
+                    pid = self._pid(parts[1])
+                    self.players[pid] = {
+                        "x": int(parts[2]), "y": int(parts[3]),
+                        "orientation": int(parts[4]), "level": int(parts[5]),
+                        "team": parts[6], "inventory": None,
+                    }
+                    self._unclaimed.append((pid, parts[6]))
+                elif cmd == "pipi" and len(parts) >= 13:
+                    pid = self._pid(parts[1])
+                    player = self.players.setdefault(pid, {})
+                    player.update(
+                        x=int(parts[2]), y=int(parts[3]),
+                        orientation=int(parts[4]), level=int(parts[5]),
+                        inventory=dict(zip(RESOURCE_NAMES, (int(v) for v in parts[6:13]))),
+                    )
+                elif cmd == "ppo" and len(parts) >= 5:
+                    pid = self._pid(parts[1])
+                    self.players.setdefault(pid, {}).update(
+                        x=int(parts[2]), y=int(parts[3]), orientation=int(parts[4]),
+                    )
+                elif cmd == "plv" and len(parts) >= 3:
+                    self.players.setdefault(self._pid(parts[1]), {})["level"] = int(parts[2])
+                elif cmd == "pin" and len(parts) >= 11:
+                    pid = self._pid(parts[1])
+                    self.players.setdefault(pid, {})["inventory"] = dict(
+                        zip(RESOURCE_NAMES, (int(v) for v in parts[4:11]))
+                    )
+                elif cmd == "pdi" and len(parts) >= 2:
+                    self.players.pop(self._pid(parts[1]), None)
+        except (ValueError, IndexError):
+            pass
+
+    def claim_player(self, team: str, timeout: float = 3.0) -> int | None:
+        """Return the player id of the most recent unclaimed connection for `team`.
+
+        Called right after an agent's handshake: the server pushes the matching
+        pnw within its next loop iteration, so we poll briefly for it.
+        """
+        deadline = time.time() + timeout
+        while time.time() < deadline:
+            with self._lock:
+                for i, (pid, pnw_team) in enumerate(self._unclaimed):
+                    if pnw_team == team:
+                        self._unclaimed.pop(i)
+                        return pid
+            time.sleep(0.02)
+        return None
+
+    def get_player(self, player_id: int) -> dict | None:
+        with self._lock:
+            player = self.players.get(player_id)
+            return dict(player) if player else None
+
+    def close(self):
+        self.alive = False
+        self._conn.close()
 
 
 class Team(TypedDict):
@@ -239,13 +324,15 @@ class HistoryEntry(TypedDict, total=False):
         One entry of an agent's conversation log, exposed by the API.
         `kind` lets a dashboard separate turns without parsing text:
         - "user": a message sent to the agent.
+        - "llm_response": one full raw LLM answer (may contain several USE lines).
         - "tool_use": the agent chose to USE `tool_name`.
         - "tool_result": the result fed back from that tool use.
         - "report": the agent's final REPORT text for the turn.
     """
-    kind: Literal["user", "tool_use", "tool_result", "report"]
+    kind: Literal["user", "llm_response", "tool_use", "tool_result", "report"]
     content: str
     tool_name: str
+    tool_input: str  # full "USE" payload: tool name + arguments
     message_id: str
     malformed: bool
     truncated: bool
@@ -265,6 +352,9 @@ class Agent:
 
     # Live TCP connection to the Zappy server (None when no server is reachable).
     connection: ServerConnection | None = None
+
+    # Server-side player id (from the GUI event stream), when a GuiMonitor is running.
+    player_id: int | None = None
 
     facts_memory: list[str] = field(default_factory=list)
     history: list[HistoryEntry] = field(default_factory=list)
@@ -451,20 +541,3 @@ def random_agent(team: Team, id: str | None = None) -> Agent:
     personality = random.choice(list_personality_names())
 
     return create_agent(id or personality, team, personality)
-
-
-def build_prompt(agent: Agent, user_message: str, as_system: bool = False) -> list[Message]:
-    return [
-        {
-            "role": "system",
-            "content": agent["cached_prompt"]
-        },
-        {
-            "role": "system",
-            "content": agent["personality_prompt"]
-        },
-        {
-            "role": "system" if as_system else "user",
-            "content": user_message
-        }
-    ]

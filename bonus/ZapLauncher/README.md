@@ -11,24 +11,35 @@ dashboard.
 - An **agent** = one team + one personality. Talk to it, and it answers in
   character — either with a plain reply, or by using a tool (like "look
   around") and reacting to the result.
-- Everything is run with Docker. Once started, you get:
-  - a **web dashboard** to create teams/agents and chat with them,
-  - a **REST API** (with auto-generated docs) behind it,
-  - a CLI if you just want a quick terminal chat.
+- Everything is run with Docker. Once started, you get three points of view
+  on the same game, all served by the API itself:
+  - `/leader` — the **team-leader dashboard**: create teams/agents, chat with
+    them, watch the live feed,
+  - `/player` — the **player POV**: take manual control of one Trantorian and
+    play it yourself (keyboard or buttons),
+  - `/playbook` — **playbook scenes**: run a whole team through a predefined
+    sequence of actions, with per-step assertions (great for testing),
+  - plus the **REST API** (with auto-generated docs at `/docs`) behind all three.
 
 ## TL;DR (for developers)
 
 - `prompt_database/` is the source of truth for all prompt text (teams,
-  personalities, protocol, lore). Nothing is hardcoded in Python.
+  personalities, protocol, lore, playbooks). Nothing is hardcoded in Python.
 - `multiagent.py` builds an `Agent`'s full prompt as two parts: a **cached
   prefix** (shared across a team, cheap to reuse) and a **personality
-  suffix** (agent-specific).
+  suffix** (agent-specific). It also owns the TCP connections to the game
+  server (`ServerConnection` / `GraphicConnection`).
 - `engine.py` drives one conversational turn: call the LLM, parse its
-  `USE`/`REPORT` answer, run a tool if asked, loop until a `REPORT`.
+  `USE`/`REPORT` answer, run the tools it asked for, loop until a `REPORT`
+  (capped at 8 LLM calls per turn).
 - `runtime.py` is the single in-memory source of truth ("the current loop")
-  shared by `main.py` (CLI) and `api.py` (REST API).
-- `api.py` exposes that runtime over HTTP for the dashboard.
-- `dashboard/` is a static, build-free HTML/CSS/JS client for the API.
+  shared by every API entry point.
+- `api.py` exposes that runtime over HTTP, runs the autonomous turn
+  dispatcher, and serves the three frontends.
+- `dashboard/`, `player/`, `playbook/` are static, build-free HTML/CSS/JS
+  clients for the API (served at `/leader`, `/player`, `/playbook`).
+- `tests/` is a pytest suite (functional + end-to-end against a fake Zappy
+  server; see "Testing" below).
 
 ---
 
@@ -89,17 +100,28 @@ database engine, the filesystem *is* the database.
 
 ### The USE / REPORT protocol and tools
 
-Agents must answer with exactly one of:
-- `USE <tool_name>` — run one of the tools in `tools.py` (currently `look`,
-  `broadcast`, both placeholders) against the agent, feed the result back
-  to the agent, and let it respond again.
+Agents answer with one or more lines of:
+- `USE <tool_name> [args]` — run one of the tools in `tools.py` (`forward`,
+  `left`, `right`, `look`, `inventory`, `broadcast`, `connect_nbr`, `fork`,
+  `eject`, `take`, `set`, `incantation`, plus the local memory tools
+  `remember`/`forget`) against the agent's live server connection, feed the
+  result back, and let it respond again. Several USE lines in one response
+  are executed in order (fewer LLM calls = faster game).
+
+Agents also have a **persistent personal memory**: `USE remember <fact>`
+stores up to 30 facts (relationships, deals, ritual crews) that are injected
+into the system context on every turn — surviving far beyond the
+conversation window — and `USE forget <number>` drops outdated ones. The
+memory is visible in the `/leader` agent view and exposed as
+`facts_memory` on `GET /agents/{id}`.
 - `REPORT <text>` — end the turn; `<text>` is the agent's final answer.
 
-`engine.run_turn` loops this (capped at 5 steps) and logs every step as a
-structured entry (`user` / `tool_use` / `tool_result` / `report`) in
-`agent.history` — this is what lets the API/dashboard show "tools used"
-without guessing from raw text, and is also why the cached system prompt
-never leaks into a conversation view: it's never part of the history.
+`engine.run_turn` loops this (capped at 8 LLM calls) and logs every step as a
+structured entry (`user` / `llm_response` / `tool_use` / `tool_result` /
+`report`) in `agent.history` — this is what lets the API/dashboard show
+"tools used" without guessing from raw text, and is also why the cached
+system prompt never leaks into a conversation view: it's never part of the
+history.
 
 ### Token usage & caching
 
@@ -112,14 +134,9 @@ usage can be looked up per message.
 
 ## Infrastructure / where things are accessible
 
-Everything runs in **one Docker container** built from the `Dockerfile`:
-
-```bash
-./run.sh
-# = docker build . -t zaplauncher && docker run -it --env-file .env -p 8000:8000 zaplauncher:latest
-```
-
-This requires a `.env` file at the repo root with:
+Everything runs in **one Docker container** built from the `Dockerfile`,
+normally via the compose file one directory up (`docker compose up
+zaplauncher`). This requires a `.env` file next to `compose.yml` with:
 
 ```
 API_KEY=<your Mistral API key>
@@ -133,13 +150,32 @@ Once running:
 | Interactive API docs (Swagger UI) | `http://localhost:8000/docs` |
 | Alternative API docs (ReDoc) | `http://localhost:8000/redoc` |
 | Raw OpenAPI schema | `http://localhost:8000/openapi.json` |
-| Web dashboard | open `dashboard/index.html` directly in a browser (no server needed — it's static HTML/CSS/JS that calls the API via `fetch`); set the API base URL in the top bar if it isn't on `http://localhost:8000` |
-| CLI | `docker run -it --env-file .env zaplauncher python main.py` (overrides the container's default command) |
+| Team-leader dashboard | `http://localhost:8000/leader/` |
+| Player POV (manual control) | `http://localhost:8000/player/` |
+| Playbook scenes | `http://localhost:8000/playbook/` |
+
+`/` redirects to `/leader/`. The frontends are plain static files served by
+the API itself, so there is no build step and no CORS configuration needed;
+they can still be opened straight from disk (they fall back to
+`http://localhost:8000` as API base in that case).
 
 The container's **default command runs the API** (`uvicorn api:app --host
-0.0.0.0 --port 8000`), since that's what the dashboard and any external
-client need. The CLI is still there for a quick terminal chat, but you have
-to ask Docker to run it explicitly instead of the API.
+0.0.0.0 --port 8000`).
+
+## Testing
+
+```bash
+# Functional + e2e tests (fake Zappy server, scripted LLM — no network, no key)
+docker run --rm -v $PWD:/app -w /app -e API_KEY=test python:trixie \
+    bash -c "pip install -q -r requirements-dev.txt && pytest"
+
+# End-to-end against the real C++ server (from the bonus/ directory).
+# ZAPPY_CLIENTS=20: every connection consumes an egg and the suite opens ~8.
+docker compose build server && ZAPPY_CLIENTS=20 docker compose up -d server
+docker run --rm --network bonus_zappy-net -v $PWD/ZapLauncher:/app -w /app \
+    -e API_KEY=test -e ZAPPY_E2E_HOST=server -e ZAPPY_E2E_PORT=4242 \
+    python:trixie bash -c "pip install -q -r requirements-dev.txt && pytest tests/test_e2e_real_server.py"
+```
 
 LLM calls go out to Mistral's API (`https://api.mistral.ai/v1`, OpenAI-compatible
 client) using the model/endpoint/cache key configured per team.
@@ -148,24 +184,37 @@ client) using the model/endpoint/cache key configured per team.
 
 | File | Role |
 |---|---|
-| `multiagent.py` | Core types (`Team`, `Agent`, `HistoryEntry`) + all `prompt_database` read/write helpers + prompt assembly |
+| `multiagent.py` | Core types (`Team`, `Agent`, `HistoryEntry`), server connections, all `prompt_database` read/write helpers + prompt assembly |
 | `tools.py` | The tools agents can `USE` |
-| `runtime.py` | In-memory state shared by the CLI and the API: running `teams`, `agents`, `usage_log` |
-| `engine.py` | LLM call + USE/REPORT turn loop, shared by the CLI and the API |
-| `main.py` | CLI entry point |
-| `api.py` | FastAPI app: every route the dashboard (or any client) uses |
-| `dashboard/` | Static web dashboard (no build step, no dependencies) |
-| `prompt_database/` | All prompt text, organized as described above |
+| `runtime.py` | In-memory state shared by every entry point: running `teams`, `agents`, `usage_log` |
+| `engine.py` | LLM call + USE/REPORT turn loop |
+| `api.py` | FastAPI app: every route, the autonomous turn dispatcher, playbook runner, static frontends |
+| `dashboard/` | Team-leader frontend, served at `/leader` (no build step, no dependencies) |
+| `player/` | Player-POV frontend (manual control), served at `/player` |
+| `playbook/` | Playbook-scene frontend, served at `/playbook` |
+| `prompt_database/` | All prompt text + playbooks, organized as described above |
+| `tests/` | pytest suite (fake Zappy server, scripted LLM, API tests, e2e) |
 
 ### API surface (see `/docs` for full schemas)
 
 - `GET /prompts/teams[/​{id}]`, `/prompts/personalities[/​{name}]`,
   `/prompts/protocol`, `/prompts/trantorian` — browse preset prompts
-- `GET /teams` · `POST /teams` — list/create teams
+- `GET /teams` · `PATCH /teams/{id}` — list/configure teams
 - `POST /personalities` — create a personality
 - `GET /agents/{id}` · `POST /agents` · `PATCH /agents/{id}` — describe,
   create, or live-edit a running agent's prompts
 - `GET /agents/{id}/conversation` — structured turn-by-turn history
 - `POST /agents/{id}/prompt` — send a message, get back the new history
   entries
+- `POST /agents/{id}/action` — run one tool directly (no LLM); 409 if the
+  agent is mid-turn
+- `POST /agents/{id}/control` — take/release manual control of an agent
+  (while manual, the autonomous loop leaves it alone)
+- `GET /agents/{id}/state` — authoritative state mirrored from the server's
+  GUI event stream (player id, position, **facing** north/east/south/west,
+  level, inventory); powers the player POV's compass and isometric view
+- `GET /playbooks` · `GET/PUT /playbooks/{name}` · `POST /playbooks/{name}/run`
+  — list, read, save, and execute playbook scenes
+- `GET /feed` — cross-agent activity feed
+- `GET /status` — server link, per-agent connection state, busy + manual sets
 - `GET /usage/{message_id}` — token usage for one LLM call

@@ -161,7 +161,6 @@ bool CommandParser::executeNext(std::vector<std::unique_ptr<Client>> &clients)
         return false;
     std::string line = _commandQueue.front().line;
     _commandQueue.pop_front();
-    puts("ok");
     if (_client->getType() == ClientType::UNKNOWN)
         _handleHandshake(line);
     else

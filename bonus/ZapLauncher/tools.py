@@ -102,6 +102,31 @@ def incantation(agent: Agent, args: str = "") -> str:
     return "Elevation underway (no server)"
 
 
+# Personal memory: facts survive beyond the conversation window, so agents can
+# maintain relationships ("Zaphod/REDS is my gathering partner") across turns.
+MAX_FACTS = 30
+
+
+def remember(agent: Agent, args: str = "") -> str:
+    fact = args.strip()
+    if not fact:
+        return "error: remember requires the fact on the same line — USE remember <fact>"
+    agent.facts_memory.append(fact)
+    dropped = ""
+    if len(agent.facts_memory) > MAX_FACTS:
+        agent.facts_memory.pop(0)
+        dropped = " (memory full — oldest fact dropped)"
+    return f"remembered ({len(agent.facts_memory)}/{MAX_FACTS}){dropped}: {fact}"
+
+
+def forget(agent: Agent, args: str = "") -> str:
+    arg = args.strip()
+    if not arg.isdigit() or not (1 <= int(arg) <= len(agent.facts_memory)):
+        return "error: forget requires the number of a fact from your memory list — USE forget <number>"
+    removed = agent.facts_memory.pop(int(arg) - 1)
+    return f"forgot: {removed}"
+
+
 TOOLS = {
     "forward": forward,
     "left": left,
@@ -115,6 +140,8 @@ TOOLS = {
     "take": take,
     "set": set_object,
     "incantation": incantation,
+    "remember": remember,
+    "forget": forget,
 }
 
 

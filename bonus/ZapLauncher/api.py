@@ -1,9 +1,15 @@
 import asyncio
+import json
+import os
+import re
+import select
 import time
 from typing import Literal, Optional
 
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import RedirectResponse
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 
 import multiagent
@@ -15,6 +21,9 @@ app = FastAPI(title="ZapLauncher API", version="1.0.0")
 
 # Agent ids currently running an autonomous LLM turn.
 _busy_agents: set[str] = set()
+
+# Agent ids under manual (human) control: the autonomous loop leaves them alone.
+_manual_agents: set[str] = set()
 
 # Dashboards are expected to run on a different origin during development.
 app.add_middleware(
@@ -62,6 +71,7 @@ class AgentDescription(BaseModel):
     team_id: str
     personality_prompt: str
     cached_prompt: str
+    facts_memory: list[str] = []
 
 
 class AgentCreateRequest(BaseModel):
@@ -89,6 +99,7 @@ class ConversationEntry(BaseModel):
     kind: Literal["user", "tool_use", "tool_result", "report", "llm_response"]
     content: Optional[str] = None
     tool_name: Optional[str] = None
+    tool_input: Optional[str] = None
     message_id: Optional[str] = None
     malformed: Optional[bool] = None
     truncated: Optional[bool] = None
@@ -113,6 +124,53 @@ class StatusResponse(BaseModel):
     server_connected: bool
     agents: dict[str, str]
     busy_agents: list[str] = []
+    manual_agents: list[str] = []
+
+
+class ControlRequest(BaseModel):
+    manual: bool
+
+
+class ControlResponse(BaseModel):
+    agent_id: str
+    manual: bool
+
+
+class PlaybookAgentSpec(BaseModel):
+    id: str
+    personality: str
+
+
+class PlaybookStep(BaseModel):
+    agent: str
+    tool: str
+    args: str = ""
+    expect: Optional[str] = None
+
+
+class Playbook(BaseModel):
+    name: str
+    team: str
+    agents: list[PlaybookAgentSpec] = []
+    steps: list[PlaybookStep]
+
+
+class StepResult(BaseModel):
+    index: int
+    agent: str
+    tool: str
+    args: str = ""
+    result: Optional[str] = None
+    expect: Optional[str] = None
+    passed: Optional[bool] = None
+    error: Optional[str] = None
+    skipped: bool = False
+
+
+class PlaybookRunResult(BaseModel):
+    name: str
+    ok: bool
+    steps: list[StepResult]
 
 
 # ---------------------------------------------------------------------------
@@ -133,12 +191,24 @@ def _get_agent(agent_id: str) -> multiagent.Agent:
     return agent
 
 
+def _claim_agent(agent_id: str) -> None:
+    """Mark an agent busy for the duration of a turn/action; 409 if it already is.
+
+    Prevents two entry points (autonomous loop, /prompt, /action) from
+    driving the same server socket concurrently.
+    """
+    if agent_id in _busy_agents:
+        raise HTTPException(409, f"Agent is busy: {agent_id}")
+    _busy_agents.add(agent_id)
+
+
 def _agent_description(agent: multiagent.Agent) -> AgentDescription:
     return AgentDescription(
         id=agent.id,
         team_id=agent.team_id,
         personality_prompt=agent.personality_prompt,
         cached_prompt=agent.cached_prompt,
+        facts_memory=list(agent.facts_memory),
     )
 
 
@@ -176,13 +246,20 @@ async def _start_autonomous_loop():
 
 
 async def _autonomous_loop():
-    """Poll each connected agent for a 'waiting N' notification every 500 ms.
-    When found, spawn a task that consumes the notification and runs one LLM turn."""
+    """Event-driven turn dispatcher.
+
+    Instead of a fixed 500 ms poll (which added up to half a second of dead
+    time to every single turn), block in select() on all idle agent sockets
+    and wake the moment the server sends anything. A 'waiting N' notification
+    then triggers an LLM turn immediately. The 0.5 s select timeout only
+    bounds how fast newly created agents join the watch set.
+    """
     while True:
-        await asyncio.sleep(0.5)
         try:
+            dispatched = False
+            watch: dict = {}
             for agent_id, agent in list(runtime.agents.items()):
-                if agent_id in _busy_agents:
+                if agent_id in _busy_agents or agent_id in _manual_agents:
                     continue
                 conn = agent.connection
                 if not conn:
@@ -191,8 +268,21 @@ async def _autonomous_loop():
                 if ms is not None:
                     _busy_agents.add(agent_id)
                     asyncio.create_task(_handle_waiting(agent_id, ms))
+                    dispatched = True
+                else:
+                    watch[conn._sock] = agent_id
+            if dispatched:
+                # Let the dispatched turns start, then re-scan right away.
+                await asyncio.sleep(0)
+                continue
+            if not watch:
+                await asyncio.sleep(0.2)
+                continue
+            # Sleep until any watched socket has data (select does not consume it).
+            await asyncio.to_thread(select.select, list(watch), [], [], 0.5)
         except Exception as exc:
             print(f"[autonomous loop] error: {exc}")
+            await asyncio.sleep(0.5)
 
 
 async def _handle_waiting(agent_id: str, timeout_ms: int):
@@ -243,6 +333,7 @@ def get_status():
         server_connected=multiagent.server_connected,
         agents=agent_statuses,
         busy_agents=list(_busy_agents),
+        manual_agents=list(_manual_agents),
     )
 
 
@@ -367,6 +458,8 @@ def get_agent(agent_id: str):
 def create_agent_route(req: AgentCreateRequest):
     team = _get_team(req.team_id)
 
+    # The monitor must be listening BEFORE the handshake, or it misses the pnw.
+    monitor = runtime.get_gui_monitor()
     try:
         if req.random or not req.personality:
             agent = multiagent.random_agent(team, id=req.id)
@@ -383,6 +476,9 @@ def create_agent_route(req: AgentCreateRequest):
 
     if agent.id in runtime.agents:
         raise HTTPException(409, f"Agent already exists: {agent.id}")
+
+    if monitor and agent.connection is not None:
+        agent.player_id = monitor.claim_player(team["id"])
 
     runtime.agents[agent.id] = agent
     return _agent_description(agent)
@@ -409,19 +505,31 @@ def get_conversation(agent_id: str, since: int = Query(default=0, ge=0)):
 def prompt_agent_route(agent_id: str, req: PromptAgentRequest):
     agent = _get_agent(agent_id)
     team = _get_team(agent.team_id)
-    return engine.run_turn(team, agent, req.message)
+    _claim_agent(agent_id)
+    try:
+        return engine.run_turn(team, agent, req.message)
+    finally:
+        _busy_agents.discard(agent_id)
 
 
 @app.post("/agents/{agent_id}/action", response_model=list[ConversationEntry])
 def run_agent_action(agent_id: str, req: ActionRequest):
     agent = _get_agent(agent_id)
+    _claim_agent(agent_id)
     try:
         result = tools.use_tool(req.tool, req.args, agent)
     except ValueError as exc:
         raise HTTPException(400, str(exc))
+    finally:
+        _busy_agents.discard(agent_id)
+    # Deliver any broadcast messages that arrived while the command was running
+    if agent.connection is not None:
+        received = agent.connection.drain_messages()
+        if received:
+            result += "\n" + "\n".join(received)
     now = time.time()
     entries = [
-        {"kind": "tool_use", "tool_name": req.tool, "timestamp": now},
+        {"kind": "tool_use", "tool_name": req.tool, "tool_input": (req.tool + " " + req.args).strip(), "timestamp": now},
         {"kind": "tool_result", "tool_name": req.tool, "content": result, "timestamp": now},
     ]
     agent.history.extend(entries)
@@ -461,3 +569,214 @@ def get_usage(message_id: str):
     if usage is None:
         raise HTTPException(404, f"Unknown message id: {message_id}")
     return UsageInfo(message_id=message_id, usage=usage)
+
+
+# ---------------------------------------------------------------------------
+# Manual control (player POV)
+# ---------------------------------------------------------------------------
+
+class AgentStateResponse(BaseModel):
+    agent_id: str
+    player_id: Optional[int] = None
+    x: Optional[int] = None
+    y: Optional[int] = None
+    orientation: Optional[int] = None
+    facing: Optional[str] = None
+    level: Optional[int] = None
+    inventory: Optional[dict] = None
+
+
+@app.get("/agents/{agent_id}/state", response_model=AgentStateResponse)
+def get_agent_state(agent_id: str):
+    """Authoritative state mirrored from the server's GUI event stream:
+    absolute position, facing (north/east/south/west), level, inventory.
+    Fields are null when no GUI monitor is available for this agent."""
+    agent = _get_agent(agent_id)
+    monitor = runtime.get_gui_monitor()
+    if not monitor or agent.player_id is None:
+        return AgentStateResponse(agent_id=agent_id, player_id=agent.player_id)
+    player = monitor.get_player(agent.player_id)
+    if not player:
+        return AgentStateResponse(agent_id=agent_id, player_id=agent.player_id)
+    return AgentStateResponse(
+        agent_id=agent_id,
+        player_id=agent.player_id,
+        x=player.get("x"),
+        y=player.get("y"),
+        orientation=player.get("orientation"),
+        facing=multiagent.FACING_NAMES.get(player.get("orientation")),
+        level=player.get("level"),
+        inventory=player.get("inventory"),
+    )
+
+
+@app.post("/agents/{agent_id}/control", response_model=ControlResponse)
+def set_agent_control(agent_id: str, req: ControlRequest):
+    """Give a human the wheel: while manual, the autonomous LLM loop skips
+    this agent entirely; actions come in through /agents/{id}/action."""
+    _get_agent(agent_id)
+    if req.manual:
+        _manual_agents.add(agent_id)
+    else:
+        _manual_agents.discard(agent_id)
+    return ControlResponse(agent_id=agent_id, manual=req.manual)
+
+
+# ---------------------------------------------------------------------------
+# Playbooks (scene mode)
+# ---------------------------------------------------------------------------
+
+PLAYBOOKS_DIR = os.path.join(multiagent.PROMPT_DATABASE_DIR, "playbooks")
+
+_PLAYBOOK_NAME_RE = re.compile(r"^[A-Za-z0-9_-]+$")
+
+
+def _playbook_path(name: str) -> str:
+    if not _PLAYBOOK_NAME_RE.match(name):
+        raise HTTPException(422, "Playbook name must match [A-Za-z0-9_-]+")
+    return os.path.join(PLAYBOOKS_DIR, f"{name}.json")
+
+
+def _load_playbook(name: str) -> Playbook:
+    path = _playbook_path(name)
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+    except FileNotFoundError:
+        raise HTTPException(404, f"Unknown playbook: {name}")
+    except json.JSONDecodeError as exc:
+        raise HTTPException(500, f"Playbook file is not valid JSON: {exc}")
+    data["name"] = name
+    return Playbook(**data)
+
+
+@app.get("/playbooks", response_model=list[Playbook])
+def list_playbooks():
+    os.makedirs(PLAYBOOKS_DIR, exist_ok=True)
+    names = sorted(
+        os.path.splitext(f)[0]
+        for f in os.listdir(PLAYBOOKS_DIR)
+        if f.endswith(".json")
+    )
+    return [_load_playbook(name) for name in names]
+
+
+@app.get("/playbooks/{name}", response_model=Playbook)
+def get_playbook(name: str):
+    return _load_playbook(name)
+
+
+@app.put("/playbooks/{name}", response_model=Playbook)
+def save_playbook(name: str, playbook: Playbook):
+    path = _playbook_path(name)
+    playbook.name = name
+    os.makedirs(PLAYBOOKS_DIR, exist_ok=True)
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(playbook.model_dump(), f, indent=2)
+    return playbook
+
+
+def _ensure_playbook_agents(playbook: Playbook) -> None:
+    team = runtime.teams.get(playbook.team)
+    if team is None:
+        raise HTTPException(404, f"Unknown team: {playbook.team}")
+    monitor = runtime.get_gui_monitor()
+    for spec in playbook.agents:
+        if spec.id in runtime.agents:
+            continue
+        if spec.personality not in multiagent.list_personality_names():
+            raise HTTPException(404, f"Unknown personality: {spec.personality}")
+        try:
+            agent = multiagent.create_agent(spec.id, team, spec.personality)
+        except ConnectionError as exc:
+            raise HTTPException(503, f"Could not connect agent '{spec.id}': {exc}")
+        if monitor and agent.connection is not None:
+            agent.player_id = monitor.claim_player(team["id"])
+        runtime.agents[agent.id] = agent
+
+
+@app.post("/playbooks/{name}/run", response_model=PlaybookRunResult)
+def run_playbook(name: str):
+    """Execute a playbook scene: create/claim its agents, put them under
+    manual control (the LLM loop must not interfere), then run every step
+    in order. A step with `expect` passes when the result contains that
+    substring; hard errors stop the run and mark remaining steps skipped."""
+    playbook = _load_playbook(name)
+    _ensure_playbook_agents(playbook)
+
+    scene_agents = {spec.id for spec in playbook.agents} | {s.agent for s in playbook.steps}
+    for agent_id in scene_agents:
+        if agent_id in _busy_agents:
+            raise HTTPException(409, f"Agent is busy: {agent_id}")
+    _manual_agents.update(scene_agents)
+
+    results: list[StepResult] = []
+    ok = True
+    aborted = False
+    try:
+        for index, step in enumerate(playbook.steps):
+            if aborted:
+                results.append(StepResult(
+                    index=index, agent=step.agent, tool=step.tool, args=step.args,
+                    expect=step.expect, skipped=True,
+                ))
+                continue
+
+            agent = runtime.agents.get(step.agent)
+            if agent is None:
+                results.append(StepResult(
+                    index=index, agent=step.agent, tool=step.tool, args=step.args,
+                    expect=step.expect, error=f"Unknown agent: {step.agent}", passed=False,
+                ))
+                ok = False
+                aborted = True
+                continue
+
+            try:
+                result = tools.use_tool(step.tool, step.args, agent)
+            except ValueError as exc:
+                results.append(StepResult(
+                    index=index, agent=step.agent, tool=step.tool, args=step.args,
+                    expect=step.expect, error=str(exc), passed=False,
+                ))
+                ok = False
+                aborted = True
+                continue
+
+            now = time.time()
+            agent.history.extend([
+                {"kind": "tool_use", "tool_name": step.tool,
+                 "tool_input": (step.tool + " " + step.args).strip(), "timestamp": now},
+                {"kind": "tool_result", "tool_name": step.tool, "content": result, "timestamp": now},
+            ])
+
+            passed: Optional[bool] = None
+            if step.expect is not None:
+                passed = step.expect in result
+                if not passed:
+                    ok = False
+            results.append(StepResult(
+                index=index, agent=step.agent, tool=step.tool, args=step.args,
+                result=result, expect=step.expect, passed=passed,
+            ))
+    finally:
+        _manual_agents.difference_update(scene_agents)
+
+    return PlaybookRunResult(name=name, ok=ok, steps=results)
+
+
+# ---------------------------------------------------------------------------
+# Point-of-view frontends
+# ---------------------------------------------------------------------------
+
+_BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+
+@app.get("/", include_in_schema=False)
+def root():
+    return RedirectResponse(url="/leader/")
+
+
+app.mount("/leader", StaticFiles(directory=os.path.join(_BASE_DIR, "dashboard"), html=True), name="leader")
+app.mount("/player", StaticFiles(directory=os.path.join(_BASE_DIR, "player"), html=True), name="player")
+app.mount("/playbook", StaticFiles(directory=os.path.join(_BASE_DIR, "playbook"), html=True), name="playbook")

@@ -33,7 +33,7 @@ class Player
     std::shared_ptr<Team> _team;
     Inventory _inventory;
     PlayerState _state;
-    std::vector<std::pair<std::string, std::vector<std::pair<std::pair<std::clock_t, int>, int>>>> _messagesToSend; // <<message, <<clock, timeNeeded>, receiverFd>, <clock, timeNeeded>, receiverFd>>, <message, <<clock, timeNeeded>, receiverFd>>>
+    std::vector<std::pair<std::string, std::vector<std::pair<std::pair<std::chrono::steady_clock::time_point, int>, int>>>> _messagesToSend; // <<message, <<queuedAt, delayMs>, receiverFd>, ...>
     std::chrono::steady_clock::time_point _frozenUntil = std::chrono::steady_clock::time_point::min(); // While in the future, the player is frozen (e.g. during an incantation) and cannot act.
 
   public:
@@ -92,6 +92,6 @@ class Player
     /// @brief Queues a message to be delivered to a receiver after timeNeeded elapses.
     void addMessageToQueue(const std::string &message, int timeNeeded, int receiverFd);
     /// @brief Flushes any queued messages whose delivery time has arrived.
-    void sendMessageToClient(std::clock_t currentTime, std::vector<std::unique_ptr<Client>> &clients);
+    void sendMessageToClient(std::chrono::steady_clock::time_point currentTime, std::vector<std::unique_ptr<Client>> &clients);
   };
 } // namespace zappy
