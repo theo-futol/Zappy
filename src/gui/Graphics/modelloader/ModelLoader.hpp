@@ -89,6 +89,14 @@ class ModelLoader
     int resolveTexture(const cgltf_primitive &primitive, Model &model) const;
 
     /**
+     * @brief Resolves a primitive's emissive texture to an index into Model::textures.
+     * @param primitive Source primitive.
+     * @param model Model whose `textures` list is appended to on first sight.
+     * @return The emissive texture index, or -1 when the material has no emissive map.
+     */
+    int resolveEmissive(const cgltf_primitive &primitive, Model &model) const;
+
+    /**
      * @brief Builds the scene-graph nodes and the root list.
      * @param data Parsed cgltf document.
      * @param meshRanges Per-mesh primitive ranges from readMeshes.

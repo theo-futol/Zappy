@@ -10,6 +10,8 @@ in vec2 TexCoord;  // coordonnée de texture
 
 uniform sampler2D uTexture; // la texture liée (slot de Texture::bind)
 uniform int uHasTexture;    // 1 = échantillonner uTexture ; 0 = utiliser uBaseColor
+uniform sampler2D uEmissive; // carte émissive (écrans, néons) ; slot 1
+uniform int uHasEmissive;   // 1 = ajouter l'émissif ; 0 = aucune émission
 uniform vec3 uBaseColor;    // couleur de repli quand il n'y a pas de texture
 uniform vec3 uLightPos;     // position de la lampe (monde)
 uniform vec3 uViewPos;      // position de la caméra (monde)
@@ -34,7 +36,8 @@ void main()
     vec3 specular = SpecularStrength * pow(max(dot(viewDir, reflectDir), 0.0), Shininess) * uLightColor;
 
     vec3 albedo = (uHasTexture != 0) ? texture(uTexture, TexCoord).rgb : uBaseColor;
-    vec3 result = (ambient + diffuse + specular) * albedo;
+    vec3 emissive = (uHasEmissive != 0) ? texture(uEmissive, TexCoord).rgb : vec3(0.0);
+    vec3 result = (ambient + diffuse + specular) * albedo + emissive; // l'émissif brille indépendamment de la lumière
 
     FragColor = vec4(result, 1.0);
 }

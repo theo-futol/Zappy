@@ -149,7 +149,9 @@ class RenderModel
     {
         Mesh *mesh;              ///< Mesh to draw (owned by the AssetCache).
         const Texture *texture;  ///< Base-color texture, or nullptr if untextured.
+        const Texture *emissive; ///< Emissive map, or nullptr if the material has none.
         Mat4 transform;          ///< World transform of the node referencing it.
+        bool skinned;            ///< True if this primitive is skinned (posed by joints, not by transform).
     };
 
     /**
@@ -158,6 +160,13 @@ class RenderModel
      * @return The interleaved mesh data.
      */
     static MeshData interleave(const ModelPrimitive &primitive);
+
+    /**
+     * @brief Binds a draw item's base-color (slot 0) and emissive (slot 1) textures and their flags.
+     * @param shader Phong shader, already bound.
+     * @param item Draw item whose textures to bind.
+     */
+    static void bindMaterial(Shader &shader, const DrawItem &item);
 
     /**
      * @brief Uploads every primitive as a mesh and records its local bounds.

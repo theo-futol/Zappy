@@ -101,11 +101,15 @@ RenderModel::RenderModel(const Model &model, AssetCache &assets, const std::stri
         return;
     if (!model.skins.empty())
     {
+        // Skinned primitives are posed by joints (their node transform is baked into the
+        // inverse-bind matrices), so drop it. Static primitives in the same file (props,
+        // doors) keep their node transform, otherwise they collapse to the origin.
         for (DrawItem &item : _items)
-            item.transform = Mat4(1.0f);
+            if (item.skinned)
+                item.transform = Mat4(1.0f);
         buildSkin(model);
-        boundsMin = Vec3(std::numeric_limits<float>::max());
-        boundsMax = Vec3(std::numeric_limits<float>::lowest());
+        // Bounds already hold the static primitives (from flattenNode); add the posed skinned
+        // vertices so a mixed model is framed as a whole (both parts scaled to the unit size).
         accumulateSkinnedBounds(model, boundsMin, boundsMax);
     }
 
@@ -226,10 +230,15 @@ void RenderModel::flattenNode(const Model &model, std::size_t nodeIndex, const M
     for (std::size_t primitive : node.primitives)
     {
         int textureIndex = model.primitives[primitive].texture;
+        int emissiveIndex = model.primitives[primitive].emissive;
         const Texture *texture = (textureIndex >= 0 && static_cast<std::size_t>(textureIndex) < _textures.size()) ? _textures[textureIndex] : nullptr;
+        const Texture *emissive = (emissiveIndex >= 0 && static_cast<std::size_t>(emissiveIndex) < _textures.size()) ? _textures[emissiveIndex] : nullptr;
+        bool primSkinned = !model.primitives[primitive].weights.empty();
 
-        _items.push_back(DrawItem{_meshes[primitive], texture, world});
-        for (int corner = 0; corner < 8; ++corner)
+        _items.push_back(DrawItem{_meshes[primitive], texture, emissive, world, primSkinned});
+        // A skinned primitive is rendered in skin space, so its node transform is not where it
+        // ends up: its contribution to the bounds is added later from the posed vertices.
+        for (int corner = 0; !primSkinned && corner < 8; ++corner)
         {
             Vec3 lo = _localMin[primitive];
             Vec3 hi = _localMax[primitive];
@@ -386,22 +395,21 @@ const std::vector<Mat4> &RenderModel::bindJoints() const
 
 void RenderModel::drawSkinned(Shader &shader, const Mat4 &base, const std::vector<Mat4> &joints) const
 {
-    Mat3 normalMatrix = glm::transpose(glm::inverse(Mat3(base)));
-    std::vector<Mat4> one{base};
+    Mat3 baseNormal = glm::transpose(glm::inverse(Mat3(base)));
 
-    shader.setUniform("uSkinned", 1);
+    shader.setUniform("uEmissive", 1);
     for (std::size_t k = 0; k < joints.size(); ++k)
         shader.setUniform("uJoints[" + std::to_string(k) + "]", joints[k]);
-    shader.setUniform("uNormalMatrix", normalMatrix);
     for (const DrawItem &item : _items)
     {
-        if (item.texture != nullptr)
-        {
-            item.texture->bind(0);
-            shader.setUniform("uHasTexture", 1);
-        }
-        else
-            shader.setUniform("uHasTexture", 0);
+        // Skinned parts are posed by the joints and placed by `base`; static parts (props in
+        // the same file) are drawn unskinned and placed by their own node transform.
+        Mat4 model = item.skinned ? base : base * item.transform;
+        std::vector<Mat4> one{model};
+
+        shader.setUniform("uSkinned", item.skinned ? 1 : 0);
+        shader.setUniform("uNormalMatrix", item.skinned ? baseNormal : Mat3(glm::transpose(glm::inverse(Mat3(model)))));
+        bindMaterial(shader, item);
         item.mesh->drawInstanced(one);
     }
     shader.setUniform("uSkinned", 0);
@@ -416,6 +424,7 @@ void RenderModel::drawInstanced(Shader &shader, const std::vector<Mat4> &bases) 
 
     instances.reserve(bases.size());
     shader.setUniform("uSkinned", 0);
+    shader.setUniform("uEmissive", 1);
     for (const DrawItem &item : _items)
     {
         Mat3 normalMatrix = glm::transpose(glm::inverse(Mat3(bases[0] * item.transform)));
@@ -424,15 +433,27 @@ void RenderModel::drawInstanced(Shader &shader, const std::vector<Mat4> &bases) 
         for (const Mat4 &base : bases)
             instances.push_back(base * item.transform);
         shader.setUniform("uNormalMatrix", normalMatrix);
-        if (item.texture != nullptr)
-        {
-            item.texture->bind(0);
-            shader.setUniform("uHasTexture", 1);
-        }
-        else
-            shader.setUniform("uHasTexture", 0);
+        bindMaterial(shader, item);
         item.mesh->drawInstanced(instances);
     }
+}
+
+void RenderModel::bindMaterial(Shader &shader, const DrawItem &item)
+{
+    if (item.texture != nullptr)
+    {
+        item.texture->bind(0);
+        shader.setUniform("uHasTexture", 1);
+    }
+    else
+        shader.setUniform("uHasTexture", 0);
+    if (item.emissive != nullptr)
+    {
+        item.emissive->bind(1);
+        shader.setUniform("uHasEmissive", 1);
+    }
+    else
+        shader.setUniform("uHasEmissive", 0);
 }
 
 Vec3 RenderModel::center() const

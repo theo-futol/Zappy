@@ -58,6 +58,7 @@ ModelPrimitive ModelLoader::readPrimitive(const cgltf_primitive &primitive, Mode
     result.joints = readAttribute(primitive, cgltf_attribute_type_joints, Vec4Size);
     result.weights = readAttribute(primitive, cgltf_attribute_type_weights, Vec4Size);
     result.texture = resolveTexture(primitive, model);
+    result.emissive = resolveEmissive(primitive, model);
     if (primitive.indices != nullptr)
     {
         result.indices.reserve(primitive.indices->count);
@@ -104,6 +105,25 @@ int ModelLoader::resolveTexture(const cgltf_primitive &primitive, Model &model) 
         texture = material.pbr_metallic_roughness.base_color_texture.texture;
     if (texture == nullptr && material.has_pbr_specular_glossiness)
         texture = material.pbr_specular_glossiness.diffuse_texture.texture;
+    if (texture == nullptr || texture->image == nullptr || texture->image->uri == nullptr)
+        return -1;
+
+    std::string uri = texture->image->uri;
+
+    for (std::size_t i = 0; i < model.textures.size(); ++i)
+        if (model.textures[i] == uri)
+            return static_cast<int>(i);
+    model.textures.push_back(uri);
+    return static_cast<int>(model.textures.size() - 1);
+}
+
+int ModelLoader::resolveEmissive(const cgltf_primitive &primitive, Model &model) const
+{
+    if (primitive.material == nullptr)
+        return -1;
+
+    const cgltf_texture *texture = primitive.material->emissive_texture.texture;
+
     if (texture == nullptr || texture->image == nullptr || texture->image->uri == nullptr)
         return -1;
 

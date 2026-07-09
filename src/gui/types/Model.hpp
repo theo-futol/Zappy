@@ -29,6 +29,7 @@ struct ModelPrimitive
     std::vector<float> weights;        ///< Skin joint weights, 4 floats per vertex (empty if not skinned).
     std::vector<unsigned int> indices; ///< Triangle indices into the vertex arrays.
     int texture;                       ///< Index into Model::textures, or -1 when untextured.
+    int emissive;                      ///< Index into Model::textures for the emissive map, or -1.
 };
 
 /**

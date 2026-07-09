@@ -1,0 +1,11 @@
+Model Information:
+* title:	Transformers Fall Of Cybertron Drop Ship Autobot
+* source:	https://sketchfab.com/3d-models/transformers-fall-of-cybertron-drop-ship-autobot-19f7ec0f25794fa09169d5070a887be1
+* author:	hafid.quispe (https://sketchfab.com/hafid.quispe)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Transformers Fall Of Cybertron Drop Ship Autobot" (https://sketchfab.com/3d-models/transformers-fall-of-cybertron-drop-ship-autobot-19f7ec0f25794fa09169d5070a887be1) by hafid.quispe (https://sketchfab.com/hafid.quispe) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
