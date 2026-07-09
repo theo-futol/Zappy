@@ -67,19 +67,19 @@ void ClientHandler::handleClients(void)
                 _world->resourcePassiveGeneration();
             _lastResourceUpdate = now;
         }
-        if (now - _lastFoodUpdate >= foodIntervalMs)
-        {
-            if (!_world->isPaused())
-            {
-                for (int id : _world->foodCheck())
-                {
-                    Client *client = getClientByPlayerId(id);
-                    if (client)
-                        client->setType(ClientType::DEAD);
-                }
-            }
-            _lastFoodUpdate = now;
-        }
+        // if (now - _lastFoodUpdate >= foodIntervalMs)
+        // {
+        //     if (!_world->isPaused())
+        //     {
+        //         for (int id : _world->foodCheck())
+        //         {
+        //             Client *client = getClientByPlayerId(id);
+        //             if (client)
+        //                 client->setType(ClientType::DEAD);
+        //         }
+        //     }
+        //     _lastFoodUpdate = now;
+        // }
         clientEventHandling();
         if (_world->checkWinningCondition())
             *_serverIsRunning = false;
