@@ -153,6 +153,16 @@ void World::setTimeUnit(int f)
     _f = f;
 }
 
+bool World::isPaused() const
+{
+    return _paused;
+}
+
+void World::setPaused(bool paused)
+{
+    _paused = paused;
+}
+
 tile *World::getTileAt(int playerID)
 {
     Player *player = getPlayerById(playerID);

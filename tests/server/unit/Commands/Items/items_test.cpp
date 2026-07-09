@@ -123,7 +123,7 @@ Test(Take, picks_up_an_item_updates_inventory_and_tile_and_broadcasts_pgt)
     cr_assert_str_eq(f.broadcastQueue.front().c_str(), expectedPin.c_str());
     f.broadcastQueue.pop();
 
-    std::string expectedBct = f.commands->Bct({"bct", std::to_string(player->getPosition().x), std::to_string(player->getPosition().y)}, *f.client);
+    std::string expectedBct = f.commands->Bct({std::to_string(player->getPosition().x), std::to_string(player->getPosition().y)}, *f.client);
     cr_assert_str_eq(f.broadcastQueue.front().c_str(), expectedBct.c_str());
 }
 
@@ -197,6 +197,6 @@ Test(Set, drops_an_item_updates_inventory_and_tile_and_broadcasts_pdr)
     cr_assert_str_eq(f.broadcastQueue.front().c_str(), expectedPin.c_str());
     f.broadcastQueue.pop();
 
-    std::string expectedBct = f.commands->Bct({"bct", std::to_string(player->getPosition().x), std::to_string(player->getPosition().y)}, *f.client);
+    std::string expectedBct = f.commands->Bct({std::to_string(player->getPosition().x), std::to_string(player->getPosition().y)}, *f.client);
     cr_assert_str_eq(f.broadcastQueue.front().c_str(), expectedBct.c_str());
 }

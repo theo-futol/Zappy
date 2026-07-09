@@ -63,16 +63,20 @@ void ClientHandler::handleClients(void)
         now = std::chrono::steady_clock::now();
         if (now - _lastResourceUpdate >= resourceIntervalMs)
         {
-            _world->resourcePassiveGeneration();
+            if (!_world->isPaused())
+                _world->resourcePassiveGeneration();
             _lastResourceUpdate = now;
         }
         if (now - _lastFoodUpdate >= foodIntervalMs)
         {
-            for (int id : _world->foodCheck())
+            if (!_world->isPaused())
             {
-                Client *client = getClientByPlayerId(id);
-                if (client)
-                    client->setType(ClientType::DEAD);
+                for (int id : _world->foodCheck())
+                {
+                    Client *client = getClientByPlayerId(id);
+                    if (client)
+                        client->setType(ClientType::DEAD);
+                }
             }
             _lastFoodUpdate = now;
         }

@@ -51,6 +51,7 @@ class World
     std::queue<std::string> *_broadcastQueue;
     int _nextPlayerId = 1;
     bool _useOldGen;
+    bool _paused = false;
 
     /// @brief Legacy resource generation: independently rolls width*height*density
     ///        random tiles per resource type, incrementing whatever is already there.
@@ -147,6 +148,12 @@ class World
     /// @brief sets the active time unit for the world.
     /// @param f 
     void setTimeUnit(int f);
+    /// @brief Returns whether the simulation is currently paused.
+    /// @return _paused
+    bool isPaused() const;
+    /// @brief Pauses or resumes the simulation.
+    /// @param paused
+    void setPaused(bool paused);
     /// @brief Returns the team that has won the game, or nullptr if no team has won.
     /// @return 
     Team *getWinningTeam() const;

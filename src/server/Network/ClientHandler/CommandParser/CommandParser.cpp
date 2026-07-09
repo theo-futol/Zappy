@@ -82,6 +82,12 @@ void CommandParser::_initGraphicCommands()
     _graphicCommands["sst"] = [](const std::vector<std::string> &cmd, Client &client, Commands &commands, std::vector<std::unique_ptr<Client>> &) {
         return commands.Sst(cmd, client);
     };
+    _graphicCommands["Play"] = [](const std::vector<std::string> &cmd, Client &client, Commands &commands, std::vector<std::unique_ptr<Client>> &) {
+        return commands.Play(cmd, client);
+    };
+    _graphicCommands["Stop"] = [](const std::vector<std::string> &cmd, Client &client, Commands &commands, std::vector<std::unique_ptr<Client>> &) {
+        return commands.Stop(cmd, client);
+    };
 }
 
 bool CommandParser::feed(std::vector<std::unique_ptr<Client>> &clients)
@@ -147,6 +153,9 @@ bool CommandParser::executeNext(std::vector<std::unique_ptr<Client>> &clients)
     if (_client->getType() == ClientType::AI)
     {
         Player *player = _world->getPlayerById(_client->getPlayerId());
+        // The simulation is paused (GUI "Stop"): no AI command may execute until "Play" resumes it.
+        if (_world->isPaused())
+            return false;
         // A frozen player (mid-incantation) must not run any queued command until the ritual ends.
         if (player && player->isFrozen())
         {
