@@ -8,7 +8,7 @@ var searchData=
   ['eggeventhandler_5',['EggEventHandler',['../classZappy_1_1EggEventHandler.html',1,'Zappy']]],
   ['eggeventhandler_2ecpp_6',['EggEventHandler.cpp',['../EggEventHandler_8cpp.html',1,'']]],
   ['eggeventhandler_2ehpp_7',['EggEventHandler.hpp',['../EggEventHandler_8hpp.html',1,'']]],
-  ['eject_8',['eject',['../classia_1_1test_1_1FakeClient.html#a876e3635814afed2414a74aa97cef261',1,'ia.test.FakeClient.eject()'],['../classia_1_1client_1_1ZappyAIClient.html#ab6978e5e81d147af05efdef081b33e7f',1,'ia.client.ZappyAIClient.eject()'],['../classzappy_1_1Commands.html#a2aa5f645033eadf18b4df8461c95ab9c',1,'zappy::Commands::Eject()']]],
+  ['eject_8',['eject',['../classzappy_1_1Commands.html#a2aa5f645033eadf18b4df8461c95ab9c',1,'zappy::Commands::Eject()'],['../classia_1_1test_1_1FakeClient.html#a876e3635814afed2414a74aa97cef261',1,'ia.test.FakeClient.eject()'],['../classia_1_1client_1_1ZappyAIClient.html#ab6978e5e81d147af05efdef081b33e7f',1,'ia.client.ZappyAIClient.eject()']]],
   ['eject_2ecpp_9',['Eject.cpp',['../Eject_8cpp.html',1,'']]],
   ['elevationrequirement_10',['ElevationRequirement',['../structzappy_1_1ElevationRequirement.html',1,'zappy']]],
   ['emissive_5ffactor_11',['emissive_factor',['../structcgltf__material.html#a79aa53678e3dfefb5c002ac96a541baf',1,'cgltf_material']]],

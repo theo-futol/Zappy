@@ -15,5 +15,6 @@ var searchData=
   ['socket_2ehpp_12',['Socket.hpp',['../Socket_8hpp.html',1,'']]],
   ['sst_2ecpp_13',['Sst.cpp',['../Sst_8cpp.html',1,'']]],
   ['stb_5fimage_2eh_14',['stb_image.h',['../stb__image_8h.html',1,'']]],
-  ['strategy_2epy_15',['strategy.py',['../strategy_8py.html',1,'']]]
+  ['stop_2ecpp_15',['Stop.cpp',['../Stop_8cpp.html',1,'']]],
+  ['strategy_2epy_16',['strategy.py',['../strategy_8py.html',1,'']]]
 ];

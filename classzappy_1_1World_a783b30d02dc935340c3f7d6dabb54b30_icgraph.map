@@ -1,0 +1,12 @@
+<map id="zappy::World::setPaused" name="zappy::World::setPaused">
+<area shape="rect" id="Node000001" title="Pauses or resumes the simulation." alt="" coords="685,31,864,56"/>
+<area shape="rect" id="Node000002" href="$classzappy_1_1Commands.html#adf1e31a47dcc2e6a9d526a9e4b97489d" title="play: resumes the simulation if it was stopped." alt="" coords="459,5,637,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="671,34,637,31,638,25,672,29"/>
+<area shape="rect" id="Node000005" href="$classzappy_1_1Commands.html#ad86b6ff3da9af51424c56b33a03ccaa1" title="stop: pauses the simulation." alt="" coords="459,55,637,80"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="671,57,638,61,637,55,671,52"/>
+<area shape="rect" id="Node000003" href="$classzappy_1_1CommandParser.html#afc4da6302e4998b21a8b2339d7dc372a" title="Fills _graphicCommands with the graphic protocol commands." alt="" coords="228,23,411,63"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="446,32,411,36,410,31,445,27"/>
+<area shape="rect" id="Node000004" href="$classzappy_1_1CommandParser.html#a741addd675a90a09b183e9518b626962" title="Builds a parser for one client." alt="" coords="5,23,180,63"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="214,46,180,46,180,41,214,41"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="445,59,410,56,411,50,446,54"/>
+</map>

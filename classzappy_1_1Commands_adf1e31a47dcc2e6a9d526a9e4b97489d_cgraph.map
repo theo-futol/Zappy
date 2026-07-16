@@ -1,0 +1,7 @@
+<map id="zappy::Commands::Play" name="zappy::Commands::Play">
+<area shape="rect" id="Node000001" title="play: resumes the simulation if it was stopped." alt="" coords="5,31,184,56"/>
+<area shape="rect" id="Node000002" href="$classzappy_1_1World.html#ab35a84cc431ec41932be438c21cd14a7" title="Returns whether the simulation is currently paused." alt="" coords="236,5,407,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="184,31,222,26,223,32,185,36"/>
+<area shape="rect" id="Node000003" href="$classzappy_1_1World.html#a783b30d02dc935340c3f7d6dabb54b30" title="Pauses or resumes the simulation." alt="" coords="232,55,411,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="185,50,218,54,218,59,184,55"/>
+</map>

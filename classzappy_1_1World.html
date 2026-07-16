@@ -108,7 +108,7 @@ $(document).ready(function(){initNavTree('classzappy_1_1World.html',''); initRes
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzappy_1_1World__coll__graph.svg" width="227" height="506"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzappy_1_1World__coll__graph.svg" width="227" height="526"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
@@ -197,6 +197,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a93b2bb4700e29ccc111c4b4067d7e742" id="r_a93b2bb4700e29ccc111c4b4067d7e742"><td class="memItemLeft" align="right" valign="top"><a class="el" href="glad_8h.html#a950fc91edb4504f62f1c577bf4727c29">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1World.html#a93b2bb4700e29ccc111c4b4067d7e742">setTimeUnit</a> (int <a class="el" href="glad_8h.html#ae29c29480f1260cc37ad71203904ea4d">f</a>)</td></tr>
 <tr class="memdesc:a93b2bb4700e29ccc111c4b4067d7e742"><td class="mdescLeft">&#160;</td><td class="mdescRight">sets the active time unit for the world.  <br /></td></tr>
 <tr class="separator:a93b2bb4700e29ccc111c4b4067d7e742"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab35a84cc431ec41932be438c21cd14a7" id="r_ab35a84cc431ec41932be438c21cd14a7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1World.html#ab35a84cc431ec41932be438c21cd14a7">isPaused</a> () const</td></tr>
+<tr class="memdesc:ab35a84cc431ec41932be438c21cd14a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether the simulation is currently paused.  <br /></td></tr>
+<tr class="separator:ab35a84cc431ec41932be438c21cd14a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a783b30d02dc935340c3f7d6dabb54b30" id="r_a783b30d02dc935340c3f7d6dabb54b30"><td class="memItemLeft" align="right" valign="top"><a class="el" href="glad_8h.html#a950fc91edb4504f62f1c577bf4727c29">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1World.html#a783b30d02dc935340c3f7d6dabb54b30">setPaused</a> (bool paused)</td></tr>
+<tr class="memdesc:a783b30d02dc935340c3f7d6dabb54b30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pauses or resumes the simulation.  <br /></td></tr>
+<tr class="separator:a783b30d02dc935340c3f7d6dabb54b30"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2cbe63c0d49892221552eb22d64b1953" id="r_a2cbe63c0d49892221552eb22d64b1953"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structzappy_1_1Team.html">Team</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1World.html#a2cbe63c0d49892221552eb22d64b1953">getWinningTeam</a> () const</td></tr>
 <tr class="memdesc:a2cbe63c0d49892221552eb22d64b1953"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the team that has won the game, or nullptr if no team has won.  <br /></td></tr>
 <tr class="separator:a2cbe63c0d49892221552eb22d64b1953"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -235,6 +241,8 @@ Private Attributes</h2></td></tr>
 <tr class="separator:ac8ddf83a9ecb8b484753a75aca09a777"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac8c7dbcc78f8d81497a17ce0319b5304" id="r_ac8c7dbcc78f8d81497a17ce0319b5304"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1World.html#ac8c7dbcc78f8d81497a17ce0319b5304">_useOldGen</a></td></tr>
 <tr class="separator:ac8c7dbcc78f8d81497a17ce0319b5304"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adcb238d6f4cb1638bdd6b3e9af51dc96" id="r_adcb238d6f4cb1638bdd6b3e9af51dc96"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classzappy_1_1World.html#adcb238d6f4cb1638bdd6b3e9af51dc96">_paused</a> = false</td></tr>
+<tr class="separator:adcb238d6f4cb1638bdd6b3e9af51dc96"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The authoritative game state: the map, the players, the teams, and the simulation rules that act on them (resource generation, food/starvation, elevation requirements and win condition). </p>
@@ -346,7 +354,7 @@ Private Attributes</h2></td></tr>
 
 <p>Hatches a player from one of the team's eggs, chosen at random, spawning it on that egg's tile and consuming the egg. The new player is reached through client fd. Returns the new player's logical id, or -1 if the team does not exist or has no egg left, in which case no player is created. </p>
 
-<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00239">239</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00249">249</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
 <div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
@@ -392,7 +400,7 @@ Private Attributes</h2></td></tr>
 
 <p>Adds the player pointer to the tile at the given position, if it exists. </p>
 
-<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00276">276</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00286">286</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
 <div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-4-summary" class="dynsummary" style="display:block;">
@@ -444,7 +452,7 @@ Private Attributes</h2></td></tr>
 
 <p>Registers a new team, laying initialSlots eggs at random tiles so the first clients have something to hatch from (one egg == one free slot). </p>
 
-<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00213">213</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00223">223</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
 <div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-6-summary" class="dynsummary" style="display:block;">
@@ -488,7 +496,7 @@ Private Attributes</h2></td></tr>
 
 <p>Pushes a "bct" broadcast line for the tile at the given position, if a broadcast queue is set. </p>
 
-<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00173">173</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00183">183</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
 <div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-8-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-8-summary" class="dynsummary" style="display:block;">
@@ -523,7 +531,7 @@ Private Attributes</h2></td></tr>
 
 <p>Returns true once a team has reached the win condition (6 players lvl 8). </p>
 
-<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00413">413</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00423">423</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
 <div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-10-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-10-summary" class="dynsummary" style="display:block;">
@@ -559,20 +567,13 @@ Private Attributes</h2></td></tr>
 <p>Consumes one food unit per player and kills those who have starved. </p>
 <dl class="section return"><dt>Returns</dt><dd>The ids of the players that died of starvation this tick. </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00306">306</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00316">316</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
 <div id="dynsection-12" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-12-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-12-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-12-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classzappy_1_1World_a779b35cdefa7a85d2f888890ad2ec84b_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-<div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-13-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-13-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classzappy_1_1World_a779b35cdefa7a85d2f888890ad2ec84b_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -595,19 +596,19 @@ Private Attributes</h2></td></tr>
 
 <p>Free connection slots remaining for a team (used to admit new players). </p>
 
-<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00205">205</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00215">215</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
+<div id="dynsection-13" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-13-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-13-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-13-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzappy_1_1World_a991347e5787aa696ad62de265c680a96_cgraph.svg" width="446" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 <div id="dynsection-14" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-14-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+  <img id="dynsection-14-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-14-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-14-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzappy_1_1World_a991347e5787aa696ad62de265c680a96_cgraph.svg" width="446" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div id="dynsection-15" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-15-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-15-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-15-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classzappy_1_1World_a991347e5787aa696ad62de265c680a96_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -631,12 +632,12 @@ Private Attributes</h2></td></tr>
 
 <p>Returns the requirements to elevate from <code>level</code> to <code>level + 1</code>, or nullptr if <code>level</code> is out of [1, 7]. </p>
 
-<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00339">339</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
-<div id="dynsection-16" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-16-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-16-summary" class="dynsummary" style="display:block;">
+<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00349">349</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
+<div id="dynsection-15" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-15-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-15-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-16-content" class="dyncontent" style="display:none;">
+<div id="dynsection-15-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classzappy_1_1World_a34a1fc2900d878a2db5bfb0ee1cf659f_icgraph.svg" width="100%" height="386"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -657,7 +658,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00455">455</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00465">465</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
 
 </div>
 </div>
@@ -676,7 +677,7 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00460">460</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00470">470</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
 
 </div>
 </div>
@@ -698,11 +699,11 @@ Private Attributes</h2></td></tr>
 <p>Map dimensions as (width, height). </p>
 
 <p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00137">137</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
-<div id="dynsection-17" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-17-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-17-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-16" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-16-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-16-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-17-content" class="dyncontent" style="display:none;">
+<div id="dynsection-16-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classzappy_1_1World_ad35316e4e1203c45ad2f853319775432_icgraph.svg" width="100%" height="561"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -727,18 +728,18 @@ Private Attributes</h2></td></tr>
 <p>Looks up a player by its logical id, or nullptr if none matches. </p>
 
 <p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00121">121</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
+<div id="dynsection-17" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-17-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-17-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-17-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzappy_1_1World_a43fb08ea54d522c20d2c27ed281297f4_cgraph.svg" width="414" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 <div id="dynsection-18" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-18-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+  <img id="dynsection-18-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-18-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-18-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzappy_1_1World_a43fb08ea54d522c20d2c27ed281297f4_cgraph.svg" width="414" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div id="dynsection-19" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-19-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-19-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-19-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classzappy_1_1World_a43fb08ea54d522c20d2c27ed281297f4_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -761,11 +762,11 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00129">129</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
-<div id="dynsection-20" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-20-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-20-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-19" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-19-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-19-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-20-content" class="dyncontent" style="display:none;">
+<div id="dynsection-19-content" class="dyncontent" style="display:none;">
 <div class="center"><iframe scrolling="no" frameborder="0" src="classzappy_1_1World_a7f5526d40e57cf68f11a5c577acc98d9_cgraph.svg" width="414" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
@@ -789,11 +790,11 @@ Private Attributes</h2></td></tr>
 <p>All players currently in the world. </p>
 
 <p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00111">111</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
-<div id="dynsection-21" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-21-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-21-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-20" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-20-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-20-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-21-content" class="dyncontent" style="display:none;">
+<div id="dynsection-20-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classzappy_1_1World_a1ae471ce1c5239de029c030e47710937_icgraph.svg" width="100%" height="424"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -852,19 +853,19 @@ Private Attributes</h2></td></tr>
 
 <p>Returns the players standing on the tile that are exactly at <code>level</code>. </p>
 
-<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00346">346</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00356">356</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
+<div id="dynsection-21" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-21-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-21-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-21-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzappy_1_1World_ab1b432308478a9dba9cf0a0695bef412_cgraph.svg" width="432" height="135"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 <div id="dynsection-22" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-22-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+  <img id="dynsection-22-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-22-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-22-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzappy_1_1World_ab1b432308478a9dba9cf0a0695bef412_cgraph.svg" width="432" height="135"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div id="dynsection-23" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-23-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-23-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-23-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classzappy_1_1World_ab1b432308478a9dba9cf0a0695bef412_icgraph.svg" width="100%" height="395"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -888,12 +889,12 @@ Private Attributes</h2></td></tr>
 
 <p>Looks up a team by name, or nullptr if it does not exist. </p>
 
-<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00226">226</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
-<div id="dynsection-24" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-24-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-24-summary" class="dynsummary" style="display:block;">
+<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00236">236</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
+<div id="dynsection-23" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-23-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-23-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-24-content" class="dyncontent" style="display:none;">
+<div id="dynsection-23-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classzappy_1_1World_a0f7b0576d14b018ca6fcba792695d853_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -916,12 +917,12 @@ Private Attributes</h2></td></tr>
 
 <p>All teams in the game. </p>
 
-<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00234">234</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
-<div id="dynsection-25" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-25-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-25-summary" class="dynsummary" style="display:block;">
+<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00244">244</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
+<div id="dynsection-24" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-24-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-24-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-25-content" class="dyncontent" style="display:none;">
+<div id="dynsection-24-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classzappy_1_1World_acc46f4ab94b9cd7dc0df5adf581195e9_icgraph.svg" width="100%" height="386"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -945,19 +946,19 @@ Private Attributes</h2></td></tr>
 
 <p>Returns the tile the given player is standing on. </p>
 
-<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00156">156</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00166">166</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
+<div id="dynsection-25" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-25-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-25-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-25-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzappy_1_1World_a572b27056a65707d367e2a839ef12daa_cgraph.svg" width="634" height="135"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 <div id="dynsection-26" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-26-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+  <img id="dynsection-26-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-26-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-26-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzappy_1_1World_a572b27056a65707d367e2a839ef12daa_cgraph.svg" width="634" height="135"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div id="dynsection-27" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-27-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-27-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-27-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classzappy_1_1World_a572b27056a65707d367e2a839ef12daa_icgraph.svg" width="100%" height="364"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -981,12 +982,12 @@ Private Attributes</h2></td></tr>
 
 <p>Returns the tile at the given coordinates. </p>
 
-<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00164">164</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
-<div id="dynsection-28" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-28-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-28-summary" class="dynsummary" style="display:block;">
+<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00174">174</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
+<div id="dynsection-27" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-27-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-27-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-28-content" class="dyncontent" style="display:none;">
+<div id="dynsection-27-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classzappy_1_1World_a9fce895cc2d62e61b943f7d9e03471db_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1011,11 +1012,11 @@ Private Attributes</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>_f </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00144">144</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
-<div id="dynsection-29" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-29-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-29-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-28" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-28-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-28-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-29-content" class="dyncontent" style="display:none;">
+<div id="dynsection-28-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classzappy_1_1World_a05439a20a5736f87ccfa09d8bae3ca45_icgraph.svg" width="100%" height="424"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1039,12 +1040,12 @@ Private Attributes</h2></td></tr>
 <p>Returns the team that has won the game, or nullptr if no team has won. </p>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00405">405</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
-<div id="dynsection-30" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-30-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-30-summary" class="dynsummary" style="display:block;">
+<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00415">415</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
+<div id="dynsection-29" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-29-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-29-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-30-content" class="dyncontent" style="display:none;">
+<div id="dynsection-29-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classzappy_1_1World_a2cbe63c0d49892221552eb22d64b1953_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1084,20 +1085,49 @@ Private Attributes</h2></td></tr>
 
 <p>Checks whether an elevation from <code>level</code> to <code>level + 1</code> can take place on the tile. Verifies both the minimum number of same-level players and the required stones. </p>
 
-<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00357">357</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00367">367</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
+<div id="dynsection-30" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-30-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-30-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-30-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classzappy_1_1World_aad86d2fa98fbe95fed52656c32582b19_cgraph.svg" width="100%" height="461"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
 <div id="dynsection-31" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-31-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+  <img id="dynsection-31-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-31-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-31-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classzappy_1_1World_aad86d2fa98fbe95fed52656c32582b19_cgraph.svg" width="100%" height="461"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classzappy_1_1World_aad86d2fa98fbe95fed52656c32582b19_icgraph.svg" width="100%" height="386"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
+
+</div>
+</div>
+<a id="ab35a84cc431ec41932be438c21cd14a7" name="ab35a84cc431ec41932be438c21cd14a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab35a84cc431ec41932be438c21cd14a7">&#9670;&#160;</a></span>isPaused()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool zappy::World::isPaused </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns whether the simulation is currently paused. </p>
+<dl class="section return"><dt>Returns</dt><dd>_paused </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00156">156</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
 <div id="dynsection-32" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-32-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-32-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-32-content" class="dyncontent" style="display:none;">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classzappy_1_1World_aad86d2fa98fbe95fed52656c32582b19_icgraph.svg" width="100%" height="386"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classzappy_1_1World_ab35a84cc431ec41932be438c21cd14a7_icgraph.svg" width="100%" height="424"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -1136,7 +1166,7 @@ Private Attributes</h2></td></tr>
 
 <p>Removes from the tile the stones consumed by an elevation from <code>level</code> to <code>level + 1</code>. </p>
 
-<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00388">388</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00398">398</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
 <div id="dynsection-33" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-33-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-33-summary" class="dynsummary" style="display:block;">
@@ -1172,7 +1202,7 @@ Private Attributes</h2></td></tr>
 
 <p>Removes a player from the world and decrease the number of slots occupied in its team. The player is removed from the tile it was standing on and from the list of players in the world. </p>
 
-<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00439">439</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00449">449</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
 <div id="dynsection-35" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-35-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-35-summary" class="dynsummary" style="display:block;">
@@ -1218,7 +1248,7 @@ Private Attributes</h2></td></tr>
 
 <p>Removes the player pointer from the tile at the given position, if any. </p>
 
-<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00268">268</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00278">278</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
 <div id="dynsection-37" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-37-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-37-summary" class="dynsummary" style="display:block;">
@@ -1394,7 +1424,7 @@ Private Attributes</h2></td></tr>
 
 <p>Sends a message to every player currently standing on the given tile. </p>
 
-<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00283">283</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00293">293</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
 <div id="dynsection-45" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-45-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-45-summary" class="dynsummary" style="display:block;">
@@ -1430,13 +1460,48 @@ Private Attributes</h2></td></tr>
 
 <p>Sets the queue used to push world events out to graphic clients. </p>
 
-<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00301">301</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00311">311</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
 <div id="dynsection-47" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-47-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-47-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-47-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classzappy_1_1World_a90583ba922f8a981c645259558511518_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a783b30d02dc935340c3f7d6dabb54b30" name="a783b30d02dc935340c3f7d6dabb54b30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a783b30d02dc935340c3f7d6dabb54b30">&#9670;&#160;</a></span>setPaused()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="glad_8h.html#a950fc91edb4504f62f1c577bf4727c29">void</a> zappy::World::setPaused </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>paused</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Pauses or resumes the simulation. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">paused</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00161">161</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
+<div id="dynsection-48" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-48-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-48-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-48-content" class="dyncontent" style="display:none;">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classzappy_1_1World_a783b30d02dc935340c3f7d6dabb54b30_icgraph.svg" width="100%" height="364"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -1475,19 +1540,19 @@ Private Attributes</h2></td></tr>
 
 <p>Sets the absolute count of a resource on a tile. </p>
 
-<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00186">186</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
-<div id="dynsection-48" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-48-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-48-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-48-content" class="dyncontent" style="display:none;">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classzappy_1_1World_a3d970927132d48c4440f41db095da4eb_cgraph.svg" width="410" height="135"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
+<p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00196">196</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
 <div id="dynsection-49" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-49-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+  <img id="dynsection-49-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-49-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-49-content" class="dyncontent" style="display:none;">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classzappy_1_1World_a3d970927132d48c4440f41db095da4eb_cgraph.svg" width="410" height="135"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div id="dynsection-50" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-50-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-50-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-50-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classzappy_1_1World_a3d970927132d48c4440f41db095da4eb_icgraph.svg" width="100%" height="364"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1518,11 +1583,11 @@ Private Attributes</h2></td></tr>
 </dl>
 
 <p class="definition">Definition at line <a class="el" href="World_8cpp_source.html#l00149">149</a> of file <a class="el" href="World_8cpp_source.html">World.cpp</a>.</p>
-<div id="dynsection-50" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-50-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-50-summary" class="dynsummary" style="display:block;">
+<div id="dynsection-51" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-51-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-51-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-50-content" class="dyncontent" style="display:none;">
+<div id="dynsection-51-content" class="dyncontent" style="display:none;">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classzappy_1_1World_a93b2bb4700e29ccc111c4b4067d7e742_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
@@ -1646,6 +1711,30 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="World_8hpp_source.html#l00052">52</a> of file <a class="el" href="World_8hpp_source.html">World.hpp</a>.</p>
+
+</div>
+</div>
+<a id="adcb238d6f4cb1638bdd6b3e9af51dc96" name="adcb238d6f4cb1638bdd6b3e9af51dc96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adcb238d6f4cb1638bdd6b3e9af51dc96">&#9670;&#160;</a></span>_paused</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool zappy::World::_paused = false</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="World_8hpp_source.html#l00054">54</a> of file <a class="el" href="World_8hpp_source.html">World.hpp</a>.</p>
 
 </div>
 </div>

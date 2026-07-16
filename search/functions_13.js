@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['take_0',['take',['../classia_1_1client_1_1ZappyAIClient.html#a31a8f940eef4abfb13c5f0606b7bea75',1,'ia.client.ZappyAIClient.take()'],['../classzappy_1_1Commands.html#af68393f7ba46aec892196685895c50a7',1,'zappy::Commands::Take()'],['../classia_1_1test_1_1FakeClient.html#adc6645854fedfcda7afb089789a9aa38',1,'ia.test.FakeClient.take()']]],
+  ['take_0',['take',['../classia_1_1test_1_1FakeClient.html#adc6645854fedfcda7afb089789a9aa38',1,'ia.test.FakeClient.take()'],['../classia_1_1client_1_1ZappyAIClient.html#a31a8f940eef4abfb13c5f0606b7bea75',1,'ia.client.ZappyAIClient.take()'],['../classzappy_1_1Commands.html#af68393f7ba46aec892196685895c50a7',1,'zappy::Commands::Take()']]],
   ['takeoutgoing_1',['takeOutgoing',['../classZappy_1_1RenderSystem.html#a9abe9d0469b3ee917ffbe173274d7e4c',1,'Zappy::RenderSystem']]],
   ['tcpsocket_2',['TcpSocket',['../classZappy_1_1TcpSocket.html#ae6a42460d82e6fa08e36f24f118118d9',1,'Zappy::TcpSocket']]],
   ['tcpsocketexception_3',['TcpSocketException',['../classZappy_1_1TcpSocket_1_1TcpSocketException.html#a334a1b5c3574dd033673fde9c5ae3263',1,'Zappy::TcpSocket::TcpSocketException']]],

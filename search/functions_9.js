@@ -10,10 +10,11 @@ var searchData=
   ['inittwod_7',['initTwoD',['../classZappy_1_1RenderSystem.html#a3ed3055c99d4acbde0ac2748ae7acaae',1,'Zappy::RenderSystem']]],
   ['inputhandler_8',['InputHandler',['../classZappy_1_1InputHandler.html#ad9c7012a04f2c6db750003557053d6b8',1,'Zappy::InputHandler']]],
   ['interleave_9',['interleave',['../classZappy_1_1RenderModel.html#a48b38a1747301544ee85ddde1d8b59e4',1,'Zappy::RenderModel']]],
-  ['inventory_10',['inventory',['../classZappy_1_1Trantorian.html#a7dbbcf56c254ce9e1669370e46079d96',1,'Zappy::Trantorian::inventory()'],['../classZappy_1_1Trantorian.html#abca2faa63ea64bea7f98ece0d52d3558',1,'Zappy::Trantorian::inventory() const'],['../classia_1_1client_1_1ZappyAIClient.html#a4112f097c92800537b87b6342a7fa0b5',1,'ia.client.ZappyAIClient.inventory()'],['../classia_1_1test_1_1FakeClient.html#a485ea93f39794e449e5cd3e0f70ed8f1',1,'ia.test.FakeClient.inventory()'],['../classzappy_1_1Inventory.html#a984fa5cf672d44c7c79e2024bca36578',1,'zappy::Inventory::Inventory()']]],
+  ['inventory_10',['inventory',['../classzappy_1_1Inventory.html#a984fa5cf672d44c7c79e2024bca36578',1,'zappy::Inventory::Inventory()'],['../classZappy_1_1Trantorian.html#a7dbbcf56c254ce9e1669370e46079d96',1,'Zappy::Trantorian::inventory()'],['../classZappy_1_1Trantorian.html#abca2faa63ea64bea7f98ece0d52d3558',1,'Zappy::Trantorian::inventory() const'],['../classia_1_1client_1_1ZappyAIClient.html#a4112f097c92800537b87b6342a7fa0b5',1,'ia.client.ZappyAIClient.inventory()'],['../classia_1_1test_1_1FakeClient.html#a485ea93f39794e449e5cd3e0f70ed8f1',1,'ia.test.FakeClient.inventory()']]],
   ['isbanned_11',['isBanned',['../classzappy_1_1CommandParser.html#ac4070ffc5bd0bdc69dc9fed51a4e6588',1,'zappy::CommandParser']]],
   ['isfrozen_12',['isFrozen',['../classzappy_1_1Player.html#ae6c620cf832083d406498ba44e7f8541',1,'zappy::Player']]],
   ['isincantationvalid_13',['isIncantationValid',['../classzappy_1_1World.html#aad86d2fa98fbe95fed52656c32582b19',1,'zappy::World']]],
   ['isopen_14',['isOpen',['../classZappy_1_1Window.html#a0f0475130c5d82c6b2debced1cd62760',1,'Zappy::Window']]],
-  ['itemtypetostring_15',['itemTypeToString',['../namespacezappy.html#aef0d81865578aa094dcbd509e0055a81',1,'zappy']]]
+  ['ispaused_15',['isPaused',['../classzappy_1_1World.html#ab35a84cc431ec41932be438c21cd14a7',1,'zappy::World']]],
+  ['itemtypetostring_16',['itemTypeToString',['../namespacezappy.html#aef0d81865578aa094dcbd509e0055a81',1,'zappy']]]
 ];

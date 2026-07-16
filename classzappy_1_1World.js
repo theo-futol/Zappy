@@ -25,6 +25,7 @@ var classzappy_1_1World =
     [ "getTimeUnit", "classzappy_1_1World.html#a05439a20a5736f87ccfa09d8bae3ca45", null ],
     [ "getWinningTeam", "classzappy_1_1World.html#a2cbe63c0d49892221552eb22d64b1953", null ],
     [ "isIncantationValid", "classzappy_1_1World.html#aad86d2fa98fbe95fed52656c32582b19", null ],
+    [ "isPaused", "classzappy_1_1World.html#ab35a84cc431ec41932be438c21cd14a7", null ],
     [ "removeIncantationStones", "classzappy_1_1World.html#a353dcd17b411d7adefd995b3476b1ea4", null ],
     [ "removePlayer", "classzappy_1_1World.html#a61bd77a5a1cae883aa060469d039fe92", null ],
     [ "removePlayerFromTile", "classzappy_1_1World.html#a3904131e585caa94fc0b4d4fb01e11f2", null ],
@@ -33,6 +34,7 @@ var classzappy_1_1World =
     [ "resourcePassiveGenerationLegacy", "classzappy_1_1World.html#a420188584d7d2f104bb3e7d186266758", null ],
     [ "sendMessageToPlayersThatAreOnTile", "classzappy_1_1World.html#a16e90e4f9247dcfdc66d275ab5fc2888", null ],
     [ "setBroadCastQueue", "classzappy_1_1World.html#a90583ba922f8a981c645259558511518", null ],
+    [ "setPaused", "classzappy_1_1World.html#a783b30d02dc935340c3f7d6dabb54b30", null ],
     [ "setTileAt", "classzappy_1_1World.html#a3d970927132d48c4440f41db095da4eb", null ],
     [ "setTimeUnit", "classzappy_1_1World.html#a93b2bb4700e29ccc111c4b4067d7e742", null ],
     [ "_broadcastQueue", "classzappy_1_1World.html#a454ed2c861c51fb79f5b242413d9986d", null ],
@@ -40,6 +42,7 @@ var classzappy_1_1World =
     [ "_map", "classzappy_1_1World.html#afd4cb3967d421825d58329b4e0ddcfd8", null ],
     [ "_mapSize", "classzappy_1_1World.html#a95cd94d72d3669dda43eb1adb82aec41", null ],
     [ "_nextPlayerId", "classzappy_1_1World.html#ac8ddf83a9ecb8b484753a75aca09a777", null ],
+    [ "_paused", "classzappy_1_1World.html#adcb238d6f4cb1638bdd6b3e9af51dc96", null ],
     [ "_players", "classzappy_1_1World.html#a8c47c2f6eedb997fabf9c4937bdd845d", null ],
     [ "_teams", "classzappy_1_1World.html#a33450d11fc5e15cf69e8cd103227497b", null ],
     [ "_useOldGen", "classzappy_1_1World.html#ac8c7dbcc78f8d81497a17ce0319b5304", null ]

@@ -1,7 +1,7 @@
 var searchData=
 [
   ['tab_0',['Tab',['../classZappy_1_1MainMenu.html#ac121b2f70efc0aada13b0d749ba18623',1,'Zappy::MainMenu']]],
-  ['take_1',['take',['../classia_1_1test_1_1FakeClient.html#adc6645854fedfcda7afb089789a9aa38',1,'ia.test.FakeClient.take()'],['../classia_1_1client_1_1ZappyAIClient.html#a31a8f940eef4abfb13c5f0606b7bea75',1,'ia.client.ZappyAIClient.take()'],['../classzappy_1_1Commands.html#af68393f7ba46aec892196685895c50a7',1,'zappy::Commands::Take()']]],
+  ['take_1',['take',['../classzappy_1_1Commands.html#af68393f7ba46aec892196685895c50a7',1,'zappy::Commands::Take()'],['../classia_1_1test_1_1FakeClient.html#adc6645854fedfcda7afb089789a9aa38',1,'ia.test.FakeClient.take()'],['../classia_1_1client_1_1ZappyAIClient.html#a31a8f940eef4abfb13c5f0606b7bea75',1,'ia.client.ZappyAIClient.take()']]],
   ['takeoutgoing_2',['takeOutgoing',['../classZappy_1_1RenderSystem.html#a9abe9d0469b3ee917ffbe173274d7e4c',1,'Zappy::RenderSystem']]],
   ['tangent_3',['tangent',['../structZappy_1_1WorldPoint.html#a7b60ee12abce11d28e1b92e166ea2a5c',1,'Zappy::WorldPoint']]],
   ['target_4',['target',['../glad_8h.html#af9d0cbbbeb7414e786c41899e5a856d7',1,'glad.h']]],

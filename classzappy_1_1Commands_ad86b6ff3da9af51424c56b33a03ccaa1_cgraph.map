@@ -1,0 +1,5 @@
+<map id="zappy::Commands::Stop" name="zappy::Commands::Stop">
+<area shape="rect" id="Node000001" title="stop: pauses the simulation." alt="" coords="5,5,184,31"/>
+<area shape="rect" id="Node000002" href="$classzappy_1_1World.html#a783b30d02dc935340c3f7d6dabb54b30" title="Pauses or resumes the simulation." alt="" coords="232,5,411,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="185,15,218,15,218,21,185,21"/>
+</map>

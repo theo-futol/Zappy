@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['main_2ecpp_0',['main.cpp',['../server_2main_8cpp.html',1,'(Global Namespace)'],['../gui_2main_8cpp.html',1,'(Global Namespace)']]],
+  ['main_2ecpp_0',['main.cpp',['../gui_2main_8cpp.html',1,'(Global Namespace)'],['../server_2main_8cpp.html',1,'(Global Namespace)']]],
   ['mainmenu_2ecpp_1',['MainMenu.cpp',['../MainMenu_8cpp.html',1,'']]],
   ['mainmenu_2ehpp_2',['MainMenu.hpp',['../MainMenu_8hpp.html',1,'']]],
   ['map_2ecpp_3',['Map.cpp',['../Map_8cpp.html',1,'']]],
