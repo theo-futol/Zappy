@@ -1,2 +1,21 @@
 .env
 ZapLauncher
+
+# Zappy VR
+zappy-vr/Library
+zappy-vr/Logs
+zappy-vr/.run
+zappy-vr/.utmp
+zappy-vr/vr/My project Final_BurstDebugInformation_DoNotShip/
+zappy-vr/teste_13h19.apk
+zappy-vr/teste_13h19_BackUpThisFolder_ButDontShipItWithYourGame/
+zappy-vr/UserSettings/
+zappy-vr/vr/Library
+zappy-vr/vr/Logs
+zappy-vr/vr/.run
+zappy-vr/vr/.utmp
+zappy-vr/vr/.vscode/
+zappy-vr/vr/UserSettings/
+zappy-vr/vr/My project Final_BurstDebugInformation_DoNotShip/
+zappy-vr/vr/teste_13h19.apk
+zappy-vr/vr/teste_13h19_BackUpThisFolder_ButDontShipItWithYourGame/
